@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Sensitive and environment settings | Magento 2 Developer Documentation (copy)</title>
+	<title>Sensitive and environment settings | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/extension-dev-guide/configuration/sensitive-and-environment-settings.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/extension-dev-guide/configuration/sensitive-and-environment-settings.html">Magento 2.0</a></li>
 		
@@ -3258,7 +3259,7 @@
 
 <p>Use the following guidelines to determine which settings to designate as sensitive, system-specific, or both.</p>
 
-<p>Magento stores these settings in <code class="highlighter-rouge">&lt;Magento root dir&gt;/app/etc/env.php</code>.
+<p>Magento stores these settings in <code class="language-plaintext highlighter-rouge">&lt;Magento root dir&gt;/app/etc/env.php</code>.
 Do not include this file in source control.</p>
 
 <h3 id="sensitive-values">Sensitive values</h3>
@@ -3295,7 +3296,7 @@ Do not include this file in source control.</p>
 
 <h2 id="how-to-specify-values-as-sensitive-or-system-specific">How to specify values as sensitive or system-specific</h2>
 
-<p>Add a reference to <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Config/Model/Config/TypePool.php" target="_blank"><code class="highlighter-rouge">Magento\Config\Model\Config\TypePool</code></a> to the <a href="/devdocs/guides/v2.2/extension-dev-guide/build/di-xml-file.html"><code class="highlighter-rouge">di.xml</code></a> file to specify either a system-specific or sensitive configuration value.</p>
+<p>Add a reference to <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Config/Model/Config/TypePool.php" target="_blank"><code class="language-plaintext highlighter-rouge">Magento\Config\Model\Config\TypePool</code></a> to the <a href="/devdocs/guides/v2.2/extension-dev-guide/build/di-xml-file.html"><code class="language-plaintext highlighter-rouge">di.xml</code></a> file to specify either a system-specific or sensitive configuration value.</p>
 
 <h3 id="example-sensitive-settings">Example: Sensitive settings</h3>
 
@@ -3309,13 +3310,13 @@ Do not include this file in source control.</p>
 
 <p>After specifying the sensitive setting, use the following commands to verify it:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php bin/magento cache:clean
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php bin/magento cache:clean
 php bin/magento app:config:dump
 </code></pre></div></div>
 
 <p>A message similar to the following is displayed:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>The configuration file doesn't contain sensitive data for security reasons. Sensitive data can be stored in the following environment variables:
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>The configuration file doesn't contain sensitive data for security reasons. Sensitive data can be stored in the following environment variables:
 CONFIG__DEFAULT__PAYMENT__TEST__PASWORD for payment/test/password
 Done.
 </code></pre></div></div>
@@ -3332,7 +3333,7 @@ Done.
 
 <h3 id="sensitive-system-specific-setting">Sensitive, system-specific setting</h3>
 
-<p>To set a configuration setting as both sensitive and system-specific, create two entries with the <code class="highlighter-rouge">name</code> property for <code class="highlighter-rouge">argument</code> set to <code class="highlighter-rouge">sensitive</code> for one entry and <code class="highlighter-rouge">environment</code> for the other.</p>
+<p>To set a configuration setting as both sensitive and system-specific, create two entries with the <code class="language-plaintext highlighter-rouge">name</code> property for <code class="language-plaintext highlighter-rouge">argument</code> set to <code class="language-plaintext highlighter-rouge">sensitive</code> for one entry and <code class="language-plaintext highlighter-rouge">environment</code> for the other.</p>
 
 <h4 id="related-topics">Related topics</h4>
 

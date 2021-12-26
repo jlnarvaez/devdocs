@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Secure cron.php to run in a browser | Magento 2 Developer Documentation (copy)</title>
+	<title>Secure cron.php to run in a browser | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/config-guide/secy/secy-cron.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/config-guide/secy/secy-cron.html">Magento 2.0</a></li>
 		
@@ -4018,7 +4019,7 @@
 	<h1 class="page-heading">Secure cron.php to run in a browser</h1>
 </section>
 
-			<p>This topic discusses securing <code class="highlighter-rouge">pub/cron.php</code> to prevent it from being used in a malicious exploit. If you don’t secure cron, any user could potentially run cron to attack your Magento application.</p>
+			<p>This topic discusses securing <code class="language-plaintext highlighter-rouge">pub/cron.php</code> to prevent it from being used in a malicious exploit. If you don’t secure cron, any user could potentially run cron to attack your Magento application.</p>
 
 <p>The Magento cron job runs a number of scheduled tasks and is a vital part of your Magento configuration. Scheduled tasks include, but are not limited to:</p>
 
@@ -4034,11 +4035,11 @@
 <p>You can run a Magento cron job in the following ways:</p>
 
 <ul>
-  <li>Using the <a href="/devdocs/guides/v2.3/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group-run"><code class="highlighter-rouge">magento cron:run</code></a> command either from the command line or in a crontab</li>
-  <li>Accessing <code class="highlighter-rouge">pub/cron.php?[group=&lt;name&gt;]</code> in a web browser</li>
+  <li>Using the <a href="/devdocs/guides/v2.3/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group-run"><code class="language-plaintext highlighter-rouge">magento cron:run</code></a> command either from the command line or in a crontab</li>
+  <li>Accessing <code class="language-plaintext highlighter-rouge">pub/cron.php?[group=&lt;name&gt;]</code> in a web browser</li>
 </ul>
 
-<p class="bs-callout bs-callout-info">You don’t need to do anything if you use the <a href="/devdocs/guides/v2.3/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group-run"><code class="highlighter-rouge">magento cron:run</code></a> command to run cron because it uses a different process that is already secure.</p>
+<p class="bs-callout bs-callout-info">You don’t need to do anything if you use the <a href="/devdocs/guides/v2.3/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group-run"><code class="language-plaintext highlighter-rouge">magento cron:run</code></a> command to run cron because it uses a different process that is already secure.</p>
 
 <h2 id="secure-cron-with-apache">Secure cron with Apache</h2>
 
@@ -4053,19 +4054,19 @@
 
 <p>For security reasons, you can locate the password file anywhere except your web server docroot. In this example, we’re storing the password file in a new directory.</p>
 
-<p>Enter the following commands as a user with <code class="highlighter-rouge">root</code> privileges:</p>
+<p>Enter the following commands as a user with <code class="language-plaintext highlighter-rouge">root</code> privileges:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mkdir -p /usr/local/apache/password
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mkdir -p /usr/local/apache/password
 htpasswd -c /usr/local/apache/password/passwords &lt;username&gt;
 </code></pre></div></div>
 
-<p>Where <code class="highlighter-rouge">&lt;username&gt;</code> can be the web server user or another user. In this example, we use the web server user, but the choice of user is up to you.</p>
+<p>Where <code class="language-plaintext highlighter-rouge">&lt;username&gt;</code> can be the web server user or another user. In this example, we use the web server user, but the choice of user is up to you.</p>
 
 <p>Follow the prompts on your screen to create a password for the user.</p>
 
-<p>To add another user to your password file, enter the following command as a user with <code class="highlighter-rouge">root</code> privileges:</p>
+<p>To add another user to your password file, enter the following command as a user with <code class="language-plaintext highlighter-rouge">root</code> privileges:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>htpasswd /usr/local/apache/password/passwords &lt;username&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>htpasswd /usr/local/apache/password/passwords &lt;username&gt;
 </code></pre></div></div>
 
 <h3 id="add-users-to-create-an-authorized-cron-group-optional">Add users to create an authorized cron group (optional)</h3>
@@ -4074,35 +4075,35 @@ htpasswd -c /usr/local/apache/password/passwords &lt;username&gt;
 
 <p>To add another user to your password file:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>htpasswd /usr/local/apache/password/passwords &lt;username&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>htpasswd /usr/local/apache/password/passwords &lt;username&gt;
 </code></pre></div></div>
 
-<p>To create an authorized group, create a group file anywhere outside the web server docroot. The group file specifies the name of the group and the users in the group. In this example, the group name is <code class="highlighter-rouge">MagentoCronGroup</code>.</p>
+<p>To create an authorized group, create a group file anywhere outside the web server docroot. The group file specifies the name of the group and the users in the group. In this example, the group name is <code class="language-plaintext highlighter-rouge">MagentoCronGroup</code>.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vim /usr/local/apache/password/group
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vim /usr/local/apache/password/group
 </code></pre></div></div>
 
 <p>Contents of the file:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>MagentoCronGroup: &lt;username1&gt; ... &lt;usernameN&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>MagentoCronGroup: &lt;username1&gt; ... &lt;usernameN&gt;
 </code></pre></div></div>
 
-<h3 id="secure-cron-in-htaccess">Secure cron in <code class="highlighter-rouge">.htaccess</code></h3>
+<h3 id="secure-cron-in-htaccess">Secure cron in <code class="language-plaintext highlighter-rouge">.htaccess</code></h3>
 
-<p>To secure cron in Magento’s <code class="highlighter-rouge">.htaccess</code> file:</p>
+<p>To secure cron in Magento’s <code class="language-plaintext highlighter-rouge">.htaccess</code> file:</p>
 
 <ol>
   <li>Log in to your Magento server as, or switch to, the   <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span>
 .</li>
   <li>
-    <p>Open <code class="highlighter-rouge">&lt;your Magento install dir&gt;/pub/.htaccess</code> in a text editor.</p>
+    <p>Open <code class="language-plaintext highlighter-rouge">&lt;your Magento install dir&gt;/pub/.htaccess</code> in a text editor.</p>
 
-    <p>(Because <code class="highlighter-rouge">cron.php</code> is located in the <code class="highlighter-rouge">pub</code> directory, edit this <code class="highlighter-rouge">.htaccess</code> only.)</p>
+    <p>(Because <code class="language-plaintext highlighter-rouge">cron.php</code> is located in the <code class="language-plaintext highlighter-rouge">pub</code> directory, edit this <code class="language-plaintext highlighter-rouge">.htaccess</code> only.)</p>
   </li>
   <li>
-    <p><em>Cron access for one or more users.</em> Replace the existing <code class="highlighter-rouge">&lt;Files cron.php&gt;</code> directive with the following:</p>
+    <p><em>Cron access for one or more users.</em> Replace the existing <code class="language-plaintext highlighter-rouge">&lt;Files cron.php&gt;</code> directive with the following:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;Files cron.php&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;Files cron.php&gt;
 	AuthType Basic
 	AuthName "Cron Authentication"
 	AuthUserFile /usr/local/apache/password/passwords
@@ -4111,9 +4112,9 @@ htpasswd -c /usr/local/apache/password/passwords &lt;username&gt;
 </code></pre></div>    </div>
   </li>
   <li>
-    <p><em>Cron access for a group.</em> Replace the existing <code class="highlighter-rouge">&lt;Files cron.php&gt;</code> directive with the following:</p>
+    <p><em>Cron access for a group.</em> Replace the existing <code class="language-plaintext highlighter-rouge">&lt;Files cron.php&gt;</code> directive with the following:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;Files cron.php&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;Files cron.php&gt;
 	AuthType Basic
 	AuthName "Cron Authentication"
 	AuthUserFile /usr/local/apache/password/passwords
@@ -4122,7 +4123,7 @@ htpasswd -c /usr/local/apache/password/passwords &lt;username&gt;
 &lt;/Files&gt;
 </code></pre></div>    </div>
   </li>
-  <li>Save your changes to <code class="highlighter-rouge">.htaccess</code> and exit the text editor.</li>
+  <li>Save your changes to <code class="language-plaintext highlighter-rouge">.htaccess</code> and exit the text editor.</li>
   <li>Continue with <a href="#verify-cron-is-secure">Verify cron is secure</a>.</li>
 </ol>
 
@@ -4133,7 +4134,7 @@ htpasswd -c /usr/local/apache/password/passwords &lt;username&gt;
 
 <ol>
   <li>Set up an encrypted password file for nginx</li>
-  <li>Modify your nginx configuration to reference the password file when accessing <code class="highlighter-rouge">pub/cron.php</code></li>
+  <li>Modify your nginx configuration to reference the password file when accessing <code class="language-plaintext highlighter-rouge">pub/cron.php</code></li>
 </ol>
 
 <h3 id="create-a-password-file-1">Create a password file</h3>
@@ -4145,30 +4146,30 @@ htpasswd -c /usr/local/apache/password/passwords &lt;username&gt;
   <li><a href="https://www.howtoforge.com/basic-http-authentication-with-nginx" target="_blank">Basic HTTP Authentication with nginx (howtoforge)</a></li>
 </ul>
 
-<h3 id="secure-cron-in-nginxconfsample">Secure cron in <code class="highlighter-rouge">nginx.conf.sample</code></h3>
+<h3 id="secure-cron-in-nginxconfsample">Secure cron in <code class="language-plaintext highlighter-rouge">nginx.conf.sample</code></h3>
 
 <p>Magento provides an optimized sample nginx configuration file out of the box. We recommend modifying it to secure cron.</p>
 
 <ol>
   <li>
-    <p>Add the following to your Magento <a href="https://github.com/magento/magento2/blob/2.0/nginx.conf.sample" target="_blank"><code class="highlighter-rouge">nginx.sample.conf</code></a> file:</p>
+    <p>Add the following to your Magento <a href="https://github.com/magento/magento2/blob/2.0/nginx.conf.sample" target="_blank"><code class="language-plaintext highlighter-rouge">nginx.sample.conf</code></a> file:</p>
 
     <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="gp">#</span>Securing cron
-<span class="gp">location ~ cron\.php$</span> <span class="o">{</span>
-<span class="gp">   auth_basic "Cron Authentication";</span>
-<span class="gp">   auth_basic_user_file /etc/nginx/.htpasswd;</span>
-<span class="go">
+<span class="gp">location ~ cron\.php$</span><span class="w"> </span><span class="o">{</span>
+<span class="gp">   auth_basic "Cron Authentication";</span><span class="w">
+</span><span class="gp">   auth_basic_user_file /etc/nginx/.htpasswd;</span><span class="w">
+</span><span class="go">
 </span><span class="gp">   try_files $</span>uri <span class="o">=</span>404<span class="p">;</span>
-<span class="gp">   fastcgi_pass   fastcgi_backend;</span>
-<span class="gp">   fastcgi_buffers 1024 4k;</span>
-<span class="go">
-</span><span class="gp">   fastcgi_read_timeout 600s;</span>
-<span class="gp">   fastcgi_connect_timeout 600s;</span>
-<span class="go">
-</span><span class="gp">   fastcgi_index  index.php;</span>
-<span class="gp">   fastcgi_param  SCRIPT_FILENAME  $</span>document_root<span class="nv">$fastcgi_script_name</span><span class="p">;</span>
-<span class="gp">   include        fastcgi_params;</span>
-<span class="go">}
+<span class="gp">   fastcgi_pass   fastcgi_backend;</span><span class="w">
+</span><span class="gp">   fastcgi_buffers 1024 4k;</span><span class="w">
+</span><span class="go">
+</span><span class="gp">   fastcgi_read_timeout 600s;</span><span class="w">
+</span><span class="gp">   fastcgi_connect_timeout 600s;</span><span class="w">
+</span><span class="go">
+</span><span class="gp">   fastcgi_index  index.php;</span><span class="w">
+</span><span class="gp">   fastcgi_param  SCRIPT_FILENAME  $</span>document_root<span class="nv">$fastcgi_script_name</span><span class="p">;</span>
+<span class="gp">   include        fastcgi_params;</span><span class="w">
+</span><span class="go">}
 </span></code></pre></div>    </div>
   </li>
   <li>
@@ -4184,47 +4185,47 @@ htpasswd -c /usr/local/apache/password/passwords &lt;username&gt;
 
 <h2 id="verify-cron-is-secure">Verify cron is secure</h2>
 
-<p>The easiest way to verify that <code class="highlighter-rouge">pub/cron.php</code> is secure is to verify that it’s creating rows in the <code class="highlighter-rouge">cron_schedule</code> Magento database table after you set up password authentication. This example uses SQL commands to check the database, but you can use whatever tool you like.</p>
+<p>The easiest way to verify that <code class="language-plaintext highlighter-rouge">pub/cron.php</code> is secure is to verify that it’s creating rows in the <code class="language-plaintext highlighter-rouge">cron_schedule</code> Magento database table after you set up password authentication. This example uses SQL commands to check the database, but you can use whatever tool you like.</p>
 
-<p class="bs-callout bs-callout-info">The <code class="highlighter-rouge">default</code> cron you’re running in this example runs according to the schedule defined in <code class="highlighter-rouge">crontab.xml</code>. Some cron job runs only once a day. The first time you run cron from the browser, the <code class="highlighter-rouge">cron_schedule</code> table is updated, but subsequent <code class="highlighter-rouge">pub/cron.php</code> requests run at the configured schedule.</p>
+<p class="bs-callout bs-callout-info">The <code class="language-plaintext highlighter-rouge">default</code> cron you’re running in this example runs according to the schedule defined in <code class="language-plaintext highlighter-rouge">crontab.xml</code>. Some cron job runs only once a day. The first time you run cron from the browser, the <code class="language-plaintext highlighter-rouge">cron_schedule</code> table is updated, but subsequent <code class="language-plaintext highlighter-rouge">pub/cron.php</code> requests run at the configured schedule.</p>
 
 <p>To verify cron is secure:</p>
 
 <ol>
   <li>
-    <p>Log in to your Magento database as either the Magento database user or as <code class="highlighter-rouge">root</code>.</p>
+    <p>Log in to your Magento database as either the Magento database user or as <code class="language-plaintext highlighter-rouge">root</code>.</p>
 
     <p>For example,</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql -u magento -p
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql -u magento -p
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Use the Magento database:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>use &lt;magento database name&gt;;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>use &lt;magento database name&gt;;
 </code></pre></div>    </div>
 
     <p>For example,</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>use magento;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>use magento;
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Delete all rows from the <code class="highlighter-rouge">cron_schedule</code> database table:</p>
+    <p>Delete all rows from the <code class="language-plaintext highlighter-rouge">cron_schedule</code> database table:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>TRUNCATE TABLE cron_schedule;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>TRUNCATE TABLE cron_schedule;
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Run cron from a browser:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>http[s]://&lt;magento hostname or ip&gt;/cron.php?group=default
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>http[s]://&lt;magento hostname or ip&gt;/cron.php?group=default
 </code></pre></div>    </div>
 
     <p>For example,</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>http://magento.example.com/cron.php?group=default
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>http://magento.example.com/cron.php?group=default
 </code></pre></div>    </div>
   </li>
   <li>
@@ -4267,21 +4268,21 @@ mysql&gt; SELECT <span class="k">*</span> from cron_schedule<span class="p">;</s
 
 <p class="bs-callout bs-callout-warning">Do <em>not</em> run cron in a browser without securing it first.</p>
 
-<p>If you’re using an Apache web server, you must remove the restriction from the <code class="highlighter-rouge">.htaccess</code> file before you can run cron in a browser:</p>
+<p>If you’re using an Apache web server, you must remove the restriction from the <code class="language-plaintext highlighter-rouge">.htaccess</code> file before you can run cron in a browser:</p>
 
 <ol>
   <li>Log in to your Magento server as a user with permissions to write to the Magento file system.</li>
   <li>
     <p>Open any of the following in a text editor (depending on your entry point to Magento):</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;your Magento install dir&gt;/pub/.htaccess
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;your Magento install dir&gt;/pub/.htaccess
 &lt;your Magento install dir&gt;/.htaccess
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Delete or comment out the following:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>## Deny access to cron.php
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>## Deny access to cron.php
 &lt;Files cron.php&gt;
 	order allow,deny
 	deny from all
@@ -4290,7 +4291,7 @@ mysql&gt; SELECT <span class="k">*</span> from cron_schedule<span class="p">;</s
 
     <p>For example,</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>## Deny access  to cron.php
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>## Deny access  to cron.php
 #&lt;Files cron.php&gt;
 #	order allow,deny
 #	deny from all
@@ -4302,24 +4303,24 @@ mysql&gt; SELECT <span class="k">*</span> from cron_schedule<span class="p">;</s
 
 <p>You can then run cron in a web browser as follows:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;your Magento hostname or IP&gt;/&lt;Magento root&gt;/pub/cron.php[?group=&lt;group name&gt;]
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;your Magento hostname or IP&gt;/&lt;Magento root&gt;/pub/cron.php[?group=&lt;group name&gt;]
 </code></pre></div></div>
 
 <p>Where:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">&lt;your Magento hostname or IP&gt;</code> is the hostname or IP address of your Magento installation</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;your Magento hostname or IP&gt;</code> is the hostname or IP address of your Magento installation</li>
   <li>
-    <p><code class="highlighter-rouge">&lt;Magento root&gt;</code> is the web server docroot-relative directory to which you installed the Magento software</p>
+    <p><code class="language-plaintext highlighter-rouge">&lt;Magento root&gt;</code> is the web server docroot-relative directory to which you installed the Magento software</p>
 
     <p>The exact URL you use to run the Magento application depends on how you configured your web server and virtual host.</p>
   </li>
-  <li><code class="highlighter-rouge">&lt;group name&gt;</code> is any valid cron group name (optional)</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;group name&gt;</code> is any valid cron group name (optional)</li>
 </ul>
 
 <p>For example,</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>http://magento.example.com/magento2/pub/cron.php?group=index
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>http://magento.example.com/magento2/pub/cron.php?group=index
 </code></pre></div></div>
 
 <p class="bs-callout bs-callout-info">You must run cron twice: first to discover tasks to run and again to run the tasks themselves. Refer to <a href="/devdocs/guides/v2.3/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group-run">Configure and run cron</a> for more information about cron groups.</p>

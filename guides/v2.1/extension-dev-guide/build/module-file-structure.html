@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Create your component file structure | Magento 2 Developer Documentation (copy)</title>
+	<title>Create your component file structure | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/extension-dev-guide/build/module-file-structure.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/extension-dev-guide/build/module-file-structure.html">Magento 2.0</a></li>
 		
@@ -3033,19 +3034,19 @@
 
 <ul>
   <li>
-    <p><code class="highlighter-rouge">&lt;Magento install directory&gt;/app</code>: This is the <em>recommended</em> location for component development. You can easily set up this type of environment by <a href="/devdocs/guides/v2.1/install-gde/prereq/dev_install.html">Cloning the Magento 2 GitHub repository</a>.</p>
+    <p><code class="language-plaintext highlighter-rouge">&lt;Magento install directory&gt;/app</code>: This is the <em>recommended</em> location for component development. You can easily set up this type of environment by <a href="/devdocs/guides/v2.1/install-gde/prereq/dev_install.html">Cloning the Magento 2 GitHub repository</a>.</p>
 
     <ul>
-      <li>For modules, use <code class="highlighter-rouge">app/code</code>.</li>
-      <li>For storefront themes, use <code class="highlighter-rouge">app/design/frontend</code>.</li>
-      <li>For Admin themes, use <code class="highlighter-rouge">app/design/adminhtml</code>.</li>
-      <li>For language packages, use <code class="highlighter-rouge">app/i18n</code>.</li>
+      <li>For modules, use <code class="language-plaintext highlighter-rouge">app/code</code>.</li>
+      <li>For storefront themes, use <code class="language-plaintext highlighter-rouge">app/design/frontend</code>.</li>
+      <li>For Admin themes, use <code class="language-plaintext highlighter-rouge">app/design/adminhtml</code>.</li>
+      <li>For language packages, use <code class="language-plaintext highlighter-rouge">app/i18n</code>.</li>
     </ul>
   </li>
   <li>
-    <p><code class="highlighter-rouge">&lt;Magento install directory&gt;/vendor</code>: This location is found in the alternative setups where the  <a href="/devdocs/guides/v2.1/install-gde/composer.html"><code class="highlighter-rouge">composer create-project</code></a>.  command was used to get a Magento 2 metapackage (which downloads the CE or EE code), or a <a href="/devdocs/guides/v2.1/install-gde/prereq/zip_install.html">compressed Magento 2 archive</a> was extracted in order to install Magento.</p>
+    <p><code class="language-plaintext highlighter-rouge">&lt;Magento install directory&gt;/vendor</code>: This location is found in the alternative setups where the  <a href="/devdocs/guides/v2.1/install-gde/composer.html"><code class="language-plaintext highlighter-rouge">composer create-project</code></a>.  command was used to get a Magento 2 metapackage (which downloads the CE or EE code), or a <a href="/devdocs/guides/v2.1/install-gde/prereq/zip_install.html">compressed Magento 2 archive</a> was extracted in order to install Magento.</p>
 
-    <p>Any third party components (and the Magento application itself) are downloaded and stored under the <code class="highlighter-rouge">vendor</code> directory. If you are using Git to manage project, this directory is typically added to the <code class="highlighter-rouge">.gitignore</code> file. Therefore, we recommend you do your customization work in <code class="highlighter-rouge">app/code</code>, not <code class="highlighter-rouge">vendor</code>.</p>
+    <p>Any third party components (and the Magento application itself) are downloaded and stored under the <code class="language-plaintext highlighter-rouge">vendor</code> directory. If you are using Git to manage project, this directory is typically added to the <code class="language-plaintext highlighter-rouge">.gitignore</code> file. Therefore, we recommend you do your customization work in <code class="language-plaintext highlighter-rouge">app/code</code>, not <code class="language-plaintext highlighter-rouge">vendor</code>.</p>
   </li>
 </ul>
 
@@ -3054,9 +3055,9 @@
 <p>The following files are required for all components:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">registration.php</code>: Among other things, this file specifies the directory in which the component is installed by vendors in production environments. By default, composer automatically installs components in the <code class="highlighter-rouge">&lt;Magento root dir&gt;/vendor</code> directory. For more information, see <a href="/devdocs/guides/v2.1/extension-dev-guide/build/component-registration.html">Component registration</a>.</li>
-  <li><code class="highlighter-rouge">etc/module.xml</code>: This file specifies basic information about the component such as the components dependencies and its version number. This version number is used to determine schema and data updates when <code class="highlighter-rouge">bin/magento setup:upgrade</code> is run.</li>
-  <li><code class="highlighter-rouge">composer.json</code>: Specifies component dependencies and other metadata. For more information, see <a href="/devdocs/guides/v2.1/extension-dev-guide/build/composer-integration.html">Composer integration</a>.</li>
+  <li><code class="language-plaintext highlighter-rouge">registration.php</code>: Among other things, this file specifies the directory in which the component is installed by vendors in production environments. By default, composer automatically installs components in the <code class="language-plaintext highlighter-rouge">&lt;Magento root dir&gt;/vendor</code> directory. For more information, see <a href="/devdocs/guides/v2.1/extension-dev-guide/build/component-registration.html">Component registration</a>.</li>
+  <li><code class="language-plaintext highlighter-rouge">etc/module.xml</code>: This file specifies basic information about the component such as the components dependencies and its version number. This version number is used to determine schema and data updates when <code class="language-plaintext highlighter-rouge">bin/magento setup:upgrade</code> is run.</li>
+  <li><code class="language-plaintext highlighter-rouge">composer.json</code>: Specifies component dependencies and other metadata. For more information, see <a href="/devdocs/guides/v2.1/extension-dev-guide/build/composer-integration.html">Composer integration</a>.</li>
 </ul>
 
 <h3 id="module-file-structure">Module file structure</h3>
@@ -3070,12 +3071,12 @@
 <p>Following are some common module directories:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">Block</code>: contains   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
+  <li><code class="language-plaintext highlighter-rouge">Block</code>: contains   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
  view classes as part of Model View Controller(MVC) vertical implementation of module logic.</li>
-  <li><code class="highlighter-rouge">Controller</code>: contains PHP controller classes as part of MVC vertical implementation of module logic.</li>
-  <li><code class="highlighter-rouge">etc</code>: contains configuration files; in particular, <code class="highlighter-rouge">module.xml</code>, which is required.</li>
-  <li><code class="highlighter-rouge">Model</code>: contains PHP model classes as part of MVC vertical implementation of module logic.</li>
-  <li><code class="highlighter-rouge">Setup</code>: contains classes for module database structure and data setup which are invoked when installing or upgrading.</li>
+  <li><code class="language-plaintext highlighter-rouge">Controller</code>: contains PHP controller classes as part of MVC vertical implementation of module logic.</li>
+  <li><code class="language-plaintext highlighter-rouge">etc</code>: contains configuration files; in particular, <code class="language-plaintext highlighter-rouge">module.xml</code>, which is required.</li>
+  <li><code class="language-plaintext highlighter-rouge">Model</code>: contains PHP model classes as part of MVC vertical implementation of module logic.</li>
+  <li><code class="language-plaintext highlighter-rouge">Setup</code>: contains classes for module database structure and data setup which are invoked when installing or upgrading.</li>
 </ul>
 
 <h4 class="no_toc" id="additional-directories">Additional directories</h4>
@@ -3083,12 +3084,12 @@
  files.</p>
 
 <ul>
-  <li><code class="highlighter-rouge">Api</code>: contains any PHP classes exposed to the   <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span>
+  <li><code class="language-plaintext highlighter-rouge">Api</code>: contains any PHP classes exposed to the   <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span>
 .</li>
-  <li><code class="highlighter-rouge">Console</code>: contains CLI commands. For more info, see <a href="/devdocs/guides/v2.1/extension-dev-guide/cli-cmds/cli-add.html">Add CLI commands</a>.</li>
-  <li><code class="highlighter-rouge">i18n</code>: contains localization files.</li>
-  <li><code class="highlighter-rouge">Plugin</code>: contains any needed <a href="/devdocs/guides/v2.1/extension-dev-guide/plugins.html">plug-ins</a>.</li>
-  <li><code class="highlighter-rouge">view</code>: contains view files, including static view files, design templates, email templates, and layout files.</li>
+  <li><code class="language-plaintext highlighter-rouge">Console</code>: contains CLI commands. For more info, see <a href="/devdocs/guides/v2.1/extension-dev-guide/cli-cmds/cli-add.html">Add CLI commands</a>.</li>
+  <li><code class="language-plaintext highlighter-rouge">i18n</code>: contains localization files.</li>
+  <li><code class="language-plaintext highlighter-rouge">Plugin</code>: contains any needed <a href="/devdocs/guides/v2.1/extension-dev-guide/plugins.html">plug-ins</a>.</li>
+  <li><code class="language-plaintext highlighter-rouge">view</code>: contains view files, including static view files, design templates, email templates, and layout files.</li>
 </ul>
 
 <h3 id="theme-file-structure">Theme file structure</h3>
@@ -3096,7 +3097,7 @@
 <p>A typical   <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>
  file structure can look like the following:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>├── composer.json
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>├── composer.json
 ├── etc
 │   └── view.xml
 ├── i18n
@@ -3137,19 +3138,19 @@
 <p>Typical theme directories are:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">etc</code>: Contains configuration files such as the <code class="highlighter-rouge">view.xml</code> file which contains image configurations for all images and thumbnails.</li>
-  <li><code class="highlighter-rouge">i18n</code>: <a href="/devdocs/guides/v2.1/frontend-dev-guide/translations/xlate.html#m2devgde-xlate-dictionaries">Translation dictionaries</a>, if any.</li>
-  <li><code class="highlighter-rouge">media</code>: Theme preview images (screen capture of your theme) can be put in here.</li>
+  <li><code class="language-plaintext highlighter-rouge">etc</code>: Contains configuration files such as the <code class="language-plaintext highlighter-rouge">view.xml</code> file which contains image configurations for all images and thumbnails.</li>
+  <li><code class="language-plaintext highlighter-rouge">i18n</code>: <a href="/devdocs/guides/v2.1/frontend-dev-guide/translations/xlate.html#m2devgde-xlate-dictionaries">Translation dictionaries</a>, if any.</li>
+  <li><code class="language-plaintext highlighter-rouge">media</code>: Theme preview images (screen capture of your theme) can be put in here.</li>
   <li>
-    <p><code class="highlighter-rouge">web</code>: Optional directory that contains   <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span>
+    <p><code class="language-plaintext highlighter-rouge">web</code>: Optional directory that contains   <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span>
  organized into the following subdirectories:</p>
 
     <ul>
-      <li><code class="highlighter-rouge">css/source</code>: Contains a theme’s <code class="highlighter-rouge">less</code> configuration files that invoke mixins for global elements from the <a href="/devdocs/guides/v2.1/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a>, and the <code class="highlighter-rouge">theme.less</code> file that overrides the default variables values.</li>
-      <li><code class="highlighter-rouge">css/source/lib</code>: Contains view files that override the <a href="/devdocs/guides/v2.1/frontend-dev-guide/css-topics/theme-ui-lib.html">UI library</a> files stored in <code class="highlighter-rouge">lib/web/css/source/lib</code>.</li>
-      <li><code class="highlighter-rouge">fonts</code>: The folder to place the different fonts for your theme.</li>
-      <li><code class="highlighter-rouge">images</code>: Static images folder.</li>
-      <li><code class="highlighter-rouge">js</code>: The folder for your JavaScript files.</li>
+      <li><code class="language-plaintext highlighter-rouge">css/source</code>: Contains a theme’s <code class="language-plaintext highlighter-rouge">less</code> configuration files that invoke mixins for global elements from the <a href="/devdocs/guides/v2.1/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a>, and the <code class="language-plaintext highlighter-rouge">theme.less</code> file that overrides the default variables values.</li>
+      <li><code class="language-plaintext highlighter-rouge">css/source/lib</code>: Contains view files that override the <a href="/devdocs/guides/v2.1/frontend-dev-guide/css-topics/theme-ui-lib.html">UI library</a> files stored in <code class="language-plaintext highlighter-rouge">lib/web/css/source/lib</code>.</li>
+      <li><code class="language-plaintext highlighter-rouge">fonts</code>: The folder to place the different fonts for your theme.</li>
+      <li><code class="language-plaintext highlighter-rouge">images</code>: Static images folder.</li>
+      <li><code class="language-plaintext highlighter-rouge">js</code>: The folder for your JavaScript files.</li>
     </ul>
   </li>
 </ul>
@@ -3160,7 +3161,7 @@
 
 <p>A typical directory structure for three language packages follows:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>├── de_DE
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>├── de_DE
 │   ├── composer.json
 │   ├── language.xml
 │   ├── LICENSE_AFL.txt

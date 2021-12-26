@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Manage the indexers | Magento 2 Developer Documentation (copy)</title>
+	<title>Manage the indexers | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/config-guide/cli/config-cli-subcommands-index.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/config-guide/cli/config-cli-subcommands-index.html">Magento 2.0</a></li>
 		
@@ -4003,7 +4004,7 @@
 
 <p>The list displays as follows:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>design_config_grid                       Design Config Grid
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>design_config_grid                       Design Config Grid
 customer_grid                            Customer Grid
 catalog_category_product                 Category Products
 catalog_product_category                 Product Categories
@@ -4024,7 +4025,7 @@ catalogsearch_fulltext                   Catalog Search
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento indexer:status <span class="o">[</span>indexer]
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">[indexer]</code> is a space-separated list of indexers. Omit <code class="highlighter-rouge">[indexer]</code> to view the status of all indexers.</p>
+<p><code class="language-plaintext highlighter-rouge">[indexer]</code> is a space-separated list of indexers. Omit <code class="language-plaintext highlighter-rouge">[indexer]</code> to view the status of all indexers.</p>
 
 <p>To list all indexers:</p>
 
@@ -4038,7 +4039,7 @@ catalogsearch_fulltext                   Catalog Search
 
 <p>Sample result:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>+----------------------+------------------+-----------+---------------------+---------------------+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>+----------------------+------------------+-----------+---------------------+---------------------+
 | Title                | Status           | Update On | Schedule Status     | Schedule Updated    |
 +----------------------+------------------+-----------+---------------------+---------------------+
 | Catalog Product Rule | Reindex required | Save      |                     |                     |
@@ -4065,7 +4066,7 @@ catalogsearch_fulltext                   Catalog Search
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento indexer:reindex <span class="o">[</span>indexer]
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">[indexer]</code> is a space-separated list of indexers. Omit <code class="highlighter-rouge">[indexer]</code> to reindex all indexers.</p>
+<p><code class="language-plaintext highlighter-rouge">[indexer]</code> is a space-separated list of indexers. Omit <code class="language-plaintext highlighter-rouge">[indexer]</code> to reindex all indexers.</p>
 
 <p>To view a list of all indexers:</p>
 
@@ -4079,7 +4080,7 @@ catalogsearch_fulltext                   Catalog Search
 
 <p>Sample result:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Category Products index has been rebuilt successfully in &lt;time&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Category Products index has been rebuilt successfully in &lt;time&gt;
 Product Categories index has been rebuilt successfully in &lt;time&gt;
 Product Price index has been rebuilt successfully in &lt;time&gt;
 Product EAV index has been rebuilt successfully in &lt;time&gt;
@@ -4106,10 +4107,10 @@ Catalog Search index has been rebuilt successfully in &lt;time&gt;
 
 <p>If you want to use parallelization you need to set one of available modes of dimensions for product price indexer:</p>
 <ul>
-  <li><code class="highlighter-rouge">none</code> (default)</li>
-  <li><code class="highlighter-rouge">website</code></li>
-  <li><code class="highlighter-rouge">customer_group</code></li>
-  <li><code class="highlighter-rouge">website_and_customer_group</code></li>
+  <li><code class="language-plaintext highlighter-rouge">none</code> (default)</li>
+  <li><code class="language-plaintext highlighter-rouge">website</code></li>
+  <li><code class="language-plaintext highlighter-rouge">customer_group</code></li>
+  <li><code class="language-plaintext highlighter-rouge">website_and_customer_group</code></li>
 </ul>
 
 <p>For example, to set the mode by website run:</p>
@@ -4120,7 +4121,7 @@ Catalog Search index has been rebuilt successfully in &lt;time&gt;
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php bin/magento indexer:show-dimensions-mode
 </code></pre></div></div>
 
-<p>To reindex in parallel mode, run the reindex command using the environment variable <code class="highlighter-rouge">MAGE_INDEXER_THREADS_COUNT</code>, or add an environment variable to <code class="highlighter-rouge">env.php</code>. This variable sets the number of threads for the reindex processing.</p>
+<p>To reindex in parallel mode, run the reindex command using the environment variable <code class="language-plaintext highlighter-rouge">MAGE_INDEXER_THREADS_COUNT</code>, or add an environment variable to <code class="language-plaintext highlighter-rouge">env.php</code>. This variable sets the number of threads for the reindex processing.</p>
 
 <p>For example, the following command runs the Catalog Search Fulltext indexer across three threads:</p>
 
@@ -4132,10 +4133,10 @@ Catalog Search index has been rebuilt successfully in &lt;time&gt;
 <p>Use this command to set the following indexer options:</p>
 
 <ul>
-  <li><strong>Update on save (<code class="highlighter-rouge">realtime</code>)</strong> - Indexed data is updated as soon as a change is made in the   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>
+  <li><strong>Update on save (<code class="language-plaintext highlighter-rouge">realtime</code>)</strong> - Indexed data is updated as soon as a change is made in the   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>
 . (For example, the   <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span>
  products index is reindex after products are added to a category in the Admin.) This is the default.</li>
-  <li><strong>Update by schedule (<code class="highlighter-rouge">schedule</code>)</strong> - Data is indexed according to the schedule set by your Magento cron job.</li>
+  <li><strong>Update by schedule (<code class="language-plaintext highlighter-rouge">schedule</code>)</strong> - Data is indexed according to the schedule set by your Magento cron job.</li>
 </ul>
 
 <p><a href="/devdocs/guides/v2.2/extension-dev-guide/indexing.html">Learn more about indexing</a>.</p>
@@ -4147,14 +4148,14 @@ Catalog Search index has been rebuilt successfully in &lt;time&gt;
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento indexer:show-mode <span class="o">[</span>indexer]
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">[indexer]</code> is a space-separated list of indexers. Omit <code class="highlighter-rouge">[indexer]</code> to show all indexers’ modes. For example, to show the mode of all indexers:</p>
+<p><code class="language-plaintext highlighter-rouge">[indexer]</code> is a space-separated list of indexers. Omit <code class="language-plaintext highlighter-rouge">[indexer]</code> to show all indexers’ modes. For example, to show the mode of all indexers:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento indexer:show-mode
 </code></pre></div></div>
 
 <p>Sample result:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Category Products:                                 Update on Save
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Category Products:                                 Update on Save
 Product Categories:                                Update on Save
 Product Price:                                     Update on Save
 Product EAV:                                       Update on Save
@@ -4171,11 +4172,11 @@ Catalog Search:                                    Update on Save
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento indexer:set-mode <span class="o">{</span>realtime|schedule<span class="o">}</span> <span class="o">[</span>indexer]
 </code></pre></div></div>
 
-<p><strong><code class="highlighter-rouge">realtime</code></strong> sets the selected indexers to update on save.</p>
+<p><strong><code class="language-plaintext highlighter-rouge">realtime</code></strong> sets the selected indexers to update on save.</p>
 
-<p><strong><code class="highlighter-rouge">schedule</code></strong> sets the specified indexers to save according to the cron schedule.</p>
+<p><strong><code class="language-plaintext highlighter-rouge">schedule</code></strong> sets the specified indexers to save according to the cron schedule.</p>
 
-<p><strong><code class="highlighter-rouge">indexer</code></strong> is a space-separated list of indexers. Omit <code class="highlighter-rouge">indexer</code> to configure all indexers the same way.</p>
+<p><strong><code class="language-plaintext highlighter-rouge">indexer</code></strong> is a space-separated list of indexers. Omit <code class="language-plaintext highlighter-rouge">indexer</code> to configure all indexers the same way.</p>
 
 <p>To view the list of indexers:</p>
 
@@ -4189,7 +4190,7 @@ Catalog Search:                                    Update on Save
 
 <p>Sample result:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Index mode for Indexer Category Products was changed from 'Update on Save' to 'Update by Schedule'
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Index mode for Indexer Category Products was changed from 'Update on Save' to 'Update by Schedule'
 Index mode for Indexer Product Categories was changed from 'Update on Save' to 'Update by Schedule'
 </code></pre></div></div>
 

@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>503 (Service Unavailable) errors accessing Magento software in a web browser | Magento 2 Developer Documentation (copy)</title>
+	<title>503 (Service Unavailable) errors accessing Magento software in a web browser | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/install-gde/trouble/php/tshoot_mod_access_compat.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/install-gde/trouble/php/tshoot_mod_access_compat.html">Magento 2.0</a></li>
 		
@@ -4553,27 +4554,27 @@
  or   <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>
  in a web browser, you get HTTP 503 (Service Unavailable) errors.</p>
 
-<p>To confirm this issue is not related to <a href="/devdocs/guides/v2.1/install-gde/install/cli/install-cli-subcommands-maint.html">maintenance mode</a>, look in your Apache <code class="highlighter-rouge">error.log</code> for messages that include:</p>
+<p>To confirm this issue is not related to <a href="/devdocs/guides/v2.1/install-gde/install/cli/install-cli-subcommands-maint.html">maintenance mode</a>, look in your Apache <code class="language-plaintext highlighter-rouge">error.log</code> for messages that include:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>"Invalid command 'Order', perhaps misspelled or defined by a module not included in the server configuration".
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>"Invalid command 'Order', perhaps misspelled or defined by a module not included in the server configuration".
 </code></pre></div></div>
 
 <h4 id="details">Details</h4>
 
-<p>Apache 2.4 changes the way certain directives related to <code class="highlighter-rouge">.htaccess</code> work. The Magento software uses <code class="highlighter-rouge">.htaccess</code> to rewrite URLs. If <code class="highlighter-rouge">.htaccess</code> doesn’t work properly, you cannot access the Magento software in a web browser.</p>
+<p>Apache 2.4 changes the way certain directives related to <code class="language-plaintext highlighter-rouge">.htaccess</code> work. The Magento software uses <code class="language-plaintext highlighter-rouge">.htaccess</code> to rewrite URLs. If <code class="language-plaintext highlighter-rouge">.htaccess</code> doesn’t work properly, you cannot access the Magento software in a web browser.</p>
 
 <p>Not all Apache 2.4 distributions have this issue because in some cases, a compatibility   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
- named <code class="highlighter-rouge">mod_access_compat</code> is enabled by default. If, however, your Apache 2.4 distribution has this module disabled, you must perform the tasks discussed in the next section. You can also consult the resources listed in the final section in this topic.</p>
+ named <code class="language-plaintext highlighter-rouge">mod_access_compat</code> is enabled by default. If, however, your Apache 2.4 distribution has this module disabled, you must perform the tasks discussed in the next section. You can also consult the resources listed in the final section in this topic.</p>
 
 <h4 id="suggested-solution">Suggested solution</h4>
 
 <p>As a user with ‘root’ privileges, enter the following commands:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>a2enmod access_compat
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>a2enmod access_compat
 service &lt;name&gt; restart
 </code></pre></div></div>
 
-<p>On CentOS, <code class="highlighter-rouge">&lt;name&gt;</code> is <code class="highlighter-rouge">httpd</code>. On Ubuntu, <code class="highlighter-rouge">&lt;name&gt;</code> is <code class="highlighter-rouge">apache2</code>.</p>
+<p>On CentOS, <code class="language-plaintext highlighter-rouge">&lt;name&gt;</code> is <code class="language-plaintext highlighter-rouge">httpd</code>. On Ubuntu, <code class="language-plaintext highlighter-rouge">&lt;name&gt;</code> is <code class="language-plaintext highlighter-rouge">apache2</code>.</p>
 
 <h4 id="additional-resources">Additional resources</h4>
 

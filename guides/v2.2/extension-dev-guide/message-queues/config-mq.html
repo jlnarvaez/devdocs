@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Configure message queues | Magento 2 Developer Documentation (copy)</title>
+	<title>Configure message queues | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/extension-dev-guide/message-queues/config-mq.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/extension-dev-guide/message-queues/config-mq.html">Magento 2.0</a></li>
 		
@@ -3258,31 +3259,31 @@
 
 <h3 id="overview">Overview</h3>
 
-<p>Configuring the message queue topology involves creating and modifying the following configuration files in the <code class="highlighter-rouge">&lt;module&gt;/etc</code> directory:</p>
+<p>Configuring the message queue topology involves creating and modifying the following configuration files in the <code class="language-plaintext highlighter-rouge">&lt;module&gt;/etc</code> directory:</p>
 
 <ul>
-  <li><a href="#communicationxml"><code class="highlighter-rouge">communication.xml</code></a> - Defines aspects of the message queue system that all communication types have in common.</li>
-  <li><a href="#queueconsumerxml"><code class="highlighter-rouge">queue_consumer.xml</code></a> - Defines the relationship between an existing queue and its consumer.</li>
-  <li><a href="#queuetopologyxml"><code class="highlighter-rouge">queue_topology.xml</code></a> - Defines the message routing rules and declares queues and exchanges.</li>
-  <li><a href="#queuepublisherxml"><code class="highlighter-rouge">queue_publisher.xml</code></a> - Defines the exchange where a topic is published.</li>
+  <li><a href="#communicationxml"><code class="language-plaintext highlighter-rouge">communication.xml</code></a> - Defines aspects of the message queue system that all communication types have in common.</li>
+  <li><a href="#queueconsumerxml"><code class="language-plaintext highlighter-rouge">queue_consumer.xml</code></a> - Defines the relationship between an existing queue and its consumer.</li>
+  <li><a href="#queuetopologyxml"><code class="language-plaintext highlighter-rouge">queue_topology.xml</code></a> - Defines the message routing rules and declares queues and exchanges.</li>
+  <li><a href="#queuepublisherxml"><code class="language-plaintext highlighter-rouge">queue_publisher.xml</code></a> - Defines the exchange where a topic is published.</li>
 </ul>
 
 <h3 id="use-cases">Use Cases</h3>
 
-<p>Depending on your needs, you may only need to create and configure <code class="highlighter-rouge">communication.xml</code> and one or two of these files.</p>
+<p>Depending on your needs, you may only need to create and configure <code class="language-plaintext highlighter-rouge">communication.xml</code> and one or two of these files.</p>
 
 <ul>
-  <li>If you only want to publish to an existing queue created by a 3rd party system, you will only need the <code class="highlighter-rouge">queue_publisher.xml</code> file.</li>
-  <li>If you only want to consume from an existing queue,  you will only need the <code class="highlighter-rouge">queue_consumer.xml</code> config file.</li>
-  <li>In cases where you want to configure the local queue and publish to it for 3rd party systems to consume, you will need the <code class="highlighter-rouge">queue_publisher.xml</code> and <code class="highlighter-rouge">queue_topology.xml</code> files.</li>
-  <li>When you want to configure the local queue and consume messages published by 3rd party system, you will need the <code class="highlighter-rouge">queue_topology.xml</code> and <code class="highlighter-rouge">queue_consumer.xml</code> files.</li>
+  <li>If you only want to publish to an existing queue created by a 3rd party system, you will only need the <code class="language-plaintext highlighter-rouge">queue_publisher.xml</code> file.</li>
+  <li>If you only want to consume from an existing queue,  you will only need the <code class="language-plaintext highlighter-rouge">queue_consumer.xml</code> config file.</li>
+  <li>In cases where you want to configure the local queue and publish to it for 3rd party systems to consume, you will need the <code class="language-plaintext highlighter-rouge">queue_publisher.xml</code> and <code class="language-plaintext highlighter-rouge">queue_topology.xml</code> files.</li>
+  <li>When you want to configure the local queue and consume messages published by 3rd party system, you will need the <code class="language-plaintext highlighter-rouge">queue_topology.xml</code> and <code class="language-plaintext highlighter-rouge">queue_consumer.xml</code> files.</li>
 </ul>
 
-<h3 id="communicationxml"><code class="highlighter-rouge">communication.xml</code></h3>
+<h3 id="communicationxml"><code class="language-plaintext highlighter-rouge">communication.xml</code></h3>
 
-<p>The <code class="highlighter-rouge">&lt;module&gt;/etc/communication.xml</code> file defines aspects of the message queue system that all communication types have in common. This release supports AMQP and database connections.</p>
+<p>The <code class="language-plaintext highlighter-rouge">&lt;module&gt;/etc/communication.xml</code> file defines aspects of the message queue system that all communication types have in common. This release supports AMQP and database connections.</p>
 
-<h3 class="no_toc" id="sample-communicationxml-file">Sample <code class="highlighter-rouge">communication.xml</code> file</h3>
+<h3 class="no_toc" id="sample-communicationxml-file">Sample <code class="language-plaintext highlighter-rouge">communication.xml</code> file</h3>
 
 <p>The following sample defines two synchronous topics. The first topic is for RPC calls. The second uses a custom service interface.</p>
 
@@ -3297,9 +3298,9 @@
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <h3 class="no_toc" id="topic-element">topic element###</h3>
-<p>Topic configuration is flexible in that you can switch the transport layer for topics at deployment time. These values can be overwritten in the <code class="highlighter-rouge">env.php</code> file.</p>
+<p>Topic configuration is flexible in that you can switch the transport layer for topics at deployment time. These values can be overwritten in the <code class="language-plaintext highlighter-rouge">env.php</code> file.</p>
 
-<p>The <code class="highlighter-rouge">name</code> parameter is required. The topic definition must include either a <code class="highlighter-rouge">request</code> or a <code class="highlighter-rouge">schema</code>. Use <code class="highlighter-rouge">schema</code> if you want to implement a custom service interface.  Otherwise, specify <code class="highlighter-rouge">request</code>. If <code class="highlighter-rouge">request</code> is specified, then also specify <code class="highlighter-rouge">response</code> if the topic is synchronous.</p>
+<p>The <code class="language-plaintext highlighter-rouge">name</code> parameter is required. The topic definition must include either a <code class="language-plaintext highlighter-rouge">request</code> or a <code class="language-plaintext highlighter-rouge">schema</code>. Use <code class="language-plaintext highlighter-rouge">schema</code> if you want to implement a custom service interface.  Otherwise, specify <code class="language-plaintext highlighter-rouge">request</code>. If <code class="language-plaintext highlighter-rouge">request</code> is specified, then also specify <code class="language-plaintext highlighter-rouge">response</code> if the topic is synchronous.</p>
 
 <table>
   <thead>
@@ -3311,7 +3312,7 @@
   <tbody>
     <tr>
       <td>name</td>
-      <td>A string that uniquely identifies the topic. A topic name should be a series of strings that are separated by periods. The leftmost string should be the most general, and each string afterward should narrow the scope. For example, to describe actions for tending to pets, you might create names such as <code class="highlighter-rouge">cat.white.feed</code> and <code class="highlighter-rouge">dog.retriever.walk</code>. Wildcards are not supported in the <code class="highlighter-rouge">communication.xml</code> file.</td>
+      <td>A string that uniquely identifies the topic. A topic name should be a series of strings that are separated by periods. The leftmost string should be the most general, and each string afterward should narrow the scope. For example, to describe actions for tending to pets, you might create names such as <code class="language-plaintext highlighter-rouge">cat.white.feed</code> and <code class="language-plaintext highlighter-rouge">dog.retriever.walk</code>. Wildcards are not supported in the <code class="language-plaintext highlighter-rouge">communication.xml</code> file.</td>
     </tr>
     <tr>
       <td>request</td>
@@ -3323,13 +3324,13 @@
     </tr>
     <tr>
       <td>schema</td>
-      <td>The interface that describes the structure of the message. The format must be  <code class="highlighter-rouge">&lt;module&gt;\Api\&lt;ServiceName&gt;::&lt;methodName&gt;</code>.</td>
+      <td>The interface that describes the structure of the message. The format must be  <code class="language-plaintext highlighter-rouge">&lt;module&gt;\Api\&lt;ServiceName&gt;::&lt;methodName&gt;</code>.</td>
     </tr>
   </tbody>
 </table>
 
 <h3 class="no_toc" id="handler-element">handler element</h3>
-<p>The <code class="highlighter-rouge">handler</code> element specifies the class where the logic for handling messages exists and the method it executes.</p>
+<p>The <code class="language-plaintext highlighter-rouge">handler</code> element specifies the class where the logic for handling messages exists and the method it executes.</p>
 
 <table>
   <thead>
@@ -3353,15 +3354,15 @@
     </tr>
     <tr>
       <td>disabled</td>
-      <td>Determines whether this handler is disabled. The default value is <code class="highlighter-rouge">false</code>.</td>
+      <td>Determines whether this handler is disabled. The default value is <code class="language-plaintext highlighter-rouge">false</code>.</td>
     </tr>
   </tbody>
 </table>
 
-<h3 id="queueconsumerxml"><code class="highlighter-rouge">queue_consumer.xml</code></h3>
-<p>The <code class="highlighter-rouge">queue_consumer.xml</code> file contains one or more <code class="highlighter-rouge">consumer</code> elements:</p>
+<h3 id="queueconsumerxml"><code class="language-plaintext highlighter-rouge">queue_consumer.xml</code></h3>
+<p>The <code class="language-plaintext highlighter-rouge">queue_consumer.xml</code> file contains one or more <code class="language-plaintext highlighter-rouge">consumer</code> elements:</p>
 
-<h4 class="no_toc" id="example-queue_consumer-file">Example <code class="highlighter-rouge">queue_consumer</code> file</h4>
+<h4 class="no_toc" id="example-queue_consumer-file">Example <code class="language-plaintext highlighter-rouge">queue_consumer</code> file</h4>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0"?&gt;</span>
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework-message-queue:etc/consumer.xsd"</span><span class="nt">&gt;</span>
@@ -3370,7 +3371,7 @@
     <span class="nt">&lt;consumer</span> <span class="na">name=</span><span class="s">"rpc.test"</span> <span class="na">queue=</span><span class="s">"queue.for.rpc.test.unused.queue"</span> <span class="na">consumerInstance=</span><span class="s">"Magento\Framework\MessageQueue\BatchConsumer"</span> <span class="na">connection=</span><span class="s">"amqp"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
-<h4 class="no_toc" id="consumer-element"><code class="highlighter-rouge">consumer</code> element</h4>
+<h4 class="no_toc" id="consumer-element"><code class="language-plaintext highlighter-rouge">consumer</code> element</h4>
 
 <table>
   <thead>
@@ -3390,7 +3391,7 @@
     </tr>
     <tr>
       <td>handler</td>
-      <td>Specifies the class and method that processes the message. The value must be specified in the format <code class="highlighter-rouge">&lt;Vendor&gt;\Module\&lt;ServiceName&gt;::&lt;methodName&gt;</code>.</td>
+      <td>Specifies the class and method that processes the message. The value must be specified in the format <code class="language-plaintext highlighter-rouge">&lt;Vendor&gt;\Module\&lt;ServiceName&gt;::&lt;methodName&gt;</code>.</td>
     </tr>
     <tr>
       <td>consumerInstance</td>
@@ -3398,7 +3399,7 @@
     </tr>
     <tr>
       <td>connection</td>
-      <td>For AMQP connections, the connection name must match the <code class="highlighter-rouge">connection</code> attribute in the <code class="highlighter-rouge">queue_topology.xml</code> file. Otherwise, the connection name must be <code class="highlighter-rouge">db</code>.</td>
+      <td>For AMQP connections, the connection name must match the <code class="language-plaintext highlighter-rouge">connection</code> attribute in the <code class="language-plaintext highlighter-rouge">queue_topology.xml</code> file. Otherwise, the connection name must be <code class="language-plaintext highlighter-rouge">db</code>.</td>
     </tr>
     <tr>
       <td>maxMessages</td>
@@ -3407,18 +3408,18 @@
   </tbody>
 </table>
 
-<h3 id="queuetopologyxml"><code class="highlighter-rouge">queue_topology.xml</code></h3>
+<h3 id="queuetopologyxml"><code class="language-plaintext highlighter-rouge">queue_topology.xml</code></h3>
 
-<p>The <code class="highlighter-rouge">queue_topology.xml</code> file defines the message routing rules and declares queues and exchanges. It contains the following elements:</p>
+<p>The <code class="language-plaintext highlighter-rouge">queue_topology.xml</code> file defines the message routing rules and declares queues and exchanges. It contains the following elements:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">exchange</code></li>
-  <li><code class="highlighter-rouge">exchange/binding</code>(optional)</li>
-  <li><code class="highlighter-rouge">exchange/arguments</code> (optional)</li>
-  <li><code class="highlighter-rouge">exchange/binding/arguments</code> (optional)</li>
+  <li><code class="language-plaintext highlighter-rouge">exchange</code></li>
+  <li><code class="language-plaintext highlighter-rouge">exchange/binding</code>(optional)</li>
+  <li><code class="language-plaintext highlighter-rouge">exchange/arguments</code> (optional)</li>
+  <li><code class="language-plaintext highlighter-rouge">exchange/binding/arguments</code> (optional)</li>
 </ul>
 
-<h4 class="no_toc" id="example-queue_topologyxml-file">Example <code class="highlighter-rouge">queue_topology.xml</code> file</h4>
+<h4 class="no_toc" id="example-queue_topologyxml-file">Example <code class="language-plaintext highlighter-rouge">queue_topology.xml</code> file</h4>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0"?&gt;</span>
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework-message-queue:etc/topology.xsd"</span><span class="nt">&gt;</span>
@@ -3441,7 +3442,7 @@
   <span class="nt">&lt;/exchange&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
-<h4 class="no_toc" id="exchange-element"><code class="highlighter-rouge">exchange</code> element</h4>
+<h4 class="no_toc" id="exchange-element"><code class="language-plaintext highlighter-rouge">exchange</code> element</h4>
 
 <table>
   <thead>
@@ -3457,30 +3458,30 @@
     </tr>
     <tr>
       <td>type (required)</td>
-      <td>Specifies the type of exchange. Must be <code class="highlighter-rouge">topic</code>.</td>
+      <td>Specifies the type of exchange. Must be <code class="language-plaintext highlighter-rouge">topic</code>.</td>
     </tr>
     <tr>
       <td>connection  (required)</td>
-      <td>For AMQP connections, a string that identifies the connection.  For MySQL connections, the connection name must be <code class="highlighter-rouge">db</code>.</td>
+      <td>For AMQP connections, a string that identifies the connection.  For MySQL connections, the connection name must be <code class="language-plaintext highlighter-rouge">db</code>.</td>
     </tr>
     <tr>
       <td>durable</td>
-      <td>Boolean value indicating whether the exchange is persistent. Non-durable exchanges are purged when the server restarts. The default is <code class="highlighter-rouge">true</code>.</td>
+      <td>Boolean value indicating whether the exchange is persistent. Non-durable exchanges are purged when the server restarts. The default is <code class="language-plaintext highlighter-rouge">true</code>.</td>
     </tr>
     <tr>
       <td>autoDelete</td>
-      <td>Boolean value indicating whether the exchange is deleted when all queues have finished using it. The default is <code class="highlighter-rouge">false</code>.</td>
+      <td>Boolean value indicating whether the exchange is deleted when all queues have finished using it. The default is <code class="language-plaintext highlighter-rouge">false</code>.</td>
     </tr>
     <tr>
       <td>internal</td>
-      <td>Boolean value. If set to true, the exchange may not be used directly by publishers, but only when bound to other exchanges. The default is <code class="highlighter-rouge">false</code>.</td>
+      <td>Boolean value. If set to true, the exchange may not be used directly by publishers, but only when bound to other exchanges. The default is <code class="language-plaintext highlighter-rouge">false</code>.</td>
     </tr>
   </tbody>
 </table>
 
-<h4 class="no_toc" id="binding-element"><code class="highlighter-rouge">binding</code> element</h4>
+<h4 class="no_toc" id="binding-element"><code class="language-plaintext highlighter-rouge">binding</code> element</h4>
 
-<p>The <code class="highlighter-rouge">binding</code> element is a subnode of the <code class="highlighter-rouge">exchange</code> element.</p>
+<p>The <code class="language-plaintext highlighter-rouge">binding</code> element is a subnode of the <code class="language-plaintext highlighter-rouge">exchange</code> element.</p>
 
 <table>
   <thead>
@@ -3500,7 +3501,7 @@
     </tr>
     <tr>
       <td>destinationType (required)</td>
-      <td>Must be <code class="highlighter-rouge">queue</code>.</td>
+      <td>Must be <code class="language-plaintext highlighter-rouge">queue</code>.</td>
     </tr>
     <tr>
       <td>destination (required)</td>
@@ -3508,7 +3509,7 @@
     </tr>
     <tr>
       <td>disabled</td>
-      <td>Determines whether this binding is disabled. The default value is <code class="highlighter-rouge">false</code>.</td>
+      <td>Determines whether this binding is disabled. The default value is <code class="language-plaintext highlighter-rouge">false</code>.</td>
     </tr>
   </tbody>
 </table>
@@ -3526,37 +3527,37 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">*.*.*</code></td>
+      <td><code class="language-plaintext highlighter-rouge">*.*.*</code></td>
       <td>Matches any topic that contains exactly two periods.</td>
-      <td><code class="highlighter-rouge">mytopic.createOrder.success</code>, <code class="highlighter-rouge">mytopic.updatePrice.item1</code></td>
-      <td><code class="highlighter-rouge">mytopic.createOrder</code>, <code class="highlighter-rouge">mytopic.createOrder.success.true</code></td>
+      <td><code class="language-plaintext highlighter-rouge">mytopic.createOrder.success</code>, <code class="language-plaintext highlighter-rouge">mytopic.updatePrice.item1</code></td>
+      <td><code class="language-plaintext highlighter-rouge">mytopic.createOrder</code>, <code class="language-plaintext highlighter-rouge">mytopic.createOrder.success.true</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">#</code></td>
+      <td><code class="language-plaintext highlighter-rouge">#</code></td>
       <td>Matches any topic name.</td>
-      <td><code class="highlighter-rouge">mytopic</code>, <code class="highlighter-rouge">mytopic.createOrder.success</code>, <code class="highlighter-rouge">this.is.a.long.topic.name</code></td>
+      <td><code class="language-plaintext highlighter-rouge">mytopic</code>, <code class="language-plaintext highlighter-rouge">mytopic.createOrder.success</code>, <code class="language-plaintext highlighter-rouge">this.is.a.long.topic.name</code></td>
       <td>Not applicable</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">mytopic.#</code></td>
-      <td>Matches any topic name that begins with <code class="highlighter-rouge">mytopic</code> and has a period afterward.</td>
-      <td><code class="highlighter-rouge">mytopic.success</code>, <code class="highlighter-rouge">mytopic.createOrder.error</code></td>
-      <td><code class="highlighter-rouge">new.mytopic.success</code>,</td>
+      <td><code class="language-plaintext highlighter-rouge">mytopic.#</code></td>
+      <td>Matches any topic name that begins with <code class="language-plaintext highlighter-rouge">mytopic</code> and has a period afterward.</td>
+      <td><code class="language-plaintext highlighter-rouge">mytopic.success</code>, <code class="language-plaintext highlighter-rouge">mytopic.createOrder.error</code></td>
+      <td><code class="language-plaintext highlighter-rouge">new.mytopic.success</code>,</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">*.Order.#</code></td>
+      <td><code class="language-plaintext highlighter-rouge">*.Order.#</code></td>
       <td>There must be one string before <strong>.Order</strong>. There can be any number of strings (including 0) after that.</td>
-      <td><code class="highlighter-rouge">mytopic.Order</code>, <code class="highlighter-rouge">mytopic.Order.Create</code>, <code class="highlighter-rouge">newtopic.Order.delete.success</code></td>
+      <td><code class="language-plaintext highlighter-rouge">mytopic.Order</code>, <code class="language-plaintext highlighter-rouge">mytopic.Order.Create</code>, <code class="language-plaintext highlighter-rouge">newtopic.Order.delete.success</code></td>
       <td> </td>
     </tr>
   </tbody>
 </table>
 
-<h4 class="no_toc" id="arguments-element"><code class="highlighter-rouge">arguments</code> element</h4>
+<h4 class="no_toc" id="arguments-element"><code class="language-plaintext highlighter-rouge">arguments</code> element</h4>
 
-<p>The <code class="highlighter-rouge">arguments</code> element is an optional element that contains one or more <code class="highlighter-rouge">argument</code> elements. These arguments define key/value pairs that are passed to the broker for processing.</p>
+<p>The <code class="language-plaintext highlighter-rouge">arguments</code> element is an optional element that contains one or more <code class="language-plaintext highlighter-rouge">argument</code> elements. These arguments define key/value pairs that are passed to the broker for processing.</p>
 
-<p>Each <code class="highlighter-rouge">argument</code> definition must have the following parameters:</p>
+<p>Each <code class="language-plaintext highlighter-rouge">argument</code> definition must have the following parameters:</p>
 
 <table>
   <thead>
@@ -3577,16 +3578,16 @@
   </tbody>
 </table>
 
-<p>The following illustrates an <code class="highlighter-rouge">arguments</code> block:</p>
+<p>The following illustrates an <code class="language-plaintext highlighter-rouge">arguments</code> block:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;arguments&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"warehouseId"</span> <span class="na">xsi:type=</span><span class="s">"int"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"carrierName"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>USPS<span class="nt">&lt;/argument&gt;</span>
 <span class="nt">&lt;/arguments&gt;</span></code></pre></figure>
 
-<h3 id="queuepublisherxml"><code class="highlighter-rouge">queue_publisher.xml</code></h3>
+<h3 id="queuepublisherxml"><code class="language-plaintext highlighter-rouge">queue_publisher.xml</code></h3>
 
-<p>The <code class="highlighter-rouge">queue_publisher.xml</code> file defines which connection and exchange to use to publish messages for a specific topic. It contains the following elements:</p>
+<p>The <code class="language-plaintext highlighter-rouge">queue_publisher.xml</code> file defines which connection and exchange to use to publish messages for a specific topic. It contains the following elements:</p>
 
 <ul>
   <li>
@@ -3597,7 +3598,7 @@
   </li>
 </ul>
 
-<h4 class="no_toc" id="example-queue_publisherxml-file">Example <code class="highlighter-rouge">queue_publisher.xml</code> file</h4>
+<h4 class="no_toc" id="example-queue_publisherxml-file">Example <code class="language-plaintext highlighter-rouge">queue_publisher.xml</code> file</h4>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0"?&gt;</span>
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework-message-queue:etc/publisher.xsd"</span><span class="nt">&gt;</span>
@@ -3608,7 +3609,7 @@
     <span class="nt">&lt;/publisher&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
-<h4 class="no_toc" id="publisher-element"><code class="highlighter-rouge">publisher</code> element</h4>
+<h4 class="no_toc" id="publisher-element"><code class="language-plaintext highlighter-rouge">publisher</code> element</h4>
 
 <table>
   <thead>
@@ -3624,14 +3625,14 @@
     </tr>
     <tr>
       <td>disabled</td>
-      <td>Determines whether this queue is disabled. The default value is <code class="highlighter-rouge">false</code>.</td>
+      <td>Determines whether this queue is disabled. The default value is <code class="language-plaintext highlighter-rouge">false</code>.</td>
     </tr>
   </tbody>
 </table>
 
-<h4 class="no_toc" id="connection-element"><code class="highlighter-rouge">connection</code> element</h4>
+<h4 class="no_toc" id="connection-element"><code class="language-plaintext highlighter-rouge">connection</code> element</h4>
 
-<p>The <code class="highlighter-rouge">connection</code> element is a subnode of the <code class="highlighter-rouge">publisher</code> element. There must not be more than one enabled active connection to a publisher defined at a time. If you omit the <code class="highlighter-rouge">connection</code> element, the default connection of <code class="highlighter-rouge">amqp</code> and exchange <code class="highlighter-rouge">magento</code> will be used.</p>
+<p>The <code class="language-plaintext highlighter-rouge">connection</code> element is a subnode of the <code class="language-plaintext highlighter-rouge">publisher</code> element. There must not be more than one enabled active connection to a publisher defined at a time. If you omit the <code class="language-plaintext highlighter-rouge">connection</code> element, the default connection of <code class="language-plaintext highlighter-rouge">amqp</code> and exchange <code class="language-plaintext highlighter-rouge">magento</code> will be used.</p>
 
 <table>
   <thead>
@@ -3643,20 +3644,20 @@
   <tbody>
     <tr>
       <td>name (required)</td>
-      <td>For AMQP connections, the connection name must match the <code class="highlighter-rouge">connection</code> attribute in the <code class="highlighter-rouge">queue_topology.xml</code> file. Otherwise, the connection name must be <code class="highlighter-rouge">db</code>.</td>
+      <td>For AMQP connections, the connection name must match the <code class="language-plaintext highlighter-rouge">connection</code> attribute in the <code class="language-plaintext highlighter-rouge">queue_topology.xml</code> file. Otherwise, the connection name must be <code class="language-plaintext highlighter-rouge">db</code>.</td>
     </tr>
     <tr>
       <td>exchange</td>
-      <td>The name of the exchange to publish to. The default system exchange name is <code class="highlighter-rouge">magento</code>.</td>
+      <td>The name of the exchange to publish to. The default system exchange name is <code class="language-plaintext highlighter-rouge">magento</code>.</td>
     </tr>
     <tr>
       <td>disabled</td>
-      <td>Determines whether this queue is disabled. The default value is <code class="highlighter-rouge">false</code>.</td>
+      <td>Determines whether this queue is disabled. The default value is <code class="language-plaintext highlighter-rouge">false</code>.</td>
     </tr>
   </tbody>
 </table>
 
-<h3 id="updatequeuexml">Updating <code class="highlighter-rouge">queue.xml</code></h3>
+<h3 id="updatequeuexml">Updating <code class="language-plaintext highlighter-rouge">queue.xml</code></h3>
 
 <p>See <a href="/devdocs/guides/v2.2/extension-dev-guide/message-queues/queue-migration.html">Migrate message queue configuration</a> for information about upgrading from Magento 2.0 or 2.1.</p>
 

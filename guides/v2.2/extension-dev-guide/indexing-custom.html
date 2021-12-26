@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Adding a custom indexer | Magento 2 Developer Documentation (copy)</title>
+	<title>Adding a custom indexer | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/extension-dev-guide/indexing-custom.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/extension-dev-guide/indexing-custom.html">Magento 2.0</a></li>
 		
@@ -3269,15 +3270,15 @@
 <p>Your custom indexer class should implement <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Indexer/ActionInterface.php" target="_blank">\Magento\Framework\Indexer\ActionInterface</a>, and the indexer should be able to perform three types of operations:</p>
 
 <ul>
-  <li>Row reindex: processing a single entry from a dictionary; responsibility of <code class="highlighter-rouge">executeRow($id)</code></li>
-  <li>List reindex: processing a set of dictionary entries; responsibility of <code class="highlighter-rouge">executeList($ids)</code>, where <code class="highlighter-rouge">$ids</code> is an array of   <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">entity</span>
+  <li>Row reindex: processing a single entry from a dictionary; responsibility of <code class="language-plaintext highlighter-rouge">executeRow($id)</code></li>
+  <li>List reindex: processing a set of dictionary entries; responsibility of <code class="language-plaintext highlighter-rouge">executeList($ids)</code>, where <code class="language-plaintext highlighter-rouge">$ids</code> is an array of   <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">entity</span>
  IDs</li>
-  <li>Full reindex: processing all entities from a specific dictionary; responsibility of <code class="highlighter-rouge">executeFull()</code></li>
+  <li>Full reindex: processing all entities from a specific dictionary; responsibility of <code class="language-plaintext highlighter-rouge">executeFull()</code></li>
 </ul>
 
 <h3 id="indexer-configuration">Indexer configuration</h3>
 
-<p>In the <code class="highlighter-rouge">etc</code> directory of your module, add <code class="highlighter-rouge">indexer.xml</code> with the following:</p>
+<p>In the <code class="language-plaintext highlighter-rouge">etc</code> directory of your module, add <code class="language-plaintext highlighter-rouge">indexer.xml</code> with the following:</p>
 
 <ul>
   <li>indexer ID</li>
@@ -3288,7 +3289,7 @@
   <li>shared indexes, if any</li>
 </ul>
 
-<p>Use the optional <code class="highlighter-rouge">shared_index=</code> parameter to improve performance if your indexer is related to another indexer. In this <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/CatalogRule/etc/indexer.xml" target="_blank">example</a>, if   <span term-uuid="8d40d668-4996-4856-9f81-b1386cf4b14f" class="glossary-term" data-toggle="popover">catalog</span>
+<p>Use the optional <code class="language-plaintext highlighter-rouge">shared_index=</code> parameter to improve performance if your indexer is related to another indexer. In this <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/CatalogRule/etc/indexer.xml" target="_blank">example</a>, if   <span term-uuid="8d40d668-4996-4856-9f81-b1386cf4b14f" class="glossary-term" data-toggle="popover">catalog</span>
  rule product needs to be reindexed, but other catalog product rule index is up-to-date, then only catalog rule product is reindexed.</p>
 
 <p>All indexers related to a   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
@@ -3296,7 +3297,7 @@
 
 <h3 id="mview-configuration">MView configuration</h3>
 
-<p>Add the <code class="highlighter-rouge">mview.xml</code> configuration file in the <code class="highlighter-rouge">etc</code> module directory, where you declare the following:</p>
+<p>Add the <code class="language-plaintext highlighter-rouge">mview.xml</code> configuration file in the <code class="language-plaintext highlighter-rouge">etc</code> module directory, where you declare the following:</p>
 
 <ul>
   <li>indexer view ID</li>
@@ -3313,7 +3314,7 @@
 
 <p>To push best-selling products to the top of a category listing, process statistics about sales to change the product position dynamically.</p>
 
-<p>Assuming your module is named <code class="highlighter-rouge">&lt;VendorName&gt;_Merchandizing</code>, you must write the appropriate code in the indexer class:</p>
+<p>Assuming your module is named <code class="language-plaintext highlighter-rouge">&lt;VendorName&gt;_Merchandizing</code>, you must write the appropriate code in the indexer class:</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nt">&lt;VendorName&gt;</span>\Merchandizing\Model\Indexer;
 
@@ -3325,7 +3326,7 @@ class Popular implements \Magento\Framework\Indexer\ActionInterface, \Magento\Fr
     public function execute($ids); //Used by mview, allows you to process multiple placed orders in the "Update on schedule" mode
 }</code></pre></figure>
 
-<p>Next, declare the indexer in <code class="highlighter-rouge">Merchandizing/etc/indexer.xml</code>:</p>
+<p>Next, declare the indexer in <code class="language-plaintext highlighter-rouge">Merchandizing/etc/indexer.xml</code>:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../Indexer/etc/indexer.xsd"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;indexer</span> <span class="na">id=</span><span class="s">"merchandizing_popular"</span> <span class="na">view_id=</span><span class="s">"merchandizing_popular_order"</span> <span class="na">class=</span><span class="s">"Vendor\Merchandizing\Model\Indexer\Popular"</span><span class="nt">&gt;</span>
@@ -3334,7 +3335,7 @@ class Popular implements \Magento\Framework\Indexer\ActionInterface, \Magento\Fr
   <span class="nt">&lt;/indexer&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
-<p>Finally, declare the indexer view (<code class="highlighter-rouge">merchandizing_popular_order</code>) that tracks sales (<code class="highlighter-rouge">Merchandizing/etc/mview.xml</code>):</p>
+<p>Finally, declare the indexer view (<code class="language-plaintext highlighter-rouge">merchandizing_popular_order</code>) that tracks sales (<code class="language-plaintext highlighter-rouge">Merchandizing/etc/mview.xml</code>):</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../lib/internal/Magento/Framework/Mview/etc/mview.xsd"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;view</span> <span class="na">id=</span><span class="s">" merchandizing_popular_order"</span> <span class="na">class=</span><span class="s">"Vendor\Merchandizing\Model\Indexer\Popular"</span> <span class="na">group=</span><span class="s">"indexer"</span><span class="nt">&gt;</span>
@@ -3344,7 +3345,7 @@ class Popular implements \Magento\Framework\Indexer\ActionInterface, \Magento\Fr
   <span class="nt">&lt;/view&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
-<p>These settings start <code class="highlighter-rouge">&lt;VendorName&gt;\Merchandizing\Model\Indexer\Popular::execute</code> method every time an order is changed.</p>
+<p>These settings start <code class="language-plaintext highlighter-rouge">&lt;VendorName&gt;\Merchandizing\Model\Indexer\Popular::execute</code> method every time an order is changed.</p>
 
 <p>Now when an order is placed, the Popular Products indexer calculates the sorting order of the products by popularity and stores this data in the index table, so that it can be used in product displaying logic.</p>
 

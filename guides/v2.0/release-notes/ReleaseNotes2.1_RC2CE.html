@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento Open Source 2.1 Release Candidate 2 (RC2) Release Notes | Magento 2 Developer Documentation (copy)</title>
+	<title>Magento Open Source 2.1 Release Candidate 2 (RC2) Release Notes | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/release-notes/ReleaseNotes2.1_RC2CE.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/release-notes/ReleaseNotes2.1_RC2CE.html">Magento 2.0</a></li>
 		
@@ -1828,7 +1829,7 @@
 
 <!--- 53397 -->
 <ul>
-  <li>The <code class="highlighter-rouge">collectRates()</code> method now obtains the full address details for a registered customer.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">collectRates()</code> method now obtains the full address details for a registered customer.</li>
 </ul>
 
 <!--- 53463 -->
@@ -1860,24 +1861,24 @@
 
 <!--- 53362 -->
 <ul>
-  <li>Gift Message information is now present as expected in the <code class="highlighter-rouge">extension_attributes</code> when you request this list by Web API.  Previously, if you placed an order with a Gift Message, and then performed a Web API request to get the list of orders, Gift Message information would be absent in the <code class="highlighter-rouge">extension_attributes</code>. <a href="https://github.com/magento/magento2/issues/4039" target="_blank"> (GITHUB-4309)</a></li>
+  <li>Gift Message information is now present as expected in the <code class="language-plaintext highlighter-rouge">extension_attributes</code> when you request this list by Web API.  Previously, if you placed an order with a Gift Message, and then performed a Web API request to get the list of orders, Gift Message information would be absent in the <code class="language-plaintext highlighter-rouge">extension_attributes</code>. <a href="https://github.com/magento/magento2/issues/4039" target="_blank"> (GITHUB-4309)</a></li>
 </ul>
 
 <!--- 52782 -->
 <ul>
-  <li>The <code class="highlighter-rouge">getPassword()</code> and <code class="highlighter-rouge">getPasswordConfirm()</code> methods now return the <code class="highlighter-rouge">password</code> and <code class="highlighter-rouge">passwordconfirm</code> parameters as strings. <a href="https://github.com/magento/magento2/issues/4355" target="_blank"> (GITHUB-4355)</a></li>
+  <li>The <code class="language-plaintext highlighter-rouge">getPassword()</code> and <code class="language-plaintext highlighter-rouge">getPasswordConfirm()</code> methods now return the <code class="language-plaintext highlighter-rouge">password</code> and <code class="language-plaintext highlighter-rouge">passwordconfirm</code> parameters as strings. <a href="https://github.com/magento/magento2/issues/4355" target="_blank"> (GITHUB-4355)</a></li>
 </ul>
 
 <h4 id="messages-and-documentation">Messages and documentation</h4>
 
 <!--- 52340 -->
 <ul>
-  <li>The <code class="highlighter-rouge">getList</code> method documentation has been enhanced.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">getList</code> method documentation has been enhanced.</li>
 </ul>
 
 <!--- 52000 -->
 <ul>
-  <li>Error messages associated with <code class="highlighter-rouge">cron</code> processes are now more helpful. <a href="https://github.com/magento/magento2/issues/3189" target="_blank"> (GITHUB-3189)</a></li>
+  <li>Error messages associated with <code class="language-plaintext highlighter-rouge">cron</code> processes are now more helpful. <a href="https://github.com/magento/magento2/issues/3189" target="_blank"> (GITHUB-3189)</a></li>
 </ul>
 
 <!--- 50898 -->
@@ -1923,17 +1924,17 @@ This Release Candidate is for test purposes only. Do not install it in a product
 
 <p>Before proceeding, please familiarize yourself with these prerequisites, then run</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git clone git@github.com:magento/magento2.git
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git clone git@github.com:magento/magento2.git
 
 git checkout tags/2.1.0-rc2 [-b 2.1.0-rc2]
 </code></pre></div></div>
 
 <h3 id="install-rc-composer">Install using Composer</h3>
 
-<p>This Release Candidate is available from <code class="highlighter-rouge">repo.magento.com</code>. Before installing this Release Candidate using Composer,  familiarize yourself with the Composer   <span term-uuid="7490850a-0654-4ce1-83ff-d88c1d7d07fa" class="glossary-term" data-toggle="popover">metapackage</span>
+<p>This Release Candidate is available from <code class="language-plaintext highlighter-rouge">repo.magento.com</code>. Before installing this Release Candidate using Composer,  familiarize yourself with the Composer   <span term-uuid="7490850a-0654-4ce1-83ff-d88c1d7d07fa" class="glossary-term" data-toggle="popover">metapackage</span>
   <a href="/devdocs/guides/v2.0/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer create-project --repository=https://repo.magento.com/ magento/project-community-edition=2.1.0-rc1 &lt;installation directory name&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer create-project --repository=https://repo.magento.com/ magento/project-community-edition=2.1.0-rc1 &lt;installation directory name&gt;
 </code></pre></div></div>
 
 <h2 id="upgrade-rc-nosamp">Upgrade existing installations</h2>

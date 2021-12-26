@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Manage company structures | Magento 2 Developer Documentation (copy)</title>
+	<title>Manage company structures | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/b2b/company-structures.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/b2b/company-structures.html">Magento 2.0</a></li>
 		
@@ -2105,14 +2106,14 @@
 
 <p><strong>Service name</strong></p>
 
-<p><code class="highlighter-rouge">companyTeamRepositoryV1</code></p>
+<p><code class="language-plaintext highlighter-rouge">companyTeamRepositoryV1</code></p>
 
 <p><strong>REST Endpoints</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="err">POST</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/team/</span><span class="p">:</span><span class="err">companyId</span><span class="w">
-</span><span class="err">PUT</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/team/</span><span class="p">:</span><span class="err">teamId</span><span class="w">
-</span><span class="err">GET</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/team/</span><span class="p">:</span><span class="err">teamId</span><span class="w">
-</span><span class="err">DELETE</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/team/</span><span class="p">:</span><span class="err">teamId</span><span class="w">
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="err">POST</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/team/:companyId</span><span class="w">
+</span><span class="err">PUT</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/team/:teamId</span><span class="w">
+</span><span class="err">GET</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/team/:teamId</span><span class="w">
+</span><span class="err">DELETE</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/team/:teamId</span><span class="w">
 </span><span class="err">GET</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/team/</span></code></pre></figure>
 
 <p><strong>Company team parameters</strong></p>
@@ -2154,20 +2155,20 @@
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code class="highlighter-rouge">POST /V1/team/2</code></p>
+<p><code class="language-plaintext highlighter-rouge">POST /V1/team/2</code></p>
 
 <p><strong>Payload</strong></p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"team"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Western District"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Buyers from the California office"</span><span class="w">
+  </span><span class="nl">"team"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Western District"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Buyers from the California office"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 
 <p><strong>Response</strong></p>
 
-<p>The team ID, such as <code class="highlighter-rouge">4</code>.</p>
+<p>The team ID, such as <code class="language-plaintext highlighter-rouge">4</code>.</p>
 
 <h3 id="update-a-team">Update a team</h3>
 
@@ -2175,28 +2176,28 @@
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code class="highlighter-rouge">PUT /V1/team/4</code></p>
+<p><code class="language-plaintext highlighter-rouge">PUT /V1/team/4</code></p>
 
 <p><strong>Payload</strong></p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"team"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-  	</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Western Region"</span><span class="w">
+  </span><span class="nl">"team"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  	</span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Western Region"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 
 <p><strong>Response</strong></p>
 
-<p><code class="highlighter-rouge">true</code>, indicating the request was successful</p>
+<p><code class="language-plaintext highlighter-rouge">true</code>, indicating the request was successful</p>
 
 <h3 id="return-all-information-about-a-team">Return all information about a team</h3>
 
-<p>The <code class="highlighter-rouge">GET</code> call returns the team <code class="highlighter-rouge">id</code>, <code class="highlighter-rouge">name</code>, and <code class="highlighter-rouge">description</code>.</p>
+<p>The <code class="language-plaintext highlighter-rouge">GET</code> call returns the team <code class="language-plaintext highlighter-rouge">id</code>, <code class="language-plaintext highlighter-rouge">name</code>, and <code class="language-plaintext highlighter-rouge">description</code>.</p>
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code class="highlighter-rouge">GET /V1/team/4</code></p>
+<p><code class="language-plaintext highlighter-rouge">GET /V1/team/4</code></p>
 
 <p><strong>Payload</strong></p>
 
@@ -2205,9 +2206,9 @@
 <p><strong>Response</strong></p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Western Region"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Buyers from the California office"</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Western Region"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Buyers from the California office"</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 
 <h3 id="delete-a-team">Delete a team</h3>
@@ -2216,7 +2217,7 @@
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code class="highlighter-rouge">DELETE /V1/team/4</code></p>
+<p><code class="language-plaintext highlighter-rouge">DELETE /V1/team/4</code></p>
 
 <p><strong>Payload</strong></p>
 
@@ -2228,13 +2229,13 @@
 
 <h3 id="search-for-a-team">Search for a team</h3>
 
-<p>The following query returns information about all teams (<code class="highlighter-rouge">team_id</code> ≥ <code class="highlighter-rouge">0</code>)</p>
+<p>The following query returns information about all teams (<code class="language-plaintext highlighter-rouge">team_id</code> ≥ <code class="language-plaintext highlighter-rouge">0</code>)</p>
 
 <p>See <a href="/devdocs/guides/v2.3/rest/performing-searches.html">Search using REST APIs</a> for information about constructing a search query.</p>
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code class="highlighter-rouge">GET V1/team?searchCriteria[filter_groups][0][filters][0][field]=team_id&amp;searchCriteria[filter_groups][0][filters][0][value]=0&amp;searchCriteria[filter_groups][0][filters][0][condition_type]=gteq</code></p>
+<p><code class="language-plaintext highlighter-rouge">GET V1/team?searchCriteria[filter_groups][0][filters][0][field]=team_id&amp;searchCriteria[filter_groups][0][filters][0][value]=0&amp;searchCriteria[filter_groups][0][filters][0][condition_type]=gteq</code></p>
 
 <p><strong>Payload</strong></p>
 
@@ -2244,32 +2245,32 @@
 <div class="collapsible">
     <b class="collapsible-title">Show code sample </b>
     <div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-    </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"West"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"California office"</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"West"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"California office"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"East"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New York office"</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"East"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New York office"</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"search_criteria"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"filter_groups"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="nl">"search_criteria"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"filter_groups"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"filters"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="nl">"filters"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                     </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"team_id"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"condition_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gteq"</span><span class="w">
+                        </span><span class="nl">"field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"team_id"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"condition_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gteq"</span><span class="w">
                     </span><span class="p">}</span><span class="w">
                 </span><span class="p">]</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"total_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="nl">"total_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 </div>
   </div>
@@ -2282,18 +2283,18 @@
 
 <p><strong>Service name</strong></p>
 
-<p><code class="highlighter-rouge">companyHierarchyV1</code></p>
+<p><code class="language-plaintext highlighter-rouge">companyHierarchyV1</code></p>
 
 <p><strong>REST Endpoints</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="err">GET</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/hierarchy/</span><span class="p">:</span><span class="err">id</span><span class="w">
-</span><span class="err">PUT</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/hierarchy/move/</span><span class="p">:</span><span class="err">id</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="err">GET</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/hierarchy/:id</span><span class="w">
+</span><span class="err">PUT</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/hierarchy/move/:id</span></code></pre></figure>
 
 <h3 id="return-all-information-about-the-company-hierarchy">Return all information about the company hierarchy</h3>
 
 <p>In the following example, the following company hierarchy has already been established:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Admin (structure_id = 2)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Admin (structure_id = 2)
 |-- East (team, structure_id = 8)
 |   |-- Bryce Martin (customer, structure_id = 4)
 |   |-- Melanie Shaw (customer, structure_id = 3)
@@ -2305,7 +2306,7 @@
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code class="highlighter-rouge">GET /V1/hierarchy/2</code></p>
+<p><code class="language-plaintext highlighter-rouge">GET /V1/hierarchy/2</code></p>
 
 <p><strong>Payload</strong></p>
 
@@ -2317,67 +2318,67 @@
     <b class="collapsible-title">Show code sample </b>
     <div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"structure_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"entity_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customer"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"structure_parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
+    </span><span class="nl">"structure_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"entity_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"structure_parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"structure_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"entity_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customer"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"structure_parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
+    </span><span class="nl">"structure_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"entity_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"structure_parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"structure_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"entity_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"team"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"structure_parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="nl">"structure_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"entity_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"team"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"structure_parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"structure_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"entity_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customer"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"structure_parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
+    </span><span class="nl">"structure_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"entity_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"structure_parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"structure_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"entity_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customer"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"structure_parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
+    </span><span class="nl">"structure_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"entity_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"structure_parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"structure_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"entity_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"team"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"structure_parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="nl">"structure_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"entity_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"team"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"structure_parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"structure_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"entity_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customer"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"structure_parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="nl">"structure_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"entity_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"structure_parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
   </span><span class="p">}</span></code></pre></figure>
 </div>
   </div>
 
 <h3 id="assign-a-new-parent-to-teams-and-company-users">Assign a new parent to teams and company users</h3>
 
-<p>The following example moves Bryce Martin (<code class="highlighter-rouge">structure_id = 4</code>) to the West team (<code class="highlighter-rouge">structure_id = 7</code>)</p>
+<p>The following example moves Bryce Martin (<code class="language-plaintext highlighter-rouge">structure_id = 4</code>) to the West team (<code class="language-plaintext highlighter-rouge">structure_id = 7</code>)</p>
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code class="highlighter-rouge">PUT /V1/hierarchy/move/5</code></p>
+<p><code class="language-plaintext highlighter-rouge">PUT /V1/hierarchy/move/5</code></p>
 
 <p><strong>Payload</strong></p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"newParentId"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
+  </span><span class="nl">"newParentId"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 
 <p><strong>Response</strong></p>
 
-<p><code class="highlighter-rouge">[]</code> (an empty array)</p>
+<p><code class="language-plaintext highlighter-rouge">[]</code> (an empty array)</p>
 
 <h2 id="related-information">Related information</h2>
 

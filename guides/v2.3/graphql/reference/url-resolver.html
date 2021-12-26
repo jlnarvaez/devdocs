@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>urlResolver endpoint | Magento 2 Developer Documentation (copy)</title>
+	<title>urlResolver endpoint | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/graphql/reference/url-resolver.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/graphql/reference/url-resolver.html">Magento 2.0</a></li>
 		
@@ -2183,11 +2184,11 @@
 	<h1 class="page-heading">urlResolver endpoint</h1>
 </section>
 
-			<p>The <code class="highlighter-rouge">urlResolver</code> query returns the canonical URL for a specified product, category or CMS page. An external app can render a page by a url without any prior knowledge about the landing page.</p>
+			<p>The <code class="language-plaintext highlighter-rouge">urlResolver</code> query returns the canonical URL for a specified product, category or CMS page. An external app can render a page by a url without any prior knowledge about the landing page.</p>
 
 <h2 id="query-structure">Query structure</h2>
 
-<p><code class="highlighter-rouge">urlResolver(url: String!): EntityUrl</code></p>
+<p><code class="language-plaintext highlighter-rouge">urlResolver(url: String!): EntityUrl</code></p>
 
 <p>where:</p>
 
@@ -2201,29 +2202,29 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">url</code></td>
+      <td><code class="language-plaintext highlighter-rouge">url</code></td>
       <td>String</td>
-      <td>The URL to resolve. Magento stores product and category URLs with the <code class="highlighter-rouge">.html</code> extension.  CMS URLs do not contain the extension.</td>
+      <td>The URL to resolve. Magento stores product and category URLs with the <code class="language-plaintext highlighter-rouge">.html</code> extension.  CMS URLs do not contain the extension.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">EntityUrl</code></td>
-      <td><code class="highlighter-rouge">EntityUrl</code></td>
-      <td>An output object containing the <code class="highlighter-rouge">id</code>, <code class="highlighter-rouge">relative_url</code>, and <code class="highlighter-rouge">type</code> attributes.</td>
+      <td><code class="language-plaintext highlighter-rouge">EntityUrl</code></td>
+      <td><code class="language-plaintext highlighter-rouge">EntityUrl</code></td>
+      <td>An output object containing the <code class="language-plaintext highlighter-rouge">id</code>, <code class="language-plaintext highlighter-rouge">relative_url</code>, and <code class="language-plaintext highlighter-rouge">type</code> attributes.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">id</code></td>
+      <td><code class="language-plaintext highlighter-rouge">id</code></td>
       <td>Int</td>
-      <td>The ID assigned to the object associated with the specified <code class="highlighter-rouge">url</code>. This could be a product ID, category ID, or page ID.</td>
+      <td>The ID assigned to the object associated with the specified <code class="language-plaintext highlighter-rouge">url</code>. This could be a product ID, category ID, or page ID.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">relative_url</code></td>
+      <td><code class="language-plaintext highlighter-rouge">relative_url</code></td>
       <td>String</td>
-      <td>The internal relative URL. If the specified  <code class="highlighter-rouge">url</code> is a redirect, the query returns the redirected URL, not the original.</td>
+      <td>The internal relative URL. If the specified  <code class="language-plaintext highlighter-rouge">url</code> is a redirect, the query returns the redirected URL, not the original.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">type</code></td>
+      <td><code class="language-plaintext highlighter-rouge">type</code></td>
       <td>UrlRewriteEntityTypeEnum</td>
-      <td>The value of <code class="highlighter-rouge">UrlRewriteEntityTypeEnum</code> is one of PRODUCT, CATEGORY, or CMS_PAGE.</td>
+      <td>The value of <code class="language-plaintext highlighter-rouge">UrlRewriteEntityTypeEnum</code> is one of PRODUCT, CATEGORY, or CMS_PAGE.</td>
     </tr>
   </tbody>
 </table>
@@ -2233,7 +2234,7 @@
 <p><strong>Request</strong></p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
- </span><span class="err">urlResolver(url</span><span class="p">:</span><span class="s2">"joust-duffle-bag.html"</span><span class="err">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+ </span><span class="err">urlResolver(url:</span><span class="s2">"joust-duffle-bag.html"</span><span class="err">)</span><span class="w"> </span><span class="p">{</span><span class="w">
    </span><span class="err">id</span><span class="w">
    </span><span class="err">relative_url</span><span class="w">
    </span><span class="err">type</span><span class="w">
@@ -2243,11 +2244,11 @@
 <p><strong>Response</strong></p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"urlResolver"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"relative_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"catalog/product/view/id/1"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRODUCT"</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"urlResolver"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"relative_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"catalog/product/view/id/1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRODUCT"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>

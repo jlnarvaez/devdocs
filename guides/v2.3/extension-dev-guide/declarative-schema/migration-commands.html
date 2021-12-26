@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Migrate install/upgrade scripts to declarative schema | Magento 2 Developer Documentation (copy)</title>
+	<title>Migrate install/upgrade scripts to declarative schema | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/extension-dev-guide/declarative-schema/migration-commands.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/extension-dev-guide/declarative-schema/migration-commands.html">Magento 2.0</a></li>
 		
@@ -3478,7 +3479,7 @@
 
 <h2 id="convert-installupgrade-schema-scripts-to--db_schemaxml-files">Convert install/upgrade schema scripts to  db_schema.xml files</h2>
 
-<p>The <strong>Schema Listener Tool</strong> converts pre-Magento 2.3 migration scripts into declarative schema. To use this tool, you specify an argument when you run the <code class="highlighter-rouge">setup:install</code> or <code class="highlighter-rouge">setup:upgrade</code> CLI command. As Magento is installed or upgraded, the system logs all schema changes per module, then persists the changes in a series of <code class="highlighter-rouge">db_schema.xml</code> files (one per affected module).</p>
+<p>The <strong>Schema Listener Tool</strong> converts pre-Magento 2.3 migration scripts into declarative schema. To use this tool, you specify an argument when you run the <code class="language-plaintext highlighter-rouge">setup:install</code> or <code class="language-plaintext highlighter-rouge">setup:upgrade</code> CLI command. As Magento is installed or upgraded, the system logs all schema changes per module, then persists the changes in a series of <code class="language-plaintext highlighter-rouge">db_schema.xml</code> files (one per affected module).</p>
 
 <p class="bs-callout bs-callout-info">The Schema Listener tool listens for schema changes and attempts to change Magento code, so it should not be run in production mode. It is disabled by default.</p>
 
@@ -3490,16 +3491,16 @@
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento setup:upgrade <span class="nt">--convert-old-scripts</span><span class="o">=</span>1
 </code></pre></div></div>
 
-<p class="bs-callout bs-callout-info">In Magento 2.3 Alpha, the <code class="highlighter-rouge">--convert-old-scripts</code> parameter was named <code class="highlighter-rouge">--convert_old_scripts</code>.</p>
+<p class="bs-callout bs-callout-info">In Magento 2.3 Alpha, the <code class="language-plaintext highlighter-rouge">--convert-old-scripts</code> parameter was named <code class="language-plaintext highlighter-rouge">--convert_old_scripts</code>.</p>
 
 <h3 id="troubleshooting">Troubleshooting</h3>
 
 <p>The Schema Listener Tool cannot convert everything that can appear in a pre-Magento 2.3 migration script.</p>
 
 <ul>
-  <li>The tool supports only DDL operations represented in <code class="highlighter-rouge">\Magento\Framework\DB\Adapter\Pdo\Mysql</code>. As a result, the tool ignores all custom DDL operations.</li>
-  <li>The tool ignores all raw SQL in your <code class="highlighter-rouge">InstallSchema</code> or <code class="highlighter-rouge">UpgradeSchema</code> scripts.</li>
-  <li>Any DDL statements in a <code class="highlighter-rouge">Recurring</code> file will not be transferred to the new schema, because this file should be designed to run during each installation or upgrade.</li>
+  <li>The tool supports only DDL operations represented in <code class="language-plaintext highlighter-rouge">\Magento\Framework\DB\Adapter\Pdo\Mysql</code>. As a result, the tool ignores all custom DDL operations.</li>
+  <li>The tool ignores all raw SQL in your <code class="language-plaintext highlighter-rouge">InstallSchema</code> or <code class="language-plaintext highlighter-rouge">UpgradeSchema</code> scripts.</li>
+  <li>Any DDL statements in a <code class="language-plaintext highlighter-rouge">Recurring</code> file will not be transferred to the new schema, because this file should be designed to run during each installation or upgrade.</li>
   <li>See <a href="/devdocs/guides/v2.3/extension-dev-guide/declarative-schema/db-schema.html">Configure declarative schema</a> if you need to make manual modifications to your schema.</li>
 </ul>
 
@@ -3513,17 +3514,17 @@
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> bin/magento setup:db-declaration:generate-patch <span class="o">[</span>options] &lt;module-name&gt; &lt;patch-name&gt;
 </code></pre></div>    </div>
-    <p>where <code class="highlighter-rouge">[options]</code> can be any of the following:</p>
+    <p>where <code class="language-plaintext highlighter-rouge">[options]</code> can be any of the following:</p>
 
-    <p><code class="highlighter-rouge">--revertable[=true | false]</code> - Determines whether the patch is revertable. The default value is <code class="highlighter-rouge">false</code>.</p>
+    <p><code class="language-plaintext highlighter-rouge">--revertable[=true | false]</code> - Determines whether the patch is revertable. The default value is <code class="language-plaintext highlighter-rouge">false</code>.</p>
 
-    <p><code class="highlighter-rouge">--type[=&lt;type&gt;]</code> - Specifies what type of patch to generate. The default is <code class="highlighter-rouge">data</code>.</p>
+    <p><code class="language-plaintext highlighter-rouge">--type[=&lt;type&gt;]</code> - Specifies what type of patch to generate. The default is <code class="language-plaintext highlighter-rouge">data</code>.</p>
 
-    <p class="bs-callout bs-callout-info">In Magento 2.3 Alpha, the <code class="highlighter-rouge">setup:db-declaration:generate-patch</code> command was named <code class="highlighter-rouge">dev:generate:patch</code>.</p>
+    <p class="bs-callout bs-callout-info">In Magento 2.3 Alpha, the <code class="language-plaintext highlighter-rouge">setup:db-declaration:generate-patch</code> command was named <code class="language-plaintext highlighter-rouge">dev:generate:patch</code>.</p>
   </li>
   <li>
     <p>All released modules that previously used upgrade scripts must support backward compatibility by implementing
-<code class="highlighter-rouge">\Magento\Setup\Model\Patch\PatchVersionInterface</code> and the <code class="highlighter-rouge">getVersion</code> method. This method allows you to skip changes that were applied in previous versions and were done by old scripts. The returned value of the <code class="highlighter-rouge">getVersion</code> method in this case should be equal to the value of a version in <code class="highlighter-rouge">version_compare</code> function in old scripts. When the <code class="highlighter-rouge">InstallData.php</code> script does not have any versions to compare, you can specify the first version of your module. See <a href="/devdocs/guides/v2.3/extension-dev-guide/declarative-schema/data-patches.html">Develop declarative data and schema patches</a> for more information.</p>
+<code class="language-plaintext highlighter-rouge">\Magento\Setup\Model\Patch\PatchVersionInterface</code> and the <code class="language-plaintext highlighter-rouge">getVersion</code> method. This method allows you to skip changes that were applied in previous versions and were done by old scripts. The returned value of the <code class="language-plaintext highlighter-rouge">getVersion</code> method in this case should be equal to the value of a version in <code class="language-plaintext highlighter-rouge">version_compare</code> function in old scripts. When the <code class="language-plaintext highlighter-rouge">InstallData.php</code> script does not have any versions to compare, you can specify the first version of your module. See <a href="/devdocs/guides/v2.3/extension-dev-guide/declarative-schema/data-patches.html">Develop declarative data and schema patches</a> for more information.</p>
   </li>
 </ol>
 
@@ -3538,7 +3539,7 @@
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento setup:upgrade <span class="nt">--dry-run</span><span class="o">=</span>1
 </code></pre></div></div>
 
-<p>As a result of specifying the <code class="highlighter-rouge">--dry-run=1</code> flag, Magento writes a log file at <code class="highlighter-rouge">&lt;Magento_Root&gt;/var/log/dry-run-installation.log</code>. This file contains all the DDL SQL statements that are generated during installation. You can use these SQL statements for debugging and optimizing performance processes.</p>
+<p>As a result of specifying the <code class="language-plaintext highlighter-rouge">--dry-run=1</code> flag, Magento writes a log file at <code class="language-plaintext highlighter-rouge">&lt;Magento_Root&gt;/var/log/dry-run-installation.log</code>. This file contains all the DDL SQL statements that are generated during installation. You can use these SQL statements for debugging and optimizing performance processes.</p>
 
 <h2 id="safe-installation-and-rollback">Safe installation and rollback</h2>
 
@@ -3546,11 +3547,11 @@
 
 <p>To help prevent data loss, you can specify command line options that dump all the data that could be lost as a result of an installation. The dumped data can then be restored manually or automatically. These arguments are optional–you do not have to create a manual dump during a system upgrade. <em>(Note that this works only with schema.)</em></p>
 
-<p>Magento provides options to the <code class="highlighter-rouge">setup:install</code> and <code class="highlighter-rouge">setup:upgrade</code> commands that enable safe installations and rollbacks:</p>
+<p>Magento provides options to the <code class="language-plaintext highlighter-rouge">setup:install</code> and <code class="language-plaintext highlighter-rouge">setup:upgrade</code> commands that enable safe installations and rollbacks:</p>
 
-<p><code class="highlighter-rouge">--safe-mode</code> - Creates a data dump during the installation or upgrade process.</p>
+<p><code class="language-plaintext highlighter-rouge">--safe-mode</code> - Creates a data dump during the installation or upgrade process.</p>
 
-<p><code class="highlighter-rouge">--data-restore</code> - (Used with the <code class="highlighter-rouge">setup:upgrade</code> command only.) Performs a rollback. Before you rollback, you must first check out code to the previous version of Magento. Then run <code class="highlighter-rouge">setup:upgrade  --data-restore</code>.</p>
+<p><code class="language-plaintext highlighter-rouge">--data-restore</code> - (Used with the <code class="language-plaintext highlighter-rouge">setup:upgrade</code> command only.) Performs a rollback. Before you rollback, you must first check out code to the previous version of Magento. Then run <code class="language-plaintext highlighter-rouge">setup:upgrade  --data-restore</code>.</p>
 
 <p>Several types of operations have an effect on data dumps and rollbacks.</p>
 
@@ -3574,8 +3575,8 @@
 <p>When safe mode is enabled, Magento creates a CSV file each time a destructive operation for a table or column occurs. You can find these files at the following locations:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">Magento_root/var/declarative_dumps_csv/{column_name_column_type_other_dimensions}.csv</code></li>
-  <li><code class="highlighter-rouge">Magento_root/var/declarative_dumps_csv/{table_name}.csv</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Magento_root/var/declarative_dumps_csv/{column_name_column_type_other_dimensions}.csv</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Magento_root/var/declarative_dumps_csv/{table_name}.csv</code></li>
 </ul>
 
 <p>Each CSV file contains a row that defines the column (or other database entity) names as well as rows of values, as shown in the following image:</p>
@@ -3584,52 +3585,52 @@
 
 <h2 id="create-whitelist">Create a schema whitelist</h2>
 
-<p>Backward compatibility must be maintained. Therefore, declarative schema does not automatically delete database tables, columns or keys that are not defined in a <code class="highlighter-rouge">db_schema.xml</code> file. Declarative schema cannot delete these elements because these items can be declared somewhere else, such as in an <code class="highlighter-rouge">Setup/UpgradeSchema.php</code> file.</p>
+<p>Backward compatibility must be maintained. Therefore, declarative schema does not automatically delete database tables, columns or keys that are not defined in a <code class="language-plaintext highlighter-rouge">db_schema.xml</code> file. Declarative schema cannot delete these elements because these items can be declared somewhere else, such as in an <code class="language-plaintext highlighter-rouge">Setup/UpgradeSchema.php</code> file.</p>
 
-<p>The <code class="highlighter-rouge">&lt;module_vendor&gt;/&lt;module_name&gt;/etc/db_schema_whitelist.json</code> file provides a history of all tables, columns, keys added with declarative schema. It can be generated manually or created automatically with the following command:</p>
+<p>The <code class="language-plaintext highlighter-rouge">&lt;module_vendor&gt;/&lt;module_name&gt;/etc/db_schema_whitelist.json</code> file provides a history of all tables, columns, keys added with declarative schema. It can be generated manually or created automatically with the following command:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento setup:db-declaration:generate-whitelist <span class="o">[</span>options]
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">[options]</code> can be:</p>
+<p><code class="language-plaintext highlighter-rouge">[options]</code> can be:</p>
 
-<p><code class="highlighter-rouge">--module-name[=MODULE-NAME]</code> specifies which module to generate a whitelist for. If no module name is specified, then the default behavior is to generate a whitelist for all modules. You can also explicitly set <code class="highlighter-rouge">--module-name=all</code>.</p>
+<p><code class="language-plaintext highlighter-rouge">--module-name[=MODULE-NAME]</code> specifies which module to generate a whitelist for. If no module name is specified, then the default behavior is to generate a whitelist for all modules. You can also explicitly set <code class="language-plaintext highlighter-rouge">--module-name=all</code>.</p>
 
-<p class="bs-callout bs-callout-info">In Magento 2.3 Alpha, the <code class="highlighter-rouge">setup:db-declaration:generate-whitelist</code> command was named <code class="highlighter-rouge">declaration:generate:whitelist</code>.</p>
+<p class="bs-callout bs-callout-info">In Magento 2.3 Alpha, the <code class="language-plaintext highlighter-rouge">setup:db-declaration:generate-whitelist</code> command was named <code class="language-plaintext highlighter-rouge">declaration:generate:whitelist</code>.</p>
 
-<p>As a best practice, you should generate a new whitelist file for each release. You must generate the whitelist  in any release that contains changes in the <code class="highlighter-rouge">db_schema.xml</code> file.</p>
+<p>As a best practice, you should generate a new whitelist file for each release. You must generate the whitelist  in any release that contains changes in the <code class="language-plaintext highlighter-rouge">db_schema.xml</code> file.</p>
 
-<p>The following code sample shows a sample <code class="highlighter-rouge">db_schema_whitelist.json</code> file:</p>
+<p>The following code sample shows a sample <code class="language-plaintext highlighter-rouge">db_schema_whitelist.json</code> file:</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"adminnotification_inbox"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"column"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"notification_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"severity"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"date_added"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"is_read"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"is_remove"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="nl">"adminnotification_inbox"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"column"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"notification_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"severity"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"date_added"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"is_read"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"is_remove"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
         </span><span class="p">},</span><span class="w">
-        </span><span class="s2">"index"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"ADMINNOTIFICATION_INBOX_SEVERITY"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"ADMINNOTIFICATION_INBOX_IS_READ"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"ADMINNOTIFICATION_INBOX_IS_REMOVE"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="nl">"index"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"ADMINNOTIFICATION_INBOX_SEVERITY"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"ADMINNOTIFICATION_INBOX_IS_READ"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"ADMINNOTIFICATION_INBOX_IS_REMOVE"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
         </span><span class="p">},</span><span class="w">
-        </span><span class="s2">"constraint"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"PRIMARY"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="nl">"constraint"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"PRIMARY"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"admin_system_messages"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"column"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"identity"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"severity"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="nl">"admin_system_messages"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"column"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"identity"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"severity"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
         </span><span class="p">},</span><span class="w">
-        </span><span class="s2">"constraint"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"PRIMARY"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="nl">"constraint"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"PRIMARY"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -3639,9 +3640,9 @@
 
 <h2 id="resolve-reference-ids">Resolve reference IDs</h2>
 
-<p>The sample <code class="highlighter-rouge">db_schema_whitelist.json</code> file above contains system-generated constraint and index names. <a href="/devdocs/guides/v2.3/extension-dev-guide/declarative-schema/db-schema.html">Configure your <code class="highlighter-rouge">db_schema.xml</code> file</a> so that the <code class="highlighter-rouge">referenceId</code> attributes match these values.</p>
+<p>The sample <code class="language-plaintext highlighter-rouge">db_schema_whitelist.json</code> file above contains system-generated constraint and index names. <a href="/devdocs/guides/v2.3/extension-dev-guide/declarative-schema/db-schema.html">Configure your <code class="language-plaintext highlighter-rouge">db_schema.xml</code> file</a> so that the <code class="language-plaintext highlighter-rouge">referenceId</code> attributes match these values.</p>
 
-<p class="bs-callout bs-callout-info">In Magento 2.3.0, the identifying attribute for constraints and index definitions is <code class="highlighter-rouge">referenceId</code>. In pre-release versions, the attribute was <code class="highlighter-rouge">name</code>.</p>
+<p class="bs-callout bs-callout-info">In Magento 2.3.0, the identifying attribute for constraints and index definitions is <code class="language-plaintext highlighter-rouge">referenceId</code>. In pre-release versions, the attribute was <code class="language-plaintext highlighter-rouge">name</code>.</p>
 
 			
 		</div>

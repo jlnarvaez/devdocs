@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento's deployment configuration | Magento 2 Developer Documentation (copy)</title>
+	<title>Magento's deployment configuration | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/config-guide/config/config-php.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/config-guide/config/config-php.html">Magento 2.0</a></li>
 		
@@ -4020,31 +4021,31 @@
 
 			<h2 id="config-php-overview">Purpose of the deployment configuration</h2>
 
-<p>Magento’s deployment configuration consists of the shared and system-specific configuration for your installation. Magento’s deployment configuration is divided between <a href="/devdocs/guides/v2.3/config-guide/prod/config-reference-configphp.html"><code class="highlighter-rouge">app/etc/config.php</code></a> and <a href="/devdocs/guides/v2.3/config-guide/prod/config-reference-envphp.html"><code class="highlighter-rouge">app/etc/env.php</code></a>.</p>
+<p>Magento’s deployment configuration consists of the shared and system-specific configuration for your installation. Magento’s deployment configuration is divided between <a href="/devdocs/guides/v2.3/config-guide/prod/config-reference-configphp.html"><code class="language-plaintext highlighter-rouge">app/etc/config.php</code></a> and <a href="/devdocs/guides/v2.3/config-guide/prod/config-reference-envphp.html"><code class="language-plaintext highlighter-rouge">app/etc/env.php</code></a>.</p>
 
 <ul>
   <li>
-    <p><code class="highlighter-rouge">app/etc/config.php</code> is the <em>shared</em> configuration file.
+    <p><code class="language-plaintext highlighter-rouge">app/etc/config.php</code> is the <em>shared</em> configuration file.
 This file contains the list of installed modules, themes, and language packages; and shared configuration settings.</p>
 
     <p>Check this file in to source control and use it in your development, staging, and production systems.</p>
 
-    <p>As of the 2.2 release, the <code class="highlighter-rouge">app/etc/config.php</code> file is no longer an entry in the <code class="highlighter-rouge">.gitignore</code> file.
+    <p>As of the 2.2 release, the <code class="language-plaintext highlighter-rouge">app/etc/config.php</code> file is no longer an entry in the <code class="language-plaintext highlighter-rouge">.gitignore</code> file.
 This was done to facilitate <a href="/devdocs/guides/v2.3/config-guide/deployment/">pipeline deployment</a>.</p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">app/etc/env.php</code> contains settings that are specific to the installation environment.</p>
+    <p><code class="language-plaintext highlighter-rouge">app/etc/env.php</code> contains settings that are specific to the installation environment.</p>
   </li>
 </ul>
 
-<p>Together, <code class="highlighter-rouge">config.php</code> and <code class="highlighter-rouge">env.php</code> are referred to as Magento’s <em>deployment configuration</em> because they are created during installation and are required to start Magento.</p>
+<p>Together, <code class="language-plaintext highlighter-rouge">config.php</code> and <code class="language-plaintext highlighter-rouge">env.php</code> are referred to as Magento’s <em>deployment configuration</em> because they are created during installation and are required to start Magento.</p>
 
-<p class="bs-callout bs-callout-info">The Magento 2 deployment configuration replaces <code class="highlighter-rouge">local.xml</code> in Magento 1.x.</p>
+<p class="bs-callout bs-callout-info">The Magento 2 deployment configuration replaces <code class="language-plaintext highlighter-rouge">local.xml</code> in Magento 1.x.</p>
 
-<p>Unlike other <a href="/devdocs/guides/v2.3/config-guide/config/config-files.html">module configuration files</a>, Magento’s deployment configuration is loaded into memory when Magento initializes, is not merged with any other files, and cannot be extended. (<code class="highlighter-rouge">config.php</code> and <code class="highlighter-rouge">env.php</code> are merged with each other, however.)</p>
+<p>Unlike other <a href="/devdocs/guides/v2.3/config-guide/config/config-files.html">module configuration files</a>, Magento’s deployment configuration is loaded into memory when Magento initializes, is not merged with any other files, and cannot be extended. (<code class="language-plaintext highlighter-rouge">config.php</code> and <code class="language-plaintext highlighter-rouge">env.php</code> are merged with each other, however.)</p>
 
 <h2 id="config-php-contents">Details about the deployment configuration</h2>
-<p><code class="highlighter-rouge">config.php</code> and <code class="highlighter-rouge">env.php</code> are   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
+<p><code class="language-plaintext highlighter-rouge">config.php</code> and <code class="language-plaintext highlighter-rouge">env.php</code> are   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
  files that return a <a href="http://www.w3schools.com/php/php_arrays.asp">multi-dimensional associative array</a>, which is basically a hierarchical arrangement of configuration parameters and values.</p>
 
 <p>On the top level of this array are <em>configuration segments</em>. A segment has arbitrary content (a scalar value or a nested array) distinguished by an arbitrary key—where both the key and its value are defined by the Magento framework.</p>
@@ -4055,7 +4056,7 @@ This was done to facilitate <a href="/devdocs/guides/v2.3/config-guide/deploymen
  sequence definition, which is obtained by merging all modules’ configuration files, with the   <span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">exception</span>
  of disabled modules.</p>
 
-<p>The following sections discusses the structure and contents of the deployment configuration—<code class="highlighter-rouge">config.php</code> and <code class="highlighter-rouge">env.php</code>.</p>
+<p>The following sections discusses the structure and contents of the deployment configuration—<code class="language-plaintext highlighter-rouge">config.php</code> and <code class="language-plaintext highlighter-rouge">env.php</code>.</p>
 
 <ul>
   <li><a href="#config-php-contents-config-php">Manage installed modules</a></li>
@@ -4063,18 +4064,18 @@ This was done to facilitate <a href="/devdocs/guides/v2.3/config-guide/deploymen
 </ul>
 
 <h2 id="config-php-contents-config-php">Manage installed modules</h2>
-<p><code class="highlighter-rouge">config.php</code> lists your installed modules. Magento provides both command-line and web-based utilities to manage modules (install, uninstall, enable, disable, or upgrade).</p>
+<p><code class="language-plaintext highlighter-rouge">config.php</code> lists your installed modules. Magento provides both command-line and web-based utilities to manage modules (install, uninstall, enable, disable, or upgrade).</p>
 
 <p>Examples:</p>
 
 <ul>
-  <li>Uninstall components: <a href="/devdocs/guides/v2.3/install-gde/install/cli/install-cli-uninstall.html"><code class="highlighter-rouge">bin/magento setup:uninstall</code></a></li>
-  <li>Enable or disable components: <a href="/devdocs/guides/v2.3/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable"><code class="highlighter-rouge">bin/magento module:disable</code></a>, <a href="/devdocs/guides/v2.3/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable"><code class="highlighter-rouge">bin/magento module:enable</code></a>.</li>
+  <li>Uninstall components: <a href="/devdocs/guides/v2.3/install-gde/install/cli/install-cli-uninstall.html"><code class="language-plaintext highlighter-rouge">bin/magento setup:uninstall</code></a></li>
+  <li>Enable or disable components: <a href="/devdocs/guides/v2.3/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable"><code class="language-plaintext highlighter-rouge">bin/magento module:disable</code></a>, <a href="/devdocs/guides/v2.3/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable"><code class="language-plaintext highlighter-rouge">bin/magento module:enable</code></a>.</li>
   <li><a href="/devdocs/guides/v2.3/comp-mgr/module-man/compman-start.html">Component Manager</a></li>
   <li><a href="/devdocs/guides/v2.3/comp-mgr/upgrader/upgrade-start.html">System Upgrade</a></li>
 </ul>
 
-<p><code class="highlighter-rouge">config.php</code> snippet:</p>
+<p><code class="language-plaintext highlighter-rouge">config.php</code> snippet:</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">return</span> <span class="k">array</span> <span class="p">(</span>
   <span class="s1">'modules'</span> <span class="o">=&gt;</span>
@@ -4088,11 +4089,11 @@ This was done to facilitate <a href="/devdocs/guides/v2.3/config-guide/deploymen
     <span class="s1">'Magento_Backup'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
     <span class="s1">'Magento_Eav'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
     <span class="s1">'Magento_Customer'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-<span class="o">...</span>
+<span class="mf">...</span>
   <span class="p">),</span>
 <span class="p">);</span></code></pre></figure>
 
-<p>The value <code class="highlighter-rouge">1</code> or <code class="highlighter-rouge">0</code> indicates whether a module is enabled or disabled.</p>
+<p>The value <code class="language-plaintext highlighter-rouge">1</code> or <code class="language-plaintext highlighter-rouge">0</code> indicates whether a module is enabled or disabled.</p>
 
 <p>Disabled modules are not recognized by the Magento application; in other words, they don’t participate in merging configuration, in dependency injection, events, plug-ins, and so on. Disabled modules do not modify the   <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>
  or   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>

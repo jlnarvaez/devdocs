@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Annotations | Magento 2 Developer Documentation (copy)</title>
+	<title>Annotations | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -2157,10 +2156,9 @@
 	<h1 class="page-heading">Annotations</h1>
 </section>
 
-			
-<p style="text-align: right"><em>This topic was updated due to the 2.3.6 MFTF release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.3.6 MFTF release.</em></p>
 
-<p>Annotations are essentially comments in the code. In PHP, they all are marked by a preceding <code class="highlighter-rouge">@</code> symbol.</p>
+<p>Annotations are essentially comments in the code. In PHP, they all are marked by a preceding <code class="language-plaintext highlighter-rouge">@</code> symbol.</p>
 
 <p>Within <a href="../test.html">tests</a>, annotations are contained within their own node.</p>
 
@@ -2169,7 +2167,7 @@
 <p>The following conventions apply to annotations in the Magento Functional Testing Framework (MFTF):</p>
 
 <ul>
-  <li>All annotations are within an <code class="highlighter-rouge">&lt;annotations&gt;</code> element.</li>
+  <li>All annotations are within an <code class="language-plaintext highlighter-rouge">&lt;annotations&gt;</code> element.</li>
   <li>Each element within corresponds to a supported annotation type.</li>
   <li>There is no distinction made in XML between Codeception annotations and Allure annotations.</li>
   <li>Each annotation contains only one value.
@@ -2201,7 +2199,7 @@ If multiple annotation values are supported and required each value requires a s
 
 <h3 id="description">description</h3>
 
-<p>The <code class="highlighter-rouge">&lt;description&gt;</code> element is an implementation of a <a href="https://devhub.io/zh/repos/allure-framework-allure-phpunit#extended-test-class-or-test-method-description"><code class="highlighter-rouge">@Description</code></a> Allure tag; Metadata for report.</p>
+<p>The <code class="language-plaintext highlighter-rouge">&lt;description&gt;</code> element is an implementation of a <a href="https://devhub.io/zh/repos/allure-framework-allure-phpunit#extended-test-class-or-test-method-description"><code class="language-plaintext highlighter-rouge">@Description</code></a> Allure tag; Metadata for report.</p>
 
 <table>
   <thead>
@@ -2213,7 +2211,7 @@ If multiple annotation values are supported and required each value requires a s
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">value</code></td>
+      <td><code class="language-plaintext highlighter-rouge">value</code></td>
       <td>string</td>
       <td>required</td>
     </tr>
@@ -2227,9 +2225,9 @@ If multiple annotation values are supported and required each value requires a s
 
 <h3 id="features">features</h3>
 
-<p>The <code class="highlighter-rouge">&lt;features&gt;</code> element is an implementation of a <a href="https://devhub.io/zh/repos/allure-framework-allure-phpunit#map-test-classes-and-test-methods-to-features-and-stories"><code class="highlighter-rouge">@Features</code></a> Allure tag.</p>
+<p>The <code class="language-plaintext highlighter-rouge">&lt;features&gt;</code> element is an implementation of a <a href="https://devhub.io/zh/repos/allure-framework-allure-phpunit#map-test-classes-and-test-methods-to-features-and-stories"><code class="language-plaintext highlighter-rouge">@Features</code></a> Allure tag.</p>
 
-<p><code class="highlighter-rouge">&lt;features&gt;</code> sets a string that will be displayed as a feature within the Allure report. Tests under the same feature are grouped together in the report.</p>
+<p><code class="language-plaintext highlighter-rouge">&lt;features&gt;</code> sets a string that will be displayed as a feature within the Allure report. Tests under the same feature are grouped together in the report.</p>
 
 <table>
   <thead>
@@ -2241,7 +2239,7 @@ If multiple annotation values are supported and required each value requires a s
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">value</code></td>
+      <td><code class="language-plaintext highlighter-rouge">value</code></td>
       <td>string</td>
       <td>required</td>
     </tr>
@@ -2256,15 +2254,15 @@ If multiple annotation values are supported and required each value requires a s
 
 <h3 id="group">group</h3>
 
-<p>The <code class="highlighter-rouge">&lt;group&gt;</code> element is an implementation of a <a href="http://codeception.com/docs/07-AdvancedUsage#Groups"><code class="highlighter-rouge">@group</code></a> Codeception tag.</p>
+<p>The <code class="language-plaintext highlighter-rouge">&lt;group&gt;</code> element is an implementation of a <a href="http://codeception.com/docs/07-AdvancedUsage#Groups"><code class="language-plaintext highlighter-rouge">@group</code></a> Codeception tag.</p>
 
-<p><code class="highlighter-rouge">&lt;group&gt;</code> specifies a string to identify and collect tests together.
+<p><code class="language-plaintext highlighter-rouge">&lt;group&gt;</code> specifies a string to identify and collect tests together.
 Any test can be a part of multiple groups.
 The purpose of grouping is to create a set of test for a functionality or purpose, such as all cart tests or all slow tests and run them together locally.</p>
 
 <p class="bs-callout bs-callout-warning">Group values cannot collide with <a href="../suite.html">suite</a> names.</p>
 
-<p class="bs-callout bs-callout-tip">Add <code class="highlighter-rouge">&lt;skip&gt;</code> to the test to skip it during test run.</p>
+<p class="bs-callout bs-callout-tip">Add <code class="language-plaintext highlighter-rouge">&lt;skip&gt;</code> to the test to skip it during test run.</p>
 
 <table>
   <thead>
@@ -2277,10 +2275,10 @@ The purpose of grouping is to create a set of test for a functionality or purpos
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">value</code></td>
+      <td><code class="language-plaintext highlighter-rouge">value</code></td>
       <td>string</td>
       <td>required</td>
-      <td>A value that is used to group tests. It should be lower case. <code class="highlighter-rouge">skip</code> is reserved to ignore content of the test and generate an empty test.</td>
+      <td>A value that is used to group tests. It should be lower case. <code class="language-plaintext highlighter-rouge">skip</code> is reserved to ignore content of the test and generate an empty test.</td>
     </tr>
   </tbody>
 </table>
@@ -2292,7 +2290,7 @@ The purpose of grouping is to create a set of test for a functionality or purpos
 
 <h3 id="return">return</h3>
 
-<p>The <code class="highlighter-rouge">&lt;return&gt;</code> element is an implementation of a <a href="http://codeception.com/docs/07-AdvancedUsage#Examples"><code class="highlighter-rouge">@return</code></a> Codeception tag.
+<p>The <code class="language-plaintext highlighter-rouge">&lt;return&gt;</code> element is an implementation of a <a href="http://codeception.com/docs/07-AdvancedUsage#Examples"><code class="language-plaintext highlighter-rouge">@return</code></a> Codeception tag.
 It specifies what is returned from a test execution.</p>
 
 <table>
@@ -2305,7 +2303,7 @@ It specifies what is returned from a test execution.</p>
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">value</code></td>
+      <td><code class="language-plaintext highlighter-rouge">value</code></td>
       <td>string</td>
       <td>required</td>
     </tr>
@@ -2319,7 +2317,7 @@ It specifies what is returned from a test execution.</p>
 
 <h3 id="severity">severity</h3>
 
-<p>The <code class="highlighter-rouge">&lt;return&gt;</code> element is an implementation of a <a href="https://devhub.io/zh/repos/allure-framework-allure-phpunit#set-test-severity"><code class="highlighter-rouge">@Severity</code></a> Allure tag; Metadata for report.</p>
+<p>The <code class="language-plaintext highlighter-rouge">&lt;return&gt;</code> element is an implementation of a <a href="https://devhub.io/zh/repos/allure-framework-allure-phpunit#set-test-severity"><code class="language-plaintext highlighter-rouge">@Severity</code></a> Allure tag; Metadata for report.</p>
 
 <table>
   <thead>
@@ -2332,10 +2330,10 @@ It specifies what is returned from a test execution.</p>
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">value</code></td>
+      <td><code class="language-plaintext highlighter-rouge">value</code></td>
       <td>string</td>
       <td>required</td>
-      <td><code class="highlighter-rouge">MINOR</code>, <code class="highlighter-rouge">AVERAGE</code>, <code class="highlighter-rouge">MAJOR</code>, <code class="highlighter-rouge">BLOCKER</code>, <code class="highlighter-rouge">CRITICAL</code></td>
+      <td><code class="language-plaintext highlighter-rouge">MINOR</code>, <code class="language-plaintext highlighter-rouge">AVERAGE</code>, <code class="language-plaintext highlighter-rouge">MAJOR</code>, <code class="language-plaintext highlighter-rouge">BLOCKER</code>, <code class="language-plaintext highlighter-rouge">CRITICAL</code></td>
     </tr>
   </tbody>
 </table>
@@ -2347,12 +2345,12 @@ It specifies what is returned from a test execution.</p>
 
 <h3 id="skip">skip</h3>
 
-<p>Use the <code class="highlighter-rouge">&lt;skip&gt;</code> element to skip a test.
-It contains one or more child elements <code class="highlighter-rouge">&lt;issueId&gt;</code> to specify one or more issues that cause the test skipping.</p>
+<p>Use the <code class="language-plaintext highlighter-rouge">&lt;skip&gt;</code> element to skip a test.
+It contains one or more child elements <code class="language-plaintext highlighter-rouge">&lt;issueId&gt;</code> to specify one or more issues that cause the test skipping.</p>
 
 <h5 id="issueid">issueId</h5>
 
-<p>This element under <code class="highlighter-rouge">&lt;skip&gt;</code> is required at least once and contains references to issues that cause the test to be skipped.</p>
+<p>This element under <code class="language-plaintext highlighter-rouge">&lt;skip&gt;</code> is required at least once and contains references to issues that cause the test to be skipped.</p>
 
 <table>
   <thead>
@@ -2364,7 +2362,7 @@ It contains one or more child elements <code class="highlighter-rouge">&lt;issue
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">value</code></td>
+      <td><code class="language-plaintext highlighter-rouge">value</code></td>
       <td>string</td>
       <td>required</td>
     </tr>
@@ -2381,7 +2379,7 @@ It contains one or more child elements <code class="highlighter-rouge">&lt;issue
 
 <h3 id="stories">stories</h3>
 
-<p>The <code class="highlighter-rouge">&lt;stories&gt;</code> element is an implementation of a <a href="https://devhub.io/zh/repos/allure-framework-allure-phpunit#map-test-classes-and-test-methods-to-features-and-stories"><code class="highlighter-rouge">@Stories</code></a> Allure tag.
+<p>The <code class="language-plaintext highlighter-rouge">&lt;stories&gt;</code> element is an implementation of a <a href="https://devhub.io/zh/repos/allure-framework-allure-phpunit#map-test-classes-and-test-methods-to-features-and-stories"><code class="language-plaintext highlighter-rouge">@Stories</code></a> Allure tag.
 It has the same functionality as <a href="#features">features</a>, within the Story report group.</p>
 
 <table>
@@ -2394,7 +2392,7 @@ It has the same functionality as <a href="#features">features</a>, within the St
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">value</code></td>
+      <td><code class="language-plaintext highlighter-rouge">value</code></td>
       <td>string</td>
       <td>required</td>
     </tr>
@@ -2409,7 +2407,7 @@ It has the same functionality as <a href="#features">features</a>, within the St
 
 <h3 id="testcaseid">testCaseId</h3>
 
-<p>The <code class="highlighter-rouge">&lt;testCaseId&gt;</code> element is an implementation of a <a href="https://github.com/allure-framework/allure1/wiki/Test-Case-ID"><code class="highlighter-rouge">@TestCaseId</code></a> Allure tag.
+<p>The <code class="language-plaintext highlighter-rouge">&lt;testCaseId&gt;</code> element is an implementation of a <a href="https://github.com/allure-framework/allure1/wiki/Test-Case-ID"><code class="language-plaintext highlighter-rouge">@TestCaseId</code></a> Allure tag.
 It specifies a ZephyrId for a test.</p>
 
 <p>This tag is prefixed to a title of the test annotation to make the test title unique in Allure.</p>
@@ -2428,7 +2426,7 @@ It specifies a ZephyrId for a test.</p>
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">value</code></td>
+      <td><code class="language-plaintext highlighter-rouge">value</code></td>
       <td>string</td>
       <td>required</td>
     </tr>
@@ -2442,7 +2440,7 @@ It specifies a ZephyrId for a test.</p>
 
 <h3 id="title">title</h3>
 
-<p>The <code class="highlighter-rouge">&lt;title&gt;</code> element is an implementation of <a href="https://devhub.io/zh/repos/allure-framework-allure-phpunit#human-readable-test-class-or-test-method-title"><code class="highlighter-rouge">@Title</code></a> Allure tag; Metadata for report.</p>
+<p>The <code class="language-plaintext highlighter-rouge">&lt;title&gt;</code> element is an implementation of <a href="https://devhub.io/zh/repos/allure-framework-allure-phpunit#human-readable-test-class-or-test-method-title"><code class="language-plaintext highlighter-rouge">@Title</code></a> Allure tag; Metadata for report.</p>
 
 <table>
   <thead>
@@ -2454,7 +2452,7 @@ It specifies a ZephyrId for a test.</p>
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">value</code></td>
+      <td><code class="language-plaintext highlighter-rouge">value</code></td>
       <td>string</td>
       <td>required</td>
     </tr>
@@ -2468,7 +2466,7 @@ It specifies a ZephyrId for a test.</p>
 
 <h3 id="usecaseid">useCaseId</h3>
 
-<p>The <code class="highlighter-rouge">&lt;useCaseId&gt;</code> element is an implementation of a <code class="highlighter-rouge">@UseCaseId</code> custom tag. It specifies the use case ID for a test and is ignored by Allure configuration at the moment, as Allure implementation is not complete.</p>
+<p>The <code class="language-plaintext highlighter-rouge">&lt;useCaseId&gt;</code> element is an implementation of a <code class="language-plaintext highlighter-rouge">@UseCaseId</code> custom tag. It specifies the use case ID for a test and is ignored by Allure configuration at the moment, as Allure implementation is not complete.</p>
 
 <table>
   <thead>
@@ -2480,7 +2478,7 @@ It specifies a ZephyrId for a test.</p>
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">value</code></td>
+      <td><code class="language-plaintext highlighter-rouge">value</code></td>
       <td>string</td>
       <td>required</td>
     </tr>

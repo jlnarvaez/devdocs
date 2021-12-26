@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Create a translation dictionary for a theme | Magento 2 Developer Documentation (copy)</title>
+	<title>Create a translation dictionary for a theme | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/frontend-dev-guide/translations/translate_practice.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/frontend-dev-guide/translations/translate_practice.html">Magento 2.0</a></li>
 		
@@ -2747,7 +2748,7 @@
 
 <h2 id="theme">Changing default strings</h2>
 
-<p>OrangeCo created a custom <code class="highlighter-rouge">orange</code> theme that inherits from the Magento Blank theme.
+<p>OrangeCo created a custom <code class="language-plaintext highlighter-rouge">orange</code> theme that inherits from the Magento Blank theme.
 Among the other changes, they want to rephrase certain strings used in the Blank theme and modules for the default locale.</p>
 
 <p>Namely, they need the following changes:</p>
@@ -2766,11 +2767,11 @@ Among the other changes, they want to rephrase certain strings used in the Blank
 <p>So OrangeCo take the following steps:</p>
 
 <ol>
-  <li>Run the <a href="/devdocs/guides/v2.1/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">i18n (internationalization) tool</a> to generate the en_US dictionary for the <code class="highlighter-rouge">orange</code> theme:
+  <li>Run the <a href="/devdocs/guides/v2.1/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">i18n (internationalization) tool</a> to generate the en_US dictionary for the <code class="language-plaintext highlighter-rouge">orange</code> theme:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> php magento2/bin/magento i18n:collect-phrases <span class="nt">--output</span><span class="o">=</span><span class="s2">"magento2/app/design/frontend/OrangeCo/orange/i18n/en_US.csv"</span> magento2/app/design/frontend/OrangeCo/orange
 </code></pre></div>    </div>
   </li>
-  <li>Open the newly generated <code class="highlighter-rouge">magento2/app/design/frontend/OrangeCo/orange/i18n/en_US.csv</code> file and add the following rows:
+  <li>Open the newly generated <code class="language-plaintext highlighter-rouge">magento2/app/design/frontend/OrangeCo/orange/i18n/en_US.csv</code> file and add the following rows:
     <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> "Add to Cart", "Purchase"
  "Add to Compare", "Compare"
  "Add to Wish List", "Wishlist"

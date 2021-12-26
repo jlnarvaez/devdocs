@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Fastly image optimization | Magento 2 Developer Documentation (copy)</title>
+	<title>Fastly image optimization | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/cdn/fastly-image-optimization.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/cdn/fastly-image-optimization.html">Magento 2.0</a></li>
 		
@@ -4343,16 +4344,16 @@ source file so they can fit the requested dimensions.</p>
       </li>
       <li>
         <p><strong>Resize filter</strong>—leave the default setting
-(<code class="highlighter-rouge">Lancsoz3</code>), or select an alternative. This setting specifies the filter
+(<code class="language-plaintext highlighter-rouge">Lancsoz3</code>), or select an alternative. This setting specifies the filter
 used to deliver a resized image. Depending on the filter selected the
 resized image can have a higher or lower number of pixels.</p>
 
         <ul>
-          <li><code class="highlighter-rouge">Lanczos3</code> (default)—Delivers the best quality image. It increases the ability to detect edges and linear features within an image and uses sinc resampling to provide the best possible reconstruction.</li>
-          <li><code class="highlighter-rouge">Lanczos2</code>—Uses same filter as <code class="highlighter-rouge">Lancsoz3</code> but with a less accurate approximation of the sinc resampling function.</li>
-          <li><code class="highlighter-rouge">Bicubic</code>—Has a natural sharpening effect when making an image smaller.</li>
-          <li><code class="highlighter-rouge">Bilinear</code>—Has a natural smoothing effect when making an image larger.</li>
-          <li><code class="highlighter-rouge">Nearest</code>—Has a natural pixelation effect when resizing pixel art.</li>
+          <li><code class="language-plaintext highlighter-rouge">Lanczos3</code> (default)—Delivers the best quality image. It increases the ability to detect edges and linear features within an image and uses sinc resampling to provide the best possible reconstruction.</li>
+          <li><code class="language-plaintext highlighter-rouge">Lanczos2</code>—Uses same filter as <code class="language-plaintext highlighter-rouge">Lancsoz3</code> but with a less accurate approximation of the sinc resampling function.</li>
+          <li><code class="language-plaintext highlighter-rouge">Bicubic</code>—Has a natural sharpening effect when making an image smaller.</li>
+          <li><code class="language-plaintext highlighter-rouge">Bilinear</code>—Has a natural smoothing effect when making an image larger.</li>
+          <li><code class="language-plaintext highlighter-rouge">Nearest</code>—Has a natural pixelation effect when resizing pixel art.</li>
         </ul>
       </li>
     </ul>
@@ -4406,7 +4407,7 @@ perceive visual differences in images. For example, Alpha channel/transparencies
 are stripped out and replaced with a white background, unless you use Deep image
 optimization which uses the background color of your theme.</p>
 
-<p>If you turn off lossy conversion (<code class="highlighter-rouge">WebP Auto? = No</code>), Fastly IO only changes
+<p>If you turn off lossy conversion (<code class="language-plaintext highlighter-rouge">WebP Auto? = No</code>), Fastly IO only changes
 JPEG images to WEBP format for compatible browsers. No other image types are
 changed. For example, if the original image is PNG the output from the
 Fastly IO service is PNG.</p>
@@ -4448,10 +4449,10 @@ code for the image is rewritten as shown in the following example:</p>
 
 <p>The Adaptive pixel ratios feature is useful to optimize images for Progressive
 web applications. It allows you to deliver multiple image sizes and resolutions
-from one image source file by adding a <code class="highlighter-rouge">srcset</code> for each product image.</p>
+from one image source file by adding a <code class="language-plaintext highlighter-rouge">srcset</code> for each product image.</p>
 
 <p>When the Adaptive pixel ratios feature is enabled, the Fastly IO service
-delivers a fixed-width image that can adapt to varying <code class="highlighter-rouge">device-pixel-ratios</code>.
+delivers a fixed-width image that can adapt to varying <code class="language-plaintext highlighter-rouge">device-pixel-ratios</code>.
 For example, the service modifies the product image definition as shown in the
 following example:</p>
 
@@ -4464,7 +4465,7 @@ following example:</p>
   <span class="na">alt=</span><span class="s">"Fusion Backpack"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<p>See <code class="highlighter-rouge">srcset</code> <a href="https://caniuse.com/#feat=srcset">browser support</a>
+<p>See <code class="language-plaintext highlighter-rouge">srcset</code> <a href="https://caniuse.com/#feat=srcset">browser support</a>
 and <a href="https://html.spec.whatwg.org/multipage/embedded-content.html#attr-img-srcset">specification</a>.</p>
 
 <h2 id="validate-fastly-io">Validate Fastly IO</h2>

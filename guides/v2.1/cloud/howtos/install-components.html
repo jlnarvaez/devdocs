@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Install, manage, and upgrade extensions | Magento 2 Developer Documentation (copy)</title>
+	<title>Install, manage, and upgrade extensions | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/howtos/install-components.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/howtos/install-components.html">Magento 2.0</a></li>
 		
@@ -4238,7 +4239,7 @@
   <li>Language packages to localize the storefront and Admin</li>
 </ul>
 
-<p>These instructions walk through extension installation purchased from Magento Marketplace. You can use the same procedure to install any extension with the extension’s Composer name. To find it, open the extension’s <code class="highlighter-rouge">composer.json</code> file and note the values for <code class="highlighter-rouge">"name"</code> and <code class="highlighter-rouge">"version"</code>.</p>
+<p>These instructions walk through extension installation purchased from Magento Marketplace. You can use the same procedure to install any extension with the extension’s Composer name. To find it, open the extension’s <code class="language-plaintext highlighter-rouge">composer.json</code> file and note the values for <code class="language-plaintext highlighter-rouge">"name"</code> and <code class="language-plaintext highlighter-rouge">"version"</code>.</p>
 
 <p>We also include instructions for <a href="#update">updating extensions</a>.</p>
 
@@ -4252,54 +4253,54 @@
   <li>
     <p>Enter the following command in a terminal to log in to your project:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud login
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud login
 </code></pre></div>    </div>
   </li>
   <li>
     <p>List your projects. With the project ID, you can complete additional commands.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud project:list
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud project:list
 </code></pre></div>    </div>
   </li>
   <li>
     <p>If necessary, clone the project to your local. You should have cloned when setting up your local development workspace.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud project:get &lt;project ID&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud project:get &lt;project ID&gt;
 </code></pre></div>    </div>
   </li>
-  <li>Change to a project directory. For example, <code class="highlighter-rouge">cd /var/www/html/magento2</code></li>
+  <li>Change to a project directory. For example, <code class="language-plaintext highlighter-rouge">cd /var/www/html/magento2</code></li>
   <li>
     <p>List environments in the project. Every environment includes an active Git branch of your code, database, environment variables, configurations, and services.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:list
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:list
 </code></pre></div>    </div>
 
-  	<code class="highlighter-rouge">magento-cloud environment:list</code>—displays environment hierarchies whereas the <code class="highlighter-rouge">git branch</code> command does not.
+  	<code class="language-plaintext highlighter-rouge">magento-cloud environment:list</code>—displays environment hierarchies whereas the <code class="language-plaintext highlighter-rouge">git branch</code> command does not.
   </li>
   <li>
     <p>Fetch origin branches to get the latest code:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git fetch origin
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git fetch origin
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Check out, or switch to, a specific branch and environment. Git commands only checkout the Git branch. The Magento Cloud command also switches to the active environment.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:checkout &lt;environment ID&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:checkout &lt;environment ID&gt;
 </code></pre></div>    </div>
 
-    <p>To create a new environment, use <code class="highlighter-rouge">magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
+    <p>To create a new environment, use <code class="language-plaintext highlighter-rouge">magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
   </li>
   <li>
     <p>Pull any updated code to your local for the environment ID (which is the Git branch):</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git pull origin &lt;environment ID&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git pull origin &lt;environment ID&gt;
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Create a <a href="/devdocs/guides/v2.1/cloud/project/project-webint-snap.html">snapshot</a> of the environment as a backup:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -4311,15 +4312,15 @@
   <li>Purchase an extension or module from <a href="https://marketplace.magento.com">Magento Marketplace</a> or another site.</li>
   <li><a href="#getstarted">Create a branch</a> to work with the files.</li>
   <li><a href="#compose">Get the extension’s Composer name</a> and version from your purchase history.</li>
-  <li>In your local Magento Commerce Cloud project, <a href="#update">update the Magento <code class="highlighter-rouge">composer.json</code></a> file with the name and version of the extension and add the code to Git. The code builds, deploys, and is available through the environment.</li>
+  <li>In your local Magento Commerce Cloud project, <a href="#update">update the Magento <code class="language-plaintext highlighter-rouge">composer.json</code></a> file with the name and version of the extension and add the code to Git. The code builds, deploys, and is available through the environment.</li>
   <li><a href="#verify">Verify</a> the extension installed properly.</li>
 </ol>
 
 <h3 id="compose">Step 1: Get the extension’s Composer name and version</h3>
 
-<p>If you already know the extension’s Composer name and version, skip this step and continue with <a href="#update">Update Magento’s <code class="highlighter-rouge">composer.json</code></a>.</p>
+<p>If you already know the extension’s Composer name and version, skip this step and continue with <a href="#update">Update Magento’s <code class="language-plaintext highlighter-rouge">composer.json</code></a>.</p>
 
-<p>This section discusses how to get a module’s Composer name and its version from Magento Marketplace. Alternatively, you can find the name and version of <em>any</em> module (whether or not you purchased it on Marketplace) in the module’s <code class="highlighter-rouge">composer.json</code> file. Open <code class="highlighter-rouge">composer.json</code> in a text editor and write down the values of <code class="highlighter-rouge">"name"</code> and <code class="highlighter-rouge">"version"</code>.</p>
+<p>This section discusses how to get a module’s Composer name and its version from Magento Marketplace. Alternatively, you can find the name and version of <em>any</em> module (whether or not you purchased it on Marketplace) in the module’s <code class="language-plaintext highlighter-rouge">composer.json</code> file. Open <code class="language-plaintext highlighter-rouge">composer.json</code> in a text editor and write down the values of <code class="language-plaintext highlighter-rouge">"name"</code> and <code class="language-plaintext highlighter-rouge">"version"</code>.</p>
 
 <h4 id="to-get-the-modules-composer-name-from-magento-marketplace">To get the module’s Composer name from Magento Marketplace:</h4>
 
@@ -4343,23 +4344,23 @@
   <li>Click <strong>Copy</strong> to copy the component name to the clipboard.</li>
   <li>Open a text editor.</li>
   <li>Paste the module name in the text editor.</li>
-  <li>Append a colon character (<code class="highlighter-rouge">:</code>) to the component name.</li>
+  <li>Append a colon character (<code class="language-plaintext highlighter-rouge">:</code>) to the component name.</li>
   <li>In <strong>Technical Details</strong> on the My Purchases page, click <strong>Copy</strong> to copy the version to the clipboard.</li>
   <li>
     <p>Append the version number to the component name after the colon.</p>
 
     <p>A sample follows:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>pixlee/magento2:1.0.1
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>pixlee/magento2:1.0.1
 </code></pre></div>    </div>
   </li>
 </ol>
 
-<h3 id="update">Step 2: Update Magento’s <code class="highlighter-rouge">composer.json</code></h3>
+<h3 id="update">Step 2: Update Magento’s <code class="language-plaintext highlighter-rouge">composer.json</code></h3>
 
-<p>When adding the module to <code class="highlighter-rouge">composer.json</code>, the file <a href="/devdocs/guides/v2.1/config-guide/config/config-php.html"><code class="highlighter-rouge">app/etc/config.php</code></a> will also be updated. This file includes a list of installed modules, themes, and language packages, and shared configuration settings. This file differs from <code class="highlighter-rouge">config.local.php</code> used by <a href="/devdocs/guides/v2.1/cloud/live/sens-data-over.html">Configuration Management</a>.</p>
+<p>When adding the module to <code class="language-plaintext highlighter-rouge">composer.json</code>, the file <a href="/devdocs/guides/v2.1/config-guide/config/config-php.html"><code class="language-plaintext highlighter-rouge">app/etc/config.php</code></a> will also be updated. This file includes a list of installed modules, themes, and language packages, and shared configuration settings. This file differs from <code class="language-plaintext highlighter-rouge">config.local.php</code> used by <a href="/devdocs/guides/v2.1/cloud/live/sens-data-over.html">Configuration Management</a>.</p>
 
-<p>To update <code class="highlighter-rouge">composer.json</code>:</p>
+<p>To update <code class="language-plaintext highlighter-rouge">composer.json</code>:</p>
 
 <ol>
   <li>If you haven’t done so already, change to your environment root directory.</li>
@@ -4378,7 +4379,7 @@ composer update
   </li>
   <li>Wait for project dependencies to update.</li>
   <li>
-    <p>Enter the following commands in the order shown to commit your changes, including <code class="highlighter-rouge">composer.lock</code>:</p>
+    <p>Enter the following commands in the order shown to commit your changes, including <code class="language-plaintext highlighter-rouge">composer.lock</code>:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git add <span class="nt">-A</span>
 git commit <span class="nt">-m</span> <span class="s2">"&lt;message&gt;"</span>
@@ -4389,7 +4390,7 @@ git push origin &lt;environment ID&gt;
 
 <p>If there are errors, see <a href="/devdocs/guides/v2.1/cloud/trouble/trouble_comp-deploy-fail.html">extension deployment failure</a>.</p>
 
-<p class="bs-callout bs-callout-warning">When installing and adding the module, you must add the <code class="highlighter-rouge">composer.lock</code> file to your Git branch for deployment. This ensures that the module loads properly when you use the <code class="highlighter-rouge">composer install</code> command.</p>
+<p class="bs-callout bs-callout-warning">When installing and adding the module, you must add the <code class="language-plaintext highlighter-rouge">composer.lock</code> file to your Git branch for deployment. This ensures that the module loads properly when you use the <code class="language-plaintext highlighter-rouge">composer install</code> command.</p>
 
 <h3 id="verify">Step 3: Verify the extension</h3>
 
@@ -4407,7 +4408,7 @@ git push origin &lt;environment ID&gt;
   <li>Verify the extension is listed.</li>
 </ol>
 
-<p>The extension name is in the format <code class="highlighter-rouge">&lt;VendorName&gt;_&lt;ComponentName&gt;</code>. It will not be in the same format as the Composer name.</p>
+<p>The extension name is in the format <code class="language-plaintext highlighter-rouge">&lt;VendorName&gt;_&lt;ComponentName&gt;</code>. It will not be in the same format as the Composer name.</p>
 
 <h2 id="manage">Manage extensions</h2>
 
@@ -4415,7 +4416,7 @@ git push origin &lt;environment ID&gt;
 
 <h3 id="enable-disable">Enable and disable extensions</h3>
 
-<p>You can use CLI commands or directly edit <code class="highlighter-rouge">app/etc/config.php</code> to enable or disable modules. After updating this file, push your changes from your local to the remote Git and deploy across all environments.</p>
+<p>You can use CLI commands or directly edit <code class="language-plaintext highlighter-rouge">app/etc/config.php</code> to enable or disable modules. After updating this file, push your changes from your local to the remote Git and deploy across all environments.</p>
 
 <ol>
   <li>In a terminal, access your local development environment.</li>
@@ -4443,7 +4444,7 @@ git push origin &lt;environment ID&gt;
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php bin/magento module:status
 </code></pre></div>    </div>
 
-    <p>Also, you can navigate to, and edit, the <code class="highlighter-rouge">app/etc/config.php</code> file to verify the module is disabled.</p>
+    <p>Also, you can navigate to, and edit, the <code class="language-plaintext highlighter-rouge">app/etc/config.php</code> file to verify the module is disabled.</p>
 
     <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="k">return</span> <span class="k">array</span> <span class="p">(</span>
   <span class="s1">'modules'</span> <span class="o">=&gt;</span>
@@ -4457,14 +4458,14 @@ git push origin &lt;environment ID&gt;
     <span class="s1">'Magento_Backup'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
     <span class="s1">'Magento_Eav'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
     <span class="s1">'Magento_Customer'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="o">...</span>
+  <span class="mf">...</span>
    <span class="p">),</span>
  <span class="p">);</span>
 </code></pre></div>    </div>
   </li>
 </ol>
 
-<p>The value <code class="highlighter-rouge">1</code> or <code class="highlighter-rouge">0</code> indicates whether a module is enabled or disabled.</p>
+<p>The value <code class="language-plaintext highlighter-rouge">1</code> or <code class="language-plaintext highlighter-rouge">0</code> indicates whether a module is enabled or disabled.</p>
 
 <ol>
   <li>
@@ -4484,7 +4485,7 @@ git push origin &lt;environment ID&gt;
 
 <p>For projects using Magento Commerce Cloud <strong>before 2.1.4</strong>, to change settings for your extensions and modules, you should make those changes in all environments as needed. We recommend using similar or matching settings between Staging and Production to fully test functionality. If you have an extension or module using sandbox credentials and settings, you make sure to switch those to live settings if in Production.</p>
 
-<p>For projects <strong>2.1.4 and later</strong>, you will update configurations according to <a href="/devdocs/guides/v2.1/cloud/live/sens-data-over.html#cloud-clp-settings">Configuration Management</a> for <code class="highlighter-rouge">config.local.php</code>.</p>
+<p>For projects <strong>2.1.4 and later</strong>, you will update configurations according to <a href="/devdocs/guides/v2.1/cloud/live/sens-data-over.html#cloud-clp-settings">Configuration Management</a> for <code class="language-plaintext highlighter-rouge">config.local.php</code>.</p>
 
 <h2 id="update">Upgrade an extension</h2>
 
@@ -4499,9 +4500,9 @@ git push origin &lt;environment ID&gt;
 
 <ol>
   <li>If you haven’t done so already, change to your environment root directory.</li>
-  <li>Open <code class="highlighter-rouge">composer.json</code> in a text editor.</li>
+  <li>Open <code class="language-plaintext highlighter-rouge">composer.json</code> in a text editor.</li>
   <li>Locate your extension and update the version.</li>
-  <li>Save your changes to <code class="highlighter-rouge">composer.json</code> and exit the text editor.</li>
+  <li>Save your changes to <code class="language-plaintext highlighter-rouge">composer.json</code> and exit the text editor.</li>
   <li>
     <p>Use the following command to update project dependencies:</p>
 
@@ -4509,7 +4510,7 @@ git push origin &lt;environment ID&gt;
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Enter the following commands in the order to commit the changes and deploy the project, including <code class="highlighter-rouge">composer.lock</code>:</p>
+    <p>Enter the following commands in the order to commit the changes and deploy the project, including <code class="language-plaintext highlighter-rouge">composer.lock</code>:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git add <span class="nt">-A</span>
 git commit <span class="nt">-m</span> <span class="s2">"&lt;message&gt;"</span>

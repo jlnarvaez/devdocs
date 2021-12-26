@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Add custom shipping carrier validations | Magento 2 Developer Documentation (copy)</title>
+	<title>Add custom shipping carrier validations | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/howdoi/checkout/checkout_carrier.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/howdoi/checkout/checkout_carrier.html">Magento 2.0</a></li>
 		
@@ -1450,13 +1451,13 @@
 <p>During checkout, if the shipping address fields declared in the rules are filled, the further validation of fields’ values is carried on the   <span term-uuid="ebe2cd14-d6d4-4d75-b3d7-a4f2384e5af9" class="glossary-term" data-toggle="popover">server side</span>
 . For example, whether a carrier is available for the specified country.</p>
 
-<p>For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code, add your customization in a separate module. For your checkout customization to be applied correctly, your custom module should <a href="/devdocs/guides/v2.0/extension-dev-guide/build/composer-integration.html">depend</a> on the <code class="highlighter-rouge">Magento_Checkout</code> module.</p>
+<p>For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code, add your customization in a separate module. For your checkout customization to be applied correctly, your custom module should <a href="/devdocs/guides/v2.0/extension-dev-guide/build/composer-integration.html">depend</a> on the <code class="language-plaintext highlighter-rouge">Magento_Checkout</code> module.</p>
 
-<p>Do not use <code class="highlighter-rouge">Ui</code> for your custom module name, because <code class="highlighter-rouge">%Vendor%_Ui</code> notation, required when specifying paths, might cause issues.</p>
+<p>Do not use <code class="language-plaintext highlighter-rouge">Ui</code> for your custom module name, because <code class="language-plaintext highlighter-rouge">%Vendor%_Ui</code> notation, required when specifying paths, might cause issues.</p>
 
-<p>In your <code class="highlighter-rouge">&lt;your_module_dir&gt;/view/frontend/web/js/model</code> directory, create a <code class="highlighter-rouge">.js</code> file implementing the validation rules.</p>
+<p>In your <code class="language-plaintext highlighter-rouge">&lt;your_module_dir&gt;/view/frontend/web/js/model</code> directory, create a <code class="language-plaintext highlighter-rouge">.js</code> file implementing the validation rules.</p>
 
-<p>The script must implement the <code class="highlighter-rouge">getRules()</code> method.</p>
+<p>The script must implement the <code class="language-plaintext highlighter-rouge">getRules()</code> method.</p>
 
 <p>For example, the FedEx shipping method requires only two fields of the shipping address to be filled: <strong>Country</strong> and <strong>Zip Code</strong>. This is how the validation rules for FedEx look:</p>
 
@@ -1467,15 +1468,15 @@
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nx">define</span><span class="p">(</span>
     <span class="p">[],</span>
     <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-        <span class="s1">'use strict'</span><span class="p">;</span>
+        <span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
         <span class="k">return</span> <span class="p">{</span>
             <span class="na">getRules</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
                 <span class="k">return</span> <span class="p">{</span>
-                    <span class="s1">'postcode'</span><span class="p">:</span> <span class="p">{</span>
-                        <span class="s1">'required'</span><span class="p">:</span> <span class="kc">true</span>
+                    <span class="dl">'</span><span class="s1">postcode</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="dl">'</span><span class="s1">required</span><span class="dl">'</span><span class="p">:</span> <span class="kc">true</span>
                     <span class="p">},</span>
-                    <span class="s1">'country_id'</span><span class="p">:</span> <span class="p">{</span>
-                        <span class="s1">'required'</span><span class="p">:</span> <span class="kc">true</span>
+                    <span class="dl">'</span><span class="s1">country_id</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="dl">'</span><span class="s1">required</span><span class="dl">'</span><span class="p">:</span> <span class="kc">true</span>
                     <span class="p">}</span>
                 <span class="p">};</span>
             <span class="p">}</span>
@@ -1488,20 +1489,20 @@
 
 <h2 id="validator">Step 2: Create validator</h2>
 
-<p>Create the validator <code class="highlighter-rouge">.js</code> script that checks if the fields defined by the validation rules are filled. The script must be located in the <code class="highlighter-rouge">&lt;your_module_dir&gt;/view/frontend/web/js/model</code> directory.</p>
+<p>Create the validator <code class="language-plaintext highlighter-rouge">.js</code> script that checks if the fields defined by the validation rules are filled. The script must be located in the <code class="language-plaintext highlighter-rouge">&lt;your_module_dir&gt;/view/frontend/web/js/model</code> directory.</p>
 
 <p>A sample validator script follows:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nx">define</span><span class="p">(</span>
     <span class="p">[</span>
-        <span class="s1">'jquery'</span><span class="p">,</span>
-        <span class="s1">'mageUtils'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">jquery</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">mageUtils</span><span class="dl">'</span><span class="p">,</span>
 
-        <span class="s1">'./shipping-rates-validation-rules'</span><span class="p">,</span>
-        <span class="s1">'mage/translate'</span>
+        <span class="dl">'</span><span class="s1">./shipping-rates-validation-rules</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">mage/translate</span><span class="dl">'</span>
     <span class="p">],</span>
     <span class="kd">function</span> <span class="p">(</span><span class="nx">$</span><span class="p">,</span> <span class="nx">utils</span><span class="p">,</span> <span class="nx">validationRules</span><span class="p">,</span> <span class="nx">$t</span><span class="p">)</span> <span class="p">{</span>
-        <span class="s1">'use strict'</span><span class="p">;</span>
+        <span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
         <span class="k">return</span> <span class="p">{</span>
             <span class="na">validationErrors</span><span class="p">:</span> <span class="p">[],</span>
             <span class="na">validate</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">address</span><span class="p">)</span> <span class="p">{</span>
@@ -1509,7 +1510,7 @@
                 <span class="k">this</span><span class="p">.</span><span class="nx">validationErrors</span> <span class="o">=</span> <span class="p">[];</span>
                 <span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">validationRules</span><span class="p">.</span><span class="nx">getRules</span><span class="p">(),</span> <span class="kd">function</span><span class="p">(</span><span class="nx">field</span><span class="p">,</span> <span class="nx">rule</span><span class="p">)</span> <span class="p">{</span>
                     <span class="k">if</span> <span class="p">(</span><span class="nx">rule</span><span class="p">.</span><span class="nx">required</span> <span class="o">&amp;&amp;</span> <span class="nx">utils</span><span class="p">.</span><span class="nx">isEmpty</span><span class="p">(</span><span class="nx">address</span><span class="p">[</span><span class="nx">field</span><span class="p">]))</span> <span class="p">{</span>
-                        <span class="kd">var</span> <span class="nx">message</span> <span class="o">=</span> <span class="nx">$t</span><span class="p">(</span><span class="s1">'Field '</span><span class="p">)</span> <span class="o">+</span> <span class="nx">field</span> <span class="o">+</span> <span class="nx">$t</span><span class="p">(</span><span class="s1">' is required.'</span><span class="p">);</span>
+                        <span class="kd">var</span> <span class="nx">message</span> <span class="o">=</span> <span class="nx">$t</span><span class="p">(</span><span class="dl">'</span><span class="s1">Field </span><span class="dl">'</span><span class="p">)</span> <span class="o">+</span> <span class="nx">field</span> <span class="o">+</span> <span class="nx">$t</span><span class="p">(</span><span class="dl">'</span><span class="s1"> is required.</span><span class="dl">'</span><span class="p">);</span>
                         <span class="nb">self</span><span class="p">.</span><span class="nx">validationErrors</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
                     <span class="p">}</span>
                 <span class="p">});</span>
@@ -1520,19 +1521,19 @@
 <span class="p">);</span>
 </code></pre></div></div>
 
-<p>You can use this sample for your validator, but you need to specify your validation rules script instead of <code class="highlighter-rouge">./shipping-rates-validation-rules</code> in the list of used modules.</p>
+<p>You can use this sample for your validator, but you need to specify your validation rules script instead of <code class="language-plaintext highlighter-rouge">./shipping-rates-validation-rules</code> in the list of used modules.</p>
 
 <h2 id="register">Step 3: Register validator and rules in the validators pool</h2>
 
-<p>Your custom validator must be added to the pool of validators. To do this, in the <code class="highlighter-rouge">&lt;your_module_dir&gt;/view/frontend/web/js/view</code> directory create a new <code class="highlighter-rouge">&lt;your-validation&gt;.js</code> file with the following content (having replaced the <code class="highlighter-rouge">&lt;your_validator&gt;</code> and <code class="highlighter-rouge">&lt;your_validation_rules&gt;</code> with your values):</p>
+<p>Your custom validator must be added to the pool of validators. To do this, in the <code class="language-plaintext highlighter-rouge">&lt;your_module_dir&gt;/view/frontend/web/js/view</code> directory create a new <code class="language-plaintext highlighter-rouge">&lt;your-validation&gt;.js</code> file with the following content (having replaced the <code class="language-plaintext highlighter-rouge">&lt;your_validator&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;your_validation_rules&gt;</code> with your values):</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nx">define</span><span class="p">(</span>
     <span class="p">[</span>
-        <span class="s1">'uiComponent'</span><span class="p">,</span>
-        <span class="s1">'Magento_Checkout/js/model/shipping-rates-validator'</span><span class="p">,</span>
-        <span class="s1">'Magento_Checkout/js/model/shipping-rates-validation-rules'</span><span class="p">,</span>
-        <span class="s1">'../model/&lt;your_validator&gt;'</span><span class="p">,</span>
-        <span class="s1">'../model/&lt;your_validation_rules&gt;'</span>
+        <span class="dl">'</span><span class="s1">uiComponent</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">Magento_Checkout/js/model/shipping-rates-validator</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">Magento_Checkout/js/model/shipping-rates-validation-rules</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">../model/&lt;your_validator&gt;</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">../model/&lt;your_validation_rules&gt;</span><span class="dl">'</span>
     <span class="p">],</span>
     <span class="kd">function</span> <span class="p">(</span>
         <span class="nx">Component</span><span class="p">,</span>
@@ -1541,9 +1542,9 @@
         <span class="nx">shippingRatesValidator</span><span class="p">,</span>
         <span class="nx">shippingRatesValidationRules</span>
     <span class="p">)</span> <span class="p">{</span>
-        <span class="s1">'use strict'</span><span class="p">;</span>
-        <span class="nx">defaultShippingRatesValidator</span><span class="p">.</span><span class="nx">registerValidator</span><span class="p">(</span><span class="s1">'carrierName'</span><span class="p">,</span> <span class="nx">shippingRatesValidator</span><span class="p">);</span>
-        <span class="nx">defaultShippingRatesValidationRules</span><span class="p">.</span><span class="nx">registerRules</span><span class="p">(</span><span class="s1">'carrierName'</span><span class="p">,</span> <span class="nx">shippingRatesValidationRules</span><span class="p">);</span>
+        <span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
+        <span class="nx">defaultShippingRatesValidator</span><span class="p">.</span><span class="nx">registerValidator</span><span class="p">(</span><span class="dl">'</span><span class="s1">carrierName</span><span class="dl">'</span><span class="p">,</span> <span class="nx">shippingRatesValidator</span><span class="p">);</span>
+        <span class="nx">defaultShippingRatesValidationRules</span><span class="p">.</span><span class="nx">registerRules</span><span class="p">(</span><span class="dl">'</span><span class="s1">carrierName</span><span class="dl">'</span><span class="p">,</span> <span class="nx">shippingRatesValidationRules</span><span class="p">);</span>
         <span class="k">return</span> <span class="nx">Component</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">);</span>
@@ -1554,7 +1555,7 @@
 <p>The last step is specifying the script you created on the previous step in the checkout page   <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span>
 .</p>
 
-<p>In your custom module directory, create a new <code class="highlighter-rouge">&lt;your_module_dir&gt;/view/frontend/layout/checkout_index_index.xml</code> file.</p>
+<p>In your custom module directory, create a new <code class="language-plaintext highlighter-rouge">&lt;your_module_dir&gt;/view/frontend/layout/checkout_index_index.xml</code> file.</p>
 
 <p>In this file, add the following:</p>
 

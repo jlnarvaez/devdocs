@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Required PHP settings | Magento 2 Developer Documentation (copy)</title>
+	<title>Required PHP settings | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/install-gde/prereq/php-settings.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/install-gde/prereq/php-settings.html">Magento 2.0</a></li>
 		
@@ -4616,13 +4617,13 @@
   <li>
     <p>Set the system time zone for PHP; otherwise, errors like the following display during the installation and time-related operations like cron might not work:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>PHP Warning:  date(): It is not safe to rely on the system's timezone settings. [more messages follow]
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>PHP Warning:  date(): It is not safe to rely on the system's timezone settings. [more messages follow]
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Set <a href="http://php.net/manual/en/ini.core.php#ini.always-populate-raw-post-data" target="_blank"><code class="highlighter-rouge">always_populate_raw_post_data = -1</code></a></p>
+    <p>Set <a href="http://php.net/manual/en/ini.core.php#ini.always-populate-raw-post-data" target="_blank"><code class="language-plaintext highlighter-rouge">always_populate_raw_post_data = -1</code></a></p>
 
-    <p><code class="highlighter-rouge">always_populate_raw_post_data</code> is deprecated in PHP 5.6 and is dropped in PHP 7.0.x. This setting causes PHP to always populate <code class="highlighter-rouge">$HTTP_RAW_POST_DATA</code> with raw POST data. Failure to set this properly in PHP 5.5 or 5.6 results in errors when connecting to the database.</p>
+    <p><code class="language-plaintext highlighter-rouge">always_populate_raw_post_data</code> is deprecated in PHP 5.6 and is dropped in PHP 7.0.x. This setting causes PHP to always populate <code class="language-plaintext highlighter-rouge">$HTTP_RAW_POST_DATA</code> with raw POST data. Failure to set this properly in PHP 5.5 or 5.6 results in errors when connecting to the database.</p>
   </li>
   <li>
     <p>Set the PHP memory limit.</p>
@@ -4630,24 +4631,24 @@
     <p>Our detailed recommendations are:</p>
 
     <ul>
-      <li>Compiling code or deploying static assets, <code class="highlighter-rouge">756M</code></li>
-      <li>Installing and updating Magento components from Magento Marketplace, <code class="highlighter-rouge">2G</code></li>
-      <li>Testing, <code class="highlighter-rouge">2G</code></li>
+      <li>Compiling code or deploying static assets, <code class="language-plaintext highlighter-rouge">756M</code></li>
+      <li>Installing and updating Magento components from Magento Marketplace, <code class="language-plaintext highlighter-rouge">2G</code></li>
+      <li>Testing, <code class="language-plaintext highlighter-rouge">2G</code></li>
     </ul>
   </li>
   <li>
-    <p>Disable <a href="http://php.net/manual/en/ini.core.php#ini.asp-tags" target="_blank"><code class="highlighter-rouge">asp_tags</code></a></p>
+    <p>Disable <a href="http://php.net/manual/en/ini.core.php#ini.asp-tags" target="_blank"><code class="language-plaintext highlighter-rouge">asp_tags</code></a></p>
 
-    <p>If <code class="highlighter-rouge">asp_tags are</code> enabled, errors display when accessing PHTML templates.</p>
+    <p>If <code class="language-plaintext highlighter-rouge">asp_tags are</code> enabled, errors display when accessing PHTML templates.</p>
 
-    <p><code class="highlighter-rouge">asp_tags</code> will be removed in PHP 7.</p>
+    <p><code class="language-plaintext highlighter-rouge">asp_tags</code> will be removed in PHP 7.</p>
   </li>
   <li>
-    <p>Enable <a href="http://php.net/manual/en/opcache.configuration.php#ini.opcache.save_comments" target="_blank"><code class="highlighter-rouge">opcache.save_comments</code></a>, which is required for Magento 2.1 and later.</p>
+    <p>Enable <a href="http://php.net/manual/en/opcache.configuration.php#ini.opcache.save_comments" target="_blank"><code class="language-plaintext highlighter-rouge">opcache.save_comments</code></a>, which is required for Magento 2.1 and later.</p>
 
     <p>We recommend you enable the <a href="http://php.net/manual/en/intro.opcache.php" target="_blank">PHP OpCache</a> for performance reasons. The OPcache is enabled in many PHP distributions.</p>
 
-    <p>Magento 2.1 and later use PHP code comments in the <code class="highlighter-rouge">getDocComment</code> validation call in the <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/Api/ExtensionAttributesFactory.php#L64-L73" target="_blank"><code class="highlighter-rouge">getExtensionAttributes</code></a> method in <code class="highlighter-rouge">Magento\Framework\Api\ExtensionAttributesFactory.php</code>.</p>
+    <p>Magento 2.1 and later use PHP code comments in the <code class="language-plaintext highlighter-rouge">getDocComment</code> validation call in the <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/Api/ExtensionAttributesFactory.php#L64-L73" target="_blank"><code class="language-plaintext highlighter-rouge">getExtensionAttributes</code></a> method in <code class="language-plaintext highlighter-rouge">Magento\Framework\Api\ExtensionAttributesFactory.php</code>.</p>
   </li>
 </ul>
 
@@ -4661,24 +4662,24 @@
 
 <div class="collapsible">
     <b class="collapsible-title">To find the PHP configuration file, php.ini: </b>
-    <div class="collapsible-content"><p>To find the web server configuration, run a <a href="/devdocs/guides/v2.2/install-gde/prereq/optional.html#install-optional-phpinfo"><code class="highlighter-rouge">phpinfo.php</code> file</a> in your web browser and look for the Loaded Configuration File as follows:</p>
+    <div class="collapsible-content"><p>To find the web server configuration, run a <a href="/devdocs/guides/v2.2/install-gde/prereq/optional.html#install-optional-phpinfo"><code class="language-plaintext highlighter-rouge">phpinfo.php</code> file</a> in your web browser and look for the Loaded Configuration File as follows:</p>
 
 <p><img src="/devdocs/common/images/config_phpini-webserver.png" alt="" /></p>
 
 <p>To locate the PHP command-line configuration, enter</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php --ini
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php --ini
 </code></pre></div></div>
 
 <p>Use the value of Loaded Configuration file.</p>
 
-<p class="bs-callout bs-callout-info">If you have only one <code class="highlighter-rouge">php.ini</code> file, make the changes in that file. If you have two <code class="highlighter-rouge">php.ini</code> files, make the changes in <em>all</em> files. Failure to do so might cause unpredictable performance.</p>
+<p class="bs-callout bs-callout-info">If you have only one <code class="language-plaintext highlighter-rouge">php.ini</code> file, make the changes in that file. If you have two <code class="language-plaintext highlighter-rouge">php.ini</code> files, make the changes in <em>all</em> files. Failure to do so might cause unpredictable performance.</p>
 </div>
   </div>
 
 <div class="collapsible">
     <b class="collapsible-title">To find OPcache configuration settings: </b>
-    <div class="collapsible-content"><p>PHP OPcache settings are typically located either in <code class="highlighter-rouge">php.ini</code> or <code class="highlighter-rouge">opcache.ini</code>. The location might depend on your operating system and PHP version. The OPcache configuration file might have an <code class="highlighter-rouge">[opcache]</code> section or settings like <code class="highlighter-rouge">opcache.enable</code>.</p>
+    <div class="collapsible-content"><p>PHP OPcache settings are typically located either in <code class="language-plaintext highlighter-rouge">php.ini</code> or <code class="language-plaintext highlighter-rouge">opcache.ini</code>. The location might depend on your operating system and PHP version. The OPcache configuration file might have an <code class="language-plaintext highlighter-rouge">[opcache]</code> section or settings like <code class="language-plaintext highlighter-rouge">opcache.enable</code>.</p>
 
 <p>Use the following guidelines to find it:</p>
 
@@ -4686,21 +4687,21 @@
   <li>
     <p>Apache web server:</p>
 
-    <p>For Ubuntu with Apache, OPcache settings are typically located in <code class="highlighter-rouge">php.ini</code>.</p>
+    <p>For Ubuntu with Apache, OPcache settings are typically located in <code class="language-plaintext highlighter-rouge">php.ini</code>.</p>
 
-    <p>For CentOS with Apache or nginx, OPcache settings are typically located in <code class="highlighter-rouge">/etc/php.d/opcache.ini</code></p>
+    <p>For CentOS with Apache or nginx, OPcache settings are typically located in <code class="language-plaintext highlighter-rouge">/etc/php.d/opcache.ini</code></p>
 
     <p>If not, use the following command to locate it:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>sudo find / -name 'opcache.ini'
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>sudo find / -name 'opcache.ini'
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>nginx web server with PHP-FPM: <code class="highlighter-rouge">/etc/php5/fpm/php.ini</code></p>
+    <p>nginx web server with PHP-FPM: <code class="language-plaintext highlighter-rouge">/etc/php5/fpm/php.ini</code></p>
   </li>
 </ul>
 
-<p>If you have more than one <code class="highlighter-rouge">opcache.ini</code>, modify all of them.</p>
+<p>If you have more than one <code class="language-plaintext highlighter-rouge">opcache.ini</code>, modify all of them.</p>
 </div>
   </div>
 
@@ -4709,38 +4710,38 @@
 <div class="collapsible">
     <b class="collapsible-title">To set PHP options: </b>
     <div class="collapsible-content"><ol>
-  <li>Open a <code class="highlighter-rouge">php.ini</code> in a text editor.</li>
+  <li>Open a <code class="language-plaintext highlighter-rouge">php.ini</code> in a text editor.</li>
   <li>Locate your server’s time zone in the available <a href="http://php.net/manual/en/timezones.php" target="_blank">time zone settings</a></li>
   <li>
     <p>Locate the following setting and uncomment it if necessary:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>date.timezone =
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>date.timezone =
 </code></pre></div>    </div>
   </li>
   <li>Add the time zone setting you found in step 2.</li>
   <li>
-    <p>Change the value of <code class="highlighter-rouge">memory_limit</code> to one of the values at the beginning of this section.</p>
+    <p>Change the value of <code class="language-plaintext highlighter-rouge">memory_limit</code> to one of the values at the beginning of this section.</p>
 
     <p>For example,</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>memory_limit=2G
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>memory_limit=2G
 </code></pre></div>    </div>
   </li>
   <li>
-    <p><em>Required for PHP 5.6, recommended for PHP 5.5</em>. Locate <code class="highlighter-rouge">always_populate_raw_post_data</code>, uncomment it if necessary, and set it as follows:</p>
+    <p><em>Required for PHP 5.6, recommended for PHP 5.5</em>. Locate <code class="language-plaintext highlighter-rouge">always_populate_raw_post_data</code>, uncomment it if necessary, and set it as follows:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>always_populate_raw_post_data = -1
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>always_populate_raw_post_data = -1
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Locate the following setting:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>asp_tags =
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>asp_tags =
 </code></pre></div>    </div>
   </li>
-  <li>Make sure its value is set to <code class="highlighter-rouge">Off</code>.</li>
+  <li>Make sure its value is set to <code class="language-plaintext highlighter-rouge">Off</code>.</li>
   <li>Save your changes and exit the text editor.</li>
-  <li>Open the other <code class="highlighter-rouge">php.ini</code> (if they are different) and make the same changes in it.</li>
+  <li>Open the other <code class="language-plaintext highlighter-rouge">php.ini</code> (if they are different) and make the same changes in it.</li>
 </ol>
 </div>
   </div>
@@ -4754,21 +4755,21 @@
     <p>Open your OpCache configuration file in a text editor:</p>
 
     <ul>
-      <li><code class="highlighter-rouge">opcache.ini</code> (CentOS)</li>
-      <li><code class="highlighter-rouge">php.ini</code> (Ubuntu)</li>
-      <li><code class="highlighter-rouge">/etc/php5/fpm/php.ini</code> (nginx web server (CentOS or Ubuntu))</li>
+      <li><code class="language-plaintext highlighter-rouge">opcache.ini</code> (CentOS)</li>
+      <li><code class="language-plaintext highlighter-rouge">php.ini</code> (Ubuntu)</li>
+      <li><code class="language-plaintext highlighter-rouge">/etc/php5/fpm/php.ini</code> (nginx web server (CentOS or Ubuntu))</li>
     </ul>
   </li>
-  <li>Locate <code class="highlighter-rouge">opcache.save_comments</code> and uncomment it if necessary.</li>
-  <li>Make sure its value is set to <code class="highlighter-rouge">1</code>.</li>
+  <li>Locate <code class="language-plaintext highlighter-rouge">opcache.save_comments</code> and uncomment it if necessary.</li>
+  <li>Make sure its value is set to <code class="language-plaintext highlighter-rouge">1</code>.</li>
   <li>Save your changes and exit the text editor.</li>
   <li>
     <p>Restart your web server:</p>
 
     <ul>
-      <li>Apache, Ubuntu: <code class="highlighter-rouge">service apache2 restart</code></li>
-      <li>Apache, CentOS: <code class="highlighter-rouge">service httpd restart</code></li>
-      <li>nginx, Ubuntu and CentOS: <code class="highlighter-rouge">service nginx restart</code></li>
+      <li>Apache, Ubuntu: <code class="language-plaintext highlighter-rouge">service apache2 restart</code></li>
+      <li>Apache, CentOS: <code class="language-plaintext highlighter-rouge">service httpd restart</code></li>
+      <li>nginx, Ubuntu and CentOS: <code class="language-plaintext highlighter-rouge">service nginx restart</code></li>
     </ul>
   </li>
 </ol>

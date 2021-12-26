@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Install extensions from the command line | Magento 2 Developer Documentation (copy)</title>
+	<title>Install extensions from the command line | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/comp-mgr/install-extensions.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/comp-mgr/install-extensions.html">Magento 2.0</a></li>
 		
@@ -2705,21 +2706,21 @@
 </ul>
 
 <p class="bs-callout bs-callout-tip">This topic explains how to install extensions you purchase from the Magento Marketplace using the command line. You can use the same procedure to install <em>any</em> extension; all you need is the extension’s   <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span>
- name and version. To find it, open the extension’s <code class="highlighter-rouge">composer.json</code> file and note the values for <code class="highlighter-rouge">"name"</code> and <code class="highlighter-rouge">"version"</code>.</p>
+ name and version. To find it, open the extension’s <code class="language-plaintext highlighter-rouge">composer.json</code> file and note the values for <code class="language-plaintext highlighter-rouge">"name"</code> and <code class="language-plaintext highlighter-rouge">"version"</code>.</p>
 
 <p>To install an extension, you must:</p>
 
 <ol>
   <li>Get an extension from the Magento Marketplace or elsewhere.</li>
   <li>Get the extension’s Composer name and version.</li>
-  <li>Update the <code class="highlighter-rouge">composer.json</code> file in your Magento project with the name and version of the extension.</li>
+  <li>Update the <code class="language-plaintext highlighter-rouge">composer.json</code> file in your Magento project with the name and version of the extension.</li>
   <li>Verify that the extension installed properly.</li>
   <li>Enable and configure the extension.</li>
 </ol>
 
 <h2 id="get-the-extensions-composer-name-and-version">Get the extension’s Composer name and version</h2>
 
-<p>If you already know the extension’s Composer name and version, skip this step and continue with <a href="#update-composer-json">Update your <code class="highlighter-rouge">composer.json</code> file</a>.</p>
+<p>If you already know the extension’s Composer name and version, skip this step and continue with <a href="#update-composer-json">Update your <code class="language-plaintext highlighter-rouge">composer.json</code> file</a>.</p>
 
 <p>To get the extension’s Composer name and version from the Magento Marketplace:</p>
 
@@ -2743,22 +2744,22 @@
     <p><img src="/devdocs/common/images/marketplace-extension-technical-details.png" alt="Technical details shows the extension's Composer name" width="200px" /></p>
   </li>
 </ol>
-<p>Alternatively, you can find the Composer name and version of <em>any</em> extension (whether you purchased it on Magento Marketplace or somewhere else) in the extension’s <code class="highlighter-rouge">composer.json</code> file.</p>
+<p>Alternatively, you can find the Composer name and version of <em>any</em> extension (whether you purchased it on Magento Marketplace or somewhere else) in the extension’s <code class="language-plaintext highlighter-rouge">composer.json</code> file.</p>
 
-<h2 id="update-composer-json">Update your <code class="highlighter-rouge">composer.json</code> file</h2>
+<h2 id="update-composer-json">Update your <code class="language-plaintext highlighter-rouge">composer.json</code> file</h2>
 
-<p>Add the extension’s name and version to your <code class="highlighter-rouge">composer.json</code> file:</p>
+<p>Add the extension’s name and version to your <code class="language-plaintext highlighter-rouge">composer.json</code> file:</p>
 
 <ol>
   <li>
-    <p>Navigate to your Magento project directory and update your <code class="highlighter-rouge">composer.json</code> file.</p>
+    <p>Navigate to your Magento project directory and update your <code class="language-plaintext highlighter-rouge">composer.json</code> file.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer require &lt;component-name&gt;:&lt;version&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer require &lt;component-name&gt;:&lt;version&gt;
 </code></pre></div>    </div>
 
     <p>For example,</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer require j2t/module-payplug:2.0.2
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer require j2t/module-payplug:2.0.2
 </code></pre></div>    </div>
   </li>
   <li>
@@ -2767,7 +2768,7 @@
   <li>
     <p>Wait for Composer to finish updating your project dependencies and make sure there aren’t any errors:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Updating dependencies (including require-dev)
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Updating dependencies (including require-dev)
 Package operations: 1 install, 0 updates, 0 removals
   - Installing j2t/module-payplug (2.0.2): Downloading (100%)
 Writing lock file
@@ -2780,31 +2781,31 @@ Generating autoload files
 
 <p>To verify that the extension installed properly, run the following command:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento module:status
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento module:status
 </code></pre></div></div>
 
 <p>By default, the extension is probably disabled:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>List of disabled modules:
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>List of disabled modules:
 J2t_Payplug
 </code></pre></div></div>
 
-<p class="bs-callout bs-callout-info">The extension name is in the format <code class="highlighter-rouge">&lt;VendorName&gt;_&lt;ComponentName&gt;</code>; it’s not the same format as the Composer name. Use this format to enable the extension.</p>
+<p class="bs-callout bs-callout-info">The extension name is in the format <code class="language-plaintext highlighter-rouge">&lt;VendorName&gt;_&lt;ComponentName&gt;</code>; it’s not the same format as the Composer name. Use this format to enable the extension.</p>
 
 <h2 id="enable-the-extension">Enable the extension</h2>
 
-<p>Some extensions won’t work properly unless you clear Magento-generated static view files first. Use the <code class="highlighter-rouge">--clear-static-content</code> option to clear static view files when you’re enabling an extension.</p>
+<p>Some extensions won’t work properly unless you clear Magento-generated static view files first. Use the <code class="language-plaintext highlighter-rouge">--clear-static-content</code> option to clear static view files when you’re enabling an extension.</p>
 
 <ol>
   <li>
     <p>Enable the extension and clear static view files:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento module:enable J2t_Payplug --clear-static-content
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento module:enable J2t_Payplug --clear-static-content
 </code></pre></div>    </div>
 
     <p>You should see the following output:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>The following modules have been enabled:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>The following modules have been enabled:
 - J2t_Payplug
 
 To make sure that the enabled modules are properly registered, run 'setup:upgrade'.
@@ -2816,24 +2817,24 @@ Generated static view files cleared successfully.
   <li>
     <p>Register the extension:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento setup:upgrade
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento setup:upgrade
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Recompile your Magento project:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento setup:di:compile
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento setup:di:compile
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Verify that the extension is enabled:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento module:status
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento module:status
 </code></pre></div>    </div>
 
     <p>You should see output verifying that the extension is no longer disabled:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>List of enabled modules:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>List of enabled modules:
 J2t_Payplug
 
 List of disabled modules:
@@ -2847,7 +2848,7 @@ None
 
 <p class="bs-callout bs-callout-tip">If you encounter errors when loading the storefront in a browser, use the following command to clear the cache:
 <br />
-<code class="highlighter-rouge">bin/magento cache:flush</code></p>
+<code class="language-plaintext highlighter-rouge">bin/magento cache:flush</code></p>
 
 			
 		</div>

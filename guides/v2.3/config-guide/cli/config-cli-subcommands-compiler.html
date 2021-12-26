@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Code compiler | Magento 2 Developer Documentation (copy)</title>
+	<title>Code compiler | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/config-guide/cli/config-cli-subcommands-compiler.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler.html">Magento 2.0</a></li>
 		
@@ -4039,11 +4040,11 @@
 <p>You can find code compilation classes in the <a href="https://github.com/magento/magento2/blob/2.0/setup/src/Magento/Setup/Module/Di/App/Task/Operation">\Magento\Setup\Module\Di\App\Task\Operation</a>   <span term-uuid="621ef86b-7314-4fbc-a80d-ab7fa45a27cb" class="glossary-term" data-toggle="popover">namespace</span>
 .</p>
 
-<p class="bs-callout bs-callout-warning">The Magento software does not support the multi-tenant compiler, which includes the <code class="highlighter-rouge">bin/magento setup:di:compile-multi-tenant</code> command.</p>
+<p class="bs-callout bs-callout-warning">The Magento software does not support the multi-tenant compiler, which includes the <code class="language-plaintext highlighter-rouge">bin/magento setup:di:compile-multi-tenant</code> command.</p>
 
 <h4 id="config-cli-subcommands-single">To run the single-tenant compiler:</h4>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento setup:di:compile
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento setup:di:compile
 
 Generated code and dependency injection configuration successfully.
 </code></pre></div></div>
@@ -4056,10 +4057,10 @@ Generated code and dependency injection configuration successfully.
   <li>
     <p>Enable the modules.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php bin/magento module:enable --all [-c|--clear-static-content]
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php bin/magento module:enable --all [-c|--clear-static-content]
 </code></pre></div>    </div>
 
-    <p>Use the <code class="highlighter-rouge">[-c|--clear-static-content]</code> option to clear   <span term-uuid="a3e37235-4e8b-464f-a19d-4a120560206a" class="glossary-term" data-toggle="popover">static content</span>
+    <p>Use the <code class="language-plaintext highlighter-rouge">[-c|--clear-static-content]</code> option to clear   <span term-uuid="a3e37235-4e8b-464f-a19d-4a120560206a" class="glossary-term" data-toggle="popover">static content</span>
 . This is necessary if you previously enabled or disabled modules and you must clear the static content previously generated for them.</p>
 
     <p>See <a href="/devdocs/guides/v2.3/install-gde/install/cli/install-cli-subcommands-enable.html">Enable modules</a>.</p>
@@ -4067,7 +4068,7 @@ Generated code and dependency injection configuration successfully.
   <li>
     <p>Compile the code.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento setup:di:compile
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento setup:di:compile
 
 Generated code and dependency injection configuration successfully.
 </code></pre></div>    </div>

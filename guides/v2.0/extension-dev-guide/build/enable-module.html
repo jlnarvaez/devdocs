@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Enable or disable your component | Magento 2 Developer Documentation (copy)</title>
+	<title>Enable or disable your component | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/extension-dev-guide/build/enable-module.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/extension-dev-guide/build/enable-module.html">Magento 2.0</a></li>
 		
@@ -2916,12 +2917,12 @@ where <code>Component_Name</code> is the name of the component you are enabling.
 </ol>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>The general order of operations for <code class="highlighter-rouge">setup:upgrade</code> is:</p>
+  <p>The general order of operations for <code class="language-plaintext highlighter-rouge">setup:upgrade</code> is:</p>
 
   <ol>
     <li><strong>Schema install/upgrade.</strong></li>
     <li><strong>Schema post-upgrade</strong>— handles any additional updates. These recurring upgrades occur independently and regardless of any changes to the schema.</li>
-    <li><strong>Data install/upgrade</strong> — installs the data. Taken from <code class="highlighter-rouge">setup/InstallData.php</code>.</li>
+    <li><strong>Data install/upgrade</strong> — installs the data. Taken from <code class="language-plaintext highlighter-rouge">setup/InstallData.php</code>.</li>
   </ol>
 </div>
 
@@ -2929,7 +2930,7 @@ where <code>Component_Name</code> is the name of the component you are enabling.
 
 <p>To disable a component, enter the following at the command line:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento module:disable --clear-static-content Component_Name
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento module:disable --clear-static-content Component_Name
 </code></pre></div></div>
 
 <p>For more on enabling and disabling components, see <a href="/devdocs/guides/v2.0/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">enable or disable modules</a>.</p>

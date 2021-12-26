@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Manage message queues | Magento 2 Developer Documentation (copy)</title>
+	<title>Manage message queues | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/config-guide/mq/manage-mysql.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/config-guide/mq/manage-mysql.html">Magento 2.0</a></li>
 		
@@ -3670,11 +3671,11 @@
 
 <h2 id="process-management">Process management</h2>
 
-<p>Cron jobs are the default mechanism to restart consumers. Processes started by <code class="highlighter-rouge">cron</code> consume the specified number of messages and then terminate. Re-running <code class="highlighter-rouge">cron</code> restarts the consumer.</p>
+<p>Cron jobs are the default mechanism to restart consumers. Processes started by <code class="language-plaintext highlighter-rouge">cron</code> consume the specified number of messages and then terminate. Re-running <code class="language-plaintext highlighter-rouge">cron</code> restarts the consumer.</p>
 
-<p>A magic method, whose name is the same as the consumer name, is used as a callback when declaring a new <code class="highlighter-rouge">consumer run</code> job in <code class="highlighter-rouge">crontab.xml</code>. Using magic methods allows you to pass the name of the consumer implicitly via method name. Alternatively, virtual types based on abstract consumer runner should be declared with concrete consumer name specified as an argument (this approach is more complex and requires extra configuration).</p>
+<p>A magic method, whose name is the same as the consumer name, is used as a callback when declaring a new <code class="language-plaintext highlighter-rouge">consumer run</code> job in <code class="language-plaintext highlighter-rouge">crontab.xml</code>. Using magic methods allows you to pass the name of the consumer implicitly via method name. Alternatively, virtual types based on abstract consumer runner should be declared with concrete consumer name specified as an argument (this approach is more complex and requires extra configuration).</p>
 
-<p>The following shows a <code class="highlighter-rouge">crontab</code> group entry:</p>
+<p>The following shows a <code class="language-plaintext highlighter-rouge">crontab</code> group entry:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;group</span> <span class="na">id=</span><span class="s">"default"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;job</span> <span class="na">name=</span><span class="s">"consumerCustomerCreatedListener"</span> <span class="na">instance=</span><span class="s">"Magento\MessageQueue\Model\ConsumerRunner"</span> <span class="na">method=</span><span class="s">"customerCreatedListener"</span><span class="nt">&gt;</span>
@@ -3683,7 +3684,7 @@
 <span class="nt">&lt;/group&gt;</span>
 </code></pre></div></div>
 
-<p class="bs-callout">How often you check message queues depends on your business logic and available system resources. In general, you’ll probably want to check for newly created customers and send welcome emails more frequently than a more resource intensive process (e.g., updating your catalog). You should define <code class="highlighter-rouge">cron</code> schedules according to your business needs. See <a href="/devdocs/guides/v2.1/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a> for more information about using <code class="highlighter-rouge">cron</code> with Magento.</p>
+<p class="bs-callout">How often you check message queues depends on your business logic and available system resources. In general, you’ll probably want to check for newly created customers and send welcome emails more frequently than a more resource intensive process (e.g., updating your catalog). You should define <code class="language-plaintext highlighter-rouge">cron</code> schedules according to your business needs. See <a href="/devdocs/guides/v2.1/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a> for more information about using <code class="language-plaintext highlighter-rouge">cron</code> with Magento.</p>
 
 <p>You can also use a process manager such as <a href="http://supervisord.org/index.html">Supervisor</a> to monitor the status of processes. The manager can use the command line to restart the processes as needed.</p>
 
@@ -3691,16 +3692,16 @@
 
 <h3 id="start-consumers">Start consumers</h3>
 
-<p>Use the <code class="highlighter-rouge">magento</code> command to start message queue consumers. You can start multiple consumers simultaneously.</p>
+<p>Use the <code class="language-plaintext highlighter-rouge">magento</code> command to start message queue consumers. You can start multiple consumers simultaneously.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>./bin/magento queue:consumers:start &lt;consumer_name&gt; <span class="o">[</span><span class="nt">--max-messages</span><span class="o">=</span>&lt;value&gt;]
 </code></pre></div></div>
 
-<p>Where <code class="highlighter-rouge">&lt;consumer_name&gt;</code> is the consumer to start and <code class="highlighter-rouge">--max-messages=&lt;value&gt;</code> specifies the maximum number of messages to consume per invocation.</p>
+<p>Where <code class="language-plaintext highlighter-rouge">&lt;consumer_name&gt;</code> is the consumer to start and <code class="language-plaintext highlighter-rouge">--max-messages=&lt;value&gt;</code> specifies the maximum number of messages to consume per invocation.</p>
 
-<p class="bs-callout bs-callout-info">If the number of queued messages is less than the specified max, the consumer terminates when the last message has been processed. If you don’t specify <code class="highlighter-rouge">--max-messages</code>, the process runs continuously.</p>
+<p class="bs-callout bs-callout-info">If the number of queued messages is less than the specified max, the consumer terminates when the last message has been processed. If you don’t specify <code class="language-plaintext highlighter-rouge">--max-messages</code>, the process runs continuously.</p>
 
-<p>After consuming all available messages, the command terminates. You can run the command again manually or with a cron job. You can also run multiple instances of the <code class="highlighter-rouge">magento queue:consumers:start</code> command to process large message queues. For example, you can append <code class="highlighter-rouge">&amp;</code> to the command to run it in the background, return to a prompt, and continue running commands (e.g., <code class="highlighter-rouge">bin/magento queue:consumers:start &lt;consumer_name&gt; &amp;</code>).</p>
+<p>After consuming all available messages, the command terminates. You can run the command again manually or with a cron job. You can also run multiple instances of the <code class="language-plaintext highlighter-rouge">magento queue:consumers:start</code> command to process large message queues. For example, you can append <code class="language-plaintext highlighter-rouge">&amp;</code> to the command to run it in the background, return to a prompt, and continue running commands (e.g., <code class="language-plaintext highlighter-rouge">bin/magento queue:consumers:start &lt;consumer_name&gt; &amp;</code>).</p>
 
 <h3 id="list-consumers">List consumers</h3>
 

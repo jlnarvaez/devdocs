@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento theme structure | Magento 2 Developer Documentation (copy)</title>
+	<title>Magento theme structure | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/frontend-dev-guide/themes/theme-structure.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/frontend-dev-guide/themes/theme-structure.html">Magento 2.0</a></li>
 		
@@ -2746,7 +2747,7 @@
 
 <h2 id="theme-structure-loc">Magento theme location</h2>
 <p><span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">Storefront</span>
- themes are conventionally located under <code class="highlighter-rouge">app/design/frontend/&lt;Vendor&gt;/</code>. Though technically they can reside in other directories. For example Magento built-in themes can be located under <code class="highlighter-rouge">vendor/magento/theme-frontend-&lt;theme_code&gt;</code> when a Magento instance is deployed from the   <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span>
+ themes are conventionally located under <code class="language-plaintext highlighter-rouge">app/design/frontend/&lt;Vendor&gt;/</code>. Though technically they can reside in other directories. For example Magento built-in themes can be located under <code class="language-plaintext highlighter-rouge">vendor/magento/theme-frontend-&lt;theme_code&gt;</code> when a Magento instance is deployed from the   <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span>
  repository.</p>
 
 <p>Each theme must be stored in a separate directory:</p>
@@ -3017,11 +3018,11 @@
 
 <p>Static view files that can be accessed by a direct link from the storefront, are distinguished as public theme files.</p>
 
-<p class="bs-callout bs-callout-info">To be actually accessible for browsers public static files are <a href="/devdocs/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">published</a> to the <code class="highlighter-rouge">/pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;language&gt;/css/</code> directory.</p>
+<p class="bs-callout bs-callout-info">To be actually accessible for browsers public static files are <a href="/devdocs/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">published</a> to the <code class="language-plaintext highlighter-rouge">/pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;language&gt;/css/</code> directory.</p>
 
 <h3 id="dynamic-view-files">Dynamic view files</h3>
 
-<p>View files that are processed or executed by the server in order to provide result to the client. These are: <code class="highlighter-rouge">.less</code> files, templates, and layouts.</p>
+<p>View files that are processed or executed by the server in order to provide result to the client. These are: <code class="language-plaintext highlighter-rouge">.less</code> files, templates, and layouts.</p>
 
 <p>Dynamic view files are located in a theme directory as follows:</p>
 

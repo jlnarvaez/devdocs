@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Dependency injection | Magento 2 Developer Documentation (copy)</title>
+	<title>Dependency injection | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/extension-dev-guide/depend-inj.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/extension-dev-guide/depend-inj.html">Magento 2.0</a></li>
 		
@@ -3252,7 +3253,7 @@
 	<h1 class="page-heading">Dependency injection</h1>
 </section>
 
-			<p>Magento 2 uses <a href="https://en.wikipedia.org/wiki/Dependency_injection">Dependency Injection</a> to replace functionality provided by the <code class="highlighter-rouge">Mage</code> class in Magento 1.x.</p>
+			<p>Magento 2 uses <a href="https://en.wikipedia.org/wiki/Dependency_injection">Dependency Injection</a> to replace functionality provided by the <code class="language-plaintext highlighter-rouge">Mage</code> class in Magento 1.x.</p>
 
 <p>Dependency Injection is a design pattern that allows an object A to declare its dependencies to an external object B that supplies those dependencies.
 The dependencies declared by A are usually class interfaces and the dependencies B provides are the concrete implementations for those interfaces.</p>
@@ -3270,16 +3271,16 @@ This means that your high level classes should use the interfaces of low level c
 <p>Using interfaces in your code reduces the risk of incompatibility bugs when Magento changes the underlying implementation of those interfaces.
 It also lets you focus on what a class does instead of how its implemented.</p>
 
-<p>Since the Magento codebase follows this principle, you can map your own implementation of a Magento interface to a dependent class or service using the <a href="/devdocs/guides/v2.2/extension-dev-guide/build/di-xml-file.html"><code class="highlighter-rouge">di.xml</code></a> file.</p>
+<p>Since the Magento codebase follows this principle, you can map your own implementation of a Magento interface to a dependent class or service using the <a href="/devdocs/guides/v2.2/extension-dev-guide/build/di-xml-file.html"><code class="language-plaintext highlighter-rouge">di.xml</code></a> file.</p>
 
 <h2 id="object-manager">Object manager</h2>
 
-<p>The <a href="/devdocs/guides/v2.2/extension-dev-guide/object-manager.html"><code class="highlighter-rouge">ObjectManager</code></a> is a Magento service class that instantiates objects at the beginning of the bootstrapping process.</p>
+<p>The <a href="/devdocs/guides/v2.2/extension-dev-guide/object-manager.html"><code class="language-plaintext highlighter-rouge">ObjectManager</code></a> is a Magento service class that instantiates objects at the beginning of the bootstrapping process.</p>
 
 <p>Magento uses class constructor signatures to retrieve information about an object’s constructor dependencies.
-When a class is constructed, the object manager injects the class’s dependencies, defined in the <code class="highlighter-rouge">di.xml</code> file, into the class constructor.</p>
+When a class is constructed, the object manager injects the class’s dependencies, defined in the <code class="language-plaintext highlighter-rouge">di.xml</code> file, into the class constructor.</p>
 
-<p>Since the object manager provides its service indirectly, your class should not depend on the <code class="highlighter-rouge">ObjectManager</code> object itself.
+<p>Since the object manager provides its service indirectly, your class should not depend on the <code class="language-plaintext highlighter-rouge">ObjectManager</code> object itself.
 The only exceptions are custom factories with complex logic and integration tests that need environment setup.</p>
 
 <h2 id="compiling-dependencies">Compiling dependencies</h2>
@@ -3293,32 +3294,32 @@ During the class creation process, the object manager uses this information to c
 
 <p>The following code sample highlights the two types of dependency injections used in Magento:</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="k">namespace</span> <span class="nx">Magento\Backend\Model\Menu</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">Builder</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="kn">namespace</span> <span class="nn">Magento\Backend\Model\Menu</span><span class="p">;</span>
+<span class="kd">class</span> <span class="nc">Builder</span>
 <span class="p">{</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * @param \Magento\Backend\Model\Menu\Item\Factory $menuItemFactory
      * @param \Magento\Backend\Model\Menu $menu
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
-        <span class="nx">Magento\Backend\Model\Menu\Item\Factory</span> <span class="nv">$menuItemFactory</span><span class="p">,</span>  <span class="c1">// Service dependency
-</span>        <span class="nx">Magento\Backend\Model\Menu</span> <span class="nv">$menu</span>  <span class="c1">// Service dependency
-</span>    <span class="p">)</span> <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_itemFactory</span> <span class="o">=</span> <span class="nv">$menuItemFactory</span><span class="p">;</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_menu</span> <span class="o">=</span> <span class="nv">$menu</span><span class="p">;</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span>
+        <span class="kt">Magento</span><span class="err">\</span><span class="nc">Backend\Model\Menu\Item\Factory</span> <span class="nv">$menuItemFactory</span><span class="p">,</span>  <span class="c1">// Service dependency</span>
+        <span class="nc">Magento\Backend\Model\Menu</span> <span class="nv">$menu</span>  <span class="c1">// Service dependency</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">_itemFactory</span> <span class="o">=</span> <span class="nv">$menuItemFactory</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">_menu</span> <span class="o">=</span> <span class="nv">$menu</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">processCommand</span><span class="p">(</span><span class="nx">\Magento\Backend\Model\Menu\Builder\CommandAbstract</span> <span class="nv">$command</span><span class="p">)</span> <span class="c1">// API param
-</span>    <span class="p">{</span>
-        <span class="c1">// processCommand Code
-</span>    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">processCommand</span><span class="p">(</span><span class="err">\</span><span class="nc">Magento\Backend\Model\Menu\Builder\CommandAbstract</span> <span class="nv">$command</span><span class="p">)</span> <span class="c1">// API param</span>
+    <span class="p">{</span>
+        <span class="c1">// processCommand Code</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <h3 id="constructor-injection">Constructor injection</h3>
 
-<p>In the code sample, the <code class="highlighter-rouge">Builder</code> class declares its dependency on the <code class="highlighter-rouge">Factory</code> and <code class="highlighter-rouge">Menu</code> classes in its constructor.
-Magento uses the <code class="highlighter-rouge">di.xml</code> file to determine which implementations to inject into the <code class="highlighter-rouge">Builder</code> class.</p>
+<p>In the code sample, the <code class="language-plaintext highlighter-rouge">Builder</code> class declares its dependency on the <code class="language-plaintext highlighter-rouge">Factory</code> and <code class="language-plaintext highlighter-rouge">Menu</code> classes in its constructor.
+Magento uses the <code class="language-plaintext highlighter-rouge">di.xml</code> file to determine which implementations to inject into the <code class="language-plaintext highlighter-rouge">Builder</code> class.</p>
 
 <h4 id="optional-dependencies">Optional dependencies</h4>
 
@@ -3329,7 +3330,7 @@ If a class is expensive to instantiate and your class does not always use it, co
 
 <h3 id="method-injection">Method injection</h3>
 
-<p>In the code sample, the <code class="highlighter-rouge">Builder</code> class is also dependent on the <code class="highlighter-rouge">CommandAbstract</code> class for its <code class="highlighter-rouge">processCommand()</code> method.</p>
+<p>In the code sample, the <code class="language-plaintext highlighter-rouge">Builder</code> class is also dependent on the <code class="language-plaintext highlighter-rouge">CommandAbstract</code> class for its <code class="language-plaintext highlighter-rouge">processCommand()</code> method.</p>
 
 <p>Method injection involves passing in a dependency as a method parameter to use it in the class logic.
 When an object needs to perform actions on a dependency that cannot be injected, use method injection.</p>
@@ -3339,7 +3340,7 @@ When an object needs to perform actions on a dependency that cannot be injected,
 <h3 id="injectable">Injectable</h3>
 
 <p>Injectable objects are singleton service objects obtained through dependency injection.
-The object manager uses the configuration in the <code class="highlighter-rouge">di.xml</code> file to create these objects and inject them into constructors.</p>
+The object manager uses the configuration in the <code class="language-plaintext highlighter-rouge">di.xml</code> file to create these objects and inject them into constructors.</p>
 
 <p>Injectable objects can depend on other injectable objects in their constructor as long as the dependency chain does not circle back to the original injectable object.</p>
 
@@ -3351,7 +3352,7 @@ They are obtained by creating a new class instance every time they are needed.</
 <p>Transient objects, such as those that require external input from the user or database, fall into this category.
 If you attempt to inject these objects, you will either receive an incomplete, incorrect object or an error that the object could not be created.</p>
 
-<p>For example, you cannot depend on a model object, such as <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/Model/Product.php"><code class="highlighter-rouge">Product</code></a>, because you need to provide a product id or explicitly request a new, empty instance to get a <code class="highlighter-rouge">Product</code> object. 
+<p>For example, you cannot depend on a model object, such as <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/Model/Product.php"><code class="language-plaintext highlighter-rouge">Product</code></a>, because you need to provide a product id or explicitly request a new, empty instance to get a <code class="language-plaintext highlighter-rouge">Product</code> object. 
 Since you cannot specify this data in the constructor signature, Magento cannot inject this object.</p>
 
 <p>To get around this limitation, injectable objects can depend on <a href="/devdocs/guides/v2.2/extension-dev-guide/factories.html">factories</a> that produce newable objects.</p>
@@ -3359,7 +3360,7 @@ Since you cannot specify this data in the constructor signature, Magento cannot 
 <p><strong>Related topics</strong></p>
 
 <ul>
-  <li><a href="/devdocs/guides/v2.2/extension-dev-guide/build/di-xml-file.html">The <code class="highlighter-rouge">di.xml</code> file</a></li>
+  <li><a href="/devdocs/guides/v2.2/extension-dev-guide/build/di-xml-file.html">The <code class="language-plaintext highlighter-rouge">di.xml</code> file</a></li>
   <li><a href="/devdocs/guides/v2.2/extension-dev-guide/object-manager.html">ObjectManager</a></li>
   <li><a href="/devdocs/guides/v2.2/extension-dev-guide/plugins.html">Plugins</a></li>
   <li><a href="/devdocs/guides/v2.2/extension-dev-guide/routing.html">Routing</a></li>

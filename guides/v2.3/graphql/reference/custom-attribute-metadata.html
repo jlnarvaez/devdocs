@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>CustomAttributeMetadata endpoint | Magento 2 Developer Documentation (copy)</title>
+	<title>CustomAttributeMetadata endpoint | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/graphql/reference/custom-attribute-metadata.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/graphql/reference/custom-attribute-metadata.html">Magento 2.0</a></li>
 		
@@ -2183,7 +2184,7 @@
 	<h1 class="page-heading">CustomAttributeMetadata endpoint</h1>
 </section>
 
-			<p>The <code class="highlighter-rouge">customAttributeMetadata</code> endpoint returns the attribute type, given an attribute code and entity type. All entity attributes can be added to an equivalent GraphQL type, including custom, extension, and EAV (which have precedence set in that order for collisions). The GraphQL query consumer does not have the ability to know a field’s attribute type.</p>
+			<p>The <code class="language-plaintext highlighter-rouge">customAttributeMetadata</code> endpoint returns the attribute type, given an attribute code and entity type. All entity attributes can be added to an equivalent GraphQL type, including custom, extension, and EAV (which have precedence set in that order for collisions). The GraphQL query consumer does not have the ability to know a field’s attribute type.</p>
 
 <h2 id="supported-attributes">Supported attributes</h2>
 
@@ -2197,23 +2198,23 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">attribute_code</code></td>
+      <td><code class="language-plaintext highlighter-rouge">attribute_code</code></td>
       <td>String</td>
       <td>The unique identifier for an attribute code. This value should be in lowercase letters without spaces.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">entity_type</code></td>
+      <td><code class="language-plaintext highlighter-rouge">entity_type</code></td>
       <td>String</td>
       <td>The type of entity that defines the attribute</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">attribute_type</code></td>
+      <td><code class="language-plaintext highlighter-rouge">attribute_type</code></td>
       <td>String</td>
       <td>The data type of the attribute (Response only)</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">attribute_options</code></td>
-      <td><code class="highlighter-rouge">AttributeOption</code></td>
+      <td><code class="language-plaintext highlighter-rouge">attribute_options</code></td>
+      <td><code class="language-plaintext highlighter-rouge">AttributeOption</code></td>
       <td>A list of attribute options</td>
     </tr>
   </tbody>
@@ -2231,12 +2232,12 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">label</code></td>
+      <td><code class="language-plaintext highlighter-rouge">label</code></td>
       <td>String</td>
       <td>The name of an attribute option</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">value</code></td>
+      <td><code class="language-plaintext highlighter-rouge">value</code></td>
       <td>String</td>
       <td>The value assigned to an attribute option</td>
     </tr>
@@ -2251,9 +2252,9 @@
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
  </span><span class="err">customAttributeMetadata(</span><span class="w">
-   </span><span class="err">attributes</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-     </span><span class="err">attribute_code</span><span class="p">:</span><span class="w"> </span><span class="s2">"color"</span><span class="w">
-     </span><span class="err">entity_type</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="w">
+   </span><span class="err">attributes:</span><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="err">attribute_code:</span><span class="w"> </span><span class="s2">"color"</span><span class="w">
+     </span><span class="err">entity_type:</span><span class="w"> </span><span class="s2">"4"</span><span class="w">
    </span><span class="p">}</span><span class="w">
  </span><span class="err">)</span><span class="w"> </span><span class="p">{</span><span class="w">
    </span><span class="err">items</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -2272,73 +2273,73 @@
 <p><strong>Response</strong></p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"customAttributeMetadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"customAttributeMetadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"attribute_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"color"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"entity_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"attribute_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Int"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"attribute_options"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="nl">"attribute_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"color"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"entity_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"attribute_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Int"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"attribute_options"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
-              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"49"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Black"</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"49"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Black"</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
-              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"214"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"blue"</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"214"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"blue"</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
-              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"215"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"green"</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"215"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"green"</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
-              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"213"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"red"</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"213"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"red"</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
-              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Blue"</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Blue"</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
-              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"51"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brown"</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"51"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brown"</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
-              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"52"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gray"</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"52"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gray"</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
-              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"53"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Green"</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"53"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Green"</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
-              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"54"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lavender"</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"54"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lavender"</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
-              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"55"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Multi"</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"55"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Multi"</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
-              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Orange"</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Orange"</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
-              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"57"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Purple"</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"57"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Purple"</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
-              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"58"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Red"</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"58"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Red"</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
-              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"White"</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"59"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"White"</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
-              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"60"</span><span class="p">,</span><span class="w">
-              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yellow"</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"60"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yellow"</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">]</span><span class="w">
         </span><span class="p">}</span><span class="w">

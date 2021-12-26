@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Step 4. Create a quote | Magento 2 Developer Documentation (copy)</title>
+	<title>Step 4. Create a quote | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/rest/tutorials/orders/order-create-quote.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/rest/tutorials/orders/order-create-quote.html">Magento 2.0</a></li>
 		
@@ -1541,17 +1542,17 @@
 
 <h3 id="create-cart">Create a cart for a logged-in customer</h3>
 
-<p>This tutorial manages the cart of a logged-in customer. Unless otherwise noted, all calls must specify customer’s token <code class="highlighter-rouge">q0u66k8h42yaevtchv09uyy3y9gaj2ap</code> in the header.</p>
+<p>This tutorial manages the cart of a logged-in customer. Unless otherwise noted, all calls must specify customer’s token <code class="language-plaintext highlighter-rouge">q0u66k8h42yaevtchv09uyy3y9gaj2ap</code> in the header.</p>
 
 <p><strong>Endpoint</strong></p>
 
-<p><code class="highlighter-rouge">POST http://&lt;host&gt;/rest/default/V1/carts/mine</code></p>
+<p><code class="language-plaintext highlighter-rouge">POST http://&lt;host&gt;/rest/default/V1/carts/mine</code></p>
 
 <p><strong>Headers</strong></p>
 
-<p><code class="highlighter-rouge">Content-Type</code> <code class="highlighter-rouge">application/json</code></p>
+<p><code class="language-plaintext highlighter-rouge">Content-Type</code> <code class="language-plaintext highlighter-rouge">application/json</code></p>
 
-<p><code class="highlighter-rouge">Authorization</code> <code class="highlighter-rouge">Bearer &lt;customer token&gt;</code></p>
+<p><code class="language-plaintext highlighter-rouge">Authorization</code> <code class="language-plaintext highlighter-rouge">Bearer &lt;customer token&gt;</code></p>
 
 <p><strong>Payload</strong></p>
 
@@ -1559,13 +1560,13 @@
 
 <p><strong>Response</strong></p>
 
-<p>The response is the <code class="highlighter-rouge">quoteId</code>: <code class="highlighter-rouge">4</code></p>
+<p>The response is the <code class="language-plaintext highlighter-rouge">quoteId</code>: <code class="language-plaintext highlighter-rouge">4</code></p>
 
-<p class="bs-callout bs-callout-tip">Some calls refer to this parameter as the <code class="highlighter-rouge">cartId</code>.</p>
+<p class="bs-callout bs-callout-tip">Some calls refer to this parameter as the <code class="language-plaintext highlighter-rouge">cartId</code>.</p>
 
 <h3 id="verify-step">Verify this step</h3>
 
-<p>There are no additional verification steps.<code class="highlighter-rouge">quoteId</code> values are not displayed on the   <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span>
+<p>There are no additional verification steps.<code class="language-plaintext highlighter-rouge">quoteId</code> values are not displayed on the   <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span>
  or in Admin.</p>
 
 

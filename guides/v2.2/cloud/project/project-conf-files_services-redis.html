@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Set up Redis service | Magento 2 Developer Documentation (copy)</title>
+	<title>Set up Redis service | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/project/project-conf-files_services-redis.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/project/project-conf-files_services-redis.html">Magento 2.0</a></li>
 		
@@ -4318,23 +4319,23 @@
 
 <p>We support Redis versions 2.8 and 3.0. Redis 3.0 supports up to 64 different databases per instance of the service, while 2.8 allows for only a single database. See <a href="/devdocs/guides/v2.2/config-guide/redis/config-redis.html">Configure Redis</a>.</p>
 
-<p>You can use the following instructions for service setup on Magento Commerce Cloud Pro Integration environments and Starter environments including Production <code class="highlighter-rouge">master</code>. You must submit a support ticket to configure the service on Pro Production and Staging environments. See <a href="/devdocs/guides/v2.2/cloud/project/project-conf-files_services.html">Services</a>.</p>
+<p>You can use the following instructions for service setup on Magento Commerce Cloud Pro Integration environments and Starter environments including Production <code class="language-plaintext highlighter-rouge">master</code>. You must submit a support ticket to configure the service on Pro Production and Staging environments. See <a href="/devdocs/guides/v2.2/cloud/project/project-conf-files_services.html">Services</a>.</p>
 
 <h2 id="settings">Add Redis in configuration files</h2>
 
-<p>To enable Redis, add your installed version and allocated disk space in MB to <code class="highlighter-rouge">.magento/services.yaml</code> file:</p>
+<p>To enable Redis, add your installed version and allocated disk space in MB to <code class="language-plaintext highlighter-rouge">.magento/services.yaml</code> file:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="na">myredis</span><span class="pi">:</span>
     <span class="na">type</span><span class="pi">:</span> <span class="s">redis:3.0</span>
 </code></pre></div></div>
 
-<p>To provide your own Redis configuration, add a <code class="highlighter-rouge">core_config</code> key in your <code class="highlighter-rouge">.magento/services.yaml</code> file:</p>
+<p>To provide your own Redis configuration, add a <code class="language-plaintext highlighter-rouge">core_config</code> key in your <code class="language-plaintext highlighter-rouge">.magento/services.yaml</code> file:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="na">cache</span><span class="pi">:</span>
     <span class="na">type</span><span class="pi">:</span> <span class="s">redis:3.0</span>
 </code></pre></div></div>
 
-<p>To configure relationships for an environment variable in your <code class="highlighter-rouge">.magento.app.yaml</code> file:</p>
+<p>To configure relationships for an environment variable in your <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> file:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="na">runtime</span><span class="pi">:</span>
     <span class="na">extensions</span><span class="pi">:</span>
@@ -4344,30 +4345,30 @@
     <span class="na">redis</span><span class="pi">:</span> <span class="s2">"</span><span class="s">myredis:redis"</span>
 </code></pre></div></div>
 
-<p>Merge and deploy the code to set the configurations for Redis. For information on how these changes affect your environments, see <a href="/devdocs/guides/v2.2/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a>.</p>
+<p>Merge and deploy the code to set the configurations for Redis. For information on how these changes affect your environments, see <a href="/devdocs/guides/v2.2/cloud/project/project-conf-files_services.html"><code class="language-plaintext highlighter-rouge">services.yaml</code></a>.</p>
 
 <h2 id="cloud-es-config-mg">Verify environment-related relationships</h2>
 
-<p>We use the Magento Commerce Cloud environment variable <a href="/devdocs/guides/v2.2/cloud/env/environment-vars_cloud.html"><code class="highlighter-rouge">$MAGENTO_CLOUD_RELATIONSHIPS</code></a>, a JSON object, to retrieve environment-related relationships.</p>
+<p>We use the Magento Commerce Cloud environment variable <a href="/devdocs/guides/v2.2/cloud/env/environment-vars_cloud.html"><code class="language-plaintext highlighter-rouge">$MAGENTO_CLOUD_RELATIONSHIPS</code></a>, a JSON object, to retrieve environment-related relationships.</p>
 
 <p>To verify this information used for configurations and settings:</p>
 
 <ol>
   <li>Use SSH to connect to the Integration environment with Redis installed and configured.</li>
   <li>
-    <p>Create <code class="highlighter-rouge">pretty-print</code> connection information for Redis.</p>
+    <p>Create <code class="language-plaintext highlighter-rouge">pretty-print</code> connection information for Redis.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
 </code></pre></div>    </div>
 
     <p>The response includes all relationships for services and configuration data for that environment, similar to the following for Redis:</p>
 
     <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"redis"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="nl">"redis"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"192.0.2.55"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"scheme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"redis"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"port"</span><span class="p">:</span><span class="w"> </span><span class="mi">6379</span><span class="w">
+            </span><span class="nl">"host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"192.0.2.55"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"scheme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"redis"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"port"</span><span class="p">:</span><span class="w"> </span><span class="mi">6379</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -4377,7 +4378,7 @@
 
 <h2 id="using-the-redis-cli">Using the Redis CLI</h2>
 
-<p>Assuming your Redis relationship is named <code class="highlighter-rouge">redis</code>, you can access it using the <code class="highlighter-rouge">redis-cli</code> tool.</p>
+<p>Assuming your Redis relationship is named <code class="language-plaintext highlighter-rouge">redis</code>, you can access it using the <code class="language-plaintext highlighter-rouge">redis-cli</code> tool.</p>
 
 <ol>
   <li>Use SSH to connect to the Integration environment with RabbitMQ installed and configured.</li>

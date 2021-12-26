@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>SOAP Reference | Magento 2 Developer Documentation (copy)</title>
+	<title>SOAP Reference | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/soap/bk-soap.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/soap/bk-soap.html">Magento 2.0</a></li>
 		
@@ -1468,15 +1469,15 @@
 
 			<h2 id="soap-wsdl-endpoint-format">Soap WSDL Endpoint Format</h2>
 
-<p><code class="highlighter-rouge">http://&lt;magento_host&gt;/soap/&lt;store_code&gt;?wsdl&amp;services=&lt;serviceName1,serviceName2,..&gt;</code></p>
+<p><code class="language-plaintext highlighter-rouge">http://&lt;magento_host&gt;/soap/&lt;store_code&gt;?wsdl&amp;services=&lt;serviceName1,serviceName2,..&gt;</code></p>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>The value of <code class="highlighter-rouge">store_code</code> can be one of the following:</p>
+  <p>The value of <code class="language-plaintext highlighter-rouge">store_code</code> can be one of the following:</p>
 
   <ul>
-    <li><code class="highlighter-rouge">default</code></li>
+    <li><code class="language-plaintext highlighter-rouge">default</code></li>
     <li>The assigned store code</li>
-    <li><code class="highlighter-rouge">all</code>. This value only applies to the   <span term-uuid="f3944faf-127e-4097-9918-a2e9c647d44f" class="glossary-term" data-toggle="popover">CMS</span>
+    <li><code class="language-plaintext highlighter-rouge">all</code>. This value only applies to the   <span term-uuid="f3944faf-127e-4097-9918-a2e9c647d44f" class="glossary-term" data-toggle="popover">CMS</span>
  and Product modules. If this value is specified, the   <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span>
  call affects all the merchant’s stores.</li>
   </ul>
@@ -1484,33 +1485,33 @@
 
 <h2 id="list-of-service-names-per-module">List of Service Names per Module</h2>
 
-<p>The entire list can be retrieved here: <code class="highlighter-rouge">http://&lt;magento_host&gt;/soap/default?wsdl_list=1</code></p>
+<p>The entire list can be retrieved here: <code class="language-plaintext highlighter-rouge">http://&lt;magento_host&gt;/soap/default?wsdl_list=1</code></p>
 
 <h2 id="eelist">Magento Commerce Web APIs Services per Module</h2>
 
 <p>The Web APIs for Magento Commerce are available on Commerce installations only. Commerce installations automatically have access to all Magento Open Source REST APIs.</p>
 
 <h3 id="customer-balance">Customer balance</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>customerBalanceBalanceManagementV1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>customerBalanceBalanceManagementV1
 </code></pre></div></div>
 
 <h3 id="gift-cards">Gift cards</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>giftCardAccountGiftCardAccountManagementV1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>giftCardAccountGiftCardAccountManagementV1
 giftCardAccountGuestGiftCardAccountManagementV1
 giftRegistryGuestCartShippingMethodManagementV1
 giftRegistryShippingMethodManagementV1
 </code></pre></div></div>
 
 <h3 id="gift-wrapping">Gift wrapping</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>giftWrappingWrappingRepositoryV1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>giftWrappingWrappingRepositoryV1
 </code></pre></div></div>
 
 <h3 id="reward">Reward</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>rewardRewardManagementV1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>rewardRewardManagementV1
 </code></pre></div></div>
 
 <h3 id="rma">RMA</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>rmaCommentManagementV1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>rmaCommentManagementV1
 rmaRmaAttributesManagementV1
 rmaRmaManagementV1
 rmaRmaRepositoryV1
@@ -1518,7 +1519,7 @@ rmaTrackManagementV1
 </code></pre></div></div>
 
 <h3 id="worldpay">Worldpay</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>worldpayGuestPaymentInformationManagementProxyV1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>worldpayGuestPaymentInformationManagementProxyV1
 </code></pre></div></div>
 
 <h2 id="celist">Magento Open Source Web APIs Services per Module</h2>
@@ -1526,18 +1527,18 @@ rmaTrackManagementV1
 <p>The Magento Commerce Web APIs are available on all installations.</p>
 
 <h3 id="backend">Backend</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>backendModuleServiceV1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>backendModuleServiceV1
 </code></pre></div></div>
 
 <h3 id="bundle-product">Bundle product</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bundleProductLinkManagementV1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bundleProductLinkManagementV1
 bundleProductOptionManagementV1
 bundleProductOptionRepositoryV1
 bundleProductOptionTypeListV1
 </code></pre></div></div>
 
 <h3 id="catalog">Catalog</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>catalogAttributeSetManagementV1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>catalogAttributeSetManagementV1
 catalogAttributeSetRepositoryV1
 catalogCategoryAttributeOptionManagementV1
 catalogCategoryAttributeRepositoryV1
@@ -1564,11 +1565,11 @@ catalogProductWebsiteLinkRepositoryV1
 </code></pre></div></div>
 
 <h3 id="catalog-inventory">Catalog inventory</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>catalogInventoryStockRegistryV1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>catalogInventoryStockRegistryV1
 </code></pre></div></div>
 
 <h3 id="checkout">Checkout</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>checkoutGuestPaymentInformationManagementV1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>checkoutGuestPaymentInformationManagementV1
 checkoutGuestShippingInformationManagementV1
 checkoutGuestTotalsInformationManagementV1
 checkoutPaymentInformationManagementV1
@@ -1577,22 +1578,22 @@ checkoutTotalsInformationManagementV1
 </code></pre></div></div>
 
 <h3 id="checkout-agreements">Checkout agreements</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>checkoutAgreementsCheckoutAgreementsRepositoryV1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>checkoutAgreementsCheckoutAgreementsRepositoryV1
 </code></pre></div></div>
 
 <h3 id="cms">CMS</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cmsBlockRepositoryV1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cmsBlockRepositoryV1
 cmsPageRepositoryV1
 </code></pre></div></div>
 
 <h3 id="configurable-product">Configurable product</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>configurableProductConfigurableProductManagementV1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>configurableProductConfigurableProductManagementV1
 configurableProductLinkManagementV1
 configurableProductOptionRepositoryV1
 </code></pre></div></div>
 
 <h3 id="customer">Customer</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>customerAccountManagementV1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>customerAccountManagementV1
 customerAddressMetadataV1
 customerAddressRepositoryV1
 customerCustomerMetadataV1
@@ -1602,34 +1603,34 @@ customerGroupRepositoryV1
 </code></pre></div></div>
 
 <h3 id="directory">Directory</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>directoryCountryInformationAcquirerV1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>directoryCountryInformationAcquirerV1
 directoryCurrencyInformationAcquirerV1
 </code></pre></div></div>
 
 <h3 id="downloadable">Downloadable</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>downloadableLinkRepositoryV1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>downloadableLinkRepositoryV1
 downloadableSampleRepositoryV1
 </code></pre></div></div>
 
 <h3 id="eav">EAV</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>eavAttributeSetManagementV1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>eavAttributeSetManagementV1
 eavAttributeSetRepositoryV1
 </code></pre></div></div>
 
 <h3 id="gift-message">Gift message</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>giftMessageCartRepositoryV1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>giftMessageCartRepositoryV1
 giftMessageGuestCartRepositoryV1
 giftMessageGuestItemRepositoryV1
 giftMessageItemRepositoryV1
 </code></pre></div></div>
 
 <h3 id="integration">Integration</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>integrationAdminTokenServiceV1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>integrationAdminTokenServiceV1
 integrationCustomerTokenServiceV1
 </code></pre></div></div>
 
 <h3 id="quote">Quote</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>quoteBillingAddressManagementV1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>quoteBillingAddressManagementV1
 quoteCartItemRepositoryV1
 quoteCartManagementV1
 quoteCartRepositoryV1
@@ -1652,7 +1653,7 @@ quoteShippingMethodManagementV1
 </code></pre></div></div>
 
 <h3 id="sales">Sales</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>salesCreditmemoCommentRepositoryV1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>salesCreditmemoCommentRepositoryV1
 salesCreditmemoManagementV1
 salesCreditmemoRepositoryV1
 salesInvoiceCommentRepositoryV1
@@ -1674,24 +1675,24 @@ salesTransactionRepositoryV1
 </code></pre></div></div>
 
 <h3 id="sales-rule">Sales rule</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>salesRuleCouponManagementV1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>salesRuleCouponManagementV1
 salesRuleCouponRepositoryV1
 salesRuleRuleRepositoryV1
 </code></pre></div></div>
 
 <h3 id="search">Search</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>searchV1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>searchV1
 </code></pre></div></div>
 
 <h3 id="store">Store</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>storeGroupRepositoryV1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>storeGroupRepositoryV1
 storeStoreConfigManagerV1
 storeStoreRepositoryV1
 storeWebsiteRepositoryV1
 </code></pre></div></div>
 
 <h3 id="tax">Tax</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>taxTaxClassRepositoryV1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>taxTaxClassRepositoryV1
 taxTaxRateRepositoryV1
 taxTaxRuleRepositoryV1
 </code></pre></div></div>

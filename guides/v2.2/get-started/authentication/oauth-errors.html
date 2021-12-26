@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>OAuth error codes | Magento 2 Developer Documentation (copy)</title>
+	<title>OAuth error codes | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/get-started/authentication/oauth-errors.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/get-started/authentication/oauth-errors.html">Magento 2.0</a></li>
 		
@@ -1837,79 +1838,79 @@
     <tr>
       <td>400</td>
       <td>1</td>
-      <td><code class="highlighter-rouge">version_rejected</code></td>
-      <td>The <code class="highlighter-rouge">oauth_version</code> parameter does not correspond to the “1.0” value.</td>
+      <td><code class="language-plaintext highlighter-rouge">version_rejected</code></td>
+      <td>The <code class="language-plaintext highlighter-rouge">oauth_version</code> parameter does not correspond to the “1.0” value.</td>
     </tr>
     <tr>
       <td>400</td>
       <td>2</td>
-      <td><code class="highlighter-rouge">parameter_absent</code></td>
+      <td><code class="language-plaintext highlighter-rouge">parameter_absent</code></td>
       <td>A required parameter is missing in the request. The name of the missing parameter is specified additionally in the response.</td>
     </tr>
     <tr>
       <td>400</td>
       <td>3</td>
-      <td><code class="highlighter-rouge">parameter_rejected</code></td>
+      <td><code class="language-plaintext highlighter-rouge">parameter_rejected</code></td>
       <td>The type of the parameter or its value do not meet the protocol requirements (for example,  array is passed instead of the string).</td>
     </tr>
     <tr>
       <td>400</td>
       <td>4</td>
-      <td><code class="highlighter-rouge">timestamp_refused</code></td>
+      <td><code class="language-plaintext highlighter-rouge">timestamp_refused</code></td>
       <td>The timestamp value in the oauth_timestamp parameter is incorrect.</td>
     </tr>
     <tr>
       <td>401</td>
       <td>5</td>
-      <td><code class="highlighter-rouge">nonce_used</code></td>
+      <td><code class="language-plaintext highlighter-rouge">nonce_used</code></td>
       <td>The nonce-timestamp combination has already been used.</td>
     </tr>
     <tr>
       <td>400</td>
       <td>6</td>
-      <td><code class="highlighter-rouge">signature_method_rejected</code></td>
+      <td><code class="language-plaintext highlighter-rouge">signature_method_rejected</code></td>
       <td>The signature method is not supported. The following methods are supported: HMAC-SHA1.</td>
     </tr>
     <tr>
       <td>401</td>
       <td>7</td>
-      <td><code class="highlighter-rouge">signature_invalid</code></td>
+      <td><code class="language-plaintext highlighter-rouge">signature_invalid</code></td>
       <td>The signature is invalid.</td>
     </tr>
     <tr>
       <td>401</td>
       <td>8</td>
-      <td><code class="highlighter-rouge">consumer_key_rejected</code></td>
+      <td><code class="language-plaintext highlighter-rouge">consumer_key_rejected</code></td>
       <td>The Consumer Key has incorrect length or does not exist.</td>
     </tr>
     <tr>
       <td>401</td>
       <td>9</td>
-      <td><code class="highlighter-rouge">token_used</code></td>
+      <td><code class="language-plaintext highlighter-rouge">token_used</code></td>
       <td>An attempt of authorization of an already authorized token or an attempt to exchange a not temporary token for a permanent one.</td>
     </tr>
     <tr>
       <td>401</td>
       <td>10</td>
-      <td><code class="highlighter-rouge">token_expired</code></td>
+      <td><code class="language-plaintext highlighter-rouge">token_expired</code></td>
       <td>The temporary token has expired. At the moment, the mechanism of expiration of temporary tokens is not implemented and the current error is not used.</td>
     </tr>
     <tr>
       <td>401</td>
       <td>11</td>
-      <td><code class="highlighter-rouge">token_revoke</code></td>
+      <td><code class="language-plaintext highlighter-rouge">token_revoke</code></td>
       <td>The token is revoked by the user who authorized it.</td>
     </tr>
     <tr>
       <td>401</td>
       <td>12</td>
-      <td><code class="highlighter-rouge">token_rejected</code></td>
+      <td><code class="language-plaintext highlighter-rouge">token_rejected</code></td>
       <td>The token is not valid, or does not exist, or is not valid for using in the current type of request.</td>
     </tr>
     <tr>
       <td>401</td>
       <td>13</td>
-      <td><code class="highlighter-rouge">verifier_invalid</code></td>
+      <td><code class="language-plaintext highlighter-rouge">verifier_invalid</code></td>
       <td>The confirmation string does not correspond to the token.</td>
     </tr>
   </tbody>

@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Module overview | Magento 2 Developer Documentation (copy)</title>
+	<title>Module overview | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/architecture/archi_perspectives/components/modules/mod_intro.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/architecture/archi_perspectives/components/modules/mod_intro.html">Magento 2.0</a></li>
 		
@@ -2180,18 +2181,18 @@
 
 <h2 id="where-do-modules-live">Where do modules live?</h2>
 
-<p>Modules typically live in the <code class="highlighter-rouge">vendor</code> directory of a Magento installation, in a directory with the following PSR-0 compliant format: <code class="highlighter-rouge">vendor/&lt;vendor&gt;/&lt;type&gt;-&lt;module-name&gt;</code>, where <code class="highlighter-rouge">&lt;type&gt;</code> can be one of the following values:</p>
+<p>Modules typically live in the <code class="language-plaintext highlighter-rouge">vendor</code> directory of a Magento installation, in a directory with the following PSR-0 compliant format: <code class="language-plaintext highlighter-rouge">vendor/&lt;vendor&gt;/&lt;type&gt;-&lt;module-name&gt;</code>, where <code class="language-plaintext highlighter-rouge">&lt;type&gt;</code> can be one of the following values:</p>
 <ul>
-  <li><strong><code class="highlighter-rouge">module</code></strong> - for modules (<code class="highlighter-rouge">module-customer-import-export</code>)</li>
-  <li><strong><code class="highlighter-rouge">theme</code></strong> - for frontend and admin themes (<code class="highlighter-rouge">theme-frontend-luma</code> or <code class="highlighter-rouge">theme-adminhtml-backend</code>)</li>
-  <li><strong><code class="highlighter-rouge">language</code></strong> - for language packs (<code class="highlighter-rouge">language-de_de</code>)</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">module</code></strong> - for modules (<code class="language-plaintext highlighter-rouge">module-customer-import-export</code>)</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">theme</code></strong> - for frontend and admin themes (<code class="language-plaintext highlighter-rouge">theme-frontend-luma</code> or <code class="language-plaintext highlighter-rouge">theme-adminhtml-backend</code>)</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">language</code></strong> - for language packs (<code class="language-plaintext highlighter-rouge">language-de_de</code>)</li>
 </ul>
 
-<p>For example, the Customer Import/Export module of Magento can be found at <code class="highlighter-rouge">vendor/magento/module-customer-import-export</code>.</p>
+<p>For example, the Customer Import/Export module of Magento can be found at <code class="language-plaintext highlighter-rouge">vendor/magento/module-customer-import-export</code>.</p>
 
-<p>But if you are creating a new module for distribution, you can just create the <code class="highlighter-rouge">app/code/&lt;vendor&gt;/&lt;type&gt;-&lt;module-name&gt;</code> directory and the required directories within it.</p>
+<p>But if you are creating a new module for distribution, you can just create the <code class="language-plaintext highlighter-rouge">app/code/&lt;vendor&gt;/&lt;type&gt;-&lt;module-name&gt;</code> directory and the required directories within it.</p>
 
-<p>Inside this folder, you will find all the code related to this module, including the <code class="highlighter-rouge">etc/module.xml</code> file, which contains the name and version of the module, as well as any dependencies.</p>
+<p>Inside this folder, you will find all the code related to this module, including the <code class="language-plaintext highlighter-rouge">etc/module.xml</code> file, which contains the name and version of the module, as well as any dependencies.</p>
 
 <h2 id="working-with-modules">Working with modules</h2>
 

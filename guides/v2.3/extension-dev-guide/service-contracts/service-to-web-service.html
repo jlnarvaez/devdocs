@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Configure services as web APIs | Magento 2 Developer Documentation (copy)</title>
+	<title>Configure services as web APIs | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/extension-dev-guide/service-contracts/service-to-web-service.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/extension-dev-guide/service-contracts/service-to-web-service.html">Magento 2.0</a></li>
 		
@@ -3476,10 +3477,10 @@
 .</p>
 
 <p>To <a href="#configure-webapi">configure a web API</a>, you define   <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span>
- elements and attributes in the <code class="highlighter-rouge">webapi.xml</code> XML configuration file for the   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
- for the service. The <code class="highlighter-rouge">webapi.xml</code> file for your module specifies an XML schema file for validation. By default, this file is <code class="highlighter-rouge">app/code/&lt;VENDOR&gt;/Webapi/etc/webapi.xsd</code>.</p>
+ elements and attributes in the <code class="language-plaintext highlighter-rouge">webapi.xml</code> XML configuration file for the   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
+ for the service. The <code class="language-plaintext highlighter-rouge">webapi.xml</code> file for your module specifies an XML schema file for validation. By default, this file is <code class="language-plaintext highlighter-rouge">app/code/&lt;VENDOR&gt;/Webapi/etc/webapi.xsd</code>.</p>
 
-<p>Your module can use the default <code class="highlighter-rouge">webapi.xsd</code> file or you can create a customized XML schema file for validation.</p>
+<p>Your module can use the default <code class="language-plaintext highlighter-rouge">webapi.xsd</code> file or you can create a customized XML schema file for validation.</p>
 
 <p>Users can make REST or SOAP calls to access the   <span term-uuid="377dc0a3-b8a7-4dfa-808e-2de37e4c0029" class="glossary-term" data-toggle="popover">web API</span>
 .</p>
@@ -3506,18 +3507,18 @@
 
 <h2 id="configure-webapi">Configure a web API</h2>
 
-<p>To configure a web API for a service, you define XML elements and attributes in the <code class="highlighter-rouge">app/code/Magento/&lt;MODULE&gt;/etc/webapi.xml</code> file, where <code class="highlighter-rouge">&lt;MODULE&gt; is the module name.</code> For example, the web API for the Customer service is defined in the <code class="highlighter-rouge">app/code/Magento/Customer/etc/webapi.xml</code> configuration file.</p>
+<p>To configure a web API for a service, you define XML elements and attributes in the <code class="language-plaintext highlighter-rouge">app/code/Magento/&lt;MODULE&gt;/etc/webapi.xml</code> file, where <code class="language-plaintext highlighter-rouge">&lt;MODULE&gt; is the module name.</code> For example, the web API for the Customer service is defined in the <code class="language-plaintext highlighter-rouge">app/code/Magento/Customer/etc/webapi.xml</code> configuration file.</p>
 
 <h2 id="service-interface-requirements">Service Interface Requirements</h2>
 
-<p>After a service class is configured using the <code class="highlighter-rouge">webapi.xml</code> file, Magento dynamically makes the service method available using the web API. Because this is automatically generated, it is important that the service class be formatted a very specific way.</p>
+<p>After a service class is configured using the <code class="language-plaintext highlighter-rouge">webapi.xml</code> file, Magento dynamically makes the service method available using the web API. Because this is automatically generated, it is important that the service class be formatted a very specific way.</p>
 
 <p>This makes sense when you consider that while a service class possibly expects objects of a specific class type (such a save method) and possibly returns a result that is a class or array of classes, neither SOAP nor REST are guaranteed to have that class defined on the client end or even to have a concept similar to a   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
  class. Because of this, Magento uses reflection to automatically create these classes and sets data that you have submitted in JSON or HTTP array syntax onto an instance of the expected PHP class when calling the service method.</p>
 
 <p>Conversely, if an object is returned from one of these methods, Magento automatically converts that PHP object into a JSON or SOAP object before sending it over the web API.</p>
 
-<p>To do this conversion, the Magento application must know information about both the parameters the service method is expecting and the return type of the result the service method delivers. PHP 5.x does not allow for type-hinting for scalar parameters or for return types so in order to convert the array or JSON object to or from the appropriate class type, PHP relies on the PHP doc block. Specifically, the lines containing <code class="highlighter-rouge">@param</code> and <code class="highlighter-rouge">@return</code> must follow certain rules for Magento to be able to correctly convert between types.</p>
+<p>To do this conversion, the Magento application must know information about both the parameters the service method is expecting and the return type of the result the service method delivers. PHP 5.x does not allow for type-hinting for scalar parameters or for return types so in order to convert the array or JSON object to or from the appropriate class type, PHP relies on the PHP doc block. Specifically, the lines containing <code class="language-plaintext highlighter-rouge">@param</code> and <code class="language-plaintext highlighter-rouge">@return</code> must follow certain rules for Magento to be able to correctly convert between types.</p>
 
 <p>For SOAP and REST to work correctly, the following rules must be followed by the service interface’s doc block:</p>
 
@@ -3527,18 +3528,18 @@
   <li>
     <p>Parameters must be defined in the doc block as</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>* @param type $paramName
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>* @param type $paramName
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Return type must be defined in the doc block as</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>* @return type
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>* @return type
 </code></pre></div>    </div>
   </li>
-  <li>Valid scalar types include: <code class="highlighter-rouge">mixed</code> (or <code class="highlighter-rouge">anyType</code>), <code class="highlighter-rouge">bool</code> (or <code class="highlighter-rouge">boolean</code>), <code class="highlighter-rouge">str</code> (or <code class="highlighter-rouge">string</code>), <code class="highlighter-rouge">integer</code> (or <code class="highlighter-rouge">int</code>), <code class="highlighter-rouge">float</code>, and <code class="highlighter-rouge">double</code>.</li>
+  <li>Valid scalar types include: <code class="language-plaintext highlighter-rouge">mixed</code> (or <code class="language-plaintext highlighter-rouge">anyType</code>), <code class="language-plaintext highlighter-rouge">bool</code> (or <code class="language-plaintext highlighter-rouge">boolean</code>), <code class="language-plaintext highlighter-rouge">str</code> (or <code class="language-plaintext highlighter-rouge">string</code>), <code class="language-plaintext highlighter-rouge">integer</code> (or <code class="language-plaintext highlighter-rouge">int</code>), <code class="language-plaintext highlighter-rouge">float</code>, and <code class="language-plaintext highlighter-rouge">double</code>.</li>
   <li>Valid object types include a fully qualified class name or a fully qualified interface name.</li>
-  <li>Any parameters or return values of type array can be denoted by following any of the previous types by an empty set of square brackets <code class="highlighter-rouge">[]</code></li>
+  <li>Any parameters or return values of type array can be denoted by following any of the previous types by an empty set of square brackets <code class="language-plaintext highlighter-rouge">[]</code></li>
 </ul>
 
 <p>Following are some examples of various types and what they would look like in the doc block:</p>
@@ -3547,32 +3548,32 @@
   <li>
     <p>A parameter $types which can be an array of strings:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>* @param string[] $types
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>* @param string[] $types
 </code></pre></div>    </div>
   </li>
   <li>
     <p>A parameter $id which can be an integer:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>* @param int $id
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>* @param int $id
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>A parameter $customer which is an object of class <code class="highlighter-rouge">\Magento\Customer\Api\Data\CustomerInterface</code>:</p>
+    <p>A parameter $customer which is an object of class <code class="language-plaintext highlighter-rouge">\Magento\Customer\Api\Data\CustomerInterface</code>:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>* @param \Magento\Customer\Api\Data\CustomerInterface $customer
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>* @param \Magento\Customer\Api\Data\CustomerInterface $customer
 </code></pre></div>    </div>
 
-    <p>Note that even if the class <code class="highlighter-rouge">\Magento\Customer\Api\Data\CustomerInterface</code> is in the same namespace (or a sub-namespace) of the current class or a use statement has exists at the top of the class, the fully qualified namespace must be used or the web API throws an exception.</p>
+    <p>Note that even if the class <code class="language-plaintext highlighter-rouge">\Magento\Customer\Api\Data\CustomerInterface</code> is in the same namespace (or a sub-namespace) of the current class or a use statement has exists at the top of the class, the fully qualified namespace must be used or the web API throws an exception.</p>
   </li>
   <li>
-    <p>A return which is an array of objects of type <code class="highlighter-rouge">\Magento\Customer\Api\Data\CustomerInterface</code>:</p>
+    <p>A return which is an array of objects of type <code class="language-plaintext highlighter-rouge">\Magento\Customer\Api\Data\CustomerInterface</code>:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>* @return \Magento\Customer\Api\Data\CustomerInterface[]
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>* @return \Magento\Customer\Api\Data\CustomerInterface[]
 </code></pre></div>    </div>
   </li>
 </ul>
 
-<p class="bs-callout bs-callout-info">If a service method argument is called <code class="highlighter-rouge">item</code>, there will be a problem during SOAP processing. All item nodes are removed during SOAP request processing. This is done to unwrap array items that are wrapped by the SOAP server into an <code class="highlighter-rouge">item</code> element.</p>
+<p class="bs-callout bs-callout-info">If a service method argument is called <code class="language-plaintext highlighter-rouge">item</code>, there will be a problem during SOAP processing. All item nodes are removed during SOAP request processing. This is done to unwrap array items that are wrapped by the SOAP server into an <code class="language-plaintext highlighter-rouge">item</code> element.</p>
 
 <h2 id="configuration-options">webapi.xml configuration options</h2>
 

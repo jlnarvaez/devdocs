@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Set up multiple websites or stores | Magento 2 Developer Documentation (copy)</title>
+	<title>Set up multiple websites or stores | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/project/project-multi-sites.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/project/project-multi-sites.html">Magento 2.0</a></li>
 		
@@ -3565,7 +3566,7 @@
   <li><a href="#cloud-multi-stores-routes">Configure routes</a>, which specify how incoming URLs are handled by Magento Commerce.</li>
   <li><a href="#cloud-multi-stores-admin">Set up websites, stores, and store views</a> in your Magento Commerce server’s   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>
 .</li>
-  <li><a href="#cloud-multi-stores-magento-vars">Modify <code class="highlighter-rouge">magento-vars.php</code></a> to specify the values of the <code class="highlighter-rouge">MAGE_RUN_TYPE</code> and <code class="highlighter-rouge">MAGE_RUN_CODE</code> variables.</li>
+  <li><a href="#cloud-multi-stores-magento-vars">Modify <code class="language-plaintext highlighter-rouge">magento-vars.php</code></a> to specify the values of the <code class="language-plaintext highlighter-rouge">MAGE_RUN_TYPE</code> and <code class="language-plaintext highlighter-rouge">MAGE_RUN_CODE</code> variables.</li>
   <li><a href="#cloud-multi-stores-deploy">Deploy</a> to your Integration branch and test.</li>
 </ol>
 
@@ -3580,11 +3581,11 @@
 <ol>
   <li>Log in to your local environment as, or switch to, the <a href="/devdocs/guides/v2.0/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
   <li>Change to your Magento Commerce base directory.</li>
-  <li>Open <code class="highlighter-rouge">.magento/routes.yaml</code> in a text editor.</li>
+  <li>Open <code class="language-plaintext highlighter-rouge">.magento/routes.yaml</code> in a text editor.</li>
   <li>
     <p>Replace its contents with the following:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>"http://{default}/":
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>"http://{default}/":
 	type: upstream
 	upstream: "mymagento:php"
 
@@ -3601,7 +3602,7 @@
 	upstream: "mymagento:php"
 </code></pre></div>    </div>
   </li>
-  <li>Save your changes to <code class="highlighter-rouge">routes.yaml</code> and exit the text editor.</li>
+  <li>Save your changes to <code class="language-plaintext highlighter-rouge">routes.yaml</code> and exit the text editor.</li>
 </ol>
 
 <h3 id="cloud-multi-stores-admin">Set up websites, stores, and store views</h3>
@@ -3618,36 +3619,36 @@
   <li>
     <p>Log in to your account:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud login
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud login
 </code></pre></div>    </div>
   </li>
   <li>
     <p>List the environments:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:list
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:list
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Check out your environment:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:checkout &lt;environment ID&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:checkout &lt;environment ID&gt;
 </code></pre></div>    </div>
   </li>
   <li>
     <p>View the environment’s access URLs:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:url
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:url
 </code></pre></div>    </div>
   </li>
   <li>
     <p>View Admin login information:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud variable:list
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud variable:list
 </code></pre></div>    </div>
 
     <p>Admin access information displays similar to the following:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>+----------------+---------------+-----------+------+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>+----------------+---------------+-----------+------+
 | ID             | Value         | Inherited | JSON |
 +----------------+---------------+-----------+------+
 | ADMIN_PASSWORD | admin_A456    | Yes       | No   |
@@ -3664,16 +3665,16 @@
 
 <p>See <a href="/devdocs/guides/v2.0/config-guide/multi-site/ms_websites.html">Set up multiple websites, stores, and store views in the Admin</a>.</p>
 
-<h3 id="cloud-multi-stores-magento-vars">Modify <code class="highlighter-rouge">magento-vars.php</code></h3>
+<h3 id="cloud-multi-stores-magento-vars">Modify <code class="language-plaintext highlighter-rouge">magento-vars.php</code></h3>
 
 <p>Instead of configuring an   <span term-uuid="b14ef3d8-51fd-48fe-94df-ed069afb2cdc" class="glossary-term" data-toggle="popover">nginx</span>
- virtual host, pass the <code class="highlighter-rouge">MAGE_RUN_CODE</code> and <code class="highlighter-rouge">MAGE_RUN_TYPE</code> variables using <code class="highlighter-rouge">magento-vars.php</code> which is located in your Magento root directory.</p>
+ virtual host, pass the <code class="language-plaintext highlighter-rouge">MAGE_RUN_CODE</code> and <code class="language-plaintext highlighter-rouge">MAGE_RUN_TYPE</code> variables using <code class="language-plaintext highlighter-rouge">magento-vars.php</code> which is located in your Magento root directory.</p>
 
 <ol>
-  <li>Open <code class="highlighter-rouge">magento-vars.php</code> in a text editor.</li>
+  <li>Open <code class="language-plaintext highlighter-rouge">magento-vars.php</code> in a text editor.</li>
   <li>Uncomment everything after the first two lines.</li>
   <li>
-    <p>Move the entire block starting with <code class="highlighter-rouge">if (isHttpHost("example.com")</code> after <code class="highlighter-rouge">function isHttpHost($host)</code>.</p>
+    <p>Move the entire block starting with <code class="language-plaintext highlighter-rouge">if (isHttpHost("example.com")</code> after <code class="language-plaintext highlighter-rouge">function isHttpHost($host)</code>.</p>
 
     <p>Following is what the file should look like so far:</p>
 
@@ -3697,26 +3698,26 @@
 
     <p>From:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>return strpos(str_replace('---', '.', $_SERVER['HTTP_HOST']), $host) === 0;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>return strpos(str_replace('---', '.', $_SERVER['HTTP_HOST']), $host) === 0;
 </code></pre></div>    </div>
 
     <p>To:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>return $_SERVER['HTTP_HOST'] ===  $host;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>return $_SERVER['HTTP_HOST'] ===  $host;
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Replace the following values in the <code class="highlighter-rouge">if (isHttpHost("example.com"))</code> block:</p>
+    <p>Replace the following values in the <code class="language-plaintext highlighter-rouge">if (isHttpHost("example.com"))</code> block:</p>
 
     <ul>
-      <li><code class="highlighter-rouge">"example.com"</code> with the base URL of your website, replacing the first period with three dashes.</li>
-      <li><code class="highlighter-rouge">"default"</code> with the unique code for your website or store view.</li>
-      <li><code class="highlighter-rouge">"store"</code> with either <code class="highlighter-rouge">website</code> (to load the website in the storefront) or <code class="highlighter-rouge">store</code> (to load a storeview in the storefront).</li>
+      <li><code class="language-plaintext highlighter-rouge">"example.com"</code> with the base URL of your website, replacing the first period with three dashes.</li>
+      <li><code class="language-plaintext highlighter-rouge">"default"</code> with the unique code for your website or store view.</li>
+      <li><code class="language-plaintext highlighter-rouge">"store"</code> with either <code class="language-plaintext highlighter-rouge">website</code> (to load the website in the storefront) or <code class="language-plaintext highlighter-rouge">store</code> (to load a storeview in the storefront).</li>
     </ul>
 
     <p>An example follows:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;?php
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;?php
 // enable, adjust and copy this code for each store you run
 // Store #0, default one
 function isHttpHost($host)
@@ -3732,7 +3733,7 @@ if (isHttpHost("french---branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud")) {
 }
 </code></pre></div>    </div>
   </li>
-  <li>Save your changes to <code class="highlighter-rouge">magento-vars.php</code> and exit the text editor.</li>
+  <li>Save your changes to <code class="language-plaintext highlighter-rouge">magento-vars.php</code> and exit the text editor.</li>
 </ol>
 
 <h3 id="cloud-multi-stores-deploy">Deploy and test on the Integration server</h3>
@@ -3744,7 +3745,7 @@ To deploy and test:</p>
   <li>
     <p>Enter the following commands in the order shown:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git add -A &amp;&amp; git commit -m "Implement multiple sites"
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git add -A &amp;&amp; git commit -m "Implement multiple sites"
 git push origin &lt;branch name&gt;
 </code></pre></div>    </div>
   </li>
@@ -3753,14 +3754,14 @@ git push origin &lt;branch name&gt;
     <p>When deployment is done, in a web browser, go to your site’s base   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>
 .</p>
 
-    <p>The URL must be in the format: <code class="highlighter-rouge">http://&lt;magento run_code&gt;---&lt;rest of URL&gt;</code></p>
+    <p>The URL must be in the format: <code class="language-plaintext highlighter-rouge">http://&lt;magento run_code&gt;---&lt;rest of URL&gt;</code></p>
 
-    <p>For example, <code class="highlighter-rouge">http://french---master-benrmky-dyrozemqbw72k.us.magentosite.cloud/</code></p>
+    <p>For example, <code class="language-plaintext highlighter-rouge">http://french---master-benrmky-dyrozemqbw72k.us.magentosite.cloud/</code></p>
   </li>
   <li>Make sure you test your site thoroughly.</li>
 </ol>
 
-<p>When complete, merge the code to the <code class="highlighter-rouge">master</code> Git branch for further deployment.</p>
+<p>When complete, merge the code to the <code class="language-plaintext highlighter-rouge">master</code> Git branch for further deployment.</p>
 
 <h3 id="deploy-staging-prod">Deploy to Staging and Production</h3>
 

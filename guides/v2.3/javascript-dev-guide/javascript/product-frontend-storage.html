@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Use the Frontend Product Repository | Magento 2 Developer Documentation (copy)</title>
+	<title>Use the Frontend Product Repository | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/javascript-dev-guide/javascript/product-frontend-storage.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/javascript-dev-guide/javascript/product-frontend-storage.html">Magento 2.0</a></li>
 		
@@ -2187,30 +2188,30 @@ The product information it provides is useful for optimal mini-cart, widgets, an
 
 <h2 id="the-product-data-storage">The product data storage</h2>
 
-<p>The frontend product repository uses the <code class="highlighter-rouge">product_data_storage</code> section of the data storage cache as its data source.
+<p>The frontend product repository uses the <code class="language-plaintext highlighter-rouge">product_data_storage</code> section of the data storage cache as its data source.
 This section is responsible for holding all product data that come from the server when a customer visits a product page.</p>
 
 <h2 id="instantiate-the-repository">Instantiate the repository</h2>
 
-<p>The following code snippet uses the <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/view/frontend/web/js/product/storage/storage-service.js" target="_blank"><code class="highlighter-rouge">Magento_Catalog/js/product/storage/storage-service</code></a> to initialize the repository when the data storage cache itself initializes:</p>
+<p>The following code snippet uses the <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/view/frontend/web/js/product/storage/storage-service.js" target="_blank"><code class="language-plaintext highlighter-rouge">Magento_Catalog/js/product/storage/storage-service</code></a> to initialize the repository when the data storage cache itself initializes:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">([</span>
-    <span class="s1">'Magento_Catalog/js/product/storage/storage-service'</span>
+    <span class="dl">'</span><span class="s1">Magento_Catalog/js/product/storage/storage-service</span><span class="dl">'</span>
 <span class="p">]),</span> <span class="kd">function</span><span class="p">(</span><span class="nx">storage</span><span class="p">){</span>
-    <span class="s1">'use strict'</span><span class="p">;</span>
+    <span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
 
     <span class="k">return</span> <span class="p">{</span>
 
         <span class="p">...</span>
 
         <span class="na">identifiersConfig</span><span class="p">:</span> <span class="p">{</span>
-            <span class="na">namespace</span><span class="p">:</span> <span class="s1">'product_data_storage'</span>
+            <span class="na">namespace</span><span class="p">:</span> <span class="dl">'</span><span class="s1">product_data_storage</span><span class="dl">'</span>
         <span class="p">},</span>
 
         <span class="na">productStorageConfig</span><span class="p">:</span> <span class="p">{</span>
-            <span class="na">namespace</span><span class="p">:</span> <span class="s1">'product_data_storage'</span><span class="p">,</span>
-            <span class="na">customerDataProvider</span><span class="p">:</span> <span class="s1">'product_data_storage'</span><span class="p">,</span>
-            <span class="na">className</span><span class="p">:</span> <span class="s1">'DataStorage'</span>
+            <span class="na">namespace</span><span class="p">:</span> <span class="dl">'</span><span class="s1">product_data_storage</span><span class="dl">'</span><span class="p">,</span>
+            <span class="na">customerDataProvider</span><span class="p">:</span> <span class="dl">'</span><span class="s1">product_data_storage</span><span class="dl">'</span><span class="p">,</span>
+            <span class="na">className</span><span class="p">:</span> <span class="dl">'</span><span class="s1">DataStorage</span><span class="dl">'</span>
         <span class="p">},</span>
 
         <span class="na">initIdsStorage</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
@@ -2247,7 +2248,7 @@ This section is responsible for holding all product data that come from the serv
 
 <h2 id="get-data-from-the-server">Get data from the server</h2>
 
-<p>Use the <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/view/frontend/web/js/product/storage/data-storage.js#L213" target="_blank"><code class="highlighter-rouge">loadDataFromServer</code></a> method from the <code class="highlighter-rouge">data-storage</code> class to get product data from a list of IDs.</p>
+<p>Use the <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/view/frontend/web/js/product/storage/data-storage.js#L213" target="_blank"><code class="language-plaintext highlighter-rouge">loadDataFromServer</code></a> method from the <code class="language-plaintext highlighter-rouge">data-storage</code> class to get product data from a list of IDs.</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">...</span>
 
@@ -2268,29 +2269,29 @@ This section is responsible for holding all product data that come from the serv
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">currency</code></td>
+      <td><code class="language-plaintext highlighter-rouge">currency</code></td>
       <td>The currency data to get for the product</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">store</code></td>
+      <td><code class="language-plaintext highlighter-rouge">store</code></td>
       <td>The ID of the store associated with the product</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">ids</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ids</code></td>
       <td>An object that contains the list of IDs as keys</td>
     </tr>
   </tbody>
 </table>
 
-<p>In the preceding example the data is handled by the subscribed function <code class="highlighter-rouge">dataCollectionHandler</code>.</p>
+<p>In the preceding example the data is handled by the subscribed function <code class="language-plaintext highlighter-rouge">dataCollectionHandler</code>.</p>
 
 <h3 id="specify-rest-resource">Specify REST resource</h3>
 
 <p>Use the following REST endpoint to get product information:</p>
 
-<p><code class="highlighter-rouge">/V1/products-render-info</code></p>
+<p><code class="language-plaintext highlighter-rouge">/V1/products-render-info</code></p>
 
-<p>For UI Components, add this information in the <a href="/devdocs/guides/v2.3/ui_comp_guide/concepts/ui_comp_data_source.html"><code class="highlighter-rouge">dataProvider</code></a> entry inside your <code class="highlighter-rouge">etc/view/frontend/ui_component/&lt;ui-component-name&gt;.xml</code> file.</p>
+<p>For UI Components, add this information in the <a href="/devdocs/guides/v2.3/ui_comp_guide/concepts/ui_comp_data_source.html"><code class="language-plaintext highlighter-rouge">dataProvider</code></a> entry inside your <code class="language-plaintext highlighter-rouge">etc/view/frontend/ui_component/&lt;ui-component-name&gt;.xml</code> file.</p>
 
 <p>The following example is from the <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/view/frontend/ui_component/widget_recently_viewed.xml" target="_blank">recently-viewed widget</a>:</p>
 
@@ -2311,58 +2312,58 @@ This section is responsible for holding all product data that come from the serv
     <span class="nt">&lt;/argument&gt;</span>
 <span class="nt">&lt;/argument&gt;</span></code></pre></figure>
 
-<p>This sets the appropriate information inside the <code class="highlighter-rouge">updateRequestConfig</code> object in the product storage configuration(<code class="highlighter-rouge">productStorageConfig</code> in the example code).</p>
+<p>This sets the appropriate information inside the <code class="language-plaintext highlighter-rouge">updateRequestConfig</code> object in the product storage configuration(<code class="language-plaintext highlighter-rouge">productStorageConfig</code> in the example code).</p>
 
-<p>The object structure for this REST response is represented by <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/Api/Data/ProductRenderInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Catalog\Api\Data\ProductRenderInterface</code></a>:</p>
+<p>The object structure for this REST response is represented by <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/Api/Data/ProductRenderInterface.php" target="_blank"><code class="language-plaintext highlighter-rouge">\Magento\Catalog\Api\Data\ProductRenderInterface</code></a>:</p>
 
 <div class="collapsible">
     <b class="collapsible-title">Show Object Structure </b>
     <div class="collapsible-content"><figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">[</span>
    <span class="nx">item_id</span><span class="p">:</span> <span class="p">{</span>
         <span class="c1">//@see: \Magento\Catalog\Api\Data\ProductRender\ButtonInterface</span>
-        <span class="s1">'add_to_*_button'</span><span class="p">:</span> <span class="p">{</span> <span class="c1">//Any product button will be represented by this interface </span>
+        <span class="dl">'</span><span class="s1">add_to_*_button</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span> <span class="c1">//Any product button will be represented by this interface </span>
             <span class="nl">post_data</span><span class="p">:</span> <span class="p">{...},</span>
-            <span class="nx">required_options</span><span class="p">:</span> <span class="kr">boolean</span><span class="p">,</span>
+            <span class="nx">required_options</span><span class="p">:</span> <span class="nx">boolean</span><span class="p">,</span>
             <span class="nx">url</span><span class="p">:</span> <span class="nx">string</span>
         <span class="p">},</span>
         <span class="c1">//\Magento\Catalog\Api\Data\ProductRenderExtensionInterface</span>
-        <span class="s1">'extension_attributes'</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s1">'review_html'</span><span class="p">:</span> <span class="s1">'...'</span>
+        <span class="dl">'</span><span class="s1">extension_attributes</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="dl">'</span><span class="s1">review_html</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">...</span><span class="dl">'</span>
         <span class="p">},</span>
         <span class="c1">//@see: \Magento\Catalog\Api\Data\ProductRender\ImageInterface[]</span>
-        <span class="s1">'images'</span><span class="p">:</span> <span class="p">[</span>
+        <span class="dl">'</span><span class="s1">images</span><span class="dl">'</span><span class="p">:</span> <span class="p">[</span>
             <span class="p">{</span>
-                <span class="s1">'url'</span><span class="p">:</span> <span class="s1">'...'</span><span class="p">,</span>
-                <span class="s1">'code'</span><span class="p">:</span> <span class="s1">'...'</span><span class="p">,</span>
-                <span class="s1">'height'</span><span class="p">:</span> <span class="p">...,</span>
-                <span class="s1">'width'</span><span class="p">:</span> <span class="p">...,</span>
-                <span class="s1">'resized_height'</span><span class="p">:</span> <span class="p">...,</span>
+                <span class="dl">'</span><span class="s1">url</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">...</span><span class="dl">'</span><span class="p">,</span>
+                <span class="dl">'</span><span class="s1">code</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">...</span><span class="dl">'</span><span class="p">,</span>
+                <span class="dl">'</span><span class="s1">height</span><span class="dl">'</span><span class="p">:</span> <span class="p">...,</span>
+                <span class="dl">'</span><span class="s1">width</span><span class="dl">'</span><span class="p">:</span> <span class="p">...,</span>
+                <span class="dl">'</span><span class="s1">resized_height</span><span class="dl">'</span><span class="p">:</span> <span class="p">...,</span>
                 <span class="p">...</span>
             <span class="p">}</span>
         <span class="p">],</span>
-        <span class="s1">'is_salable'</span><span class="p">:</span> <span class="kr">boolean</span><span class="p">,</span>
-        <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'...'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">is_salable</span><span class="dl">'</span><span class="p">:</span> <span class="nx">boolean</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">...</span><span class="dl">'</span><span class="p">,</span>
         <span class="c1">//@see: \Magento\Catalog\Api\Data\ProductRender\PriceInfoInterface</span>
-        <span class="s1">'price_info'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">'</span><span class="s1">price_info</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
             <span class="c1">//@see \Magento\Catalog\Api\Data\ProductRender\FormattedPriceInfoInterface</span>
             <span class="c1">//All prices are kind of html with currency symbol and rounding rules</span>
-            <span class="s1">'formatted_prices'</span><span class="p">:</span> <span class="p">{</span>
-                <span class="s1">'final_price'</span><span class="p">:</span> <span class="p">...,</span>
-                <span class="s1">'max_price'</span><span class="p">:</span> <span class="p">...,</span>
-                <span class="s1">'max_regular_price'</span><span class="p">:</span> <span class="p">...,</span>
-                <span class="s1">'minimal_regular_price'</span><span class="p">:</span> <span class="p">...,</span>
+            <span class="dl">'</span><span class="s1">formatted_prices</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
+                <span class="dl">'</span><span class="s1">final_price</span><span class="dl">'</span><span class="p">:</span> <span class="p">...,</span>
+                <span class="dl">'</span><span class="s1">max_price</span><span class="dl">'</span><span class="p">:</span> <span class="p">...,</span>
+                <span class="dl">'</span><span class="s1">max_regular_price</span><span class="dl">'</span><span class="p">:</span> <span class="p">...,</span>
+                <span class="dl">'</span><span class="s1">minimal_regular_price</span><span class="dl">'</span><span class="p">:</span> <span class="p">...,</span>
                 <span class="p">...</span>
             <span class="p">},</span>
-            <span class="s1">'final_price'</span><span class="p">:</span> <span class="p">...,</span>
-            <span class="s1">'max_price'</span><span class="p">:</span> <span class="p">...,</span>
-            <span class="s1">'max_regular_price'</span><span class="p">:</span> <span class="p">...,</span>
-            <span class="s1">'minimal_regular_price'</span><span class="p">:</span> <span class="p">...,</span>
+            <span class="dl">'</span><span class="s1">final_price</span><span class="dl">'</span><span class="p">:</span> <span class="p">...,</span>
+            <span class="dl">'</span><span class="s1">max_price</span><span class="dl">'</span><span class="p">:</span> <span class="p">...,</span>
+            <span class="dl">'</span><span class="s1">max_regular_price</span><span class="dl">'</span><span class="p">:</span> <span class="p">...,</span>
+            <span class="dl">'</span><span class="s1">minimal_regular_price</span><span class="dl">'</span><span class="p">:</span> <span class="p">...,</span>
             <span class="p">...</span>
         <span class="p">},</span>
-        <span class="s1">'url'</span><span class="p">:</span> <span class="s1">'...'</span><span class="p">,</span>
-        <span class="s1">'type'</span><span class="p">:</span> <span class="s1">'...'</span><span class="p">,</span> <span class="c1">//enum: configurable, simple, virtual, etc</span>
-        <span class="s1">'currency_code'</span><span class="p">:</span> <span class="s1">'...'</span><span class="p">,</span> <span class="c1">//e.g. USD</span>
-        <span class="s1">'store_id'</span><span class="p">:</span> <span class="p">...</span> <span class="c1">//integer</span>
+        <span class="dl">'</span><span class="s1">url</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">...</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">type</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">...</span><span class="dl">'</span><span class="p">,</span> <span class="c1">//enum: configurable, simple, virtual, etc</span>
+        <span class="dl">'</span><span class="s1">currency_code</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">...</span><span class="dl">'</span><span class="p">,</span> <span class="c1">//e.g. USD</span>
+        <span class="dl">'</span><span class="s1">store_id</span><span class="dl">'</span><span class="p">:</span> <span class="p">...</span> <span class="c1">//integer</span>
    <span class="p">}</span>  
 <span class="p">]</span></code></pre></figure>
 </div>

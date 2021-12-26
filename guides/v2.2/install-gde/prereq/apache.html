@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Apache | Magento 2 Developer Documentation (copy)</title>
+	<title>Apache | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/install-gde/prereq/apache.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/install-gde/prereq/apache.html">Magento 2.0</a></li>
 		
@@ -4624,15 +4625,15 @@
 
 <h2 id="apache-help-rewrite">Important: Apache rewrites and .htaccess</h2>
 
-<p>This topic discusses how to enable Apache 2.2 rewrites and specify a setting for the <a href="http://httpd.apache.org/docs/current/howto/htaccess.html" target="_blank">distributed configuration file, <code class="highlighter-rouge">.htaccess</code></a>.</p>
+<p>This topic discusses how to enable Apache 2.2 rewrites and specify a setting for the <a href="http://httpd.apache.org/docs/current/howto/htaccess.html" target="_blank">distributed configuration file, <code class="language-plaintext highlighter-rouge">.htaccess</code></a>.</p>
 
-<p>Magento uses server rewrites and <code class="highlighter-rouge">.htaccess</code> to provide directory-level instructions for Apache. The following instructions are included in all of the other sections in this topic as well.</p>
+<p>Magento uses server rewrites and <code class="language-plaintext highlighter-rouge">.htaccess</code> to provide directory-level instructions for Apache. The following instructions are included in all of the other sections in this topic as well.</p>
 
 <div class="collapsible">
     <b class="collapsible-title">Click to show Apache 2.4 instructions </b>
-    <div class="collapsible-content"><p>Use this section to enable Apache 2.4 rewrites and specify a setting for the <a href="http://httpd.apache.org/docs/current/howto/htaccess.html">distributed configuration file, <code class="highlighter-rouge">.htaccess</code></a></p>
+    <div class="collapsible-content"><p>Use this section to enable Apache 2.4 rewrites and specify a setting for the <a href="http://httpd.apache.org/docs/current/howto/htaccess.html">distributed configuration file, <code class="language-plaintext highlighter-rouge">.htaccess</code></a></p>
 
-<p>Magento uses server rewrites and <code class="highlighter-rouge">.htaccess</code> to provide directory-level instructions for Apache.</p>
+<p>Magento uses server rewrites and <code class="language-plaintext highlighter-rouge">.htaccess</code> to provide directory-level instructions for Apache.</p>
 
 <p class="bs-callout bs-callout-info">Failure to enable these settings typically results in no styles displaying on your storefront or Admin.</p>
 
@@ -4644,16 +4645,16 @@
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>To enable Magento to use the distributed <code class="highlighter-rouge">.htaccess</code> configuration file, see the guidelines in the <a href="http://httpd.apache.org/docs/current/mod/mod_rewrite.html">Apache 2.4 documentation</a>.</p>
+    <p>To enable Magento to use the distributed <code class="language-plaintext highlighter-rouge">.htaccess</code> configuration file, see the guidelines in the <a href="http://httpd.apache.org/docs/current/mod/mod_rewrite.html">Apache 2.4 documentation</a>.</p>
 
-    <p>Note that in Apache 2.4, the server’s default site configuration file is <code class="highlighter-rouge">/etc/apache2/sites-available/000-default.conf</code>.</p>
+    <p>Note that in Apache 2.4, the server’s default site configuration file is <code class="language-plaintext highlighter-rouge">/etc/apache2/sites-available/000-default.conf</code>.</p>
 
-    <p>For example, you can add the following to the end of <code class="highlighter-rouge">000-default.conf</code>:</p>
+    <p>For example, you can add the following to the end of <code class="language-plaintext highlighter-rouge">000-default.conf</code>:</p>
 
-    <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="gp">&lt;Directory "/var/www/html"&gt;</span>
-<span class="gp">        AllowOverride  &lt;value from Apache site&gt;</span>
-<span class="gp">&lt;/Directory&gt;</span>
-</code></pre></div>    </div>
+    <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="gp">&lt;Directory "/var/www/html"&gt;</span><span class="w">
+</span><span class="gp">        AllowOverride  &lt;value from Apache site&gt;</span><span class="w">
+</span><span class="gp">&lt;/Directory&gt;</span><span class="w">
+</span></code></pre></div>    </div>
 
     <p class="bs-callout bs-callout-info">In some cases, additional parameters might be required. For more information, see the <a href="https://httpd.apache.org/docs/2.4/mod/mod_access_compat.html#order">Apache 2.4 documentation</a>.</p>
   </li>
@@ -4664,8 +4665,8 @@
 </code></pre></div>    </div>
 
     <ul class="bs-callout bs-callout-info">
-      <li>If you upgraded from an earlier Apache version, first look for <code class="highlighter-rouge">&lt;Directory "/var/www/html"&gt;</code> or <code class="highlighter-rouge">&lt;Directory "/var/www"&gt;</code> in <code class="highlighter-rouge">000-default.conf</code>.</li>
-      <li>You must change the value of <code class="highlighter-rouge">AllowOverride</code> in the directive for the directory to which you expect to install the Magento software. For example, to install in the web server docroot, edit the directive in <code class="highlighter-rouge">&lt;Directory /var/www&gt;</code>.</li>
+      <li>If you upgraded from an earlier Apache version, first look for <code class="language-plaintext highlighter-rouge">&lt;Directory "/var/www/html"&gt;</code> or <code class="language-plaintext highlighter-rouge">&lt;Directory "/var/www"&gt;</code> in <code class="language-plaintext highlighter-rouge">000-default.conf</code>.</li>
+      <li>You must change the value of <code class="language-plaintext highlighter-rouge">AllowOverride</code> in the directive for the directory to which you expect to install the Magento software. For example, to install in the web server docroot, edit the directive in <code class="language-plaintext highlighter-rouge">&lt;Directory /var/www&gt;</code>.</li>
     </ul>
   </li>
 </ol>
@@ -4674,9 +4675,9 @@
 
 <div class="collapsible">
     <b class="collapsible-title">Click to show Apache 2.2 instructions </b>
-    <div class="collapsible-content"><p>Use this section to enable Apache 2.2 rewrites and specify a setting for the <a href="http://httpd.apache.org/docs/current/howto/htaccess.html">distributed configuration file, <code class="highlighter-rouge">.htaccess</code></a></p>
+    <div class="collapsible-content"><p>Use this section to enable Apache 2.2 rewrites and specify a setting for the <a href="http://httpd.apache.org/docs/current/howto/htaccess.html">distributed configuration file, <code class="language-plaintext highlighter-rouge">.htaccess</code></a></p>
 
-<p>Magento uses server rewrites and <code class="highlighter-rouge">.htaccess</code> to provide directory-level instructions for Apache.</p>
+<p>Magento uses server rewrites and <code class="language-plaintext highlighter-rouge">.htaccess</code> to provide directory-level instructions for Apache.</p>
 
 <p class="bs-callout bs-callout-info">Failure to enable these settings typically results in no styles displaying on your storefront or Admin.</p>
 
@@ -4685,24 +4686,24 @@
     <p>Open the following file for editing.</p>
 
     <ul>
-      <li>Ubuntu: <code class="highlighter-rouge">vim /etc/apache2/sites-available/default</code></li>
-      <li>CentOS: <code class="highlighter-rouge">vim /etc/httpd/conf/httpd.conf</code></li>
+      <li>Ubuntu: <code class="language-plaintext highlighter-rouge">vim /etc/apache2/sites-available/default</code></li>
+      <li>CentOS: <code class="language-plaintext highlighter-rouge">vim /etc/httpd/conf/httpd.conf</code></li>
     </ul>
   </li>
   <li>
     <p>Locate the block that starts with:</p>
 
     <ul>
-      <li>Ubuntu 12: <code class="highlighter-rouge">&lt;Directory /var/www/&gt;</code></li>
-      <li>Ubuntu 14 or CentOS: <code class="highlighter-rouge">&lt;Directory /var/www/html&gt;</code></li>
+      <li>Ubuntu 12: <code class="language-plaintext highlighter-rouge">&lt;Directory /var/www/&gt;</code></li>
+      <li>Ubuntu 14 or CentOS: <code class="language-plaintext highlighter-rouge">&lt;Directory /var/www/html&gt;</code></li>
     </ul>
   </li>
   <li>
-    <p>Change the value of <code class="highlighter-rouge">AllowOverride</code> to <code class="highlighter-rouge">&lt;value from Apache site&gt;</code>.</p>
+    <p>Change the value of <code class="language-plaintext highlighter-rouge">AllowOverride</code> to <code class="language-plaintext highlighter-rouge">&lt;value from Apache site&gt;</code>.</p>
 
     <p>An example for Ubuntu 12 follows.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;Directory /var/www/&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;Directory /var/www/&gt;
 Options Indexes FollowSymLinks MultiViews
 AllowOverride &lt;value from Apache site&gt;
 Order allow,deny
@@ -4710,20 +4711,20 @@ Allow from all
 &lt;Directory&gt;
 </code></pre></div>    </div>
 
-    <p class="bs-callout bs-callout-info">The preceding values for <code class="highlighter-rouge">Order</code> might not work in all cases. For more information, see the Apache documentation (<a href="https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#order">2.2</a>), <a href="https://httpd.apache.org/docs/2.4/mod/mod_authz_host.html#order">2.4</a>).</p>
+    <p class="bs-callout bs-callout-info">The preceding values for <code class="language-plaintext highlighter-rouge">Order</code> might not work in all cases. For more information, see the Apache documentation (<a href="https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#order">2.2</a>), <a href="https://httpd.apache.org/docs/2.4/mod/mod_authz_host.html#order">2.4</a>).</p>
   </li>
   <li>Save the file and exit the text editor.</li>
   <li>
-    <p><em>Ubuntu only</em>. Configure Apache to use the <code class="highlighter-rouge">mod_rewrite</code> module.</p>
+    <p><em>Ubuntu only</em>. Configure Apache to use the <code class="language-plaintext highlighter-rouge">mod_rewrite</code> module.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>    cd /etc/apache2/mods-enabled
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>    cd /etc/apache2/mods-enabled
     ln -s ../mods-available/rewrite.load
 </code></pre></div>    </div>
   </li>
   <li>
     <p>If you changed Apache settings, restart Apache.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>service apache2 restart
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>service apache2 restart
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -4736,12 +4737,12 @@ Allow from all
 
 <p>To verify the Apache version you’re currently running, enter:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>apache2 -v
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>apache2 -v
 </code></pre></div></div>
 
 <p>The result displays similar to the following:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Server version: Apache/2.2.22 (Ubuntu)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Server version: Apache/2.2.22 (Ubuntu)
 Server built: Jul 22 2014 14:35:32
 </code></pre></div></div>
 
@@ -4774,30 +4775,30 @@ Server built: Jul 22 2014 14:35:32
   <li>
     <p>Install Apache</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>apt-get -y install apache2
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>apt-get -y install apache2
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Verify the installation.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>apache2 -v
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>apache2 -v
 </code></pre></div>    </div>
 
     <p>The result displays similar to the following:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Server version: Apache/2.4.18 (Ubuntu)
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Server version: Apache/2.4.18 (Ubuntu)
 Server built: 2016-04-15T18:00:57
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Enable rewrites and <code class="highlighter-rouge">.htaccess</code> as discussed in the following sections.</p>
+    <p>Enable rewrites and <code class="language-plaintext highlighter-rouge">.htaccess</code> as discussed in the following sections.</p>
   </li>
 </ol>
 
 <h3 id="enable-rewrites-and-htaccess-for-apache-24">Enable rewrites and .htaccess for Apache 2.4</h3>
-<p>Use this section to enable Apache 2.4 rewrites and specify a setting for the <a href="http://httpd.apache.org/docs/current/howto/htaccess.html">distributed configuration file, <code class="highlighter-rouge">.htaccess</code></a></p>
+<p>Use this section to enable Apache 2.4 rewrites and specify a setting for the <a href="http://httpd.apache.org/docs/current/howto/htaccess.html">distributed configuration file, <code class="language-plaintext highlighter-rouge">.htaccess</code></a></p>
 
-<p>Magento uses server rewrites and <code class="highlighter-rouge">.htaccess</code> to provide directory-level instructions for Apache.</p>
+<p>Magento uses server rewrites and <code class="language-plaintext highlighter-rouge">.htaccess</code> to provide directory-level instructions for Apache.</p>
 
 <p class="bs-callout bs-callout-info">Failure to enable these settings typically results in no styles displaying on your storefront or Admin.</p>
 
@@ -4809,16 +4810,16 @@ Server built: 2016-04-15T18:00:57
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>To enable Magento to use the distributed <code class="highlighter-rouge">.htaccess</code> configuration file, see the guidelines in the <a href="http://httpd.apache.org/docs/current/mod/mod_rewrite.html">Apache 2.4 documentation</a>.</p>
+    <p>To enable Magento to use the distributed <code class="language-plaintext highlighter-rouge">.htaccess</code> configuration file, see the guidelines in the <a href="http://httpd.apache.org/docs/current/mod/mod_rewrite.html">Apache 2.4 documentation</a>.</p>
 
-    <p>Note that in Apache 2.4, the server’s default site configuration file is <code class="highlighter-rouge">/etc/apache2/sites-available/000-default.conf</code>.</p>
+    <p>Note that in Apache 2.4, the server’s default site configuration file is <code class="language-plaintext highlighter-rouge">/etc/apache2/sites-available/000-default.conf</code>.</p>
 
-    <p>For example, you can add the following to the end of <code class="highlighter-rouge">000-default.conf</code>:</p>
+    <p>For example, you can add the following to the end of <code class="language-plaintext highlighter-rouge">000-default.conf</code>:</p>
 
-    <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="gp">&lt;Directory "/var/www/html"&gt;</span>
-<span class="gp">        AllowOverride  &lt;value from Apache site&gt;</span>
-<span class="gp">&lt;/Directory&gt;</span>
-</code></pre></div>    </div>
+    <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="gp">&lt;Directory "/var/www/html"&gt;</span><span class="w">
+</span><span class="gp">        AllowOverride  &lt;value from Apache site&gt;</span><span class="w">
+</span><span class="gp">&lt;/Directory&gt;</span><span class="w">
+</span></code></pre></div>    </div>
 
     <p class="bs-callout bs-callout-info">In some cases, additional parameters might be required. For more information, see the <a href="https://httpd.apache.org/docs/2.4/mod/mod_access_compat.html#order">Apache 2.4 documentation</a>.</p>
   </li>
@@ -4829,16 +4830,16 @@ Server built: 2016-04-15T18:00:57
 </code></pre></div>    </div>
 
     <ul class="bs-callout bs-callout-info">
-      <li>If you upgraded from an earlier Apache version, first look for <code class="highlighter-rouge">&lt;Directory "/var/www/html"&gt;</code> or <code class="highlighter-rouge">&lt;Directory "/var/www"&gt;</code> in <code class="highlighter-rouge">000-default.conf</code>.</li>
-      <li>You must change the value of <code class="highlighter-rouge">AllowOverride</code> in the directive for the directory to which you expect to install the Magento software. For example, to install in the web server docroot, edit the directive in <code class="highlighter-rouge">&lt;Directory /var/www&gt;</code>.</li>
+      <li>If you upgraded from an earlier Apache version, first look for <code class="language-plaintext highlighter-rouge">&lt;Directory "/var/www/html"&gt;</code> or <code class="language-plaintext highlighter-rouge">&lt;Directory "/var/www"&gt;</code> in <code class="language-plaintext highlighter-rouge">000-default.conf</code>.</li>
+      <li>You must change the value of <code class="language-plaintext highlighter-rouge">AllowOverride</code> in the directive for the directory to which you expect to install the Magento software. For example, to install in the web server docroot, edit the directive in <code class="language-plaintext highlighter-rouge">&lt;Directory /var/www&gt;</code>.</li>
     </ul>
   </li>
 </ol>
 
 <h3 id="enable-rewrites-and-htaccess-for-apache-22">Enable rewrites and .htaccess for Apache 2.2</h3>
-<p>Use this section to enable Apache 2.2 rewrites and specify a setting for the <a href="http://httpd.apache.org/docs/current/howto/htaccess.html">distributed configuration file, <code class="highlighter-rouge">.htaccess</code></a></p>
+<p>Use this section to enable Apache 2.2 rewrites and specify a setting for the <a href="http://httpd.apache.org/docs/current/howto/htaccess.html">distributed configuration file, <code class="language-plaintext highlighter-rouge">.htaccess</code></a></p>
 
-<p>Magento uses server rewrites and <code class="highlighter-rouge">.htaccess</code> to provide directory-level instructions for Apache.</p>
+<p>Magento uses server rewrites and <code class="language-plaintext highlighter-rouge">.htaccess</code> to provide directory-level instructions for Apache.</p>
 
 <p class="bs-callout bs-callout-info">Failure to enable these settings typically results in no styles displaying on your storefront or Admin.</p>
 
@@ -4847,24 +4848,24 @@ Server built: 2016-04-15T18:00:57
     <p>Open the following file for editing.</p>
 
     <ul>
-      <li>Ubuntu: <code class="highlighter-rouge">vim /etc/apache2/sites-available/default</code></li>
-      <li>CentOS: <code class="highlighter-rouge">vim /etc/httpd/conf/httpd.conf</code></li>
+      <li>Ubuntu: <code class="language-plaintext highlighter-rouge">vim /etc/apache2/sites-available/default</code></li>
+      <li>CentOS: <code class="language-plaintext highlighter-rouge">vim /etc/httpd/conf/httpd.conf</code></li>
     </ul>
   </li>
   <li>
     <p>Locate the block that starts with:</p>
 
     <ul>
-      <li>Ubuntu 12: <code class="highlighter-rouge">&lt;Directory /var/www/&gt;</code></li>
-      <li>Ubuntu 14 or CentOS: <code class="highlighter-rouge">&lt;Directory /var/www/html&gt;</code></li>
+      <li>Ubuntu 12: <code class="language-plaintext highlighter-rouge">&lt;Directory /var/www/&gt;</code></li>
+      <li>Ubuntu 14 or CentOS: <code class="language-plaintext highlighter-rouge">&lt;Directory /var/www/html&gt;</code></li>
     </ul>
   </li>
   <li>
-    <p>Change the value of <code class="highlighter-rouge">AllowOverride</code> to <code class="highlighter-rouge">&lt;value from Apache site&gt;</code>.</p>
+    <p>Change the value of <code class="language-plaintext highlighter-rouge">AllowOverride</code> to <code class="language-plaintext highlighter-rouge">&lt;value from Apache site&gt;</code>.</p>
 
     <p>An example for Ubuntu 12 follows.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;Directory /var/www/&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;Directory /var/www/&gt;
 Options Indexes FollowSymLinks MultiViews
 AllowOverride &lt;value from Apache site&gt;
 Order allow,deny
@@ -4872,20 +4873,20 @@ Allow from all
 &lt;Directory&gt;
 </code></pre></div>    </div>
 
-    <p class="bs-callout bs-callout-info">The preceding values for <code class="highlighter-rouge">Order</code> might not work in all cases. For more information, see the Apache documentation (<a href="https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#order">2.2</a>), <a href="https://httpd.apache.org/docs/2.4/mod/mod_authz_host.html#order">2.4</a>).</p>
+    <p class="bs-callout bs-callout-info">The preceding values for <code class="language-plaintext highlighter-rouge">Order</code> might not work in all cases. For more information, see the Apache documentation (<a href="https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#order">2.2</a>), <a href="https://httpd.apache.org/docs/2.4/mod/mod_authz_host.html#order">2.4</a>).</p>
   </li>
   <li>Save the file and exit the text editor.</li>
   <li>
-    <p><em>Ubuntu only</em>. Configure Apache to use the <code class="highlighter-rouge">mod_rewrite</code> module.</p>
+    <p><em>Ubuntu only</em>. Configure Apache to use the <code class="language-plaintext highlighter-rouge">mod_rewrite</code> module.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>    cd /etc/apache2/mods-enabled
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>    cd /etc/apache2/mods-enabled
     ln -s ../mods-available/rewrite.load
 </code></pre></div>    </div>
   </li>
   <li>
     <p>If you changed Apache settings, restart Apache.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>service apache2 restart
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>service apache2 restart
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -4909,9 +4910,9 @@ Allow from all
 
 <ol>
   <li>
-    <p>Add the <code class="highlighter-rouge">ppa:ondrej</code> repository, which has Apache 2.4:</p>
+    <p>Add the <code class="language-plaintext highlighter-rouge">ppa:ondrej</code> repository, which has Apache 2.4:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>apt-get -y update
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>apt-get -y update
 apt-add-repository ppa:ondrej/apache2
 apt-get -y update
 </code></pre></div>    </div>
@@ -4919,23 +4920,23 @@ apt-get -y update
   <li>
     <p>Install Apache 2.4:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>apt-get install -y apache2
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>apt-get install -y apache2
 </code></pre></div>    </div>
   </li>
 </ol>
 
-<p class="bs-callout bs-callout-info">If the <code class="highlighter-rouge">apt-get install</code> command fails because of unmet dependencies, consult a resource like <a href="http://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa" target="_blank">http://askubuntu.com</a>.</p>
+<p class="bs-callout bs-callout-info">If the <code class="language-plaintext highlighter-rouge">apt-get install</code> command fails because of unmet dependencies, consult a resource like <a href="http://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa" target="_blank">http://askubuntu.com</a>.</p>
 
 <ol>
   <li>
     <p>Verify the installation.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>apache2 -v
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>apache2 -v
 </code></pre></div>    </div>
 
     <p>Messages similar to the following should display:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Server version: Apache/2.4.10 (Ubuntu)
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Server version: Apache/2.4.10 (Ubuntu)
 Server built: Jul 22 2014 22:46:25
 </code></pre></div>    </div>
   </li>
@@ -4945,9 +4946,9 @@ Server built: Jul 22 2014 22:46:25
 </ol>
 
 <h3 id="enable-rewrites-and-htaccess-for-apache-24">Enable rewrites and .htaccess for Apache 2.4</h3>
-<p>Use this section to enable Apache 2.4 rewrites and specify a setting for the <a href="http://httpd.apache.org/docs/current/howto/htaccess.html">distributed configuration file, <code class="highlighter-rouge">.htaccess</code></a></p>
+<p>Use this section to enable Apache 2.4 rewrites and specify a setting for the <a href="http://httpd.apache.org/docs/current/howto/htaccess.html">distributed configuration file, <code class="language-plaintext highlighter-rouge">.htaccess</code></a></p>
 
-<p>Magento uses server rewrites and <code class="highlighter-rouge">.htaccess</code> to provide directory-level instructions for Apache.</p>
+<p>Magento uses server rewrites and <code class="language-plaintext highlighter-rouge">.htaccess</code> to provide directory-level instructions for Apache.</p>
 
 <p class="bs-callout bs-callout-info">Failure to enable these settings typically results in no styles displaying on your storefront or Admin.</p>
 
@@ -4959,16 +4960,16 @@ Server built: Jul 22 2014 22:46:25
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>To enable Magento to use the distributed <code class="highlighter-rouge">.htaccess</code> configuration file, see the guidelines in the <a href="http://httpd.apache.org/docs/current/mod/mod_rewrite.html">Apache 2.4 documentation</a>.</p>
+    <p>To enable Magento to use the distributed <code class="language-plaintext highlighter-rouge">.htaccess</code> configuration file, see the guidelines in the <a href="http://httpd.apache.org/docs/current/mod/mod_rewrite.html">Apache 2.4 documentation</a>.</p>
 
-    <p>Note that in Apache 2.4, the server’s default site configuration file is <code class="highlighter-rouge">/etc/apache2/sites-available/000-default.conf</code>.</p>
+    <p>Note that in Apache 2.4, the server’s default site configuration file is <code class="language-plaintext highlighter-rouge">/etc/apache2/sites-available/000-default.conf</code>.</p>
 
-    <p>For example, you can add the following to the end of <code class="highlighter-rouge">000-default.conf</code>:</p>
+    <p>For example, you can add the following to the end of <code class="language-plaintext highlighter-rouge">000-default.conf</code>:</p>
 
-    <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="gp">&lt;Directory "/var/www/html"&gt;</span>
-<span class="gp">        AllowOverride  &lt;value from Apache site&gt;</span>
-<span class="gp">&lt;/Directory&gt;</span>
-</code></pre></div>    </div>
+    <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="gp">&lt;Directory "/var/www/html"&gt;</span><span class="w">
+</span><span class="gp">        AllowOverride  &lt;value from Apache site&gt;</span><span class="w">
+</span><span class="gp">&lt;/Directory&gt;</span><span class="w">
+</span></code></pre></div>    </div>
 
     <p class="bs-callout bs-callout-info">In some cases, additional parameters might be required. For more information, see the <a href="https://httpd.apache.org/docs/2.4/mod/mod_access_compat.html#order">Apache 2.4 documentation</a>.</p>
   </li>
@@ -4979,8 +4980,8 @@ Server built: Jul 22 2014 22:46:25
 </code></pre></div>    </div>
 
     <ul class="bs-callout bs-callout-info">
-      <li>If you upgraded from an earlier Apache version, first look for <code class="highlighter-rouge">&lt;Directory "/var/www/html"&gt;</code> or <code class="highlighter-rouge">&lt;Directory "/var/www"&gt;</code> in <code class="highlighter-rouge">000-default.conf</code>.</li>
-      <li>You must change the value of <code class="highlighter-rouge">AllowOverride</code> in the directive for the directory to which you expect to install the Magento software. For example, to install in the web server docroot, edit the directive in <code class="highlighter-rouge">&lt;Directory /var/www&gt;</code>.</li>
+      <li>If you upgraded from an earlier Apache version, first look for <code class="language-plaintext highlighter-rouge">&lt;Directory "/var/www/html"&gt;</code> or <code class="language-plaintext highlighter-rouge">&lt;Directory "/var/www"&gt;</code> in <code class="language-plaintext highlighter-rouge">000-default.conf</code>.</li>
+      <li>You must change the value of <code class="language-plaintext highlighter-rouge">AllowOverride</code> in the directive for the directory to which you expect to install the Magento software. For example, to install in the web server docroot, edit the directive in <code class="language-plaintext highlighter-rouge">&lt;Directory /var/www&gt;</code>.</li>
     </ul>
   </li>
 </ol>
@@ -4999,9 +5000,9 @@ Server built: Jul 22 2014 22:46:25
 
 <div class="collapsible">
     <b class="collapsible-title">Click to install Apache on CentOS 6 or 7 </b>
-    <div class="collapsible-content"><p>Magento requires Apache use server rewrites. You must also specify the type of directives that can be used in <code class="highlighter-rouge">.htaccess</code>, which Magento uses to specify rewrite rules.</p>
+    <div class="collapsible-content"><p>Magento requires Apache use server rewrites. You must also specify the type of directives that can be used in <code class="language-plaintext highlighter-rouge">.htaccess</code>, which Magento uses to specify rewrite rules.</p>
 
-<p>Installing and configuring Apache is basically a three-step process: install the software, enable rewrites, and specify <code class="highlighter-rouge">.htaccess</code> directives.</p>
+<p>Installing and configuring Apache is basically a three-step process: install the software, enable rewrites, and specify <code class="language-plaintext highlighter-rouge">.htaccess</code> directives.</p>
 
 <h3 id="apache-install-centos">Installing Apache</h3>
 
@@ -5009,18 +5010,18 @@ Server built: Jul 22 2014 22:46:25
   <li>
     <p>Install Apache 2 if you haven’t already done so.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>yum -y install httpd
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>yum -y install httpd
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Verify the installation:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>httpd -v
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>httpd -v
 </code></pre></div>    </div>
 
     <p>Messages similar to the following display to confirm the installation was successful:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Server version: Apache/2.2.15 (Unix)
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Server version: Apache/2.2.15 (Unix)
 Server built: Oct 16 2014 14:48:21
 </code></pre></div>    </div>
   </li>
@@ -5032,9 +5033,9 @@ Server built: Oct 16 2014 14:48:21
 <p class="bs-callout bs-callout-info">Even though Apache 2.4 is provided by default with CentOS 7, you configure it like Apache 2.2. See the following section.</p>
 
 <h3 id="enable-rewrites-and-htaccess-for-apache-22-including-centos-7">Enable rewrites and .htaccess for Apache 2.2 (including CentOS 7)</h3>
-<p>Use this section to enable Apache 2.2 rewrites and specify a setting for the <a href="http://httpd.apache.org/docs/current/howto/htaccess.html">distributed configuration file, <code class="highlighter-rouge">.htaccess</code></a></p>
+<p>Use this section to enable Apache 2.2 rewrites and specify a setting for the <a href="http://httpd.apache.org/docs/current/howto/htaccess.html">distributed configuration file, <code class="language-plaintext highlighter-rouge">.htaccess</code></a></p>
 
-<p>Magento uses server rewrites and <code class="highlighter-rouge">.htaccess</code> to provide directory-level instructions for Apache.</p>
+<p>Magento uses server rewrites and <code class="language-plaintext highlighter-rouge">.htaccess</code> to provide directory-level instructions for Apache.</p>
 
 <p class="bs-callout bs-callout-info">Failure to enable these settings typically results in no styles displaying on your storefront or Admin.</p>
 
@@ -5043,24 +5044,24 @@ Server built: Oct 16 2014 14:48:21
     <p>Open the following file for editing.</p>
 
     <ul>
-      <li>Ubuntu: <code class="highlighter-rouge">vim /etc/apache2/sites-available/default</code></li>
-      <li>CentOS: <code class="highlighter-rouge">vim /etc/httpd/conf/httpd.conf</code></li>
+      <li>Ubuntu: <code class="language-plaintext highlighter-rouge">vim /etc/apache2/sites-available/default</code></li>
+      <li>CentOS: <code class="language-plaintext highlighter-rouge">vim /etc/httpd/conf/httpd.conf</code></li>
     </ul>
   </li>
   <li>
     <p>Locate the block that starts with:</p>
 
     <ul>
-      <li>Ubuntu 12: <code class="highlighter-rouge">&lt;Directory /var/www/&gt;</code></li>
-      <li>Ubuntu 14 or CentOS: <code class="highlighter-rouge">&lt;Directory /var/www/html&gt;</code></li>
+      <li>Ubuntu 12: <code class="language-plaintext highlighter-rouge">&lt;Directory /var/www/&gt;</code></li>
+      <li>Ubuntu 14 or CentOS: <code class="language-plaintext highlighter-rouge">&lt;Directory /var/www/html&gt;</code></li>
     </ul>
   </li>
   <li>
-    <p>Change the value of <code class="highlighter-rouge">AllowOverride</code> to <code class="highlighter-rouge">&lt;value from Apache site&gt;</code>.</p>
+    <p>Change the value of <code class="language-plaintext highlighter-rouge">AllowOverride</code> to <code class="language-plaintext highlighter-rouge">&lt;value from Apache site&gt;</code>.</p>
 
     <p>An example for Ubuntu 12 follows.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;Directory /var/www/&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;Directory /var/www/&gt;
 Options Indexes FollowSymLinks MultiViews
 AllowOverride &lt;value from Apache site&gt;
 Order allow,deny
@@ -5068,20 +5069,20 @@ Allow from all
 &lt;Directory&gt;
 </code></pre></div>    </div>
 
-    <p class="bs-callout bs-callout-info">The preceding values for <code class="highlighter-rouge">Order</code> might not work in all cases. For more information, see the Apache documentation (<a href="https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#order">2.2</a>), <a href="https://httpd.apache.org/docs/2.4/mod/mod_authz_host.html#order">2.4</a>).</p>
+    <p class="bs-callout bs-callout-info">The preceding values for <code class="language-plaintext highlighter-rouge">Order</code> might not work in all cases. For more information, see the Apache documentation (<a href="https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#order">2.2</a>), <a href="https://httpd.apache.org/docs/2.4/mod/mod_authz_host.html#order">2.4</a>).</p>
   </li>
   <li>Save the file and exit the text editor.</li>
   <li>
-    <p><em>Ubuntu only</em>. Configure Apache to use the <code class="highlighter-rouge">mod_rewrite</code> module.</p>
+    <p><em>Ubuntu only</em>. Configure Apache to use the <code class="language-plaintext highlighter-rouge">mod_rewrite</code> module.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>    cd /etc/apache2/mods-enabled
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>    cd /etc/apache2/mods-enabled
     ln -s ../mods-available/rewrite.load
 </code></pre></div>    </div>
   </li>
   <li>
     <p>If you changed Apache settings, restart Apache.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>service apache2 restart
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>service apache2 restart
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -5113,7 +5114,7 @@ Allow from all
 
 <p>For example:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;Directory /var/www/&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;Directory /var/www/&gt;
 	Options Indexes FollowSymLinks MultiViews
 	AllowOverride &lt;value from Apache site&gt;
 	Order allow,deny
@@ -5121,7 +5122,7 @@ Allow from all
 &lt;/Directory&gt;
 </code></pre></div></div>
 
-<p class="bs-callout bs-callout-info">The preceding values for <code class="highlighter-rouge">Order</code> might not work in all cases. For more information, see the <a href="https://httpd.apache.org/docs/2.4/mod/mod_access_compat.html#order" target="_blank">Apache documentation</a>.</p>
+<p class="bs-callout bs-callout-info">The preceding values for <code class="language-plaintext highlighter-rouge">Order</code> might not work in all cases. For more information, see the <a href="https://httpd.apache.org/docs/2.4/mod/mod_access_compat.html#order" target="_blank">Apache documentation</a>.</p>
 
 <h4 id="apache-error-2-2">Solving 403 Forbidden errors for Apache 2.2</h4>
 
@@ -5129,7 +5130,7 @@ Allow from all
 
 <p>For example:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;Directory /var/www/&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;Directory /var/www/&gt;
 	Options Indexes FollowSymLinks MultiViews
 	AllowOverride &lt;value from Apache site&gt;
 	Order allow,deny
@@ -5137,7 +5138,7 @@ Allow from all
 &lt;/Directory&gt;
 </code></pre></div></div>
 
-<p class="bs-callout bs-callout-info">The preceding values for <code class="highlighter-rouge">Order</code> might not work in all cases. For more information, see the <a href="https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#order" target="_blank">Apache documentation</a>.</p>
+<p class="bs-callout bs-callout-info">The preceding values for <code class="language-plaintext highlighter-rouge">Order</code> might not work in all cases. For more information, see the <a href="https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#order" target="_blank">Apache documentation</a>.</p>
 </div>
   </div>
 

@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Troubleshooting 503 (Backend Fetch Failed) errors | Magento 2 Developer Documentation (copy)</title>
+	<title>Troubleshooting 503 (Backend Fetch Failed) errors | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/config-guide/varnish/tshoot-varnish-503.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/config-guide/varnish/tshoot-varnish-503.html">Magento 2.0</a></li>
 		
@@ -3669,47 +3670,47 @@
 			<p>If the length of   <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>
  tags used by Magento exceed Varnish’s default of 8192 bytes, you can see HTTP 503 (Backend Fetch Failed) errors in the browser. The errors might display similar to the following:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Error 503 Backend fetch failed
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Error 503 Backend fetch failed
 Backend fetch failed
 </code></pre></div></div>
 
-<p>To resolve this issue, increase the default value of the <code class="highlighter-rouge">http_resp_hdr_len</code> parameter in your Varnish configuration file. The <code class="highlighter-rouge">http_resp_hdr_len</code> parameter specifies the max header length <em>within</em> the total default response size of 32768 bytes.</p>
+<p>To resolve this issue, increase the default value of the <code class="language-plaintext highlighter-rouge">http_resp_hdr_len</code> parameter in your Varnish configuration file. The <code class="language-plaintext highlighter-rouge">http_resp_hdr_len</code> parameter specifies the max header length <em>within</em> the total default response size of 32768 bytes.</p>
 
-<p class="bs-callout bs-callout-info">If the <code class="highlighter-rouge">http_resp_hdr_len</code> value exceeds 32768 bytes, you must also increase the default response size using the <code class="highlighter-rouge">http_resp_size</code> parameter.</p>
+<p class="bs-callout bs-callout-info">If the <code class="language-plaintext highlighter-rouge">http_resp_hdr_len</code> value exceeds 32768 bytes, you must also increase the default response size using the <code class="language-plaintext highlighter-rouge">http_resp_size</code> parameter.</p>
 
 <ol>
   <li>
-    <p>As a user with <code class="highlighter-rouge">root</code> privileges, open your Vanish configuration file in a text editor:</p>
+    <p>As a user with <code class="language-plaintext highlighter-rouge">root</code> privileges, open your Vanish configuration file in a text editor:</p>
 
     <ul>
-      <li>CentOS 6: <code class="highlighter-rouge">/etc/sysconfig/varnish</code></li>
-      <li>CentOS 7: <code class="highlighter-rouge">/etc/varnish/varnish.params</code></li>
-      <li>Debian: <code class="highlighter-rouge">/etc/default/varnish</code></li>
-      <li>Ubuntu: <code class="highlighter-rouge">/etc/default/varnish</code></li>
+      <li>CentOS 6: <code class="language-plaintext highlighter-rouge">/etc/sysconfig/varnish</code></li>
+      <li>CentOS 7: <code class="language-plaintext highlighter-rouge">/etc/varnish/varnish.params</code></li>
+      <li>Debian: <code class="language-plaintext highlighter-rouge">/etc/default/varnish</code></li>
+      <li>Ubuntu: <code class="language-plaintext highlighter-rouge">/etc/default/varnish</code></li>
     </ul>
   </li>
-  <li>Search for the <code class="highlighter-rouge">http_resp_hdr_len</code> parameter.</li>
-  <li>If the parameter doesn’t exist, add it after <code class="highlighter-rouge">thread_pool_max</code>.</li>
+  <li>Search for the <code class="language-plaintext highlighter-rouge">http_resp_hdr_len</code> parameter.</li>
+  <li>If the parameter doesn’t exist, add it after <code class="language-plaintext highlighter-rouge">thread_pool_max</code>.</li>
   <li>
-    <p>Set <code class="highlighter-rouge">http_resp_hdr_len</code> to a value equal to the product count of your largest   <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span>
+    <p>Set <code class="language-plaintext highlighter-rouge">http_resp_hdr_len</code> to a value equal to the product count of your largest   <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span>
  multiplied by 21. (Each product tag is about 21 characters in length.)</p>
 
     <p>For example, setting the value to 65536 bytes should work if your largest category has 3,000 products:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>-p http_resp_hdr_len=65536 \
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>-p http_resp_hdr_len=65536 \
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Set the <code class="highlighter-rouge">http_resp_size</code> to a value that accommodates the increased response header length.</p>
+    <p>Set the <code class="language-plaintext highlighter-rouge">http_resp_size</code> to a value that accommodates the increased response header length.</p>
 
     <p>For example, using the sum of the increased header length and default response size is a good starting point (e.g., 65536 + 32768 = 98304):</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>-p http_resp_size=98304 \
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>-p http_resp_size=98304 \
 </code></pre></div>    </div>
 
     <p>A snippet follows:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code># DAEMON_OPTS is used by the init script.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code># DAEMON_OPTS is used by the init script.
 DAEMON_OPTS="-a ${VARNISH_LISTEN_ADDRESS}:${VARNISH_LISTEN_PORT} \
      -f ${VARNISH_VCL_CONF} \
      -T ${VARNISH_ADMIN_LISTEN_ADDRESS}:${VARNISH_ADMIN_LISTEN_PORT} \

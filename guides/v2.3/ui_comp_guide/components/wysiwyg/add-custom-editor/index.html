@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Add Custom Editor | Magento 2 Developer Documentation (copy)</title>
+	<title>Add Custom Editor | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/ui_comp_guide/components/wysiwyg/add-custom-editor">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/ui_comp_guide/components/wysiwyg/add-custom-editor">Magento 2.0</a></li>
 		
@@ -3300,18 +3301,18 @@
 
 <h2 id="step-1-make-the-editor-library-available">Step 1. Make the editor library available</h2>
 
-<p>Download and install your editor’s library into your module’s <code class="highlighter-rouge">view/base/web/js</code> directory to have Magento publish it under <code class="highlighter-rouge">pub/static</code>.</p>
+<p>Download and install your editor’s library into your module’s <code class="language-plaintext highlighter-rouge">view/base/web/js</code> directory to have Magento publish it under <code class="language-plaintext highlighter-rouge">pub/static</code>.</p>
 
 <h2 id="step-2-register-editor">Step 2. Register editor</h2>
 
-<p>In your module’s <code class="highlighter-rouge">etc/adminhtml/di.xml</code> file, add your editor to the list of <code class="highlighter-rouge">adapterOptions</code> to include it to the list of available WYSIWYG editors in the Admin.</p>
+<p>In your module’s <code class="language-plaintext highlighter-rouge">etc/adminhtml/di.xml</code> file, add your editor to the list of <code class="language-plaintext highlighter-rouge">adapterOptions</code> to include it to the list of available WYSIWYG editors in the Admin.</p>
 
-<p>Provide unique values for the <code class="highlighter-rouge">name</code> parameter and the <code class="highlighter-rouge">value</code> and <code class="highlighter-rouge">label</code> entries for your editor to avoid naming collisions.</p>
+<p>Provide unique values for the <code class="language-plaintext highlighter-rouge">name</code> parameter and the <code class="language-plaintext highlighter-rouge">value</code> and <code class="language-plaintext highlighter-rouge">label</code> entries for your editor to avoid naming collisions.</p>
 
-<p>If you are also extending or overriding the configuration for Variable, Widget, or Gallery, you must use the same string as the <code class="highlighter-rouge">value</code> entry.</p>
+<p>If you are also extending or overriding the configuration for Variable, Widget, or Gallery, you must use the same string as the <code class="language-plaintext highlighter-rouge">value</code> entry.</p>
 
 <blockquote>
-  <p>CKEditor registration in <code class="highlighter-rouge">app/code/CKEditor/CKEditor4/etc/adminhtml/di.xml</code></p>
+  <p>CKEditor registration in <code class="language-plaintext highlighter-rouge">app/code/CKEditor/CKEditor4/etc/adminhtml/di.xml</code></p>
 </blockquote>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Cms\Model\Config\Source\Wysiwyg\Editor"</span><span class="nt">&gt;</span>
@@ -3326,10 +3327,10 @@
 <span class="nt">&lt;/type&gt;</span>
 </code></pre></div></div>
 
-<p>To avoid issues in the case that we remove or disable the adapter module, add this configuration to the <code class="highlighter-rouge">di.xml</code> file:</p>
+<p>To avoid issues in the case that we remove or disable the adapter module, add this configuration to the <code class="language-plaintext highlighter-rouge">di.xml</code> file:</p>
 
 <blockquote>
-  <p>Configuration in <code class="highlighter-rouge">di.xml</code></p>
+  <p>Configuration in <code class="language-plaintext highlighter-rouge">di.xml</code></p>
 </blockquote>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:ObjectManager/etc/config.xsd"</span><span class="nt">&gt;</span>
@@ -3345,40 +3346,40 @@
 
 <h2 id="step-3-create-editor-adapter">Step 3. Create editor adapter</h2>
 
-<p>Create an adapter for your editor in your module’s <code class="highlighter-rouge">view/base/web</code> directory.
-This adapter should implement the extensions points called by <code class="highlighter-rouge">wysiwygInstance</code> in the following file:</p>
+<p>Create an adapter for your editor in your module’s <code class="language-plaintext highlighter-rouge">view/base/web</code> directory.
+This adapter should implement the extensions points called by <code class="language-plaintext highlighter-rouge">wysiwygInstance</code> in the following file:</p>
 
-<p><code class="highlighter-rouge">lib/mage/adminhtml/wysiwyg/tiny_mce/setup.js</code></p>
+<p><code class="language-plaintext highlighter-rouge">lib/mage/adminhtml/wysiwyg/tiny_mce/setup.js</code></p>
 
 <p>At minimum your adapter should implement the following methods:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">getAdapterPrototype()</code></li>
-  <li><code class="highlighter-rouge">setup( mode )</code></li>
-  <li><code class="highlighter-rouge">openFileBrowser( o )</code></li>
-  <li><code class="highlighter-rouge">toggle()</code></li>
-  <li><code class="highlighter-rouge">onFormValidation()</code></li>
-  <li><code class="highlighter-rouge">encodeContent(content)</code></li>
+  <li><code class="language-plaintext highlighter-rouge">getAdapterPrototype()</code></li>
+  <li><code class="language-plaintext highlighter-rouge">setup( mode )</code></li>
+  <li><code class="language-plaintext highlighter-rouge">openFileBrowser( o )</code></li>
+  <li><code class="language-plaintext highlighter-rouge">toggle()</code></li>
+  <li><code class="language-plaintext highlighter-rouge">onFormValidation()</code></li>
+  <li><code class="language-plaintext highlighter-rouge">encodeContent(content)</code></li>
 </ul>
 
 <p>If you are integrating Magento entities such as variable and widget as plugins, your adapter must also implement the following methods:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">get( id )</code> - returns the editor by it element id</li>
-  <li><code class="highlighter-rouge">getContent()</code> - returns the content stored in the WYSIWYG field</li>
-  <li><code class="highlighter-rouge">setContent(content)</code> - replaces the entire contents of the WYSIWYG with the string content parameter</li>
-  <li><code class="highlighter-rouge">insertContent( content )</code> - inserts content into the editor</li>
-  <li><code class="highlighter-rouge">setCaretOnElement( targetElement )</code> - sets the caret location in the editor</li>
-  <li><code class="highlighter-rouge">activeEditor()</code> - returns the active editor as an object with a <code class="highlighter-rouge">selection</code> property.
-The <code class="highlighter-rouge">selection</code> property returns an instance of the editor with the following additional methods defined:
+  <li><code class="language-plaintext highlighter-rouge">get( id )</code> - returns the editor by it element id</li>
+  <li><code class="language-plaintext highlighter-rouge">getContent()</code> - returns the content stored in the WYSIWYG field</li>
+  <li><code class="language-plaintext highlighter-rouge">setContent(content)</code> - replaces the entire contents of the WYSIWYG with the string content parameter</li>
+  <li><code class="language-plaintext highlighter-rouge">insertContent( content )</code> - inserts content into the editor</li>
+  <li><code class="language-plaintext highlighter-rouge">setCaretOnElement( targetElement )</code> - sets the caret location in the editor</li>
+  <li><code class="language-plaintext highlighter-rouge">activeEditor()</code> - returns the active editor as an object with a <code class="language-plaintext highlighter-rouge">selection</code> property.
+The <code class="language-plaintext highlighter-rouge">selection</code> property returns an instance of the editor with the following additional methods defined:
     <ul>
-      <li><code class="highlighter-rouge">getBookmark( type:Number, normalized:Boolean ):Object</code> - returns a bookmark object that has the location for the current selection.
+      <li><code class="language-plaintext highlighter-rouge">getBookmark( type:Number, normalized:Boolean ):Object</code> - returns a bookmark object that has the location for the current selection.
 This is used to restore the selection after content modification in the document.</li>
-      <li><code class="highlighter-rouge">moveToBookmark( bookmark:Object ):Boolean</code> - restores the selection of the specified bookmark.</li>
-      <li><code class="highlighter-rouge">getNode():Element</code> - returns the currently selected element or common ancestor element for both start and end of the selection.</li>
-      <li><code class="highlighter-rouge">select( targetElement )</code> - selects the specified element.
+      <li><code class="language-plaintext highlighter-rouge">moveToBookmark( bookmark:Object ):Boolean</code> - restores the selection of the specified bookmark.</li>
+      <li><code class="language-plaintext highlighter-rouge">getNode():Element</code> - returns the currently selected element or common ancestor element for both start and end of the selection.</li>
+      <li><code class="language-plaintext highlighter-rouge">select( targetElement )</code> - selects the specified element.
 This places the start and end of the selection range around the element.</li>
-      <li><code class="highlighter-rouge">collapse( to_start:Boolean ):void</code> - collapse the selection to start or end of range.</li>
+      <li><code class="language-plaintext highlighter-rouge">collapse( to_start:Boolean ):void</code> - collapse the selection to start or end of range.</li>
     </ul>
   </li>
 </ul>
@@ -3395,13 +3396,13 @@ This places the start and end of the selection range around the element.</li>
 <span class="cm">/* global varienGlobalEvents, tinyMceEditors, MediabrowserUtility, closeEditorPopup, Base64 */</span>
 <span class="cm">/* eslint-disable strict */</span>
 <span class="nx">define</span><span class="p">([</span>
-    <span class="s1">'jquery'</span><span class="p">,</span>
-    <span class="s1">'underscore'</span><span class="p">,</span>
-    <span class="s1">'CKEditor_CKEditor4/js/ckeditor4/ckeditor'</span><span class="p">,</span>
-    <span class="s1">'mage/translate'</span><span class="p">,</span>
-    <span class="s1">'prototype'</span><span class="p">,</span>
-    <span class="s1">'mage/adminhtml/events'</span><span class="p">,</span>
-    <span class="s1">'jquery/ui'</span>
+    <span class="dl">'</span><span class="s1">jquery</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">underscore</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">CKEditor_CKEditor4/js/ckeditor4/ckeditor</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">mage/translate</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">prototype</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">mage/adminhtml/events</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">jquery/ui</span><span class="dl">'</span>
 <span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">jQuery</span><span class="p">,</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">ckeditor4</span><span class="p">)</span> <span class="p">{</span>
 
     <span class="kd">var</span> <span class="nx">ckeditorWysiwyg</span> <span class="o">=</span> <span class="nx">Class</span><span class="p">.</span><span class="nx">create</span><span class="p">();</span>
@@ -3418,11 +3419,11 @@ This places the start and end of the selection range around the element.</li>
             <span class="k">this</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="nx">htmlId</span><span class="p">;</span>
             <span class="k">this</span><span class="p">.</span><span class="nx">config</span> <span class="o">=</span> <span class="nx">config</span><span class="p">;</span>
 
-            <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">ckeditorWysiwyg</span> <span class="o">===</span> <span class="s1">'undefined'</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">ckeditorWysiwyg</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">undefined</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
                 <span class="nb">window</span><span class="p">.</span><span class="nx">ckeditorWysiwyg</span> <span class="o">=</span> <span class="nx">$H</span><span class="p">({});</span>
             <span class="p">}</span>
 
-            <span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+            <span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>
             <span class="nx">ckeditorWysiwyg</span><span class="p">.</span><span class="nx">settings</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">config</span><span class="p">;</span>
             <span class="nx">settings</span> <span class="o">=</span> <span class="nx">$H</span><span class="p">({});</span>
             <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">plugins</span><span class="p">)</span> <span class="p">{</span>
@@ -3650,11 +3651,11 @@ This places the start and end of the selection range around the element.</li>
 
 <p>After loading, modifying, and merging all configurations, Magento serializes the result into a JSON object and passes it to the UI component.</p>
 
-<p>In your module’s <code class="highlighter-rouge">view/base/requirejs-config.php</code> file, add a shim configuration entry for your editor in order to have RequireJS load it correctly.</p>
+<p>In your module’s <code class="language-plaintext highlighter-rouge">view/base/requirejs-config.php</code> file, add a shim configuration entry for your editor in order to have RequireJS load it correctly.</p>
 
 <p><strong>Example:</strong> CKEditor\CKEditor4\view\base\requirejs-config.php</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="k">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="k">var</span> <span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">"shim"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"CKEditor_CKEditor4/js/ckeditor4/ckeditor"</span><span class="o">:</span> <span class="p">{</span> <span class="s2">"exports"</span><span class="o">:</span> <span class="s2">"CKEDITOR"</span> <span class="p">}</span>
     <span class="p">}</span>

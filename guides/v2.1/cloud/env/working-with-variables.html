@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Working with variables | Magento 2 Developer Documentation (copy)</title>
+	<title>Working with variables | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/env/working-with-variables.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/env/working-with-variables.html">Magento 2.0</a></li>
 		
@@ -4226,13 +4227,13 @@
 	<h1 class="page-heading">Working with variables</h1>
 </section>
 
-			<p>Environment variables apply to a specific environment or branch. An environment <em>inherits</em> variable definitions from the parent environment. You can override an inherited value by defining the variable specifically for the environment. For example, to set variables for development, define the variable values in the <code class="highlighter-rouge">.magento.env.yaml</code> file in the Integration environment. All environments branching from the Integration environment inherit those values. Refer to <a href="/devdocs/guides/v2.1/cloud/project/magento-env-yaml.html">Build and deploy</a> for details about configuring your environment using the <code class="highlighter-rouge">.magento.env.yaml</code> file.</p>
+			<p>Environment variables apply to a specific environment or branch. An environment <em>inherits</em> variable definitions from the parent environment. You can override an inherited value by defining the variable specifically for the environment. For example, to set variables for development, define the variable values in the <code class="language-plaintext highlighter-rouge">.magento.env.yaml</code> file in the Integration environment. All environments branching from the Integration environment inherit those values. Refer to <a href="/devdocs/guides/v2.1/cloud/project/magento-env-yaml.html">Build and deploy</a> for details about configuring your environment using the <code class="language-plaintext highlighter-rouge">.magento.env.yaml</code> file.</p>
 
 <p>The following demonstrates a specific case for preventing a variable from being seen or inherited. You can only specify these options in the CLI. This case does not pertain to all available environment variables. When using the CLI, you must set variables using one of the following methods:</p>
 
 <ul>
-  <li><strong>Project-specific variables</strong>—To set the same value for all environments in your project, use the <code class="highlighter-rouge">magento-cloud project:variable:set</code> command. These variables are available at build and runtime in all environments.</li>
-  <li><strong>Environment-specific variables</strong>—To set a unique value for a specific environment, use the <code class="highlighter-rouge">magento-cloud variable:set</code> command. These variables are available at runtime and are inherited by child environments. You should specify the environment in your command using the <code class="highlighter-rouge">-e</code> option.</li>
+  <li><strong>Project-specific variables</strong>—To set the same value for all environments in your project, use the <code class="language-plaintext highlighter-rouge">magento-cloud project:variable:set</code> command. These variables are available at build and runtime in all environments.</li>
+  <li><strong>Environment-specific variables</strong>—To set a unique value for a specific environment, use the <code class="language-plaintext highlighter-rouge">magento-cloud variable:set</code> command. These variables are available at runtime and are inherited by child environments. You should specify the environment in your command using the <code class="language-plaintext highlighter-rouge">-e</code> option.</li>
 </ul>
 
 <p class="bs-callout bs-callout-info">After setting project-specific variables, you must manually redeploy the remote environment for the change to take effect. Push the new commits to trigger a redeploy. Setting environment-specific variables in the Project Web Interface automatically redeploys the environment.</p>
@@ -4240,8 +4241,8 @@
 <p>Use the following options to prevent a variable from being seen or inherited:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">--inheritable false</code>—disables inheritance for child environments. This is useful for setting production-only values on the master branch and allowing all other environments to use a project-level variable of the same name.</li>
-  <li><code class="highlighter-rouge">--sensitive true</code>—marks the variable as <em>non-readable</em> in the Project Web Interface. You can not view the variable in the user interface; however, you can view the variable from the application container, like any other variable.</li>
+  <li><code class="language-plaintext highlighter-rouge">--inheritable false</code>—disables inheritance for child environments. This is useful for setting production-only values on the master branch and allowing all other environments to use a project-level variable of the same name.</li>
+  <li><code class="language-plaintext highlighter-rouge">--sensitive true</code>—marks the variable as <em>non-readable</em> in the Project Web Interface. You can not view the variable in the user interface; however, you can view the variable from the application container, like any other variable.</li>
 </ul>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud variable:create <span class="nt">--name</span> &lt;VARIABLE_NAME&gt; <span class="nt">--value</span> &lt;VARIABLE_VALUE&gt; <span class="nt">--inheritable</span> <span class="nb">false</span> <span class="nt">--sensitive</span> <span class="nb">true</span>

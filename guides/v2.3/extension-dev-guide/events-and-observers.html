@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Events and observers | Magento 2 Developer Documentation (copy)</title>
+	<title>Events and observers | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/extension-dev-guide/events-and-observers.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/extension-dev-guide/events-and-observers.html">Magento 2.0</a></li>
 		
@@ -3483,45 +3484,45 @@
 
 <h4 id="dispatching-events">Dispatching events</h4>
 
-<p>Events can be dispatched using the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Event/Manager.php" target="_self"><code class="highlighter-rouge">Magento\Framework\Event\Manager</code></a> class. This class can be obtained through <a href="/devdocs/guides/v2.3/extension-dev-guide/depend-inj.html">dependency injection</a> by defining the dependency in your constructor.</p>
+<p>Events can be dispatched using the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Event/Manager.php" target="_self"><code class="language-plaintext highlighter-rouge">Magento\Framework\Event\Manager</code></a> class. This class can be obtained through <a href="/devdocs/guides/v2.3/extension-dev-guide/depend-inj.html">dependency injection</a> by defining the dependency in your constructor.</p>
 
-<p>To dispatch an event, call the <code class="highlighter-rouge">dispatch</code> function of the event manager class and provide it with the name of the event you want to dispatch along with an array of data you wish to provide to observers.</p>
+<p>To dispatch an event, call the <code class="language-plaintext highlighter-rouge">dispatch</code> function of the event manager class and provide it with the name of the event you want to dispatch along with an array of data you wish to provide to observers.</p>
 
 <p>The following example shows you how to dispatch an event with and without an array of data.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">MyCompany\MyModule</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="kn">namespace</span> <span class="nn">MyCompany\MyModule</span><span class="p">;</span>
 
-<span class="k">use</span> <span class="nx">Magento\Framework\Event\ObserverInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Framework\Event\ObserverInterface</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">MyClass</span>
+<span class="kd">class</span> <span class="nc">MyClass</span>
 <span class="p">{</span>
-  <span class="sd">/**
+  <span class="cd">/**
    * @var EventManager
    */</span>
   <span class="k">private</span> <span class="nv">$eventManager</span><span class="p">;</span>
 
-  <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">\Magento\Framework\Event\Manager</span> <span class="nv">$eventManager</span><span class="p">)</span>
+  <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="err">\</span><span class="nc">Magento\Framework\Event\Manager</span> <span class="nv">$eventManager</span><span class="p">)</span>
   <span class="p">{</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eventManager</span> <span class="o">=</span> <span class="nv">$eventManager</span><span class="p">;</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">eventManager</span> <span class="o">=</span> <span class="nv">$eventManager</span><span class="p">;</span>
   <span class="p">}</span>
 
-  <span class="k">public</span> <span class="k">function</span> <span class="nf">something</span><span class="p">()</span>
+  <span class="k">public</span> <span class="k">function</span> <span class="n">something</span><span class="p">()</span>
   <span class="p">{</span>
     <span class="nv">$eventData</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
-    <span class="c1">// Code...
-</span>    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eventManager</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">(</span><span class="s1">'my_module_event_before'</span><span class="p">);</span>
-    <span class="c1">// More code that sets $eventData...
-</span>    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eventManager</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">(</span><span class="s1">'my_module_event_after'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'myEventData'</span> <span class="o">=&gt;</span> <span class="nv">$eventData</span><span class="p">]);</span>
+    <span class="c1">// Code...</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">eventManager</span><span class="o">-&gt;</span><span class="nf">dispatch</span><span class="p">(</span><span class="s1">'my_module_event_before'</span><span class="p">);</span>
+    <span class="c1">// More code that sets $eventData...</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">eventManager</span><span class="o">-&gt;</span><span class="nf">dispatch</span><span class="p">(</span><span class="s1">'my_module_event_after'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'myEventData'</span> <span class="o">=&gt;</span> <span class="nv">$eventData</span><span class="p">]);</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
 <h4 id="creating-new-events">Creating new events</h4>
 
-<p>Custom events can be dispatched by simply passing in a unique event name to the event manager when you call the <code class="highlighter-rouge">dispatch</code> function. Your unique event name is referenced in your module’s <code class="highlighter-rouge">events.xml</code> file where you specify which observers will react to that event.</p>
+<p>Custom events can be dispatched by simply passing in a unique event name to the event manager when you call the <code class="language-plaintext highlighter-rouge">dispatch</code> function. Your unique event name is referenced in your module’s <code class="language-plaintext highlighter-rouge">events.xml</code> file where you specify which observers will react to that event.</p>
 
 <h4 id="event-areas">Event areas</h4>
 
-<p>Generally, the location of the <code class="highlighter-rouge">events.xml</code> file will be under the <code class="highlighter-rouge">&lt;module-root&gt;/etc</code> directory. Observers that are associated with events here will watch for these events globally. The <code class="highlighter-rouge">events.xml</code> file can also be defined under the <code class="highlighter-rouge">&lt;module-root&gt;/etc/frontend</code> and <code class="highlighter-rouge">&lt;module-root&gt;/etc/adminhtml</code> directories to configure observers to only watch for events in those specific areas.</p>
+<p>Generally, the location of the <code class="language-plaintext highlighter-rouge">events.xml</code> file will be under the <code class="language-plaintext highlighter-rouge">&lt;module-root&gt;/etc</code> directory. Observers that are associated with events here will watch for these events globally. The <code class="language-plaintext highlighter-rouge">events.xml</code> file can also be defined under the <code class="language-plaintext highlighter-rouge">&lt;module-root&gt;/etc/frontend</code> and <code class="language-plaintext highlighter-rouge">&lt;module-root&gt;/etc/adminhtml</code> directories to configure observers to only watch for events in those specific areas.</p>
 
 <h3 id="observers">Observers</h3>
 
@@ -3529,61 +3530,61 @@
 
 <h4 id="creating-an-observer">Creating an observer</h4>
 
-<p>To create an observer, you must place your class file under your <code class="highlighter-rouge">&lt;module-root&gt;/Observer</code> directory. Your observer class should implement <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Event/ObserverInterface.php"><code class="highlighter-rouge">Magento\Framework\Event\ObserverInterface</code></a> and define its <code class="highlighter-rouge">execute</code> function.</p>
+<p>To create an observer, you must place your class file under your <code class="language-plaintext highlighter-rouge">&lt;module-root&gt;/Observer</code> directory. Your observer class should implement <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Event/ObserverInterface.php"><code class="language-plaintext highlighter-rouge">Magento\Framework\Event\ObserverInterface</code></a> and define its <code class="language-plaintext highlighter-rouge">execute</code> function.</p>
 
 <p>Below is an example of the basic observer class structure:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">MyCompany\MyModule\Observer</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="kn">namespace</span> <span class="nn">MyCompany\MyModule\Observer</span><span class="p">;</span>
 
-<span class="k">use</span> <span class="nx">Magento\Framework\Event\ObserverInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Framework\Event\ObserverInterface</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">MyObserver</span> <span class="k">implements</span> <span class="nx">ObserverInterface</span>
+<span class="kd">class</span> <span class="nc">MyObserver</span> <span class="kd">implements</span> <span class="nc">ObserverInterface</span>
 <span class="p">{</span>
-  <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span>
+  <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">()</span>
   <span class="p">{</span>
-    <span class="c1">// Observer initialization code...
-</span>    <span class="c1">// You can use dependency injection to get any class this observer may need.
-</span>  <span class="p">}</span>
+    <span class="c1">// Observer initialization code...</span>
+    <span class="c1">// You can use dependency injection to get any class this observer may need.</span>
+  <span class="p">}</span>
 
-  <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">(</span><span class="nx">\Magento\Framework\Event\Observer</span> <span class="nv">$observer</span><span class="p">)</span>
+  <span class="k">public</span> <span class="k">function</span> <span class="n">execute</span><span class="p">(</span><span class="err">\</span><span class="nc">Magento\Framework\Event\Observer</span> <span class="nv">$observer</span><span class="p">)</span>
   <span class="p">{</span>
-    <span class="c1">// Observer execution code...
-</span>  <span class="p">}</span>
+    <span class="c1">// Observer execution code...</span>
+  <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
 <p>One of the more powerful feature of observers is that they are able to use parameters passed into the event when it was dispatched. Below is an example of an observer obtaining data passed in when the event was dispatched.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">MyCompany\MyModule\Observer</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="kn">namespace</span> <span class="nn">MyCompany\MyModule\Observer</span><span class="p">;</span>
 
-<span class="k">use</span> <span class="nx">Magento\Framework\Event\ObserverInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Framework\Event\ObserverInterface</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">AnotherObserver</span> <span class="k">implements</span> <span class="nx">ObserverInterface</span>
+<span class="kd">class</span> <span class="nc">AnotherObserver</span> <span class="kd">implements</span> <span class="nc">ObserverInterface</span>
 <span class="p">{</span>
-  <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span>
+  <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">()</span>
   <span class="p">{</span>
-    <span class="c1">// Observer initialization code...
-</span>    <span class="c1">// You can use dependency injection to get any class this observer may need.
-</span>  <span class="p">}</span>
+    <span class="c1">// Observer initialization code...</span>
+    <span class="c1">// You can use dependency injection to get any class this observer may need.</span>
+  <span class="p">}</span>
 
-  <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">(</span><span class="nx">\Magento\Framework\Event\Observer</span> <span class="nv">$observer</span><span class="p">)</span>
+  <span class="k">public</span> <span class="k">function</span> <span class="n">execute</span><span class="p">(</span><span class="err">\</span><span class="nc">Magento\Framework\Event\Observer</span> <span class="nv">$observer</span><span class="p">)</span>
   <span class="p">{</span>
-    <span class="nv">$myEventData</span> <span class="o">=</span> <span class="nv">$observer</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">(</span><span class="s1">'myEventData'</span><span class="p">);</span>
-    <span class="c1">// Additional observer execution code...
-</span>  <span class="p">}</span>
+    <span class="nv">$myEventData</span> <span class="o">=</span> <span class="nv">$observer</span><span class="o">-&gt;</span><span class="nf">getData</span><span class="p">(</span><span class="s1">'myEventData'</span><span class="p">);</span>
+    <span class="c1">// Additional observer execution code...</span>
+  <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
 <h4 id="subscribing-to-events">Subscribing to events</h4>
 
-<p>Observers can be configured to watch certain events in the <code class="highlighter-rouge">events.xml</code> file.</p>
+<p>Observers can be configured to watch certain events in the <code class="language-plaintext highlighter-rouge">events.xml</code> file.</p>
 
-<p>The <code class="highlighter-rouge">observer</code>   <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">xml</span>
+<p>The <code class="language-plaintext highlighter-rouge">observer</code>   <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">xml</span>
  element has the following properties:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">name</code> (required) - The name of the observer for the event definition.</li>
-  <li><code class="highlighter-rouge">instance</code> (required) - The fully qualified class name of the observer.</li>
-  <li><code class="highlighter-rouge">disabled</code> - Determines whether this observer is active or not. Default value is false.</li>
-  <li><code class="highlighter-rouge">shared</code> - Determines the <a href="/devdocs/guides/v2.3/extension-dev-guide/build/di-xml-file.html#object-lifestyle-configuration">lifestyle</a> of the class. Default is false.</li>
+  <li><code class="language-plaintext highlighter-rouge">name</code> (required) - The name of the observer for the event definition.</li>
+  <li><code class="language-plaintext highlighter-rouge">instance</code> (required) - The fully qualified class name of the observer.</li>
+  <li><code class="language-plaintext highlighter-rouge">disabled</code> - Determines whether this observer is active or not. Default value is false.</li>
+  <li><code class="language-plaintext highlighter-rouge">shared</code> - Determines the <a href="/devdocs/guides/v2.3/extension-dev-guide/build/di-xml-file.html#object-lifestyle-configuration">lifestyle</a> of the class. Default is false.</li>
 </ul>
 
 <p>Below is an example of how to assign observers to watch certain events:</p>
@@ -3598,9 +3599,9 @@
     <span class="nt">&lt;/event&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
-<p>In the preceding example, we assign the observer <code class="highlighter-rouge">MyObserver</code> to the custom event <code class="highlighter-rouge">my_module_event_before</code> and <code class="highlighter-rouge">AnotherObserver</code> to <code class="highlighter-rouge">my_module_event_after</code>.</p>
+<p>In the preceding example, we assign the observer <code class="language-plaintext highlighter-rouge">MyObserver</code> to the custom event <code class="language-plaintext highlighter-rouge">my_module_event_before</code> and <code class="language-plaintext highlighter-rouge">AnotherObserver</code> to <code class="language-plaintext highlighter-rouge">my_module_event_after</code>.</p>
 
-<p>Observer names must be unique per event definition. This means that you cannot have two observers with the same name in the same event definition. In the example, both observers have the name <code class="highlighter-rouge">myObserverName</code>. This is acceptable because each of those observers belong to different event definitions.</p>
+<p>Observer names must be unique per event definition. This means that you cannot have two observers with the same name in the same event definition. In the example, both observers have the name <code class="language-plaintext highlighter-rouge">myObserverName</code>. This is acceptable because each of those observers belong to different event definitions.</p>
 
 <h3 id="recommended-reading">Recommended Reading</h3>
 

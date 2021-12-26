@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>MySQL | Magento 2 Developer Documentation (copy)</title>
+	<title>MySQL | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/install-gde/prereq/mysql.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/install-gde/prereq/mysql.html">Magento 2.0</a></li>
 		
@@ -4651,30 +4652,30 @@
   <li>
     <p>Enter this command:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>sudo apt install -y mysql-server mysql-client
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>sudo apt install -y mysql-server mysql-client
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Start MySQL:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> sudo service mysql start
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> sudo service mysql start
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Secure the installation:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>sudo mysql_secure_installation
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>sudo mysql_secure_installation
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Test the installation:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql -u root -p
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql -u root -p
 </code></pre></div>    </div>
 
     <p>Sample output:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Welcome to the MySQL monitor.  Commands end with ; or \g.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 45
 Server version: 5.6.19-0ubuntu0.14.04.1 (Ubuntu)
 
@@ -4690,14 +4691,14 @@ mysql&gt;
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>If you expect to import large numbers of products into Magento, you can increase the value for <a href="http://dev.mysql.com/doc/refman/5.6/en/program-variables.html" target="_blank"><code class="highlighter-rouge">max_allowed_packet</code></a> that is larger than the default, 16MB.</p>
+    <p>If you expect to import large numbers of products into Magento, you can increase the value for <a href="http://dev.mysql.com/doc/refman/5.6/en/program-variables.html" target="_blank"><code class="language-plaintext highlighter-rouge">max_allowed_packet</code></a> that is larger than the default, 16MB.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>To increase the value, open `/etc/mysql/mysql.cnf` in a text editor and locate the value for `max_allowed_packet`. Save your changes to `mysql.cnf`, close the text editor, and restart MySQL (`service mysql restart`).
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>To increase the value, open `/etc/mysql/mysql.cnf` in a text editor and locate the value for `max_allowed_packet`. Save your changes to `mysql.cnf`, close the text editor, and restart MySQL (`service mysql restart`).
 </code></pre></div>    </div>
 
-    <p>To optionally verify the value you set, enter the following command at a <code class="highlighter-rouge">mysql&gt;</code> prompt:</p>
+    <p>To optionally verify the value you set, enter the following command at a <code class="language-plaintext highlighter-rouge">mysql&gt;</code> prompt:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> SHOW VARIABLES LIKE 'max_allowed_packet';
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> SHOW VARIABLES LIKE 'max_allowed_packet';
 </code></pre></div>    </div>
   </li>
   <li>
@@ -4713,30 +4714,30 @@ mysql&gt;
   <li>
     <p>Enter this command:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>apt-get -y install mysql-server-5.6 mysql-client-5.6
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>apt-get -y install mysql-server-5.6 mysql-client-5.6
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Start MySQL:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> sudo service mysql start
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> sudo service mysql start
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Secure the installation:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql_secure_installation
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql_secure_installation
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Test the installation by entering the following command:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql -u root -p
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql -u root -p
 </code></pre></div>    </div>
 
     <p>Sample output:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Welcome to the MySQL monitor.  Commands end with ; or \g.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 45
 Server version: 5.6.19-0ubuntu0.14.04.1 (Ubuntu)
 
@@ -4752,14 +4753,14 @@ mysql&gt;
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>If you expect to import large numbers of products into Magento, you can increase the value for <a href="http://dev.mysql.com/doc/refman/5.6/en/program-variables.html" target="_blank"><code class="highlighter-rouge">max_allowed_packet</code></a> that is larger than the default, 16MB.</p>
+    <p>If you expect to import large numbers of products into Magento, you can increase the value for <a href="http://dev.mysql.com/doc/refman/5.6/en/program-variables.html" target="_blank"><code class="language-plaintext highlighter-rouge">max_allowed_packet</code></a> that is larger than the default, 16MB.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>To increase the value, open `/etc/mysql/mysql.cnf` in a text editor and locate the value for `max_allowed_packet`. Save your changes to `mysql.cnf`, close the text editor, and restart MySQL (`service mysql restart`).
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>To increase the value, open `/etc/mysql/mysql.cnf` in a text editor and locate the value for `max_allowed_packet`. Save your changes to `mysql.cnf`, close the text editor, and restart MySQL (`service mysql restart`).
 </code></pre></div>    </div>
 
-    <p>To optionally verify the value you set, enter the following command at a <code class="highlighter-rouge">mysql&gt;</code> prompt:</p>
+    <p>To optionally verify the value you set, enter the following command at a <code class="language-plaintext highlighter-rouge">mysql&gt;</code> prompt:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> SHOW VARIABLES LIKE 'max_allowed_packet';
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> SHOW VARIABLES LIKE 'max_allowed_packet';
 </code></pre></div>    </div>
   </li>
   <li>
@@ -4775,7 +4776,7 @@ mysql&gt;
   <li>
     <p>Enter the following commands in the order shown:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>apt-get -y update
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>apt-get -y update
 apt-add-repository ppa:ondrej/mysql-5.6
 apt-get -y update
 apt-get -y install mysql-server
@@ -4784,24 +4785,24 @@ apt-get -y install mysql-server
   <li>
     <p>Start MySQL:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> sudo service mysql start
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> sudo service mysql start
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Secure the installation:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql_secure_installation
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql_secure_installation
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Test the installation:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql -u root -p
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql -u root -p
 </code></pre></div>    </div>
 
     <p>Messages similar to the following display:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Welcome to the MySQL monitor.  Commands end with ; or \g.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 43
 Server version: 5.6.21-1+deb.sury.org~precise+1 (Ubuntu)
 
@@ -4817,14 +4818,14 @@ mysql&gt;
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>If you expect to import large numbers of products into Magento, you can increase the value for <a href="http://dev.mysql.com/doc/refman/5.6/en/program-variables.html" target="_blank"><code class="highlighter-rouge">max_allowed_packet</code></a> that is larger than the default, 16MB.</p>
+    <p>If you expect to import large numbers of products into Magento, you can increase the value for <a href="http://dev.mysql.com/doc/refman/5.6/en/program-variables.html" target="_blank"><code class="language-plaintext highlighter-rouge">max_allowed_packet</code></a> that is larger than the default, 16MB.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>To increase the value, open `/etc/mysql/mysql.cnf` in a text editor and locate the value for `max_allowed_packet`. Save your changes to `mysql.cnf`, close the text editor, and restart MySQL (`service mysql restart`).
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>To increase the value, open `/etc/mysql/mysql.cnf` in a text editor and locate the value for `max_allowed_packet`. Save your changes to `mysql.cnf`, close the text editor, and restart MySQL (`service mysql restart`).
 </code></pre></div>    </div>
 
-    <p>To optionally verify the value you set, enter the following command at a <code class="highlighter-rouge">mysql&gt;</code> prompt:</p>
+    <p>To optionally verify the value you set, enter the following command at a <code class="language-plaintext highlighter-rouge">mysql&gt;</code> prompt:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> SHOW VARIABLES LIKE 'max_allowed_packet';
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> SHOW VARIABLES LIKE 'max_allowed_packet';
 </code></pre></div>    </div>
   </li>
   <li>
@@ -4842,9 +4843,9 @@ mysql&gt;
 
 <p>The following procedure is based on <a href="http://www.tecmint.com/install-latest-mysql-on-rhel-centos-and-fedora" target="_blank">How to Install Latest MySQL 5.7.9 on RHEL/CentOS 7/6/5 and Fedora 23/22/21</a>.</p>
 
-<p>As a user with <code class="highlighter-rouge">root</code> privileges, enter the following commands in the order shown:</p>
+<p>As a user with <code class="language-plaintext highlighter-rouge">root</code> privileges, enter the following commands in the order shown:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>wget http://dev.mysql.com/get/mysql57-community-release-el7-7.noarch.rpm
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>wget http://dev.mysql.com/get/mysql57-community-release-el7-7.noarch.rpm
 yum -y localinstall mysql57-community-release-el7-7.noarch.rpm
 </code></pre></div></div>
 
@@ -4854,9 +4855,9 @@ yum -y localinstall mysql57-community-release-el7-7.noarch.rpm
 
 <p>The following procedure is based on <a href="http://www.tecmint.com/install-latest-mysql-on-rhel-centos-and-fedora" target="_blank">How to Install Latest MySQL 5.7.9 on RHEL/CentOS 7/6/5 and Fedora 23/22/21</a>.</p>
 
-<p>As a user with <code class="highlighter-rouge">root</code> privileges, enter the following commands in the order shown:</p>
+<p>As a user with <code class="language-plaintext highlighter-rouge">root</code> privileges, enter the following commands in the order shown:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>wget http://dev.mysql.com/get/mysql57-community-release-el6-7.noarch.rpm
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>wget http://dev.mysql.com/get/mysql57-community-release-el6-7.noarch.rpm
 yum -y localinstall mysql57-community-release-el6-7.noarch.rpm
 </code></pre></div></div>
 
@@ -4868,31 +4869,31 @@ yum -y localinstall mysql57-community-release-el6-7.noarch.rpm
   <li>
     <p>Enter the following commands in the order shown:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>yum -y install mysql-community-server
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>yum -y install mysql-community-server
 service mysqld start
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Verify the version:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql --version
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql --version
 </code></pre></div>    </div>
 
     <p>Sample output follows:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql  Ver 14.14 Distrib 5.7.12, for Linux (x86_64) using  EditLine wrapper
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql  Ver 14.14 Distrib 5.7.12, for Linux (x86_64) using  EditLine wrapper
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Get the temporary database <code class="highlighter-rouge">root</code> user password:</p>
+    <p>Get the temporary database <code class="language-plaintext highlighter-rouge">root</code> user password:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>grep 'temporary password' /var/log/mysqld.log
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>grep 'temporary password' /var/log/mysqld.log
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Secure the installation:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql_secure_installation
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql_secure_installation
 </code></pre></div>    </div>
 
     <p>Follow the prompts on your screen to set a new password and configure other options.</p>
@@ -4910,7 +4911,7 @@ service mysqld start
   <li>
     <p><em>CentOS 6</em> Install the MySQL database:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>yum -y update
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>yum -y update
 sudo wget http://repo.mysql.com/mysql-community-release-el6-5.noarch.rpm &amp;&amp; sudo rpm -ivh mysql-community-release-el6-5.noarch.rpm
 sudo yum -y install mysql-server
 </code></pre></div>    </div>
@@ -4918,7 +4919,7 @@ sudo yum -y install mysql-server
   <li>
     <p><em>CentOS 7</em> Install the MySQL database:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>yum -y update
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>yum -y update
 sudo wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm &amp;&amp; sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm
 sudo yum -y install mysql-server
 </code></pre></div>    </div>
@@ -4926,24 +4927,24 @@ sudo yum -y install mysql-server
   <li>
     <p>Start MySQL:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>service mysqld start
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>service mysqld start
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Set a password for the <tt>root</tt> user and set other security-related options. Enter the following command and follow the prompts on your screen to complete the configuration:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql_secure_installation
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql_secure_installation
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Verify the MySQL server version:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql -u root -p
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql -u root -p
 </code></pre></div>    </div>
 
     <p>Messages similar to the following display:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Welcome to the MySQL monitor.  Commands end with ; or \g.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 15
 Server version: 5.6.23 MySQL Community Server (GPL)
 
@@ -4957,18 +4958,18 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>If you expect to import large numbers of products into Magento, you can configure MySQL to use the <a href="http://dev.mysql.com/doc/refman/5.6/en/program-variables.html" target="_blank"><code class="highlighter-rouge">max_allowed_packet</code></a> parameter. We recommend a value of at least 16MB.</p>
+    <p>If you expect to import large numbers of products into Magento, you can configure MySQL to use the <a href="http://dev.mysql.com/doc/refman/5.6/en/program-variables.html" target="_blank"><code class="language-plaintext highlighter-rouge">max_allowed_packet</code></a> parameter. We recommend a value of at least 16MB.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>To increase the value, open `/etc/mysql.cnf` in a text editor and add search for `max_allowed_packet`. Set the value to `16M` or larger.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>To increase the value, open `/etc/mysql.cnf` in a text editor and add search for `max_allowed_packet`. Set the value to `16M` or larger.
 </code></pre></div>    </div>
 
-    <p>If it does not exist, add it before <code class="highlighter-rouge">[mysqld_safe]</code>.</p>
+    <p>If it does not exist, add it before <code class="language-plaintext highlighter-rouge">[mysqld_safe]</code>.</p>
 
-    <p>Save your changes to <code class="highlighter-rouge">mysql.cnf</code>, close the text editor, and restart MySQL (<code class="highlighter-rouge">service mysqld restart</code>).</p>
+    <p>Save your changes to <code class="language-plaintext highlighter-rouge">mysql.cnf</code>, close the text editor, and restart MySQL (<code class="language-plaintext highlighter-rouge">service mysqld restart</code>).</p>
 
-    <p>To optionally verify the value you set, enter the following command at a <code class="highlighter-rouge">mysql&gt;</code> prompt:</p>
+    <p>To optionally verify the value you set, enter the following command at a <code class="language-plaintext highlighter-rouge">mysql&gt;</code> prompt:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> SHOW VARIABLES LIKE 'max_allowed_packet';
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> SHOW VARIABLES LIKE 'max_allowed_packet';
 </code></pre></div>    </div>
   </li>
   <li>
@@ -4987,26 +4988,26 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
   <li>
     <p>Get to a MySQL command prompt:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql -u root -p
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql -u root -p
 </code></pre></div>    </div>
   </li>
-  <li>Enter the MySQL <code class="highlighter-rouge">root</code> user’s password when prompted.</li>
+  <li>Enter the MySQL <code class="language-plaintext highlighter-rouge">root</code> user’s password when prompted.</li>
   <li>
-    <p>Enter the following commands in the order shown to create a database instance named <code class="highlighter-rouge">magento</code> with username <code class="highlighter-rouge">magento</code>:</p>
+    <p>Enter the following commands in the order shown to create a database instance named <code class="language-plaintext highlighter-rouge">magento</code> with username <code class="language-plaintext highlighter-rouge">magento</code>:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>create database magento;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>create database magento;
 create user magento IDENTIFIED BY 'magento';
 GRANT ALL ON magento.* TO magento@localhost IDENTIFIED BY 'magento';
 flush privileges;
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Enter <code class="highlighter-rouge">exit</code> to quit the command prompt.</p>
+    <p>Enter <code class="language-plaintext highlighter-rouge">exit</code> to quit the command prompt.</p>
   </li>
   <li>
     <p>Verify the database:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql -u magento -p
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql -u magento -p
 </code></pre></div>    </div>
 
     <p>If the MySQL monitor displays, you created the database properly. If an error displays, repeat the preceding commands.</p>
@@ -5018,10 +5019,10 @@ flush privileges;
 
     <ul>
       <li>
-        <p>Indexers require higher <code class="highlighter-rouge">tmp_table_size</code> and <code class="highlighter-rouge">max_heap_table_size</code> values (e.g., 64M). If you configure the <code class="highlighter-rouge">batch_size</code> parameter, you can adjust that value along with the table size settings to improve indexer performance. Refer to the <a href="/devdocs/guides/v2.3/performance-best-practices/configuration.html">Magento Optimization Guide</a> for more information.</p>
+        <p>Indexers require higher <code class="language-plaintext highlighter-rouge">tmp_table_size</code> and <code class="language-plaintext highlighter-rouge">max_heap_table_size</code> values (e.g., 64M). If you configure the <code class="language-plaintext highlighter-rouge">batch_size</code> parameter, you can adjust that value along with the table size settings to improve indexer performance. Refer to the <a href="/devdocs/guides/v2.3/performance-best-practices/configuration.html">Magento Optimization Guide</a> for more information.</p>
       </li>
       <li>
-        <p>For optimal performance, make sure all MySQL and Magento index tables can be kept in memory (e.g., configure <code class="highlighter-rouge">innodb_buffer_pool_size</code>).</p>
+        <p>For optimal performance, make sure all MySQL and Magento index tables can be kept in memory (e.g., configure <code class="language-plaintext highlighter-rouge">innodb_buffer_pool_size</code>).</p>
       </li>
     </ul>
   </li>

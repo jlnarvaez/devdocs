@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Global variables | Magento 2 Developer Documentation (copy)</title>
+	<title>Global variables | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/env/variables-global.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/env/variables-global.html">Magento 2.0</a></li>
 		
@@ -4314,28 +4315,28 @@
 	<h1 class="page-heading">Global variables</h1>
 </section>
 
-			<p>The following <em>global</em> variables control actions across each phase: build, deploy, and post-deploy. Because global variables impact every phase, you must set them in the <code class="highlighter-rouge">global</code> stage of the <code class="highlighter-rouge">.magento.env.yaml</code> file:</p>
+			<p>The following <em>global</em> variables control actions across each phase: build, deploy, and post-deploy. Because global variables impact every phase, you must set them in the <code class="language-plaintext highlighter-rouge">global</code> stage of the <code class="language-plaintext highlighter-rouge">.magento.env.yaml</code> file:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="na">stage</span><span class="pi">:</span>
   <span class="na">global</span><span class="pi">:</span>
     <span class="na">GLOBAL_VARIABLE_NAME</span><span class="pi">:</span> <span class="s">value</span>
 </code></pre></div></div>
 
-<h3 id="min_logging_level"><code class="highlighter-rouge">MIN_LOGGING_LEVEL</code></h3>
+<h3 id="min_logging_level"><code class="language-plaintext highlighter-rouge">MIN_LOGGING_LEVEL</code></h3>
 
 <ul>
   <li><strong>Default</strong>—<em>Not set</em></li>
   <li><strong>Version</strong>—Magento 2.1.4 and later</li>
 </ul>
 
-<p>Overrides the minimum logging level for all output streams without making changes to the code. This helps when troubleshooting problems with deployment. For example, if your deployment fails, you can use this variable to increase the logging granularity globally. See <a href="/devdocs/guides/v2.2/cloud/env/log-handlers.html#log-levels">Log levels</a>. The <code class="highlighter-rouge">min_level</code> value in Logging handlers overwrites this setting.</p>
+<p>Overrides the minimum logging level for all output streams without making changes to the code. This helps when troubleshooting problems with deployment. For example, if your deployment fails, you can use this variable to increase the logging granularity globally. See <a href="/devdocs/guides/v2.2/cloud/env/log-handlers.html#log-levels">Log levels</a>. The <code class="language-plaintext highlighter-rouge">min_level</code> value in Logging handlers overwrites this setting.</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="na">stage</span><span class="pi">:</span>
     <span class="na">global</span><span class="pi">:</span>
         <span class="na">MIN_LOGGING_LEVEL</span><span class="pi">:</span> <span class="s">debug</span>
 </code></pre></div></div>
 
-<h3 id="scd_on_demand"><code class="highlighter-rouge">SCD_ON_DEMAND</code></h3>
+<h3 id="scd_on_demand"><code class="language-plaintext highlighter-rouge">SCD_ON_DEMAND</code></h3>
 
 <ul>
   <li><strong>Default</strong>—<em>Not set</em></li>
@@ -4344,42 +4345,42 @@
 
 <p>Enable generation of static content when requested by a user (SCD). This is ideal for the development and testing workflow, because it decreases the deployment time.</p>
 
-<p>Pre-loading the cache using the <a href="/devdocs/guides/v2.2/cloud/project/project-conf-files_magento-app.html#hooks"><code class="highlighter-rouge">post_deploy</code> hook</a> reduces site downtime. The cache warming is available only for Pro projects that contain Staging and Production environments in the Project Web UI and for Starter projects. Add the <code class="highlighter-rouge">SCD_ON_DEMAND</code> environment variable to the <code class="highlighter-rouge">global</code> stage in the <code class="highlighter-rouge">.magento.env.yaml</code> file:</p>
+<p>Pre-loading the cache using the <a href="/devdocs/guides/v2.2/cloud/project/project-conf-files_magento-app.html#hooks"><code class="language-plaintext highlighter-rouge">post_deploy</code> hook</a> reduces site downtime. The cache warming is available only for Pro projects that contain Staging and Production environments in the Project Web UI and for Starter projects. Add the <code class="language-plaintext highlighter-rouge">SCD_ON_DEMAND</code> environment variable to the <code class="language-plaintext highlighter-rouge">global</code> stage in the <code class="language-plaintext highlighter-rouge">.magento.env.yaml</code> file:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="na">stage</span><span class="pi">:</span>
   <span class="na">global</span><span class="pi">:</span>
     <span class="na">SCD_ON_DEMAND</span><span class="pi">:</span> <span class="no">true</span>
 </code></pre></div></div>
 
-<p>The <code class="highlighter-rouge">SCD_ON_DEMAND</code> variable skips the SCD and the <code class="highlighter-rouge">STATIC_CONTENT_SYMLINK</code> in both phases (build and deploy), clears the <code class="highlighter-rouge">pub/static</code> and <code class="highlighter-rouge">var/view_preprocessed</code> folders, and writes the following to the <code class="highlighter-rouge">app/etc/env.php</code> file:</p>
+<p>The <code class="language-plaintext highlighter-rouge">SCD_ON_DEMAND</code> variable skips the SCD and the <code class="language-plaintext highlighter-rouge">STATIC_CONTENT_SYMLINK</code> in both phases (build and deploy), clears the <code class="language-plaintext highlighter-rouge">pub/static</code> and <code class="language-plaintext highlighter-rouge">var/view_preprocessed</code> folders, and writes the following to the <code class="language-plaintext highlighter-rouge">app/etc/env.php</code> file:</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="k">return</span> <span class="k">array</span><span class="p">(</span>
-   <span class="o">...</span>
+   <span class="mf">...</span>
    <span class="s1">'static_content_on_demand_in_production'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-   <span class="o">...</span>
+   <span class="mf">...</span>
 <span class="p">);</span>
 </code></pre></div></div>
 
-<h3 id="skip_html_minification"><code class="highlighter-rouge">SKIP_HTML_MINIFICATION</code></h3>
+<h3 id="skip_html_minification"><code class="language-plaintext highlighter-rouge">SKIP_HTML_MINIFICATION</code></h3>
 
 <ul>
   <li><strong>Default</strong>
     <ul>
-      <li><code class="highlighter-rouge">true</code> for <code class="highlighter-rouge">ece-tools</code> 2002.0.13 and later</li>
-      <li><code class="highlighter-rouge">false</code> for earlier versions of <code class="highlighter-rouge">ece-tools</code></li>
+      <li><code class="language-plaintext highlighter-rouge">true</code> for <code class="language-plaintext highlighter-rouge">ece-tools</code> 2002.0.13 and later</li>
+      <li><code class="language-plaintext highlighter-rouge">false</code> for earlier versions of <code class="language-plaintext highlighter-rouge">ece-tools</code></li>
     </ul>
   </li>
   <li><strong>Version</strong>—Magento 2.1.4 and later</li>
 </ul>
 
-<p>Enables or disables copying static view files to the <code class="highlighter-rouge">&lt;magento_root&gt;/init/</code> directory at the end of the build stage. If set to <code class="highlighter-rouge">true</code> files are not copied and HTML minification is available on request. Set this value to <code class="highlighter-rouge">true</code> to reduce downtime when deploying to Staging and Production environments.</p>
+<p>Enables or disables copying static view files to the <code class="language-plaintext highlighter-rouge">&lt;magento_root&gt;/init/</code> directory at the end of the build stage. If set to <code class="language-plaintext highlighter-rouge">true</code> files are not copied and HTML minification is available on request. Set this value to <code class="language-plaintext highlighter-rouge">true</code> to reduce downtime when deploying to Staging and Production environments.</p>
 
 <ul>
-  <li><strong><code class="highlighter-rouge">false</code></strong>—Copies the <code class="highlighter-rouge">view_preprocessed</code> directory to the <code class="highlighter-rouge">&lt;magento_root&gt;/init/</code> directory at the end of the build stage, and restores the directory in the <code class="highlighter-rouge">&lt;magento_root&gt;/var</code> directory at the beginning of the deployment stage.</li>
-  <li><strong><code class="highlighter-rouge">true</code></strong>—Enables on-demand HTML minification; does <em>not</em> copy the <code class="highlighter-rouge">&lt;magento_root&gt;var/view_preprocessed</code> to the <code class="highlighter-rouge">&lt;magento_root&gt;/init/</code> directory at the end of the <em>build</em> stage.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">false</code></strong>—Copies the <code class="language-plaintext highlighter-rouge">view_preprocessed</code> directory to the <code class="language-plaintext highlighter-rouge">&lt;magento_root&gt;/init/</code> directory at the end of the build stage, and restores the directory in the <code class="language-plaintext highlighter-rouge">&lt;magento_root&gt;/var</code> directory at the beginning of the deployment stage.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">true</code></strong>—Enables on-demand HTML minification; does <em>not</em> copy the <code class="language-plaintext highlighter-rouge">&lt;magento_root&gt;var/view_preprocessed</code> to the <code class="language-plaintext highlighter-rouge">&lt;magento_root&gt;/init/</code> directory at the end of the <em>build</em> stage.</li>
 </ul>
 
-<p>Add the <code class="highlighter-rouge">SKIP_HTML_MINIFICATION</code> environment variable to the <code class="highlighter-rouge">global</code> stage in the <code class="highlighter-rouge">.magento.env.yaml</code> file:</p>
+<p>Add the <code class="language-plaintext highlighter-rouge">SKIP_HTML_MINIFICATION</code> environment variable to the <code class="language-plaintext highlighter-rouge">global</code> stage in the <code class="language-plaintext highlighter-rouge">.magento.env.yaml</code> file:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="na">stage</span><span class="pi">:</span>
   <span class="na">global</span><span class="pi">:</span>

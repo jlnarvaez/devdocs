@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>After installing, images and stylesheets do not load; only text displays, no graphics | Magento 2 Developer Documentation (copy)</title>
+	<title>After installing, images and stylesheets do not load; only text displays, no graphics | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/install-gde/trouble/tshoot_no-styles.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/install-gde/trouble/tshoot_no-styles.html">Magento 2.0</a></li>
 		
@@ -4550,13 +4551,13 @@
 <p>The path to images and stylesheets is not correct, either because of an incorrect base   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>
  or because server rewrites (CentOS, Ubuntu) are not set up properly. To confirm this is the case, use a web browser inspector to check the paths to static assets and verify those assets are located on the Magento file system.</p>
 
-<p>Magento static assets are located under <code class="highlighter-rouge">&lt;your Magento install dir&gt;/pub/static/</code>, within the <code class="highlighter-rouge">frontend</code> and <code class="highlighter-rouge">adminhtml</code> directories).</p>
+<p>Magento static assets are located under <code class="language-plaintext highlighter-rouge">&lt;your Magento install dir&gt;/pub/static/</code>, within the <code class="language-plaintext highlighter-rouge">frontend</code> and <code class="language-plaintext highlighter-rouge">adminhtml</code> directories).</p>
 
 <h3 id="solution">Solution</h3>
 
 <ul>
   <li>
-    <p>If you are using the Apache web server, verify your <a href="/devdocs/guides/v2.1/install-gde/prereq/apache.html#apache-help-rewrite">server rewrites</a> setting and your Magento server’s base URL and try again. If you set up the Apache <code class="highlighter-rouge">AllowOverride</code> directive incorrectly, the   <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span>
+    <p>If you are using the Apache web server, verify your <a href="/devdocs/guides/v2.1/install-gde/prereq/apache.html#apache-help-rewrite">server rewrites</a> setting and your Magento server’s base URL and try again. If you set up the Apache <code class="language-plaintext highlighter-rouge">AllowOverride</code> directive incorrectly, the   <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span>
  are not served from the correct location.</p>
   </li>
   <li>
@@ -4564,21 +4565,21 @@
 
     <ul>
       <li>
-        <p>The <code class="highlighter-rouge">include</code> directive must point to the sample nginx configuration file in your Magento installation directory. For example:</p>
+        <p>The <code class="language-plaintext highlighter-rouge">include</code> directive must point to the sample nginx configuration file in your Magento installation directory. For example:</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>include /var/www/html/magento2/nginx.conf.sample;
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>include /var/www/html/magento2/nginx.conf.sample;
 </code></pre></div>        </div>
       </li>
       <li>
-        <p>The <code class="highlighter-rouge">server_name</code> directive must match the base URL you specified when installing Magento. For example:</p>
+        <p>The <code class="language-plaintext highlighter-rouge">server_name</code> directive must match the base URL you specified when installing Magento. For example:</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>server_name 192.186.33.10;
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>server_name 192.186.33.10;
 </code></pre></div>        </div>
       </li>
     </ul>
   </li>
   <li>
-    <p>If the Magento application is in <a href="/devdocs/guides/v2.1/config-guide/bootstrap/magento-modes.html#production-mode">production mode</a>, try deploying static view files using the command <a href="/devdocs/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html"><code class="highlighter-rouge">magento setup:static-content:deploy</code></a>.</p>
+    <p>If the Magento application is in <a href="/devdocs/guides/v2.1/config-guide/bootstrap/magento-modes.html#production-mode">production mode</a>, try deploying static view files using the command <a href="/devdocs/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html"><code class="language-plaintext highlighter-rouge">magento setup:static-content:deploy</code></a>.</p>
   </li>
 </ul>
 

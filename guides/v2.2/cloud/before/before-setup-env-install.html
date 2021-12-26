@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Install Magento | Magento 2 Developer Documentation (copy)</title>
+	<title>Install Magento | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/before/before-setup-env-install.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/before/before-setup-env-install.html">Magento 2.0</a></li>
 		
@@ -4349,7 +4350,7 @@
 
 <h3 id="get-magento-authentication-keys">Get Magento authentication keys</h3>
 
-<p>You need Magento authentication keys to install Magento in your local development environment. These are different than the authentication keys included in the code repository <code class="highlighter-rouge">auth.json</code> file. See <a href="/devdocs/guides/v2.2/cloud/access-acct/first-time-setup_import-prepare.html">Add Magento authentication keys</a>.</p>
+<p>You need Magento authentication keys to install Magento in your local development environment. These are different than the authentication keys included in the code repository <code class="language-plaintext highlighter-rouge">auth.json</code> file. See <a href="/devdocs/guides/v2.2/cloud/access-acct/first-time-setup_import-prepare.html">Add Magento authentication keys</a>.</p>
 
 <h4 id="to-create-authentication-keys-through-the-magento-marketplace">To create authentication keys through the Magento Marketplace:</h4>
 
@@ -4378,9 +4379,9 @@
 
 <h2 id="set-the-docroot">Set the docroot</h2>
 
-<p>Set the <code class="highlighter-rouge">docroot</code> to the <code class="highlighter-rouge">/magento</code> directory until you complete all setup. If you change the <code class="highlighter-rouge">docroot</code> to <code class="highlighter-rouge">/magento/pub</code> prior to completion, you will encounter issues running the Web Setup Wizard.</p>
+<p>Set the <code class="language-plaintext highlighter-rouge">docroot</code> to the <code class="language-plaintext highlighter-rouge">/magento</code> directory until you complete all setup. If you change the <code class="language-plaintext highlighter-rouge">docroot</code> to <code class="language-plaintext highlighter-rouge">/magento/pub</code> prior to completion, you will encounter issues running the Web Setup Wizard.</p>
 
-<p>For the Production environment, set the <code class="highlighter-rouge">docroot</code> to <code class="highlighter-rouge">/magento/pub</code>, which helps restrict access to vulnerable areas of the system. The webserver <code class="highlighter-rouge">docroot</code> should be set to <code class="highlighter-rouge">/magento/pub</code> only after Magento is installed (including any upgrades and patches), configured, and static files generated and populated in <code class="highlighter-rouge">/magento/pub</code>. Alternatively, you could create a subdomain (for example, <code class="highlighter-rouge">install.domain.com</code>) and configure your webserver <code class="highlighter-rouge">docroot</code> to the Magento installed root folder.</p>
+<p>For the Production environment, set the <code class="language-plaintext highlighter-rouge">docroot</code> to <code class="language-plaintext highlighter-rouge">/magento/pub</code>, which helps restrict access to vulnerable areas of the system. The webserver <code class="language-plaintext highlighter-rouge">docroot</code> should be set to <code class="language-plaintext highlighter-rouge">/magento/pub</code> only after Magento is installed (including any upgrades and patches), configured, and static files generated and populated in <code class="language-plaintext highlighter-rouge">/magento/pub</code>. Alternatively, you could create a subdomain (for example, <code class="language-plaintext highlighter-rouge">install.domain.com</code>) and configure your webserver <code class="language-plaintext highlighter-rouge">docroot</code> to the Magento installed root folder.</p>
 
 <h2 id="file-system-permissions">Set file system permissions and ownership</h2>
 
@@ -4393,29 +4394,29 @@
   <li>
     <p>Enter the following commands in the order shown:</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">cd</span> &lt;your Magento install dir&gt;
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">cd</span> &lt;your Magento <span class="nb">install dir</span><span class="o">&gt;</span>
 </code></pre></div>    </div>
 
     <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="go">find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
 find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
 </span></code></pre></div>    </div>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>chown <span class="nt">-R</span> :&lt;web server group&gt; <span class="nb">.</span>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">chown</span> <span class="nt">-R</span> :&lt;web server group&gt; <span class="nb">.</span>
 </code></pre></div>    </div>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>chmod u+x bin/magento
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">chmod </span>u+x bin/magento
 </code></pre></div>    </div>
   </li>
 </ol>
 
-<p>To optionally enter all commands on one line, enter the following assuming Magento is installed in <code class="highlighter-rouge">/var/www/html/magento2</code> and the web server group name is <code class="highlighter-rouge">apache</code>:</p>
+<p>To optionally enter all commands on one line, enter the following assuming Magento is installed in <code class="language-plaintext highlighter-rouge">/var/www/html/magento2</code> and the web server group name is <code class="language-plaintext highlighter-rouge">apache</code>:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd /var/www/html/magento2 &amp;&amp; find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} + &amp;&amp; find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} + &amp;&amp; chown -R :apache . &amp;&amp; chmod u+x bin/magento
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd /var/www/html/magento2 &amp;&amp; find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} + &amp;&amp; find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} + &amp;&amp; chown -R :apache . &amp;&amp; chmod u+x bin/magento
 </code></pre></div></div>
 
-<p>In the event file system permissions are set improperly and can’t be changed by the Magento file system owner, you can enter the command as a user with <code class="highlighter-rouge">root</code> privileges:</p>
+<p>In the event file system permissions are set improperly and can’t be changed by the Magento file system owner, you can enter the command as a user with <code class="language-plaintext highlighter-rouge">root</code> privileges:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd /var/www/html/magento2 &amp;&amp; sudo find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} + &amp;&amp; sudo find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} + &amp;&amp; sudo chown -R :apache . &amp;&amp; sudo chmod u+x bin/magento
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd /var/www/html/magento2 &amp;&amp; sudo find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} + &amp;&amp; sudo find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} + &amp;&amp; sudo chown -R :apache . &amp;&amp; sudo chmod u+x bin/magento
 </code></pre></div></div>
 
 <h2 id="install-magento">Install Magento</h2>
@@ -4478,7 +4479,7 @@ find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Change to the <code class="highlighter-rouge">app/bin</code> directory.</p>
+    <p>Change to the <code class="language-plaintext highlighter-rouge">app/bin</code> directory.</p>
   </li>
   <li>
     <p>Compile Magento.</p>
@@ -4498,7 +4499,7 @@ find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
 
 <ol>
   <li>
-    <p>Access the <code class="highlighter-rouge">localdev</code> root for the Vagrant box.</p>
+    <p>Access the <code class="language-plaintext highlighter-rouge">localdev</code> root for the Vagrant box.</p>
   </li>
   <li>
     <p>Update the hosts file.</p>
@@ -4510,7 +4511,7 @@ find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
 
 <h2 id="additional-software-and-services">Additional software and services</h2>
 
-<p>For development and testing in an environment as close to Integration as possible, you may also want to install additional tools, software, and services. These services are configured using <a href="/devdocs/guides/v2.2/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a>.</p>
+<p>For development and testing in an environment as close to Integration as possible, you may also want to install additional tools, software, and services. These services are configured using <a href="/devdocs/guides/v2.2/cloud/project/project-conf-files_services.html"><code class="language-plaintext highlighter-rouge">services.yaml</code></a>.</p>
 
 <ul>
   <li><a href="/devdocs/guides/v2.2/cloud/project/project-conf-files_services-redis.html">Redis</a></li>
@@ -4524,13 +4525,13 @@ find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
 <p>To verify the local, access the store using the URL you passed in the install command. For this example, you can access the local Magento store using the following URL formats:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">http://magento.local/</code></li>
-  <li><code class="highlighter-rouge">http://magento.local/admin</code></li>
+  <li><code class="language-plaintext highlighter-rouge">http://magento.local/</code></li>
+  <li><code class="language-plaintext highlighter-rouge">http://magento.local/admin</code></li>
 </ul>
 
 <p>To change the URI for the Admin panel, use this command to locate it:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php bin/magento info:adminuri
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php bin/magento info:adminuri
 </code></pre></div></div>
 
 <p>To verify the Integration master branch environment, log into the Project Web Interface and select your named project. In the list of branches, select the Master. Click Access site to pull up a list of URLs (HTTP and HTTPS) and click the preferred link to open the site. To view the admin, add /admin or other configured Admin URI.</p>
@@ -4550,7 +4551,7 @@ find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
 
 <h2 id="next-steps">Next steps:</h2>
 
-<p>For <strong>Pro projects</strong>, we strongly recommend fully deploying this base Magento template <code class="highlighter-rouge">master</code> branch without any code or configuration changes to Staging and Production. For instructions, see <a href="/devdocs/guides/v2.2/cloud/setup/first-time-deploy.html">First time deployment</a>.</p>
+<p>For <strong>Pro projects</strong>, we strongly recommend fully deploying this base Magento template <code class="language-plaintext highlighter-rouge">master</code> branch without any code or configuration changes to Staging and Production. For instructions, see <a href="/devdocs/guides/v2.2/cloud/setup/first-time-deploy.html">First time deployment</a>.</p>
 
 <p>For <strong>Starter projects</strong>, you are ready to start developing.</p>
 

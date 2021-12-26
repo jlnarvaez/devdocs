@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Pro develop and deploy workflow | Magento 2 Developer Documentation (copy)</title>
+	<title>Pro develop and deploy workflow | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/architecture/pro-develop-deploy-workflow.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/architecture/pro-develop-deploy-workflow.html">Magento 2.0</a></li>
 		
@@ -4324,19 +4325,19 @@
 
 <h2 id="develop">Development workflow</h2>
 
-<p>The Integration environment provides a single, base <code class="highlighter-rouge">integration</code> branch containing your Magento Commerce Cloud code. You can create up to four additional branches for developing your custom code, extensions, and third party integrations. This allows for a maximum of five <em>active</em> branches deployed to Platform-as-a-Service (PaaS) containers.</p>
+<p>The Integration environment provides a single, base <code class="language-plaintext highlighter-rouge">integration</code> branch containing your Magento Commerce Cloud code. You can create up to four additional branches for developing your custom code, extensions, and third party integrations. This allows for a maximum of five <em>active</em> branches deployed to Platform-as-a-Service (PaaS) containers.</p>
 
-<p>The Magento Commerce Cloud environments support a flexible, continuous integration process. Begin by cloning the <code class="highlighter-rouge">integration</code> branch to your local project folder. Create a new branch, or multiple branches, to develop new features, configure changes, add extensions, and deploy updates:</p>
+<p>The Magento Commerce Cloud environments support a flexible, continuous integration process. Begin by cloning the <code class="language-plaintext highlighter-rouge">integration</code> branch to your local project folder. Create a new branch, or multiple branches, to develop new features, configure changes, add extensions, and deploy updates:</p>
 
 <ul>
-  <li><strong>Fetch</strong> changes from <code class="highlighter-rouge">integration</code></li>
-  <li><strong>Branch</strong> from <code class="highlighter-rouge">integration</code></li>
+  <li><strong>Fetch</strong> changes from <code class="language-plaintext highlighter-rouge">integration</code></li>
+  <li><strong>Branch</strong> from <code class="language-plaintext highlighter-rouge">integration</code></li>
   <li><strong>Develop</strong> code on local workstation</li>
   <li><strong>Push</strong> code changes to remote and validate</li>
-  <li><strong>Merge</strong> to <code class="highlighter-rouge">integration</code> and test</li>
+  <li><strong>Merge</strong> to <code class="language-plaintext highlighter-rouge">integration</code> and test</li>
 </ul>
 
-<p>With a developed code branch and the corresponding configuration files, your code changes are ready to merge to the <code class="highlighter-rouge">integration</code> branch for more comprehensive testing. The Integration environment is also best for:</p>
+<p>With a developed code branch and the corresponding configuration files, your code changes are ready to merge to the <code class="language-plaintext highlighter-rouge">integration</code> branch for more comprehensive testing. The Integration environment is also best for:</p>
 
 <ul>
   <li><strong>Integrating third party services</strong>—Not all services are available in the PaaS environment.</li>
@@ -4372,7 +4373,7 @@
 
 <h3 id="merge-to-integration">Merge to Integration</h3>
 
-<p>Combine all verified code changes by merging your Active development branch into the base <code class="highlighter-rouge">integration</code> branch. You can test all your changes on the <code class="highlighter-rouge">integration</code> branch before promoting changes to the Staging environment.</p>
+<p>Combine all verified code changes by merging your Active development branch into the base <code class="language-plaintext highlighter-rouge">integration</code> branch. You can test all your changes on the <code class="language-plaintext highlighter-rouge">integration</code> branch before promoting changes to the Staging environment.</p>
 
 <h3 id="merge-to-staging">Merge to Staging</h3>
 
@@ -4393,7 +4394,7 @@
 
 <p>You should always push a copy of the Production code to the Global Master in case there is an emergent need to debug the Production environment without interrupting services.</p>
 
-<p>Do <strong>not</strong> create a branch from Global Master. Use the <code class="highlighter-rouge">integration</code> branch to create new, active branches for development and fixes.</p>
+<p>Do <strong>not</strong> create a branch from Global Master. Use the <code class="language-plaintext highlighter-rouge">integration</code> branch to create new, active branches for development and fixes.</p>
 
 			
 		</div>

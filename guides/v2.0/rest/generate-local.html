@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Generate a local REST API reference | Magento 2 Developer Documentation (copy)</title>
+	<title>Generate a local REST API reference | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/rest/generate-local.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/rest/generate-local.html">Magento 2.0</a></li>
 		
@@ -1805,59 +1806,59 @@
 <p>The Swagger UI is installed automatically on your server. As a result, you can generate live REST API documentation that can include Magento Commerce modules, third-party modules, and   <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span>
  attributes that have been installed on your system. To view this documentation, go to:</p>
 
-<p><code class="highlighter-rouge">http://&lt;magento_host&gt;/swagger</code></p>
+<p><code class="language-plaintext highlighter-rouge">http://&lt;magento_host&gt;/swagger</code></p>
 
-<p>By default, Magento returns documentation for resources available to anonymous users. If you specify a valid value in the api_key text box in the upper right corner, Swagger returns documentation for all the APIs the user has access to. To generate an API key, call the <code class="highlighter-rouge">POST /V1/integration/customer/token</code> or <code class="highlighter-rouge">POST /V1/integration/admin/token</code> as directed in <a href="/devdocs/guides/v2.0/get-started/authentication/gs-authentication-token.html">Token-based authentication</a>.</p>
+<p>By default, Magento returns documentation for resources available to anonymous users. If you specify a valid value in the api_key text box in the upper right corner, Swagger returns documentation for all the APIs the user has access to. To generate an API key, call the <code class="language-plaintext highlighter-rouge">POST /V1/integration/customer/token</code> or <code class="language-plaintext highlighter-rouge">POST /V1/integration/admin/token</code> as directed in <a href="/devdocs/guides/v2.0/get-started/authentication/gs-authentication-token.html">Token-based authentication</a>.</p>
 
-<p>The generated Swagger documentation provides the capability to test REST API requests. A user can enter a sample request, then press the <strong>Try it out!</strong> button, and Swagger returns information such as a <code class="highlighter-rouge">curl</code> command, a request URL, a response body, a response code, and the response header. The <strong>Try it out!</strong> button will not work unless a bearer   <span term-uuid="34ecb0ab-b8a3-42d9-a728-0b893e8c0417" class="glossary-term" data-toggle="popover">authorization</span>
+<p>The generated Swagger documentation provides the capability to test REST API requests. A user can enter a sample request, then press the <strong>Try it out!</strong> button, and Swagger returns information such as a <code class="language-plaintext highlighter-rouge">curl</code> command, a request URL, a response body, a response code, and the response header. The <strong>Try it out!</strong> button will not work unless a bearer   <span term-uuid="34ecb0ab-b8a3-42d9-a728-0b893e8c0417" class="glossary-term" data-toggle="popover">authorization</span>
  token has been specified.</p>
 
 <p class="bs-callout bs-callout-info">The <strong>Try it out!</strong> feature is not available on Swagger documentation published on the Magento devdocs website.</p>
 
 <h2 id="return-the-json-schema-for-one-or-more-services">Return the JSON schema for one or more services</h2>
 
-<p>You can use a REST client to generate the JSON schema for one or more services. In the client, set the method to <code class="highlighter-rouge">GET</code> and the   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>
+<p>You can use a REST client to generate the JSON schema for one or more services. In the client, set the method to <code class="language-plaintext highlighter-rouge">GET</code> and the   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>
  to</p>
 
-<p><code class="highlighter-rouge">http://&lt;magento_host&gt;/rest/&lt;store_code&gt;/schema?services=&lt;serviceName1,serviceName2,..&gt;</code></p>
+<p><code class="language-plaintext highlighter-rouge">http://&lt;magento_host&gt;/rest/&lt;store_code&gt;/schema?services=&lt;serviceName1,serviceName2,..&gt;</code></p>
 
-<p>The value of <code class="highlighter-rouge">store_code</code> must be one of the following:</p>
+<p>The value of <code class="language-plaintext highlighter-rouge">store_code</code> must be one of the following:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">default</code></li>
+  <li><code class="language-plaintext highlighter-rouge">default</code></li>
   <li>The assigned store code</li>
-  <li><code class="highlighter-rouge">all</code>. This value only applies to the   <span term-uuid="f3944faf-127e-4097-9918-a2e9c647d44f" class="glossary-term" data-toggle="popover">CMS</span>
+  <li><code class="language-plaintext highlighter-rouge">all</code>. This value only applies to the   <span term-uuid="f3944faf-127e-4097-9918-a2e9c647d44f" class="glossary-term" data-toggle="popover">CMS</span>
  and Product modules. If this value is specified, the API call affects all the merchant’s stores.</li>
 </ul>
 
 <p>For example:</p>
 
-<p><code class="highlighter-rouge">http://&lt;magento_host&gt;/rest/default/schema?services=catalogProductRepositoryV1</code></p>
+<p><code class="language-plaintext highlighter-rouge">http://&lt;magento_host&gt;/rest/default/schema?services=catalogProductRepositoryV1</code></p>
 
 <p>To return information about all services:</p>
 
-<p><code class="highlighter-rouge">http://&lt;magento_host&gt;/rest/&lt;store_code&gt;/schema</code></p>
+<p><code class="language-plaintext highlighter-rouge">http://&lt;magento_host&gt;/rest/&lt;store_code&gt;/schema</code></p>
 
 <p class="bs-callout bs-callout-info">You must specify an authorization token for an   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">admin</span>
  user to return information for most endpoints. See <a href="/devdocs/guides/v2.0/get-started/authentication/gs-authentication-token.html">Token-based authentication</a> for more information.</p>
 
 <h2 id="return-the-json-schema-for-a-specific-store-in-swagger">Return the JSON schema for a specific store in Swagger</h2>
 
-<p>Through Swagger it is possible to test the different REST API Calls. By default the resources will be fetched for all storeviews as shown in the example below. To return the JSON Schema for a specific store by adding a store parameter to the url with the <code class="highlighter-rouge">store_code</code> of the specific store.</p>
+<p>Through Swagger it is possible to test the different REST API Calls. By default the resources will be fetched for all storeviews as shown in the example below. To return the JSON Schema for a specific store by adding a store parameter to the url with the <code class="language-plaintext highlighter-rouge">store_code</code> of the specific store.</p>
 
 <p>Default Swagger Url:
-  <code class="highlighter-rouge">http://&lt;magento_host&gt;/swagger</code></p>
+  <code class="language-plaintext highlighter-rouge">http://&lt;magento_host&gt;/swagger</code></p>
 
 <p>Fetched JSON schema url:
-  <code class="highlighter-rouge">http://&lt;magento_host&gt;/rest/all/schema?services=all</code></p>
+  <code class="language-plaintext highlighter-rouge">http://&lt;magento_host&gt;/rest/all/schema?services=all</code></p>
 
 <hr />
 
 <p>Specified Storecode in Swagger Url:
-  <code class="highlighter-rouge">http://&lt;magento_host&gt;/swagger?store=default</code></p>
+  <code class="language-plaintext highlighter-rouge">http://&lt;magento_host&gt;/swagger?store=default</code></p>
 
 <p>Fetched JSON schema url:
-  <code class="highlighter-rouge">http://&lt;magento_host&gt;/rest/default/schema?services=all</code></p>
+  <code class="language-plaintext highlighter-rouge">http://&lt;magento_host&gt;/rest/default/schema?services=all</code></p>
 
 <h2 id="related-topics">Related topics</h2>
 

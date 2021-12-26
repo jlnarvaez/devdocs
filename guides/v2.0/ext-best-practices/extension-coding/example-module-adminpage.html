@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Creating a Magento admin page | Magento 2 Developer Documentation (copy)</title>
+	<title>Creating a Magento admin page | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/ext-best-practices/extension-coding/example-module-adminpage.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/ext-best-practices/extension-coding/example-module-adminpage.html">Magento 2.0</a></li>
 		
@@ -1776,40 +1777,40 @@
 
 <p>Start by creating the working directory for all the module files.</p>
 
-<p>In your Magento development environment under the <code class="highlighter-rouge">app/code</code> directory, run the following command:</p>
+<p>In your Magento development environment under the <code class="language-plaintext highlighter-rouge">app/code</code> directory, run the following command:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mkdir -p MyCompany/ExampleAdminNewPage
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mkdir -p MyCompany/ExampleAdminNewPage
 </code></pre></div></div>
 
-<p>This command creates the <code class="highlighter-rouge">MyCompany</code> company directory and the <code class="highlighter-rouge">ExampleAdminNewPage</code> module directory. The latter will be the root directory for the module we will create.</p>
+<p>This command creates the <code class="language-plaintext highlighter-rouge">MyCompany</code> company directory and the <code class="language-plaintext highlighter-rouge">ExampleAdminNewPage</code> module directory. The latter will be the root directory for the module we will create.</p>
 
 <h3 id="initial-boilerplate-files">Initial boilerplate files</h3>
 
 <p>These initial boilerplate files are the bare essential files needed for any Magento module.</p>
 
-<h4 class="no_toc" id="composerjson"><code class="highlighter-rouge">composer.json</code></h4>
-<p>In the module’s root directory, create the file <code class="highlighter-rouge">composer.json</code>. This file gives   <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">composer</span>
+<h4 class="no_toc" id="composerjson"><code class="language-plaintext highlighter-rouge">composer.json</code></h4>
+<p>In the module’s root directory, create the file <code class="language-plaintext highlighter-rouge">composer.json</code>. This file gives   <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">composer</span>
  the ability to install this module and its dependencies.
-For more information see: <a href="/devdocs/guides/v2.0/extension-dev-guide/build/composer-integration.html"><code class="highlighter-rouge">composer.json</code></a>.</p>
+For more information see: <a href="/devdocs/guides/v2.0/extension-dev-guide/build/composer-integration.html"><code class="language-plaintext highlighter-rouge">composer.json</code></a>.</p>
 
 <div class="collapsible">
     <b class="collapsible-title">File content for composer.json </b>
     <div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="w">    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mycompany/sample-module-minimal"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A module that creates a page in the Magento admin area"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"magento2-module"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"license"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mycompany/sample-module-minimal"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A module that creates a page in the Magento admin area"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"magento2-module"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"license"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="s2">"OSL-3.0"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"AFL-3.0"</span><span class="w">
       </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"php"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~5.6.0|7.0.2|7.0.4|~7.0.6"</span><span class="w">
+      </span><span class="nl">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"php"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~5.6.0|7.0.2|7.0.4|~7.0.6"</span><span class="w">
       </span><span class="p">},</span><span class="w">
-      </span><span class="s2">"autoload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"registration.php"</span><span class="w"> </span><span class="p">],</span><span class="w">
-        </span><span class="s2">"psr-4"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"MyCompany</span><span class="se">\\</span><span class="s2">ExampleAdminNewPage</span><span class="se">\\</span><span class="s2">"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+      </span><span class="nl">"autoload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"registration.php"</span><span class="w"> </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"psr-4"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"MyCompany\\ExampleAdminNewPage\\"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -1817,25 +1818,25 @@ For more information see: <a href="/devdocs/guides/v2.0/extension-dev-guide/buil
 </div>
   </div>
 
-<h4 class="no_toc" id="registrationphp"><code class="highlighter-rouge">registration.php</code></h4>
-<p>In the module’s root directory, create the file <code class="highlighter-rouge">registration.php</code>. This file registers the module <code class="highlighter-rouge">MyCompany_ExampleAdminNewPage</code> with Magento.</p>
+<h4 class="no_toc" id="registrationphp"><code class="language-plaintext highlighter-rouge">registration.php</code></h4>
+<p>In the module’s root directory, create the file <code class="language-plaintext highlighter-rouge">registration.php</code>. This file registers the module <code class="language-plaintext highlighter-rouge">MyCompany_ExampleAdminNewPage</code> with Magento.</p>
 
 <p>For more information see: <a href="/devdocs/guides/v2.0/extension-dev-guide/build/component-registration.html">registering your component</a>.</p>
 
 <div class="collapsible">
     <b class="collapsible-title">File content for registration.php </b>
     <div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php">    <span class="cp">&lt;?php</span>
-    <span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="na">register</span><span class="p">(</span>
-        <span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="na">MODULE</span><span class="p">,</span>
+    <span class="err">\</span><span class="nc">Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="nf">register</span><span class="p">(</span>
+        <span class="err">\</span><span class="nc">Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="no">MODULE</span><span class="p">,</span>
         <span class="s1">'MyCompany_ExampleAdminNewPage'</span><span class="p">,</span>
-        <span class="nx">__DIR__</span>
+        <span class="k">__DIR__</span>
     <span class="p">);</span>
   </code></pre></figure>
 </div>
   </div>
 
-<h4 class="no_toc" id="etcmodulexml"><code class="highlighter-rouge">etc/module.xml</code></h4>
-<p>In the module’s root directory, create a new directory called <code class="highlighter-rouge">etc</code>. Under that directory, create the file <code class="highlighter-rouge">module.xml</code>. This file specifies the name and setup version of this module.</p>
+<h4 class="no_toc" id="etcmodulexml"><code class="language-plaintext highlighter-rouge">etc/module.xml</code></h4>
+<p>In the module’s root directory, create a new directory called <code class="language-plaintext highlighter-rouge">etc</code>. Under that directory, create the file <code class="language-plaintext highlighter-rouge">module.xml</code>. This file specifies the name and setup version of this module.</p>
 
 <p>For more information see: <a href="/devdocs/guides/v2.0/extension-dev-guide/build/create_component.html">naming your component</a>.</p>
 
@@ -1856,16 +1857,16 @@ For more information see: <a href="/devdocs/guides/v2.0/extension-dev-guide/buil
 
 <p>For more information on this topic, see: <a href="/devdocs/guides/v2.0/extension-dev-guide/routing.html">routing</a>.</p>
 
-<h4 class="no_toc" id="etcadminhtmlmenuxml"><code class="highlighter-rouge">etc/adminhtml/menu.xml</code></h4>
-<p>Under the created <code class="highlighter-rouge">etc</code> directory, create a new directory called <code class="highlighter-rouge">adminhtml</code>. Under that directory, create the file <code class="highlighter-rouge">menu.xml</code>. This   <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span>
+<h4 class="no_toc" id="etcadminhtmlmenuxml"><code class="language-plaintext highlighter-rouge">etc/adminhtml/menu.xml</code></h4>
+<p>Under the created <code class="language-plaintext highlighter-rouge">etc</code> directory, create a new directory called <code class="language-plaintext highlighter-rouge">adminhtml</code>. Under that directory, create the file <code class="language-plaintext highlighter-rouge">menu.xml</code>. This   <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span>
  file adds new menu items to the Magento   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">admin</span>
 .</p>
 
-<p>The <code class="highlighter-rouge">menu.xml</code> file provided below adds two items in the Content section of the left navigation:</p>
+<p>The <code class="language-plaintext highlighter-rouge">menu.xml</code> file provided below adds two items in the Content section of the left navigation:</p>
 
 <ol>
   <li>A new separate section with the title <strong>Greetings</strong> under Content.</li>
-  <li>A link with the label <strong>Hello World</strong> that leads to a page request for <code class="highlighter-rouge">exampleadminnewpage/helloworld/index</code> underneath that new section.</li>
+  <li>A link with the label <strong>Hello World</strong> that leads to a page request for <code class="language-plaintext highlighter-rouge">exampleadminnewpage/helloworld/index</code> underneath that new section.</li>
 </ol>
 
 <p><img src="/devdocs/common/images/ext-best-practices/hello-world-menu-item.png" alt="Hello World menu item" width="322px" height="400px" /></p>
@@ -1873,9 +1874,9 @@ For more information see: <a href="/devdocs/guides/v2.0/extension-dev-guide/buil
 <p>The following parts make up the generated page request link to the <strong>Hello World</strong> page:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">exampleadminnewpage</code> - This is the <code class="highlighter-rouge">frontName</code>. Because its purpose is to help route requests to the correct module, we give it the same name as the module, but this is not required.</li>
-  <li><code class="highlighter-rouge">helloworld</code> - This specifies the name of the controller to use.</li>
-  <li><code class="highlighter-rouge">index</code> - In the XML file, since the action for the controller is not specified, Magento uses the default value <code class="highlighter-rouge">index</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">exampleadminnewpage</code> - This is the <code class="language-plaintext highlighter-rouge">frontName</code>. Because its purpose is to help route requests to the correct module, we give it the same name as the module, but this is not required.</li>
+  <li><code class="language-plaintext highlighter-rouge">helloworld</code> - This specifies the name of the controller to use.</li>
+  <li><code class="language-plaintext highlighter-rouge">index</code> - In the XML file, since the action for the controller is not specified, Magento uses the default value <code class="language-plaintext highlighter-rouge">index</code>.</li>
 </ul>
 
 <div class="collapsible">
@@ -1891,8 +1892,8 @@ For more information see: <a href="/devdocs/guides/v2.0/extension-dev-guide/buil
 </div>
   </div>
 
-<h4 class="no_toc" id="etcadminhtmlroutesxml"><code class="highlighter-rouge">etc/adminhtml/routes.xml</code></h4>
-<p>Under <code class="highlighter-rouge">etc/adminhtml</code> create the file <code class="highlighter-rouge">routes.xml</code>. The contents of this  XML file tells Magento to route requests that use the <code class="highlighter-rouge">frontName</code> <code class="highlighter-rouge">exampleadminnewpage</code> to this module.</p>
+<h4 class="no_toc" id="etcadminhtmlroutesxml"><code class="language-plaintext highlighter-rouge">etc/adminhtml/routes.xml</code></h4>
+<p>Under <code class="language-plaintext highlighter-rouge">etc/adminhtml</code> create the file <code class="language-plaintext highlighter-rouge">routes.xml</code>. The contents of this  XML file tells Magento to route requests that use the <code class="language-plaintext highlighter-rouge">frontName</code> <code class="language-plaintext highlighter-rouge">exampleadminnewpage</code> to this module.</p>
 
 <div class="collapsible">
     <b class="collapsible-title">File content for routes.xml </b>
@@ -1912,47 +1913,47 @@ For more information see: <a href="/devdocs/guides/v2.0/extension-dev-guide/buil
 
 <p>Now that we have a link to the <strong>Hello World</strong> page, we need to create the file needed to handle that request.</p>
 
-<h4 class="no_toc" id="controlleradminhtmlhelloworldindexphp"><code class="highlighter-rouge">Controller/Adminhtml/HelloWorld/Index.php</code></h4>
+<h4 class="no_toc" id="controlleradminhtmlhelloworldindexphp"><code class="language-plaintext highlighter-rouge">Controller/Adminhtml/HelloWorld/Index.php</code></h4>
 <p>In the module’s root directory, run the following command:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mkdir -p Controller/Adminhtml/HelloWorld
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mkdir -p Controller/Adminhtml/HelloWorld
 </code></pre></div></div>
 
-<p>Inside <code class="highlighter-rouge">Controller/Adminhtml/HelloWorld</code> directory, create the file <code class="highlighter-rouge">Index.php</code>. This file is the class assigned to the default Index action for the <code class="highlighter-rouge">HelloWorld</code> controller. Since the admin area serves this page, the file belongs in the <code class="highlighter-rouge">Adminhtml</code> directory, and the class itself extends <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Backend/App/Action.php" target="_blank"><code class="highlighter-rouge">\Magento\Backend\App\Action</code></a>.</p>
+<p>Inside <code class="language-plaintext highlighter-rouge">Controller/Adminhtml/HelloWorld</code> directory, create the file <code class="language-plaintext highlighter-rouge">Index.php</code>. This file is the class assigned to the default Index action for the <code class="language-plaintext highlighter-rouge">HelloWorld</code> controller. Since the admin area serves this page, the file belongs in the <code class="language-plaintext highlighter-rouge">Adminhtml</code> directory, and the class itself extends <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Backend/App/Action.php" target="_blank"><code class="language-plaintext highlighter-rouge">\Magento\Backend\App\Action</code></a>.</p>
 <div class="collapsible">
     <b class="collapsible-title">File content for Index.php </b>
     <div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php">    <span class="cp">&lt;?php</span>
-      <span class="k">namespace</span> <span class="nx">MyCompany\ExampleAdminNewPage\Controller\Adminhtml\HelloWorld</span><span class="p">;</span>
+      <span class="kn">namespace</span> <span class="nn">MyCompany\ExampleAdminNewPage\Controller\Adminhtml\HelloWorld</span><span class="p">;</span>
 
-      <span class="k">class</span> <span class="nc">Index</span> <span class="k">extends</span> <span class="nx">\Magento\Backend\App\Action</span>
+      <span class="kd">class</span> <span class="nc">Index</span> <span class="k">extends</span> <span class="err">\</span><span class="nc">Magento\Backend\App\Action</span>
       <span class="p">{</span>
-        <span class="sd">/**
+        <span class="cd">/**
         * @var \Magento\Framework\View\Result\PageFactory
         */</span>
         <span class="k">protected</span> <span class="nv">$resultPageFactory</span><span class="p">;</span>
 
-        <span class="sd">/**
+        <span class="cd">/**
          * Constructor
          *
          * @param \Magento\Backend\App\Action\Context $context
          * @param \Magento\Framework\View\Result\PageFactory $resultPageFactory
          */</span>
-        <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
-            <span class="nx">\Magento\Backend\App\Action\Context</span> <span class="nv">$context</span><span class="p">,</span>
-            <span class="nx">\Magento\Framework\View\Result\PageFactory</span> <span class="nv">$resultPageFactory</span>
+        <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span>
+            <span class="err">\</span><span class="nc">Magento\Backend\App\Action\Context</span> <span class="nv">$context</span><span class="p">,</span>
+            <span class="err">\</span><span class="nc">Magento\Framework\View\Result\PageFactory</span> <span class="nv">$resultPageFactory</span>
         <span class="p">)</span> <span class="p">{</span>
-             <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">(</span><span class="nv">$context</span><span class="p">);</span>
-             <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">resultPageFactory</span> <span class="o">=</span> <span class="nv">$resultPageFactory</span><span class="p">;</span>
+             <span class="k">parent</span><span class="o">::</span><span class="nf">__construct</span><span class="p">(</span><span class="nv">$context</span><span class="p">);</span>
+             <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">resultPageFactory</span> <span class="o">=</span> <span class="nv">$resultPageFactory</span><span class="p">;</span>
         <span class="p">}</span>
 
-        <span class="sd">/**
+        <span class="cd">/**
          * Load the page defined in view/adminhtml/layout/exampleadminnewpage_helloworld_index.xml
          *
          * @return \Magento\Framework\View\Result\Page
          */</span>
-        <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">()</span>
+        <span class="k">public</span> <span class="k">function</span> <span class="n">execute</span><span class="p">()</span>
         <span class="p">{</span>
-             <span class="k">return</span>  <span class="nv">$resultPage</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">resultPageFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">();</span>
+             <span class="k">return</span>  <span class="nv">$resultPage</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">resultPageFactory</span><span class="o">-&gt;</span><span class="nf">create</span><span class="p">();</span>
         <span class="p">}</span>
       <span class="p">}</span>
     <span class="cp">?&gt;</span>
@@ -1966,16 +1967,16 @@ For more information see: <a href="/devdocs/guides/v2.0/extension-dev-guide/buil
 
 <p>Create the necessary directories for the files by running the following commands from the module’s root directory:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mkdir -pm view/adminhtml/layout
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mkdir -pm view/adminhtml/layout
 mkdir -pm view/adminhtml/templates
 </code></pre></div></div>
 
-<p>These files belong in the <code class="highlighter-rouge">view/adminhtml</code> directory because the Magento admin area use these files during page generation.</p>
+<p>These files belong in the <code class="language-plaintext highlighter-rouge">view/adminhtml</code> directory because the Magento admin area use these files during page generation.</p>
 
-<h4 class="no_toc" id="viewadminhtmllayoutexampleadminnewpage_helloworld_indexxml"><code class="highlighter-rouge">view/adminhtml/layout/exampleadminnewpage_helloworld_index.xml</code></h4>
+<h4 class="no_toc" id="viewadminhtmllayoutexampleadminnewpage_helloworld_indexxml"><code class="language-plaintext highlighter-rouge">view/adminhtml/layout/exampleadminnewpage_helloworld_index.xml</code></h4>
 
 <p>This file defines the   <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span>
- and structure of the index page for the HelloWorld controller. It sets the title to “Greetings” and instructs Magento to use the <code class="highlighter-rouge">helloworld.phtml</code> template as the content in a <code class="highlighter-rouge">Magento\Backend\Block\Template</code> block class.</p>
+ and structure of the index page for the HelloWorld controller. It sets the title to “Greetings” and instructs Magento to use the <code class="language-plaintext highlighter-rouge">helloworld.phtml</code> template as the content in a <code class="language-plaintext highlighter-rouge">Magento\Backend\Block\Template</code> block class.</p>
 
 <p>The name of this file uses the following pattern: <em>frontName</em>_<em>controller</em>_<em>action</em>.xml</p>
 
@@ -1998,7 +1999,7 @@ mkdir -pm view/adminhtml/templates
 </div>
   </div>
 
-<h4 class="no_toc" id="viewadminhtmltemplateshelloworldphtml"><code class="highlighter-rouge">view/adminhtml/templates/helloworld.phtml</code></h4>
+<h4 class="no_toc" id="viewadminhtmltemplateshelloworldphtml"><code class="language-plaintext highlighter-rouge">view/adminhtml/templates/helloworld.phtml</code></h4>
 
 <p>This template file contains the actual page content for the <strong>Hello World</strong> page.</p>
 
@@ -2011,7 +2012,7 @@ mkdir -pm view/adminhtml/templates
 
 <h3 id="full-module-directory-structure">Full module directory structure</h3>
 
-<p>The module is now complete. Your module’s directory structure under <code class="highlighter-rouge">app/code</code> should look like the following:</p>
+<p>The module is now complete. Your module’s directory structure under <code class="language-plaintext highlighter-rouge">app/code</code> should look like the following:</p>
 
 <pre>
     MyCompany
@@ -2057,10 +2058,10 @@ mkdir -pm view/adminhtml/templates
 <p>Now that the module is code-complete, run the following commands to install it:</p>
 
 <ol>
-  <li><code class="highlighter-rouge">bin/magento module:status</code> - This command shows a list of enabled/disabled modules.</li>
-  <li><code class="highlighter-rouge">bin/magento module:enable MyCompany_ExampleAdminNewPage</code> - If necessary, run this to enable the disabled module.</li>
-  <li><code class="highlighter-rouge">bin/magento setup:upgrade</code> - This command will properly register the module with Magento.</li>
-  <li><code class="highlighter-rouge">bin/magento setup:di:compile</code> - This command compiles classes used in dependency injections.</li>
+  <li><code class="language-plaintext highlighter-rouge">bin/magento module:status</code> - This command shows a list of enabled/disabled modules.</li>
+  <li><code class="language-plaintext highlighter-rouge">bin/magento module:enable MyCompany_ExampleAdminNewPage</code> - If necessary, run this to enable the disabled module.</li>
+  <li><code class="language-plaintext highlighter-rouge">bin/magento setup:upgrade</code> - This command will properly register the module with Magento.</li>
+  <li><code class="language-plaintext highlighter-rouge">bin/magento setup:di:compile</code> - This command compiles classes used in dependency injections.</li>
 </ol>
 
 <p>Once the module installation has completed, the link to the <strong>Hello World</strong> page should appear in the <strong>Greetings</strong> section under <strong>Content</strong> in the left navigation in the admin area. Clicking this link will take you to a page that looks like the one pictured below.</p>

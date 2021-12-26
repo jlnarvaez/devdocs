@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Manage the cache | Magento 2 Developer Documentation (copy)</title>
+	<title>Manage the cache | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/config-guide/cli/config-cli-subcommands-cache.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html">Magento 2.0</a></li>
 		
@@ -4086,14 +4087,14 @@
 
 <p>To view the status of the cache, enter</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento cache:status
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento cache:status
 </code></pre></div></div>
 
 <!-- where `--bootstrap=` is a URL-encoded associative array of Magento [application bootstrap parameters](/devdocs/guides/v2.2/config-guide/bootstrap/magento-how-to-set.html#config-bootparam-overview) and values. -->
 
 <p>A sample follows:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>            config: 1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>            config: 1
             layout: 1
         block_html: 1
        collections: 1
@@ -4109,32 +4110,32 @@ config_integration: 1 config_integration_api: 1
 
 <p>This command enables you to enable or disable all cache types or only the ones you specify. Disabling cache types is useful during development because you see the results of your changes without having to flush the cache; however, disabling cache types has an adverse effect on performance.</p>
 
-<p class="bs-callout bs-callout-info">Starting in version 2.2, you can enable or disable cache types <em>only</em> using the command line. Before doing so, you must manually make <code class="highlighter-rouge">&lt;your Magento install dir&gt;/app/etc/env.php</code> writeable by the <a href="/devdocs/guides/v2.2/install-gde/prereq/file-system-perms.html">Magento file system owner</a>. You can clean (also referred to as <em>flush</em> or <em>refresh</em>) cache types using either the command line or the   <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>
+<p class="bs-callout bs-callout-info">Starting in version 2.2, you can enable or disable cache types <em>only</em> using the command line. Before doing so, you must manually make <code class="language-plaintext highlighter-rouge">&lt;your Magento install dir&gt;/app/etc/env.php</code> writeable by the <a href="/devdocs/guides/v2.2/install-gde/prereq/file-system-perms.html">Magento file system owner</a>. You can clean (also referred to as <em>flush</em> or <em>refresh</em>) cache types using either the command line or the   <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>
 .</p>
 
 <p>Command options:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento cache:enable [type] ... [type]
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento cache:enable [type] ... [type]
 bin/magento cache:disable [type] ... [type]
 </code></pre></div></div>
 
-<p>Where omitting <code class="highlighter-rouge">[type]</code> enables or disables all cache types at the same time. The <code class="highlighter-rouge">type</code> option is a space-separated list of cache types.</p>
+<p>Where omitting <code class="language-plaintext highlighter-rouge">[type]</code> enables or disables all cache types at the same time. The <code class="language-plaintext highlighter-rouge">type</code> option is a space-separated list of cache types.</p>
 
 <!-- `--bootstrap=` is a URL-encoded associative array of Magento [application bootstrap parameters](/devdocs/guides/v2.2/config-guide/bootstrap/magento-how-to-set.html#config-bootparam-overview) and values. -->
 
 <p>To list cache types and their status:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento cache:status
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento cache:status
 </code></pre></div></div>
 
 <p>For example, to disable the full page cache and the DDL cache:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento cache:disable db_ddl full_page
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento cache:disable db_ddl full_page
 </code></pre></div></div>
 
 <p>Sample result:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Changed cache status:
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Changed cache status:
                     db_ddl: 1 -&gt; 0
                  full_page: 1 -&gt; 0
 </code></pre></div></div>
@@ -4161,18 +4162,18 @@ bin/magento cache:disable [type] ... [type]
 
 <p>Command usage:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento cache:clean [type] ... [type]
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento cache:clean [type] ... [type]
 bin/magento cache:flush [type] ... [type]
 </code></pre></div></div>
 
-<p>Where <code class="highlighter-rouge">[type]</code> is a space-separated list of cache types. Omitting <code class="highlighter-rouge">[type]</code> cleans or flushes all cache types at the same time. For example, to flush all cache types, enter</p>
+<p>Where <code class="language-plaintext highlighter-rouge">[type]</code> is a space-separated list of cache types. Omitting <code class="language-plaintext highlighter-rouge">[type]</code> cleans or flushes all cache types at the same time. For example, to flush all cache types, enter</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento cache:flush
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento cache:flush
 </code></pre></div></div>
 
 <p>Sample result:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Flushed cache types:
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Flushed cache types:
 config
 layout
 block_html
@@ -4187,7 +4188,7 @@ config_webservice
 </code></pre></div></div>
 
 <p class="bs-callout bs-callout-info">You can also clean and flush cache types in the   <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>
-. Go to <strong>System</strong> &gt; <strong>Tools</strong> &gt; <strong>Cache Management</strong>. <strong>Flush Cache Storage</strong> is equivalent to <code class="highlighter-rouge">bin/magento cache:flush</code>. <strong>Flush Magento Cache</strong> is equivalent to <code class="highlighter-rouge">bin/magento cache:clean</code>.</p>
+. Go to <strong>System</strong> &gt; <strong>Tools</strong> &gt; <strong>Cache Management</strong>. <strong>Flush Cache Storage</strong> is equivalent to <code class="language-plaintext highlighter-rouge">bin/magento cache:flush</code>. <strong>Flush Magento Cache</strong> is equivalent to <code class="language-plaintext highlighter-rouge">bin/magento cache:clean</code>.</p>
 
 			
 		</div>

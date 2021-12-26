@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Web API functional testing | Magento 2 Developer Documentation (copy)</title>
+	<title>Web API functional testing | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/get-started/web-api-functional-testing.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/get-started/web-api-functional-testing.html">Magento 2.0</a></li>
 		
@@ -1685,32 +1686,32 @@
 
 <h3 id="custom">Custom Annotations for Data Fixtures</h3>
 
-<p>In the Web API functional tests only, the custom annotation  <code class="highlighter-rouge">@magentoApiDataFixture</code> is available for declaring fixtures. The difference of this annotation from <code class="highlighter-rouge">@magentoDataFixture</code> is that the fixture will be committed and accessible during HTTP requests made within the test body. The usage rules of <code class="highlighter-rouge">@magentoApiDataFixture</code> are the same as <code class="highlighter-rouge">@magentoDataFixture</code> usage rules.</p>
+<p>In the Web API functional tests only, the custom annotation  <code class="language-plaintext highlighter-rouge">@magentoApiDataFixture</code> is available for declaring fixtures. The difference of this annotation from <code class="language-plaintext highlighter-rouge">@magentoDataFixture</code> is that the fixture will be committed and accessible during HTTP requests made within the test body. The usage rules of <code class="language-plaintext highlighter-rouge">@magentoApiDataFixture</code> are the same as <code class="language-plaintext highlighter-rouge">@magentoDataFixture</code> usage rules.</p>
 
 <div class="a" id="info">
 
 <p>If data was added to the DB using <code>@magentoApiDataFixture</code>, it will not be automatically cleared after test execution. The data is cleared when <code>@magentoDataFixture</code> is used.</p>
 </div>
 
-<p>Do not define fixtures in <code class="highlighter-rouge">dev/tests/api-functional</code>. Instead, they must be taken from <code class="highlighter-rouge">dev/tests/integration</code>. The integration framework defines most necessary fixtures, and they should be reused during Web API functional testing. If the existing set of fixtures is insufficient, add new fixtures under <code class="highlighter-rouge">dev/tests/integration</code>. The fixtures will then be available for both testing frameworks.</p>
+<p>Do not define fixtures in <code class="language-plaintext highlighter-rouge">dev/tests/api-functional</code>. Instead, they must be taken from <code class="language-plaintext highlighter-rouge">dev/tests/integration</code>. The integration framework defines most necessary fixtures, and they should be reused during Web API functional testing. If the existing set of fixtures is insufficient, add new fixtures under <code class="language-plaintext highlighter-rouge">dev/tests/integration</code>. The fixtures will then be available for both testing frameworks.</p>
 
-<p>To keep your test environment clean, clear all entities created in fixture files or within tests itself from the DB after test execution. This can be done either directly in tearDown or by a corresponding rollback for the fixture file. This file should be named the same as a fixture, but with <code class="highlighter-rouge">_rollback</code> suffix.</p>
+<p>To keep your test environment clean, clear all entities created in fixture files or within tests itself from the DB after test execution. This can be done either directly in tearDown or by a corresponding rollback for the fixture file. This file should be named the same as a fixture, but with <code class="language-plaintext highlighter-rouge">_rollback</code> suffix.</p>
 
 <h2 id="create">How to Create a New Test</h2>
 
-<p>All Web API functional tests should inherit from the generic test case <code class="highlighter-rouge">Magento\TestFramework\TestCase\WebapiAbstract</code>. It defines the <code class="highlighter-rouge">_webApiCall()</code> method, which should be used to perform Web API calls from tests. Clients of <code class="highlighter-rouge">_webApiCall()</code> are unaware of which adapter will be used to perform the remote call.</p>
+<p>All Web API functional tests should inherit from the generic test case <code class="language-plaintext highlighter-rouge">Magento\TestFramework\TestCase\WebapiAbstract</code>. It defines the <code class="language-plaintext highlighter-rouge">_webApiCall()</code> method, which should be used to perform Web API calls from tests. Clients of <code class="language-plaintext highlighter-rouge">_webApiCall()</code> are unaware of which adapter will be used to perform the remote call.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">Magento\Webapi\Routing</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="kn">namespace</span> <span class="nn">Magento\Webapi\Routing</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">CoreRoutingTest</span> <span class="k">extends</span> <span class="nx">\Magento\TestFramework\TestCase\WebapiAbstract</span>
+<span class="kd">class</span> <span class="nc">CoreRoutingTest</span> <span class="k">extends</span> <span class="err">\</span><span class="nc">Magento\TestFramework\TestCase\WebapiAbstract</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">testBasicRoutingExplicitPath</span><span class="p">()</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">testBasicRoutingExplicitPath</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="nv">$itemId</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
         <span class="nv">$serviceInfo</span> <span class="o">=</span> <span class="p">[</span>
             <span class="s1">'rest'</span> <span class="o">=&gt;</span> <span class="p">[</span>
-                <span class="s1">'resourcePath'</span> <span class="o">=&gt;</span> <span class="s1">'/V1/testmodule1/'</span> <span class="o">.</span> <span class="nv">$itemId</span><span class="p">,</span>
-                <span class="s1">'httpMethod'</span> <span class="o">=&gt;</span> <span class="nx">\Magento\Framework\Webapi\Rest\Request</span><span class="o">::</span><span class="na">HTTP_METHOD_GET</span><span class="p">,</span>
+                <span class="s1">'resourcePath'</span> <span class="o">=&gt;</span> <span class="s1">'/V1/testmodule1/'</span> <span class="mf">.</span> <span class="nv">$itemId</span><span class="p">,</span>
+                <span class="s1">'httpMethod'</span> <span class="o">=&gt;</span> <span class="err">\</span><span class="nc">Magento\Framework\Webapi\Rest\Request</span><span class="o">::</span><span class="no">HTTP_METHOD_GET</span><span class="p">,</span>
             <span class="p">],</span>
             <span class="s1">'soap'</span> <span class="o">=&gt;</span> <span class="p">[</span>
                 <span class="s1">'service'</span> <span class="o">=&gt;</span> <span class="s1">'testModule1AllSoapAndRestV1'</span><span class="p">,</span>
@@ -1718,18 +1719,18 @@
             <span class="p">],</span>
         <span class="p">];</span>
         <span class="nv">$requestData</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'itemId'</span> <span class="o">=&gt;</span> <span class="nv">$itemId</span><span class="p">];</span>
-        <span class="nv">$item</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_webApiCall</span><span class="p">(</span><span class="nv">$serviceInfo</span><span class="p">,</span> <span class="nv">$requestData</span><span class="p">);</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertEquals</span><span class="p">(</span><span class="s1">'testProduct1'</span><span class="p">,</span> <span class="nv">$item</span><span class="p">[</span><span class="s1">'name'</span><span class="p">],</span> <span class="s2">"Item was retrieved unsuccessfully"</span><span class="p">);</span>
+        <span class="nv">$item</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">_webApiCall</span><span class="p">(</span><span class="nv">$serviceInfo</span><span class="p">,</span> <span class="nv">$requestData</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">assertEquals</span><span class="p">(</span><span class="s1">'testProduct1'</span><span class="p">,</span> <span class="nv">$item</span><span class="p">[</span><span class="s1">'name'</span><span class="p">],</span> <span class="s2">"Item was retrieved unsuccessfully"</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>The test above should be able to test SOAP and REST, depending on what adapter is currently used by the testing framework. The format of <code class="highlighter-rouge">$serviceInfo</code> is defined by the Web API client adapter interface:</p>
+<p>The test above should be able to test SOAP and REST, depending on what adapter is currently used by the testing framework. The format of <code class="language-plaintext highlighter-rouge">$serviceInfo</code> is defined by the Web API client adapter interface:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">Magento\TestFramework\TestCase\Webapi</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="kn">namespace</span> <span class="nn">Magento\TestFramework\TestCase\Webapi</span><span class="p">;</span>
 
-<span class="k">interface</span> <span class="nx">AdapterInterface</span>
+<span class="kd">interface</span> <span class="nc">AdapterInterface</span>
 <span class="p">{</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * Perform call to the specified service method.
      *
      * @param array $serviceInfo &lt;pre&gt;
@@ -1752,7 +1753,7 @@
      * @param \Magento\Integration\Model\Integration|null $integration
      * @return array|string|int|float|bool
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">call</span><span class="p">(</span><span class="nv">$serviceInfo</span><span class="p">,</span> <span class="nv">$arguments</span> <span class="o">=</span> <span class="p">[],</span> <span class="nv">$storeCode</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span> <span class="nv">$integration</span> <span class="o">=</span> <span class="kc">null</span><span class="p">);</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">call</span><span class="p">(</span><span class="nv">$serviceInfo</span><span class="p">,</span> <span class="nv">$arguments</span> <span class="o">=</span> <span class="p">[],</span> <span class="nv">$storeCode</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span> <span class="nv">$integration</span> <span class="o">=</span> <span class="kc">null</span><span class="p">);</span>
 <span class="p">}</span></code></pre></figure>
 
 <h2 id="howto">How to Run the Tests</h2>
@@ -1765,9 +1766,9 @@
  Soap   <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span>
 .</p>
 
-    <p>Copy <code class="highlighter-rouge">php_soap.dll</code> or <code class="highlighter-rouge">php_soap.so</code> to your PHP extensions directory. Edit your <code class="highlighter-rouge">php.ini</code> file and enable the PHP Soap extension. Usually this means deleting the leading semi-colon in front of the extension. Then restart Apache.</p>
+    <p>Copy <code class="language-plaintext highlighter-rouge">php_soap.dll</code> or <code class="language-plaintext highlighter-rouge">php_soap.so</code> to your PHP extensions directory. Edit your <code class="language-plaintext highlighter-rouge">php.ini</code> file and enable the PHP Soap extension. Usually this means deleting the leading semi-colon in front of the extension. Then restart Apache.</p>
 
-    <p><code class="highlighter-rouge">extension=php_soap.dll</code></p>
+    <p><code class="language-plaintext highlighter-rouge">extension=php_soap.dll</code></p>
   </li>
   <li>
     <p>Before running the functional tests you need to clear your   <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>
@@ -1780,20 +1781,20 @@ Now you are ready to run the tests.</p>
 
 <ol>
   <li>
-    <p>Copy <code class="highlighter-rouge">/dev/tests/api-functional/phpunit.xml.dist</code> to <code class="highlighter-rouge">/dev/tests/api-functional/phpunit.xml</code>.</p>
+    <p>Copy <code class="language-plaintext highlighter-rouge">/dev/tests/api-functional/phpunit.xml.dist</code> to <code class="language-plaintext highlighter-rouge">/dev/tests/api-functional/phpunit.xml</code>.</p>
 
-    <p>a. Specify your Magento instance URL as a value of <code class="highlighter-rouge">TESTS_BASE_URL</code> in <code class="highlighter-rouge">phpunit.xml</code>.</p>
+    <p>a. Specify your Magento instance URL as a value of <code class="language-plaintext highlighter-rouge">TESTS_BASE_URL</code> in <code class="language-plaintext highlighter-rouge">phpunit.xml</code>.</p>
 
-    <p>b. Choose the required Web API adapter, <code class="highlighter-rouge">rest</code> or <code class="highlighter-rouge">soap</code>, to be used and specify it in <code class="highlighter-rouge">TESTS_WEB_API_ADAPTER</code>.</p>
+    <p>b. Choose the required Web API adapter, <code class="language-plaintext highlighter-rouge">rest</code> or <code class="language-plaintext highlighter-rouge">soap</code>, to be used and specify it in <code class="language-plaintext highlighter-rouge">TESTS_WEB_API_ADAPTER</code>.</p>
   </li>
   <li>
-    <p>Copy <code class="highlighter-rouge">/dev/tests/api-functional/config/install-config-mysql.php.dist</code> to <code class="highlighter-rouge">/dev/tests/api-functional/config/install-config-mysql.php</code>.</p>
+    <p>Copy <code class="language-plaintext highlighter-rouge">/dev/tests/api-functional/config/install-config-mysql.php.dist</code> to <code class="language-plaintext highlighter-rouge">/dev/tests/api-functional/config/install-config-mysql.php</code>.</p>
   </li>
   <li>
-    <p>Configure your DB connection and install settings in <code class="highlighter-rouge">/dev/tests/api-functional/config/install-config-mysql.php</code>.  Specify the Magento database. The base URL to access this Magento instance must be specified in <code class="highlighter-rouge">phpunit.xml</code>.</p>
+    <p>Configure your DB connection and install settings in <code class="language-plaintext highlighter-rouge">/dev/tests/api-functional/config/install-config-mysql.php</code>.  Specify the Magento database. The base URL to access this Magento instance must be specified in <code class="language-plaintext highlighter-rouge">phpunit.xml</code>.</p>
   </li>
   <li>
-    <p>Run <code class="highlighter-rouge">phpunit</code> using the <code class="highlighter-rouge">/dev/tests/api-functional/phpunit.xml </code> configuration file.</p>
+    <p>Run <code class="language-plaintext highlighter-rouge">phpunit</code> using the <code class="language-plaintext highlighter-rouge">/dev/tests/api-functional/phpunit.xml </code> configuration file.</p>
   </li>
 </ol>
 

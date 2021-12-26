@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Extension Lifecycle | Magento 2 Developer Documentation (copy)</title>
+	<title>Extension Lifecycle | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/extension-dev-guide/prepare/lifecycle.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/extension-dev-guide/prepare/lifecycle.html">Magento 2.0</a></li>
 		
@@ -2908,7 +2909,7 @@ These executable classes can perform tasks that set up the database, update data
 <p>Follow these guidelines when developing your executable classes to have them run during specific lifecycle stages:</p>
 
 <ul>
-  <li>Put your executable class in the <code class="highlighter-rouge">Setup</code> directory inside your module’s root directory.</li>
+  <li>Put your executable class in the <code class="language-plaintext highlighter-rouge">Setup</code> directory inside your module’s root directory.</li>
   <li>Use the specific file and class name for your class’s target lifecycle stage.</li>
   <li>Implement the specific class interface and function for your class’s target stage.</li>
   <li>Follow Magento’s <a href="/devdocs/guides/v2.0/extension-dev-guide/versioning">versioning policy</a> when changing your module’s version.</li>
@@ -2921,36 +2922,36 @@ These executable classes can perform tasks that set up the database, update data
 <h3 id="schema-installation">Schema installation</h3>
 
 <p>Magento executes the schema installation class during your module’s initial install. 
-If the <code class="highlighter-rouge">schema_version</code> for your module is found in the <code class="highlighter-rouge">setup_module</code> table, Magento skips this stage and proceeds to the <a href="#schema-upgrade">schema upgrade</a> stage.</p>
+If the <code class="language-plaintext highlighter-rouge">schema_version</code> for your module is found in the <code class="language-plaintext highlighter-rouge">setup_module</code> table, Magento skips this stage and proceeds to the <a href="#schema-upgrade">schema upgrade</a> stage.</p>
 
 <table>
   <tbody>
     <tr>
       <td><strong>Class name:</strong></td>
-      <td><code class="highlighter-rouge">InstallSchema</code></td>
+      <td><code class="language-plaintext highlighter-rouge">InstallSchema</code></td>
     </tr>
     <tr>
       <td><strong>Interface:</strong></td>
-      <td><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/InstallSchemaInterface.php"><code class="highlighter-rouge">InstallSchemaInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/InstallSchemaInterface.php"><code class="language-plaintext highlighter-rouge">InstallSchemaInterface</code></a></td>
     </tr>
     <tr>
       <td><strong>Method:</strong></td>
-      <td><code class="highlighter-rouge">install()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">install()</code></td>
     </tr>
   </tbody>
 </table>
 
 <p><strong>Example:</strong> InstallSchema.php</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="k">class</span> <span class="err">\</span><span class="nc">VendorName\ModuleName\Setup\InstallSchema</span> <span class="k">implements</span> <span class="nx">\Magento\Framework\Setup\InstallSchemaInterface</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="n">class</span> <span class="err">\</span><span class="nc">VendorName\ModuleName\Setup\InstallSchema</span> <span class="k">implements</span> <span class="err">\</span><span class="nc">Magento\Framework\Setup\InstallSchemaInterface</span>
 <span class="p">{</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * {@inheritdoc}
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">install</span><span class="p">(</span><span class="nx">SchemaSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="nx">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">install</span><span class="p">(</span><span class="kt">SchemaSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="kt">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="c1">//Install schema logic
-</span>    <span class="p">}</span>
+        <span class="c1">//Install schema logic</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -2963,30 +2964,30 @@ The purpose of this class is to update the database structure or apply patches.<
   <tbody>
     <tr>
       <td><strong>Class name</strong></td>
-      <td><code class="highlighter-rouge">UpgradeSchema</code></td>
+      <td><code class="language-plaintext highlighter-rouge">UpgradeSchema</code></td>
     </tr>
     <tr>
       <td><strong>Interface</strong></td>
-      <td><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/UpgradeSchemaInterface.php"><code class="highlighter-rouge">UpgradeSchemaInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/UpgradeSchemaInterface.php"><code class="language-plaintext highlighter-rouge">UpgradeSchemaInterface</code></a></td>
     </tr>
     <tr>
       <td><strong>Method</strong></td>
-      <td><code class="highlighter-rouge">upgrade()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">upgrade()</code></td>
     </tr>
   </tbody>
 </table>
 
 <p><strong>Example:</strong> UpgradeSchema.php</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="k">class</span> <span class="err">\</span><span class="nc">VendorName\ModuleName\Setup\UpgradeSchema</span> <span class="k">implements</span> <span class="nx">\Magento\Framework\Setup\UpgradeSchemaInterface</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="n">class</span> <span class="err">\</span><span class="nc">VendorName\ModuleName\Setup\UpgradeSchema</span> <span class="k">implements</span> <span class="err">\</span><span class="nc">Magento\Framework\Setup\UpgradeSchemaInterface</span>
 <span class="p">{</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * {@inheritdoc}
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">upgrade</span><span class="p">(</span><span class="nx">SchemaSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="nx">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">upgrade</span><span class="p">(</span><span class="kt">SchemaSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="kt">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="c1">//Upgrade schema logic
-</span>    <span class="p">}</span>
+        <span class="c1">//Upgrade schema logic</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -2999,30 +3000,30 @@ This class makes final modifications to the database schema after it has been in
   <tbody>
     <tr>
       <td><strong>Class name</strong></td>
-      <td><code class="highlighter-rouge">Recurring</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Recurring</code></td>
     </tr>
     <tr>
       <td><strong>Interface</strong></td>
-      <td><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/InstallSchemaInterface.php"><code class="highlighter-rouge">InstallSchemaInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/InstallSchemaInterface.php"><code class="language-plaintext highlighter-rouge">InstallSchemaInterface</code></a></td>
     </tr>
     <tr>
       <td><strong>Method</strong></td>
-      <td><code class="highlighter-rouge">install()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">install()</code></td>
     </tr>
   </tbody>
 </table>
 
 <p><strong>Example:</strong> Recurring.php</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="k">class</span> <span class="err">\</span><span class="nc">VendorName\ModuleName\Setup\Recurring</span> <span class="k">implements</span> <span class="nx">\Magento\Framework\Setup\InstallSchemaInterface</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="n">class</span> <span class="err">\</span><span class="nc">VendorName\ModuleName\Setup\Recurring</span> <span class="k">implements</span> <span class="err">\</span><span class="nc">Magento\Framework\Setup\InstallSchemaInterface</span>
 <span class="p">{</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * {@inheritdoc}
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">install</span><span class="p">(</span><span class="nx">SchemaSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="nx">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">install</span><span class="p">(</span><span class="kt">SchemaSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="kt">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="c1">//Recurring schema event logic
-</span>    <span class="p">}</span>
+        <span class="c1">//Recurring schema event logic</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -3039,66 +3040,66 @@ The purpose of this class is to populate the database with initial data.</p>
   <tbody>
     <tr>
       <td><strong>Class name</strong></td>
-      <td><code class="highlighter-rouge">InstallData</code></td>
+      <td><code class="language-plaintext highlighter-rouge">InstallData</code></td>
     </tr>
     <tr>
       <td><strong>Interface</strong></td>
-      <td><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/InstallDataInterface.php"><code class="highlighter-rouge">InstallDataInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/InstallDataInterface.php"><code class="language-plaintext highlighter-rouge">InstallDataInterface</code></a></td>
     </tr>
     <tr>
       <td><strong>Method</strong></td>
-      <td><code class="highlighter-rouge">install()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">install()</code></td>
     </tr>
   </tbody>
 </table>
 
 <p><strong>Example:</strong> InstallData.php</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="k">class</span> <span class="err">\</span><span class="nc">VendorName\ModuleName\Setup\InstallData</span> <span class="k">implements</span> <span class="nx">\Magento\Framework\Setup\InstallDataInterface</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="n">class</span> <span class="err">\</span><span class="nc">VendorName\ModuleName\Setup\InstallData</span> <span class="k">implements</span> <span class="err">\</span><span class="nc">Magento\Framework\Setup\InstallDataInterface</span>
 <span class="p">{</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * {@inheritdoc}
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">install</span><span class="p">(</span><span class="nx">ModuleDataSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="nx">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">install</span><span class="p">(</span><span class="kt">ModuleDataSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="kt">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="c1">// Data install logic
-</span>    <span class="p">}</span>
+        <span class="c1">// Data install logic</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <h3 id="data-upgrade">Data upgrade</h3>
 
-<p>Magento executes the data upgrade class when it detects an earlier version in the <code class="highlighter-rouge">schema_version</code> field for the module in the <code class="highlighter-rouge">setup_module</code> table.
+<p>Magento executes the data upgrade class when it detects an earlier version in the <code class="language-plaintext highlighter-rouge">schema_version</code> field for the module in the <code class="language-plaintext highlighter-rouge">setup_module</code> table.
 The purpose of this class is to fix corrupted data or populate a new data field after a schema change.</p>
 
 <table>
   <tbody>
     <tr>
       <td><strong>Class name</strong></td>
-      <td><code class="highlighter-rouge">UpgradeData</code></td>
+      <td><code class="language-plaintext highlighter-rouge">UpgradeData</code></td>
     </tr>
     <tr>
       <td><strong>Interface</strong></td>
-      <td><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/UpgradeDataInterface.php"><code class="highlighter-rouge">UpgradeDataInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/UpgradeDataInterface.php"><code class="language-plaintext highlighter-rouge">UpgradeDataInterface</code></a></td>
     </tr>
     <tr>
       <td><strong>Method</strong></td>
-      <td><code class="highlighter-rouge">upgrade()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">upgrade()</code></td>
     </tr>
   </tbody>
 </table>
 
 <p><strong>Example:</strong> UpgradeData.php</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="k">class</span> <span class="err">\</span><span class="nc">VendorName\ModuleName\Setup\UpgradeData</span> <span class="k">implements</span> <span class="nx">\Magento\Framework\Setup\UpgradeDataInterface</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="n">class</span> <span class="err">\</span><span class="nc">VendorName\ModuleName\Setup\UpgradeData</span> <span class="k">implements</span> <span class="err">\</span><span class="nc">Magento\Framework\Setup\UpgradeDataInterface</span>
 <span class="p">{</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * {@inheritdoc}
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">upgrade</span><span class="p">(</span><span class="nx">ModuleDataSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="nx">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">);</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">upgrade</span><span class="p">(</span><span class="kt">ModuleDataSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="kt">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">);</span>
     <span class="p">{</span>
-        <span class="c1">// Data upgrade logic
-</span>    <span class="p">}</span>
+        <span class="c1">// Data upgrade logic</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -3111,106 +3112,106 @@ This class makes final modifications to the database store after data has been i
   <tbody>
     <tr>
       <td><strong>Class name</strong></td>
-      <td><code class="highlighter-rouge">RecurringData</code></td>
+      <td><code class="language-plaintext highlighter-rouge">RecurringData</code></td>
     </tr>
     <tr>
       <td><strong>Interface</strong></td>
-      <td><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/InstallDataInterface.php"><code class="highlighter-rouge">InstallDataInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/InstallDataInterface.php"><code class="language-plaintext highlighter-rouge">InstallDataInterface</code></a></td>
     </tr>
     <tr>
       <td><strong>Method</strong></td>
-      <td><code class="highlighter-rouge">install()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">install()</code></td>
     </tr>
   </tbody>
 </table>
 
 <p><strong>Example:</strong> InstallDataInterface.php</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="k">class</span> <span class="err">\</span><span class="nc">VendorName\ModuleName\Setup\RecurringData</span> <span class="k">implements</span> <span class="nx">\Magento\Framework\Setup\InstallDataInterface</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="n">class</span> <span class="err">\</span><span class="nc">VendorName\ModuleName\Setup\RecurringData</span> <span class="k">implements</span> <span class="err">\</span><span class="nc">Magento\Framework\Setup\InstallDataInterface</span>
 <span class="p">{</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * {@inheritdoc}
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">install</span><span class="p">(</span><span class="nx">ModuleDataSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="nx">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">install</span><span class="p">(</span><span class="kt">ModuleDataSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="kt">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="c1">// Recurring data event logic
-</span>    <span class="p">}</span>
+        <span class="c1">// Recurring data event logic</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <h2 id="database-interface">Database interface</h2>
 
-<p>Use the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/ModuleDataSetupInterface.php"><code class="highlighter-rouge">ModuleDataSetupInterface</code></a> when you need to do database manipulations.
+<p>Use the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/ModuleDataSetupInterface.php"><code class="language-plaintext highlighter-rouge">ModuleDataSetupInterface</code></a> when you need to do database manipulations.
 If your installation or upgrade logic spans multiple classes, pass this resource on to other classes that need to modify the database.</p>
 
 <p><strong>Example:</strong> <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/Setup/InstallData.php">Customer module’s InstallData.php</a></p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="k">class</span> <span class="nc">InstallData</span> <span class="k">implements</span> <span class="nx">InstallDataInterface</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="kd">class</span> <span class="nc">InstallData</span> <span class="kd">implements</span> <span class="nc">InstallDataInterface</span>
 <span class="p">{</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * @var CustomerFactory
      */</span>
     <span class="k">private</span> <span class="nv">$customerSetupFactory</span><span class="p">;</span>
 
-    <span class="sd">/**
+    <span class="cd">/**
      * @param CustomerFactory $customerSetupFactory
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">CustomerFactory</span> <span class="nv">$customerSetupFactory</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="kt">CustomerFactory</span> <span class="nv">$customerSetupFactory</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">customerSetupFactory</span> <span class="o">=</span> <span class="nv">$customerSetupFactory</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">customerSetupFactory</span> <span class="o">=</span> <span class="nv">$customerSetupFactory</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="sd">/**
+    <span class="cd">/**
      * {@inheritdoc}
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">install</span><span class="p">(</span><span class="nx">ModuleDataSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="nx">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">install</span><span class="p">(</span><span class="kt">ModuleDataSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="kt">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="sd">/** @var Customer $customerSetup */</span>
-        <span class="nv">$customerSetup</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">customerSetupFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">([</span><span class="s1">'setup'</span> <span class="o">=&gt;</span> <span class="nv">$setup</span><span class="p">]);</span>
+        <span class="cd">/** @var Customer $customerSetup */</span>
+        <span class="nv">$customerSetup</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">customerSetupFactory</span><span class="o">-&gt;</span><span class="nf">create</span><span class="p">([</span><span class="s1">'setup'</span> <span class="o">=&gt;</span> <span class="nv">$setup</span><span class="p">]);</span>
 
-        <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">startSetup</span><span class="p">();</span>
+        <span class="nv">$setup</span><span class="o">-&gt;</span><span class="nf">startSetup</span><span class="p">();</span>
 
-        <span class="o">...</span>
+        <span class="mf">...</span>
 
-        <span class="nv">$customerSetup</span><span class="o">-&gt;</span><span class="na">installEntities</span><span class="p">();</span>
+        <span class="nv">$customerSetup</span><span class="o">-&gt;</span><span class="nf">installEntities</span><span class="p">();</span>
 
-        <span class="nv">$customerSetup</span><span class="o">-&gt;</span><span class="na">installCustomerForms</span><span class="p">();</span>
+        <span class="nv">$customerSetup</span><span class="o">-&gt;</span><span class="nf">installCustomerForms</span><span class="p">();</span>
 
-        <span class="nv">$disableAGCAttribute</span> <span class="o">=</span> <span class="nv">$customerSetup</span><span class="o">-&gt;</span><span class="na">getEavConfig</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getAttribute</span><span class="p">(</span><span class="s1">'customer'</span><span class="p">,</span> <span class="s1">'disable_auto_group_change'</span><span class="p">);</span>
+        <span class="nv">$disableAGCAttribute</span> <span class="o">=</span> <span class="nv">$customerSetup</span><span class="o">-&gt;</span><span class="nf">getEavConfig</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">getAttribute</span><span class="p">(</span><span class="s1">'customer'</span><span class="p">,</span> <span class="s1">'disable_auto_group_change'</span><span class="p">);</span>
         
-        <span class="o">...</span>
+        <span class="mf">...</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <h2 id="module-version">Module version</h2>
 
-<p>Use the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/ModuleContextInterface.php"><code class="highlighter-rouge">ModuleContextInterface</code></a> to get the current module version and execute logic based on the version.</p>
+<p>Use the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/ModuleContextInterface.php"><code class="language-plaintext highlighter-rouge">ModuleContextInterface</code></a> to get the current module version and execute logic based on the version.</p>
 
 <p><strong>Example:</strong> <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/User/Setup/UpgradeData.php">User module’s UpgradeData.php</a></p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="k">namespace</span> <span class="nx">Magento\User\Setup</span><span class="p">;</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="kn">namespace</span> <span class="nn">Magento\User\Setup</span><span class="p">;</span>
 
-<span class="k">use</span> <span class="nx">Magento\Framework\Encryption\Encryptor</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Framework\Setup\ModuleContextInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Framework\Setup\ModuleDataSetupInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Framework\Setup\UpgradeDataInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Framework\Encryption\Encryptor</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Framework\Setup\ModuleContextInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Framework\Setup\ModuleDataSetupInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Framework\Setup\UpgradeDataInterface</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">UpgradeData</span> <span class="k">implements</span> <span class="nx">UpgradeDataInterface</span>
+<span class="kd">class</span> <span class="nc">UpgradeData</span> <span class="kd">implements</span> <span class="nc">UpgradeDataInterface</span>
 <span class="p">{</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * @inheritdoc
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">upgrade</span><span class="p">(</span><span class="nx">ModuleDataSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="nx">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">upgrade</span><span class="p">(</span><span class="kt">ModuleDataSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="kt">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">startSetup</span><span class="p">();</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nb">version_compare</span><span class="p">(</span><span class="nv">$context</span><span class="o">-&gt;</span><span class="na">getVersion</span><span class="p">(),</span> <span class="s1">'2.0.1'</span><span class="p">,</span> <span class="s1">'&lt;'</span><span class="p">))</span> <span class="p">{</span>
-            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">upgradeHash</span><span class="p">(</span><span class="nv">$setup</span><span class="p">);</span>
+        <span class="nv">$setup</span><span class="o">-&gt;</span><span class="nf">startSetup</span><span class="p">();</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">version_compare</span><span class="p">(</span><span class="nv">$context</span><span class="o">-&gt;</span><span class="nf">getVersion</span><span class="p">(),</span> <span class="s1">'2.0.1'</span><span class="p">,</span> <span class="s1">'&lt;'</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">upgradeHash</span><span class="p">(</span><span class="nv">$setup</span><span class="p">);</span>
         <span class="p">}</span>
-        <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">endSetup</span><span class="p">();</span>
+        <span class="nv">$setup</span><span class="o">-&gt;</span><span class="nf">endSetup</span><span class="p">();</span>
     <span class="p">}</span>
 
-    <span class="o">...</span>
+    <span class="mf">...</span>
 
 <span class="p">}</span>
 </code></pre></div></div>
@@ -3219,7 +3220,7 @@ If your installation or upgrade logic spans multiple classes, pass this resource
 
 <p>Magento executes the uninstall event class when your module is uninstalled using the <a href="/devdocs/guides/v2.0/comp-mgr/module-man/compman-uninst-final.html">Component Manager</a> or with the following command line command:</p>
 
-<p><code class="highlighter-rouge">bin/magento module:uninstall --remove-data &lt;module_name&gt;</code></p>
+<p><code class="language-plaintext highlighter-rouge">bin/magento module:uninstall --remove-data &lt;module_name&gt;</code></p>
 
 <p>In this phase, your module should remove all traces of its existence in the database by dropping tables, deleting data, or restoring data.</p>
 
@@ -3227,29 +3228,29 @@ If your installation or upgrade logic spans multiple classes, pass this resource
   <tbody>
     <tr>
       <td><strong>Class name</strong></td>
-      <td><code class="highlighter-rouge">Uninstall</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Uninstall</code></td>
     </tr>
     <tr>
       <td><strong>Interface</strong></td>
-      <td><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/UninstallInterface.php"><code class="highlighter-rouge">UninstallInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/UninstallInterface.php"><code class="language-plaintext highlighter-rouge">UninstallInterface</code></a></td>
     </tr>
     <tr>
       <td><strong>Method</strong></td>
-      <td><code class="highlighter-rouge">uninstall()</code></td>
+      <td><code class="language-plaintext highlighter-rouge">uninstall()</code></td>
     </tr>
   </tbody>
 </table>
 
 <p><strong>Example:</strong> Uninstall.php</p>
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="k">class</span> <span class="err">\</span><span class="nc">VendorName\ModuleName\Setup\Uninstall</span> <span class="k">implements</span> <span class="nx">\Magento\Framework\Setup\UninstallInterface</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="n">class</span> <span class="err">\</span><span class="nc">VendorName\ModuleName\Setup\Uninstall</span> <span class="k">implements</span> <span class="err">\</span><span class="nc">Magento\Framework\Setup\UninstallInterface</span>
 <span class="p">{</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * {@inheritdoc}
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">uninstall</span><span class="p">(</span><span class="nx">SchemaSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="nx">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">uninstall</span><span class="p">(</span><span class="kt">SchemaSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="kt">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="c1">//Uninstall logic
-</span>    <span class="p">}</span>
+        <span class="c1">//Uninstall logic</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
 

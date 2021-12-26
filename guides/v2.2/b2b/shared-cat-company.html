@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Assign companies to a shared catalog | Magento 2 Developer Documentation (copy)</title>
+	<title>Assign companies to a shared catalog | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/b2b/shared-cat-company.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/b2b/shared-cat-company.html">Magento 2.0</a></li>
 		
@@ -2060,17 +2061,17 @@
 
 <p><strong>Service name</strong></p>
 
-<p><code class="highlighter-rouge">sharedCatalogCompanyManagementV1</code></p>
+<p><code class="language-plaintext highlighter-rouge">sharedCatalogCompanyManagementV1</code></p>
 
 <p><strong>REST endpoints</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="err">POST</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/sharedCatalog/</span><span class="p">:</span><span class="err">sharedCatalogId/assignCompanies</span><span class="w">
-</span><span class="err">POST</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/sharedCatalog/</span><span class="p">:</span><span class="err">sharedCatalogId/unassignCompanies</span><span class="w">
-</span><span class="err">GET</span><span class="w">  </span><span class="err">/V</span><span class="mi">1</span><span class="err">/sharedCatalog/</span><span class="p">:</span><span class="err">sharedCatalogId/companies</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="err">POST</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/sharedCatalog/:sharedCatalogId/assignCompanies</span><span class="w">
+</span><span class="err">POST</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/sharedCatalog/:sharedCatalogId/unassignCompanies</span><span class="w">
+</span><span class="err">GET</span><span class="w">  </span><span class="err">/V</span><span class="mi">1</span><span class="err">/sharedCatalog/:sharedCatalogId/companies</span></code></pre></figure>
 
 <p><strong>Company parameters</strong></p>
 
-<p class="bs-callout bs-callout-info">Although you can specify other parameters defined within a <code class="highlighter-rouge">categories</code> object, the <code class="highlighter-rouge">id</code> is the only one used to assign or unassign a category to a shared catalog.</p>
+<p class="bs-callout bs-callout-info">Although you can specify other parameters defined within a <code class="language-plaintext highlighter-rouge">categories</code> object, the <code class="language-plaintext highlighter-rouge">id</code> is the only one used to assign or unassign a category to a shared catalog.</p>
 
 <table>
   <thead>
@@ -2083,7 +2084,7 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">id</code></td>
+      <td><code class="language-plaintext highlighter-rouge">id</code></td>
       <td>The company ID number</td>
       <td>integer</td>
       <td>Required to assign or unassign a company to a shared catalog</td>
@@ -2099,24 +2100,24 @@
 
 <p><strong>Sample usage</strong></p>
 
-<p><code class="highlighter-rouge">POST /V1/sharedCatalog/2/assignCompanies</code></p>
+<p><code class="language-plaintext highlighter-rouge">POST /V1/sharedCatalog/2/assignCompanies</code></p>
 
 <p><strong>Payload</strong></p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"companies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"companies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 
 <p><strong>Response</strong></p>
 
-<p><code class="highlighter-rouge">true</code>, indicating the operation was successful</p>
+<p><code class="language-plaintext highlighter-rouge">true</code>, indicating the operation was successful</p>
 
 <h2 id="unassign-categories-from-a-shared-catalog">Unassign categories from a shared catalog</h2>
 
@@ -2124,29 +2125,29 @@
 
 <p><strong>Sample usage</strong></p>
 
-<p><code class="highlighter-rouge">POST /V1/sharedCatalog/2/unassignCompanies</code></p>
+<p><code class="language-plaintext highlighter-rouge">POST /V1/sharedCatalog/2/unassignCompanies</code></p>
 
 <p><strong>Payload</strong></p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"companies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"companies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 
 <p><strong>Response</strong></p>
 
-<p><code class="highlighter-rouge">true</code>, indicating the operation was successful</p>
+<p><code class="language-plaintext highlighter-rouge">true</code>, indicating the operation was successful</p>
 
 <h2 id="list-the-shared-catalog-companies">List the shared catalog companies</h2>
 
-<p>The <code class="highlighter-rouge">GET</code> call returns an array of company IDs.</p>
+<p>The <code class="language-plaintext highlighter-rouge">GET</code> call returns an array of company IDs.</p>
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code class="highlighter-rouge">GET  /V1/sharedCatalog/2/companies</code></p>
+<p><code class="language-plaintext highlighter-rouge">GET  /V1/sharedCatalog/2/companies</code></p>
 
 <p><strong>Payload</strong></p>
 
@@ -2154,7 +2155,7 @@
 
 <p><strong>Response</strong></p>
 
-<p><code class="highlighter-rouge">"[\"1\",\"2\"]"</code></p>
+<p><code class="language-plaintext highlighter-rouge">"[\"1\",\"2\"]"</code></p>
 
 <h2 id="related-information">Related information</h2>
 

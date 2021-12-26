@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>PHP 5.6 or 7.0&mdash;Ubuntu | Magento 2 Developer Documentation (copy)</title>
+	<title>PHP 5.6 or 7.0&mdash;Ubuntu | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/install-gde/prereq/php-ubuntu.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/install-gde/prereq/php-ubuntu.html">Magento 2.0</a></li>
 		
@@ -4593,15 +4594,15 @@
 
 <h2 id="ubuntu-verify-php">Verify PHP is installed</h2>
 
-<p>To verify if PHP is installed already, enter <code class="highlighter-rouge">php -v</code>. If PHP is installed, messages similar to the following display:</p>
+<p>To verify if PHP is installed already, enter <code class="language-plaintext highlighter-rouge">php -v</code>. If PHP is installed, messages similar to the following display:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>PHP 5.6.4-1+deb.sury.org~precise+1 (cli) (built: Dec 21 2014 19:26:25)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>PHP 5.6.4-1+deb.sury.org~precise+1 (cli) (built: Dec 21 2014 19:26:25)
 Copyright (c) 1997-2014 The PHP Group
 Zend Engine v2.6.0, Copyright (c) 1998-2014 Zend Technologies
 with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
 </code></pre></div></div>
 
-<p class="bs-callout bs-callout-info">The preceding message confirms that the <code class="highlighter-rouge">Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p>
+<p class="bs-callout bs-callout-info">The preceding message confirms that the <code class="language-plaintext highlighter-rouge">Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p>
 
 <p>If PHP is installed, continue with the next prerequisite, <a href="/devdocs/guides/v2.1/install-gde/prereq/mysql.html">MySQL</a>.</p>
 
@@ -4620,29 +4621,29 @@ with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
   <li>
     <p>Enter the following commands in the order shown:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>sudo apt-get -y update
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>sudo apt-get -y update
 sudo add-apt-repository ppa:ondrej/php
 sudo apt-get -y update
 sudo apt-get install -y php7.0 libapache2-mod-php7.0 php7.0 php7.0-common php7.0-gd php7.0-mysql php7.0-mcrypt php7.0-curl php7.0-intl php7.0-xsl php7.0-mbstring php7.0-zip php7.0-bcmath php7.0-iconv php7.0-soap
 </code></pre></div>    </div>
 
-    <p class="bs-callout bs-callout-info">The <code class="highlighter-rouge">bcmath</code> extension is required for Magento Commerce only.</p>
+    <p class="bs-callout bs-callout-info">The <code class="language-plaintext highlighter-rouge">bcmath</code> extension is required for Magento Commerce only.</p>
   </li>
   <li>
     <p>Enter the following command to verify PHP 7 installed properly:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php -v
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php -v
 </code></pre></div>    </div>
 
     <p>Following is a sample response that indicates PHP 7.0.8 is installed:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>PHP 7.0.8-2+deb.sury.org~trusty+1 (cli) ( NTS )
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>PHP 7.0.8-2+deb.sury.org~trusty+1 (cli) ( NTS )
 Copyright (c) 1997-2016 The PHP Group
 Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies
   with Zend OPcache v7.0.8-2+deb.sury.org~trusty+1, Copyright (c) 1999-2016, by Zend Technologies
 </code></pre></div>    </div>
 
-  	The preceding message confirms that the <code class="highlighter-rouge">Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.
+  	The preceding message confirms that the <code class="language-plaintext highlighter-rouge">Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.
   </li>
   <li>
     <p>Continue with <a href="/devdocs/guides/v2.1/install-gde/prereq/php-settings.html">Required PHP settings</a>.</p>
@@ -4659,7 +4660,7 @@ Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies
   <li>
     <p>Enter the following commands in the order shown:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>apt-get -y update
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>apt-get -y update
 add-apt-repository ppa:ondrej/php
 apt-get -y update
 apt-get -y install php5.6 php5.6-mcrypt php5.6-mbstring php5.6-curl php5.6-cli php5.6-mysql php5.6-gd php5.6-intl php5.6-xsl php5.6-soap
@@ -4668,18 +4669,18 @@ apt-get -y install php5.6 php5.6-mcrypt php5.6-mbstring php5.6-curl php5.6-cli p
   <li>
     <p>Enter the following command to verify PHP 5.6 installed properly:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php -v
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php -v
 </code></pre></div>    </div>
 
     <p>Following is a sample response that indicates PHP 5.6 is installed:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>PHP 5.6.22-4+deb.sury.org~trusty+1 (cli)
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>PHP 5.6.22-4+deb.sury.org~trusty+1 (cli)
 Copyright (c) 1997-2016 The PHP Group
 Zend Engine v2.6.0, Copyright (c) 1998-2016 Zend Technologies
 with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
 </code></pre></div>    </div>
 
-  	The preceding message confirms that the <code class="highlighter-rouge">Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.
+  	The preceding message confirms that the <code class="language-plaintext highlighter-rouge">Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.
   </li>
   <li>
     <p>Continue with <a href="/devdocs/guides/v2.1/install-gde/prereq/php-settings.html">Required PHP settings</a>.</p>

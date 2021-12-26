@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Suites | Magento 2 Developer Documentation (copy)</title>
+	<title>Suites | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -2091,8 +2090,7 @@
 	<h1 class="page-heading">Suites</h1>
 </section>
 
-			
-<p style="text-align: right"><em>This topic was updated due to the 2.2.0 MFTF release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.2.0 MFTF release.</em></p>
 
 <p>Suites are essentially groups of tests that run in the specific conditions (preconditions and postconditions).
 They enable you including, excluding, and grouping tests for a customized test run when you need it.
@@ -2140,15 +2138,15 @@ By default, all generated tests are stored in the <em>default</em> suite under <
   <li>A suite name:
     <ul>
       <li>must not match any existing group value.
-For example, the suite <code class="highlighter-rouge">&lt;suite name="ExampleTest"&gt;</code> will fail during test run if any test contains in annotations <code class="highlighter-rouge">&lt;group value="ExampleTest"&gt;</code>.</li>
-      <li>must not be <code class="highlighter-rouge">default</code> or <code class="highlighter-rouge">skip</code>. Tests that are not in any suite are generated under the <code class="highlighter-rouge">default</code> suite.
-The suite name <code class="highlighter-rouge">skip</code> is synonymous to including a test in the <code class="highlighter-rouge">&lt;group value="skip"/&gt;</code>.</li>
+For example, the suite <code class="language-plaintext highlighter-rouge">&lt;suite name="ExampleTest"&gt;</code> will fail during test run if any test contains in annotations <code class="language-plaintext highlighter-rouge">&lt;group value="ExampleTest"&gt;</code>.</li>
+      <li>must not be <code class="language-plaintext highlighter-rouge">default</code> or <code class="language-plaintext highlighter-rouge">skip</code>. Tests that are not in any suite are generated under the <code class="language-plaintext highlighter-rouge">default</code> suite.
+The suite name <code class="language-plaintext highlighter-rouge">skip</code> is synonymous to including a test in the <code class="language-plaintext highlighter-rouge">&lt;group value="skip"/&gt;</code>.</li>
       <li>can contain letters, numbers, and underscores.</li>
       <li>should be upper camel case.</li>
     </ul>
   </li>
-  <li>A suite must contain at least one <code class="highlighter-rouge">&lt;include&gt;</code>, or one <code class="highlighter-rouge">&lt;exclude&gt;</code>, or both.</li>
-  <li>Using <code class="highlighter-rouge">&lt;before&gt;</code> in a suite, you must add the corresponding <code class="highlighter-rouge">&lt;after&gt;</code> to restore the initial state of your testing instance.</li>
+  <li>A suite must contain at least one <code class="language-plaintext highlighter-rouge">&lt;include&gt;</code>, or one <code class="language-plaintext highlighter-rouge">&lt;exclude&gt;</code>, or both.</li>
+  <li>Using <code class="language-plaintext highlighter-rouge">&lt;before&gt;</code> in a suite, you must add the corresponding <code class="language-plaintext highlighter-rouge">&lt;after&gt;</code> to restore the initial state of your testing instance.</li>
 </ul>
 
 <h2 id="conditions">Conditions</h2>
@@ -2157,11 +2155,11 @@ The suite name <code class="highlighter-rouge">skip</code> is synonymous to incl
 The code lives in one place and executes once per suite.</p>
 
 <ul>
-  <li>Set up preconditions and postconditions using <a href="test/actions.html">actions</a> in <a href="#before-tag"><code class="highlighter-rouge">&lt;before&gt;</code></a> and <a href="#after-tag"><code class="highlighter-rouge">&lt;after&gt;</code></a> correspondingly, just similar to use in a <a href="test.html">test</a>.</li>
+  <li>Set up preconditions and postconditions using <a href="test/actions.html">actions</a> in <a href="#before-tag"><code class="language-plaintext highlighter-rouge">&lt;before&gt;</code></a> and <a href="#after-tag"><code class="language-plaintext highlighter-rouge">&lt;after&gt;</code></a> correspondingly, just similar to use in a <a href="test.html">test</a>.</li>
   <li>Clean up after suites just like after tests.
-The MFTF enforces the presence of both <code class="highlighter-rouge">&lt;before&gt;</code> and <code class="highlighter-rouge">&lt;after&gt;</code> if either is present.</li>
+The MFTF enforces the presence of both <code class="language-plaintext highlighter-rouge">&lt;before&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;after&gt;</code> if either is present.</li>
   <li>Do not reference in the subsequent tests to data that was persisted in the preconditions.
-Referencing to <code class="highlighter-rouge">$stepKey.field$</code> of these actions is not valid.</li>
+Referencing to <code class="language-plaintext highlighter-rouge">$stepKey.field$</code> of these actions is not valid.</li>
 </ul>
 
 <h2 id="test-writing">Test writing</h2>
@@ -2172,11 +2170,11 @@ You cannot isolate this test from preconditions of the suite; it cannot be used 
 
 <p>There are several ways to generate and execute your new test in the context of a suite:</p>
 <ul>
-  <li>Edit the appropriate <code class="highlighter-rouge">suite.xml</code> to include your test only and run:
+  <li>Edit the appropriate <code class="language-plaintext highlighter-rouge">suite.xml</code> to include your test only and run:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vendor/bin/robo group &lt;suiteName&gt;
 </code></pre></div>    </div>
   </li>
-  <li>Temporarily add a group to your test like <code class="highlighter-rouge">&lt;group value="foo"&gt;</code> and run:
+  <li>Temporarily add a group to your test like <code class="language-plaintext highlighter-rouge">&lt;group value="foo"&gt;</code> and run:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vendor/bin/robo group foo
 </code></pre></div>    </div>
   </li>
@@ -2184,7 +2182,7 @@ You cannot isolate this test from preconditions of the suite; it cannot be used 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vendor/bin/robo generate:suite &lt;suite&gt;
 </code></pre></div>    </div>
   </li>
-  <li>To generate any combination of suites and tests, use <a href="commands/robo.html#generate"><code class="highlighter-rouge">generate:tests</code></a> with the <code class="highlighter-rouge">--tests</code> flag.</li>
+  <li>To generate any combination of suites and tests, use <a href="commands/robo.html#generate"><code class="language-plaintext highlighter-rouge">generate:tests</code></a> with the <code class="language-plaintext highlighter-rouge">--tests</code> flag.</li>
 </ul>
 
 <h2 id="examples">Examples</h2>
@@ -2216,7 +2214,7 @@ You cannot isolate this test from preconditions of the suite; it cannot be used 
 <span class="nt">&lt;/suites&gt;</span>
 </code></pre></div></div>
 
-<p>This example declares a suite with the name <code class="highlighter-rouge">WYSIWYG</code>.
+<p>This example declares a suite with the name <code class="language-plaintext highlighter-rouge">WYSIWYG</code>.
 The suite requires enabling WYSIWYG before running tests:</p>
 <ol>
   <li>Log in to the backend.</li>
@@ -2230,7 +2228,7 @@ The suite requires enabling WYSIWYG before running tests:</p>
   <li>Disable <strong>WYSIWYG</strong> so that</li>
 </ol>
 
-<p>This suite includes all tests that contain the <code class="highlighter-rouge">&lt;group value="WYSIWYG"/&gt;</code> annotation.</p>
+<p>This suite includes all tests that contain the <code class="language-plaintext highlighter-rouge">&lt;group value="WYSIWYG"/&gt;</code> annotation.</p>
 
 <h3 id="execute-magento-cli-commands-in-suite-conditions">Execute Magento CLI commands in suite conditions</h3>
 
@@ -2250,7 +2248,7 @@ The suite requires enabling WYSIWYG before running tests:</p>
 <span class="nt">&lt;/suites&gt;</span>
 </code></pre></div></div>
 
-<p>This example declares a suite with the name <code class="highlighter-rouge">Cache</code>.</p>
+<p>This example declares a suite with the name <code class="language-plaintext highlighter-rouge">Cache</code>.</p>
 
 <p>Preconditions:</p>
 <ol>
@@ -2258,7 +2256,7 @@ The suite requires enabling WYSIWYG before running tests:</p>
   <li>After the testing, it re-enables the cache.</li>
 </ol>
 
-<p>The suite includes a specific test <code class="highlighter-rouge">SomeCacheRelatedTest</code> and every <code class="highlighter-rouge">&lt;test&gt;</code> that includes the <code class="highlighter-rouge">&lt;group value="CacheRelated"/&gt;</code> annotation.</p>
+<p>The suite includes a specific test <code class="language-plaintext highlighter-rouge">SomeCacheRelatedTest</code> and every <code class="language-plaintext highlighter-rouge">&lt;test&gt;</code> that includes the <code class="language-plaintext highlighter-rouge">&lt;group value="CacheRelated"/&gt;</code> annotation.</p>
 
 <h3 id="change-magento-configurations-in-suite-conditions">Change Magento configurations in suite conditions</h3>
 
@@ -2280,11 +2278,11 @@ The suite requires enabling WYSIWYG before running tests:</p>
 <span class="nt">&lt;/suites&gt;</span>
 </code></pre></div></div>
 
-<p>This example declares a suite with the name <code class="highlighter-rouge">PaypalConfiguration</code>:</p>
+<p>This example declares a suite with the name <code class="language-plaintext highlighter-rouge">PaypalConfiguration</code>:</p>
 <ul>
-  <li><code class="highlighter-rouge">&lt;before&gt;</code> block persists a Paypal Configuration enabling all tests in this suite to run under the newly reconfigured Magento instance.</li>
-  <li><code class="highlighter-rouge">&lt;after&gt;</code> block deletes the persisted configuration, returning Magento to its initial state.</li>
-  <li>The suite includes all tests from the <code class="highlighter-rouge">Catalog</code> module, except the <code class="highlighter-rouge">PaypalIncompatibleTest</code> test.</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;before&gt;</code> block persists a Paypal Configuration enabling all tests in this suite to run under the newly reconfigured Magento instance.</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;after&gt;</code> block deletes the persisted configuration, returning Magento to its initial state.</li>
+  <li>The suite includes all tests from the <code class="language-plaintext highlighter-rouge">Catalog</code> module, except the <code class="language-plaintext highlighter-rouge">PaypalIncompatibleTest</code> test.</li>
 </ul>
 
 <h2 id="elements-reference">Elements reference</h2>
@@ -2308,13 +2306,13 @@ The suite requires enabling WYSIWYG before running tests:</p>
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">name</code></td>
+      <td><code class="language-plaintext highlighter-rouge">name</code></td>
       <td>string</td>
       <td>required</td>
       <td>Unique suite name identifier.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">remove</code></td>
+      <td><code class="language-plaintext highlighter-rouge">remove</code></td>
       <td>boolean</td>
       <td>optional</td>
       <td>Removing the suite during merging.</td>
@@ -2322,7 +2320,7 @@ The suite requires enabling WYSIWYG before running tests:</p>
   </tbody>
 </table>
 
-<p>It can contain <code class="highlighter-rouge">&lt;before&gt;</code>, <code class="highlighter-rouge">&lt;after&gt;</code>, <code class="highlighter-rouge">&lt;include&gt;</code>, and <code class="highlighter-rouge">&lt;exclude&gt;</code>.</p>
+<p>It can contain <code class="language-plaintext highlighter-rouge">&lt;before&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;after&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;include&gt;</code>, and <code class="language-plaintext highlighter-rouge">&lt;exclude&gt;</code>.</p>
 
 <h3 id="before-tag">before</h3>
 
@@ -2349,12 +2347,12 @@ To troubleshoot the failure, run the suite locally.</p>
 
 <p>It may contain filters by:</p>
 <ul>
-  <li>test which names a specific <code class="highlighter-rouge">&lt;test&gt;</code>.</li>
-  <li>group which refers to a declared <code class="highlighter-rouge">group</code> annotation.</li>
-  <li>module which refers to <code class="highlighter-rouge">test</code> files under a specific Magento Module.</li>
+  <li>test which names a specific <code class="language-plaintext highlighter-rouge">&lt;test&gt;</code>.</li>
+  <li>group which refers to a declared <code class="language-plaintext highlighter-rouge">group</code> annotation.</li>
+  <li>module which refers to <code class="language-plaintext highlighter-rouge">test</code> files under a specific Magento Module.</li>
 </ul>
 
-<p>The element may contain <a href="#test-tag"><code class="highlighter-rouge">&lt;test&gt;</code></a>, <a href="#group-tag"><code class="highlighter-rouge">&lt;group&gt;</code></a>, and <a href="#module-tag"><code class="highlighter-rouge">&lt;module&gt;</code></a>.</p>
+<p>The element may contain <a href="#test-tag"><code class="language-plaintext highlighter-rouge">&lt;test&gt;</code></a>, <a href="#group-tag"><code class="language-plaintext highlighter-rouge">&lt;group&gt;</code></a>, and <a href="#module-tag"><code class="language-plaintext highlighter-rouge">&lt;module&gt;</code></a>.</p>
 
 <h3 id="exclude-tag">exclude</h3>
 
@@ -2362,21 +2360,21 @@ To troubleshoot the failure, run the suite locally.</p>
 
 <p>There two types of behavior:</p>
 <ol>
-  <li>Applying filters to the included tests when the suite contains <a href="#include-tag"><code class="highlighter-rouge">&lt;include&gt;</code></a> filters.
+  <li>Applying filters to the included tests when the suite contains <a href="#include-tag"><code class="language-plaintext highlighter-rouge">&lt;include&gt;</code></a> filters.
 The MFTF will exclude tests from the previously included set and generate the remaining tests in the suite.</li>
-  <li>Applying filter to all tests when the suite does not contain <a href="#include-tag"><code class="highlighter-rouge">&lt;include&gt;</code></a> filters.
+  <li>Applying filter to all tests when the suite does not contain <a href="#include-tag"><code class="language-plaintext highlighter-rouge">&lt;include&gt;</code></a> filters.
 The MFTF will generate all existing tests except the excluded.
 In this case, the custom suite will contain all generated tests except excluded, and the <em>default</em> suite will contain the excluded tests only.</li>
 </ol>
 
 <p>It may contain filters by:</p>
 <ul>
-  <li>test which names a specific <code class="highlighter-rouge">&lt;test&gt;</code>.</li>
-  <li>group which refers to a declared <code class="highlighter-rouge">group</code> annotation.</li>
-  <li>module which refers to <code class="highlighter-rouge">test</code> files under a specific Magento Module.</li>
+  <li>test which names a specific <code class="language-plaintext highlighter-rouge">&lt;test&gt;</code>.</li>
+  <li>group which refers to a declared <code class="language-plaintext highlighter-rouge">group</code> annotation.</li>
+  <li>module which refers to <code class="language-plaintext highlighter-rouge">test</code> files under a specific Magento Module.</li>
 </ul>
 
-<p>The element may contain <a href="#test-tag"><code class="highlighter-rouge">&lt;test&gt;</code></a>, <a href="#group-tag"><code class="highlighter-rouge">&lt;group&gt;</code></a>, and <a href="#module-tag"><code class="highlighter-rouge">&lt;module&gt;</code></a>.</p>
+<p>The element may contain <a href="#test-tag"><code class="language-plaintext highlighter-rouge">&lt;test&gt;</code></a>, <a href="#group-tag"><code class="language-plaintext highlighter-rouge">&lt;group&gt;</code></a>, and <a href="#module-tag"><code class="language-plaintext highlighter-rouge">&lt;module&gt;</code></a>.</p>
 
 <h3 id="test-tag">test</h3>
 
@@ -2391,13 +2389,13 @@ In this case, the custom suite will contain all generated tests except excluded,
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">name</code></td>
+      <td><code class="language-plaintext highlighter-rouge">name</code></td>
       <td>string</td>
       <td>required</td>
       <td>Filtering a test by its name.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">remove</code></td>
+      <td><code class="language-plaintext highlighter-rouge">remove</code></td>
       <td>boolean</td>
       <td>optional</td>
       <td>Removing the filter during merging.</td>
@@ -2418,13 +2416,13 @@ In this case, the custom suite will contain all generated tests except excluded,
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">name</code></td>
+      <td><code class="language-plaintext highlighter-rouge">name</code></td>
       <td>string</td>
       <td>required</td>
-      <td>Filtering tests by the <code class="highlighter-rouge">&lt;group&gt;</code> annotation.</td>
+      <td>Filtering tests by the <code class="language-plaintext highlighter-rouge">&lt;group&gt;</code> annotation.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">remove</code></td>
+      <td><code class="language-plaintext highlighter-rouge">remove</code></td>
       <td>boolean</td>
       <td>optional</td>
       <td>Removing the filter during merging.</td>
@@ -2445,19 +2443,19 @@ In this case, the custom suite will contain all generated tests except excluded,
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">name</code></td>
+      <td><code class="language-plaintext highlighter-rouge">name</code></td>
       <td>string</td>
       <td>required</td>
       <td>Filtering tests by their location in the corresponding module.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">file</code></td>
+      <td><code class="language-plaintext highlighter-rouge">file</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Filtering a specific test file in the module.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">remove</code></td>
+      <td><code class="language-plaintext highlighter-rouge">remove</code></td>
       <td>boolean</td>
       <td>optional</td>
       <td>Removing the filter during merging.</td>

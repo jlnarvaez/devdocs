@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Vault payment configuration | Magento 2 Developer Documentation (copy)</title>
+	<title>Vault payment configuration | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/payments-integrations/vault/vault-payment-configuration.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/payments-integrations/vault/vault-payment-configuration.html">Magento 2.0</a></li>
 		
@@ -2068,19 +2069,19 @@
 	<h1 class="page-heading">Vault payment configuration</h1>
 </section>
 
-			<p>You need to configure the main parameters of the vault implementation in the <code class="highlighter-rouge">config.xml</code> file of your   <span term-uuid="422b0fa8-b181-4c7c-93a2-c553abb34efd" class="glossary-term" data-toggle="popover">payment method</span>
+			<p>You need to configure the main parameters of the vault implementation in the <code class="language-plaintext highlighter-rouge">config.xml</code> file of your   <span term-uuid="422b0fa8-b181-4c7c-93a2-c553abb34efd" class="glossary-term" data-toggle="popover">payment method</span>
  module:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">model</code> - instance of the vault payment implementation, <a href="/devdocs/guides/v2.1/payments-integrations/vault/vault-di.html">configured in <code class="highlighter-rouge">di.xml</code></a>.</li>
-  <li><code class="highlighter-rouge">title</code> - vault payment method title; can be overwritten in the store configuration.</li>
+  <li><code class="language-plaintext highlighter-rouge">model</code> - instance of the vault payment implementation, <a href="/devdocs/guides/v2.1/payments-integrations/vault/vault-di.html">configured in <code class="language-plaintext highlighter-rouge">di.xml</code></a>.</li>
+  <li><code class="language-plaintext highlighter-rouge">title</code> - vault payment method title; can be overwritten in the store configuration.</li>
 </ul>
 
 <p>These parameters are specified in the section defined by the unique vault implementation code. They are the minimum required to create vault payment. All other payment settings are inherited from the payment provider integration.</p>
 
 <p>Additional configuration might be required depending on your implementation.</p>
 
-<p>The following example is the <code class="highlighter-rouge">config.xml</code> file of the Braintree payment method:</p>
+<p>The following example is the <code class="language-plaintext highlighter-rouge">config.xml</code> file of the Braintree payment method:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Store:etc/config.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;default&gt;</span>
@@ -2097,7 +2098,7 @@
     <span class="nt">&lt;/default&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
-<p>In this example <code class="highlighter-rouge">braintree_cc_vault</code> is the unique payment code of the vault implementation for Braintree.</p>
+<p>In this example <code class="language-plaintext highlighter-rouge">braintree_cc_vault</code> is the unique payment code of the vault implementation for Braintree.</p>
 
 <h2 id="whats-next">What’s next</h2>
 

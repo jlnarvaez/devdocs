@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Non-secure functions | Magento 2 Developer Documentation (copy)</title>
+	<title>Non-secure functions | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/extension-dev-guide/security/non-secure-functions.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/extension-dev-guide/security/non-secure-functions.html">Magento 2.0</a></li>
 		
@@ -2910,12 +2911,12 @@ As a developer, you should avoid using functions that introduce vulnerabilities 
 Avoid using these functions in your code.</p>
 
 <ul>
-  <li><a href="http://php.net/manual/en/function.eval.php" target="_blank"><code class="highlighter-rouge">eval</code></a> - Using <code class="highlighter-rouge">eval</code> is considered bad practice because of its ability to <a href="https://www.owasp.org/index.php/PHP_Security_Cheat_Sheet#Code_Injection" target="_blank">execute arbitrary PHP code</a>.</li>
-  <li><a href="http://php.net/manual/en/function.serialize.php" target="_blank"><code class="highlighter-rouge">serialize</code></a>/<a href="http://php.net/manual/en/function.unserialize.php" target="_blank"><code class="highlighter-rouge">unserialize</code></a> - Attackers can create an exploit for these functions by passing a string with a serialized arbitrary object to the <code class="highlighter-rouge">unserialize</code> function to <a href="https://www.owasp.org/index.php/PHP_Object_Injection" target="_blank">run arbitrary code</a>.</li>
-  <li><a href="http://php.net/manual/en/function.md5.php" target="_blank"><code class="highlighter-rouge">md5</code></a> - The algorithm for this function is known to have <a href="https://www.owasp.org/index.php/Guide_to_Cryptography#Hashes" target="_blank">cryptographic weaknesses</a>.
+  <li><a href="http://php.net/manual/en/function.eval.php" target="_blank"><code class="language-plaintext highlighter-rouge">eval</code></a> - Using <code class="language-plaintext highlighter-rouge">eval</code> is considered bad practice because of its ability to <a href="https://www.owasp.org/index.php/PHP_Security_Cheat_Sheet#Code_Injection" target="_blank">execute arbitrary PHP code</a>.</li>
+  <li><a href="http://php.net/manual/en/function.serialize.php" target="_blank"><code class="language-plaintext highlighter-rouge">serialize</code></a>/<a href="http://php.net/manual/en/function.unserialize.php" target="_blank"><code class="language-plaintext highlighter-rouge">unserialize</code></a> - Attackers can create an exploit for these functions by passing a string with a serialized arbitrary object to the <code class="language-plaintext highlighter-rouge">unserialize</code> function to <a href="https://www.owasp.org/index.php/PHP_Object_Injection" target="_blank">run arbitrary code</a>.</li>
+  <li><a href="http://php.net/manual/en/function.md5.php" target="_blank"><code class="language-plaintext highlighter-rouge">md5</code></a> - The algorithm for this function is known to have <a href="https://www.owasp.org/index.php/Guide_to_Cryptography#Hashes" target="_blank">cryptographic weaknesses</a>.
 You should never use this function for hashing passwords or any other sensitive data.</li>
-  <li><a href="http://php.net/manual/en/function.srand.php" target="_blank"><code class="highlighter-rouge">srand</code></a> - Using a predetermined number to seed the random number generator results in a <a href="http://programmers.stackexchange.com/questions/76229/predicting-the-output-of-phps-rand" target="_blank">predictable sequence of numbers</a>.</li>
-  <li><a href="http://php.net/manual/en/function.mt-rand.php" target="_blank"><code class="highlighter-rouge">mt_srand</code></a> - This function is a pseudo-random number generator (PRNG) and is <a href="http://phpsecurity.readthedocs.io/en/latest/Insufficient-Entropy-For-Random-Values.html" target="_blank">not cryptographically secure</a>.</li>
+  <li><a href="http://php.net/manual/en/function.srand.php" target="_blank"><code class="language-plaintext highlighter-rouge">srand</code></a> - Using a predetermined number to seed the random number generator results in a <a href="http://programmers.stackexchange.com/questions/76229/predicting-the-output-of-phps-rand" target="_blank">predictable sequence of numbers</a>.</li>
+  <li><a href="http://php.net/manual/en/function.mt-rand.php" target="_blank"><code class="language-plaintext highlighter-rouge">mt_srand</code></a> - This function is a pseudo-random number generator (PRNG) and is <a href="http://phpsecurity.readthedocs.io/en/latest/Insufficient-Entropy-For-Random-Values.html" target="_blank">not cryptographically secure</a>.</li>
 </ul>
 
 			

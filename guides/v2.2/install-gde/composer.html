@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Install Magento using Composer | Magento 2 Developer Documentation (copy)</title>
+	<title>Install Magento using Composer | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/install-gde/composer.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/install-gde/composer.html">Magento 2.0</a></li>
 		
@@ -4651,7 +4652,7 @@
 
     <p>When prompted, enter your Magento authentication keys. Your <em>public key</em> is your username; your <em>private key</em> is your password.</p>
 
-    <p>If you encounter errors, such as <code class="highlighter-rouge">Could not find package...</code> or <code class="highlighter-rouge">...no matching package found</code>, make sure there are no typos in your command. If you still encounter errors, you may not be authorized to download Magento Commerce. Contact <a href="https://magento.com/support">Magento support</a> for help.</p>
+    <p>If you encounter errors, such as <code class="language-plaintext highlighter-rouge">Could not find package...</code> or <code class="language-plaintext highlighter-rouge">...no matching package found</code>, make sure there are no typos in your command. If you still encounter errors, you may not be authorized to download Magento Commerce. Contact <a href="https://magento.com/support">Magento support</a> for help.</p>
 
     <p>See <a href="/devdocs/guides/v2.2/install-gde/trouble/tshoot_composer-fail.html">troubleshooting</a> for help with more errors.</p>
   </li>
@@ -4661,8 +4662,8 @@
 
 <p>You must set read-write permissions for the web server group before you install the Magento software. This is necessary so that the Setup Wizard and command line can write files to the Magento file system.</p>
 
-<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="gp">cd /var/www/html/&lt;magento install directory&gt;</span>
-<span class="go">find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="gp">cd /var/www/html/&lt;magento install directory&gt;</span><span class="w">
+</span><span class="go">find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
 find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
 chown -R :www-data . // Ubuntu
 chmod u+x bin/magento
@@ -4679,7 +4680,7 @@ chmod u+x bin/magento
 
 <h3 class="no_toc" id="command-line">Command line</h3>
 
-<p>This example assumes that the Magento install directory is named <code class="highlighter-rouge">magento2ee</code>, the <code class="highlighter-rouge">db-host</code> is on the same machine (<code class="highlighter-rouge">localhost</code>), and that the <code class="highlighter-rouge">db-name</code>, <code class="highlighter-rouge">db-user</code>, and <code class="highlighter-rouge">db-password</code> are all <code class="highlighter-rouge">magento</code>:</p>
+<p>This example assumes that the Magento install directory is named <code class="language-plaintext highlighter-rouge">magento2ee</code>, the <code class="language-plaintext highlighter-rouge">db-host</code> is on the same machine (<code class="language-plaintext highlighter-rouge">localhost</code>), and that the <code class="language-plaintext highlighter-rouge">db-name</code>, <code class="language-plaintext highlighter-rouge">db-user</code>, and <code class="language-plaintext highlighter-rouge">db-password</code> are all <code class="language-plaintext highlighter-rouge">magento</code>:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento setup:install <span class="se">\</span>
 <span class="nt">--base-url</span><span class="o">=</span>http://localhost/magento2ee <span class="se">\</span>
@@ -4707,9 +4708,9 @@ chmod u+x bin/magento
 
 <pre><code class="language-url">http://&lt;Magento-host-or-IP&gt;/&lt;path-to-magento-root&gt;/setup
 </code></pre>
-<p>For example: <code class="highlighter-rouge">http://localhost/magento2ee/setup</code></p>
+<p>For example: <code class="language-plaintext highlighter-rouge">http://localhost/magento2ee/setup</code></p>
 
-<p class="bs-callout bs-callout-warning">You cannot use the Web Setup Wizard if your docroot is set to the <code class="highlighter-rouge">pub/</code> directory. See <a href="/devdocs/guides/v2.2/install-gde/tutorials/change-docroot-to-pub.html">Modify docroot for security</a>.</p>
+<p class="bs-callout bs-callout-warning">You cannot use the Web Setup Wizard if your docroot is set to the <code class="language-plaintext highlighter-rouge">pub/</code> directory. See <a href="/devdocs/guides/v2.2/install-gde/tutorials/change-docroot-to-pub.html">Modify docroot for security</a>.</p>
 
 			
 		</div>

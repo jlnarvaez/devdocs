@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Command-line upgrade | Magento 2 Developer Documentation (copy)</title>
+	<title>Command-line upgrade | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/comp-mgr/cli/cli-upgrade.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/comp-mgr/cli/cli-upgrade.html">Magento 2.0</a></li>
 		
@@ -2699,7 +2700,7 @@
 
 <ul>
   <li>Downloaded the   <span term-uuid="7490850a-0654-4ce1-83ff-d88c1d7d07fa" class="glossary-term" data-toggle="popover">metapackage</span>
- using <code class="highlighter-rouge">composer create-project</code></li>
+ using <code class="language-plaintext highlighter-rouge">composer create-project</code></li>
   <li>Installed the compressed archive</li>
 </ul>
 
@@ -2723,10 +2724,10 @@
 <p>Magento 2.2 includes security enhancements that requires some data to be converted from serialized data format to JSON encoded format.
 This conversion occurs during the upgrade and it can take a long time, depending on how much data is in your Magento database.</p>
 
-<p>One or more fields in the following tables are affected: <code class="highlighter-rouge">sales_order</code>, <code class="highlighter-rouge">sales_order_payment</code>, <code class="highlighter-rouge">quote</code>, <code class="highlighter-rouge">quote_payment</code>, <code class="highlighter-rouge">core_config_data</code>, <code class="highlighter-rouge">magento_reward_history</code>, <code class="highlighter-rouge">url_rewrite</code>, <code class="highlighter-rouge">salesrule</code>, and <code class="highlighter-rouge">catalogrule</code>.
+<p>One or more fields in the following tables are affected: <code class="language-plaintext highlighter-rouge">sales_order</code>, <code class="language-plaintext highlighter-rouge">sales_order_payment</code>, <code class="language-plaintext highlighter-rouge">quote</code>, <code class="language-plaintext highlighter-rouge">quote_payment</code>, <code class="language-plaintext highlighter-rouge">core_config_data</code>, <code class="language-plaintext highlighter-rouge">magento_reward_history</code>, <code class="language-plaintext highlighter-rouge">url_rewrite</code>, <code class="language-plaintext highlighter-rouge">salesrule</code>, and <code class="language-plaintext highlighter-rouge">catalogrule</code>.
 (This is not a complete list.)</p>
 
-<p>If you have a large amount of data, you can improve performance by setting the value of an environment variable, <code class="highlighter-rouge">DATA_CONVERTER_BATCH_SIZE</code>.
+<p>If you have a large amount of data, you can improve performance by setting the value of an environment variable, <code class="language-plaintext highlighter-rouge">DATA_CONVERTER_BATCH_SIZE</code>.
 By default, it’s set to a value of 50,000.</p>
 
 <p>To set the variable, before the upgrade starts enter the following command as the   <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span>
@@ -2742,7 +2743,7 @@ By default, it’s set to a value of 50,000.</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">unset </span>DATA_CONVERTER_BATCH_SIZE
 </code></pre></div></div>
 
-<p class="bs-callout bs-callout-info"><code class="highlighter-rouge">DATA_CONVERTER_BATCH_SIZE</code> requires memory; avoid setting it to a very large value (approximately 1GB) without testing it first.</p>
+<p class="bs-callout bs-callout-info"><code class="language-plaintext highlighter-rouge">DATA_CONVERTER_BATCH_SIZE</code> requires memory; avoid setting it to a very large value (approximately 1GB) without testing it first.</p>
 
 <h3 id="magento-owner-group">Magento file system owner and group</h3>
 
@@ -2784,7 +2785,7 @@ Ownership determines <em>who</em> can perform actions on the file system; permis
 
 <p>To verify your file system permissions are set properly, either log in to the Magento server or use your hosting provider’s file manager application.</p>
 
-<p>For example, enter the following commands on a Linux system if the Magento application is installed in <code class="highlighter-rouge">/var/www/html/magento2</code>:</p>
+<p>For example, enter the following commands on a Linux system if the Magento application is installed in <code class="language-plaintext highlighter-rouge">/var/www/html/magento2</code>:</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">ls</span> <span class="nt">-al</span> /var/www/html/magento2
 </code></pre></div></div>
 
@@ -2824,20 +2825,20 @@ drwxrws---. 11 magento_user apache   4096 Jun 13 16:05 var
 drwxrws---. 29 magento_user apache   4096 Jun  7 07:53 vendor
 </span></code></pre></div></div>
 
-<p>In the preceding example, the Magento file system owner is <code class="highlighter-rouge">magento_user</code>.
-Directories in the Magento file system have <code class="highlighter-rouge">drwxrwx---</code> permissions (775) and files have <code class="highlighter-rouge">-rw-rw-rw-</code> permissions (664).</p>
+<p>In the preceding example, the Magento file system owner is <code class="language-plaintext highlighter-rouge">magento_user</code>.
+Directories in the Magento file system have <code class="language-plaintext highlighter-rouge">drwxrwx---</code> permissions (775) and files have <code class="language-plaintext highlighter-rouge">-rw-rw-rw-</code> permissions (664).</p>
 
 <p>To get more detailed information, you can optionally enter the following command:</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">ls</span> <span class="nt">-al</span> /var/www/html/magento2/pub
 </code></pre></div></div>
 
-<p>Because Magento deploys static file assets to subdirectories of <code class="highlighter-rouge">pub</code>, it’s a good idea to verify permissions and ownership there as well.</p>
+<p>Because Magento deploys static file assets to subdirectories of <code class="language-plaintext highlighter-rouge">pub</code>, it’s a good idea to verify permissions and ownership there as well.</p>
 
 <p>For more information, see <a href="/devdocs/guides/v2.2/install-gde/prereq/file-sys-perms-over.html">File system permissions and ownership</a>.</p>
 
-<h2 id="upgrade-cli-pub">Prerequisite: <code class="highlighter-rouge">pub</code> directory root</h2>
+<h2 id="upgrade-cli-pub">Prerequisite: <code class="language-plaintext highlighter-rouge">pub</code> directory root</h2>
 
-<p>This section applies to you <em>only</em> if you set the Magento root directory to <code class="highlighter-rouge">&lt;your Magento install dir&gt;/pub</code>.
+<p>This section applies to you <em>only</em> if you set the Magento root directory to <code class="language-plaintext highlighter-rouge">&lt;your Magento install dir&gt;/pub</code>.
 If you did not do this, skip this section and continue with the next section.</p>
 
 <p>If you use pub as your Magento root directory:</p>
@@ -2864,7 +2865,7 @@ If you did not do this, skip this section and continue with the next section.</p
 <ol>
   <li>Log in to your Magento server as, or switch to, the Magento file system owner.</li>
   <li>Enter the following command:
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php &lt;your Magento install dir&gt;/bin/magento maintenance:enable
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php &lt;your Magento <span class="nb">install dir</span><span class="o">&gt;</span>/bin/magento maintenance:enable
 </code></pre></div>    </div>
 
     <p>For additional options, see <a href="/devdocs/guides/v2.2/install-gde/install/cli/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a>.</p>
@@ -2898,13 +2899,13 @@ If you did not do this, skip this section and continue with the next section.</p
 </code></pre></div>    </div>
   </li>
   <li>If prompted, enter your <a href="/devdocs/guides/v2.2/install-gde/prereq/connect-auth.html">authentication keys</a>.</li>
-  <li>Manually clear <code class="highlighter-rouge">var</code> subdirectories:
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>rm <span class="nt">-rf</span> &lt;Magento install dir&gt;/var/cache/<span class="k">*</span>
-rm <span class="nt">-rf</span> &lt;Magento install dir&gt;/var/page_cache/<span class="k">*</span>
-rm <span class="nt">-rf</span> &lt;Magento install dir&gt;/generated/code/<span class="k">*</span>
+  <li>Manually clear <code class="language-plaintext highlighter-rouge">var</code> subdirectories:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">rm</span> <span class="nt">-rf</span> &lt;Magento <span class="nb">install dir</span><span class="o">&gt;</span>/var/cache/<span class="k">*</span>
+<span class="nb">rm</span> <span class="nt">-rf</span> &lt;Magento <span class="nb">install dir</span><span class="o">&gt;</span>/var/page_cache/<span class="k">*</span>
+<span class="nb">rm</span> <span class="nt">-rf</span> &lt;Magento <span class="nb">install dir</span><span class="o">&gt;</span>/generated/code/<span class="k">*</span>
 </code></pre></div>    </div>
     <div class="bs-callout bs-callout-info">
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> If you use a cache storage other than filesystem (e.g., Redis, Memcached, etc.) you need to manually clear the cache there too.
+      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> If you use a cache storage other than filesystem (e.g., Redis, Memcached, etc.) you need to manually clear the cache there too.
 </code></pre></div>      </div>
     </div>
   </li>
@@ -2930,12 +2931,12 @@ rm <span class="nt">-rf</span> &lt;Magento install dir&gt;/generated/code/<span 
     <p>If so, perform the following tasks:</p>
 
     <ol>
-      <li>Reset <a href="/devdocs/guides/v2.2/install-gde/prereq/file-system-perms.html">file system ownership and permissions</a> as a user with <code class="highlighter-rouge">root</code> privileges.</li>
+      <li>Reset <a href="/devdocs/guides/v2.2/install-gde/prereq/file-system-perms.html">file system ownership and permissions</a> as a user with <code class="language-plaintext highlighter-rouge">root</code> privileges.</li>
       <li>Clear the following directories and try again:
         <ul>
-          <li><code class="highlighter-rouge">&lt;your Magento install dir&gt;/var/cache</code></li>
-          <li><code class="highlighter-rouge">&lt;your Magento install dir&gt;/var/page_cache</code></li>
-          <li><code class="highlighter-rouge">&lt;your Magento install dir&gt;/generated/code</code></li>
+          <li><code class="language-plaintext highlighter-rouge">&lt;your Magento install dir&gt;/var/cache</code></li>
+          <li><code class="language-plaintext highlighter-rouge">&lt;your Magento install dir&gt;/var/page_cache</code></li>
+          <li><code class="language-plaintext highlighter-rouge">&lt;your Magento install dir&gt;/generated/code</code></li>
         </ul>
       </li>
     </ol>

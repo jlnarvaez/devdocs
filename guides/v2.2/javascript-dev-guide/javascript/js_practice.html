@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Customizing JavaScript illustration | Magento 2 Developer Documentation (copy)</title>
+	<title>Customizing JavaScript illustration | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/javascript-dev-guide/javascript/js_practice.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/javascript-dev-guide/javascript/js_practice.html">Magento 2.0</a></li>
 		
@@ -2167,27 +2168,27 @@
   <li>Open a product page.</li>
   <li>Select to view the page source.</li>
   <li>Search for the “Click on image to view it full sized” string. The illustration of the search result follows: <img src="/devdocs/common/images/fdg_js_pr1.png" alt="Page source search result" /></li>
-  <li>View that it is output by <a href="https://github.com/magento/magento2/blob/2.1/lib/web/mage/gallery/gallery.js"><code class="highlighter-rouge">gallery.js</code></a>.</li>
+  <li>View that it is output by <a href="https://github.com/magento/magento2/blob/2.1/lib/web/mage/gallery/gallery.js"><code class="language-plaintext highlighter-rouge">gallery.js</code></a>.</li>
 </ol>
 
-<p>We see that the script which OrangeCo needs to alter is <code class="highlighter-rouge">gallery.js</code>.</p>
+<p>We see that the script which OrangeCo needs to alter is <code class="language-plaintext highlighter-rouge">gallery.js</code>.</p>
 
-<p>To be able to extend <code class="highlighter-rouge">gallery.js</code>, OrangeCo needs to know the path to it. To get this info, they refer to <code class="highlighter-rouge">requirejs-config.js</code>, which <a href="/devdocs/guides/v2.2/javascript-dev-guide/javascript/custom_js.html#extend_js">can be reached from the page source view or from the file system</a>. According to the configuration, the path for <code class="highlighter-rouge">gallery</code> is <code class="highlighter-rouge">mage/gallery</code>. The illustration follows:</p>
+<p>To be able to extend <code class="language-plaintext highlighter-rouge">gallery.js</code>, OrangeCo needs to know the path to it. To get this info, they refer to <code class="language-plaintext highlighter-rouge">requirejs-config.js</code>, which <a href="/devdocs/guides/v2.2/javascript-dev-guide/javascript/custom_js.html#extend_js">can be reached from the page source view or from the file system</a>. According to the configuration, the path for <code class="language-plaintext highlighter-rouge">gallery</code> is <code class="language-plaintext highlighter-rouge">mage/gallery</code>. The illustration follows:</p>
 
 <p><img src="/devdocs/common/images/fdg_pr_2.png" alt="RequireJS config file" /></p>
 
 <h3 id="add_code1">Step 2: Add the custom widget extending the gallery widget</h3>
 
-<p>In the <code class="highlighter-rouge">app/design/OrangeCo/orange/web/js</code> OrangeCo adds <code class="highlighter-rouge">orange-gallery.js</code> with the following content:</p>
+<p>In the <code class="language-plaintext highlighter-rouge">app/design/OrangeCo/orange/web/js</code> OrangeCo adds <code class="language-plaintext highlighter-rouge">orange-gallery.js</code> with the following content:</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nx">define</span><span class="p">([</span>
-  <span class="s1">'jquery'</span><span class="p">,</span>
-  <span class="s1">'jquery/ui'</span><span class="p">,</span>
-  <span class="s1">'mage/gallery'</span>
+  <span class="dl">'</span><span class="s1">jquery</span><span class="dl">'</span><span class="p">,</span>
+  <span class="dl">'</span><span class="s1">jquery/ui</span><span class="dl">'</span><span class="p">,</span>
+  <span class="dl">'</span><span class="s1">mage/gallery</span><span class="dl">'</span>
 <span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">){</span>
 
-  <span class="nx">$</span><span class="p">.</span><span class="nx">widget</span><span class="p">(</span><span class="s1">'orange.gallery'</span><span class="p">,</span> <span class="nx">$</span><span class="p">.</span><span class="nx">mage</span><span class="p">.</span><span class="nx">gallery</span><span class="p">,</span> <span class="p">{</span>
+  <span class="nx">$</span><span class="p">.</span><span class="nx">widget</span><span class="p">(</span><span class="dl">'</span><span class="s1">orange.gallery</span><span class="dl">'</span><span class="p">,</span> <span class="nx">$</span><span class="p">.</span><span class="nx">mage</span><span class="p">.</span><span class="nx">gallery</span><span class="p">,</span> <span class="p">{</span>
     <span class="na">_create</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="c1">// special method of jQuery UI Widgets</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">_setOption</span><span class="p">(</span><span class="s1">'controls'</span><span class="p">,</span> <span class="p">{</span><span class="s1">'notice'</span><span class="p">:</span> <span class="p">{}});</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">_setOption</span><span class="p">(</span><span class="dl">'</span><span class="s1">controls</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span><span class="dl">'</span><span class="s1">notice</span><span class="dl">'</span><span class="p">:</span> <span class="p">{}});</span>
     <span class="p">}</span>
   <span class="p">});</span>
 
@@ -2197,11 +2198,11 @@
 
 <h3 id="config1">Step 3: Update the RequireJS configuration</h3>
 
-<p>OrangeCo adds the custom <code class="highlighter-rouge">app/design/OrangeCo/orange/requirejs-config.js</code> with the following content:</p>
+<p>OrangeCo adds the custom <code class="language-plaintext highlighter-rouge">app/design/OrangeCo/orange/requirejs-config.js</code> with the following content:</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s2">"map"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"*"</span><span class="p">:</span> <span class="p">{</span>
-      <span class="s2">"gallery"</span><span class="p">:</span> <span class="s2">"js/orange-gallery"</span>
+  <span class="dl">"</span><span class="s2">map</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">*</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="dl">"</span><span class="s2">gallery</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">js/orange-gallery</span><span class="dl">"</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">};</span>
@@ -2223,27 +2224,27 @@
 
 <h3 id="step-1-define-what-is-the-default-implementation">Step 1: Define what is the default implementation</h3>
 
-<p>Using the approach described in the previous section, OrangeCo defines that the product images are displayed by <a href="https://github.com/magento/magento2/blob/2.1/lib/web/mage/gallery/gallery.js"><code class="highlighter-rouge">gallery.js</code></a>, and the configuration path for it is <code class="highlighter-rouge">mage/gallery</code>.</p>
+<p>Using the approach described in the previous section, OrangeCo defines that the product images are displayed by <a href="https://github.com/magento/magento2/blob/2.1/lib/web/mage/gallery/gallery.js"><code class="language-plaintext highlighter-rouge">gallery.js</code></a>, and the configuration path for it is <code class="language-plaintext highlighter-rouge">mage/gallery</code>.</p>
 
 <h3 id="step-2-add-the-custom-script-to-the-file-system">Step 2: Add the custom script to the file system</h3>
 
 <p>For the jCarousel widget to be able to use the configuration passed to the gallery widget,
 OrangeCo needs to add a “wrapper” script.</p>
 
-<p>To do this, OrangeCo adds the following files in the <code class="highlighter-rouge">app/design/OrangeCo/orange/web/js</code> directory:</p>
+<p>To do this, OrangeCo adds the following files in the <code class="language-plaintext highlighter-rouge">app/design/OrangeCo/orange/web/js</code> directory:</p>
 
 <ul>
-  <li>The jCarousel widget source file: <code class="highlighter-rouge">jquery.jcarousel.js</code></li>
-  <li>A "wrapper" <code class="highlighter-rouge">orange-carousel.js</code> with the following content:
+  <li>The jCarousel widget source file: <code class="language-plaintext highlighter-rouge">jquery.jcarousel.js</code></li>
+  <li>A "wrapper" <code class="language-plaintext highlighter-rouge">orange-carousel.js</code> with the following content:
     <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>    <span class="nx">define</span><span class="p">([</span>
-      <span class="s1">'jquery'</span><span class="p">,</span>
-      <span class="s1">'js/jquery.jcarousel'</span>
+      <span class="dl">'</span><span class="s1">jquery</span><span class="dl">'</span><span class="p">,</span>
+      <span class="dl">'</span><span class="s1">js/jquery.jcarousel</span><span class="dl">'</span>
     <span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">){</span>
 
       <span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">config</span><span class="p">,</span> <span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
        <span class="kd">var</span> <span class="nx">jCarouselConfig</span> <span class="o">=</span> <span class="p">{</span>
-         <span class="na">list</span><span class="p">:</span> <span class="s1">'.items.thumbs'</span><span class="p">,</span>
-         <span class="na">items</span><span class="p">:</span> <span class="s1">'.item.thumb'</span>
+         <span class="na">list</span><span class="p">:</span> <span class="dl">'</span><span class="s1">.items.thumbs</span><span class="dl">'</span><span class="p">,</span>
+         <span class="na">items</span><span class="p">:</span> <span class="dl">'</span><span class="s1">.item.thumb</span><span class="dl">'</span>
        <span class="p">};</span>
        <span class="nx">$</span><span class="p">(</span><span class="nx">element</span><span class="p">).</span><span class="nx">jcarousel</span><span class="p">(</span><span class="nx">jCarouselConfig</span><span class="p">);</span>
       <span class="p">}</span>
@@ -2254,16 +2255,16 @@ OrangeCo needs to add a “wrapper” script.</p>
 
 <h3 id="step-3-update-requirejs-configuration">Step 3: Update RequireJS configuration</h3>
 
-<p>In the <code class="highlighter-rouge">app/design/OrangeCo/orange</code> directory OrangeCo adds <code class="highlighter-rouge">requirejs-config.js</code> with the following content:</p>
+<p>In the <code class="language-plaintext highlighter-rouge">app/design/OrangeCo/orange</code> directory OrangeCo adds <code class="language-plaintext highlighter-rouge">requirejs-config.js</code> with the following content:</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s2">"map"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"*"</span><span class="p">:</span> <span class="p">{</span>
-      <span class="s2">"gallery"</span><span class="p">:</span> <span class="s2">"js/orange-gallery"</span>
+  <span class="dl">"</span><span class="s2">map</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">*</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="dl">"</span><span class="s2">gallery</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">js/orange-gallery</span><span class="dl">"</span>
     <span class="p">}</span>
   <span class="p">},</span>
-  <span class="s2">"shim"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"js/jquery.jcarousel"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"jquery"</span><span class="p">]</span> <span class="c1">// as jquery.jcarousel isn't an AMD module</span>
+  <span class="dl">"</span><span class="s2">shim</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">js/jquery.jcarousel</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">jquery</span><span class="dl">"</span><span class="p">]</span> <span class="c1">// as jquery.jcarousel isn't an AMD module</span>
   <span class="p">}</span>
 <span class="p">};</span>
 </code></pre></div></div>

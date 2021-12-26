@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Step 6. Install | Magento 2 Developer Documentation (copy)</title>
+	<title>Step 6. Install | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/install-gde/install/web/install-web_6-install.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/install-gde/install/web/install-web_6-install.html">Magento 2.0</a></li>
 		
@@ -4559,7 +4560,7 @@
 
 <h3 id="instgde-install-magento-web-step5last">Installation Success</h3>
 
-<p>The message <code class="highlighter-rouge">Success</code> displays to indicate a successful installation.</p>
+<p>The message <code class="language-plaintext highlighter-rouge">Success</code> displays to indicate a successful installation.</p>
 
 <p>If the installation failed, click <strong>Previous</strong> to review the information you entered, make sure the Magento server and database host are still reachable.</p>
 
@@ -4567,34 +4568,34 @@
 
 <h3 id="instgde-install-magento-web-log">Viewing the installation log</h3>
 
-<p>The Setup Wizard creates a log file, named <code class="highlighter-rouge">install.log</code>, that you might find useful in debugging issues or in verifying the actions performed by the wizard.</p>
+<p>The Setup Wizard creates a log file, named <code class="language-plaintext highlighter-rouge">install.log</code>, that you might find useful in debugging issues or in verifying the actions performed by the wizard.</p>
 
 <p>The Setup Wizard uses the <a href="http://php.net/manual/en/function.sys-get-temp-dir.php">sys_get_temp_dir ( void )</a> PHP call to determine where to write the installation log. To locate the log:</p>
 
 <ol>
   <li>
-    <p>Open <code class="highlighter-rouge">php.ini</code> in a text editor.</p>
+    <p>Open <code class="language-plaintext highlighter-rouge">php.ini</code> in a text editor.</p>
 
-    <p>If you don’t know where <code class="highlighter-rouge">php.ini</code> is located:</p>
+    <p>If you don’t know where <code class="language-plaintext highlighter-rouge">php.ini</code> is located:</p>
 
     <ol>
       <li>Log in as or switch to the <a href="/devdocs/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.</li>
       <li>Create <a href="/devdocs/guides/v2.1/install-gde/prereq/optional.html#install-optional-phpinfo">phpinfo.php</a> in the web server’s docroot.</li>
       <li>
-        <p>Access <code class="highlighter-rouge">phpinfo.php</code> in a web browser.</p>
+        <p>Access <code class="language-plaintext highlighter-rouge">phpinfo.php</code> in a web browser.</p>
 
-        <p>The location of <code class="highlighter-rouge">php.ini</code> is typically specified as <strong>Loaded Configuration File</strong> in the displayed results.</p>
+        <p>The location of <code class="language-plaintext highlighter-rouge">php.ini</code> is typically specified as <strong>Loaded Configuration File</strong> in the displayed results.</p>
       </li>
     </ol>
   </li>
   <li>
-    <p>Search for <code class="highlighter-rouge">sys_temp_dir</code>.</p>
+    <p>Search for <code class="language-plaintext highlighter-rouge">sys_temp_dir</code>.</p>
   </li>
 </ol>
 
-<p>The value of <code class="highlighter-rouge">sys_temp_dir</code> determines where <code class="highlighter-rouge">install.log</code> is located. If the value is commented out, PHP uses that value as its default.</p>
+<p>The value of <code class="language-plaintext highlighter-rouge">sys_temp_dir</code> determines where <code class="language-plaintext highlighter-rouge">install.log</code> is located. If the value is commented out, PHP uses that value as its default.</p>
 
-<p>A typical default value is <code class="highlighter-rouge">/tmp</code>. If that’s the case, the log is <code class="highlighter-rouge">/tmp/install.log</code>.</p>
+<p>A typical default value is <code class="language-plaintext highlighter-rouge">/tmp</code>. If that’s the case, the log is <code class="language-plaintext highlighter-rouge">/tmp/install.log</code>.</p>
 
 <h3 id="next-step">Next step</h3>
 

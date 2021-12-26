@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Scenario test | Magento 2 Developer Documentation (copy)</title>
+	<title>Scenario test | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/mtf/mtf_entities/mtf_scenariotest.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/mtf/mtf_entities/mtf_scenariotest.html">Magento 2.0</a></li>
 		
@@ -2166,18 +2167,18 @@
 
 <h2 id="test-case">Test case class</h2>
 
-<p>Test cases are located in <code class="highlighter-rouge">&lt;magento2 root dir&gt;/dev/tests/functional/tests/app/Magento/&lt;module&gt;/Test/TestCase</code> along with corresponding data sets. Each test case is a PHP class that only runs corresponding scenario, it doesn’t contain any other logic than that. In general, the difference between scenario test case and injectable test case is that all test logic is moved to distinct test steps, and their sequence is defined separately in   <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span>
+<p>Test cases are located in <code class="language-plaintext highlighter-rouge">&lt;magento2 root dir&gt;/dev/tests/functional/tests/app/Magento/&lt;module&gt;/Test/TestCase</code> along with corresponding data sets. Each test case is a PHP class that only runs corresponding scenario, it doesn’t contain any other logic than that. In general, the difference between scenario test case and injectable test case is that all test logic is moved to distinct test steps, and their sequence is defined separately in   <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span>
  file.</p>
 
 <p>Implementation of a scenario test is always the same. You have to change the name of your test case only.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="cp">&lt;?php</span>
 
-<span class="k">namespace</span> <span class="nx">Magento\YourModule\Test\TestCase</span><span class="p">;</span>
+<span class="kn">namespace</span> <span class="nn">Magento\YourModule\Test\TestCase</span><span class="p">;</span>
 
-<span class="k">use</span> <span class="nx">Magento\Mtf\TestCase\Scenario</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Mtf\TestCase\Scenario</span><span class="p">;</span>
 
-<span class="sd">/**
+<span class="cd">/**
  * Preconditions:
  * 1. ....
  * 2. ....
@@ -2187,26 +2188,26 @@
  * 2. ....
  * 3. ....
  */</span>
-<span class="k">class</span> <span class="nc">FunctionalityYouWantToTest</span> <span class="k">extends</span> <span class="nx">Scenario</span>
+<span class="kd">class</span> <span class="nc">FunctionalityYouWantToTest</span> <span class="kd">extends</span> <span class="nc">Scenario</span>
 <span class="p">{</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * Runs the scenario test case for functionality you want to test.
      *
      * @return void
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">test</span><span class="p">()</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">test</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">executeScenario</span><span class="p">();</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">executeScenario</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
 </code></pre></div></div>
 
-<p>Scenario test case is a PHP class that extends the <code class="highlighter-rouge">\Magento\Mtf\TestCase\Scenario\</code> class and implements the <code class="highlighter-rouge">test()</code> method that calls <code class="highlighter-rouge">executeScenario()</code>. However, the <code class="highlighter-rouge">Scenario</code> class is not an interface, so the method can have any other name than <code class="highlighter-rouge">test()</code>.</p>
+<p>Scenario test case is a PHP class that extends the <code class="language-plaintext highlighter-rouge">\Magento\Mtf\TestCase\Scenario\</code> class and implements the <code class="language-plaintext highlighter-rouge">test()</code> method that calls <code class="language-plaintext highlighter-rouge">executeScenario()</code>. However, the <code class="language-plaintext highlighter-rouge">Scenario</code> class is not an interface, so the method can have any other name than <code class="language-plaintext highlighter-rouge">test()</code>.</p>
 
 <h2 id="test-scenario">Test scenario</h2>
 
-<p>Test scenario is a sequence of test steps. Each scenario test case has its own scenario. All scenarios for a module are collected in an XML file located in <code class="highlighter-rouge">&lt;magento2 root dir&gt;dev/tests/functional/tests/app/Magento/&lt;module&gt;/Test/etc/testcase.xml</code>.</p>
+<p>Test scenario is a sequence of test steps. Each scenario test case has its own scenario. All scenarios for a module are collected in an XML file located in <code class="language-plaintext highlighter-rouge">&lt;magento2 root dir&gt;dev/tests/functional/tests/app/Magento/&lt;module&gt;/Test/etc/testcase.xml</code>.</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
 
@@ -2224,9 +2225,9 @@
 <span class="nt">&lt;/config&gt;</span>
 </code></pre></div></div>
 
-<h3 id="scenario-element"><code class="highlighter-rouge">&lt;scenario&gt;</code> element</h3>
+<h3 id="scenario-element"><code class="language-plaintext highlighter-rouge">&lt;scenario&gt;</code> element</h3>
 
-<p>Each <code class="highlighter-rouge">&lt;scenario&gt;</code> node defines a name of related test case in <code class="highlighter-rouge">name</code> and optionally a name of test step to be run first as <code class="highlighter-rouge">firstStep</code>.</p>
+<p>Each <code class="language-plaintext highlighter-rouge">&lt;scenario&gt;</code> node defines a name of related test case in <code class="language-plaintext highlighter-rouge">name</code> and optionally a name of test step to be run first as <code class="language-plaintext highlighter-rouge">firstStep</code>.</p>
 
 <p>Example:</p>
 
@@ -2235,11 +2236,11 @@
 <span class="nt">&lt;/scenario&gt;</span>
 </code></pre></div></div>
 
-<p>The example declares a scenario for <code class="highlighter-rouge">TestCase/OnePageCheckoutTest.php</code> where <code class="highlighter-rouge">&lt;step&gt;</code> with <code class="highlighter-rouge">name="setupConfiguration"</code> is to be run first.</p>
+<p>The example declares a scenario for <code class="language-plaintext highlighter-rouge">TestCase/OnePageCheckoutTest.php</code> where <code class="language-plaintext highlighter-rouge">&lt;step&gt;</code> with <code class="language-plaintext highlighter-rouge">name="setupConfiguration"</code> is to be run first.</p>
 
-<h3 id="step-element"><code class="highlighter-rouge">&lt;step&gt;</code> element</h3>
+<h3 id="step-element"><code class="language-plaintext highlighter-rouge">&lt;step&gt;</code> element</h3>
 
-<p>Each scenario contains test steps as <code class="highlighter-rouge">&lt;step&gt;</code> child elements. Each <code class="highlighter-rouge">&lt;step&gt;</code> requires <code class="highlighter-rouge">name</code> and <code class="highlighter-rouge">module</code> to define the name of a test step and the module to which it belongs to. All test steps are located in <code class="highlighter-rouge">&lt;module&gt;/Test/TestStep</code>.</p>
+<p>Each scenario contains test steps as <code class="language-plaintext highlighter-rouge">&lt;step&gt;</code> child elements. Each <code class="language-plaintext highlighter-rouge">&lt;step&gt;</code> requires <code class="language-plaintext highlighter-rouge">name</code> and <code class="language-plaintext highlighter-rouge">module</code> to define the name of a test step and the module to which it belongs to. All test steps are located in <code class="language-plaintext highlighter-rouge">&lt;module&gt;/Test/TestStep</code>.</p>
 
 <p>Example:</p>
 
@@ -2250,13 +2251,13 @@
 <p>The example defines the following test steps:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">Config/Test/TestStep/SetupConfigurationStep.php</code></li>
-  <li><code class="highlighter-rouge">Catalog/Test/TestStep/CreateProductsStep.php</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Config/Test/TestStep/SetupConfigurationStep.php</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Catalog/Test/TestStep/CreateProductsStep.php</code></li>
 </ul>
 
-<h4 id="next-prev-attributes"><code class="highlighter-rouge">next</code> and <code class="highlighter-rouge">prev</code> attributes</h4>
+<h4 id="next-prev-attributes"><code class="language-plaintext highlighter-rouge">next</code> and <code class="language-plaintext highlighter-rouge">prev</code> attributes</h4>
 
-<p>Using <code class="highlighter-rouge">next</code> and <code class="highlighter-rouge">prev</code> attributes you can specify previous or next test step as part of the node.</p>
+<p>Using <code class="language-plaintext highlighter-rouge">next</code> and <code class="language-plaintext highlighter-rouge">prev</code> attributes you can specify previous or next test step as part of the node.</p>
 
 <p>The following examples show tangled structure to demonstrate logic of the attributes.</p>
 
@@ -2275,15 +2276,15 @@
 <p>Both examples define the following test steps and their sequence:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">Config/Test/TestStep/SetupConfigurationStep.php</code>.</li>
-  <li><code class="highlighter-rouge">Catalog/Test/TestStep/CreateProductsStep.php</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">Config/Test/TestStep/SetupConfigurationStep.php</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">Catalog/Test/TestStep/CreateProductsStep.php</code>.</li>
 </ul>
 
-<h4 id="alias-attribute"><code class="highlighter-rouge">alias</code> attribute</h4>
+<h4 id="alias-attribute"><code class="language-plaintext highlighter-rouge">alias</code> attribute</h4>
 
-<p>Sometimes you want to use the same test step more then once in your scenario. In this case, you can use the <code class="highlighter-rouge">alias</code> attribute to define another name for a step that has been already listed as <code class="highlighter-rouge">&lt;step&gt;</code>.</p>
+<p>Sometimes you want to use the same test step more then once in your scenario. In this case, you can use the <code class="language-plaintext highlighter-rouge">alias</code> attribute to define another name for a step that has been already listed as <code class="language-plaintext highlighter-rouge">&lt;step&gt;</code>.</p>
 
-<p class="bs-callout bs-callout-info">Note that you can use <code class="highlighter-rouge">&lt;step&gt;</code> with the same name in a scenario only once.</p>
+<p class="bs-callout bs-callout-info">Note that you can use <code class="language-plaintext highlighter-rouge">&lt;step&gt;</code> with the same name in a scenario only once.</p>
 
 <p>Example:</p>
 
@@ -2297,182 +2298,182 @@
 <p>The example defines the following test steps and their sequence:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">Config/Test/TestStep/SetupConfigurationStep.php</code></li>
-  <li><code class="highlighter-rouge">Catalog/Test/TestStep/CreateProductsStep.php</code></li>
-  <li><code class="highlighter-rouge">Config/Test/TestStep/SetupConfigurationStep.php</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Config/Test/TestStep/SetupConfigurationStep.php</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Catalog/Test/TestStep/CreateProductsStep.php</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Config/Test/TestStep/SetupConfigurationStep.php</code></li>
 </ul>
 
 <h2 id="test-step">Test step class</h2>
 
-<p>All test steps are located in <code class="highlighter-rouge">&lt;module&gt;/Test/TestStep</code> as PHP classes in the following format:</p>
+<p>All test steps are located in <code class="language-plaintext highlighter-rouge">&lt;module&gt;/Test/TestStep</code> as PHP classes in the following format:</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>
 <span class="cp">&lt;?php</span>
 
-<span class="k">namespace</span> <span class="nx">Magento\YourModule\Test\TestStep</span><span class="p">;</span>
+<span class="kn">namespace</span> <span class="nn">Magento\YourModule\Test\TestStep</span><span class="p">;</span>
 
-<span class="k">use</span> <span class="nx">Magento\Mtf\TestStep\TestStepInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Mtf\TestStep\TestStepInterface</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">YourTestStep</span> <span class="k">implements</span> <span class="nx">TestStepInterface</span>
+<span class="kd">class</span> <span class="nc">YourTestStep</span> <span class="kd">implements</span> <span class="nc">TestStepInterface</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span>
     <span class="p">(</span>
-        <span class="c1">// data that are required for this step along with other dependencies.
-</span>    <span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// all required classes (fixtures, pages, etc.) have to be assigned here.
-</span>    <span class="p">};</span>
+        <span class="c1">// data that are required for this step along with other dependencies.</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// all required classes (fixtures, pages, etc.) have to be assigned here.</span>
+    <span class="p">};</span>
     
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">run</span><span class="p">()</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">run</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="c1">// logic of the functional test step.
-</span>    <span class="p">}</span>
+        <span class="c1">// logic of the functional test step.</span>
+    <span class="p">}</span>
     
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">cleanup</span><span class="p">()</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">cleanup</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="c1">// additional logic to be executed after the test step.
-</span>    <span class="p">}</span>
+        <span class="c1">// additional logic to be executed after the test step.</span>
+    <span class="p">}</span>
     
 <span class="p">}</span>
 
 </code></pre></div></div>
 
-<p>A tests step must implement <code class="highlighter-rouge">Magento\Mtf\TestStep\TestStepInterface</code> and define:</p>
+<p>A tests step must implement <code class="language-plaintext highlighter-rouge">Magento\Mtf\TestStep\TestStepInterface</code> and define:</p>
 
 <ul>
   <li>constructor (optional)</li>
-  <li>public method <code class="highlighter-rouge">run()</code> (required)</li>
-  <li>public method <code class="highlighter-rouge">cleanup()</code> (optional)</li>
+  <li>public method <code class="language-plaintext highlighter-rouge">run()</code> (required)</li>
+  <li>public method <code class="language-plaintext highlighter-rouge">cleanup()</code> (optional)</li>
 </ul>
 
-<p>Let’s see a test step on the example with <code class="highlighter-rouge">Magento\Customer\Test\TestStep\LoginCustomerOnFrontendStep</code>.</p>
+<p>Let’s see a test step on the example with <code class="language-plaintext highlighter-rouge">Magento\Customer\Test\TestStep\LoginCustomerOnFrontendStep</code>.</p>
 
 <div class="collapsible">
     <b class="collapsible-title">Show/hide example </b>
     <div class="collapsible-content"><div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> <span class="cp">&lt;?php</span>
- <span class="sd">/**
+ <span class="cd">/**
   * Copyright © 2016 Magento. All rights reserved.
   * See COPYING.txt for license details.
   */</span>
  
- <span class="k">namespace</span> <span class="nx">Magento\Customer\Test\TestStep</span><span class="p">;</span>
+ <span class="kn">namespace</span> <span class="nn">Magento\Customer\Test\TestStep</span><span class="p">;</span>
  
- <span class="k">use</span> <span class="nx">Magento\Cms\Test\Page\CmsIndex</span><span class="p">;</span>
- <span class="k">use</span> <span class="nx">Magento\Customer\Test\Fixture\Customer</span><span class="p">;</span>
- <span class="k">use</span> <span class="nx">Magento\Customer\Test\Page\CustomerAccountLogin</span><span class="p">;</span>
- <span class="k">use</span> <span class="nx">Magento\Mtf\TestStep\TestStepInterface</span><span class="p">;</span>
+ <span class="kn">use</span> <span class="nc">Magento\Cms\Test\Page\CmsIndex</span><span class="p">;</span>
+ <span class="kn">use</span> <span class="nc">Magento\Customer\Test\Fixture\Customer</span><span class="p">;</span>
+ <span class="kn">use</span> <span class="nc">Magento\Customer\Test\Page\CustomerAccountLogin</span><span class="p">;</span>
+ <span class="kn">use</span> <span class="nc">Magento\Mtf\TestStep\TestStepInterface</span><span class="p">;</span>
  
- <span class="sd">/**
+ <span class="cd">/**
   * Login customer on frontend.
   */</span>
- <span class="k">class</span> <span class="nc">LoginCustomerOnFrontendStep</span> <span class="k">implements</span> <span class="nx">TestStepInterface</span>
+ <span class="kd">class</span> <span class="nc">LoginCustomerOnFrontendStep</span> <span class="kd">implements</span> <span class="nc">TestStepInterface</span>
  <span class="p">{</span>
-     <span class="sd">/**
+     <span class="cd">/**
       * Customer fixture.
       *
       * @var Customer
       */</span>
      <span class="k">protected</span> <span class="nv">$customer</span><span class="p">;</span>
  
-     <span class="sd">/**
+     <span class="cd">/**
       * Cms index page.
       *
       * @var CmsIndex
       */</span>
      <span class="k">protected</span> <span class="nv">$cmsIndex</span><span class="p">;</span>
  
-     <span class="sd">/**
+     <span class="cd">/**
       * Customer login page.
       *
       * @var CustomerAccountLogin
       */</span>
      <span class="k">protected</span> <span class="nv">$customerAccountLogin</span><span class="p">;</span>
  
-     <span class="sd">/**
+     <span class="cd">/**
       * Logout customer on frontend step.
       *
       * @var LogoutCustomerOnFrontendStep
       */</span>
      <span class="k">protected</span> <span class="nv">$logoutCustomerOnFrontend</span><span class="p">;</span>
  
-     <span class="sd">/**
+     <span class="cd">/**
       * @constructor
       * @param CmsIndex $cmsIndex
       * @param CustomerAccountLogin $customerAccountLogin
       * @param LogoutCustomerOnFrontendStep $logoutCustomerOnFrontend
       * @param Customer $customer
       */</span>
-     <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
-         <span class="nx">CmsIndex</span> <span class="nv">$cmsIndex</span><span class="p">,</span>
-         <span class="nx">CustomerAccountLogin</span> <span class="nv">$customerAccountLogin</span><span class="p">,</span>
-         <span class="nx">LogoutCustomerOnFrontendStep</span> <span class="nv">$logoutCustomerOnFrontend</span><span class="p">,</span>
-         <span class="nx">Customer</span> <span class="nv">$customer</span>
+     <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span>
+         <span class="kt">CmsIndex</span> <span class="nv">$cmsIndex</span><span class="p">,</span>
+         <span class="kt">CustomerAccountLogin</span> <span class="nv">$customerAccountLogin</span><span class="p">,</span>
+         <span class="kt">LogoutCustomerOnFrontendStep</span> <span class="nv">$logoutCustomerOnFrontend</span><span class="p">,</span>
+         <span class="kt">Customer</span> <span class="nv">$customer</span>
      <span class="p">)</span> <span class="p">{</span>
-         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cmsIndex</span> <span class="o">=</span> <span class="nv">$cmsIndex</span><span class="p">;</span>
-         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">customerAccountLogin</span> <span class="o">=</span> <span class="nv">$customerAccountLogin</span><span class="p">;</span>
-         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">customer</span> <span class="o">=</span> <span class="nv">$customer</span><span class="p">;</span>
-         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logoutCustomerOnFrontend</span> <span class="o">=</span> <span class="nv">$logoutCustomerOnFrontend</span><span class="p">;</span>
+         <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">cmsIndex</span> <span class="o">=</span> <span class="nv">$cmsIndex</span><span class="p">;</span>
+         <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">customerAccountLogin</span> <span class="o">=</span> <span class="nv">$customerAccountLogin</span><span class="p">;</span>
+         <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">customer</span> <span class="o">=</span> <span class="nv">$customer</span><span class="p">;</span>
+         <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">logoutCustomerOnFrontend</span> <span class="o">=</span> <span class="nv">$logoutCustomerOnFrontend</span><span class="p">;</span>
      <span class="p">}</span>
  
-     <span class="sd">/**
+     <span class="cd">/**
       * Login customer.
       *
       * @return void
       */</span>
-     <span class="k">public</span> <span class="k">function</span> <span class="nf">run</span><span class="p">()</span>
+     <span class="k">public</span> <span class="k">function</span> <span class="n">run</span><span class="p">()</span>
      <span class="p">{</span>
-         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logoutCustomerOnFrontend</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">();</span>
-         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cmsIndex</span><span class="o">-&gt;</span><span class="na">getLinksBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">openLink</span><span class="p">(</span><span class="s1">'Sign In'</span><span class="p">);</span>
-         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cmsIndex</span><span class="o">-&gt;</span><span class="na">getCmsPageBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">waitPageInit</span><span class="p">();</span>
-         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">customerAccountLogin</span><span class="o">-&gt;</span><span class="na">getLoginBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">login</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">customer</span><span class="p">);</span>
-         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cmsIndex</span><span class="o">-&gt;</span><span class="na">getCmsPageBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">waitPageInit</span><span class="p">();</span>
+         <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">logoutCustomerOnFrontend</span><span class="o">-&gt;</span><span class="nf">run</span><span class="p">();</span>
+         <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">cmsIndex</span><span class="o">-&gt;</span><span class="nf">getLinksBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">openLink</span><span class="p">(</span><span class="s1">'Sign In'</span><span class="p">);</span>
+         <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">cmsIndex</span><span class="o">-&gt;</span><span class="nf">getCmsPageBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">waitPageInit</span><span class="p">();</span>
+         <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">customerAccountLogin</span><span class="o">-&gt;</span><span class="nf">getLoginBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">login</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">customer</span><span class="p">);</span>
+         <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">cmsIndex</span><span class="o">-&gt;</span><span class="nf">getCmsPageBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">waitPageInit</span><span class="p">();</span>
      <span class="p">}</span>
  
-     <span class="sd">/**
+     <span class="cd">/**
       * Logout customer on fronted.
       *
       * @return void
       */</span>
-     <span class="k">public</span> <span class="k">function</span> <span class="nf">cleanup</span><span class="p">()</span>
+     <span class="k">public</span> <span class="k">function</span> <span class="n">cleanup</span><span class="p">()</span>
      <span class="p">{</span>
-         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logoutCustomerOnFrontend</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">();</span>
+         <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">logoutCustomerOnFrontend</span><span class="o">-&gt;</span><span class="nf">run</span><span class="p">();</span>
      <span class="p">}</span>
  <span class="p">}</span>
 </code></pre></div></div>
 </div>
   </div>
 
-<h3 id="constructor-method"><code class="highlighter-rouge">constructor()</code> method</h3>
+<h3 id="constructor-method"><code class="language-plaintext highlighter-rouge">constructor()</code> method</h3>
 
-<p>You can optionally use the <code class="highlighter-rouge">constructor()</code> method which injects data to be used by <code class="highlighter-rouge">run()</code>. The data may include classes like pages, variation data, data returned by previous executed steps, etc.</p>
+<p>You can optionally use the <code class="language-plaintext highlighter-rouge">constructor()</code> method which injects data to be used by <code class="language-plaintext highlighter-rouge">run()</code>. The data may include classes like pages, variation data, data returned by previous executed steps, etc.</p>
 
-<p>On the previous example the <code class="highlighter-rouge">constructor()</code>:</p>
+<p>On the previous example the <code class="language-plaintext highlighter-rouge">constructor()</code>:</p>
 
 <ul>
-  <li>injects the <code class="highlighter-rouge">CmsIndex</code> and <code class="highlighter-rouge">CustomerAccountLogin</code> pages</li>
-  <li>injects the <code class="highlighter-rouge">LogoutCustomerOnFrontendStep</code> step</li>
-  <li>injects the <code class="highlighter-rouge">Customer</code> fixture data</li>
+  <li>injects the <code class="language-plaintext highlighter-rouge">CmsIndex</code> and <code class="language-plaintext highlighter-rouge">CustomerAccountLogin</code> pages</li>
+  <li>injects the <code class="language-plaintext highlighter-rouge">LogoutCustomerOnFrontendStep</code> step</li>
+  <li>injects the <code class="language-plaintext highlighter-rouge">Customer</code> fixture data</li>
   <li>assigns arguments to corresponding class properties</li>
 </ul>
 
-<h3 id="run-method"><code class="highlighter-rouge">run()</code> method</h3>
+<h3 id="run-method"><code class="language-plaintext highlighter-rouge">run()</code> method</h3>
 
-<p>The <code class="highlighter-rouge">run()</code> method is required to perform a test step and contains logic of the step.</p>
+<p>The <code class="language-plaintext highlighter-rouge">run()</code> method is required to perform a test step and contains logic of the step.</p>
 
-<p>On the previous example the <code class="highlighter-rouge">run()</code> method:</p>
+<p>On the previous example the <code class="language-plaintext highlighter-rouge">run()</code> method:</p>
 
 <ul>
   <li>logs out if the customer was logged in</li>
-  <li>clicks ‘Sign In’ on the <code class="highlighter-rouge">LinksBlock</code> of the <code class="highlighter-rouge">cmsIndex</code> page</li>
+  <li>clicks ‘Sign In’ on the <code class="language-plaintext highlighter-rouge">LinksBlock</code> of the <code class="language-plaintext highlighter-rouge">cmsIndex</code> page</li>
   <li>waits for requested page loading</li>
-  <li>logs in the customer on the <code class="highlighter-rouge">customerAccountLogin</code> page</li>
+  <li>logs in the customer on the <code class="language-plaintext highlighter-rouge">customerAccountLogin</code> page</li>
   <li>waits for logging in the customer</li>
 </ul>
 
-<h3 id="cleanup-method"><code class="highlighter-rouge">cleanup()</code> method</h3>
+<h3 id="cleanup-method"><code class="language-plaintext highlighter-rouge">cleanup()</code> method</h3>
 
-<p>The <code class="highlighter-rouge">cleanup()</code> method is optional. It serves to reset Magento to initial state or execute any other logic after each variation of a test step.</p>
+<p>The <code class="language-plaintext highlighter-rouge">cleanup()</code> method is optional. It serves to reset Magento to initial state or execute any other logic after each variation of a test step.</p>
 
-<p>On the previous example the <code class="highlighter-rouge">clean()</code> method:</p>
+<p>On the previous example the <code class="language-plaintext highlighter-rouge">clean()</code> method:</p>
 
 <ul>
   <li>logs out the customer</li>

@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Get payment information from frontend to backend | Magento 2 Developer Documentation (copy)</title>
+	<title>Get payment information from frontend to backend | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/payments-integrations/base-integration/get-payment-info.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/payments-integrations/base-integration/get-payment-info.html">Magento 2.0</a></li>
 		
@@ -2205,35 +2206,35 @@ and send received details to payment processor.</p>
 
 <p>However, in any case you should write some code to retrieve payment details from payment form.</p>
 
-<h2 id="example-braintree-request-builder-for-the-payment-part-of-the-request">Example: Braintree request builder for the <code class="highlighter-rouge">payment</code> part of the request</h2>
+<h2 id="example-braintree-request-builder-for-the-payment-part-of-the-request">Example: Braintree request builder for the <code class="language-plaintext highlighter-rouge">payment</code> part of the request</h2>
 
-<p>We have specified <code class="highlighter-rouge">BraintreeAuthorizeRequest</code> builder composite to process authorization and it includes the <code class="highlighter-rouge">Magento\Braintree\Gateway\Request\PaymentDataBuilder</code> builder. This is builder responsible for the payment information part of the request, in other words, the credit card information. Let’s look closer at it’s implementation.</p>
+<p>We have specified <code class="language-plaintext highlighter-rouge">BraintreeAuthorizeRequest</code> builder composite to process authorization and it includes the <code class="language-plaintext highlighter-rouge">Magento\Braintree\Gateway\Request\PaymentDataBuilder</code> builder. This is builder responsible for the payment information part of the request, in other words, the credit card information. Let’s look closer at it’s implementation.</p>
 
 <p>The Braintree payment provider requires the <a href="https://developers.braintreepayments.com/start/overview#payment-method-nonce">payment method nonce</a>
 to process transactions, and our builder should send it for each authorization transaction. 
 Here is how the Braintree payment builder looks:</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="k">class</span> <span class="nc">PaymentDataBuilder</span> <span class="k">implements</span> <span class="nx">BuilderInterface</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="kd">class</span> <span class="nc">PaymentDataBuilder</span> <span class="kd">implements</span> <span class="nc">BuilderInterface</span>
 <span class="p">{</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * @inheritdoc
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">build</span><span class="p">(</span><span class="k">array</span> <span class="nv">$buildSubject</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">build</span><span class="p">(</span><span class="kt">array</span> <span class="nv">$buildSubject</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="nv">$paymentDO</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">subjectReader</span><span class="o">-&gt;</span><span class="na">readPayment</span><span class="p">(</span><span class="nv">$buildSubject</span><span class="p">);</span>
+        <span class="nv">$paymentDO</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">subjectReader</span><span class="o">-&gt;</span><span class="nf">readPayment</span><span class="p">(</span><span class="nv">$buildSubject</span><span class="p">);</span>
 
-        <span class="nv">$payment</span> <span class="o">=</span> <span class="nv">$paymentDO</span><span class="o">-&gt;</span><span class="na">getPayment</span><span class="p">();</span>
-        <span class="nv">$order</span> <span class="o">=</span> <span class="nv">$paymentDO</span><span class="o">-&gt;</span><span class="na">getOrder</span><span class="p">();</span>
+        <span class="nv">$payment</span> <span class="o">=</span> <span class="nv">$paymentDO</span><span class="o">-&gt;</span><span class="nf">getPayment</span><span class="p">();</span>
+        <span class="nv">$order</span> <span class="o">=</span> <span class="nv">$paymentDO</span><span class="o">-&gt;</span><span class="nf">getOrder</span><span class="p">();</span>
 
         <span class="nv">$result</span> <span class="o">=</span> <span class="p">[</span>
-            <span class="nx">self</span><span class="o">::</span><span class="na">AMOUNT</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">formatPrice</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">subjectReader</span><span class="o">-&gt;</span><span class="na">readAmount</span><span class="p">(</span><span class="nv">$buildSubject</span><span class="p">)),</span>
-            <span class="nx">self</span><span class="o">::</span><span class="na">PAYMENT_METHOD_NONCE</span> <span class="o">=&gt;</span> <span class="nv">$payment</span><span class="o">-&gt;</span><span class="na">getAdditionalInformation</span><span class="p">(</span>
-                <span class="nx">DataAssignObserver</span><span class="o">::</span><span class="na">PAYMENT_METHOD_NONCE</span>
+            <span class="k">self</span><span class="o">::</span><span class="no">AMOUNT</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">formatPrice</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">subjectReader</span><span class="o">-&gt;</span><span class="nf">readAmount</span><span class="p">(</span><span class="nv">$buildSubject</span><span class="p">)),</span>
+            <span class="k">self</span><span class="o">::</span><span class="no">PAYMENT_METHOD_NONCE</span> <span class="o">=&gt;</span> <span class="nv">$payment</span><span class="o">-&gt;</span><span class="nf">getAdditionalInformation</span><span class="p">(</span>
+                <span class="nc">DataAssignObserver</span><span class="o">::</span><span class="no">PAYMENT_METHOD_NONCE</span>
             <span class="p">),</span>
-            <span class="nx">self</span><span class="o">::</span><span class="na">ORDER_ID</span> <span class="o">=&gt;</span> <span class="nv">$order</span><span class="o">-&gt;</span><span class="na">getOrderIncrementId</span><span class="p">()</span>
+            <span class="k">self</span><span class="o">::</span><span class="no">ORDER_ID</span> <span class="o">=&gt;</span> <span class="nv">$order</span><span class="o">-&gt;</span><span class="nf">getOrderIncrementId</span><span class="p">()</span>
         <span class="p">];</span>
 
-        <span class="o">...</span>
+        <span class="mf">...</span>
 
         <span class="k">return</span> <span class="nv">$result</span><span class="p">;</span>
     <span class="p">}</span>
@@ -2252,13 +2253,13 @@ So our   <span term-uuid="422b0fa8-b181-4c7c-93a2-c553abb34efd" class="glossary-
  implementation should provide the ability to display and process payment form on checkout step.</p>
 
 <p>We can send to   <span term-uuid="74d6d228-34bd-4475-a6f8-0c0f4d6d0d61" class="glossary-term" data-toggle="popover">backend</span>
- any specific data, just need to override <code class="highlighter-rouge">getData()</code> method in
+ any specific data, just need to override <code class="language-plaintext highlighter-rouge">getData()</code> method in
 <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Braintree/view/frontend/web/js/view/payment/method-renderer/cc-form.js">payment UI component</a>:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">define</span><span class="p">(</span>
-    <span class="p">[...,</span> <span class="s1">'Magento_Payment/js/view/payment/cc-form'</span><span class="p">,</span> <span class="p">...],</span>
+    <span class="p">[...,</span> <span class="dl">'</span><span class="s1">Magento_Payment/js/view/payment/cc-form</span><span class="dl">'</span><span class="p">,</span> <span class="p">...],</span>
     <span class="kd">function</span> <span class="p">(...,</span> <span class="nx">Component</span><span class="p">,</span> <span class="p">...)</span> <span class="p">{</span>
-        <span class="s1">'use strict'</span><span class="p">;</span>
+        <span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
 
         <span class="k">return</span> <span class="nx">Component</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
             <span class="na">defaults</span><span class="p">:</span> <span class="p">{</span>
@@ -2269,9 +2270,9 @@ So our   <span term-uuid="422b0fa8-b181-4c7c-93a2-c553abb34efd" class="glossary-
 
             <span class="na">getData</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
                 <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-                    <span class="s1">'method'</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">getCode</span><span class="p">(),</span>
-                    <span class="s1">'additional_data'</span><span class="p">:</span> <span class="p">{</span>
-                        <span class="s1">'payment_method_nonce'</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">paymentMethodNonce</span>
+                    <span class="dl">'</span><span class="s1">method</span><span class="dl">'</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">getCode</span><span class="p">(),</span>
+                    <span class="dl">'</span><span class="s1">additional_data</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="dl">'</span><span class="s1">payment_method_nonce</span><span class="dl">'</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">paymentMethodNonce</span>
                     <span class="p">}</span>
                 <span class="p">};</span>
 
@@ -2293,7 +2294,7 @@ So our   <span term-uuid="422b0fa8-b181-4c7c-93a2-c553abb34efd" class="glossary-
     <span class="p">}</span>
 <span class="p">);</span></code></pre></figure>
 
-<p>The <code class="highlighter-rouge">getData()</code> method returns data what we need and depending on payment integration the returned data can be more
+<p>The <code class="language-plaintext highlighter-rouge">getData()</code> method returns data what we need and depending on payment integration the returned data can be more
 complicated. we need last step to retrieve data from   <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>
  in the backend. Magento provides some
 mechanisms called <a href="/guides/v2.1/extension-dev-guide/events-and-observers.html">Observers</a>.</p>
@@ -2306,35 +2307,35 @@ in the payment additional information. In most cases it will be enough to extend
 
 <p>That’s how observer might looks:</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="k">class</span> <span class="nc">DataAssignObserver</span> <span class="k">extends</span> <span class="nx">AbstractDataAssignObserver</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="kd">class</span> <span class="nc">DataAssignObserver</span> <span class="kd">extends</span> <span class="nc">AbstractDataAssignObserver</span>
 <span class="p">{</span>
     <span class="k">const</span> <span class="no">PAYMENT_METHOD_NONCE</span> <span class="o">=</span> <span class="s1">'payment_method_nonce'</span><span class="p">;</span>
 
-    <span class="sd">/**
+    <span class="cd">/**
      * @var array
      */</span>
     <span class="k">protected</span> <span class="nv">$additionalInformationList</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="nx">self</span><span class="o">::</span><span class="na">PAYMENT_METHOD_NONCE</span><span class="p">,</span>
+        <span class="k">self</span><span class="o">::</span><span class="no">PAYMENT_METHOD_NONCE</span><span class="p">,</span>
     <span class="p">];</span>
 
-    <span class="sd">/**
+    <span class="cd">/**
      * @param Observer $observer
      * @return void
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">(</span><span class="nx">Observer</span> <span class="nv">$observer</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">execute</span><span class="p">(</span><span class="kt">Observer</span> <span class="nv">$observer</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">readDataArgument</span><span class="p">(</span><span class="nv">$observer</span><span class="p">);</span>
+        <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">readDataArgument</span><span class="p">(</span><span class="nv">$observer</span><span class="p">);</span>
 
-        <span class="nv">$additionalData</span> <span class="o">=</span> <span class="nv">$data</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">(</span><span class="nx">PaymentInterface</span><span class="o">::</span><span class="na">KEY_ADDITIONAL_DATA</span><span class="p">);</span>
+        <span class="nv">$additionalData</span> <span class="o">=</span> <span class="nv">$data</span><span class="o">-&gt;</span><span class="nf">getData</span><span class="p">(</span><span class="nc">PaymentInterface</span><span class="o">::</span><span class="no">KEY_ADDITIONAL_DATA</span><span class="p">);</span>
         <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">is_array</span><span class="p">(</span><span class="nv">$additionalData</span><span class="p">))</span> <span class="p">{</span>
             <span class="k">return</span><span class="p">;</span>
         <span class="p">}</span>
 
-        <span class="nv">$paymentInfo</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">readPaymentModelArgument</span><span class="p">(</span><span class="nv">$observer</span><span class="p">);</span>
+        <span class="nv">$paymentInfo</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">readPaymentModelArgument</span><span class="p">(</span><span class="nv">$observer</span><span class="p">);</span>
 
-        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">additionalInformationList</span> <span class="k">as</span> <span class="nv">$additionalInformationKey</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$additionalData</span><span class="p">[</span><span class="nv">$additionalInformationKey</span><span class="p">]))</span> <span class="p">{</span>
-                <span class="nv">$paymentInfo</span><span class="o">-&gt;</span><span class="na">setAdditionalInformation</span><span class="p">(</span>
+        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">additionalInformationList</span> <span class="k">as</span> <span class="nv">$additionalInformationKey</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="k">isset</span><span class="p">(</span><span class="nv">$additionalData</span><span class="p">[</span><span class="nv">$additionalInformationKey</span><span class="p">]))</span> <span class="p">{</span>
+                <span class="nv">$paymentInfo</span><span class="o">-&gt;</span><span class="nf">setAdditionalInformation</span><span class="p">(</span>
                     <span class="nv">$additionalInformationKey</span><span class="p">,</span>
                     <span class="nv">$additionalData</span><span class="p">[</span><span class="nv">$additionalInformationKey</span><span class="p">]</span>
                 <span class="p">);</span>
@@ -2344,7 +2345,7 @@ in the payment additional information. In most cases it will be enough to extend
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>And this observer should be added to list of events (<code class="highlighter-rouge">Module_Name/etc/events.xml</code>):</p>
+<p>And this observer should be added to list of events (<code class="language-plaintext highlighter-rouge">Module_Name/etc/events.xml</code>):</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:Event/etc/events.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;event</span> <span class="na">name=</span><span class="s">"payment_method_assign_data_braintree"</span><span class="nt">&gt;</span>
@@ -2355,23 +2356,23 @@ in the payment additional information. In most cases it will be enough to extend
 <p>This   <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span>
  will be triggered in <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Payment/Model/Method/Adapter.php#L600">Adapter::assignData()</a> method call:</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="k">public</span> <span class="k">function</span> <span class="nf">assignData</span><span class="p">(</span><span class="nx">\Magento\Framework\DataObject</span> <span class="nv">$data</span><span class="p">)</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="k">public</span> <span class="k">function</span> <span class="n">assignData</span><span class="p">(</span><span class="err">\</span><span class="nc">Magento\Framework\DataObject</span> <span class="nv">$data</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eventManager</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">(</span>
-        <span class="s1">'payment_method_assign_data_'</span> <span class="o">.</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCode</span><span class="p">(),</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">eventManager</span><span class="o">-&gt;</span><span class="nf">dispatch</span><span class="p">(</span>
+        <span class="s1">'payment_method_assign_data_'</span> <span class="mf">.</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">getCode</span><span class="p">(),</span>
         <span class="p">[</span>
-            <span class="nx">AbstractDataAssignObserver</span><span class="o">::</span><span class="na">METHOD_CODE</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="p">,</span>
-            <span class="nx">AbstractDataAssignObserver</span><span class="o">::</span><span class="na">MODEL_CODE</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getInfoInstance</span><span class="p">(),</span>
-            <span class="nx">AbstractDataAssignObserver</span><span class="o">::</span><span class="na">DATA_CODE</span> <span class="o">=&gt;</span> <span class="nv">$data</span>
+            <span class="nc">AbstractDataAssignObserver</span><span class="o">::</span><span class="no">METHOD_CODE</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="p">,</span>
+            <span class="nc">AbstractDataAssignObserver</span><span class="o">::</span><span class="no">MODEL_CODE</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">getInfoInstance</span><span class="p">(),</span>
+            <span class="nc">AbstractDataAssignObserver</span><span class="o">::</span><span class="no">DATA_CODE</span> <span class="o">=&gt;</span> <span class="nv">$data</span>
         <span class="p">]</span>
     <span class="p">);</span>
 
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eventManager</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">(</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">eventManager</span><span class="o">-&gt;</span><span class="nf">dispatch</span><span class="p">(</span>
         <span class="s1">'payment_method_assign_data'</span><span class="p">,</span>
         <span class="p">[</span>
-            <span class="nx">AbstractDataAssignObserver</span><span class="o">::</span><span class="na">METHOD_CODE</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="p">,</span>
-            <span class="nx">AbstractDataAssignObserver</span><span class="o">::</span><span class="na">MODEL_CODE</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getInfoInstance</span><span class="p">(),</span>
-            <span class="nx">AbstractDataAssignObserver</span><span class="o">::</span><span class="na">DATA_CODE</span> <span class="o">=&gt;</span> <span class="nv">$data</span>
+            <span class="nc">AbstractDataAssignObserver</span><span class="o">::</span><span class="no">METHOD_CODE</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="p">,</span>
+            <span class="nc">AbstractDataAssignObserver</span><span class="o">::</span><span class="no">MODEL_CODE</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">getInfoInstance</span><span class="p">(),</span>
+            <span class="nc">AbstractDataAssignObserver</span><span class="o">::</span><span class="no">DATA_CODE</span> <span class="o">=&gt;</span> <span class="nv">$data</span>
         <span class="p">]</span>
     <span class="p">);</span>
 
@@ -2382,8 +2383,8 @@ in the payment additional information. In most cases it will be enough to extend
 <p>There are two events:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">payment_method_assign_data_payment_code</code>: specific for current method (placing order using this payment method)</li>
-  <li><code class="highlighter-rouge">payment_method_assign_data</code>: global for all payments (place order)</li>
+  <li><code class="language-plaintext highlighter-rouge">payment_method_assign_data_payment_code</code>: specific for current method (placing order using this payment method)</li>
+  <li><code class="language-plaintext highlighter-rouge">payment_method_assign_data</code>: global for all payments (place order)</li>
 </ul>
 
 <p>What type of event to use depends on your implementation, but in most cases it will be enough to use the event for current payment method.</p>

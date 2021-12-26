@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Set up multiple websites or stores | Magento 2 Developer Documentation (copy)</title>
+	<title>Set up multiple websites or stores | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/project/project-multi-sites.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/project/project-multi-sites.html">Magento 2.0</a></li>
 		
@@ -4359,8 +4360,8 @@
 <ol>
   <li><strong>Configure routes</strong>—specify how incoming URLs are handled by Magento Commerce</li>
   <li><strong>Set up websites, stores, and store views</strong>—configure using the Magento Commerce Admin panel</li>
-  <li><strong>Modify <code class="highlighter-rouge">magento-vars.php</code> file</strong>—specify the values of the <code class="highlighter-rouge">MAGE_RUN_TYPE</code> and <code class="highlighter-rouge">MAGE_RUN_CODE</code> variables</li>
-  <li><strong>Deploy</strong>—deploy and test the <code class="highlighter-rouge">integration</code> branch</li>
+  <li><strong>Modify <code class="language-plaintext highlighter-rouge">magento-vars.php</code> file</strong>—specify the values of the <code class="language-plaintext highlighter-rouge">MAGE_RUN_TYPE</code> and <code class="language-plaintext highlighter-rouge">MAGE_RUN_CODE</code> variables</li>
+  <li><strong>Deploy</strong>—deploy and test the <code class="language-plaintext highlighter-rouge">integration</code> branch</li>
 </ol>
 
 <h3 id="configure-routes">Configure routes</h3>
@@ -4379,12 +4380,12 @@
     <p>Change to your Magento Commerce base directory.</p>
   </li>
   <li>
-    <p>Open the <code class="highlighter-rouge">.magento/routes.yaml</code> file in a text editor.</p>
+    <p>Open the <code class="language-plaintext highlighter-rouge">.magento/routes.yaml</code> file in a text editor.</p>
   </li>
   <li>
     <p>Replace the contents with the following:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>"http://{default}/":
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>"http://{default}/":
 	type: upstream
 	upstream: "mymagento:php"
 
@@ -4402,7 +4403,7 @@
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Save your changes to the <code class="highlighter-rouge">routes.yaml</code> file.</p>
+    <p>Save your changes to the <code class="language-plaintext highlighter-rouge">routes.yaml</code> file.</p>
   </li>
 </ol>
 
@@ -4412,34 +4413,34 @@
 
 <p>Make sure you name your websites, stores, and store views in your Cloud Admin the same as you did when you set up your local installation.</p>
 
-<h3 id="modify-the-magento-varsphp-file">Modify the <code class="highlighter-rouge">magento-vars.php</code> file</h3>
+<h3 id="modify-the-magento-varsphp-file">Modify the <code class="language-plaintext highlighter-rouge">magento-vars.php</code> file</h3>
 
-<p>Instead of configuring an NGINX virtual host, pass the <code class="highlighter-rouge">MAGE_RUN_CODE</code> and <code class="highlighter-rouge">MAGE_RUN_TYPE</code> variables using the <code class="highlighter-rouge">magento-vars.php</code> file located in your project root directory.</p>
+<p>Instead of configuring an NGINX virtual host, pass the <code class="language-plaintext highlighter-rouge">MAGE_RUN_CODE</code> and <code class="language-plaintext highlighter-rouge">MAGE_RUN_TYPE</code> variables using the <code class="language-plaintext highlighter-rouge">magento-vars.php</code> file located in your project root directory.</p>
 
-<h4 id="to-pass-variables-using-the-magento-varsphp-file">To pass variables using the <code class="highlighter-rouge">magento-vars.php</code> file:</h4>
+<h4 id="to-pass-variables-using-the-magento-varsphp-file">To pass variables using the <code class="language-plaintext highlighter-rouge">magento-vars.php</code> file:</h4>
 
 <ol>
   <li>
-    <p>Open the <code class="highlighter-rouge">magento-vars.php</code> file in a text editor.</p>
+    <p>Open the <code class="language-plaintext highlighter-rouge">magento-vars.php</code> file in a text editor.</p>
   </li>
   <li>
     <p>Uncomment everything after the first two lines.</p>
   </li>
   <li>
-    <p>Move the entire block starting with <code class="highlighter-rouge">if (isHttpHost("example.com")</code> after <code class="highlighter-rouge">function isHttpHost($host)</code>.</p>
+    <p>Move the entire block starting with <code class="language-plaintext highlighter-rouge">if (isHttpHost("example.com")</code> after <code class="language-plaintext highlighter-rouge">function isHttpHost($host)</code>.</p>
 
     <p>The file should look like the following:</p>
 
-    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="c1">// enable, adjust and copy this code for each store you run
-// Store #0, default one
-</span><span class="k">function</span> <span class="nf">isHttpHost</span><span class="p">(</span><span class="nv">$host</span><span class="p">)</span>
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="c1">// enable, adjust and copy this code for each store you run</span>
+<span class="c1">// Store #0, default one</span>
+<span class="k">function</span> <span class="n">isHttpHost</span><span class="p">(</span><span class="nv">$host</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'HTTP_HOST'</span><span class="p">]))</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">isset</span><span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'HTTP_HOST'</span><span class="p">]))</span> <span class="p">{</span>
        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
     <span class="p">}</span>
        <span class="k">return</span> <span class="nb">strpos</span><span class="p">(</span><span class="nb">str_replace</span><span class="p">(</span><span class="s1">'.'</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">,</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'HTTP_HOST'</span><span class="p">]),</span> <span class="nv">$host</span><span class="p">)</span> <span class="o">===</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="k">if</span> <span class="p">(</span><span class="nx">isHttpHost</span><span class="p">(</span><span class="s2">"example.com"</span><span class="p">))</span> <span class="p">{</span>
+<span class="k">if</span> <span class="p">(</span><span class="nf">isHttpHost</span><span class="p">(</span><span class="s2">"example.com"</span><span class="p">))</span> <span class="p">{</span>
     <span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">"MAGE_RUN_CODE"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"default"</span><span class="p">;</span>
     <span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">"MAGE_RUN_TYPE"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"store"</span><span class="p">;</span>
 <span class="p">}</span>
@@ -4459,29 +4460,29 @@
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Replace the following values in the <code class="highlighter-rouge">if (isHttpHost("example.com"))</code> block:</p>
+    <p>Replace the following values in the <code class="language-plaintext highlighter-rouge">if (isHttpHost("example.com"))</code> block:</p>
 
     <ul>
-      <li><code class="highlighter-rouge">example.com</code>—with the base URL of your website</li>
-      <li><code class="highlighter-rouge">default</code>—with the unique code for your website or store view</li>
-      <li><code class="highlighter-rouge">store</code>—with one of the following values:
+      <li><code class="language-plaintext highlighter-rouge">example.com</code>—with the base URL of your website</li>
+      <li><code class="language-plaintext highlighter-rouge">default</code>—with the unique code for your website or store view</li>
+      <li><code class="language-plaintext highlighter-rouge">store</code>—with one of the following values:
         <ul>
-          <li><code class="highlighter-rouge">website</code>—load the website in the storefront</li>
-          <li><code class="highlighter-rouge">store</code>—load a storeview in the storefront</li>
+          <li><code class="language-plaintext highlighter-rouge">website</code>—load the website in the storefront</li>
+          <li><code class="language-plaintext highlighter-rouge">store</code>—load a storeview in the storefront</li>
         </ul>
       </li>
     </ul>
 
-    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="c1">// enable, adjust and copy this code for each store you run
-// Store #0, default one
-</span><span class="k">function</span> <span class="nf">isHttpHost</span><span class="p">(</span><span class="nv">$host</span><span class="p">)</span>
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="c1">// enable, adjust and copy this code for each store you run</span>
+<span class="c1">// Store #0, default one</span>
+<span class="k">function</span> <span class="n">isHttpHost</span><span class="p">(</span><span class="nv">$host</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'HTTP_HOST'</span><span class="p">]))</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">isset</span><span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'HTTP_HOST'</span><span class="p">]))</span> <span class="p">{</span>
     <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'HTTP_HOST'</span><span class="p">]</span> <span class="o">===</span>  <span class="nv">$host</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="k">if</span> <span class="p">(</span><span class="nx">isHttpHost</span><span class="p">(</span><span class="s2">"french.branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud"</span><span class="p">))</span>
+<span class="k">if</span> <span class="p">(</span><span class="nf">isHttpHost</span><span class="p">(</span><span class="s2">"french.branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud"</span><span class="p">))</span>
 <span class="p">{</span>
     <span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">"MAGE_RUN_CODE"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"french"</span><span class="p">;</span>
     <span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">"MAGE_RUN_TYPE"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"website"</span><span class="p">;</span>
@@ -4489,7 +4490,7 @@
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Save your changes to the <code class="highlighter-rouge">magento-vars.php</code> file.</p>
+    <p>Save your changes to the <code class="language-plaintext highlighter-rouge">magento-vars.php</code> file.</p>
   </li>
 </ol>
 
@@ -4510,11 +4511,11 @@
   <li>
     <p>After deployment, open your site base URL in a web browser.</p>
 
-    <p>Use the format: <code class="highlighter-rouge">http://&lt;magento-run-code&gt;.&lt;site-URL&gt;</code><br />
-For example, <code class="highlighter-rouge">http://french.master-name-projectID.us.magentosite.cloud/</code></p>
+    <p>Use the format: <code class="language-plaintext highlighter-rouge">http://&lt;magento-run-code&gt;.&lt;site-URL&gt;</code><br />
+For example, <code class="language-plaintext highlighter-rouge">http://french.master-name-projectID.us.magentosite.cloud/</code></p>
   </li>
   <li>
-    <p>Test your site thoroughly and merge the code to the <code class="highlighter-rouge">integration</code> branch for further deployment.</p>
+    <p>Test your site thoroughly and merge the code to the <code class="language-plaintext highlighter-rouge">integration</code> branch for further deployment.</p>
   </li>
 </ol>
 

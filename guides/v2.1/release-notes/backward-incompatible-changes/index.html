@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento 2.1 backward incompatible changes | Magento 2 Developer Documentation (copy)</title>
+	<title>Magento 2.1 backward incompatible changes | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/release-notes/backward-incompatible-changes">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/release-notes/backward-incompatible-changes">Magento 2.0</a></li>
 		
@@ -2793,19 +2794,19 @@
    <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
  introduces new service methods that enhance both options management and products to categories cross linking management.</p>
 
-<p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Catalog/Api/CategoryLinkManagementInterface.php" target="_blank"><code class="highlighter-rouge">Magento\Catalog\Api\CategoryLinkManagementInterface</code></a><br />
-<strong>Action:</strong> Added the service method <code class="highlighter-rouge">assignProductToCategories</code><br />
+<p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Catalog/Api/CategoryLinkManagementInterface.php" target="_blank"><code class="language-plaintext highlighter-rouge">Magento\Catalog\Api\CategoryLinkManagementInterface</code></a><br />
+<strong>Action:</strong> Added the service method <code class="language-plaintext highlighter-rouge">assignProductToCategories</code><br />
 <strong>Description:</strong> Assign product to given categories<br /></p>
 
-<p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Catalog/Api/ProductCustomOptionRepositoryInterface.php" target="_blank"><code class="highlighter-rouge">Magento\Catalog\Api\ProductCustomOptionRepositoryInterface</code></a><br />
-<strong>Action:</strong> Added the service method <code class="highlighter-rouge">getProductOptions</code><br />
+<p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Catalog/Api/ProductCustomOptionRepositoryInterface.php" target="_blank"><code class="language-plaintext highlighter-rouge">Magento\Catalog\Api\ProductCustomOptionRepositoryInterface</code></a><br />
+<strong>Action:</strong> Added the service method <code class="language-plaintext highlighter-rouge">getProductOptions</code><br />
 <strong>Description:</strong> Returns product options<br /></p>
 
-<p><strong>Action:</strong> Added service method - <code class="highlighter-rouge">duplicate</code><br />
+<p><strong>Action:</strong> Added service method - <code class="language-plaintext highlighter-rouge">duplicate</code><br />
 <strong>Description:</strong> Duplicate product options<br /></p>
 
-<p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Catalog/Api/ProductLinkRepositoryInterface.php" target="_blank"><code class="highlighter-rouge">Catalog\Api\ProductLinkRepositoryInterface</code></a><br />
-<strong>Action:</strong> Added service method - <code class="highlighter-rouge">getList</code><br />
+<p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Catalog/Api/ProductLinkRepositoryInterface.php" target="_blank"><code class="language-plaintext highlighter-rouge">Catalog\Api\ProductLinkRepositoryInterface</code></a><br />
+<strong>Action:</strong> Added service method - <code class="language-plaintext highlighter-rouge">getList</code><br />
 <strong>Description:</strong> Get product links list<br /></p>
 
 <h3 id="cms-module">CMS Module</h3>
@@ -2813,22 +2814,22 @@
 <p>The   <span term-uuid="f3944faf-127e-4097-9918-a2e9c647d44f" class="glossary-term" data-toggle="popover">CMS</span>
  Module has been updated to allow you to manage meta titles for your CMS pages.</p>
 
-<p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Cms/Api/Data/PageInterface.php" target="_blank"><code class="highlighter-rouge">Magento\Cms\Api\Data\PageInterface</code></a><br />
-<strong>Action:</strong> Added the getter method <code class="highlighter-rouge">getMetaTitle</code><br />
+<p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Cms/Api/Data/PageInterface.php" target="_blank"><code class="language-plaintext highlighter-rouge">Magento\Cms\Api\Data\PageInterface</code></a><br />
+<strong>Action:</strong> Added the getter method <code class="language-plaintext highlighter-rouge">getMetaTitle</code><br />
 <strong>Description:</strong> Add meta title field to CMS pages<br /></p>
 
-<p><strong>Action:</strong> Added the setter method <code class="highlighter-rouge">setMetaTitle</code><br />
+<p><strong>Action:</strong> Added the setter method <code class="language-plaintext highlighter-rouge">setMetaTitle</code><br />
 <strong>Description:</strong> Set meta title field of CMS pages<br /></p>
 
 <h3 id="giftcardaccount-module-magento-commerce-only">GiftcardAccount Module (Magento Commerce Only)</h3>
 
 <p>A data interfaces has been changed in the GiftcardAccount module.</p>
 
-<p><strong>Class:</strong> <code class="highlighter-rouge">Magento\GiftCard\Api\Data\GiftcardAmountInterface</code><br />
-<strong>Action:</strong> Added the getter method <code class="highlighter-rouge">getAttributeId</code><br />
+<p><strong>Class:</strong> <code class="language-plaintext highlighter-rouge">Magento\GiftCard\Api\Data\GiftcardAmountInterface</code><br />
+<strong>Action:</strong> Added the getter method <code class="language-plaintext highlighter-rouge">getAttributeId</code><br />
 <strong>Description:</strong> Remove GiftCard Account entity<br /></p>
 
-<p><strong>Action:</strong> Added the setter method <code class="highlighter-rouge">setAttributeId</code><br />
+<p><strong>Action:</strong> Added the setter method <code class="language-plaintext highlighter-rouge">setAttributeId</code><br />
 <strong>Description:</strong> Remove GiftCard Account entity<br /></p>
 
 <h2 id="changes-in-ui">Changes in UI</h2>
@@ -2873,7 +2874,7 @@
 
 <h2 id="persistence-management">Persistence management</h2>
 
-<p>In Magento’s 2.1 release, a new level of persistence management has been added, the <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/EntityManager/EntityManager.php" target="_blank"><code class="highlighter-rouge">EntityManager</code></a>   <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span>
+<p>In Magento’s 2.1 release, a new level of persistence management has been added, the <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/EntityManager/EntityManager.php" target="_blank"><code class="language-plaintext highlighter-rouge">EntityManager</code></a>   <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span>
  component. It allows decoupling from Magento’s persistence infrastructure and provide more flexibility for future development. At the same time, the entity manager supports all “Magento 1-style” model events in a backward compatible manner.</p>
 
 <h3 id="data-interfaces-persistence">Data interfaces persistence</h3>

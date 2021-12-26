@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Build variables | Magento 2 Developer Documentation (copy)</title>
+	<title>Build variables | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/env/variables-build.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/env/variables-build.html">Magento 2.0</a></li>
 		
@@ -4226,7 +4227,7 @@
 	<h1 class="page-heading">Build variables</h1>
 </section>
 
-			<p>The following <em>build</em> variables control actions in the build phase and can inherit and override values from the <a href="/devdocs/guides/v2.1/cloud/env/variables-global.html">Global variables</a>. Insert these variables in the <code class="highlighter-rouge">build</code> stage of the <code class="highlighter-rouge">.magento.env.yaml</code> file:</p>
+			<p>The following <em>build</em> variables control actions in the build phase and can inherit and override values from the <a href="/devdocs/guides/v2.1/cloud/env/variables-global.html">Global variables</a>. Insert these variables in the <code class="language-plaintext highlighter-rouge">build</code> stage of the <code class="language-plaintext highlighter-rouge">.magento.env.yaml</code> file:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="na">stage</span><span class="pi">:</span>
   <span class="na">build</span><span class="pi">:</span>
@@ -4240,45 +4241,45 @@
   <li><a href="/devdocs/guides/v2.1/cloud/reference/discover-deploy.html">Deployment process</a></li>
 </ul>
 
-<p class="bs-callout bs-callout-info">You can still use the <code class="highlighter-rouge">build_options.ini</code> file, but we recommend using the <code class="highlighter-rouge">.magento.env.yaml</code> file instead because it centralizes the management of build and deploy actions across all of your environments—including Pro Staging and Production—without requiring a support ticket.</p>
+<p class="bs-callout bs-callout-info">You can still use the <code class="language-plaintext highlighter-rouge">build_options.ini</code> file, but we recommend using the <code class="language-plaintext highlighter-rouge">.magento.env.yaml</code> file instead because it centralizes the management of build and deploy actions across all of your environments—including Pro Staging and Production—without requiring a support ticket.</p>
 
-<h3 id="scd_compression_level"><code class="highlighter-rouge">SCD_COMPRESSION_LEVEL</code></h3>
+<h3 id="scd_compression_level"><code class="language-plaintext highlighter-rouge">SCD_COMPRESSION_LEVEL</code></h3>
 
 <ul>
-  <li><strong>Default</strong>—<code class="highlighter-rouge">6</code></li>
+  <li><strong>Default</strong>—<code class="language-plaintext highlighter-rouge">6</code></li>
   <li><strong>Version</strong>—Magento 2.1.4 and later</li>
 </ul>
 
-<p>Specifies which <a href="https://www.gnu.org/software/gzip">gzip</a> compression level (<code class="highlighter-rouge">0</code> to <code class="highlighter-rouge">9</code>) to use when compressing static content; <code class="highlighter-rouge">0</code> disables compression.</p>
+<p>Specifies which <a href="https://www.gnu.org/software/gzip">gzip</a> compression level (<code class="language-plaintext highlighter-rouge">0</code> to <code class="language-plaintext highlighter-rouge">9</code>) to use when compressing static content; <code class="language-plaintext highlighter-rouge">0</code> disables compression.</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="na">stage</span><span class="pi">:</span>
   <span class="na">build</span><span class="pi">:</span>
-    <span class="na">SCD_COMPRESSION_LEVEL</span><span class="pi">:</span> <span class="s">4</span>
+    <span class="na">SCD_COMPRESSION_LEVEL</span><span class="pi">:</span> <span class="m">4</span>
 </code></pre></div></div>
-<h3 id="scd_exclude_themes"><code class="highlighter-rouge">SCD_EXCLUDE_THEMES</code></h3>
+<h3 id="scd_exclude_themes"><code class="language-plaintext highlighter-rouge">SCD_EXCLUDE_THEMES</code></h3>
 
 <ul>
   <li><strong>Default</strong>—<em>Not set</em></li>
   <li><strong>Version</strong>—Magento 2.1.4 and later</li>
 </ul>
 
-<p>Themes include numerous files. Set this variable to <code class="highlighter-rouge">true</code> if you want to skip copying over theme files during build. This is helpful when static content deployment occurs during the build phase. Use commas to separate multiple theme locations. For example, the Luma theme is included with Magento Commerce Cloud. You may not need to constantly build this theme with your code updates and deployments. To exclude the <code class="highlighter-rouge">magento/luma</code> theme:</p>
+<p>Themes include numerous files. Set this variable to <code class="language-plaintext highlighter-rouge">true</code> if you want to skip copying over theme files during build. This is helpful when static content deployment occurs during the build phase. Use commas to separate multiple theme locations. For example, the Luma theme is included with Magento Commerce Cloud. You may not need to constantly build this theme with your code updates and deployments. To exclude the <code class="language-plaintext highlighter-rouge">magento/luma</code> theme:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="na">stage</span><span class="pi">:</span>
   <span class="na">build</span><span class="pi">:</span>
     <span class="na">SCD_EXCLUDE_THEMES</span><span class="pi">:</span> <span class="s2">"</span><span class="s">magento/luma,</span><span class="nv"> </span><span class="s">magento/my-theme"</span> 
 </code></pre></div></div>
 
-<h3 id="scd_matrix"><code class="highlighter-rouge">SCD_MATRIX</code></h3>
+<h3 id="scd_matrix"><code class="language-plaintext highlighter-rouge">SCD_MATRIX</code></h3>
 
 <ul>
   <li><strong>Default</strong>—<em>Not set</em></li>
   <li><strong>Version</strong>—Magento 2.1.4 and later</li>
 </ul>
 
-<p>You can configure multiple locales per theme as long as the theme is not excluded using the <code class="highlighter-rouge">SCD_EXCLUDE_THEMES</code> variable during build. This is ideal if you want to speed up the build process by reducing the amount of unnecessary theme files. For example, you can build the <em>magento/backend</em> theme in English and a custom theme in other languages.</p>
+<p>You can configure multiple locales per theme as long as the theme is not excluded using the <code class="language-plaintext highlighter-rouge">SCD_EXCLUDE_THEMES</code> variable during build. This is ideal if you want to speed up the build process by reducing the amount of unnecessary theme files. For example, you can build the <em>magento/backend</em> theme in English and a custom theme in other languages.</p>
 
-<p>The following example builds the <code class="highlighter-rouge">magento/backend</code> theme with three locales:</p>
+<p>The following example builds the <code class="language-plaintext highlighter-rouge">magento/backend</code> theme with three locales:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="na">stage</span><span class="pi">:</span>
   <span class="na">build</span><span class="pi">:</span>
@@ -4298,13 +4299,13 @@
       <span class="s2">"</span><span class="s">magento/backend"</span><span class="pi">:</span> <span class="pi">[</span> <span class="pi">]</span>
 </code></pre></div></div>
 
-<h3 id="scd_threads"><code class="highlighter-rouge">SCD_THREADS</code></h3>
+<h3 id="scd_threads"><code class="language-plaintext highlighter-rouge">SCD_THREADS</code></h3>
 
 <ul>
   <li><strong>Default</strong>:
     <ul>
-      <li><code class="highlighter-rouge">1</code>—Starter environments and Pro Integration environments</li>
-      <li><code class="highlighter-rouge">3</code>—Pro Staging and Production environments</li>
+      <li><code class="language-plaintext highlighter-rouge">1</code>—Starter environments and Pro Integration environments</li>
+      <li><code class="language-plaintext highlighter-rouge">3</code>—Pro Staging and Production environments</li>
     </ul>
   </li>
   <li><strong>Version</strong>—Magento 2.1.4 and later</li>
@@ -4314,37 +4315,37 @@
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="na">stage</span><span class="pi">:</span>
   <span class="na">build</span><span class="pi">:</span>
-    <span class="na">SCD_THREADS</span><span class="pi">:</span> <span class="s">2</span>
+    <span class="na">SCD_THREADS</span><span class="pi">:</span> <span class="m">2</span>
 </code></pre></div></div>
 
-<p>To further reduce deployment time, we recommend using <a href="/devdocs/guides/v2.1/cloud/live/sens-data-over.html">Configuration Management</a> with the <code class="highlighter-rouge">scd-dump</code> command to move static deployment into the build phase.</p>
+<p>To further reduce deployment time, we recommend using <a href="/devdocs/guides/v2.1/cloud/live/sens-data-over.html">Configuration Management</a> with the <code class="language-plaintext highlighter-rouge">scd-dump</code> command to move static deployment into the build phase.</p>
 
-<h3 id="skip_di_clearing"><code class="highlighter-rouge">SKIP_DI_CLEARING</code></h3>
+<h3 id="skip_di_clearing"><code class="language-plaintext highlighter-rouge">SKIP_DI_CLEARING</code></h3>
 
 <ul>
-  <li><strong>Default</strong>—<code class="highlighter-rouge">disabled</code></li>
+  <li><strong>Default</strong>—<code class="language-plaintext highlighter-rouge">disabled</code></li>
   <li><strong>Version</strong>—Magento 2.1.2 and later</li>
 </ul>
 
 <p>Before di_generation runs, the build process clears the existing build to rebuild before deploying. If you are simply redeploying without needing to fully rebuild, you can use this option to skip the deletion of the existing built files. The deploy phase will reuse the existing build files.</p>
 
-<h3 id="skip_di_compilation"><code class="highlighter-rouge">SKIP_DI_COMPILATION</code></h3>
+<h3 id="skip_di_compilation"><code class="language-plaintext highlighter-rouge">SKIP_DI_COMPILATION</code></h3>
 
 <ul>
-  <li><strong>Default</strong>—<code class="highlighter-rouge">disabled</code></li>
+  <li><strong>Default</strong>—<code class="language-plaintext highlighter-rouge">disabled</code></li>
   <li><strong>Version</strong>— Magento 2.1.2 and later</li>
 </ul>
 
 <p>If you need to quickly debug code, use this variable to skip compilation before a build. Compilation can take additional time to properly manage, compile, and then build your code. We only recommend this option for quick debug testing. You should always run di_compilation.</p>
 
-<h3 id="skip_scd"><code class="highlighter-rouge">SKIP_SCD</code></h3>
+<h3 id="skip_scd"><code class="language-plaintext highlighter-rouge">SKIP_SCD</code></h3>
 
 <ul>
   <li><strong>Default</strong>— <em>Not set</em></li>
   <li><strong>Version</strong>—Magento 2.1.4 and later</li>
 </ul>
 
-<p>Set to <code class="highlighter-rouge">true</code> to skip static content deployment during the build phase.</p>
+<p>Set to <code class="language-plaintext highlighter-rouge">true</code> to skip static content deployment during the build phase.</p>
 
 <p>If you are already deploying static content during the build phase with <a href="/devdocs/guides/v2.1/cloud/live/sens-data-over.html">Configuration Management</a>, you may want to turn it off for a quick build test.</p>
 
@@ -4355,14 +4356,14 @@
     <span class="na">SKIP_SCD</span><span class="pi">:</span> <span class="no">true</span>
 </code></pre></div></div>
 
-<h3 id="verbose_commands"><code class="highlighter-rouge">VERBOSE_COMMANDS</code></h3>
+<h3 id="verbose_commands"><code class="language-plaintext highlighter-rouge">VERBOSE_COMMANDS</code></h3>
 
 <ul>
   <li><strong>Default</strong>—<em>Not set</em></li>
   <li><strong>Version</strong>—Magento 2.1.4 and later</li>
 </ul>
 
-<p>Enables or disables the <a href="https://symfony.com/doc/current/console/verbosity.html">Symfony</a> debug verbosity level for your logs. Choose the level of detail provided in the logs: <code class="highlighter-rouge">-v</code>, <code class="highlighter-rouge">-vv</code>, or <code class="highlighter-rouge">-vvv</code>.</p>
+<p>Enables or disables the <a href="https://symfony.com/doc/current/console/verbosity.html">Symfony</a> debug verbosity level for your logs. Choose the level of detail provided in the logs: <code class="language-plaintext highlighter-rouge">-v</code>, <code class="language-plaintext highlighter-rouge">-vv</code>, or <code class="language-plaintext highlighter-rouge">-vvv</code>.</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="na">stage</span><span class="pi">:</span>
   <span class="na">build</span><span class="pi">:</span>

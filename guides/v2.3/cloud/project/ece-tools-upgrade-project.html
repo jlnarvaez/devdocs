@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Upgrade to ece-tools | Magento 2 Developer Documentation (copy)</title>
+	<title>Upgrade to ece-tools | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/project/ece-tools-upgrade-project.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/project/ece-tools-upgrade-project.html">Magento 2.0</a></li>
 		
@@ -4342,46 +4343,46 @@
 	<h1 class="page-heading">Upgrade to ece-tools</h1>
 </section>
 
-			<p>If you still use a version of Magento Commerce Cloud that does not contain the <code class="highlighter-rouge">ece-tools</code> package, then your project requires an <em>upgrade</em>. We deprecated the <code class="highlighter-rouge">magento/magento-cloud-configuration</code> and <code class="highlighter-rouge">magento/ece-patches</code> packages in favor of the <code class="highlighter-rouge">ece-tools</code> package.</p>
+			<p>If you still use a version of Magento Commerce Cloud that does not contain the <code class="language-plaintext highlighter-rouge">ece-tools</code> package, then your project requires an <em>upgrade</em>. We deprecated the <code class="language-plaintext highlighter-rouge">magento/magento-cloud-configuration</code> and <code class="language-plaintext highlighter-rouge">magento/ece-patches</code> packages in favor of the <code class="language-plaintext highlighter-rouge">ece-tools</code> package.</p>
 
-<p>You must perform a one-time, manual step to update the <code class="highlighter-rouge">magento/magento-cloud-metapackage</code> version constraint in the <code class="highlighter-rouge">composer.json</code> file, located in the root directory. This constraint enables updates for Magento Commerce Cloud metapackages—including removing deprecated packages—without upgrading your current Magento Commerce version. If your project contains the <code class="highlighter-rouge">ece-tools</code> package and you have updated the metapackage, you can skip the following upgrade and see <a href="/devdocs/guides/v2.3/cloud/project/ece-tools-update.html">Update ece-tools</a>.</p>
+<p>You must perform a one-time, manual step to update the <code class="language-plaintext highlighter-rouge">magento/magento-cloud-metapackage</code> version constraint in the <code class="language-plaintext highlighter-rouge">composer.json</code> file, located in the root directory. This constraint enables updates for Magento Commerce Cloud metapackages—including removing deprecated packages—without upgrading your current Magento Commerce version. If your project contains the <code class="language-plaintext highlighter-rouge">ece-tools</code> package and you have updated the metapackage, you can skip the following upgrade and see <a href="/devdocs/guides/v2.3/cloud/project/ece-tools-update.html">Update ece-tools</a>.</p>
 
 <p>Before beginning an upgrade or a patching process, create an active branch from the Integration environment and checkout the new branch to your local workstation. Dedicating a branch to the upgrade or the patch process helps to avoid interference with your work in progress.</p>
 
 <h2 id="remove-deprecated-packages">Remove deprecated packages</h2>
 
-<p>Before performing an upgrade to use the <code class="highlighter-rouge">ece-tools</code> package, check the <code class="highlighter-rouge">composer.lock</code> file for the following deprecated packages:</p>
+<p>Before performing an upgrade to use the <code class="language-plaintext highlighter-rouge">ece-tools</code> package, check the <code class="language-plaintext highlighter-rouge">composer.lock</code> file for the following deprecated packages:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">magento/magento-cloud-configuration</code></li>
-  <li><code class="highlighter-rouge">magento/ece-patches</code></li>
+  <li><code class="language-plaintext highlighter-rouge">magento/magento-cloud-configuration</code></li>
+  <li><code class="language-plaintext highlighter-rouge">magento/ece-patches</code></li>
 </ul>
 
 <h2 id="metapackage">Update the metapackage</h2>
 
 <p>Each Magento Commerce version requires a different constraint based on the following:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&gt;=current_version &lt;next_version
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&gt;=current_version &lt;next_version
 </code></pre></div></div>
 
-<p>You can always find the latest metapackage constraint in the <a href="https://github.com/magento/magento-cloud/blob/master/composer.json"><code class="highlighter-rouge">magento-cloud</code> template</a>.</p>
+<p>You can always find the latest metapackage constraint in the <a href="https://github.com/magento/magento-cloud/blob/master/composer.json"><code class="language-plaintext highlighter-rouge">magento-cloud</code> template</a>.</p>
 
 <p>The following example places a constraint for the Magento Commerce Cloud metapackage to any version greater than or equal to the current version 2.2.0 and lower than next version 2.2.1:</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="s2">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"magento/magento-cloud-metapackage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&gt;=2.2.0 &lt;2.2.1"</span><span class="w">
-</span><span class="p">},</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nl">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"magento/magento-cloud-metapackage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&gt;=2.2.0 &lt;2.2.1"</span><span class="w">
+</span><span class="p">}</span><span class="err">,</span><span class="w">
 </span></code></pre></div></div>
 
 <h2 id="upgrade-the-project">Upgrade the project</h2>
 
-<p>To upgrade your project to use the <code class="highlighter-rouge">ece-tools</code> package, you need to update the metapackage, update the <code class="highlighter-rouge">.magento.app.yaml</code> hooks properties, and perform a Composer update.</p>
+<p>To upgrade your project to use the <code class="language-plaintext highlighter-rouge">ece-tools</code> package, you need to update the metapackage, update the <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> hooks properties, and perform a Composer update.</p>
 
 <h4 id="to-upgrade-project-to-use-ece-tools">To upgrade project to use ece-tools:</h4>
 
 <ol>
   <li>
-    <p>Update the <code class="highlighter-rouge">magento/magento-cloud-metapackage</code> version constraint in the <code class="highlighter-rouge">composer.json</code> file.</p>
+    <p>Update the <code class="language-plaintext highlighter-rouge">magento/magento-cloud-metapackage</code> version constraint in the <code class="language-plaintext highlighter-rouge">composer.json</code> file.</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer require <span class="s2">"magento/magento-cloud-metapackage"</span>:<span class="s2">"&gt;=2.2.0 &lt;2.2.1"</span> <span class="nt">--no-update</span>
 </code></pre></div>    </div>
@@ -4393,18 +4394,18 @@
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Modify the hook commands in the <code class="highlighter-rouge">magento.app.yaml</code> file.</p>
+    <p>Modify the hook commands in the <code class="language-plaintext highlighter-rouge">magento.app.yaml</code> file.</p>
 
     <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="na">hooks</span><span class="pi">:</span>
     <span class="c1"># We run build hooks before your application has been packaged.</span>
     <span class="na">build</span><span class="pi">:</span> <span class="pi">|</span>
-        <span class="no">php ./vendor/bin/ece-tools build</span>
+        <span class="s">php ./vendor/bin/ece-tools build</span>
     <span class="c1"># We run deploy hook after your application has been deployed and started.</span>
     <span class="na">deploy</span><span class="pi">:</span> <span class="pi">|</span>
-        <span class="no">php ./vendor/bin/ece-tools deploy</span>
+        <span class="s">php ./vendor/bin/ece-tools deploy</span>
     <span class="c1"># We run post deploy hook to clean and warm the cache. Available with ECE-Tools 2002.0.10.</span>
     <span class="na">post_deploy</span><span class="pi">:</span> <span class="pi">|</span>
-        <span class="no">php ./vendor/bin/ece-tools post-deploy</span>
+        <span class="s">php ./vendor/bin/ece-tools post-deploy</span>
 </code></pre></div>    </div>
   </li>
   <li>
@@ -4417,7 +4418,7 @@
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>It may be necessary to update the <code class="highlighter-rouge">ece-tools</code> package.</p>
+    <p>It may be necessary to update the <code class="language-plaintext highlighter-rouge">ece-tools</code> package.</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer update magento/ece-tools
 </code></pre></div>    </div>
@@ -4431,7 +4432,7 @@ composer.lock
 </span></code></pre></div>    </div>
   </li>
   <li>
-    <p>Push your code changes to the remote server and merge this branch with the <code class="highlighter-rouge">integration</code> branch.</p>
+    <p>Push your code changes to the remote server and merge this branch with the <code class="language-plaintext highlighter-rouge">integration</code> branch.</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git push origin &lt;branch name&gt;
 </code></pre></div>    </div>

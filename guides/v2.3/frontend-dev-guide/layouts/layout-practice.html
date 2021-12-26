@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Customizing layout illustration | Magento 2 Developer Documentation (copy)</title>
+	<title>Customizing layout illustration | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/frontend-dev-guide/layouts/layout-practice.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/frontend-dev-guide/layouts/layout-practice.html">Magento 2.0</a></li>
 		
@@ -2948,7 +2949,7 @@
 
 <p>OrangeCo <a href="/devdocs/guides/v2.3/frontend-dev-guide/themes/theme-apply.html">applies the Luma theme</a>. Using the approach described in <a href="/devdocs/guides/v2.3/frontend-dev-guide/themes/debug-theme.html">Locate templates, layouts, and styles</a> they find out that the original block responsible for displaying the header links is defined in</p>
 
-<p><code class="highlighter-rouge">&lt;Magento_Theme_module_dir&gt;/view/frontend/layout/default.xml</code>:</p>
+<p><code class="language-plaintext highlighter-rouge">&lt;Magento_Theme_module_dir&gt;/view/frontend/layout/default.xml</code>:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">"header.panel"</span> <span class="na">label=</span><span class="s">"Page Header Panel"</span> <span class="na">htmlTag=</span><span class="s">"div"</span> <span class="na">htmlClass=</span><span class="s">"panel header"</span><span class="nt">&gt;</span>
     ...
@@ -2964,9 +2965,9 @@
 
 <p>Other modules use this block to add their specific links to the header using the <a href="/devdocs/guides/v2.3/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref">referenceBlock</a> instruction. For example, see how links are added in the Customer module: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Customer/view/frontend/layout/default.xml#L10-L23">app/code/Magento/Customer/view/frontend/layout/default.xml#L10-L23</a></p>
 
-<p>The Luma theme <a href="/devdocs/guides/v2.3/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv">moves</a> the <code class="highlighter-rouge">top.links</code> block to the new <code class="highlighter-rouge">customer</code> block in the extending layout file.</p>
+<p>The Luma theme <a href="/devdocs/guides/v2.3/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv">moves</a> the <code class="language-plaintext highlighter-rouge">top.links</code> block to the new <code class="language-plaintext highlighter-rouge">customer</code> block in the extending layout file.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;Magento_luma_theme_dir&gt;/Magento_Customer/layout/default.xml
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;Magento_luma_theme_dir&gt;/Magento_Customer/layout/default.xml
 </code></pre></div></div>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">"header.links"</span><span class="nt">&gt;</span>
@@ -2978,7 +2979,7 @@
 ...
 </code></pre></div></div>
 
-<p>The links that should be in header, but outside the drop-down menu are added in the new <code class="highlighter-rouge">header.links</code> block (<code class="highlighter-rouge">&lt;Magento_luma_theme_dir&gt;/Magento_Theme/layout/default.xml</code>):</p>
+<p>The links that should be in header, but outside the drop-down menu are added in the new <code class="language-plaintext highlighter-rouge">header.links</code> block (<code class="language-plaintext highlighter-rouge">&lt;Magento_luma_theme_dir&gt;/Magento_Theme/layout/default.xml</code>):</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">"header.panel"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">"Magento\Framework\View\Element\Html\Links"</span> <span class="na">name=</span><span class="s">"header.links"</span><span class="nt">&gt;</span>
@@ -2992,9 +2993,9 @@
 <h3 id="step-2-define-the-templates">Step 2: Define the templates</h3>
 
 <p>Similar to the way they defined the layout on the previous step, OrangeCo
-defines the template which is used as the drop-down container : <code class="highlighter-rouge">&lt;Magento_Customer_module_dir&gt;/view/frontend/templates/account/customer.phtml</code>.</p>
+defines the template which is used as the drop-down container : <code class="language-plaintext highlighter-rouge">&lt;Magento_Customer_module_dir&gt;/view/frontend/templates/account/customer.phtml</code>.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="cp">&lt;?php</span> <span class="k">if</span><span class="p">(</span><span class="nv">$block</span><span class="o">-&gt;</span><span class="na">customerLoggedIn</span><span class="p">())</span><span class="o">:</span> <span class="cp">?&gt;</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="cp">&lt;?php</span> <span class="k">if</span><span class="p">(</span><span class="nv">$block</span><span class="o">-&gt;</span><span class="nf">customerLoggedIn</span><span class="p">())</span><span class="o">:</span> <span class="cp">?&gt;</span>
     <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"customer-welcome"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"customer-name"</span>
               <span class="na">role=</span><span class="s">"link"</span>
@@ -3008,40 +3009,40 @@ defines the template which is used as the drop-down container : <code class="hig
                     <span class="na">class=</span><span class="s">"action switch"</span>
                     <span class="na">tabindex=</span><span class="s">"-1"</span>
                     <span class="na">data-action=</span><span class="s">"customer-menu-toggle"</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;span&gt;</span><span class="cp">&lt;?php</span> <span class="cm">/* @escapeNotVerified */</span> <span class="k">echo</span> <span class="nx">__</span><span class="p">(</span><span class="s1">'Change'</span><span class="p">)</span><span class="cp">?&gt;</span><span class="nt">&lt;/span&gt;</span>
+                <span class="nt">&lt;span&gt;</span><span class="cp">&lt;?php</span> <span class="cm">/* @escapeNotVerified */</span> <span class="k">echo</span> <span class="nf">__</span><span class="p">(</span><span class="s1">'Change'</span><span class="p">)</span><span class="cp">?&gt;</span><span class="nt">&lt;/span&gt;</span>
             <span class="nt">&lt;/button&gt;</span>
         <span class="nt">&lt;/span&gt;</span>
         <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/x-magento-init"</span><span class="nt">&gt;</span>
         <span class="p">{</span>
-            <span class="s2">"*"</span><span class="p">:</span> <span class="p">{</span>
-                <span class="s2">"Magento_Ui/js/core/app"</span><span class="p">:</span> <span class="p">{</span>
-                    <span class="s2">"components"</span><span class="p">:</span> <span class="p">{</span>
-                        <span class="s2">"customer"</span><span class="p">:</span> <span class="p">{</span>
-                            <span class="s2">"component"</span><span class="p">:</span> <span class="s2">"Magento_Customer/js/view/customer"</span>
+            <span class="dl">"</span><span class="s2">*</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="dl">"</span><span class="s2">Magento_Ui/js/core/app</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="dl">"</span><span class="s2">components</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="dl">"</span><span class="s2">customer</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+                            <span class="dl">"</span><span class="s2">component</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Magento_Customer/js/view/customer</span><span class="dl">"</span>
                         <span class="p">}</span>
                     <span class="p">}</span>
                 <span class="p">}</span>
             <span class="p">}</span>
         <span class="p">}</span>
             <span class="nt">&lt;/script&gt;</span>
-            <span class="cp">&lt;?php</span> <span class="k">if</span><span class="p">(</span><span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getChildHtml</span><span class="p">())</span><span class="o">:?&gt;</span>
-            <span class="o">&lt;</span><span class="nx">div</span> <span class="k">class</span><span class="err">="</span><span class="nc">customer</span><span class="o">-</span><span class="nx">menu</span><span class="s2">" data-target="</span><span class="nx">dropdown</span><span class="s2">"&gt;
-                &lt;?php echo </span><span class="nv">$block-&gt;getChildHtml</span><span class="s2">();?&gt;
-            &lt;/div&gt;
-            &lt;?php endif; ?&gt;
-        &lt;/li&gt;
-    &lt;?php endif; ?&gt;
-</span></code></pre></div></div>
+            <span class="cp">&lt;?php</span> <span class="k">if</span><span class="p">(</span><span class="nv">$block</span><span class="o">-&gt;</span><span class="nf">getChildHtml</span><span class="p">())</span><span class="o">:</span><span class="cp">?&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"customer-menu"</span> <span class="na">data-target=</span><span class="s">"dropdown"</span><span class="nt">&gt;</span>
+                <span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$block</span><span class="o">-&gt;</span><span class="nf">getChildHtml</span><span class="p">();</span><span class="cp">?&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="cp">?&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+    <span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="cp">?&gt;</span>
+</code></pre></div></div>
 
 <p>See <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Customer/view/frontend/templates/account/customer.phtml">app/code/Magento/Customer/view/frontend/templates/account/customer.phtml</a>.</p>
 
 <h3 id="step-3-extend-the-base-layout-to-add-a-block">Step 3: Extend the base layout to add a block</h3>
 
-<p>OrangeCo needs to create a new block, say, <code class="highlighter-rouge">header.links</code>, in the <code class="highlighter-rouge">header.panel</code> container, to move the links there. As the links can be added to this list by different modules, it is better to add this block to the <code class="highlighter-rouge">default.xml</code> page configuration of the <code class="highlighter-rouge">Magento_Theme</code> module.</p>
+<p>OrangeCo needs to create a new block, say, <code class="language-plaintext highlighter-rouge">header.links</code>, in the <code class="language-plaintext highlighter-rouge">header.panel</code> container, to move the links there. As the links can be added to this list by different modules, it is better to add this block to the <code class="language-plaintext highlighter-rouge">default.xml</code> page configuration of the <code class="language-plaintext highlighter-rouge">Magento_Theme</code> module.</p>
 
 <p>So the following <a href="/devdocs/guides/v2.3/frontend-dev-guide/layouts/layout-extend.html">extending</a> layout is added in the Orange theme:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>app/design/frontend/OrangeCo/orange/Magento_Theme/layout/default.xml
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>app/design/frontend/OrangeCo/orange/Magento_Theme/layout/default.xml
 </code></pre></div></div>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
@@ -3060,9 +3061,9 @@ defines the template which is used as the drop-down container : <code class="hig
 
 <h3 id="step-4-move-links">Step 4: Move links</h3>
 
-<p>To move the links to the <code class="highlighter-rouge">header.links</code> block, OrangeCo adds an extending layout:</p>
+<p>To move the links to the <code class="language-plaintext highlighter-rouge">header.links</code> block, OrangeCo adds an extending layout:</p>
 
-<p><code class="highlighter-rouge">app/design/frontend/OrangeCo/orange/Magento_Customer/layout/default.xml</code></p>
+<p><code class="language-plaintext highlighter-rouge">app/design/frontend/OrangeCo/orange/Magento_Customer/layout/default.xml</code></p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
 <span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
@@ -3082,18 +3083,18 @@ defines the template which is used as the drop-down container : <code class="hig
 
 <p><img src="/devdocs/common/images/layout_screen221.png" alt="layout screen1" /></p>
 
-<p>Clicking the <strong>Change</strong> button toggles the <code class="highlighter-rouge">active</code> CSS class:</p>
+<p>Clicking the <strong>Change</strong> button toggles the <code class="language-plaintext highlighter-rouge">active</code> CSS class:</p>
 
 <p>To add quick basic styling and visual behavior to the “dropdown” menu, OrangeCo added  <a href="/devdocs/guides/v2.3/frontend-dev-guide/css-guide/css_quick_guide_approach.html#simple_extend">_extend.less</a> to their theme with the following customizations:</p>
 
 <ul>
   <li>Redundant elements are hidden with CSS.</li>
-  <li>The <code class="highlighter-rouge">.lib-dropdown()</code> mixin from <a href="/devdocs/guides/v2.3/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a> was applied to the corresponding element.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">.lib-dropdown()</code> mixin from <a href="/devdocs/guides/v2.3/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a> was applied to the corresponding element.</li>
 </ul>
 
-<p><code class="highlighter-rouge">app/design/frontend/OrangeCo/orange/web/css/source/_extend.less</code></p>
+<p><code class="language-plaintext highlighter-rouge">app/design/frontend/OrangeCo/orange/web/css/source/_extend.less</code></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>//
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>//
 //  Common
 //  _____________________________________________
 

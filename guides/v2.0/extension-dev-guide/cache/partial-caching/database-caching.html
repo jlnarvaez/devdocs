@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Create custom cache engines | Magento 2 Developer Documentation (copy)</title>
+	<title>Create custom cache engines | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/extension-dev-guide/cache/partial-caching/database-caching.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/extension-dev-guide/cache/partial-caching/database-caching.html">Magento 2.0</a></li>
 		
@@ -2898,14 +2899,14 @@
 	<h1 class="page-heading">Create custom cache engines</h1>
 </section>
 
-			<p>This topic discusses how to use the Magento 2 database for caching. After you complete these tasks, cached objects are stored in the <code class="highlighter-rouge">cache</code> and <code class="highlighter-rouge">cache_tag</code> Magento 2 database tables. Nothing is stored in <code class="highlighter-rouge">var/cache</code> or <code class="highlighter-rouge">var/page_cache</code>.</p>
+			<p>This topic discusses how to use the Magento 2 database for caching. After you complete these tasks, cached objects are stored in the <code class="language-plaintext highlighter-rouge">cache</code> and <code class="language-plaintext highlighter-rouge">cache_tag</code> Magento 2 database tables. Nothing is stored in <code class="language-plaintext highlighter-rouge">var/cache</code> or <code class="language-plaintext highlighter-rouge">var/page_cache</code>.</p>
 
 <p>This topic discusses how to set up database caching and how to verify database caching is working. We discuss the following options:</p>
 
 <ul>
-  <li>Using the <code class="highlighter-rouge">default</code> cache frontend, in which case you modify <code class="highlighter-rouge">di.xml</code> only.</li>
+  <li>Using the <code class="language-plaintext highlighter-rouge">default</code> cache frontend, in which case you modify <code class="language-plaintext highlighter-rouge">di.xml</code> only.</li>
   <li>Using a custom   <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>
- frontend, in which case you modify <code class="highlighter-rouge">env.php</code> only.</li>
+ frontend, in which case you modify <code class="language-plaintext highlighter-rouge">env.php</code> only.</li>
 </ul>
 
 <div class="bs-callout bs-callout-warning">
@@ -2916,30 +2917,30 @@
 
 <h2 id="mage-cache-db-prereq">Prerequisites</h2>
 
-<p>Before you continue, if you’re using your own frontend cache, make sure you <a href="/devdocs/guides/v2.0/config-guide/config/caching_frontend-cache-types.html">associate cache frontends with cache types</a>. If you’re using the <code class="highlighter-rouge">default</code>   <span term-uuid="b00459e5-a793-44dd-98d5-852ab33fc344" class="glossary-term" data-toggle="popover">frontend</span>
+<p>Before you continue, if you’re using your own frontend cache, make sure you <a href="/devdocs/guides/v2.0/config-guide/config/caching_frontend-cache-types.html">associate cache frontends with cache types</a>. If you’re using the <code class="language-plaintext highlighter-rouge">default</code>   <span term-uuid="b00459e5-a793-44dd-98d5-852ab33fc344" class="glossary-term" data-toggle="popover">frontend</span>
  cache, you don’t have to do that.</p>
 
 <p>We provide <a href="#mage-cache-db-config">sample configurations</a> at the end of this topic.</p>
 
-<h2 id="mage-cache-db-di">Database caching using the <code class="highlighter-rouge">default</code> cache frontend</h2>
+<h2 id="mage-cache-db-di">Database caching using the <code class="language-plaintext highlighter-rouge">default</code> cache frontend</h2>
 
-<p>To enable database caching using the <code class="highlighter-rouge">default</code> frontend, you must modify <code class="highlighter-rouge">&lt;your Magento install dir&gt;/app/etc/di.xml</code>, which is the global deployment injection configuration for the Magento application.</p>
+<p>To enable database caching using the <code class="language-plaintext highlighter-rouge">default</code> frontend, you must modify <code class="language-plaintext highlighter-rouge">&lt;your Magento install dir&gt;/app/etc/di.xml</code>, which is the global deployment injection configuration for the Magento application.</p>
 
-<p>To modify <code class="highlighter-rouge">di.xml</code>:</p>
+<p>To modify <code class="language-plaintext highlighter-rouge">di.xml</code>:</p>
 
 <ol>
   <li>Log in to the Magento server as, or switch to, the <a href="/devdocs/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
   <li>
-    <p>Enter the following commands to make a copy of <code class="highlighter-rouge">di.xml</code>:</p>
+    <p>Enter the following commands to make a copy of <code class="language-plaintext highlighter-rouge">di.xml</code>:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd &lt;your Magento install dir&gt;/app/etc
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd &lt;your Magento install dir&gt;/app/etc
 cp di.xml di.xml.bak
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Open <code class="highlighter-rouge">di.xml</code> in a text editor and locate the following block:</p>
+    <p>Open <code class="language-plaintext highlighter-rouge">di.xml</code> in a text editor and locate the following block:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;type name="Magento\Framework\App\Cache\Frontend\Pool"&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;type name="Magento\Framework\App\Cache\Frontend\Pool"&gt;
    &lt;arguments&gt;
       &lt;argument name="frontendSettings" xsi:type="array"&gt;
           &lt;item name="page_cache" xsi:type="array"&gt;
@@ -2959,14 +2960,14 @@ cp di.xml di.xml.bak
 &lt;/type&gt;
 </code></pre></div>    </div>
 
-    <p>The <code class="highlighter-rouge">&lt;type name="Magento\Framework\App\Cache\Frontend\Pool"&gt;</code> node configures options for the in-memory pool of all frontend cache instances.</p>
+    <p>The <code class="language-plaintext highlighter-rouge">&lt;type name="Magento\Framework\App\Cache\Frontend\Pool"&gt;</code> node configures options for the in-memory pool of all frontend cache instances.</p>
 
-    <p>The <code class="highlighter-rouge">&lt;type name="Magento\Framework\App\Cache\Type\FrontendPool"&gt;</code> node configures cache frontend options specific to each cache type.</p>
+    <p>The <code class="language-plaintext highlighter-rouge">&lt;type name="Magento\Framework\App\Cache\Type\FrontendPool"&gt;</code> node configures cache frontend options specific to each cache type.</p>
   </li>
   <li>
     <p>Replace the entire block with the following:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;type name="Magento\Framework\App\Cache\Frontend\Pool"&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;type name="Magento\Framework\App\Cache\Frontend\Pool"&gt;
 	&lt;arguments&gt;
     	&lt;argument name="frontendSettings" xsi:type="array"&gt;
     	    &lt;item name="page_cache" xsi:type="array"&gt;
@@ -2987,10 +2988,10 @@ cp di.xml di.xml.bak
 &lt;/type&gt;
 </code></pre></div>    </div>
 
-    <p>where <code class="highlighter-rouge">&lt;your cache id&gt;</code> is your unique cache identifier.</p>
+    <p>where <code class="language-plaintext highlighter-rouge">&lt;your cache id&gt;</code> is your unique cache identifier.</p>
   </li>
   <li>
-    <p>Save your changes to <code class="highlighter-rouge">di.xml</code> and exit the text editor.</p>
+    <p>Save your changes to <code class="language-plaintext highlighter-rouge">di.xml</code> and exit the text editor.</p>
   </li>
   <li>Continue with <a href="#mage-cache-db-verify">Verify database caching is working</a>.</li>
 </ol>
@@ -3002,21 +3003,21 @@ cp di.xml di.xml.bak
 
 <p class="bs-callout bs-callout-info">Due to a known issue, a custom cache frontend still results in some objects being cached to the file system; however, fewer assets are cached compared to file system caching.</p>
 
-<p>To enable database caching using a custom cache frontend, you must modify <code class="highlighter-rouge">&lt;your Magento install dir&gt;/app/etc/env.php</code> as follows:</p>
+<p>To enable database caching using a custom cache frontend, you must modify <code class="language-plaintext highlighter-rouge">&lt;your Magento install dir&gt;/app/etc/env.php</code> as follows:</p>
 
 <ol>
   <li>Log in to the Magento server as, or switch to, the <a href="/devdocs/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
   <li>
-    <p>Enter the following commands to make a copy of <code class="highlighter-rouge">env.php</code>:</p>
+    <p>Enter the following commands to make a copy of <code class="language-plaintext highlighter-rouge">env.php</code>:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd &lt;your Magento install dir&gt;/app/etc
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd &lt;your Magento install dir&gt;/app/etc
 cp env.php env.php.bak
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Open <code class="highlighter-rouge">env.php</code> in a text editor and add the following anywhere, such as before <code class="highlighter-rouge">'cache_types' =&gt;</code>:</p>
+    <p>Open <code class="language-plaintext highlighter-rouge">env.php</code> in a text editor and add the following anywhere, such as before <code class="language-plaintext highlighter-rouge">'cache_types' =&gt;</code>:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>'cache' =&gt; [
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>'cache' =&gt; [
     'frontend' =&gt; [
         '&lt;unique frontend id&gt;' =&gt; [
              &lt;cache options&gt;
@@ -3037,7 +3038,7 @@ cp env.php env.php.bak
 
     <p>An example is shown in <a href="#mage-cache-db-config">Configuration examples</a>.</p>
   </li>
-  <li>Save your changes to <code class="highlighter-rouge">env.php</code> and exit the text editor.</li>
+  <li>Save your changes to <code class="language-plaintext highlighter-rouge">env.php</code> and exit the text editor.</li>
   <li>Continue with the next section.</li>
 </ol>
 
@@ -3052,39 +3053,39 @@ cp env.php env.php.bak
   <li>
     <p>Clear the current cache directories:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>rm -rf &lt;your Magento install dir&gt;/var/cache/* &lt;your Magento install dir&gt;/var/page_cache/* &lt;your Magento install dir&gt;/var/di/* &lt;your Magento install dir&gt;/var/generation/*
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>rm -rf &lt;your Magento install dir&gt;/var/cache/* &lt;your Magento install dir&gt;/var/page_cache/* &lt;your Magento install dir&gt;/var/di/* &lt;your Magento install dir&gt;/var/generation/*
 </code></pre></div>    </div>
   </li>
   <li>
     <p>In a web browser, go to any cacheable page (such as the   <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>
  front door page).</p>
 
-    <p>If exceptions display, verify <code class="highlighter-rouge">di.xml</code> syntax and try again. (To see exceptions in the browser, you must <a href="/devdocs/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html#change-to-developer-mode">enable developer mode</a>.)</p>
+    <p>If exceptions display, verify <code class="language-plaintext highlighter-rouge">di.xml</code> syntax and try again. (To see exceptions in the browser, you must <a href="/devdocs/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html#change-to-developer-mode">enable developer mode</a>.)</p>
   </li>
   <li>
     <p>Enter the following commands:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ls &lt;your Magento install dir&gt;/var/cache/*
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ls &lt;your Magento install dir&gt;/var/cache/*
 ls &lt;your Magento install dir&gt;/var/page_cache/*
 </code></pre></div>    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
       <p>Due to a known issue, a custom cache frontend still results in some objects being cached to the file system; however, fewer assets are cached compared to file system caching.</p>
 
-      <p>If you use the <code class="highlighter-rouge">default</code> cache frontend, you don’t have this issue.</p>
+      <p>If you use the <code class="language-plaintext highlighter-rouge">default</code> cache frontend, you don’t have this issue.</p>
     </div>
   </li>
-  <li>Verify both directories are empty; if not, edit <code class="highlighter-rouge">di.xml</code> again and correct any issues.</li>
+  <li>Verify both directories are empty; if not, edit <code class="language-plaintext highlighter-rouge">di.xml</code> again and correct any issues.</li>
   <li>
-    <p>Use a database tool such as <a href="/devdocs/guides/v2.0/install-gde/prereq/optional.html#install-optional-phpmyadmin">phpMyAdmin</a> to verify there is data in the <code class="highlighter-rouge">cache</code> and <code class="highlighter-rouge">cache_tag</code> tables.</p>
+    <p>Use a database tool such as <a href="/devdocs/guides/v2.0/install-gde/prereq/optional.html#install-optional-phpmyadmin">phpMyAdmin</a> to verify there is data in the <code class="language-plaintext highlighter-rouge">cache</code> and <code class="language-plaintext highlighter-rouge">cache_tag</code> tables.</p>
 
     <p>The following figures show examples. The important thing is that there are rows in the tables. <em>The data in your tables will be different than the following</em>.</p>
 
-    <p><code class="highlighter-rouge">cache</code> table example.</p>
+    <p><code class="language-plaintext highlighter-rouge">cache</code> table example.</p>
 
     <p><img src="/devdocs/common/images/config-db_cache-table.png" alt="Sample contents of the cache table with database caching enabled" /></p>
 
-    <p><code class="highlighter-rouge">cache_tag</code> table example.</p>
+    <p><code class="language-plaintext highlighter-rouge">cache_tag</code> table example.</p>
 
     <p><img src="/devdocs/common/images/config-db_cache-tag-table.png" alt="Sample contents of the cache tag table with database caching enabled" /></p>
   </li>
@@ -3094,9 +3095,9 @@ ls &lt;your Magento install dir&gt;/var/page_cache/*
 
 <p>This section contains code sample snippets to refer to when configuring database caching.</p>
 
-<h3 id="mage-cache-db-config-default">Sample <code class="highlighter-rouge">di.xml</code> for the default cache frontend</h3>
+<h3 id="mage-cache-db-config-default">Sample <code class="language-plaintext highlighter-rouge">di.xml</code> for the default cache frontend</h3>
 
-<p><code class="highlighter-rouge">di.xml</code> snippet:</p>
+<p><code class="language-plaintext highlighter-rouge">di.xml</code> snippet:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"> <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Framework\App\Cache\Frontend\Pool"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;arguments&gt;</span>
@@ -3118,9 +3119,9 @@ ls &lt;your Magento install dir&gt;/var/page_cache/*
         <span class="nt">&lt;/arguments&gt;</span>
  <span class="nt">&lt;/type&gt;</span></code></pre></figure>
 
-<h3 id="mage-cache-db-config-custom">Sample <code class="highlighter-rouge">env.php</code> for a custom cache frontend</h3>
+<h3 id="mage-cache-db-config-custom">Sample <code class="language-plaintext highlighter-rouge">env.php</code> for a custom cache frontend</h3>
 
-<p><code class="highlighter-rouge">env.php</code> snippet that enables all cache types with a custom frontend named <code class="highlighter-rouge">magento_cache</code>:</p>
+<p><code class="language-plaintext highlighter-rouge">env.php</code> snippet that enables all cache types with a custom frontend named <code class="language-plaintext highlighter-rouge">magento_cache</code>:</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"> <span class="s1">'cache'</span> <span class="o">=&gt;</span> <span class="p">[</span>
      <span class="s1">'frontend'</span> <span class="o">=&gt;</span> <span class="p">[</span>

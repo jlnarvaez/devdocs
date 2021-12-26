@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Extend the tool | Magento 2 Developer Documentation (copy)</title>
+	<title>Extend the tool | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/migration/extend-the-tool.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/migration/extend-the-tool.html">Magento 2.0</a></li>
 		
@@ -1926,7 +1927,7 @@
 
 <h2 id="minor-data-format-and-structure-changes">Minor data format and structure changes</h2>
 
-<p>In most cases, the <a href="/devdocs/guides/v2.1/migration/migration-tool-internal-spec.html#map-step">Map Step</a> sufficiently resolves minor data format and structure changes using the following methods in the <code class="highlighter-rouge">map.xml</code> file:</p>
+<p>In most cases, the <a href="/devdocs/guides/v2.1/migration/migration-tool-internal-spec.html#map-step">Map Step</a> sufficiently resolves minor data format and structure changes using the following methods in the <code class="language-plaintext highlighter-rouge">map.xml</code> file:</p>
 
 <ul>
   <li>Change table or field names with mapping rules</li>
@@ -1978,29 +1979,29 @@
 <p>Refer to the following for an explanation of the changes in the previous example:</p>
 
 <ul>
-  <li>Unnecessary data from the index table <code class="highlighter-rouge">great_blog_index</code> should not be migrated</li>
-  <li>The table <code class="highlighter-rouge">great_blog_publication</code> was renamed to <code class="highlighter-rouge">great_blog_post</code> in Magento 2, so data should be migrated to the new table
+  <li>Unnecessary data from the index table <code class="language-plaintext highlighter-rouge">great_blog_index</code> should not be migrated</li>
+  <li>The table <code class="language-plaintext highlighter-rouge">great_blog_publication</code> was renamed to <code class="language-plaintext highlighter-rouge">great_blog_post</code> in Magento 2, so data should be migrated to the new table
     <ul>
-      <li>The <code class="highlighter-rouge">summary</code> field was renamed <code class="highlighter-rouge">title</code>, so data should be migrated to the new field</li>
-      <li>The <code class="highlighter-rouge">priority</code> field was removed and no longer exists in Magento 2</li>
-      <li>The data in the <code class="highlighter-rouge">body</code> field has changed format and should be processed by the custom handler: <code class="highlighter-rouge">\Migration\Handler\GreatBlog\NewFormat</code></li>
+      <li>The <code class="language-plaintext highlighter-rouge">summary</code> field was renamed <code class="language-plaintext highlighter-rouge">title</code>, so data should be migrated to the new field</li>
+      <li>The <code class="language-plaintext highlighter-rouge">priority</code> field was removed and no longer exists in Magento 2</li>
+      <li>The data in the <code class="language-plaintext highlighter-rouge">body</code> field has changed format and should be processed by the custom handler: <code class="language-plaintext highlighter-rouge">\Migration\Handler\GreatBlog\NewFormat</code></li>
     </ul>
   </li>
   <li>A new ratings feature was developed for the “GreatBlog” extension in Magento 2
     <ul>
-      <li>A new <code class="highlighter-rouge">great_blog_rating</code> table was created</li>
-      <li>A new <code class="highlighter-rouge">great_blog_post.rating</code> field was created</li>
+      <li>A new <code class="language-plaintext highlighter-rouge">great_blog_rating</code> table was created</li>
+      <li>A new <code class="language-plaintext highlighter-rouge">great_blog_post.rating</code> field was created</li>
     </ul>
   </li>
 </ul>
 
 <h3 id="extend-mapping-in-other-steps">Extend mapping in other steps</h3>
 
-<p>Other steps support mapping, such as the <a href="/devdocs/guides/v2.1/migration/migration-tool-internal-spec.html#eav">EAV Step</a> and Customer Attributes Step. These steps migrate a predefined list of Magento tables. For example, suppose that the “GreatBlog” extension has an additional field in the <code class="highlighter-rouge">eav_attribute</code> table and the name changed in Magento 2. Since the table is processed by the <a href="/devdocs/guides/v2.1/migration/migration-tool-internal-spec.html#eav">EAV Step</a>, mapping rules should be written for the <code class="highlighter-rouge">map-eav.xml</code> file. The <code class="highlighter-rouge">map.xml</code> and <code class="highlighter-rouge">map-eav.xml</code> files use the same <code class="highlighter-rouge">map.xsd</code> schema, so mapping rules remain the same.</p>
+<p>Other steps support mapping, such as the <a href="/devdocs/guides/v2.1/migration/migration-tool-internal-spec.html#eav">EAV Step</a> and Customer Attributes Step. These steps migrate a predefined list of Magento tables. For example, suppose that the “GreatBlog” extension has an additional field in the <code class="language-plaintext highlighter-rouge">eav_attribute</code> table and the name changed in Magento 2. Since the table is processed by the <a href="/devdocs/guides/v2.1/migration/migration-tool-internal-spec.html#eav">EAV Step</a>, mapping rules should be written for the <code class="language-plaintext highlighter-rouge">map-eav.xml</code> file. The <code class="language-plaintext highlighter-rouge">map.xml</code> and <code class="language-plaintext highlighter-rouge">map-eav.xml</code> files use the same <code class="language-plaintext highlighter-rouge">map.xsd</code> schema, so mapping rules remain the same.</p>
 
 <h2 id="major-data-format-and-structure-changes">Major data format and structure changes</h2>
 
-<p>In addition to the Map Step, there are other steps in the <code class="highlighter-rouge">config.xml</code> file which migrate data with major format and structure changes, including:</p>
+<p>In addition to the Map Step, there are other steps in the <code class="language-plaintext highlighter-rouge">config.xml</code> file which migrate data with major format and structure changes, including:</p>
 
 <ul>
   <li><a href="/devdocs/guides/v2.1/migration/migration-tool-internal-spec.html#url-rewrite-step">Url Rewrite Step</a></li>
@@ -2012,7 +2013,7 @@
 
 <h3 id="create-custom-steps">Create custom steps</h3>
 
-<p>Using the same “GreatBlog” example, suppose the extension contains three tables in Magento 1, but was redesigned to have only one table in Magento 2. To migrate all data from multiple tables to a single table, you can create a custom step in the <code class="highlighter-rouge">config.xml</code> file. For example:</p>
+<p>Using the same “GreatBlog” example, suppose the extension contains three tables in Magento 1, but was redesigned to have only one table in Magento 2. To migrate all data from multiple tables to a single table, you can create a custom step in the <code class="language-plaintext highlighter-rouge">config.xml</code> file. For example:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;steps</span> <span class="na">mode=</span><span class="s">"data"</span><span class="nt">&gt;</span>
     ...
@@ -2031,7 +2032,7 @@
 <span class="nt">&lt;/steps&gt;</span>
 </code></pre></div></div>
 
-<p>The tool runs steps according to their position in the <code class="highlighter-rouge">config.xml</code> file; from top to bottom. In our example, the <code class="highlighter-rouge">GreatBlog Step</code> will run last.</p>
+<p>The tool runs steps according to their position in the <code class="language-plaintext highlighter-rouge">config.xml</code> file; from top to bottom. In our example, the <code class="language-plaintext highlighter-rouge">GreatBlog Step</code> will run last.</p>
 
 <p>Steps can include four types of classes:</p>
 
@@ -2044,7 +2045,7 @@
 
 <p class="bs-callout bs-callout-info">Refer to <a href="/devdocs/guides/v2.1/migration/migration-tool-internal-spec.html#configuration">Configuration</a>, <a href="/devdocs/guides/v2.1/migration/migration-tool-internal-spec.html#step-internals">Step internals</a>, <a href="/devdocs/guides/v2.1/migration/migration-tool-internal-spec.html#stages">Stages</a> and <a href="/devdocs/guides/v2.1/migration/migration-tool-internal-spec.html#running-modes">Running modes</a> for more information.</p>
 
-<p>Complex SQL queries can be assembled inside these classes to fetch data from the three tables and migrate into a single table. Also, note that these tables should be “ignored” in the <a href="/devdocs/guides/v2.1/migration/migration-tool-internal-spec.html#map-step">Map Step</a> because it scans all existing tables and tries to migrate the data unless it is in the <code class="highlighter-rouge">&lt;ignore&gt;</code> tag of the <code class="highlighter-rouge">map.xml</code> file.</p>
+<p>Complex SQL queries can be assembled inside these classes to fetch data from the three tables and migrate into a single table. Also, note that these tables should be “ignored” in the <a href="/devdocs/guides/v2.1/migration/migration-tool-internal-spec.html#map-step">Map Step</a> because it scans all existing tables and tries to migrate the data unless it is in the <code class="language-plaintext highlighter-rouge">&lt;ignore&gt;</code> tag of the <code class="language-plaintext highlighter-rouge">map.xml</code> file.</p>
 
 <h2 id="prohibited-extension-methods">Prohibited extension methods</h2>
 

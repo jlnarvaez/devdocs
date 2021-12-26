@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Assertions | Magento 2 Developer Documentation (copy)</title>
+	<title>Assertions | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -2091,42 +2090,41 @@
 	<h1 class="page-heading">Assertions</h1>
 </section>
 
-			
-<p style="text-align: right"><em>This topic was updated due to the 2.1.0 MFTF release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.1.0 MFTF release.</em></p>
 
 <p>Assertions serve to pass or fail the <a href="../test.html#test-tag">test</a> if a condition is not met. These assertions will look familiar to you if you’ve used any other testing framework, like PHPUnit.</p>
 
-<p>All assertions contain the same <a href="./actions.html#common-attributes">common actions attributes</a>: <code class="highlighter-rouge">stepKey</code>, <code class="highlighter-rouge">before</code>, and <code class="highlighter-rouge">after</code>.</p>
+<p>All assertions contain the same <a href="./actions.html#common-attributes">common actions attributes</a>: <code class="language-plaintext highlighter-rouge">stepKey</code>, <code class="language-plaintext highlighter-rouge">before</code>, and <code class="language-plaintext highlighter-rouge">after</code>.</p>
 
-<p>Most assertions contain a <code class="highlighter-rouge">message</code> attribute that specifies the text of an informational message to help you identify the cause of the failure.</p>
+<p>Most assertions contain a <code class="language-plaintext highlighter-rouge">message</code> attribute that specifies the text of an informational message to help you identify the cause of the failure.</p>
 
 <h2 id="principles">Principles</h2>
 
 <p>The <a href="../test.html#principles">principles for actions</a> are also applicable to assertions.</p>
 
-<p>Assertion actions have nested self-descriptive elements, <code class="highlighter-rouge">&lt;expectedResult&gt;</code> and <code class="highlighter-rouge">&lt;actualResult&gt;</code>. These elements contain a result type and a value:</p>
+<p>Assertion actions have nested self-descriptive elements, <code class="language-plaintext highlighter-rouge">&lt;expectedResult&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;actualResult&gt;</code>. These elements contain a result type and a value:</p>
 <ul>
-  <li><code class="highlighter-rouge">type</code>
+  <li><code class="language-plaintext highlighter-rouge">type</code>
     <ul>
-      <li><code class="highlighter-rouge">const</code> (default)</li>
-      <li><code class="highlighter-rouge">int</code></li>
-      <li><code class="highlighter-rouge">float</code></li>
-      <li><code class="highlighter-rouge">bool</code></li>
-      <li><code class="highlighter-rouge">string</code></li>
-      <li><code class="highlighter-rouge">variable</code></li>
-      <li><code class="highlighter-rouge">array</code></li>
+      <li><code class="language-plaintext highlighter-rouge">const</code> (default)</li>
+      <li><code class="language-plaintext highlighter-rouge">int</code></li>
+      <li><code class="language-plaintext highlighter-rouge">float</code></li>
+      <li><code class="language-plaintext highlighter-rouge">bool</code></li>
+      <li><code class="language-plaintext highlighter-rouge">string</code></li>
+      <li><code class="language-plaintext highlighter-rouge">variable</code></li>
+      <li><code class="language-plaintext highlighter-rouge">array</code></li>
     </ul>
   </li>
-  <li><code class="highlighter-rouge">value</code></li>
+  <li><code class="language-plaintext highlighter-rouge">value</code></li>
 </ul>
 
-<p>If <code class="highlighter-rouge">variable</code> is used, the test transforms the corresponding value to <code class="highlighter-rouge">$variable</code>. Use the <code class="highlighter-rouge">stepKey</code> of a test, that returns the value you want to use, in assertions:</p>
+<p>If <code class="language-plaintext highlighter-rouge">variable</code> is used, the test transforms the corresponding value to <code class="language-plaintext highlighter-rouge">$variable</code>. Use the <code class="language-plaintext highlighter-rouge">stepKey</code> of a test, that returns the value you want to use, in assertions:</p>
 
-<p><code class="highlighter-rouge">actual="stepKeyOfGrab" actualType="variable"</code></p>
+<p><code class="language-plaintext highlighter-rouge">actual="stepKeyOfGrab" actualType="variable"</code></p>
 
-<p>To use variables embedded in a string in <code class="highlighter-rouge">expected</code> and <code class="highlighter-rouge">actual</code> of your assertion, use the <code class="highlighter-rouge">{$stepKey}</code> format:</p>
+<p>To use variables embedded in a string in <code class="language-plaintext highlighter-rouge">expected</code> and <code class="language-plaintext highlighter-rouge">actual</code> of your assertion, use the <code class="language-plaintext highlighter-rouge">{$stepKey}</code> format:</p>
 
-<p><code class="highlighter-rouge">actual="A long assert string {$stepKeyOfGrab} with an embedded variable reference." actualType="variable"</code></p>
+<p><code class="language-plaintext highlighter-rouge">actual="A long assert string {$stepKeyOfGrab} with an embedded variable reference." actualType="variable"</code></p>
 
 <h2 id="example">Example</h2>
 
@@ -2162,47 +2160,47 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">selector</code></td>
+      <td><code class="language-plaintext highlighter-rouge">selector</code></td>
       <td>string</td>
       <td>required</td>
       <td> </td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">expectedValue</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expectedValue</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">attribute</code></td>
+      <td><code class="language-plaintext highlighter-rouge">attribute</code></td>
       <td>string</td>
       <td>required</td>
       <td> </td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">before</code></td>
+      <td><code class="language-plaintext highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">after</code></td>
+      <td><code class="language-plaintext highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of the preceding action.</td>
     </tr>
   </tbody>
 </table>
 
 <h3 id="assertarrayissorted">assertArrayIsSorted</h3>
 
-<p>The <code class="highlighter-rouge">&lt;assertArrayIsSorted&gt;</code> asserts that the array is sorted according to a specified sort order, ascending or descending.</p>
+<p>The <code class="language-plaintext highlighter-rouge">&lt;assertArrayIsSorted&gt;</code> asserts that the array is sorted according to a specified sort order, ascending or descending.</p>
 
 <p>Example:</p>
 
@@ -2222,34 +2220,34 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">sortOrder</code></td>
-      <td>Possible values: <code class="highlighter-rouge">asc</code>, <code class="highlighter-rouge">desc</code></td>
+      <td><code class="language-plaintext highlighter-rouge">sortOrder</code></td>
+      <td>Possible values: <code class="language-plaintext highlighter-rouge">asc</code>, <code class="language-plaintext highlighter-rouge">desc</code></td>
       <td>required</td>
       <td>A sort order to assert on array values.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the test step.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">before</code></td>
+      <td><code class="language-plaintext highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">after</code></td>
+      <td><code class="language-plaintext highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of the preceding action.</td>
     </tr>
   </tbody>
 </table>
 
-<p>It contains an <code class="highlighter-rouge">&lt;array&gt;</code> child element that specifies an array to be asserted for proper sorting.
-It must be in typical array format like <code class="highlighter-rouge">[1,2,3,4,5]</code> or <code class="highlighter-rouge">[alpha, brontosaurus, zebra]</code>.</p>
+<p>It contains an <code class="language-plaintext highlighter-rouge">&lt;array&gt;</code> child element that specifies an array to be asserted for proper sorting.
+It must be in typical array format like <code class="language-plaintext highlighter-rouge">[1,2,3,4,5]</code> or <code class="language-plaintext highlighter-rouge">[alpha, brontosaurus, zebra]</code>.</p>
 
 <h3 id="assertarrayhaskey">assertArrayHasKey</h3>
 
@@ -2266,52 +2264,52 @@ It must be in typical array format like <code class="highlighter-rouge">[1,2,3,4
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">expected</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">expectedType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the expected result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actual</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actualType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the actual result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">message</code></td>
+      <td><code class="language-plaintext highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">before</code></td>
+      <td><code class="language-plaintext highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">after</code></td>
+      <td><code class="language-plaintext highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of the preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -2331,52 +2329,52 @@ It must be in typical array format like <code class="highlighter-rouge">[1,2,3,4
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">expected</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">expectedType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the expected result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actual</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actualType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the actual result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">message</code></td>
+      <td><code class="language-plaintext highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">before</code></td>
+      <td><code class="language-plaintext highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">after</code></td>
+      <td><code class="language-plaintext highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of the preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -2396,58 +2394,58 @@ It must be in typical array format like <code class="highlighter-rouge">[1,2,3,4
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">expected</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">expectedType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the expected result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actual</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actualType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the actual result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">strict</code></td>
+      <td><code class="language-plaintext highlighter-rouge">strict</code></td>
       <td>boolean</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">message</code></td>
+      <td><code class="language-plaintext highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">before</code></td>
+      <td><code class="language-plaintext highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">after</code></td>
+      <td><code class="language-plaintext highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of the preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -2467,52 +2465,52 @@ It must be in typical array format like <code class="highlighter-rouge">[1,2,3,4
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">expected</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">expectedType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the expected result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actual</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actualType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the actual result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">message</code></td>
+      <td><code class="language-plaintext highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">before</code></td>
+      <td><code class="language-plaintext highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">after</code></td>
+      <td><code class="language-plaintext highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of the preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -2532,52 +2530,52 @@ It must be in typical array format like <code class="highlighter-rouge">[1,2,3,4
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">expected</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">expectedType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the expected result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actual</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actualType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the actual result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">message</code></td>
+      <td><code class="language-plaintext highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">before</code></td>
+      <td><code class="language-plaintext highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">after</code></td>
+      <td><code class="language-plaintext highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of the preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -2597,40 +2595,40 @@ It must be in typical array format like <code class="highlighter-rouge">[1,2,3,4
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">actual</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actualType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the actual result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">message</code></td>
+      <td><code class="language-plaintext highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">before</code></td>
+      <td><code class="language-plaintext highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">after</code></td>
+      <td><code class="language-plaintext highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of the preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -2650,58 +2648,58 @@ It must be in typical array format like <code class="highlighter-rouge">[1,2,3,4
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">expected</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">expectedType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the expected result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actual</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actualType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the actual result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">delta</code></td>
+      <td><code class="language-plaintext highlighter-rouge">delta</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">message</code></td>
+      <td><code class="language-plaintext highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">before</code></td>
+      <td><code class="language-plaintext highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">after</code></td>
+      <td><code class="language-plaintext highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of the preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -2721,40 +2719,40 @@ It must be in typical array format like <code class="highlighter-rouge">[1,2,3,4
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">actual</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>Actual value.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actualType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actualType</code></td>
       <td>assertEnum</td>
       <td>optional</td>
       <td>Type of actual value.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">message</code></td>
+      <td><code class="language-plaintext highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">before</code></td>
+      <td><code class="language-plaintext highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">after</code></td>
+      <td><code class="language-plaintext highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of the preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -2774,40 +2772,40 @@ It must be in typical array format like <code class="highlighter-rouge">[1,2,3,4
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">actual</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actualType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the actual result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">message</code></td>
+      <td><code class="language-plaintext highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">before</code></td>
+      <td><code class="language-plaintext highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">after</code></td>
+      <td><code class="language-plaintext highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of the preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -2827,40 +2825,40 @@ It must be in typical array format like <code class="highlighter-rouge">[1,2,3,4
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">actual</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actualType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the actual result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">message</code></td>
+      <td><code class="language-plaintext highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">before</code></td>
+      <td><code class="language-plaintext highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">after</code></td>
+      <td><code class="language-plaintext highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of the preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -2880,52 +2878,52 @@ It must be in typical array format like <code class="highlighter-rouge">[1,2,3,4
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">expected</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">expectedType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the expected result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actual</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actualType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the actual result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">message</code></td>
+      <td><code class="language-plaintext highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">before</code></td>
+      <td><code class="language-plaintext highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">after</code></td>
+      <td><code class="language-plaintext highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of the preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -2945,52 +2943,52 @@ It must be in typical array format like <code class="highlighter-rouge">[1,2,3,4
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">expected</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">expectedType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the expected result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actual</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actualType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the actual result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">message</code></td>
+      <td><code class="language-plaintext highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">before</code></td>
+      <td><code class="language-plaintext highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">after</code></td>
+      <td><code class="language-plaintext highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of the preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -3010,52 +3008,52 @@ It must be in typical array format like <code class="highlighter-rouge">[1,2,3,4
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">expected</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">expectedType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the expected result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actual</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actualType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the actual result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">message</code></td>
+      <td><code class="language-plaintext highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">before</code></td>
+      <td><code class="language-plaintext highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">after</code></td>
+      <td><code class="language-plaintext highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of the preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -3075,52 +3073,52 @@ It must be in typical array format like <code class="highlighter-rouge">[1,2,3,4
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">expected</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">expectedType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the expected result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actual</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actualType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the actual result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">message</code></td>
+      <td><code class="language-plaintext highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">before</code></td>
+      <td><code class="language-plaintext highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">after</code></td>
+      <td><code class="language-plaintext highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of the preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -3140,52 +3138,52 @@ It must be in typical array format like <code class="highlighter-rouge">[1,2,3,4
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">expected</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">expectedType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the expected result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actual</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actualType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the actual result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">message</code></td>
+      <td><code class="language-plaintext highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">before</code></td>
+      <td><code class="language-plaintext highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">after</code></td>
+      <td><code class="language-plaintext highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of the preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -3205,40 +3203,40 @@ It must be in typical array format like <code class="highlighter-rouge">[1,2,3,4
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">actual</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actualType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the actual result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">message</code></td>
+      <td><code class="language-plaintext highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">before</code></td>
+      <td><code class="language-plaintext highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">after</code></td>
+      <td><code class="language-plaintext highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of the preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -3258,52 +3256,52 @@ It must be in typical array format like <code class="highlighter-rouge">[1,2,3,4
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">expected</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">expectedType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the expected result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actual</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actualType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the actual result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">message</code></td>
+      <td><code class="language-plaintext highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">before</code></td>
+      <td><code class="language-plaintext highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">after</code></td>
+      <td><code class="language-plaintext highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of the preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -3323,52 +3321,52 @@ It must be in typical array format like <code class="highlighter-rouge">[1,2,3,4
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">expected</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">expectedType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the expected result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actual</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actualType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the actual result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">message</code></td>
+      <td><code class="language-plaintext highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">before</code></td>
+      <td><code class="language-plaintext highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">after</code></td>
+      <td><code class="language-plaintext highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of the preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -3388,52 +3386,52 @@ It must be in typical array format like <code class="highlighter-rouge">[1,2,3,4
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">expected</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">expectedType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the expected result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actual</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actualType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the actual result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">message</code></td>
+      <td><code class="language-plaintext highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">before</code></td>
+      <td><code class="language-plaintext highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">after</code></td>
+      <td><code class="language-plaintext highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of the preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -3453,52 +3451,52 @@ It must be in typical array format like <code class="highlighter-rouge">[1,2,3,4
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">expected</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">expectedType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the expected result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actual</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actualType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the actual result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">message</code></td>
+      <td><code class="language-plaintext highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">before</code></td>
+      <td><code class="language-plaintext highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">after</code></td>
+      <td><code class="language-plaintext highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of the preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -3518,40 +3516,40 @@ It must be in typical array format like <code class="highlighter-rouge">[1,2,3,4
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">actual</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actualType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the actual result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">message</code></td>
+      <td><code class="language-plaintext highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">before</code></td>
+      <td><code class="language-plaintext highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">after</code></td>
+      <td><code class="language-plaintext highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of the preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -3571,58 +3569,58 @@ It must be in typical array format like <code class="highlighter-rouge">[1,2,3,4
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">expected</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">expectedType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the expected result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actual</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actualType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the actual result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">delta</code></td>
+      <td><code class="language-plaintext highlighter-rouge">delta</code></td>
       <td>string</td>
       <td>optional</td>
       <td> </td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">message</code></td>
+      <td><code class="language-plaintext highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">before</code></td>
+      <td><code class="language-plaintext highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">after</code></td>
+      <td><code class="language-plaintext highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of the preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -3642,52 +3640,52 @@ It must be in typical array format like <code class="highlighter-rouge">[1,2,3,4
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">expected</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">expectedType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the expected result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actual</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actualType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the actual result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">message</code></td>
+      <td><code class="language-plaintext highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">before</code></td>
+      <td><code class="language-plaintext highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">after</code></td>
+      <td><code class="language-plaintext highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of the preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -3707,40 +3705,40 @@ It must be in typical array format like <code class="highlighter-rouge">[1,2,3,4
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">actual</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actualType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the actual result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">message</code></td>
+      <td><code class="language-plaintext highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">before</code></td>
+      <td><code class="language-plaintext highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">after</code></td>
+      <td><code class="language-plaintext highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of the preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -3760,52 +3758,52 @@ It must be in typical array format like <code class="highlighter-rouge">[1,2,3,4
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">expected</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">expectedType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the expected result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actual</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actualType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the actual result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">message</code></td>
+      <td><code class="language-plaintext highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">before</code></td>
+      <td><code class="language-plaintext highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">after</code></td>
+      <td><code class="language-plaintext highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of the preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -3825,52 +3823,52 @@ It must be in typical array format like <code class="highlighter-rouge">[1,2,3,4
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">expected</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">expectedType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the expected result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actual</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actualType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the actual result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">message</code></td>
+      <td><code class="language-plaintext highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">before</code></td>
+      <td><code class="language-plaintext highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">after</code></td>
+      <td><code class="language-plaintext highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of the preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -3890,40 +3888,40 @@ It must be in typical array format like <code class="highlighter-rouge">[1,2,3,4
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">actual</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actualType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the actual result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">message</code></td>
+      <td><code class="language-plaintext highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">before</code></td>
+      <td><code class="language-plaintext highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">after</code></td>
+      <td><code class="language-plaintext highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of the preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -3943,52 +3941,52 @@ It must be in typical array format like <code class="highlighter-rouge">[1,2,3,4
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">expected</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">expectedType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the expected result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actual</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actualType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the actual result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">message</code></td>
+      <td><code class="language-plaintext highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">before</code></td>
+      <td><code class="language-plaintext highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">after</code></td>
+      <td><code class="language-plaintext highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of the preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -4008,52 +4006,52 @@ It must be in typical array format like <code class="highlighter-rouge">[1,2,3,4
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">expected</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">expectedType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the expected result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actual</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actualType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the actual result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">message</code></td>
+      <td><code class="language-plaintext highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">before</code></td>
+      <td><code class="language-plaintext highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">after</code></td>
+      <td><code class="language-plaintext highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of the preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -4073,52 +4071,52 @@ It must be in typical array format like <code class="highlighter-rouge">[1,2,3,4
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">expected</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">expectedType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the expected result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actual</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actualType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the actual result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">message</code></td>
+      <td><code class="language-plaintext highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">before</code></td>
+      <td><code class="language-plaintext highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">after</code></td>
+      <td><code class="language-plaintext highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of the preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -4138,52 +4136,52 @@ It must be in typical array format like <code class="highlighter-rouge">[1,2,3,4
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">expected</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">expectedType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the expected result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actual</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actualType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the actual result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">message</code></td>
+      <td><code class="language-plaintext highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">before</code></td>
+      <td><code class="language-plaintext highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">after</code></td>
+      <td><code class="language-plaintext highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of the preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -4203,40 +4201,40 @@ It must be in typical array format like <code class="highlighter-rouge">[1,2,3,4
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">actual</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actualType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the actual result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">message</code></td>
+      <td><code class="language-plaintext highlighter-rouge">message</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Text of informational message about a cause of failure.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">before</code></td>
+      <td><code class="language-plaintext highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">after</code></td>
+      <td><code class="language-plaintext highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of the preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -4256,46 +4254,46 @@ It must be in typical array format like <code class="highlighter-rouge">[1,2,3,4
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">expected</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expected</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the expected result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">expectedType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">expectedType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the expected result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the expected result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actual</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actual</code></td>
       <td>string</td>
       <td>required</td>
       <td>A value of the actual result.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">actualType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">actualType</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A type of the actual result. Possible values: <code class="highlighter-rouge">const</code> (default), <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">float</code>, <code class="highlighter-rouge">bool</code>, <code class="highlighter-rouge">string</code>, <code class="highlighter-rouge">variable</code>, <code class="highlighter-rouge">array</code>.</td>
+      <td>A type of the actual result. Possible values: <code class="language-plaintext highlighter-rouge">const</code> (default), <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">bool</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">variable</code>, <code class="language-plaintext highlighter-rouge">array</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">before</code></td>
+      <td><code class="language-plaintext highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">after</code></td>
+      <td><code class="language-plaintext highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of the preceding action.</td>
     </tr>
   </tbody>
 </table>
@@ -4315,28 +4313,28 @@ It must be in typical array format like <code class="highlighter-rouge">[1,2,3,4
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">message</code></td>
+      <td><code class="language-plaintext highlighter-rouge">message</code></td>
       <td>string</td>
       <td>required</td>
       <td> </td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
       <td>A unique identifier of the text step.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">before</code></td>
+      <td><code class="language-plaintext highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of action that must be executed next.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">after</code></td>
+      <td><code class="language-plaintext highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">stepKey</code> of the preceding action.</td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code> of the preceding action.</td>
     </tr>
   </tbody>
 </table>

@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Robo commands | Magento 2 Developer Documentation (copy)</title>
+	<title>Robo commands | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -2091,8 +2090,7 @@
 	<h1 class="page-heading">Robo commands</h1>
 </section>
 
-			
-<p style="text-align: right"><em>This topic was updated due to the 2.2.0 <abbr title="Magento Functional Testing Framework">MFTF</abbr> release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.2.0 <abbr title="Magento Functional Testing Framework">MFTF</abbr> release.</em></p>
 
 <p>Robo is a task runner for PHP that allows you to alias long, complex command line interface (CLI) commands to simple commands.</p>
 
@@ -2100,7 +2098,7 @@
 
 <h3 id="format">Format</h3>
 
-<p>Assuming that you’re working in the <code class="highlighter-rouge">magento2/dev/tests/acceptance</code> directory in your terminal, run Robo commands using the following format:</p>
+<p>Assuming that you’re working in the <code class="language-plaintext highlighter-rouge">magento2/dev/tests/acceptance</code> directory in your terminal, run Robo commands using the following format:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vendor/bin/robo <span class="nb">command</span> <span class="o">[</span>options] <span class="o">[</span>arguments]
 </code></pre></div></div>
@@ -2156,7 +2154,7 @@
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vendor/bin/robo generate:tests testName01 testName02 testName03
 </code></pre></div></div>
 
-<h4 id="run-all-tests-marked-with-the-group-tag-example-using-the-chrome-environment">Run all tests marked with the @group tag <code class="highlighter-rouge">example</code>, using the Chrome environment</h4>
+<h4 id="run-all-tests-marked-with-the-group-tag-example-using-the-chrome-environment">Run all tests marked with the @group tag <code class="language-plaintext highlighter-rouge">example</code>, using the Chrome environment</h4>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vendor/bin/robo example
 </code></pre></div></div>
@@ -2181,7 +2179,7 @@ The generated test are stored in the <em>acceptance/tests/functional/Magento/Fun
 
 <h4 id="run-skipped-tests">Run skipped tests</h4>
 
-<p>Typically, each test tagged by the <code class="highlighter-rouge">&lt;group value="skip"&gt;</code> annotation is ignored during test run.
+<p>Typically, each test tagged by the <code class="language-plaintext highlighter-rouge">&lt;group value="skip"&gt;</code> annotation is ignored during test run.
 But in case you still need to run the skipped tests, run:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vendor/bin/robo group skip
@@ -2189,7 +2187,7 @@ But in case you still need to run the skipped tests, run:</p>
 
 <h3 id="allure-robo-commands">Allure Robo commands</h3>
 
-<p>To determine which version of the Allure command you need to use run <code class="highlighter-rouge">allure --version</code>.</p>
+<p>To determine which version of the Allure command you need to use run <code class="language-plaintext highlighter-rouge">allure --version</code>.</p>
 
 <h4 id="generate-the-html-for-the-allure-report-based-on-the-test-xml-output">Generate the HTML for the Allure report based on the test XML output</h4>
 
@@ -2234,27 +2232,27 @@ But in case you still need to run the skipped tests, run:</p>
 <table>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">functional</code></td>
+      <td><code class="language-plaintext highlighter-rouge">functional</code></td>
       <td>Run all generated tests.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">example</code></td>
-      <td>Run all Tests marked with the <code class="highlighter-rouge">&lt;group value="example"/&gt;</code> annotation.</td>
+      <td><code class="language-plaintext highlighter-rouge">example</code></td>
+      <td>Run all Tests marked with the <code class="language-plaintext highlighter-rouge">&lt;group value="example"/&gt;</code> annotation.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">folder</code></td>
+      <td><code class="language-plaintext highlighter-rouge">folder</code></td>
       <td>Run all acceptance tests located under the directory path provided.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">group</code></td>
-      <td>Run tests annotated by the <code class="highlighter-rouge">&lt;group/&gt;</code> tag.</td>
+      <td><code class="language-plaintext highlighter-rouge">group</code></td>
+      <td>Run tests annotated by the <code class="language-plaintext highlighter-rouge">&lt;group/&gt;</code> tag.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">help</code></td>
+      <td><code class="language-plaintext highlighter-rouge">help</code></td>
       <td>Displays help for a command.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">list</code></td>
+      <td><code class="language-plaintext highlighter-rouge">list</code></td>
       <td>Lists available commands.</td>
     </tr>
   </tbody>
@@ -2265,15 +2263,15 @@ But in case you still need to run the skipped tests, run:</p>
 <table>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">allure1:generate</code></td>
+      <td><code class="language-plaintext highlighter-rouge">allure1:generate</code></td>
       <td>Generate the HTML for the Allure report based on the test XML output - Allure v1.4.X.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">allure1:open</code></td>
+      <td><code class="language-plaintext highlighter-rouge">allure1:open</code></td>
       <td>Open the HTML Allure report - Allure v1.4.xX.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">allure1:report</code></td>
+      <td><code class="language-plaintext highlighter-rouge">allure1:report</code></td>
       <td>Generate and open the HTML Allure report - Allure v1.4.X.</td>
     </tr>
   </tbody>
@@ -2284,15 +2282,15 @@ But in case you still need to run the skipped tests, run:</p>
 <table>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">allure2:generate</code></td>
+      <td><code class="language-plaintext highlighter-rouge">allure2:generate</code></td>
       <td>Generate the HTML for the Allure report based on the test XML output - Allure .v2.3.X</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">allure2:open</code></td>
+      <td><code class="language-plaintext highlighter-rouge">allure2:open</code></td>
       <td>Open the HTML Allure report - Allure v2.3.X.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">allure2:report</code></td>
+      <td><code class="language-plaintext highlighter-rouge">allure2:report</code></td>
       <td>Generate and open the HTML Allure report - Allure v2.3.X.</td>
     </tr>
   </tbody>
@@ -2303,7 +2301,7 @@ But in case you still need to run the skipped tests, run:</p>
 <table>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">build:project</code></td>
+      <td><code class="language-plaintext highlighter-rouge">build:project</code></td>
       <td>Clone the example configuration files and build the Codeception project.</td>
     </tr>
   </tbody>
@@ -2314,7 +2312,7 @@ But in case you still need to run the skipped tests, run:</p>
 <table>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">clone:files</code></td>
+      <td><code class="language-plaintext highlighter-rouge">clone:files</code></td>
       <td>Duplicate the example configuration files used to customize the project.</td>
     </tr>
   </tbody>
@@ -2324,36 +2322,36 @@ But in case you still need to run the skipped tests, run:</p>
 
 <p>Generate PHP code from the tests defined in XML files.</p>
 
-<p>Path to a directory with generated tests:  <code class="highlighter-rouge">tests/functional/Magento/FunctionalTest/_generated/</code>.</p>
+<p>Path to a directory with generated tests:  <code class="language-plaintext highlighter-rouge">tests/functional/Magento/FunctionalTest/_generated/</code>.</p>
 
 <table>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">generate:tests</code></td>
+      <td><code class="language-plaintext highlighter-rouge">generate:tests</code></td>
       <td>Generate all tests and suites based on specific module load order of the Magento instance</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">generate:tests &lt;testName01&gt; &lt;testName02&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">generate:tests &lt;testName01&gt; &lt;testName02&gt;</code></td>
       <td>Generates only the specified tests. It does not work for tests that are part of suites.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">generate:tests --force</code></td>
+      <td><code class="language-plaintext highlighter-rouge">generate:tests --force</code></td>
       <td>Generate all tests regardless of whether a Magento instance is available</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">generate:tests --config singleRun</code></td>
-      <td>Generate all tests and a manifest file <code class="highlighter-rouge">_generated/testManifest.txt</code>. The file contains only a path to the directory with generated tests.</td>
+      <td><code class="language-plaintext highlighter-rouge">generate:tests --config singleRun</code></td>
+      <td>Generate all tests and a manifest file <code class="language-plaintext highlighter-rouge">_generated/testManifest.txt</code>. The file contains only a path to the directory with generated tests.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">generate:tests --config parallel --lines &lt;number of lines&gt;</code></td>
-      <td>Generate all tests and a directory with manifest files under <code class="highlighter-rouge">_generated/groups/</code>. The number of manifests corresponds to the number of nodes required. Each manifest file contains a proportional list of tests sorted and grouped depending on the specified line limit <code class="highlighter-rouge">&lt;number of lines&gt;</code>.</td>
+      <td><code class="language-plaintext highlighter-rouge">generate:tests --config parallel --lines &lt;number of lines&gt;</code></td>
+      <td>Generate all tests and a directory with manifest files under <code class="language-plaintext highlighter-rouge">_generated/groups/</code>. The number of manifests corresponds to the number of nodes required. Each manifest file contains a proportional list of tests sorted and grouped depending on the specified line limit <code class="language-plaintext highlighter-rouge">&lt;number of lines&gt;</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">generate:tests --tests "&lt;json configuration&gt;"</code></td>
+      <td><code class="language-plaintext highlighter-rouge">generate:tests --tests "&lt;json configuration&gt;"</code></td>
       <td>Generates only the tests and suites in the specified JSON configuration. See examples of the JSON configurations and the entire command below.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">generate:suite &lt;suiteName&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">generate:suite &lt;suiteName&gt;</code></td>
       <td>Generates tests for the specified suite only.</td>
     </tr>
   </tbody>
@@ -2363,18 +2361,18 @@ But in case you still need to run the skipped tests, run:</p>
 
 <p>The configuration to generate a single test with no suites:</p>
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">  
-   </span><span class="s2">"tests"</span><span class="p">:[</span><span class="w">
+   </span><span class="nl">"tests"</span><span class="p">:[</span><span class="w">
       </span><span class="s2">"general_test1"</span><span class="w">     </span><span class="err">//Generate</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="s2">"general_test1"</span><span class="w"> </span><span class="err">test.</span><span class="w">
       </span><span class="p">],</span><span class="w">
-   </span><span class="s2">"suites"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+   </span><span class="nl">"suites"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
 <p>The configuration to generate a single test contained in the suite:</p>
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">  
-   </span><span class="s2">"tests"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">         </span><span class="err">//</span><span class="w"> </span><span class="err">No</span><span class="w"> </span><span class="err">tests</span><span class="w"> </span><span class="err">outside</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">suite</span><span class="w"> </span><span class="err">configuration</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">generated.</span><span class="w">
-   </span><span class="s2">"suites"</span><span class="p">:{</span><span class="w">  
-      </span><span class="s2">"sample"</span><span class="p">:[</span><span class="w">          </span><span class="err">//</span><span class="w"> </span><span class="err">The</span><span class="w"> </span><span class="err">suite</span><span class="w"> </span><span class="err">that</span><span class="w"> </span><span class="err">contains</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">test.</span><span class="w">
+   </span><span class="nl">"tests"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">         </span><span class="err">//</span><span class="w"> </span><span class="err">No</span><span class="w"> </span><span class="err">tests</span><span class="w"> </span><span class="err">outside</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">suite</span><span class="w"> </span><span class="err">configuration</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">generated.</span><span class="w">
+   </span><span class="nl">"suites"</span><span class="p">:{</span><span class="w">  
+      </span><span class="nl">"sample"</span><span class="p">:[</span><span class="w">          </span><span class="err">//</span><span class="w"> </span><span class="err">The</span><span class="w"> </span><span class="err">suite</span><span class="w"> </span><span class="err">that</span><span class="w"> </span><span class="err">contains</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">test.</span><span class="w">
          </span><span class="s2">"suite_test1"</span><span class="w">    </span><span class="err">//</span><span class="w"> </span><span class="err">The</span><span class="w"> </span><span class="err">test</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">generated.</span><span class="w">
       </span><span class="p">]</span><span class="w">
    </span><span class="p">}</span><span class="w">
@@ -2383,16 +2381,16 @@ But in case you still need to run the skipped tests, run:</p>
 
 <p>Complex configuration to generate few non-suite tests, a single test in a suite, and an entire suite:</p>
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">  
-   </span><span class="s2">"tests"</span><span class="p">:[</span><span class="w">  
+   </span><span class="nl">"tests"</span><span class="p">:[</span><span class="w">  
       </span><span class="s2">"general_test1"</span><span class="p">,</span><span class="w">   
       </span><span class="s2">"general_test2"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"general_test3"</span><span class="w">
    </span><span class="p">],</span><span class="w">
-   </span><span class="s2">"suites"</span><span class="p">:{</span><span class="w">             </span><span class="err">//Go</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">suites.</span><span class="w">
-      </span><span class="s2">"sample"</span><span class="p">:[</span><span class="w">          </span><span class="err">//Go</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="s2">"sample"</span><span class="w"> </span><span class="err">suite.</span><span class="w">
+   </span><span class="nl">"suites"</span><span class="p">:{</span><span class="w">             </span><span class="err">//Go</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">suites.</span><span class="w">
+      </span><span class="nl">"sample"</span><span class="p">:[</span><span class="w">          </span><span class="err">//Go</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="s2">"sample"</span><span class="w"> </span><span class="err">suite.</span><span class="w">
          </span><span class="s2">"suite_test1"</span><span class="w">    </span><span class="err">//Generate</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="s2">"suite_test1"</span><span class="w"> </span><span class="err">test.</span><span class="w">
       </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"sample2"</span><span class="p">:[]</span><span class="w">        </span><span class="err">//Generate</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">tests</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="s2">"sample2"</span><span class="w"> </span><span class="err">suite.</span><span class="w">
+      </span><span class="nl">"sample2"</span><span class="p">:[]</span><span class="w">        </span><span class="err">//Generate</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">tests</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="s2">"sample2"</span><span class="w"> </span><span class="err">suite.</span><span class="w">
    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
@@ -2413,8 +2411,8 @@ But in case you still need to run the skipped tests, run:</p>
 <table>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">self:update</code> or <code class="highlighter-rouge">update</code></td>
-      <td>Updates the <code class="highlighter-rouge">robo.phar</code> to the latest version, which only works when running the <code class="highlighter-rouge">phar</code> version of Robo.</td>
+      <td><code class="language-plaintext highlighter-rouge">self:update</code> or <code class="language-plaintext highlighter-rouge">update</code></td>
+      <td>Updates the <code class="language-plaintext highlighter-rouge">robo.phar</code> to the latest version, which only works when running the <code class="language-plaintext highlighter-rouge">phar</code> version of Robo.</td>
     </tr>
   </tbody>
 </table>

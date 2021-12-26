@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Build and deploy | Magento 2 Developer Documentation (copy)</title>
+	<title>Build and deploy | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/project/magento-env-yaml.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/project/magento-env-yaml.html">Magento 2.0</a></li>
 		
@@ -4342,33 +4343,33 @@
 	<h1 class="page-heading">Build and deploy</h1>
 </section>
 
-			<p>The <code class="highlighter-rouge">.magento.env.yaml</code> file centralizes the management of build and deploy actions across all of your environments, including Pro Staging and Production, using environment variables. If you need to configure unique actions in each environment, you must modify this file in each environment branch.</p>
+			<p>The <code class="language-plaintext highlighter-rouge">.magento.env.yaml</code> file centralizes the management of build and deploy actions across all of your environments, including Pro Staging and Production, using environment variables. If you need to configure unique actions in each environment, you must modify this file in each environment branch.</p>
 
-<p>Unlike other YAML configuration files, such as <a href="/devdocs/guides/v2.3/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a>, <a href="/devdocs/guides/v2.3/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">.magento/routes.yaml</code></a>, and <a href="/devdocs/guides/v2.3/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">.magento/services.yaml</code></a>, you can use the <code class="highlighter-rouge">.magento.env.yaml</code> file to manage configuration settings without opening a support ticket.</p>
+<p>Unlike other YAML configuration files, such as <a href="/devdocs/guides/v2.3/cloud/project/project-conf-files_magento-app.html"><code class="language-plaintext highlighter-rouge">.magento.app.yaml</code></a>, <a href="/devdocs/guides/v2.3/cloud/project/project-conf-files_routes.html"><code class="language-plaintext highlighter-rouge">.magento/routes.yaml</code></a>, and <a href="/devdocs/guides/v2.3/cloud/project/project-conf-files_services.html"><code class="language-plaintext highlighter-rouge">.magento/services.yaml</code></a>, you can use the <code class="language-plaintext highlighter-rouge">.magento.env.yaml</code> file to manage configuration settings without opening a support ticket.</p>
 
 <h2 id="file-structure">File structure</h2>
 
-<p>The <code class="highlighter-rouge">.magento.env.yaml</code> file includes the following sections:</p>
+<p>The <code class="language-plaintext highlighter-rouge">.magento.env.yaml</code> file includes the following sections:</p>
 
 <ul>
-  <li><strong><code class="highlighter-rouge">stage</code></strong>—Accommodates the following stages of deployment:
+  <li><strong><code class="language-plaintext highlighter-rouge">stage</code></strong>—Accommodates the following stages of deployment:
     <ul>
-      <li><code class="highlighter-rouge">global</code>—Controls actions in both the build, deploy, and post-deploy phases. You can override these settings in the build, deploy, and post-deploy sections.</li>
-      <li><code class="highlighter-rouge">build</code>—Controls actions in the build phase only. If you do not specify settings in this section, the build phase uses settings from the global section. Settings in the <code class="highlighter-rouge">build_options.ini</code> file override settings in this section.</li>
-      <li><code class="highlighter-rouge">deploy</code>—Controls actions in the deploy phase only. If you do not specify settings in this section, the deploy phase uses settings from the global section.</li>
-      <li><code class="highlighter-rouge">post-deploy</code>—Controls actions <em>after</em> deploying your application and <em>after</em> the container begins accepting connections.</li>
+      <li><code class="language-plaintext highlighter-rouge">global</code>—Controls actions in both the build, deploy, and post-deploy phases. You can override these settings in the build, deploy, and post-deploy sections.</li>
+      <li><code class="language-plaintext highlighter-rouge">build</code>—Controls actions in the build phase only. If you do not specify settings in this section, the build phase uses settings from the global section. Settings in the <code class="language-plaintext highlighter-rouge">build_options.ini</code> file override settings in this section.</li>
+      <li><code class="language-plaintext highlighter-rouge">deploy</code>—Controls actions in the deploy phase only. If you do not specify settings in this section, the deploy phase uses settings from the global section.</li>
+      <li><code class="language-plaintext highlighter-rouge">post-deploy</code>—Controls actions <em>after</em> deploying your application and <em>after</em> the container begins accepting connections.</li>
     </ul>
   </li>
-  <li><strong><code class="highlighter-rouge">log</code></strong>—Controls <a href="/devdocs/guides/v2.3/cloud/env/setup-notifications.html">notifications</a>, including notification types and level of detail.
+  <li><strong><code class="language-plaintext highlighter-rouge">log</code></strong>—Controls <a href="/devdocs/guides/v2.3/cloud/env/setup-notifications.html">notifications</a>, including notification types and level of detail.
     <ul>
-      <li><code class="highlighter-rouge">slack</code>—Configure a message to send to a Slack bot.</li>
-      <li><code class="highlighter-rouge">email</code>—Configure an email to send to one or more email recipients.</li>
+      <li><code class="language-plaintext highlighter-rouge">slack</code>—Configure a message to send to a Slack bot.</li>
+      <li><code class="language-plaintext highlighter-rouge">email</code>—Configure an email to send to one or more email recipients.</li>
       <li><a href="/devdocs/guides/v2.3/cloud/env/log-handlers.html">logging handlers</a>—Configure hardware and software application messages sent to a remote logging server.</li>
     </ul>
   </li>
 </ul>
 
-<p>The latest sample of the <code class="highlighter-rouge">.magento.env.yaml</code> file contains a detailed definition for each variable in the following reference topics:</p>
+<p>The latest sample of the <code class="language-plaintext highlighter-rouge">.magento.env.yaml</code> file contains a detailed definition for each variable in the following reference topics:</p>
 
 <ul>
   <li><a href="/devdocs/guides/v2.3/cloud/env/environment-vars_magento.html">Application</a>—variables control administrative credentials</li>
@@ -4383,7 +4384,7 @@
 
 <h2 id="php-constants">PHP constants</h2>
 
-<p>You can use PHP constants in <code class="highlighter-rouge">.magento.env.yaml</code> file definitions instead of hard-coding values. The following example defines the <code class="highlighter-rouge">driver_ options</code> using a PHP constant:</p>
+<p>You can use PHP constants in <code class="language-plaintext highlighter-rouge">.magento.env.yaml</code> file definitions instead of hard-coding values. The following example defines the <code class="language-plaintext highlighter-rouge">driver_ options</code> using a PHP constant:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="na">stage</span><span class="pi">:</span>
   <span class="na">deploy</span><span class="pi">:</span>
@@ -4391,16 +4392,16 @@
       <span class="na">connection</span><span class="pi">:</span>
         <span class="na">default</span><span class="pi">:</span>
           <span class="na">driver_options</span><span class="pi">:</span>
-            <span class="kt">!php/const:</span><span class="s">\PDO::MYSQL_ATTR_LOCAL_INFILE</span> <span class="pi">:</span> <span class="s">1</span>
+            <span class="kt">!php/const:</span><span class="s">\PDO::MYSQL_ATTR_LOCAL_INFILE</span> <span class="pi">:</span> <span class="m">1</span>
         <span class="na">indexer</span><span class="pi">:</span>
           <span class="na">driver_options</span><span class="pi">:</span>
-            <span class="kt">!php/const:</span><span class="s">\PDO::MYSQL_ATTR_LOCAL_INFILE</span> <span class="pi">:</span> <span class="s">1</span>
+            <span class="kt">!php/const:</span><span class="s">\PDO::MYSQL_ATTR_LOCAL_INFILE</span> <span class="pi">:</span> <span class="m">1</span>
       <span class="na">_merge</span><span class="pi">:</span> <span class="no">true</span>
 </code></pre></div></div>
 
 <h2 id="error-handling">Error handling</h2>
 
-<p>When a failure occurs because of an unexpected value in the <code class="highlighter-rouge">.magento.env.yaml</code> configuration file, you receive an error message. For example, the following error message presents a list of suggested changes to each item with an unexpected value, in some cases providing valid options:</p>
+<p>When a failure occurs because of an unexpected value in the <code class="language-plaintext highlighter-rouge">.magento.env.yaml</code> configuration file, you receive an error message. For example, the following error message presents a list of suggested changes to each item with an unexpected value, in some cases providing valid options:</p>
 
 <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="go">  - Environment configuration is not valid. Please correct .magento.env.yaml file with next suggestions:
   	Item CRON_CONSUMERS_RUNNER is not supposed to be in stage build. Please move it to one of possible stages: global, deploy

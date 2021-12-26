@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento 2.3 backward incompatible changes | Magento 2 Developer Documentation (copy)</title>
+	<title>Magento 2.3 backward incompatible changes | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/release-notes/backward-incompatible-changes">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/release-notes/backward-incompatible-changes">Magento 2.0</a></li>
 		
@@ -1885,13 +1886,13 @@ The purpose of this document is to highlight major changes between Magento 2.2 a
 
 <h3 id="storemanager-instead-of-storeresolver">StoreManager instead of StoreResolver</h3>
 
-<p><code class="highlighter-rouge">\Magento\Store\Api\StoreResolverInterface</code> has been deprecated in favor of the <code class="highlighter-rouge">\Magento\Store\Model\StoreManagerInterface</code>.</p>
+<p><code class="language-plaintext highlighter-rouge">\Magento\Store\Api\StoreResolverInterface</code> has been deprecated in favor of the <code class="language-plaintext highlighter-rouge">\Magento\Store\Model\StoreManagerInterface</code>.</p>
 
-<p>When resolving for a store frontend, use <code class="highlighter-rouge">\Magento\Store\Model\StoreManagerInterface::getStore</code>.</p>
+<p>When resolving for a store frontend, use <code class="language-plaintext highlighter-rouge">\Magento\Store\Model\StoreManagerInterface::getStore</code>.</p>
 
-<p>The following example shows the diff in <code class="highlighter-rouge">Magento\Catalog\Model\ResourceModel\Product\StatusBaseSelectProcessor</code> class after replacing the deprecated method.</p>
+<p>The following example shows the diff in <code class="language-plaintext highlighter-rouge">Magento\Catalog\Model\ResourceModel\Product\StatusBaseSelectProcessor</code> class after replacing the deprecated method.</p>
 
-<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>...
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="err">...</span>
      /**
 <span class="gd">-     * @var StoreResolverInterface
 </span><span class="gi">+     * @var StoreManagerInterface
@@ -1925,7 +1926,7 @@ The purpose of this document is to highlight major changes between Magento 2.2 a
 </span><span class="gi">+           . ' AND status_attr.store_id = ' . $this-&gt;storeManager-&gt;getStore()-&gt;getId(),
 </span>            []
         );
-...
+<span class="err">...</span>
 </code></pre></div></div>
 
 <h2 id="application-framework-libraries">Application framework libraries</h2>
@@ -1934,55 +1935,55 @@ The purpose of this document is to highlight major changes between Magento 2.2 a
 
 <p>With the release of Magento 2.3 we are releasing a new version of Zend Framework 1.</p>
 
-<p><strong>Affected libraries</strong>: <code class="highlighter-rouge">Zend Framework 1</code></p>
+<p><strong>Affected libraries</strong>: <code class="language-plaintext highlighter-rouge">Zend Framework 1</code></p>
 
 <p><strong>Affected modules</strong>:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">Zend_Application</code></li>
-  <li><code class="highlighter-rouge">Zend_Barcode</code></li>
-  <li><code class="highlighter-rouge">Zend_Captcha</code></li>
-  <li><code class="highlighter-rouge">Zend_Cloud</code></li>
-  <li><code class="highlighter-rouge">Zend_CodeGenerator</code></li>
-  <li><code class="highlighter-rouge">Zend_Controller</code></li>
-  <li><code class="highlighter-rouge">Zend_Debug</code></li>
-  <li><code class="highlighter-rouge">Zend_Dojo</code></li>
-  <li><code class="highlighter-rouge">Zend_Dom</code></li>
-  <li><code class="highlighter-rouge">Zend_EventManager</code></li>
-  <li><code class="highlighter-rouge">Zend_Feed</code></li>
-  <li><code class="highlighter-rouge">Zend_Form</code></li>
-  <li><code class="highlighter-rouge">Zend_Gdata</code></li>
-  <li><code class="highlighter-rouge">Zend_Layout</code></li>
-  <li><code class="highlighter-rouge">Zend_Markup</code></li>
-  <li><code class="highlighter-rouge">Zend_Mobile</code></li>
-  <li><code class="highlighter-rouge">Zend_Navigation</code></li>
-  <li><code class="highlighter-rouge">Zend_Paginator</code></li>
-  <li><code class="highlighter-rouge">Zend_Queue</code></li>
-  <li><code class="highlighter-rouge">Zend_Reflection</code></li>
-  <li><code class="highlighter-rouge">Zend_Rest</code></li>
-  <li><code class="highlighter-rouge">Zend_Search</code></li>
-  <li><code class="highlighter-rouge">Zend_Stdlib</code></li>
-  <li><code class="highlighter-rouge">Zend_Tag</code></li>
-  <li><code class="highlighter-rouge">Zend_Test</code></li>
-  <li><code class="highlighter-rouge">Zend_Tool</code></li>
-  <li><code class="highlighter-rouge">Zend_XmlRpc</code></li>
-  <li><code class="highlighter-rouge">Zend_Amf</code></li>
-  <li><code class="highlighter-rouge">Zend_Auth</code></li>
-  <li><code class="highlighter-rouge">Zend_Ldap</code></li>
-  <li><code class="highlighter-rouge">Zend_OpenId</code></li>
-  <li><code class="highlighter-rouge">Zend_Serializer</code></li>
-  <li><code class="highlighter-rouge">Zend_Version</code></li>
-  <li><code class="highlighter-rouge">Zend_View</code></li>
-  <li><code class="highlighter-rouge">Zend_Wildfire</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_Application</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_Barcode</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_Captcha</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_Cloud</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_CodeGenerator</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_Controller</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_Debug</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_Dojo</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_Dom</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_EventManager</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_Feed</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_Form</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_Gdata</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_Layout</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_Markup</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_Mobile</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_Navigation</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_Paginator</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_Queue</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_Reflection</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_Rest</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_Search</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_Stdlib</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_Tag</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_Test</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_Tool</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_XmlRpc</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_Amf</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_Auth</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_Ldap</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_OpenId</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_Serializer</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_Version</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_View</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_Wildfire</code></li>
 </ul>
 
 <p><strong>Affected classes</strong>:</p>
 <ul>
-  <li><code class="highlighter-rouge">Zend_Db_Profiler_Firebug</code></li>
-  <li><code class="highlighter-rouge">Zend_Log_Formatter_Firebug</code></li>
-  <li><code class="highlighter-rouge">Zend_Log_Writer_Firebug</code></li>
-  <li><code class="highlighter-rouge">Zend_Log_Writer_Mail</code></li>
-  <li><code class="highlighter-rouge">Zend_Validate_Ldap_Dn</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_Db_Profiler_Firebug</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_Log_Formatter_Firebug</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_Log_Writer_Firebug</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_Log_Writer_Mail</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Zend_Validate_Ldap_Dn</code></li>
 </ul>
 
 <p><strong>Action</strong>: Affected modules and classes were removed.</p>
@@ -1998,57 +1999,57 @@ The purpose of this document is to highlight major changes between Magento 2.2 a
       <li>Look for the needed functionality in existing Symfony components or Zend modules.</li>
     </ul>
   </li>
-  <li>In place of the now removed <code class="highlighter-rouge">Zend_Serializer</code> module you can use <code class="highlighter-rouge">Magento\Framework\Serialize\Serializer\Serialize</code>, which facilitates backward-compatibility.</li>
+  <li>In place of the now removed <code class="language-plaintext highlighter-rouge">Zend_Serializer</code> module you can use <code class="language-plaintext highlighter-rouge">Magento\Framework\Serialize\Serializer\Serialize</code>, which facilitates backward-compatibility.</li>
 </ul>
 
 <h2 id="search-and-related-modules">Search and related modules</h2>
 
-<p><strong>Affected modules</strong>: <code class="highlighter-rouge">Search</code>, <code class="highlighter-rouge">CatalogSearch</code>, <code class="highlighter-rouge">AdvancedSearch</code>, <code class="highlighter-rouge">Elasticsearch</code>.</p>
+<p><strong>Affected modules</strong>: <code class="language-plaintext highlighter-rouge">Search</code>, <code class="language-plaintext highlighter-rouge">CatalogSearch</code>, <code class="language-plaintext highlighter-rouge">AdvancedSearch</code>, <code class="language-plaintext highlighter-rouge">Elasticsearch</code>.</p>
 
-<p><strong>Affected framework libraries</strong>: <code class="highlighter-rouge">Search</code></p>
+<p><strong>Affected framework libraries</strong>: <code class="language-plaintext highlighter-rouge">Search</code></p>
 
-<p><strong>Action</strong>: Affected components were updated to use single interface. The interface is <code class="highlighter-rouge">\Magento\Framework\Search\EngineResolverInterface</code>. Its implementation is <code class="highlighter-rouge">\Magento\Search\Model\EngineResolver</code>.</p>
+<p><strong>Action</strong>: Affected components were updated to use single interface. The interface is <code class="language-plaintext highlighter-rouge">\Magento\Framework\Search\EngineResolverInterface</code>. Its implementation is <code class="language-plaintext highlighter-rouge">\Magento\Search\Model\EngineResolver</code>.</p>
 
 <p><strong>Reason</strong>: To resolve a search engine currently set in System Configuration.</p>
 
 <p><strong>Details</strong>:</p>
 <ul>
-  <li>The interface provides method <code class="highlighter-rouge">getCurrentSearchEngine()</code> that returns a string with the current search engine identifier.</li>
-  <li>The implementation introduces a fallback to a default search engine <code class="highlighter-rouge">mysql</code> if the current search engine (set in the System Configuration) doesn’t exist.</li>
+  <li>The interface provides method <code class="language-plaintext highlighter-rouge">getCurrentSearchEngine()</code> that returns a string with the current search engine identifier.</li>
+  <li>The implementation introduces a fallback to a default search engine <code class="language-plaintext highlighter-rouge">mysql</code> if the current search engine (set in the System Configuration) doesn’t exist.</li>
   <li>Classes affected by this modification have backward incompatible changes in their constructor arguments.</li>
 </ul>
 
 <p>Affected Magento Open Source classes:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">\Magento\CatalogSearch\Model\Indexer\IndexStructureFactory</code></li>
-  <li><code class="highlighter-rouge">\Magento\CatalogSearch\Model\Indexer\IndexSwitcherProxy</code></li>
-  <li><code class="highlighter-rouge">\Magento\CatalogSearch\Model\Indexer\IndexerHandlerFactory</code></li>
-  <li><code class="highlighter-rouge">\Magento\CatalogSearch\Model\ResourceModel\EngineProvider</code></li>
-  <li><code class="highlighter-rouge">\Magento\Search\Controller\Adminhtml\Synonyms\ResultPageBuilder</code></li>
-  <li><code class="highlighter-rouge">\Magento\Search\Model\AdapterFactory</code></li>
-  <li><code class="highlighter-rouge">\Magento\Search\Model\SearchEngine\MenuBuilder</code></li>
-  <li><code class="highlighter-rouge">\Magento\Search\Model\EngineResolver</code> - added interface</li>
-  <li><code class="highlighter-rouge">\Magento\Framework\Search\Dynamic\DataProviderFactory</code></li>
-  <li><code class="highlighter-rouge">\Magento\Framework\Search\Dynamic\IntervalFactory</code></li>
+  <li><code class="language-plaintext highlighter-rouge">\Magento\CatalogSearch\Model\Indexer\IndexStructureFactory</code></li>
+  <li><code class="language-plaintext highlighter-rouge">\Magento\CatalogSearch\Model\Indexer\IndexSwitcherProxy</code></li>
+  <li><code class="language-plaintext highlighter-rouge">\Magento\CatalogSearch\Model\Indexer\IndexerHandlerFactory</code></li>
+  <li><code class="language-plaintext highlighter-rouge">\Magento\CatalogSearch\Model\ResourceModel\EngineProvider</code></li>
+  <li><code class="language-plaintext highlighter-rouge">\Magento\Search\Controller\Adminhtml\Synonyms\ResultPageBuilder</code></li>
+  <li><code class="language-plaintext highlighter-rouge">\Magento\Search\Model\AdapterFactory</code></li>
+  <li><code class="language-plaintext highlighter-rouge">\Magento\Search\Model\SearchEngine\MenuBuilder</code></li>
+  <li><code class="language-plaintext highlighter-rouge">\Magento\Search\Model\EngineResolver</code> - added interface</li>
+  <li><code class="language-plaintext highlighter-rouge">\Magento\Framework\Search\Dynamic\DataProviderFactory</code></li>
+  <li><code class="language-plaintext highlighter-rouge">\Magento\Framework\Search\Dynamic\IntervalFactory</code></li>
 </ul>
 
 <p>Affected Magento Commerce classes:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">\Magento\CatalogSearch\Model\Indexer\IndexStructureFactory</code></li>
-  <li><code class="highlighter-rouge">\Magento\CatalogSearch\Model\Indexer\IndexSwitcherProxy</code></li>
-  <li><code class="highlighter-rouge">\Magento\CatalogSearch\Model\Indexer\IndexerHandlerFactory</code></li>
-  <li><code class="highlighter-rouge">\Magento\CatalogSearch\Model\ResourceModel\EngineProvider</code></li>
-  <li><code class="highlighter-rouge">\Magento\Search\Controller\Adminhtml\Synonyms\ResultPageBuilder</code></li>
-  <li><code class="highlighter-rouge">\Magento\Search\Model\AdapterFactory</code></li>
-  <li><code class="highlighter-rouge">\Magento\Search\Model\SearchEngine\MenuBuilder</code></li>
-  <li><code class="highlighter-rouge">\Magento\Search\Model\EngineResolver</code> - added interface</li>
-  <li><code class="highlighter-rouge">\Magento\Framework\Search\Dynamic\DataProviderFactory</code></li>
-  <li><code class="highlighter-rouge">\Magento\Framework\Search\Dynamic\IntervalFactory</code></li>
-  <li><code class="highlighter-rouge">\Magento\AdvancedSearch\Model\Client\ClientResolver</code></li>
-  <li><code class="highlighter-rouge">\Magento\AdvancedSearch\Model\Indexer\Fulltext\Plugin\CustomerGroup</code></li>
-  <li><code class="highlighter-rouge">\Magento\AdvancedSearch\Model\SuggestedQueries</code></li>
+  <li><code class="language-plaintext highlighter-rouge">\Magento\CatalogSearch\Model\Indexer\IndexStructureFactory</code></li>
+  <li><code class="language-plaintext highlighter-rouge">\Magento\CatalogSearch\Model\Indexer\IndexSwitcherProxy</code></li>
+  <li><code class="language-plaintext highlighter-rouge">\Magento\CatalogSearch\Model\Indexer\IndexerHandlerFactory</code></li>
+  <li><code class="language-plaintext highlighter-rouge">\Magento\CatalogSearch\Model\ResourceModel\EngineProvider</code></li>
+  <li><code class="language-plaintext highlighter-rouge">\Magento\Search\Controller\Adminhtml\Synonyms\ResultPageBuilder</code></li>
+  <li><code class="language-plaintext highlighter-rouge">\Magento\Search\Model\AdapterFactory</code></li>
+  <li><code class="language-plaintext highlighter-rouge">\Magento\Search\Model\SearchEngine\MenuBuilder</code></li>
+  <li><code class="language-plaintext highlighter-rouge">\Magento\Search\Model\EngineResolver</code> - added interface</li>
+  <li><code class="language-plaintext highlighter-rouge">\Magento\Framework\Search\Dynamic\DataProviderFactory</code></li>
+  <li><code class="language-plaintext highlighter-rouge">\Magento\Framework\Search\Dynamic\IntervalFactory</code></li>
+  <li><code class="language-plaintext highlighter-rouge">\Magento\AdvancedSearch\Model\Client\ClientResolver</code></li>
+  <li><code class="language-plaintext highlighter-rouge">\Magento\AdvancedSearch\Model\Indexer\Fulltext\Plugin\CustomerGroup</code></li>
+  <li><code class="language-plaintext highlighter-rouge">\Magento\AdvancedSearch\Model\SuggestedQueries</code></li>
 </ul>
 
 <h2 id="wysiwyg-editor">WYSIWYG Editor</h2>
@@ -2056,9 +2057,9 @@ The purpose of this document is to highlight major changes between Magento 2.2 a
 <h3 id="banner-module">Banner module</h3>
 
 <ul>
-  <li>The Banner module now uses a UI Component form and no longer uses the <code class="highlighter-rouge">banner_edit_tab_properties_after_prepare_form</code> event in <code class="highlighter-rouge">Magento/Banner/Block/Adminhtml/Banner/Edit/Tab/Properties.php</code>.</li>
-  <li>The <code class="highlighter-rouge">Magento/Banner/Block/Adminhtml/Banner/Edit/Tab/Content.php</code> class is no longer used.
-The <code class="highlighter-rouge">adminhtml_banner_edit_tab_content_before_prepare_form</code> that was used in this class is now used in the data provider for the banner form.</li>
+  <li>The Banner module now uses a UI Component form and no longer uses the <code class="language-plaintext highlighter-rouge">banner_edit_tab_properties_after_prepare_form</code> event in <code class="language-plaintext highlighter-rouge">Magento/Banner/Block/Adminhtml/Banner/Edit/Tab/Properties.php</code>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">Magento/Banner/Block/Adminhtml/Banner/Edit/Tab/Content.php</code> class is no longer used.
+The <code class="language-plaintext highlighter-rouge">adminhtml_banner_edit_tab_content_before_prepare_form</code> that was used in this class is now used in the data provider for the banner form.</li>
 </ul>
 
 <h3 id="magento-banner">Magento Banner</h3>

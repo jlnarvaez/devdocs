@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento Commerce 2.1 Release Candidate 2 (RC2) Release Notes | Magento 2 Developer Documentation (copy)</title>
+	<title>Magento Commerce 2.1 Release Candidate 2 (RC2) Release Notes | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/release-notes/ReleaseNotes2.1_RC2EE.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/release-notes/ReleaseNotes2.1_RC2EE.html">Magento 2.0</a></li>
 		
@@ -1623,7 +1624,7 @@
   </li>
 </ul>
 
-<p>This Release Candidate is available from <code class="highlighter-rouge">repo.magento.com</code> if you have a Magento Commerce license or GitHub  if you have previously signed an agreement to access Magento Commerce 2.0 beta software on GitHub.</p>
+<p>This Release Candidate is available from <code class="language-plaintext highlighter-rouge">repo.magento.com</code> if you have a Magento Commerce license or GitHub  if you have previously signed an agreement to access Magento Commerce 2.0 beta software on GitHub.</p>
 
 <p>Backward-incompatible changes are documented in <a href="/guides/v2.1/release-notes/backward-incompatible-changes/index.html" target="_blank">Magento 2.1 Backward Incompatible Changes</a>.</p>
 
@@ -1857,7 +1858,7 @@
 
 <!--- 53397 -->
 <ul>
-  <li>The <code class="highlighter-rouge">collectRates()</code> method now obtains the full address details for a registered customer.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">collectRates()</code> method now obtains the full address details for a registered customer.</li>
 </ul>
 
 <!--- 53463 -->
@@ -1889,24 +1890,24 @@
 
 <!--- 53362 -->
 <ul>
-  <li>Gift Message information is now present as expected in the <code class="highlighter-rouge">extension_attributes</code> when you request this list by Web API.  Previously, if you placed an order with a Gift Message, and then performed a Web API request to get the list of orders, Gift Message information would be absent in the <code class="highlighter-rouge">extension_attributes</code>. <a href="https://github.com/magento/magento2/issues/4039" target="_blank"> (GITHUB-4309)</a></li>
+  <li>Gift Message information is now present as expected in the <code class="language-plaintext highlighter-rouge">extension_attributes</code> when you request this list by Web API.  Previously, if you placed an order with a Gift Message, and then performed a Web API request to get the list of orders, Gift Message information would be absent in the <code class="language-plaintext highlighter-rouge">extension_attributes</code>. <a href="https://github.com/magento/magento2/issues/4039" target="_blank"> (GITHUB-4309)</a></li>
 </ul>
 
 <!--- 52782 -->
 <ul>
-  <li>The <code class="highlighter-rouge">getPassword()</code> and <code class="highlighter-rouge">getPasswordConfirm()</code> methods now return the <code class="highlighter-rouge">password</code> and <code class="highlighter-rouge">passwordconfirm</code> parameters as strings. <a href="https://github.com/magento/magento2/issues/4355" target="_blank"> (GITHUB-4355)</a></li>
+  <li>The <code class="language-plaintext highlighter-rouge">getPassword()</code> and <code class="language-plaintext highlighter-rouge">getPasswordConfirm()</code> methods now return the <code class="language-plaintext highlighter-rouge">password</code> and <code class="language-plaintext highlighter-rouge">passwordconfirm</code> parameters as strings. <a href="https://github.com/magento/magento2/issues/4355" target="_blank"> (GITHUB-4355)</a></li>
 </ul>
 
 <h4 id="messages-and-documentation">Messages and documentation</h4>
 
 <!--- 52340 -->
 <ul>
-  <li>The <code class="highlighter-rouge">getList</code> method documentation has been enhanced.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">getList</code> method documentation has been enhanced.</li>
 </ul>
 
 <!--- 52000 -->
 <ul>
-  <li>Error messages associated with <code class="highlighter-rouge">cron</code> processes are now more helpful. <a href="https://github.com/magento/magento2/issues/3189" target="_blank"> (GITHUB-3189)</a></li>
+  <li>Error messages associated with <code class="language-plaintext highlighter-rouge">cron</code> processes are now more helpful. <a href="https://github.com/magento/magento2/issues/3189" target="_blank"> (GITHUB-3189)</a></li>
 </ul>
 
 <!--- 50898 -->
@@ -1993,9 +1994,9 @@
 
 <h3 id="install-rc-composer">Install using Composer</h3>
 
-<p>This Release Candidate is available from <code class="highlighter-rouge">repo.magento.com</code>. Before installing this Release Candidate using Composer,  familiarize yourself with these  <a href="/devdocs/guides/v2.0/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run:</p>
+<p>This Release Candidate is available from <code class="language-plaintext highlighter-rouge">repo.magento.com</code>. Before installing this Release Candidate using Composer,  familiarize yourself with these  <a href="/devdocs/guides/v2.0/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>	composer create-project --repository=https://repo.magento.com/ magento/project-enterprise-edition=2.1.0-rc2 &lt;installation directory name&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>	composer create-project --repository=https://repo.magento.com/ magento/project-enterprise-edition=2.1.0-rc2 &lt;installation directory name&gt;
 </code></pre></div></div>
 
 <h2 id="upgrade-rc-nosamp">Upgrade existing installations</h2>
@@ -2032,24 +2033,24 @@
   <li>
     <p>Change to the directory in which you installed the Magento software.</p>
 
-    <p>For example, <code class="highlighter-rouge">cd /var/www/html/magento2</code></p>
+    <p>For example, <code class="language-plaintext highlighter-rouge">cd /var/www/html/magento2</code></p>
   </li>
   <li>
     <p>Enter the following commands in the order shown:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer require &lt;product&gt; 2.1.0-rc2 --no-update
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer require &lt;product&gt; 2.1.0-rc2 --no-update
 composer update
 </code></pre></div>    </div>
 
     <p>To upgrade to Magento Open Source 2.1 RC2, enter:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer require magento/product-community-edition 2.1.0-rc2 --no-update
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer require magento/product-community-edition 2.1.0-rc2 --no-update
 composer update
 </code></pre></div>    </div>
 
     <p>To upgrade to Magento Commerce 2.1 RC2, enter:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer require magento/product-enterprise-edition 2.1.0-rc2 --no-update
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer require magento/product-enterprise-edition 2.1.0-rc2 --no-update
 composer update
 </code></pre></div>    </div>
   </li>
@@ -2057,7 +2058,7 @@ composer update
   <li>
     <p>Update the database schema and data:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> php bin/magento setup:upgrade
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> php bin/magento setup:upgrade
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -2080,8 +2081,8 @@ composer update
 <ol>
   <li>Log in to your Magento server as, or switch to, the <a href="/devdocs/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
   <li>Change to the Magento installation directory.</li>
-  <li>Back up your current <code class="highlighter-rouge">composer.json</code> file:
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cp composer.json composer.json.bak
+  <li>Back up your current <code class="language-plaintext highlighter-rouge">composer.json</code> file:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">cp </span>composer.json composer.json.bak
 </code></pre></div>    </div>
   </li>
   <li>Upgrade the Magento software version using commands of the following format:
@@ -2109,7 +2110,7 @@ composer update
 </ol>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>To upgrade to a Release Candidate, append <code class="highlighter-rouge">-rc&lt;x&gt;</code> to the version of each module. For example, <code class="highlighter-rouge">-rc3</code>.</p>
+  <p>To upgrade to a Release Candidate, append <code class="language-plaintext highlighter-rouge">-rc&lt;x&gt;</code> to the version of each module. For example, <code class="language-plaintext highlighter-rouge">-rc3</code>.</p>
 </div>
 
 <ol>
@@ -2128,9 +2129,9 @@ composer update
 <ol>
   <li>If you haven’t done so already, log in to your Magento server as, or switch to, the Magento file system owner.</li>
   <li>Change to your Magento installation directory.</li>
-  <li>Manually clear the <code class="highlighter-rouge">var/cache</code>, <code class="highlighter-rouge">var/page_cache</code>, and <code class="highlighter-rouge">var/generation</code> directories.
+  <li>Manually clear the <code class="language-plaintext highlighter-rouge">var/cache</code>, <code class="language-plaintext highlighter-rouge">var/page_cache</code>, and <code class="language-plaintext highlighter-rouge">var/generation</code> directories.
 A sample command follows:
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>rm <span class="nt">-rf</span> var/cache/<span class="k">*</span> var/page_cache/<span class="k">*</span> var/generation/<span class="k">*</span>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">rm</span> <span class="nt">-rf</span> var/cache/<span class="k">*</span> var/page_cache/<span class="k">*</span> var/generation/<span class="k">*</span>
 </code></pre></div>    </div>
   </li>
   <li>Upgrade Magento:
@@ -2150,42 +2151,42 @@ Failure to do so will cause your upgrade to fail.</p>
 
 <p>If you run the Magento application as one user (which is typical of shared hosting environments), change file system permissions and ownership as follows:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">cd</span> &lt;your Magento install dir&gt;
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">cd</span> &lt;your Magento <span class="nb">install dir</span><span class="o">&gt;</span>
 </code></pre></div></div>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>find var vendor pub/static pub/media app/etc <span class="nt">-type</span> f <span class="nt">-exec</span> chmod g+w <span class="o">{}</span> +
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>find var vendor pub/static pub/media app/etc <span class="nt">-type</span> f <span class="nt">-exec</span> <span class="nb">chmod </span>g+w <span class="o">{}</span> +
 </code></pre></div></div>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>find var vendor pub/static pub/media app/etc <span class="nt">-type</span> d <span class="nt">-exec</span> chmod g+w <span class="o">{}</span> +
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>find var vendor pub/static pub/media app/etc <span class="nt">-type</span> d <span class="nt">-exec</span> <span class="nb">chmod </span>g+w <span class="o">{}</span> +
 </code></pre></div></div>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>chmod u+x bin/magento
-</code></pre></div></div>
-
-<p>To optionally enter all commands on one line, enter the following assuming Magento is installed in <code class="highlighter-rouge">/var/www/html/magento2</code>:</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">cd</span> /var/www/html/magento2 <span class="o">&amp;&amp;</span> find var vendor pub/static pub/media app/etc <span class="nt">-type</span> f <span class="nt">-exec</span> chmod g+w <span class="o">{}</span> + <span class="o">&amp;&amp;</span> find var vendor pub/static pub/media app/etc <span class="nt">-type</span> d <span class="nt">-exec</span> chmod g+w <span class="o">{}</span> + <span class="o">&amp;&amp;</span> chmod u+x bin/magento
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">chmod </span>u+x bin/magento
 </code></pre></div></div>
 
-<p>After you set file system permissions, manually clear the <code class="highlighter-rouge">var/cache</code>, <code class="highlighter-rouge">var/page_cache</code>, and <code class="highlighter-rouge">var/generation</code> directories.</p>
+<p>To optionally enter all commands on one line, enter the following assuming Magento is installed in <code class="language-plaintext highlighter-rouge">/var/www/html/magento2</code>:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">cd</span> /var/www/html/magento2 <span class="o">&amp;&amp;</span> find var vendor pub/static pub/media app/etc <span class="nt">-type</span> f <span class="nt">-exec</span> <span class="nb">chmod </span>g+w <span class="o">{}</span> + <span class="o">&amp;&amp;</span> find var vendor pub/static pub/media app/etc <span class="nt">-type</span> d <span class="nt">-exec</span> <span class="nb">chmod </span>g+w <span class="o">{}</span> + <span class="o">&amp;&amp;</span> <span class="nb">chmod </span>u+x bin/magento
+</code></pre></div></div>
+
+<p>After you set file system permissions, manually clear the <code class="language-plaintext highlighter-rouge">var/cache</code>, <code class="language-plaintext highlighter-rouge">var/page_cache</code>, and <code class="language-plaintext highlighter-rouge">var/generation</code> directories.</p>
 
 <p>A sample command follows:</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>rm <span class="nt">-rf</span> var/cache/<span class="k">*</span> var/page_cache/<span class="k">*</span> var/generation/<span class="k">*</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">rm</span> <span class="nt">-rf</span> var/cache/<span class="k">*</span> var/page_cache/<span class="k">*</span> var/generation/<span class="k">*</span>
 </code></pre></div></div>
 
 <h4 id="two-user-ownership-and-permissions">Two-user ownership and permissions</h4>
 
-<p>If you run the Magento application with two users, enter the following commands as a user with <code class="highlighter-rouge">root</code> privileges:</p>
+<p>If you run the Magento application with two users, enter the following commands as a user with <code class="language-plaintext highlighter-rouge">root</code> privileges:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">cd</span> &lt;your Magento install dir&gt;
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">cd</span> &lt;your Magento <span class="nb">install dir</span><span class="o">&gt;</span>
 </code></pre></div></div>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>find var vendor pub/static pub/media app/etc <span class="nt">-type</span> f <span class="nt">-exec</span> chmod g+w <span class="o">{}</span> +
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>find var vendor pub/static pub/media app/etc <span class="nt">-type</span> f <span class="nt">-exec</span> <span class="nb">chmod </span>g+w <span class="o">{}</span> +
 </code></pre></div></div>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>find var vendor pub/static pub/media app/etc <span class="nt">-type</span> d <span class="nt">-exec</span> chmod g+ws <span class="o">{}</span> +
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>find var vendor pub/static pub/media app/etc <span class="nt">-type</span> d <span class="nt">-exec</span> <span class="nb">chmod </span>g+ws <span class="o">{}</span> +
 </code></pre></div></div>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>chown <span class="nt">-R</span> :&lt;web server group&gt; <span class="nb">.</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">chown</span> <span class="nt">-R</span> :&lt;web server group&gt; <span class="nb">.</span>
 </code></pre></div></div>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>chmod u+x bin/magento
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">chmod </span>u+x bin/magento
 </code></pre></div></div>
 
-<p>To optionally enter all commands on one line, enter the following assuming Magento is installed in <code class="highlighter-rouge">/var/www/html/magento2</code> and the web server group name is <code class="highlighter-rouge">apache</code>:</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">cd</span> /var/www/html/magento2 <span class="o">&amp;&amp;</span> find var vendor pub/static pub/media app/etc <span class="nt">-type</span> f <span class="nt">-exec</span> chmod g+w <span class="o">{}</span> + <span class="o">&amp;&amp;</span> find var vendor pub/static pub/media app/etc <span class="nt">-type</span> d <span class="nt">-exec</span> chmod g+ws <span class="o">{}</span> + <span class="o">&amp;&amp;</span> chown <span class="nt">-R</span> :apache <span class="nb">.</span> <span class="o">&amp;&amp;</span> chmod u+x bin/magento
+<p>To optionally enter all commands on one line, enter the following assuming Magento is installed in <code class="language-plaintext highlighter-rouge">/var/www/html/magento2</code> and the web server group name is <code class="language-plaintext highlighter-rouge">apache</code>:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">cd</span> /var/www/html/magento2 <span class="o">&amp;&amp;</span> find var vendor pub/static pub/media app/etc <span class="nt">-type</span> f <span class="nt">-exec</span> <span class="nb">chmod </span>g+w <span class="o">{}</span> + <span class="o">&amp;&amp;</span> find var vendor pub/static pub/media app/etc <span class="nt">-type</span> d <span class="nt">-exec</span> <span class="nb">chmod </span>g+ws <span class="o">{}</span> + <span class="o">&amp;&amp;</span> <span class="nb">chown</span> <span class="nt">-R</span> :apache <span class="nb">.</span> <span class="o">&amp;&amp;</span> <span class="nb">chmod </span>u+x bin/magento
 </code></pre></div></div>
 
 <!-- Link definitions -->

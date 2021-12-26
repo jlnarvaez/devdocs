@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Pro architecture (legacy) | Magento 2 Developer Documentation (copy)</title>
+	<title>Pro architecture (legacy) | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/architecture/pro-architecture-legacy.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/architecture/pro-architecture-legacy.html">Magento 2.0</a></li>
 		
@@ -3546,9 +3547,9 @@
 			<p>Each <em>Pro</em> plan project supports a total of eight environments that you can use to develop, test, and launch your store. To modify files on these remote environments, you must push changes from your local workspace using Git branches.</p>
 
 <ul>
-  <li><strong>Integration</strong>—Provides up to six environments, including the <code class="highlighter-rouge">master</code> branch, deployed to Platform-as-a-Service (PaaS) containers. You deploy code from the Integration <code class="highlighter-rouge">master</code> branch to the Staging and Production <code class="highlighter-rouge">master</code> branches.</li>
-  <li><strong>Staging</strong>—Provides a single environment and <code class="highlighter-rouge">master</code> branch deployed to dedicated Infrastructure-as-a-Service (IaaS) containers.</li>
-  <li><strong>Production</strong>—Provides a single environment and <code class="highlighter-rouge">master</code> branch deployed to dedicated Infrastructure-as-a-Service (IaaS) containers.</li>
+  <li><strong>Integration</strong>—Provides up to six environments, including the <code class="language-plaintext highlighter-rouge">master</code> branch, deployed to Platform-as-a-Service (PaaS) containers. You deploy code from the Integration <code class="language-plaintext highlighter-rouge">master</code> branch to the Staging and Production <code class="language-plaintext highlighter-rouge">master</code> branches.</li>
+  <li><strong>Staging</strong>—Provides a single environment and <code class="language-plaintext highlighter-rouge">master</code> branch deployed to dedicated Infrastructure-as-a-Service (IaaS) containers.</li>
+  <li><strong>Production</strong>—Provides a single environment and <code class="language-plaintext highlighter-rouge">master</code> branch deployed to dedicated Infrastructure-as-a-Service (IaaS) containers.</li>
 </ul>
 
 <p class="bs-callout bs-callout-info">To manage Staging and Production environment settings through the Project Web Interface for Pro projects <strong>created before October 23, 2017</strong>, you must <a href="/devdocs/guides/v2.0/cloud/trouble/pro-env-management.html">request an update</a>. If you do not request the update, you must use CLI commands or tickets to modify settings, variables, and routes.</p>
@@ -3615,14 +3616,14 @@
 
 <h4 id="branches">Branches</h4>
 
-<p>You can have an unlimited number of <em>inactive</em> Git branches to store code, but to access, view, and test inactive branches you must activate them. Use the <code class="highlighter-rouge">magento-cloud environment:activate</code> command to activate the environment.</p>
+<p>You can have an unlimited number of <em>inactive</em> Git branches to store code, but to access, view, and test inactive branches you must activate them. Use the <code class="language-plaintext highlighter-rouge">magento-cloud environment:activate</code> command to activate the environment.</p>
 
-<p>When you update your project to manage the <a href="/devdocs/guides/v2.0/cloud/trouble/pro-env-management.html">Staging and Production environments through the Project Web Interface</a>, all active and inactive branches continue as children of the <code class="highlighter-rouge">master</code> branch.</p>
+<p>When you update your project to manage the <a href="/devdocs/guides/v2.0/cloud/trouble/pro-env-management.html">Staging and Production environments through the Project Web Interface</a>, all active and inactive branches continue as children of the <code class="language-plaintext highlighter-rouge">master</code> branch.</p>
 
 <p>Developing in the Integration environment requires the following Git process:</p>
 
 <ol>
-  <li>Clone the <code class="highlighter-rouge">master</code> branch from the project environment to your local workspace</li>
+  <li>Clone the <code class="language-plaintext highlighter-rouge">master</code> branch from the project environment to your local workspace</li>
   <li>Create a new branch and develop on your local workspace</li>
   <li>Push code changes, which automatically build and deploy to the Integration environment for testing</li>
 </ol>
@@ -3635,9 +3636,9 @@
 
 <h4 id="branches-1">Branches</h4>
 
-<p>The Staging environment contains a default <code class="highlighter-rouge">master</code> branch. You cannot branch from the Staging environment <code class="highlighter-rouge">master</code> branch. You must push code changes from the Integration environment <code class="highlighter-rouge">master</code> branch to Staging environment <code class="highlighter-rouge">master</code> branch.</p>
+<p>The Staging environment contains a default <code class="language-plaintext highlighter-rouge">master</code> branch. You cannot branch from the Staging environment <code class="language-plaintext highlighter-rouge">master</code> branch. You must push code changes from the Integration environment <code class="language-plaintext highlighter-rouge">master</code> branch to Staging environment <code class="language-plaintext highlighter-rouge">master</code> branch.</p>
 
-<p>When you update your project to manage the <a href="/devdocs/guides/v2.0/cloud/trouble/pro-env-management.html">Production and Staging environments through the Project Web Interface</a>, we create a branch from the Integration environment <code class="highlighter-rouge">master</code> branch called <code class="highlighter-rouge">staging</code> that contains all user access settings and environment variables for your Staging environment.</p>
+<p>When you update your project to manage the <a href="/devdocs/guides/v2.0/cloud/trouble/pro-env-management.html">Production and Staging environments through the Project Web Interface</a>, we create a branch from the Integration environment <code class="language-plaintext highlighter-rouge">master</code> branch called <code class="language-plaintext highlighter-rouge">staging</code> that contains all user access settings and environment variables for your Staging environment.</p>
 
 <p class="bs-callout bs-callout-info">We highly recommend testing every merchant and customer interaction in the Staging environment prior to deploying to the Production environment. See <a href="/devdocs/guides/v2.0/cloud/live/stage-prod-live.html">Deploy your store</a> and <a href="/devdocs/guides/v2.0/cloud/live/stage-prod-test.html">Test deployment</a>.</p>
 
@@ -3647,9 +3648,9 @@
 
 <h4 id="branches-2">Branches</h4>
 
-<p>The Production environment contains a default <code class="highlighter-rouge">master</code> branch. You cannot branch from the Production environment <code class="highlighter-rouge">master</code> branch. You must push code changes from the Staging environment <code class="highlighter-rouge">master</code> branch to Production environment <code class="highlighter-rouge">master</code> branch.</p>
+<p>The Production environment contains a default <code class="language-plaintext highlighter-rouge">master</code> branch. You cannot branch from the Production environment <code class="language-plaintext highlighter-rouge">master</code> branch. You must push code changes from the Staging environment <code class="language-plaintext highlighter-rouge">master</code> branch to Production environment <code class="language-plaintext highlighter-rouge">master</code> branch.</p>
 
-<p>When you update your project to manage the <a href="/devdocs/guides/v2.0/cloud/trouble/pro-env-management.html">Production and Staging environments through the Project Web Interface</a>, we create a branch from the Integration environment <code class="highlighter-rouge">master</code> branch called <code class="highlighter-rouge">production</code> that contains all user access settings and environment variables for your Production environment.</p>
+<p>When you update your project to manage the <a href="/devdocs/guides/v2.0/cloud/trouble/pro-env-management.html">Production and Staging environments through the Project Web Interface</a>, we create a branch from the Integration environment <code class="language-plaintext highlighter-rouge">master</code> branch called <code class="language-plaintext highlighter-rouge">production</code> that contains all user access settings and environment variables for your Production environment.</p>
 
 <p class="bs-callout bs-callout-info">We highly recommend testing every merchant and customer interaction in the Staging environment prior to deploying to the Production environment. See <a href="/devdocs/guides/v2.0/cloud/live/stage-prod-live.html">Deploy your store</a> and <a href="/devdocs/guides/v2.0/cloud/live/live.html">Go Live and launch</a>.</p>
 
@@ -3689,10 +3690,10 @@
   <li>NGINX web server using PHP-FPM, one instance with multiple workers</li>
   <li>GlusterFS file server for managing all static file deployments and synchronization with four directory mounts:
     <ul>
-      <li><code class="highlighter-rouge">var</code></li>
-      <li><code class="highlighter-rouge">pub/media</code></li>
-      <li><code class="highlighter-rouge">pub/static</code></li>
-      <li><code class="highlighter-rouge">app/etc</code></li>
+      <li><code class="language-plaintext highlighter-rouge">var</code></li>
+      <li><code class="language-plaintext highlighter-rouge">pub/media</code></li>
+      <li><code class="language-plaintext highlighter-rouge">pub/static</code></li>
+      <li><code class="language-plaintext highlighter-rouge">app/etc</code></li>
     </ul>
   </li>
   <li>Redis server, one per VM with only one active and the other two as replicas</li>
@@ -3758,9 +3759,9 @@
 <p>Edit the following YAML files to configure specific software versions to use in your implementation.</p>
 
 <ul>
-  <li><a href="/devdocs/guides/v2.0/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a>—application build and deployment</li>
-  <li><a href="/devdocs/guides/v2.0/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">routes.yaml</code></a>—url processing</li>
-  <li><a href="/devdocs/guides/v2.0/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a>—supported services</li>
+  <li><a href="/devdocs/guides/v2.0/cloud/project/project-conf-files_magento-app.html"><code class="language-plaintext highlighter-rouge">.magento.app.yaml</code></a>—application build and deployment</li>
+  <li><a href="/devdocs/guides/v2.0/cloud/project/project-conf-files_routes.html"><code class="language-plaintext highlighter-rouge">routes.yaml</code></a>—url processing</li>
+  <li><a href="/devdocs/guides/v2.0/cloud/project/project-conf-files_services.html"><code class="language-plaintext highlighter-rouge">services.yaml</code></a>—supported services</li>
 </ul>
 
 <h2 id="develop">Prepare for development</h2>
@@ -3769,7 +3770,7 @@
 
 <ol>
   <li>Set up your local environment</li>
-  <li>Clone the <code class="highlighter-rouge">master</code> branch from the Project to your local workspace</li>
+  <li>Clone the <code class="language-plaintext highlighter-rouge">master</code> branch from the Project to your local workspace</li>
   <li>Branch and develop in a new Git branch on your local workspace</li>
   <li>Push code to Git to build and deploy to an environment for testing</li>
 </ol>

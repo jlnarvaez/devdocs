@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Step 9. Create a shipment | Magento 2 Developer Documentation (copy)</title>
+	<title>Step 9. Create a shipment | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/rest/tutorials/orders/order-create-shipment.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/rest/tutorials/orders/order-create-shipment.html">Magento 2.0</a></li>
 		
@@ -1615,51 +1616,51 @@
 	<h1 class="page-heading">Step 9. Create a shipment</h1>
 </section>
 
-			<p>To create a shipment, you need the <code class="highlighter-rouge">order_item_id</code> of each item to be shipped. Since the Sprite Yoga Companion Kit is a bundle item, you only need to include the top-level <code class="highlighter-rouge">order_item_id</code> (<code class="highlighter-rouge">5</code>). The <code class="highlighter-rouge">order_item_id</code> for the Radiant Tee-M-Orange is <code class="highlighter-rouge">3</code>.</p>
+			<p>To create a shipment, you need the <code class="language-plaintext highlighter-rouge">order_item_id</code> of each item to be shipped. Since the Sprite Yoga Companion Kit is a bundle item, you only need to include the top-level <code class="language-plaintext highlighter-rouge">order_item_id</code> (<code class="language-plaintext highlighter-rouge">5</code>). The <code class="language-plaintext highlighter-rouge">order_item_id</code> for the Radiant Tee-M-Orange is <code class="language-plaintext highlighter-rouge">3</code>.</p>
 
-<p>To create a partial shipment, specify only those <code class="highlighter-rouge">order_item_id</code>s that are to be shipped now.</p>
+<p>To create a partial shipment, specify only those <code class="language-plaintext highlighter-rouge">order_item_id</code>s that are to be shipped now.</p>
 
 <p>If the call is successful on a full shipment, Magento changes the status of an order to Complete.</p>
 
 <p><strong>Endpoint</strong></p>
 
-<p><code class="highlighter-rouge">POST http://&lt;host&gt;/rest/default/V1/order/3/ship</code></p>
+<p><code class="language-plaintext highlighter-rouge">POST http://&lt;host&gt;/rest/default/V1/order/3/ship</code></p>
 
-<p>where <code class="highlighter-rouge">3</code> is the order id.</p>
+<p>where <code class="language-plaintext highlighter-rouge">3</code> is the order id.</p>
 
 <p><strong>Headers</strong></p>
 
-<p><code class="highlighter-rouge">Content-Type</code> <code class="highlighter-rouge">application/json</code></p>
+<p><code class="language-plaintext highlighter-rouge">Content-Type</code> <code class="language-plaintext highlighter-rouge">application/json</code></p>
 
-<p><code class="highlighter-rouge">Authorization</code> <code class="highlighter-rouge">Bearer &lt;administrator token&gt;</code></p>
+<p><code class="language-plaintext highlighter-rouge">Authorization</code> <code class="language-plaintext highlighter-rouge">Bearer &lt;administrator token&gt;</code></p>
 
 <p><strong>Payload</strong></p>
 
-<p>The <code class="highlighter-rouge">tracks</code> array optionally allows you to include one or more tracking numbers for the   <span term-uuid="c8f00e9d-7f70-4561-9773-60da604ba5c9" class="glossary-term" data-toggle="popover">shipment</span>
+<p>The <code class="language-plaintext highlighter-rouge">tracks</code> array optionally allows you to include one or more tracking numbers for the   <span term-uuid="c8f00e9d-7f70-4561-9773-60da604ba5c9" class="glossary-term" data-toggle="popover">shipment</span>
 .</p>
 
 <div class="collapsible">
     <b class="collapsible-title">Show code sample </b>
     <div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="nl">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="nl">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="nl">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"tracks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"tracks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"track_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1Y-9876543210"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United Parcel Service"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"carrier_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ups"</span><span class="w">
+      </span><span class="nl">"track_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1Y-9876543210"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United Parcel Service"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"carrier_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ups"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
@@ -1668,7 +1669,7 @@
 
 <p><strong>Response</strong></p>
 
-<p>A shipment ID, such as <code class="highlighter-rouge">3</code>.</p>
+<p>A shipment ID, such as <code class="language-plaintext highlighter-rouge">3</code>.</p>
 
 <h2 id="verify-this-step">Verify this step</h2>
 

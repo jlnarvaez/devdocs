@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Deploy code and migrate static files and data | Magento 2 Developer Documentation (copy)</title>
+	<title>Deploy code and migrate static files and data | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/live/stage-prod-migrate.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/live/stage-prod-migrate.html">Magento 2.0</a></li>
 		
@@ -4237,7 +4238,7 @@
   <li><a href="#cloud-live-migrate-db">Migrate the database</a></li>
 </ul>
 
-<p>If you encounter errors or need to make changes, complete those updates on your local. Push the code changes to the Integration environment. Deploy the updated <code class="highlighter-rouge">master</code> branch again. See instructions in the <a href="/devdocs/guides/v2.1/cloud/live/stage-prod-migrate.html">previous step</a>.</p>
+<p>If you encounter errors or need to make changes, complete those updates on your local. Push the code changes to the Integration environment. Deploy the updated <code class="language-plaintext highlighter-rouge">master</code> branch again. See instructions in the <a href="/devdocs/guides/v2.1/cloud/live/stage-prod-migrate.html">previous step</a>.</p>
 
 <h2 id="code">Deploy code to Staging and Production</h2>
 
@@ -4247,7 +4248,7 @@
 
 <p>The Project Web Interface provides full features to create, manage, and deploy code branches in your Integration, Staging, and Production environments for Starter and Pro plans.</p>
 
-<p>For Pro projects created <strong>after October 23, 2017</strong> or <a href="/devdocs/guides/v2.1/cloud/trouble/pro-env-management.html">updated</a>, deploy the Integration <code class="highlighter-rouge">master</code> branch you created to Staging and Production:</p>
+<p>For Pro projects created <strong>after October 23, 2017</strong> or <a href="/devdocs/guides/v2.1/cloud/trouble/pro-env-management.html">updated</a>, deploy the Integration <code class="language-plaintext highlighter-rouge">master</code> branch you created to Staging and Production:</p>
 
 <ol>
   <li><a href="https://accounts.magento.cloud">Log in</a> to your project.</li>
@@ -4273,7 +4274,7 @@
 
 <h3 id="ssh">Deploy code with SSH and CLI</h3>
 
-<p>If you prefer to use CLI for deploying, you will need to configure additional SSH settings and Git remotes to use commands. You can SSH into the Staging and Production environments to push the <code class="highlighter-rouge">master</code> branch.</p>
+<p>If you prefer to use CLI for deploying, you will need to configure additional SSH settings and Git remotes to use commands. You can SSH into the Staging and Production environments to push the <code class="language-plaintext highlighter-rouge">master</code> branch.</p>
 
 <p>You’ll need the SSH and Git access information for your project.</p>
 
@@ -4288,16 +4289,16 @@
         <p>Git URL format:</p>
 
         <ul>
-          <li>Staging: <code class="highlighter-rouge">git@git.ent.magento.cloud:&lt;project ID&gt;_stg.git</code></li>
-          <li>Production: <code class="highlighter-rouge">git@git.ent.magento.cloud:&lt;project ID&gt;.git</code></li>
+          <li>Staging: <code class="language-plaintext highlighter-rouge">git@git.ent.magento.cloud:&lt;project ID&gt;_stg.git</code></li>
+          <li>Production: <code class="language-plaintext highlighter-rouge">git@git.ent.magento.cloud:&lt;project ID&gt;.git</code></li>
         </ul>
       </li>
       <li>
         <p>SSH URL format:</p>
 
         <ul>
-          <li>Staging: <code class="highlighter-rouge">&lt;project ID&gt;_stg@&lt;project ID&gt;.ent.magento.cloud</code></li>
-          <li>Production: <code class="highlighter-rouge">&lt;project ID&gt;@&lt;project ID&gt;.ent.magento.cloud</code></li>
+          <li>Staging: <code class="language-plaintext highlighter-rouge">&lt;project ID&gt;_stg@&lt;project ID&gt;.ent.magento.cloud</code></li>
+          <li>Production: <code class="language-plaintext highlighter-rouge">&lt;project ID&gt;@&lt;project ID&gt;.ent.magento.cloud</code></li>
         </ul>
       </li>
     </ul>
@@ -4314,65 +4315,65 @@
     <p>Checkout your Staging or Production branch:</p>
 
     <ul>
-      <li>Staging: <code class="highlighter-rouge">git checkout staging</code></li>
-      <li>Production: <code class="highlighter-rouge">git checkout production</code></li>
+      <li>Staging: <code class="language-plaintext highlighter-rouge">git checkout staging</code></li>
+      <li>Production: <code class="language-plaintext highlighter-rouge">git checkout production</code></li>
     </ul>
   </li>
   <li>
-    <p>Pull the <code class="highlighter-rouge">master</code> branch from Integration. Remember, a pull performs a fetch and a merge in one step.</p>
+    <p>Pull the <code class="language-plaintext highlighter-rouge">master</code> branch from Integration. Remember, a pull performs a fetch and a merge in one step.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>   git pull origin master
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>   git pull origin master
 </code></pre></div>    </div>
 
-    <p>You merge this code as <code class="highlighter-rouge">staging</code> and <code class="highlighter-rouge">production</code> are branches of <code class="highlighter-rouge">master</code>.</p>
+    <p>You merge this code as <code class="language-plaintext highlighter-rouge">staging</code> and <code class="language-plaintext highlighter-rouge">production</code> are branches of <code class="language-plaintext highlighter-rouge">master</code>.</p>
   </li>
   <li>
     <p>To fully update all code, then perform a push:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>   git push origin
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>   git push origin
 </code></pre></div>    </div>
   </li>
 </ol>
 
 <h4 id="classic">Deploy to Pro: created before October 23, 2017</h4>
 
-<p>For these environments, you are pushing code from repository to repository: Integration <code class="highlighter-rouge">master</code> to Staging or Production <code class="highlighter-rouge">master</code>. Due to these being <code class="highlighter-rouge">master</code> branches in different repositories, you cannot merge as if branch to branch. You should have completed all <a href="/devdocs/guides/v2.1/cloud/live/stage-prod-migrate-prereq.html">prerequisites</a> prior to deployment.</p>
+<p>For these environments, you are pushing code from repository to repository: Integration <code class="language-plaintext highlighter-rouge">master</code> to Staging or Production <code class="language-plaintext highlighter-rouge">master</code>. Due to these being <code class="language-plaintext highlighter-rouge">master</code> branches in different repositories, you cannot merge as if branch to branch. You should have completed all <a href="/devdocs/guides/v2.1/cloud/live/stage-prod-migrate-prereq.html">prerequisites</a> prior to deployment.</p>
 
 <ol>
   <li>Open an SSH connection to your Staging or Production environment using the SSH command.</li>
   <li>
-    <p>Pull the <code class="highlighter-rouge">master</code> branch to the server.</p>
+    <p>Pull the <code class="language-plaintext highlighter-rouge">master</code> branch to the server.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>   git pull origin master
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>   git pull origin master
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Merge changes to Staging or Production:</p>
 
     <ul>
-      <li>Staging: <code class="highlighter-rouge">git push staging master:master</code></li>
-      <li>Production: <code class="highlighter-rouge">git push production master:master</code></li>
+      <li>Staging: <code class="language-plaintext highlighter-rouge">git push staging master:master</code></li>
+      <li>Production: <code class="language-plaintext highlighter-rouge">git push production master:master</code></li>
     </ul>
 
-    <p>You must force push for these branches as they are separate repositories with a <code class="highlighter-rouge">master</code> branch.</p>
+    <p>You must force push for these branches as they are separate repositories with a <code class="language-plaintext highlighter-rouge">master</code> branch.</p>
   </li>
 </ol>
 
 <h2 id="cloud-live-migrate-static">Migrate static files</h2>
 
 <p>You will migrate   <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span>
- from your <code class="highlighter-rouge">pub/media</code> directory to Staging or Production.</p>
+ from your <code class="language-plaintext highlighter-rouge">pub/media</code> directory to Staging or Production.</p>
 
-<p>We recommend using the Linux remote synchronization and file transfer command <a href="https://en.wikipedia.org/wiki/Rsync"><code class="highlighter-rouge">rsync</code></a>. rsync uses an algorithm that minimizes the amount of data by moving only the portions of files that have changed; in addition, it supports compression.</p>
+<p>We recommend using the Linux remote synchronization and file transfer command <a href="https://en.wikipedia.org/wiki/Rsync"><code class="language-plaintext highlighter-rouge">rsync</code></a>. rsync uses an algorithm that minimizes the amount of data by moving only the portions of files that have changed; in addition, it supports compression.</p>
 
 <p>We suggest using the following syntax:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>rsync -azvP &lt;source&gt; &lt;destination&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>rsync -azvP &lt;source&gt; &lt;destination&gt;
 </code></pre></div></div>
 
 <p>Options:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>a archive
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>a archive
 z compress
 v verbose
 P partial progress
@@ -4382,7 +4383,7 @@ P partial progress
 
 <p>To migrate static files from your local machine:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>*	rsync the `pub/media` directory from your local Magento server to staging or production:
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>*	rsync the `pub/media` directory from your local Magento server to staging or production:
 
 	rsync -azvP local_machine/pub/media/ &lt;environment_ssh_link@ssh.region.magento.cloud&gt;:pub/media/ 
 </code></pre></div></div>
@@ -4395,13 +4396,13 @@ P partial progress
   <li>
     <p>SSH into the environment you want to transfer from (you can find ssh link in your Cloud UI -&gt; select the branch -&gt; Access Site -&gt; SSH access):</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> ssh -A &lt;environment_ssh_link@ssh.region.magento.cloud&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> ssh -A &lt;environment_ssh_link@ssh.region.magento.cloud&gt;
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>rsync the <code class="highlighter-rouge">pub/media</code> directory from your environment you have logged into on step #1 to another remote environment:</p>
+    <p>rsync the <code class="language-plaintext highlighter-rouge">pub/media</code> directory from your environment you have logged into on step #1 to another remote environment:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>rsync -azvP pub/media/ &lt;destination_environment_ssh_link@ssh.region.magento.cloud&gt;:pub/media/
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>rsync -azvP pub/media/ &lt;destination_environment_ssh_link@ssh.region.magento.cloud&gt;:pub/media/
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -4414,7 +4415,7 @@ P partial progress
 
 <p><strong>Important:</strong> The Integration environment database is strictly for development testing and may include data you may not want to migrate into Staging and Production.</p>
 
-<p>For continuous integration deployments, we <strong>do not recommend</strong> migrating data from Integration to Staging and Production. You could pass testing data or overwrite important data. Any vital configurations will be passed using the <a href="/devdocs/guides/v2.1/cloud/live/sens-data-over.html">configuration file</a> and <code class="highlighter-rouge">setup:upgrade</code> command during build and deploy.</p>
+<p>For continuous integration deployments, we <strong>do not recommend</strong> migrating data from Integration to Staging and Production. You could pass testing data or overwrite important data. Any vital configurations will be passed using the <a href="/devdocs/guides/v2.1/cloud/live/sens-data-over.html">configuration file</a> and <code class="language-plaintext highlighter-rouge">setup:upgrade</code> command during build and deploy.</p>
 
 <p>We <strong>do recommend</strong> migrating data from Production into Staging to fully test your site and store(s) in a near-production environment with all services and settings.</p>
 
@@ -4426,13 +4427,13 @@ P partial progress
   <li>
     <p>SSH into the environment you want to create a database dump from:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>    ssh -A &lt;environment_ssh_link@ssh.region.magento.cloud&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>    ssh -A &lt;environment_ssh_link@ssh.region.magento.cloud&gt;
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Find the database login information with the following command:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>    php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))-&gt;database);'
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>    php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))-&gt;database);'
 </code></pre></div>    </div>
   </li>
   <li>
@@ -4440,38 +4441,38 @@ P partial progress
 
     <p>For Starter environments and Pro Integration environments:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysqldump -h &lt;database host&gt; --user=&lt;database username&gt; --password=&lt;password&gt; --single-transaction --triggers main | gzip - &gt; /tmp/database.sql.gz
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysqldump -h &lt;database host&gt; --user=&lt;database username&gt; --password=&lt;password&gt; --single-transaction --triggers main | gzip - &gt; /tmp/database.sql.gz
 </code></pre></div>    </div>
 
-    <p>For Pro Staging and Production environments, the name of the database is in the <code class="highlighter-rouge">MAGENTO_CLOUD_RELATIONSHIPS</code> variable (typically the same as the application name and username):</p>
+    <p>For Pro Staging and Production environments, the name of the database is in the <code class="language-plaintext highlighter-rouge">MAGENTO_CLOUD_RELATIONSHIPS</code> variable (typically the same as the application name and username):</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysqldump -h &lt;database host&gt; --user=&lt;database username&gt; --password=&lt;password&gt; --single-transaction --triggers &lt;database name&gt; | gzip - &gt; /tmp/database.sql.gz
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Transfer the database dump to another remote environment with an <code class="highlighter-rouge">rsync</code> command:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>rsync -azvP /tmp/database.sql.gz &lt;destination_environment_ssh_link@ssh.region.magento.cloud&gt;:/tmp
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysqldump -h &lt;database host&gt; --user=&lt;database username&gt; --password=&lt;password&gt; --single-transaction --triggers &lt;database name&gt; | gzip - &gt; /tmp/database.sql.gz
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Enter <code class="highlighter-rouge">exit</code> to terminate the SSH connection.</p>
+    <p>Transfer the database dump to another remote environment with an <code class="language-plaintext highlighter-rouge">rsync</code> command:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>rsync -azvP /tmp/database.sql.gz &lt;destination_environment_ssh_link@ssh.region.magento.cloud&gt;:/tmp
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Enter <code class="language-plaintext highlighter-rouge">exit</code> to terminate the SSH connection.</p>
   </li>
   <li>
     <p>Open an SSH connection to the environment you want to migrate the database into:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ssh -A &lt;destination_environment_ssh_link@ssh.region.magento.cloud&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ssh -A &lt;destination_environment_ssh_link@ssh.region.magento.cloud&gt;
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Import the database dump with the following command:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>zcat /tmp/database.sql.gz | mysql -h &lt;database_host&gt; -u &lt;username&gt; -p&lt;password&gt; &lt;database name&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>zcat /tmp/database.sql.gz | mysql -h &lt;database_host&gt; -u &lt;username&gt; -p&lt;password&gt; &lt;database name&gt;
 </code></pre></div>    </div>
 
     <p>The following is an example using information from step 2:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>zcat /tmp/database.sql.gz | mysql -h database.internal -u user main
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>zcat /tmp/database.sql.gz | mysql -h database.internal -u user main
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -4480,14 +4481,14 @@ P partial progress
 
 <p>If you encounter the following error, you can try to create a database dump with the DEFINER replaced:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ERROR 1277 (42000) at line &lt;number&gt;: Access denied; you need (at least one of) the SUPER privilege(s) for this operation
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ERROR 1277 (42000) at line &lt;number&gt;: Access denied; you need (at least one of) the SUPER privilege(s) for this operation
 </code></pre></div></div>
 
 <p>This error occurs because the DEFINER for the triggers in the SQL dump is the production user. This user requires administrative permissions.</p>
 
-<p>To solve the issue, you can generate a new database dump changing or removing the <code class="highlighter-rouge">DEFINER</code> clause. The following is one example of completing this change:</p>
+<p>To solve the issue, you can generate a new database dump changing or removing the <code class="language-plaintext highlighter-rouge">DEFINER</code> clause. The following is one example of completing this change:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysqldump <span class="nt">-h</span> &lt;database host&gt; <span class="nt">--user</span><span class="o">=</span>&lt;database username&gt; <span class="nt">--password</span><span class="o">=</span>&lt;password&gt; <span class="nt">--single-transaction</span> main  | sed <span class="nt">-e</span> <span class="s1">'s/DEFINER[ ]*=[ ]*[^*]*\*/\*/'</span> | gzip <span class="o">&gt;</span> /tmp/database_no-definer.sql.gz
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysqldump <span class="nt">-h</span> &lt;database host&gt; <span class="nt">--user</span><span class="o">=</span>&lt;database username&gt; <span class="nt">--password</span><span class="o">=</span>&lt;password&gt; <span class="nt">--single-transaction</span> main  | <span class="nb">sed</span> <span class="nt">-e</span> <span class="s1">'s/DEFINER[ ]*=[ ]*[^*]*\*/\*/'</span> | <span class="nb">gzip</span> <span class="o">&gt;</span> /tmp/database_no-definer.sql.gz
 </code></pre></div></div>
 
 <p>Use the database dump you just created to <a href="#cloud-live-migrate-db">migrate the database</a>.</p>

@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Linking properties of UI components | Magento 2 Developer Documentation (copy)</title>
+	<title>Linking properties of UI components | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/ui_comp_guide/concepts/ui_comp_linking_concept.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/ui_comp_guide/concepts/ui_comp_linking_concept.html">Magento 2.0</a></li>
 		
@@ -3020,40 +3021,40 @@
 <p>The following properties are used for linking observable properties and methods of UI components:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">exports</code></li>
-  <li><code class="highlighter-rouge">imports</code></li>
-  <li><code class="highlighter-rouge">links</code></li>
-  <li><code class="highlighter-rouge">listens</code></li>
+  <li><code class="language-plaintext highlighter-rouge">exports</code></li>
+  <li><code class="language-plaintext highlighter-rouge">imports</code></li>
+  <li><code class="language-plaintext highlighter-rouge">links</code></li>
+  <li><code class="language-plaintext highlighter-rouge">listens</code></li>
 </ul>
 
-<p>These properties are processed by the <code class="highlighter-rouge">initLinks()</code> method of the <a href="/devdocs/guides/v2.1/ui_comp_guide/concepts/ui_comp_uielement_concept.html"><code class="highlighter-rouge">uiElement</code> class</a> which is called at the moment of a component’s instantiation.</p>
+<p>These properties are processed by the <code class="language-plaintext highlighter-rouge">initLinks()</code> method of the <a href="/devdocs/guides/v2.1/ui_comp_guide/concepts/ui_comp_uielement_concept.html"><code class="language-plaintext highlighter-rouge">uiElement</code> class</a> which is called at the moment of a component’s instantiation.</p>
 
 <p>Linking properties are set in <a href="/devdocs/guides/v2.1/ui_comp_guide/concepts/ui_comp_config_flow_concept.html">UI components configuration files</a>: XML, JS or   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
 .</p>
 
 <h2 id="list-of-linking-properties">List of linking properties</h2>
 
-<h3 id="exports"><code class="highlighter-rouge">exports</code></h3>
+<h3 id="exports"><code class="language-plaintext highlighter-rouge">exports</code></h3>
 
-<p>The <code class="highlighter-rouge">exports</code> property is used to copy a local value to some external entity. If the external entity property is anything but a function, it will be set to the value of the local property. If the external property is a function, it will be called with the local properties value as an argument.
-If the local value is a ko of io-es5 observable, the external entity will also be updated whenever the local property changes. <code class="highlighter-rouge">exports</code>’s value is an object, composed of the following:</p>
+<p>The <code class="language-plaintext highlighter-rouge">exports</code> property is used to copy a local value to some external entity. If the external entity property is anything but a function, it will be set to the value of the local property. If the external property is a function, it will be called with the local properties value as an argument.
+If the local value is a ko of io-es5 observable, the external entity will also be updated whenever the local property changes. <code class="language-plaintext highlighter-rouge">exports</code>’s value is an object, composed of the following:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">key</code>: name of the internal property or method that is tracked for changes.</li>
-  <li><code class="highlighter-rouge">value</code>: name of the property or method that receives the value. Can use <a href="#string_templ">string templates</a>.</li>
+  <li><code class="language-plaintext highlighter-rouge">key</code>: name of the internal property or method that is tracked for changes.</li>
+  <li><code class="language-plaintext highlighter-rouge">value</code>: name of the property or method that receives the value. Can use <a href="#string_templ">string templates</a>.</li>
 </ul>
 
-<p>Example of setting <code class="highlighter-rouge">exports</code> in a component’s <code class="highlighter-rouge">.js</code> file:</p>
+<p>Example of setting <code class="language-plaintext highlighter-rouge">exports</code> in a component’s <code class="language-plaintext highlighter-rouge">.js</code> file:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
-  <span class="s1">'exports'</span><span class="p">:</span> <span class="p">{</span>
-   <span class="s1">'visible'</span><span class="p">:</span> <span class="s1">'${ $.provider }:visibility'</span>
+  <span class="dl">'</span><span class="s1">exports</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
+   <span class="dl">'</span><span class="s1">visible</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">${ $.provider }:visibility</span><span class="dl">'</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>Here <code class="highlighter-rouge">visible</code> is the <code class="highlighter-rouge">key</code>, <code class="highlighter-rouge">${ $.provider }:visibility</code> is the <code class="highlighter-rouge">value</code>. The value of the local <code class="highlighter-rouge">visible</code> property is assigned to the <code class="highlighter-rouge">visibility</code> property of the <code class="highlighter-rouge">provider</code> component. The latter is changed automatically if the value of <code class="highlighter-rouge">visible</code> changes if the local <code class="highlighter-rouge">visible</code> property is observable (which it isn’t given only the code example above).</p>
+<p>Here <code class="language-plaintext highlighter-rouge">visible</code> is the <code class="language-plaintext highlighter-rouge">key</code>, <code class="language-plaintext highlighter-rouge">${ $.provider }:visibility</code> is the <code class="language-plaintext highlighter-rouge">value</code>. The value of the local <code class="language-plaintext highlighter-rouge">visible</code> property is assigned to the <code class="language-plaintext highlighter-rouge">visibility</code> property of the <code class="language-plaintext highlighter-rouge">provider</code> component. The latter is changed automatically if the value of <code class="language-plaintext highlighter-rouge">visible</code> changes if the local <code class="language-plaintext highlighter-rouge">visible</code> property is observable (which it isn’t given only the code example above).</p>
 
-<p>Example of setting <code class="highlighter-rouge">exports</code> in a component’s configuration <code class="highlighter-rouge">.xml</code> file:</p>
+<p>Example of setting <code class="language-plaintext highlighter-rouge">exports</code> in a component’s configuration <code class="language-plaintext highlighter-rouge">.xml</code> file:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
@@ -3063,27 +3064,27 @@ If the local value is a ko of io-es5 observable, the external entity will also b
     <span class="nt">&lt;/item&gt;</span>
 <span class="nt">&lt;/argument&gt;</span></code></pre></figure>
 
-<p>For an example of <code class="highlighter-rouge">exports</code> usage in Magento code see <a href="https://github.com/magento/magento2/blob/2.1//app/code/Magento/CatalogInventory/view/adminhtml/ui_component/product_form.xml#L81"><code class="highlighter-rouge">product_form.xml</code>, line 81</a></p>
+<p>For an example of <code class="language-plaintext highlighter-rouge">exports</code> usage in Magento code see <a href="https://github.com/magento/magento2/blob/2.1//app/code/Magento/CatalogInventory/view/adminhtml/ui_component/product_form.xml#L81"><code class="language-plaintext highlighter-rouge">product_form.xml</code>, line 81</a></p>
 
-<h3 id="imports"><code class="highlighter-rouge">imports</code></h3>
-<p>The <code class="highlighter-rouge">imports</code> property is used for tracking changes of an external entity property. <code class="highlighter-rouge">imports</code>’s value is an object, composed of the following:</p>
+<h3 id="imports"><code class="language-plaintext highlighter-rouge">imports</code></h3>
+<p>The <code class="language-plaintext highlighter-rouge">imports</code> property is used for tracking changes of an external entity property. <code class="language-plaintext highlighter-rouge">imports</code>’s value is an object, composed of the following:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">key</code>: name of the internal property or method that receives the value.</li>
-  <li><code class="highlighter-rouge">value</code>: name of the property or method that is tracked for changes. Can use <a href="#string_templ">string templates</a>.</li>
+  <li><code class="language-plaintext highlighter-rouge">key</code>: name of the internal property or method that receives the value.</li>
+  <li><code class="language-plaintext highlighter-rouge">value</code>: name of the property or method that is tracked for changes. Can use <a href="#string_templ">string templates</a>.</li>
 </ul>
 
-<p>Example of using <code class="highlighter-rouge">imports</code> in a component’s <code class="highlighter-rouge">.js</code> file:</p>
+<p>Example of using <code class="language-plaintext highlighter-rouge">imports</code> in a component’s <code class="language-plaintext highlighter-rouge">.js</code> file:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
-  <span class="s1">'imports'</span><span class="p">:</span> <span class="p">{</span>
-   <span class="s1">'visible'</span><span class="p">:</span> <span class="s1">'${ $.provider }:visibility'</span>
+  <span class="dl">'</span><span class="s1">imports</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
+   <span class="dl">'</span><span class="s1">visible</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">${ $.provider }:visibility</span><span class="dl">'</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>Here the value of the <code class="highlighter-rouge">visibility</code> property of the <code class="highlighter-rouge">provider</code> component is assigned to the local <code class="highlighter-rouge">visible</code> property. If the latter is a ko or ko-es5 observable, the local property is automatically updated if <code class="highlighter-rouge">visibility</code> changes.</p>
+<p>Here the value of the <code class="language-plaintext highlighter-rouge">visibility</code> property of the <code class="language-plaintext highlighter-rouge">provider</code> component is assigned to the local <code class="language-plaintext highlighter-rouge">visible</code> property. If the latter is a ko or ko-es5 observable, the local property is automatically updated if <code class="language-plaintext highlighter-rouge">visibility</code> changes.</p>
 
-<p>Example of using <code class="highlighter-rouge">imports</code> in a component’s configuration <code class="highlighter-rouge">.xml</code> file:</p>
+<p>Example of using <code class="language-plaintext highlighter-rouge">imports</code> in a component’s configuration <code class="language-plaintext highlighter-rouge">.xml</code> file:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
@@ -3093,28 +3094,28 @@ If the local value is a ko of io-es5 observable, the external entity will also b
     <span class="nt">&lt;/item&gt;</span>
 <span class="nt">&lt;/argument&gt;</span></code></pre></figure>
 
-<p>For an example of <code class="highlighter-rouge">imports</code> usage in Magento code see <a href="https://github.com/magento/magento2/blob/2.1//app/code/Magento/CatalogInventory/view/adminhtml/ui_component/product_form.xml#L103"><code class="highlighter-rouge">product_form.xml</code>, line 103</a></p>
+<p>For an example of <code class="language-plaintext highlighter-rouge">imports</code> usage in Magento code see <a href="https://github.com/magento/magento2/blob/2.1//app/code/Magento/CatalogInventory/view/adminhtml/ui_component/product_form.xml#L103"><code class="language-plaintext highlighter-rouge">product_form.xml</code>, line 103</a></p>
 
-<h3 id="links"><code class="highlighter-rouge">links</code></h3>
+<h3 id="links"><code class="language-plaintext highlighter-rouge">links</code></h3>
 
-<p>The <code class="highlighter-rouge">links</code> property is used for cross tracking properties changes: both linked properties are tracked and changing of one results in changing the other. <code class="highlighter-rouge">links</code>’s value is an object, composed of the following:</p>
+<p>The <code class="language-plaintext highlighter-rouge">links</code> property is used for cross tracking properties changes: both linked properties are tracked and changing of one results in changing the other. <code class="language-plaintext highlighter-rouge">links</code>’s value is an object, composed of the following:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">key</code>: name of the internal property or method that sends and receives the notifications.</li>
-  <li><code class="highlighter-rouge">value</code>: name of the property or method that sends and receives the value. Can use <a href="#string_templ">string templates</a>.</li>
+  <li><code class="language-plaintext highlighter-rouge">key</code>: name of the internal property or method that sends and receives the notifications.</li>
+  <li><code class="language-plaintext highlighter-rouge">value</code>: name of the property or method that sends and receives the value. Can use <a href="#string_templ">string templates</a>.</li>
 </ul>
 
-<p>Example of using <code class="highlighter-rouge">links</code> in a component’s <code class="highlighter-rouge">.js</code> file:</p>
+<p>Example of using <code class="language-plaintext highlighter-rouge">links</code> in a component’s <code class="language-plaintext highlighter-rouge">.js</code> file:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
-  <span class="s1">'links'</span><span class="p">:</span> <span class="p">{</span>
-   <span class="s1">'visible'</span><span class="p">:</span> <span class="s1">'${ $.provider }:visibility'</span>
+  <span class="dl">'</span><span class="s1">links</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
+   <span class="dl">'</span><span class="s1">visible</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">${ $.provider }:visibility</span><span class="dl">'</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>Here the local <code class="highlighter-rouge">visible</code> property is linked with the <code class="highlighter-rouge">visibility</code>  property of the provider component. If any of them is a ko or ko-es5 observable and changes, the other is changed automatically. If a non-observable linked property is changed the other is not updated automatically.</p>
+<p>Here the local <code class="language-plaintext highlighter-rouge">visible</code> property is linked with the <code class="language-plaintext highlighter-rouge">visibility</code>  property of the provider component. If any of them is a ko or ko-es5 observable and changes, the other is changed automatically. If a non-observable linked property is changed the other is not updated automatically.</p>
 
-<p>Example of using <code class="highlighter-rouge">links</code> in a component’s configuration <code class="highlighter-rouge">.xml</code> file:</p>
+<p>Example of using <code class="language-plaintext highlighter-rouge">links</code> in a component’s configuration <code class="language-plaintext highlighter-rouge">.xml</code> file:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
@@ -3124,28 +3125,28 @@ If the local value is a ko of io-es5 observable, the external entity will also b
     <span class="nt">&lt;/item&gt;</span>
 <span class="nt">&lt;/argument&gt;</span></code></pre></figure>
 
-<p>For an example of <code class="highlighter-rouge">links</code> usage in Magento code see <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/form/element/text.js#L19"><code class="highlighter-rouge">text.js</code>, line 19</a></p>
+<p>For an example of <code class="language-plaintext highlighter-rouge">links</code> usage in Magento code see <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/form/element/text.js#L19"><code class="language-plaintext highlighter-rouge">text.js</code>, line 19</a></p>
 
-<h3 id="listens"><code class="highlighter-rouge">listens</code></h3>
-<p>The <code class="highlighter-rouge">listens</code> property is used to track the changes of a component’s property. <code class="highlighter-rouge">listens</code>’s value is an object, composed of the following:</p>
+<h3 id="listens"><code class="language-plaintext highlighter-rouge">listens</code></h3>
+<p>The <code class="language-plaintext highlighter-rouge">listens</code> property is used to track the changes of a component’s property. <code class="language-plaintext highlighter-rouge">listens</code>’s value is an object, composed of the following:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">key</code>: name of the observable property or method which is tracked for changes. Can use <a href="#string_templ">string templates</a>.</li>
-  <li><code class="highlighter-rouge">value</code>: name of the internal method or property which listens to the changes.</li>
+  <li><code class="language-plaintext highlighter-rouge">key</code>: name of the observable property or method which is tracked for changes. Can use <a href="#string_templ">string templates</a>.</li>
+  <li><code class="language-plaintext highlighter-rouge">value</code>: name of the internal method or property which listens to the changes.</li>
 </ul>
 
-<p>Example of using <code class="highlighter-rouge">listens</code> in a component’s <code class="highlighter-rouge">.js</code> file :</p>
+<p>Example of using <code class="language-plaintext highlighter-rouge">listens</code> in a component’s <code class="language-plaintext highlighter-rouge">.js</code> file :</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
-  <span class="s1">'listens'</span><span class="p">:</span> <span class="p">{</span>
-   <span class="s1">'${ $.provider }:visibility'</span><span class="p">:</span> <span class="s1">'visibilityChanged'</span>
+  <span class="dl">'</span><span class="s1">listens</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
+   <span class="dl">'</span><span class="s1">${ $.provider }:visibility</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">visibilityChanged</span><span class="dl">'</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>Here the local <code class="highlighter-rouge">visibilityChanged</code> property is a method that will be called when the <code class="highlighter-rouge">visibility</code> property of the <code class="highlighter-rouge">provider</code> component changes. It receives the new value as an argument. If the local property is not a function, it will be set to the new value.
-The external property has to be an observable in order for <code class="highlighter-rouge">listens</code> to have any effect.</p>
+<p>Here the local <code class="language-plaintext highlighter-rouge">visibilityChanged</code> property is a method that will be called when the <code class="language-plaintext highlighter-rouge">visibility</code> property of the <code class="language-plaintext highlighter-rouge">provider</code> component changes. It receives the new value as an argument. If the local property is not a function, it will be set to the new value.
+The external property has to be an observable in order for <code class="language-plaintext highlighter-rouge">listens</code> to have any effect.</p>
 
-<p>Example of using <code class="highlighter-rouge">listens</code> in a component’s configuration <code class="highlighter-rouge">.xml</code> file:</p>
+<p>Example of using <code class="language-plaintext highlighter-rouge">listens</code> in a component’s configuration <code class="language-plaintext highlighter-rouge">.xml</code> file:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
@@ -3155,23 +3156,23 @@ The external property has to be an observable in order for <code class="highligh
     <span class="nt">&lt;/item&gt;</span>
 <span class="nt">&lt;/argument&gt;</span></code></pre></figure>
 
-<p>For example of <code class="highlighter-rouge">listens</code> usage in Magento code see <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Catalog/view/adminhtml/ui_component/new_category_form.xml#L92"><code class="highlighter-rouge">new_category_form.xml</code>, line 92</a></p>
+<p>For example of <code class="language-plaintext highlighter-rouge">listens</code> usage in Magento code see <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Catalog/view/adminhtml/ui_component/new_category_form.xml#L92"><code class="language-plaintext highlighter-rouge">new_category_form.xml</code>, line 92</a></p>
 
 <h2 id="string_templ">Template strings usage</h2>
 
-<p>The options of linking properties can contain template strings in the <code class="highlighter-rouge">'${...}'</code> format. During the component’s initialization, values in this format are processed as template strings using <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals">ES6 templates</a>. In browsers that do not support ES6 templates, these values are processed as underscore templates.</p>
+<p>The options of linking properties can contain template strings in the <code class="language-plaintext highlighter-rouge">'${...}'</code> format. During the component’s initialization, values in this format are processed as template strings using <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals">ES6 templates</a>. In browsers that do not support ES6 templates, these values are processed as underscore templates.</p>
 
-<p>So if we put a variable name in <code class="highlighter-rouge">'${...}'</code>, it is processed into a string representation of the variable’s value.</p>
+<p>So if we put a variable name in <code class="language-plaintext highlighter-rouge">'${...}'</code>, it is processed into a string representation of the variable’s value.</p>
 
 <p>When working with UI components, we often need to use the string representation of a certain property of the   <span term-uuid="9bcc648c-bd08-4feb-906d-1e24c4f2f422" class="glossary-term" data-toggle="popover">UI component</span>
-. To address a property of the UI component in the scope of this component, the <code class="highlighter-rouge">$.someProperty</code> syntax is used.</p>
+. To address a property of the UI component in the scope of this component, the <code class="language-plaintext highlighter-rouge">$.someProperty</code> syntax is used.</p>
 
 <p>As a result, if the component’s property is the variable for the template string, we get notation similar to the following:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>'${ $.provider }:foo' 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>'${ $.provider }:foo' 
 </code></pre></div></div>
 
-<p>If the string would be built at runtime it would be equivalent to <code class="highlighter-rouge">this.provider + ':foo'</code>.</p>
+<p>If the string would be built at runtime it would be equivalent to <code class="language-plaintext highlighter-rouge">this.provider + ':foo'</code>.</p>
 
 <p>We can also build complex templates strings using this syntax, as follows:</p>
 
@@ -3179,19 +3180,19 @@ The external property has to be an observable in order for <code class="highligh
   <li>
     <p>Using variables from the other component:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>  '${ $.provider }:${ $.dataScope }' // 'provider' is the full name of the other component
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>  '${ $.provider }:${ $.dataScope }' // 'provider' is the full name of the other component
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Calling several functions in one string:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>  '${ $.provider }:data.overload': 'overload reset validate'// we call 'overload', 'reset', 'validate'
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>  '${ $.provider }:data.overload': 'overload reset validate'// we call 'overload', 'reset', 'validate'
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Using inline conditions:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>  '${ $.provider }:${ $.customScope ? $.customScope + "." : ""}data.validate': 'validate'
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>  '${ $.provider }:${ $.customScope ? $.customScope + "." : ""}data.validate': 'validate'
 </code></pre></div>    </div>
   </li>
 </ul>

@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Installation dependencies not met | Magento 2 Developer Documentation (copy)</title>
+	<title>Installation dependencies not met | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/install-gde/trouble/tshoot_install_depend.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/install-gde/trouble/tshoot_install_depend.html">Magento 2.0</a></li>
 		
@@ -4625,7 +4626,7 @@
 <p><span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
  Fatal error:  Class ‘Magento\Framework\Stdlib\DateTime\TimezoneInterface’ not found in /var/www/magento2/app/bootstrap.php on line 56&lt;/pre&gt;</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Dependencies not installed. Please run 'composer install' under /setup directory.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Dependencies not installed. Please run 'composer install' under /setup directory.
 </code></pre></div></div>
 
 <pre>Whoops, it looks like setup tool dependencies are not installed.</pre>
@@ -4634,11 +4635,11 @@
 <pre> Exception
  PHP Fatal error:  Class 'Magento\Framework\Stdlib\DateTime\TimezoneInterface' not found in /var/www/html/magento2/app/bootstrap.php on line 56</pre>
 
-<p class="bs-callout bs-callout-info">If the Web Setup Wizard stops, informs you that the installation is incomplete, but does not display an error in the console log, the likely cause is you did not run <code>composer install</code> from the <code class="highlighter-rouge">&lt;your Magento install dir&gt;/setup</code> directory. The entire message is <code class="highlighter-rouge">Installation is incomplete. Check the console log for errors before trying again.</code></p>
+<p class="bs-callout bs-callout-info">If the Web Setup Wizard stops, informs you that the installation is incomplete, but does not display an error in the console log, the likely cause is you did not run <code>composer install</code> from the <code class="language-plaintext highlighter-rouge">&lt;your Magento install dir&gt;/setup</code> directory. The entire message is <code class="language-plaintext highlighter-rouge">Installation is incomplete. Check the console log for errors before trying again.</code></p>
 
 <h3 id="description">Description</h3>
 
-<p>You must run <code class="highlighter-rouge">composer install</code> from <em>both</em> the <code class="highlighter-rouge">&lt;your Magento install dir&gt;</code> and <code class="highlighter-rouge">&lt;your Magento install dir&gt;/setup</code> directories before installer.</p>
+<p>You must run <code class="language-plaintext highlighter-rouge">composer install</code> from <em>both</em> the <code class="language-plaintext highlighter-rouge">&lt;your Magento install dir&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;your Magento install dir&gt;/setup</code> directories before installer.</p>
 
 <h3 id="suggestion">Suggestion</h3>
 

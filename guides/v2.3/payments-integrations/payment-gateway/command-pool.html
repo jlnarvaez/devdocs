@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Gateway Command Pool | Magento 2 Developer Documentation (copy)</title>
+	<title>Gateway Command Pool | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/payments-integrations/payment-gateway/command-pool.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/payments-integrations/payment-gateway/command-pool.html">Magento 2.0</a></li>
 		
@@ -2203,17 +2204,17 @@
 
 <h2 id="interface">Interface</h2>
 
-<p>The basic interface for a command pool is <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Payment/Gateway/Command/CommandPoolInterface.php"><code class="highlighter-rouge">\Magento\Payment\Gateway\Command\CommandPoolInterface</code></a>. It implements the <a href="http://designpatternsphp.readthedocs.io/en/latest/Creational/Pool/README.html">Pool pattern</a></p>
+<p>The basic interface for a command pool is <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Payment/Gateway/Command/CommandPoolInterface.php"><code class="language-plaintext highlighter-rouge">\Magento\Payment\Gateway\Command\CommandPoolInterface</code></a>. It implements the <a href="http://designpatternsphp.readthedocs.io/en/latest/Creational/Pool/README.html">Pool pattern</a></p>
 
 <h2 id="default-implementation">Default implementation</h2>
 
 <p>The <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Payment/Gateway/Command/CommandPool.php">default CommandPool</a>
-implements <code class="highlighter-rouge">CommandPoolInterface</code> and takes a list of commands as an optional argument for the constructor.</p>
+implements <code class="language-plaintext highlighter-rouge">CommandPoolInterface</code> and takes a list of commands as an optional argument for the constructor.</p>
 
 <h2 id="command-pool-configuration-for-a-particular-provider">Command pool configuration for a particular provider</h2>
 
 <p>Following is an example of the command pool configuring for the Braintree payment provider, and adding it to the provider’s   <span term-uuid="422b0fa8-b181-4c7c-93a2-c553abb34efd" class="glossary-term" data-toggle="popover">payment method</span>
- configuration (<a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Braintree/etc/di.xml"><code class="highlighter-rouge">app/code/Magento/Braintree/etc/di.xml</code></a>).</p>
+ configuration (<a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Braintree/etc/di.xml"><code class="language-plaintext highlighter-rouge">app/code/Magento/Braintree/etc/di.xml</code></a>).</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml">...
 <span class="c">&lt;!-- BrainreeCommandPool - a command pool for the Braintree payments provider --&gt;</span>

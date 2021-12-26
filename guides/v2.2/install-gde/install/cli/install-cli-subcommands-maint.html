@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Enable or disable maintenance mode | Magento 2 Developer Documentation (copy)</title>
+	<title>Enable or disable maintenance mode | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/install-gde/install/cli/install-cli-subcommands-maint.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/install-gde/install/cli/install-cli-subcommands-maint.html">Magento 2.0</a></li>
 		
@@ -4612,11 +4613,11 @@
 <p>Magento detects maintenance mode as follows:</p>
 
 <ul>
-  <li>If <code class="highlighter-rouge">var/.maintenance.flag</code> does not exist, maintenance mode is off and Magento operates normally.</li>
+  <li>If <code class="language-plaintext highlighter-rouge">var/.maintenance.flag</code> does not exist, maintenance mode is off and Magento operates normally.</li>
   <li>
-    <p>Otherwise, maintenance mode is on unless <code class="highlighter-rouge">var/.maintenance.ip</code> exists:</p>
+    <p>Otherwise, maintenance mode is on unless <code class="language-plaintext highlighter-rouge">var/.maintenance.ip</code> exists:</p>
 
-    <p><code class="highlighter-rouge">var/.maintenance.ip</code> can contain a list of IP addresses. If an entry point is accessed using HTTP and the client IP address corresponds to one of the entries in that list, then maintenance mode is off.</p>
+    <p><code class="language-plaintext highlighter-rouge">var/.maintenance.ip</code> can contain a list of IP addresses. If an entry point is accessed using HTTP and the client IP address corresponds to one of the entries in that list, then maintenance mode is off.</p>
   </li>
 </ul>
 
@@ -4627,31 +4628,31 @@
 
     <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
 </code></pre></div>    </div>
 
     <p>If the Magento file system owner does not allow logins you can do the following:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
+    <p>To run Magento commands from any directory, add <code class="language-plaintext highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="language-plaintext highlighter-rouge">PATH</code>.</p>
 
     <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables">unix.stackexchange.com</a>.</p>
 
     <p>bash shell example for CentOS:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>export PATH=$PATH:/var/www/html/magento2/bin
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>export PATH=$PATH:/var/www/html/magento2/bin
 </code></pre></div>    </div>
   </li>
 </ol>
 
 <p class="bs-callout bs-callout-info">You can also run the commands in the following ways:</p>
 <ul>
-  <li><code class="highlighter-rouge">cd &lt;your Magento install dir&gt;/bin</code> and run them as <code class="highlighter-rouge">./magento &lt;command name&gt;</code></li>
-  <li><code class="highlighter-rouge">php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li>
-  <li><code class="highlighter-rouge">&lt;your Magento install dir&gt;</code> is a subdirectory of your web server’s docroot. <a href="/devdocs/guides/v2.2/install-gde/basics/basics_docroot.html">Need help locating the docroot?</a></li>
+  <li><code class="language-plaintext highlighter-rouge">cd &lt;your Magento install dir&gt;/bin</code> and run them as <code class="language-plaintext highlighter-rouge">./magento &lt;command name&gt;</code></li>
+  <li><code class="language-plaintext highlighter-rouge">php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;your Magento install dir&gt;</code> is a subdirectory of your web server’s docroot. <a href="/devdocs/guides/v2.2/install-gde/basics/basics_docroot.html">Need help locating the docroot?</a></li>
 </ul>
 
 <p>In addition to the command arguments discussed here, see <a href="/devdocs/guides/v2.2/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
@@ -4662,47 +4663,47 @@
 
 <h2 id="instgde-cli-maint">Enable or disable maintenance mode</h2>
 
-<p>Use the <code class="highlighter-rouge">magento maintenance</code> CLI command to enable or disable Magento maintenance mode.</p>
+<p>Use the <code class="language-plaintext highlighter-rouge">magento maintenance</code> CLI command to enable or disable Magento maintenance mode.</p>
 
 <p>Command usage:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento maintenance:enable [--ip=&lt;ip address&gt; ... --ip=&lt;ip address&gt;] | [ip=none]
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento maintenance:enable [--ip=&lt;ip address&gt; ... --ip=&lt;ip address&gt;] | [ip=none]
 magento maintenance:disable [--ip=&lt;ip address&gt; ... --ip=&lt;ip address&gt;] | [ip=none]
 magento maintenance:status
 </code></pre></div></div>
 
 <p>where</p>
 
-<p><code class="highlighter-rouge">--ip=&lt;ip address&gt;</code> is an IP address to exempt from maintenance mode (for example, developers doing the maintenance). To exempt more than one IP address in the same command, use the option multiple times.</p>
+<p><code class="language-plaintext highlighter-rouge">--ip=&lt;ip address&gt;</code> is an IP address to exempt from maintenance mode (for example, developers doing the maintenance). To exempt more than one IP address in the same command, use the option multiple times.</p>
 
-<p class="bs-callout bs-callout-info">Using <code class="highlighter-rouge">--ip=&amp;lt;ip address&gt;</code> with <code class="highlighter-rouge">magento maintenance:disable</code> means only that you’re saving the list of IPs for later use. To clear the list of exempt IPs, you can use <code class="highlighter-rouge">magento maintenance:enable --ip=none</code> or see <a href="#instgde-cli-maint-exempt">Maintain the list of exempt IP addresses</a>.</p>
+<p class="bs-callout bs-callout-info">Using <code class="language-plaintext highlighter-rouge">--ip=&amp;lt;ip address&gt;</code> with <code class="language-plaintext highlighter-rouge">magento maintenance:disable</code> means only that you’re saving the list of IPs for later use. To clear the list of exempt IPs, you can use <code class="language-plaintext highlighter-rouge">magento maintenance:enable --ip=none</code> or see <a href="#instgde-cli-maint-exempt">Maintain the list of exempt IP addresses</a>.</p>
 
-<p><code class="highlighter-rouge">magento maintenance:status</code> displays the current status of maintenance mode.</p>
+<p><code class="language-plaintext highlighter-rouge">magento maintenance:status</code> displays the current status of maintenance mode.</p>
 
 <p>For example, to enable maintenance mode with no IP address exemptions:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento maintenance:enable
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento maintenance:enable
 </code></pre></div></div>
 
 <p>To enable maintenance mode for all clients except 192.0.2.10 and 192.0.2.11:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento maintenance:enable --ip=192.0.2.10 --ip=192.0.2.11
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento maintenance:enable --ip=192.0.2.10 --ip=192.0.2.11
 </code></pre></div></div>
 
-<p>After you place Magento in maintenance mode, you must stop all message queue consumer processes. One way to find these processes is to run the <code class="highlighter-rouge">ps -ef | grep queue:consumer:start</code> command. Then run the <code class="highlighter-rouge">kill &lt;process_id&gt;</code> command for each consumer. In a multiple node environment, be sure to repeat this task on each node.</p>
+<p>After you place Magento in maintenance mode, you must stop all message queue consumer processes. One way to find these processes is to run the <code class="language-plaintext highlighter-rouge">ps -ef | grep queue:consumer:start</code> command. Then run the <code class="language-plaintext highlighter-rouge">kill &lt;process_id&gt;</code> command for each consumer. In a multiple node environment, be sure to repeat this task on each node.</p>
 
 <h2 id="instgde-cli-maint-exempt">Maintain the list of exempt IP addresses</h2>
 
-<p>To maintain the list of exempt IP addresses, you can either use the <code class="highlighter-rouge">[--ip=&lt;ip list&gt;]</code> option in the preceding commands or you can use the following:</p>
+<p>To maintain the list of exempt IP addresses, you can either use the <code class="language-plaintext highlighter-rouge">[--ip=&lt;ip list&gt;]</code> option in the preceding commands or you can use the following:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento maintenance:allow-ips &lt;ip address&gt; .. &lt;ip address&gt; [--none]
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento maintenance:allow-ips &lt;ip address&gt; .. &lt;ip address&gt; [--none]
 </code></pre></div></div>
 
 <p>where</p>
 
-<p><code class="highlighter-rouge">&lt;ip address&gt; .. &lt;ip address&gt;</code> is an optional space-delimited list of IP addresses to exempt.</p>
+<p><code class="language-plaintext highlighter-rouge">&lt;ip address&gt; .. &lt;ip address&gt;</code> is an optional space-delimited list of IP addresses to exempt.</p>
 
-<p><code class="highlighter-rouge">--none</code> clears the list.</p>
+<p><code class="language-plaintext highlighter-rouge">--none</code> clears the list.</p>
 
 <h4 id="related-topics">Related topics</h4>
 

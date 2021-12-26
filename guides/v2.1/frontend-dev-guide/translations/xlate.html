@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Translations overview | Magento 2 Developer Documentation (copy)</title>
+	<title>Translations overview | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/frontend-dev-guide/translations/xlate.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/frontend-dev-guide/translations/xlate.html">Magento 2.0</a></li>
 		
@@ -2745,7 +2746,7 @@
 
 <h3 id="translate_terms">Terms used</h3>
 
-<p>A <em>translation dictionary</em> is a comma-separated value (.csv) file with at least two columns: the original phrase in the <code class="highlighter-rouge">en_US</code> locale and a translation of that phrase in an another locale. Sample translation from English (<code class="highlighter-rouge">en_US</code>) to German (<code class="highlighter-rouge">de_DE</code>):</p>
+<p>A <em>translation dictionary</em> is a comma-separated value (.csv) file with at least two columns: the original phrase in the <code class="language-plaintext highlighter-rouge">en_US</code> locale and a translation of that phrase in an another locale. Sample translation from English (<code class="language-plaintext highlighter-rouge">en_US</code>) to German (<code class="language-plaintext highlighter-rouge">de_DE</code>):</p>
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>"Add to Cart","Zum Warenkorb hinzufügen"
 "Add to Compare","Hinzufügen um zu vergleichen"
 "Add to Wishlist","Zum Wunschzettel hinzufügen"
@@ -2756,7 +2757,7 @@
 
 <p>A <em>language package</em> is basically a collection of translation dictionaries for a particular language together with meta-information. You can also distribute language packages to other merchants if you wish. <a href="#m2devgde-xlate-languagepack">More information about language packages</a>.</p>
 
-<p class="bs-callout bs-callout-info">To create a language package, the <code class="highlighter-rouge">.csv</code> file requires additional columns that specify the themes or modules in which the translations were found. For more information, see <a href="/devdocs/guides/v2.1/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">Generate a translation dictionary</a>.</p>
+<p class="bs-callout bs-callout-info">To create a language package, the <code class="language-plaintext highlighter-rouge">.csv</code> file requires additional columns that specify the themes or modules in which the translations were found. For more information, see <a href="/devdocs/guides/v2.1/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">Generate a translation dictionary</a>.</p>
 
 <h3 id="benefits">Benefits</h3>
 
@@ -2767,7 +2768,7 @@
     <p>Two types of language packages:</p>
 
     <ul>
-      <li>Module and theme packages. Included in the <code class="highlighter-rouge">i18n</code> directory of a module or theme, the Magento application auto-discovers these packages.</li>
+      <li>Module and theme packages. Included in the <code class="language-plaintext highlighter-rouge">i18n</code> directory of a module or theme, the Magento application auto-discovers these packages.</li>
       <li>
         <p>An entire dictionary in one directory.</p>
 
@@ -2788,7 +2789,7 @@
 
 <ul>
   <li>The   <span term-uuid="9c4c7b9b-43f0-4454-8e8c-fb62ad40c35f" class="glossary-term" data-toggle="popover">language package</span>
- (<code class="highlighter-rouge">i18n</code> directory) can now be moved and saved to any directory of your   <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span>
+ (<code class="language-plaintext highlighter-rouge">i18n</code> directory) can now be moved and saved to any directory of your   <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span>
 .</li>
   <li>The phrases for translations are enabled in the <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/Phrase.php">Phrase</a> class.</li>
 </ul>
@@ -2796,7 +2797,7 @@
 <h3 id="programming-notes">Programming notes</h3>
 
 <ul>
-  <li>It is recommended, but not enforced, that you do not place variables inside <code class="highlighter-rouge">__()</code> functions or <code class="highlighter-rouge">new Phrase()</code> calls. The scanner that collects the phrases from the code cannot interpret and collect the value of the variable when it is in these locations. Instead, you should place the full text in the <code class="highlighter-rouge">__()</code> function or <code class="highlighter-rouge">new Phrase()</code> call. If you need to specify a variable in these cases, ensure that it is translated correctly wherever it is defined as a string literal.</li>
+  <li>It is recommended, but not enforced, that you do not place variables inside <code class="language-plaintext highlighter-rouge">__()</code> functions or <code class="language-plaintext highlighter-rouge">new Phrase()</code> calls. The scanner that collects the phrases from the code cannot interpret and collect the value of the variable when it is in these locations. Instead, you should place the full text in the <code class="language-plaintext highlighter-rouge">__()</code> function or <code class="language-plaintext highlighter-rouge">new Phrase()</code> call. If you need to specify a variable in these cases, ensure that it is translated correctly wherever it is defined as a string literal.</li>
 </ul>
 
 <h3 id="more-information">More information</h3>
@@ -2845,16 +2846,16 @@
   <li>This language is configured by the store administrator to be used in specified scope (that is, storefront)</li>
 </ul>
 
-<p>The Magento application automatically assembles translation dictionaries located in modules’ <code class="highlighter-rouge">i18n</code> directory into a dictionary per language. For example, Brazilian Portuguese (<code class="highlighter-rouge">pt_BR</code>) translation dictionaries might be located in   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
+<p>The Magento application automatically assembles translation dictionaries located in modules’ <code class="language-plaintext highlighter-rouge">i18n</code> directory into a dictionary per language. For example, Brazilian Portuguese (<code class="language-plaintext highlighter-rouge">pt_BR</code>) translation dictionaries might be located in   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
  and theme directories similar to the following:</p>
 <ul>
-  <li><code class="highlighter-rouge">&lt;Magento_Checkout_module_dir&gt;/i18n/pt_BR.csv</code></li>
-  <li><code class="highlighter-rouge">&lt;Magento_Checkout_module_dir&gt;/&lt;theme&gt;/i18n/pt_BR.csv</code></li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;Magento_Checkout_module_dir&gt;/i18n/pt_BR.csv</code></li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;Magento_Checkout_module_dir&gt;/&lt;theme&gt;/i18n/pt_BR.csv</code></li>
 </ul>
 
-<p class="bs-callout bs-callout-info"><code class="highlighter-rouge">&lt;Magento_Checkout_module_dir&gt;</code> stands for the Magento_Checkout module directory. Its actual location in your code base depends on the way Magento was installed. See <a href="/devdocs/guides/v2.1/frontend-dev-guide/conventions.html">Conventional notations for paths to modules and themes</a> for details.</p>
+<p class="bs-callout bs-callout-info"><code class="language-plaintext highlighter-rouge">&lt;Magento_Checkout_module_dir&gt;</code> stands for the Magento_Checkout module directory. Its actual location in your code base depends on the way Magento was installed. See <a href="/devdocs/guides/v2.1/frontend-dev-guide/conventions.html">Conventional notations for paths to modules and themes</a> for details.</p>
 
-<p>Assembling the preceding <code class="highlighter-rouge">pt_BR.csv</code> files across all modules and the current theme results in a Portuguese translation of the entire application area (storefront or the Admin).</p>
+<p>Assembling the preceding <code class="language-plaintext highlighter-rouge">pt_BR.csv</code> files across all modules and the current theme results in a Portuguese translation of the entire application area (storefront or the Admin).</p>
 
 <h3 id="m2devgde-xlate-generatortool">The dictionary generator tool</h3>
 
@@ -2865,7 +2866,7 @@
 <p>Magento enables you to create the following types of language packages:</p>
 
 <ul>
-  <li>A set of <code class="highlighter-rouge">.csv</code> files for modules and themes. These packages files are intended to be deployed in modules. For example:
+  <li>A set of <code class="language-plaintext highlighter-rouge">.csv</code> files for modules and themes. These packages files are intended to be deployed in modules. For example:
     <pre><code class="language-tree">    __/app
      |__/code
      | |__/Magento
@@ -2893,16 +2894,16 @@
   </li>
 </ul>
 
-<p>In addition to the <code class="highlighter-rouge">.csv</code> file that contains the language dictionary, the language package contains meta-information:</p>
+<p>In addition to the <code class="language-plaintext highlighter-rouge">.csv</code> file that contains the language dictionary, the language package contains meta-information:</p>
 
 <ul>
   <li>
-    <p><code class="highlighter-rouge">composer.json</code> that contains any dependencies for the language package and a mapping to its defined   <span term-uuid="05099dbb-d491-4e33-a065-16035cb2d4d9" class="glossary-term" data-toggle="popover">locale</span></p>
+    <p><code class="language-plaintext highlighter-rouge">composer.json</code> that contains any dependencies for the language package and a mapping to its defined   <span term-uuid="05099dbb-d491-4e33-a065-16035cb2d4d9" class="glossary-term" data-toggle="popover">locale</span></p>
 
     <p><a href="https://github.com/magento/magento2/blob/2.1/app/i18n/Magento/de_DE/composer.json">Sample composer.json</a></p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">language.xml</code>, in which you declare a language package.</p>
+    <p><code class="language-plaintext highlighter-rouge">language.xml</code>, in which you declare a language package.</p>
 
     <p><a href="https://github.com/magento/magento2/blob/2.1/app/i18n/Magento/de_DE/language.xml">Sample language.xml</a></p>
   </li>

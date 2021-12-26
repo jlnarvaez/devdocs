@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Configure nginx and Elasticsearch | Magento 2 Developer Documentation (copy)</title>
+	<title>Configure nginx and Elasticsearch | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/config-guide/elasticsearch/es-config-nginx.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/config-guide/elasticsearch/es-config-nginx.html">Magento 2.0</a></li>
 		
@@ -3674,7 +3675,7 @@
 
 <p>(An older term, Secure Sockets Layer (SSL), is frequently used interchangeably with TLS. In this topic, we refer to <em>TLS</em>.)</p>
 
-<p class="bs-callout bs-callout-warning">Unless otherwise noted, all commands in this topic must be entered as a user with <code class="highlighter-rouge">root</code> privileges.</p>
+<p class="bs-callout bs-callout-warning">Unless otherwise noted, all commands in this topic must be entered as a user with <code class="language-plaintext highlighter-rouge">root</code> privileges.</p>
 
 <h3 id="recommendations">Recommendations</h3>
 
@@ -3728,16 +3729,16 @@
 <p>See one of the following sections for more information:</p>
 
 <ul>
-  <li><a href="#es-ws-secure-nginx-conf">Step 1: Specify additional configuration files in your global <code class="highlighter-rouge">nginx.conf</code></a></li>
+  <li><a href="#es-ws-secure-nginx-conf">Step 1: Specify additional configuration files in your global <code class="language-plaintext highlighter-rouge">nginx.conf</code></a></li>
   <li><a href="#es-ws-secure-nginx-proxy">Step 2: Set up nginx as a proxy</a></li>
 </ul>
 
-<h3 id="es-ws-secure-nginx-conf">Step 1: Specify additional configuration files in your global <code class="highlighter-rouge">nginx.conf</code></h3>
+<h3 id="es-ws-secure-nginx-conf">Step 1: Specify additional configuration files in your global <code class="language-plaintext highlighter-rouge">nginx.conf</code></h3>
 
-<p>Make sure your global <code class="highlighter-rouge">/etc/nginx/nginx.conf</code> contains the following line so it loads the other configuration files discussed in the following sections:</p>
+<p>Make sure your global <code class="language-plaintext highlighter-rouge">/etc/nginx/nginx.conf</code> contains the following line so it loads the other configuration files discussed in the following sections:</p>
 
-<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="gp">include /etc/nginx/conf.d/*.conf;</span>
-</code></pre></div></div>
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="gp">include /etc/nginx/conf.d/*.conf;</span><span class="w">
+</span></code></pre></div></div>
 
 <h3 id="es-ws-secure-nginx-proxy">Step 2: Set up nginx as a proxy</h3>
 
@@ -3746,9 +3747,9 @@
 
 <ol>
   <li>
-    <p>Use a text editor to create a new file <code class="highlighter-rouge">/etc/nginx/conf.d/magento_es_auth.conf</code> with the following contents:</p>
+    <p>Use a text editor to create a new file <code class="language-plaintext highlighter-rouge">/etc/nginx/conf.d/magento_es_auth.conf</code> with the following contents:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>server {
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>server {
     listen 8080;
     location / {
         proxy_pass http://localhost:9200;
@@ -3759,7 +3760,7 @@
   <li>
     <p>Restart nginx:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>service nginx restart
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>service nginx restart
 </code></pre></div>    </div>
   </li>
   <li>
@@ -3770,12 +3771,12 @@
 
     <p>For example, if your proxy uses port 8080:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>curl -i http://localhost:8080/_cluster/health
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>curl -i http://localhost:8080/_cluster/health
 </code></pre></div>    </div>
 
     <p>Messages similar to the following display to indicate success:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>HTTP/1.1 200 OK
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>HTTP/1.1 200 OK
 Date: Tue, 23 Feb 2016 20:38:03 GMT
 Content-Type: application/json; charset=UTF-8
 Content-Length: 389
@@ -3881,7 +3882,7 @@ Connection: keep-alive
     <img src="/devdocs/common/images/solr_refresh-cache.png" alt="" width="600px" /></li>
 </ol>
 
-<p>To clean the cache using the command line, use the <a href="/devdocs/guides/v2.1/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean"><code class="highlighter-rouge">magento cache:clean</code></a> command.</p>
+<p>To clean the cache using the command line, use the <a href="/devdocs/guides/v2.1/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean"><code class="language-plaintext highlighter-rouge">magento cache:clean</code></a> command.</p>
 
 <p>To reindex using the command line:</p>
 
@@ -3892,12 +3893,12 @@ Connection: keep-alive
 
     <p>Enter the following command to reindex the catalog search index only:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php &lt;your Magento install dir&gt;/bin magento indexer:reindex catalogsearch_fulltext
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php &lt;your Magento install dir&gt;/bin magento indexer:reindex catalogsearch_fulltext
 </code></pre></div>    </div>
 
     <p>Enter the following command to reindex all indexers:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php &lt;your Magento install dir&gt;/bin magento indexer:reindex
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php &lt;your Magento install dir&gt;/bin magento indexer:reindex
 </code></pre></div>    </div>
   </li>
   <li>Wait while the reindexing completes.</li>
@@ -3930,52 +3931,52 @@ Connection: keep-alive
 
 <h3 id="es-ws-secure-nginx-pwd">Step 1: Create a password</h3>
 
-<p>We recommend you use the Apache <code class="highlighter-rouge">htpasswd</code> command to encode passwords for a user with access to Elasticsearch (named <code class="highlighter-rouge">magento_elasticsearch</code> in this example).</p>
+<p>We recommend you use the Apache <code class="language-plaintext highlighter-rouge">htpasswd</code> command to encode passwords for a user with access to Elasticsearch (named <code class="language-plaintext highlighter-rouge">magento_elasticsearch</code> in this example).</p>
 
 <p>To create a password:</p>
 
 <ol>
   <li>
-    <p>Enter the following command to determine if <code class="highlighter-rouge">htpasswd</code> is already installed:</p>
+    <p>Enter the following command to determine if <code class="language-plaintext highlighter-rouge">htpasswd</code> is already installed:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>which htpasswd
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>which htpasswd
 </code></pre></div>    </div>
 
-    <p>If a path displays, it is installed; if the command returns no output, <code class="highlighter-rouge">htpasswd</code> is not installed.</p>
+    <p>If a path displays, it is installed; if the command returns no output, <code class="language-plaintext highlighter-rouge">htpasswd</code> is not installed.</p>
   </li>
   <li>
-    <p>If necessary, install <code class="highlighter-rouge">htpasswd</code>:</p>
+    <p>If necessary, install <code class="language-plaintext highlighter-rouge">htpasswd</code>:</p>
 
     <ul>
-      <li>Ubuntu: <code class="highlighter-rouge">apt-get -y install apache2-utils</code></li>
-      <li>CentOS: <code class="highlighter-rouge">yum -y install httpd-tools</code></li>
+      <li>Ubuntu: <code class="language-plaintext highlighter-rouge">apt-get -y install apache2-utils</code></li>
+      <li>CentOS: <code class="language-plaintext highlighter-rouge">yum -y install httpd-tools</code></li>
     </ul>
   </li>
   <li>
-    <p>Create a <code class="highlighter-rouge">/etc/nginx/passwd</code> directory to store passwords:</p>
+    <p>Create a <code class="language-plaintext highlighter-rouge">/etc/nginx/passwd</code> directory to store passwords:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mkdir -p /etc/nginx/passwd
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mkdir -p /etc/nginx/passwd
 htpasswd -c /etc/nginx/passwd/.&lt;filename&gt; &lt;username&gt;
 </code></pre></div>    </div>
 
-    <p class="bs-callout bs-callout-info">For security reasons, <code class="highlighter-rouge">&lt;filename&gt;</code> should be hidden; that is, it must start with a period. An example follows.</p>
+    <p class="bs-callout bs-callout-info">For security reasons, <code class="language-plaintext highlighter-rouge">&lt;filename&gt;</code> should be hidden; that is, it must start with a period. An example follows.</p>
 
     <p>Example:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mkdir -p /etc/nginx/passwd
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mkdir -p /etc/nginx/passwd
 htpasswd -c /etc/nginx/passwd/.magento_elasticsearch magento_elasticsearch
 </code></pre></div>    </div>
 
     <p>Follow the prompts on your screen to create the user’s password.</p>
   </li>
   <li>
-    <p><em>(Optional).</em> To add another user to your password file, enter the same command without the <code class="highlighter-rouge">-c</code> (create) option:</p>
+    <p><em>(Optional).</em> To add another user to your password file, enter the same command without the <code class="language-plaintext highlighter-rouge">-c</code> (create) option:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>htpasswd /etc/nginx/passwd/.&lt;filename&gt; &lt;username&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>htpasswd /etc/nginx/passwd/.&lt;filename&gt; &lt;username&gt;
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Verify that the contents of <code class="highlighter-rouge">/etc/nginx/passwd</code> is correct.</p>
+    <p>Verify that the contents of <code class="language-plaintext highlighter-rouge">/etc/nginx/passwd</code> is correct.</p>
   </li>
 </ol>
 
@@ -3985,9 +3986,9 @@ htpasswd -c /etc/nginx/passwd/.magento_elasticsearch magento_elasticsearch
 
 <p class="bs-callout bs-callout-warning">The example shown is for an <em>unsecure</em> proxy. To use a secure proxy, add the following contents (except the listen port) to your secure server block.</p>
 
-<p>Use a text editor to modify either <code class="highlighter-rouge">/etc/nginx/conf.d/magento_es_auth.conf</code> (unsecure) or your secure server block with the following contents:</p>
+<p>Use a text editor to modify either <code class="language-plaintext highlighter-rouge">/etc/nginx/conf.d/magento_es_auth.conf</code> (unsecure) or your secure server block with the following contents:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>server {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>server {
 	listen 8080;
 	server_name 127.0.0.1;
 
@@ -4025,13 +4026,13 @@ htpasswd -c /etc/nginx/passwd/.magento_elasticsearch magento_elasticsearch
   <li>
     <p>Enter the following command to create a new directory to store the authentication configuration:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mkdir /etc/nginx/auth/
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mkdir /etc/nginx/auth/
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Use a text editor to create a new file <code class="highlighter-rouge">/etc/nginx/auth/magento_elasticsearch.conf</code> with the following contents:</p>
+    <p>Use a text editor to create a new file <code class="language-plaintext highlighter-rouge">/etc/nginx/auth/magento_elasticsearch.conf</code> with the following contents:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>location /elasticsearch {
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>location /elasticsearch {
 auth_basic "Restricted - elasticsearch";
 auth_basic_user_file /etc/nginx/passwd/.htpasswd_magento_elasticsearch;
 
@@ -4042,11 +4043,11 @@ proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 }
 </code></pre></div>    </div>
   </li>
-  <li>If you set up a secure proxy, delete <code class="highlighter-rouge">/etc/nginx/conf.d/magento_es_auth.conf</code>.</li>
+  <li>If you set up a secure proxy, delete <code class="language-plaintext highlighter-rouge">/etc/nginx/conf.d/magento_es_auth.conf</code>.</li>
   <li>
     <p>Restart nginx and continue with the next section:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>service nginx restart
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>service nginx restart
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -4056,15 +4057,15 @@ proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 <p>This section discusses two ways to verify that HTTP Basic authentication is working:</p>
 
 <ul>
-  <li>Using a <code class="highlighter-rouge">curl</code> command to verify you must enter a username and password to get cluster status</li>
+  <li>Using a <code class="language-plaintext highlighter-rouge">curl</code> command to verify you must enter a username and password to get cluster status</li>
   <li>Configuring HTTP Basic authentication in the Magento Admin</li>
 </ul>
 
-<h3 id="use-a-curl-command-to-verify-cluster-status">Use a <code class="highlighter-rouge">curl</code> command to verify cluster status</h3>
+<h3 id="use-a-curl-command-to-verify-cluster-status">Use a <code class="language-plaintext highlighter-rouge">curl</code> command to verify cluster status</h3>
 
 <p>Enter the following command:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>curl <span class="nt">-i</span> http://&lt;hostname, ip, or localhost&gt;:&lt;proxy port&gt;/_cluster/health
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>curl <span class="nt">-i</span> http://&lt;<span class="nb">hostname</span>, ip, or localhost&gt;:&lt;proxy port&gt;/_cluster/health
 </code></pre></div></div>
 
 <p>For example, if you enter the command on the Elasticsearch server and your proxy uses port 8080:</p>
@@ -4081,18 +4082,18 @@ Content-Length: 194
 Connection: keep-alive
 WWW-Authenticate: Basic realm="Restricted"
 
-</span><span class="gp">&lt;html&gt;</span>
-<span class="gp">&lt;head&gt;</span>&lt;title&gt;401 Authorization Required&lt;/title&gt;&lt;/head&gt;
-<span class="gp">&lt;body bgcolor="white"&gt;</span>
-<span class="gp">  &lt;center&gt;</span>&lt;h1&gt;401 Authorization Required&lt;/h1&gt;&lt;/center&gt;
+</span><span class="gp">&lt;html&gt;</span><span class="w">
+</span><span class="gp">&lt;head&gt;</span>&lt;title&gt;401 Authorization Required&lt;/title&gt;&lt;/head&gt;
+<span class="gp">&lt;body bgcolor="white"&gt;</span><span class="w">
+</span><span class="gp">  &lt;center&gt;</span>&lt;h1&gt;401 Authorization Required&lt;/h1&gt;&lt;/center&gt;
 <span class="go">
-</span><span class="gp">&lt;/body&gt;</span>
-<span class="gp">&lt;/html&gt;</span>
-</code></pre></div></div>
+</span><span class="gp">&lt;/body&gt;</span><span class="w">
+</span><span class="gp">&lt;/html&gt;</span><span class="w">
+</span></code></pre></div></div>
 
 <p>Now try the following command:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>curl <span class="nt">-i</span> <span class="nt">-u</span> &lt;username&gt;:&lt;password&gt; http://&lt;hostname, ip, or localhost&gt;:&lt;proxy port&gt;/_cluster/health
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>curl <span class="nt">-i</span> <span class="nt">-u</span> &lt;username&gt;:&lt;password&gt; http://&lt;<span class="nb">hostname</span>, ip, or localhost&gt;:&lt;proxy port&gt;/_cluster/health
 </code></pre></div></div>
 
 <p>For example:</p>
@@ -4104,7 +4105,7 @@ WWW-Authenticate: Basic realm="Restricted"
 
 <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="go">HTTP/1.1 200 OK
 Date: Tue, 23 Feb 2016 20:38:03 GMT
-</span><span class="gp">Content-Type: application/json;</span> <span class="nv">charset</span><span class="o">=</span>UTF-8
+</span><span class="gp">Content-Type: application/json;</span><span class="w"> </span><span class="nv">charset</span><span class="o">=</span>UTF-8
 <span class="go">Content-Length: 389
 Connection: keep-alive
 

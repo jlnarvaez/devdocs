@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>SQLSTATE[HY000] [2002] No such file or directory | Magento 2 Developer Documentation (copy)</title>
+	<title>SQLSTATE[HY000] [2002] No such file or directory | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/install-gde/trouble/php/tshoot_phpini.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/install-gde/trouble/php/tshoot_phpini.html">Magento 2.0</a></li>
 		
@@ -4549,14 +4550,14 @@
 
 <p>During or after installation, a  message similar to the following displays:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Exception' with message 'PHP Fatal error: Uncaught exception 'PDOException' with message 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Exception' with message 'PHP Fatal error: Uncaught exception 'PDOException' with message 
 'SQLSTATE[HY000] [2002] No such file or directory 
 </code></pre></div></div>
 
 <h3 id="solution">Solution</h3>
 
 <p>This is commonly caused by a different instance of   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
- being used by the PHP command line compared to the web server. In particular, <code class="highlighter-rouge">mysql.sock</code> might be misconfigured if this is the case.</p>
+ being used by the PHP command line compared to the web server. In particular, <code class="language-plaintext highlighter-rouge">mysql.sock</code> might be misconfigured if this is the case.</p>
 
 <p>To determine whether or not you’re using one instance of PHP:</p>
 
@@ -4565,16 +4566,16 @@
   <li>
     <p>Enter the following command:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php -i | grep 'php.ini'
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php -i | grep 'php.ini'
 </code></pre></div>    </div>
 
-    <p>This determines the settings used by the PHP command-line interface (CLI). Note where <code class="highlighter-rouge">php.ini</code> is located.</p>
+    <p>This determines the settings used by the PHP command-line interface (CLI). Note where <code class="language-plaintext highlighter-rouge">php.ini</code> is located.</p>
   </li>
   <li>If you haven’t already done so, set up a <a href="/devdocs/guides/v2.1/install-gde/prereq/optional.html#install-optional-phpinfo">phpinfo.php</a> on your web server.</li>
   <li>
-    <p>Compare the value of <strong>Loaded Configuration File</strong> from <code class="highlighter-rouge">phpinfo.php</code> with the one from <code class="highlighter-rouge">php -i</code>.</p>
+    <p>Compare the value of <strong>Loaded Configuration File</strong> from <code class="language-plaintext highlighter-rouge">phpinfo.php</code> with the one from <code class="language-plaintext highlighter-rouge">php -i</code>.</p>
 
-    <p><code class="highlighter-rouge">phpinfo.php</code> shows the <code class="highlighter-rouge">php.ini</code> file used by your web server. If it’s different from what’s in PHP’s <code class="highlighter-rouge">php.ini</code>, you must make <em>all</em> PHP settings consistent for both the PHP CLI and the web server.</p>
+    <p><code class="language-plaintext highlighter-rouge">phpinfo.php</code> shows the <code class="language-plaintext highlighter-rouge">php.ini</code> file used by your web server. If it’s different from what’s in PHP’s <code class="language-plaintext highlighter-rouge">php.ini</code>, you must make <em>all</em> PHP settings consistent for both the PHP CLI and the web server.</p>
 
     <p>For additional details, consult the documentation provided with your web server.</p>
   </li>

@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Page | Magento 2 Developer Documentation (copy)</title>
+	<title>Page | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/mtf/mtf_entities/mtf_page.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/mtf/mtf_entities/mtf_page.html">Magento 2.0</a></li>
 		
@@ -2169,7 +2170,7 @@ A page serves as container for <a href="/devdocs/guides/v2.0/mtf/mtf_entities/mt
  file in the Page directory of the module to which it belongs</p>
   </li>
   <li>
-    <p>Add the previously created blocks presented on this page to the <code class="highlighter-rouge">&lt;page&gt;</code> node</p>
+    <p>Add the previously created blocks presented on this page to the <code class="language-plaintext highlighter-rouge">&lt;page&gt;</code> node</p>
   </li>
   <li>
     <p>Run the page generator</p>
@@ -2179,7 +2180,7 @@ A page serves as container for <a href="/devdocs/guides/v2.0/mtf/mtf_entities/mt
 <p>Let’s see an example of the Magento   <span term-uuid="f0dcf847-ce21-4b88-8b45-83e1cbf08100" class="glossary-term" data-toggle="popover">Widget</span>
  page:</p>
 
-<p><code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Page/Adminhtml/WidgetInstanceIndex.xml</code></p>
+<p><code class="language-plaintext highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Page/Adminhtml/WidgetInstanceIndex.xml</code></p>
 
 <p>where four blocks have been added:</p>
 
@@ -2202,46 +2203,46 @@ A page serves as container for <a href="/devdocs/guides/v2.0/mtf/mtf_entities/mt
 
 </code></pre></div></div>
 
-<p id="mtf_page_attributes">The following table explains <code class="highlighter-rouge">&lt;page&gt;</code> attributes.</p>
+<p id="mtf_page_attributes">The following table explains <code class="language-plaintext highlighter-rouge">&lt;page&gt;</code> attributes.</p>
 
 <table>
   <thead>
     <tr>
-      <th><code class="highlighter-rouge">&lt;page&gt;</code> attribute</th>
+      <th><code class="language-plaintext highlighter-rouge">&lt;page&gt;</code> attribute</th>
       <th>Description</th>
       <th>Example with explanation</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">name</code></td>
-      <td>Name of the page PHP class, that will be generated in <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/generated/Magento/&lt;module&gt;/Page/&lt;area&gt;/&lt;name&gt;.php</code>.</td>
-      <td><code class="highlighter-rouge">WidgetInstanceIndex</code></td>
+      <td><code class="language-plaintext highlighter-rouge">name</code></td>
+      <td>Name of the page PHP class, that will be generated in <code class="language-plaintext highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/generated/Magento/&lt;module&gt;/Page/&lt;area&gt;/&lt;name&gt;.php</code>.</td>
+      <td><code class="language-plaintext highlighter-rouge">WidgetInstanceIndex</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">area</code></td>
-      <td>The page usage area. Determines a <a href="#mtf_page_types">type of the page</a>. The directory with the name assigned to <code class="highlighter-rouge">area</code> will be created in the module. Value can be <code class="highlighter-rouge">Adminhtml</code> for the Admin area, or any other for another area.</td>
-      <td><code class="highlighter-rouge">Adminhtml</code>. The page class will be generated in the <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/generated/Magento/Widget/Page/Adminhtml</code>.</td>
+      <td><code class="language-plaintext highlighter-rouge">area</code></td>
+      <td>The page usage area. Determines a <a href="#mtf_page_types">type of the page</a>. The directory with the name assigned to <code class="language-plaintext highlighter-rouge">area</code> will be created in the module. Value can be <code class="language-plaintext highlighter-rouge">Adminhtml</code> for the Admin area, or any other for another area.</td>
+      <td><code class="language-plaintext highlighter-rouge">Adminhtml</code>. The page class will be generated in the <code class="language-plaintext highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/generated/Magento/Widget/Page/Adminhtml</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">mca</code></td>
+      <td><code class="language-plaintext highlighter-rouge">mca</code></td>
       <td>Path following the base URL for the Magento pages (storefront or Admin), or full URL for other pages. MCA is an abbreviation of the Module Controller Action.</td>
-      <td><code class="highlighter-rouge">admin/widget_instance/index</code>. Considering that <code class="highlighter-rouge">area="Adminhtml"</code>, the Magento page under test is <code class="highlighter-rouge">http://example.com/admin/admin/widget_instance/index</code></td>
+      <td><code class="language-plaintext highlighter-rouge">admin/widget_instance/index</code>. Considering that <code class="language-plaintext highlighter-rouge">area="Adminhtml"</code>, the Magento page under test is <code class="language-plaintext highlighter-rouge">http://example.com/admin/admin/widget_instance/index</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">module</code></td>
+      <td><code class="language-plaintext highlighter-rouge">module</code></td>
       <td>Module where the page will be generated.</td>
-      <td><code class="highlighter-rouge">Magento_Widget</code>. The page will be generated in the <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/Magento/Widget/Page</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Magento_Widget</code>. The page will be generated in the <code class="language-plaintext highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/Magento/Widget/Page</code></td>
     </tr>
   </tbody>
 </table>
 
-<p>See the <code class="highlighter-rouge">block</code> node attributes details in the following table:</p>
+<p>See the <code class="language-plaintext highlighter-rouge">block</code> node attributes details in the following table:</p>
 
 <table>
   <thead>
     <tr>
-      <th><code class="highlighter-rouge">block</code> attribute</th>
+      <th><code class="language-plaintext highlighter-rouge">block</code> attribute</th>
       <th>Description</th>
       <th>Is required</th>
       <th>Values</th>
@@ -2250,48 +2251,48 @@ A page serves as container for <a href="/devdocs/guides/v2.0/mtf/mtf_entities/mt
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">name</code></td>
+      <td><code class="language-plaintext highlighter-rouge">name</code></td>
       <td>Name of the block</td>
       <td>Required</td>
       <td>Unique in the page. The method to get the block class instance is generated using this value.</td>
-      <td><code class="highlighter-rouge">widgetGrid</code></td>
+      <td><code class="language-plaintext highlighter-rouge">widgetGrid</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">class</code></td>
+      <td><code class="language-plaintext highlighter-rouge">class</code></td>
       <td>Full name of the block class</td>
       <td>Required</td>
       <td>Class name</td>
-      <td><code class="highlighter-rouge">Magento\Widget\Test\Block\Adminhtml\Widget\WidgetGrid</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Magento\Widget\Test\Block\Adminhtml\Widget\WidgetGrid</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">locator</code></td>
+      <td><code class="language-plaintext highlighter-rouge">locator</code></td>
       <td>CSS selector or XPath locator of the block</td>
       <td>Required</td>
       <td><a href="http://www.w3.org/TR/selectors/">CSS Selectors</a>, <a href="http://www.w3.org/TR/xpath-31/">XPath</a></td>
-      <td>CSS: <code class="highlighter-rouge">#widgetInstanceGrid</code>, XPath: <code class="highlighter-rouge">//*[@id="widgetInstanceGrid"]</code></td>
+      <td>CSS: <code class="language-plaintext highlighter-rouge">#widgetInstanceGrid</code>, XPath: <code class="language-plaintext highlighter-rouge">//*[@id="widgetInstanceGrid"]</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">strategy</code></td>
+      <td><code class="language-plaintext highlighter-rouge">strategy</code></td>
       <td>Selector strategy</td>
       <td>Required</td>
-      <td><code class="highlighter-rouge">css selector</code> or <code class="highlighter-rouge">xpath</code></td>
-      <td><code class="highlighter-rouge">css selector</code></td>
+      <td><code class="language-plaintext highlighter-rouge">css selector</code> or <code class="language-plaintext highlighter-rouge">xpath</code></td>
+      <td><code class="language-plaintext highlighter-rouge">css selector</code></td>
     </tr>
   </tbody>
 </table>
 
-<p>Also, block can contain a <code class="highlighter-rouge">render</code> node. <a href="/devdocs/guides/v2.0/mtf/mtf_entities/mtf_block.html#mtf_block_render">Read about renders in the Block topic</a>.</p>
+<p>Also, block can contain a <code class="language-plaintext highlighter-rouge">render</code> node. <a href="/devdocs/guides/v2.0/mtf/mtf_entities/mtf_block.html#mtf_block_render">Read about renders in the Block topic</a>.</p>
 
 <p>To apply all changes you’ve made to the page (XML file), run the class generator.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php &lt;magento2&gt;/dev/tests/functional/utils/generate.php
 </code></pre></div></div>
 
-<p>The page will be updated in the <code class="highlighter-rouge">&lt;magento2&gt;/dev/tests/functional/generated</code> directory.</p>
+<p>The page will be updated in the <code class="language-plaintext highlighter-rouge">&lt;magento2&gt;/dev/tests/functional/generated</code> directory.</p>
 
 <h2 id="mtf_page_types">Page types</h2>
 
-<p>Depending on <code class="highlighter-rouge">area</code> and <code class="highlighter-rouge">mca</code> attributes, page can be of one of the following types:</p>
+<p>Depending on <code class="language-plaintext highlighter-rouge">area</code> and <code class="language-plaintext highlighter-rouge">mca</code> attributes, page can be of one of the following types:</p>
 
 <ul>
   <li><span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>
@@ -2303,27 +2304,27 @@ A page serves as container for <a href="/devdocs/guides/v2.0/mtf/mtf_entities/mt
 
 <h3 id="mtf_page_admin">Admin page</h3>
 
-<p>Admin page has attribute <code class="highlighter-rouge">area="Adminhtml"</code> in <code class="highlighter-rouge">&lt;page&gt;</code> node of the page XML file. Generated page extends  <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/BackendPage.php">Magento\Mtf\Page\BackendPage</a> class. You will log in automatically to the Admin.</p>
+<p>Admin page has attribute <code class="language-plaintext highlighter-rouge">area="Adminhtml"</code> in <code class="language-plaintext highlighter-rouge">&lt;page&gt;</code> node of the page XML file. Generated page extends  <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/BackendPage.php">Magento\Mtf\Page\BackendPage</a> class. You will log in automatically to the Admin.</p>
 
-<p>The page will be opened as a concatenation of <code class="highlighter-rouge">app_backend_url</code> from <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/phpunit.xml</code> and <code class="highlighter-rouge">mca</code> link.</p>
+<p>The page will be opened as a concatenation of <code class="language-plaintext highlighter-rouge">app_backend_url</code> from <code class="language-plaintext highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/phpunit.xml</code> and <code class="language-plaintext highlighter-rouge">mca</code> link.</p>
 
 <h3 id="mtf_page_storefront">Storefront page</h3>
 
-<p>Storefront page is recognizable by <code class="highlighter-rouge">area</code> assigned any value except <code class="highlighter-rouge">Adminhtml</code>, <em>and</em> <code class="highlighter-rouge">mca</code> doesn’t have <code class="highlighter-rouge">http</code>. This type of page extends class <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/FrontendPage.php">Magento\Mtf\Page\FrontendPage</a>.</p>
+<p>Storefront page is recognizable by <code class="language-plaintext highlighter-rouge">area</code> assigned any value except <code class="language-plaintext highlighter-rouge">Adminhtml</code>, <em>and</em> <code class="language-plaintext highlighter-rouge">mca</code> doesn’t have <code class="language-plaintext highlighter-rouge">http</code>. This type of page extends class <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/FrontendPage.php">Magento\Mtf\Page\FrontendPage</a>.</p>
 
-<p>Page will be opened as concatenation of <code class="highlighter-rouge">app_frontend_url</code> from <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/phpunit.xml</code> and <code class="highlighter-rouge">mca</code> link.</p>
+<p>Page will be opened as concatenation of <code class="language-plaintext highlighter-rouge">app_frontend_url</code> from <code class="language-plaintext highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/phpunit.xml</code> and <code class="language-plaintext highlighter-rouge">mca</code> link.</p>
 
 <h3 id="mtf_page_extern">External page</h3>
 
-<p>External page has <code class="highlighter-rouge">area</code> assigned any value except <code class="highlighter-rouge">Adminhtml</code>, <em>and</em> <code class="highlighter-rouge">mca</code> containing <code class="highlighter-rouge">http</code>. Generated page extends class <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/ExternalPage.php">Magento\Mtf\Page\ExternalPage</a>.</p>
+<p>External page has <code class="language-plaintext highlighter-rouge">area</code> assigned any value except <code class="language-plaintext highlighter-rouge">Adminhtml</code>, <em>and</em> <code class="language-plaintext highlighter-rouge">mca</code> containing <code class="language-plaintext highlighter-rouge">http</code>. Generated page extends class <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/ExternalPage.php">Magento\Mtf\Page\ExternalPage</a>.</p>
 
-<p>The page will be opened using <code class="highlighter-rouge">mca</code> link.</p>
+<p>The page will be opened using <code class="language-plaintext highlighter-rouge">mca</code> link.</p>
 
 <h2 id="mtf_page_merge">Merge pages</h2>
 
 <p>Page merging can help you to override modules declared in a page, or add blocks from different modules.</p>
 
-<p>Pages are merged when they have the same <code class="highlighter-rouge">name</code> attribute value.</p>
+<p>Pages are merged when they have the same <code class="language-plaintext highlighter-rouge">name</code> attribute value.</p>
 
 <p>Pages are merged module by module in the order that modules are loaded in Magento. All new modules are loaded after related Magento modules (according to the dependencies) so that the pages from new modules are merged the last.</p>
 
@@ -2337,17 +2338,17 @@ A page serves as container for <a href="/devdocs/guides/v2.0/mtf/mtf_entities/mt
 
 <ul>
   <li>with the same name as the page you want to merge</li>
-  <li>with the same <code class="highlighter-rouge">mca</code></li>
-  <li>the <code class="highlighter-rouge">module</code> and <code class="highlighter-rouge">area</code> attributes can be omitted</li>
+  <li>with the same <code class="language-plaintext highlighter-rouge">mca</code></li>
+  <li>the <code class="language-plaintext highlighter-rouge">module</code> and <code class="language-plaintext highlighter-rouge">area</code> attributes can be omitted</li>
 </ul>
 
 <p><strong>Step 3.</strong> Add blocks to the page</p>
 
 <p><strong>Step 4.</strong> Run the page generator</p>
 
-<p>For example, we have <code class="highlighter-rouge">dev/tests/functional/tests/app/Magento/Catalog/Test/Page/Product/CatalogProductView.xml</code> page and want to add three blocks from the Magento_Review module.</p>
+<p>For example, we have <code class="language-plaintext highlighter-rouge">dev/tests/functional/tests/app/Magento/Catalog/Test/Page/Product/CatalogProductView.xml</code> page and want to add three blocks from the Magento_Review module.</p>
 
-<p><code class="highlighter-rouge">dev/tests/functional/tests/app/Magento/Catalog/Test/Page/Product/CatalogProductView.xml</code> contains:</p>
+<p><code class="language-plaintext highlighter-rouge">dev/tests/functional/tests/app/Magento/Catalog/Test/Page/Product/CatalogProductView.xml</code> contains:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
 <span class="c">&lt;!--
@@ -2368,7 +2369,7 @@ A page serves as container for <a href="/devdocs/guides/v2.0/mtf/mtf_entities/mt
 
 </code></pre></div></div>
 
-<p>We should create <code class="highlighter-rouge">dev/tests/functional/tests/app/Magento/Review/Test/Page/Product/CatalogProductView.xml</code> page with blocks we want to add:</p>
+<p>We should create <code class="language-plaintext highlighter-rouge">dev/tests/functional/tests/app/Magento/Review/Test/Page/Product/CatalogProductView.xml</code> page with blocks we want to add:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
 <span class="c">&lt;!--
@@ -2388,25 +2389,25 @@ A page serves as container for <a href="/devdocs/guides/v2.0/mtf/mtf_entities/mt
 
 <p>And generate the updated page:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php &lt;magento2_root_dir&gt;/dev/tests/functional/utils/generate.php
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php &lt;magento2_root_dir&gt;/dev/tests/functional/utils/generate.php
 </code></pre></div></div>
 
-<p>The result is in the <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/generated/Magento/Catalog/Test/Page/Product/CatalogProductView.php</code> with the following code:</p>
+<p>The result is in the <code class="language-plaintext highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/generated/Magento/Catalog/Test/Page/Product/CatalogProductView.php</code> with the following code:</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="cp">&lt;?php</span>
-<span class="sd">/**
+<span class="cd">/**
  * Copyright © 2015 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */</span>
-<span class="k">namespace</span> <span class="nx">Magento\Catalog\Test\Page\Product</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Mtf\Page\FrontendPage</span><span class="p">;</span>
-<span class="sd">/**
+<span class="kn">namespace</span> <span class="nn">Magento\Catalog\Test\Page\Product</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Mtf\Page\FrontendPage</span><span class="p">;</span>
+<span class="cd">/**
  * Class CatalogProductView
  */</span>
-<span class="k">class</span> <span class="nc">CatalogProductView</span> <span class="k">extends</span> <span class="nx">FrontendPage</span>
+<span class="kd">class</span> <span class="nc">CatalogProductView</span> <span class="kd">extends</span> <span class="nc">FrontendPage</span>
 <span class="p">{</span>
     <span class="k">const</span> <span class="no">MCA</span> <span class="o">=</span> <span class="s1">'catalog/product/view'</span><span class="p">;</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * Blocks' config
      *
      * @var array
@@ -2453,61 +2454,61 @@ A page serves as container for <a href="/devdocs/guides/v2.0/mtf/mtf_entities/mt
             <span class="s1">'strategy'</span> <span class="o">=&gt;</span> <span class="s1">'css selector'</span><span class="p">,</span>
         <span class="p">],</span>
     <span class="p">];</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * @return \Magento\Catalog\Test\Block\Product\View
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getViewBlock</span><span class="p">()</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">getViewBlock</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getBlockInstance</span><span class="p">(</span><span class="s1">'viewBlock'</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">getBlockInstance</span><span class="p">(</span><span class="s1">'viewBlock'</span><span class="p">);</span>
     <span class="p">}</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * @return \Magento\Catalog\Test\Block\Product\Additional
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getAdditionalInformationBlock</span><span class="p">()</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">getAdditionalInformationBlock</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getBlockInstance</span><span class="p">(</span><span class="s1">'additionalInformationBlock'</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">getBlockInstance</span><span class="p">(</span><span class="s1">'additionalInformationBlock'</span><span class="p">);</span>
     <span class="p">}</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * @return \Magento\Catalog\Test\Block\Product\View\CustomOptions
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getCustomOptionsBlock</span><span class="p">()</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">getCustomOptionsBlock</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getBlockInstance</span><span class="p">(</span><span class="s1">'customOptionsBlock'</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">getBlockInstance</span><span class="p">(</span><span class="s1">'customOptionsBlock'</span><span class="p">);</span>
     <span class="p">}</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * @return \Magento\Backend\Test\Block\Messages
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getMessagesBlock</span><span class="p">()</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">getMessagesBlock</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getBlockInstance</span><span class="p">(</span><span class="s1">'messagesBlock'</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">getBlockInstance</span><span class="p">(</span><span class="s1">'messagesBlock'</span><span class="p">);</span>
     <span class="p">}</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * @return \Magento\Theme\Test\Block\Html\Title
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getTitleBlock</span><span class="p">()</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">getTitleBlock</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getBlockInstance</span><span class="p">(</span><span class="s1">'titleBlock'</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">getBlockInstance</span><span class="p">(</span><span class="s1">'titleBlock'</span><span class="p">);</span>
     <span class="p">}</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * @return \Magento\Review\Test\Block\Product\View\Summary
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getReviewSummary</span><span class="p">()</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">getReviewSummary</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getBlockInstance</span><span class="p">(</span><span class="s1">'reviewSummary'</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">getBlockInstance</span><span class="p">(</span><span class="s1">'reviewSummary'</span><span class="p">);</span>
     <span class="p">}</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * @return \Magento\Review\Test\Block\Product\View
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getCustomerReviewBlock</span><span class="p">()</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">getCustomerReviewBlock</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getBlockInstance</span><span class="p">(</span><span class="s1">'customerReviewBlock'</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">getBlockInstance</span><span class="p">(</span><span class="s1">'customerReviewBlock'</span><span class="p">);</span>
     <span class="p">}</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * @return \Magento\Review\Test\Block\ReviewForm
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getReviewFormBlock</span><span class="p">()</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">getReviewFormBlock</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getBlockInstance</span><span class="p">(</span><span class="s1">'reviewFormBlock'</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">getBlockInstance</span><span class="p">(</span><span class="s1">'reviewFormBlock'</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -2524,8 +2525,8 @@ A page serves as container for <a href="/devdocs/guides/v2.0/mtf/mtf_entities/mt
 
 <ul>
   <li>with the same name as the page you want to merge</li>
-  <li>with the same <code class="highlighter-rouge">mca</code></li>
-  <li>without <code class="highlighter-rouge">module</code> and <code class="highlighter-rouge">area</code> attributes</li>
+  <li>with the same <code class="language-plaintext highlighter-rouge">mca</code></li>
+  <li>without <code class="language-plaintext highlighter-rouge">module</code> and <code class="language-plaintext highlighter-rouge">area</code> attributes</li>
 </ul>
 
 <p><strong>Step 3.</strong> Add blocks that you want to override (indicating a block class with new behavior)</p>
@@ -2537,10 +2538,10 @@ A page serves as container for <a href="/devdocs/guides/v2.0/mtf/mtf_entities/mt
 <ul>
   <li>A Magento_NewModule changes the   <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span>
  creation behavior of a Magento_Catalog module.</li>
-  <li><code class="highlighter-rouge">editForm</code> block from page <code class="highlighter-rouge">\Magento\Catalog\Test\Page\Adminhtml\CatalogCategoryEdit</code> must be changed according to new functionality.</li>
+  <li><code class="language-plaintext highlighter-rouge">editForm</code> block from page <code class="language-plaintext highlighter-rouge">\Magento\Catalog\Test\Page\Adminhtml\CatalogCategoryEdit</code> must be changed according to new functionality.</li>
 </ul>
 
-<p>Let us see page <code class="highlighter-rouge">\Magento\Catalog\Test\Page\Adminhtml\CatalogCategoryEdit</code>:</p>
+<p>Let us see page <code class="language-plaintext highlighter-rouge">\Magento\Catalog\Test\Page\Adminhtml\CatalogCategoryEdit</code>:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>
 <span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
@@ -2566,20 +2567,20 @@ A page serves as container for <a href="/devdocs/guides/v2.0/mtf/mtf_entities/mt
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">"editForm"</span> <span class="na">class=</span><span class="s">"Magento\Catalog\Test\Block\Adminhtml\Category\Edit\CategoryForm"</span> <span class="na">locator=</span><span class="s">"#container"</span> <span class="na">strategy=</span><span class="s">"css selector"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<p>We shouldn’t change the <code class="highlighter-rouge">editForm</code> block in the Magento_Catalog module because in case of disabling of a Magento_NewModule module, the test will fail. Best way in this case is to create a new block in a Magento_NewModule module that covers new functionality.</p>
+<p>We shouldn’t change the <code class="language-plaintext highlighter-rouge">editForm</code> block in the Magento_Catalog module because in case of disabling of a Magento_NewModule module, the test will fail. Best way in this case is to create a new block in a Magento_NewModule module that covers new functionality.</p>
 
-<p>Assume that we already created the new block <code class="highlighter-rouge">\Magento\NewModule\Test\Block\Adminhtml\Category\Edit\CategoryForm</code>.</p>
+<p>Assume that we already created the new block <code class="language-plaintext highlighter-rouge">\Magento\NewModule\Test\Block\Adminhtml\Category\Edit\CategoryForm</code>.</p>
 
-<p>To use the <code class="highlighter-rouge">editForm</code> block from the Magento_NewModule, we must follow:</p>
+<p>To use the <code class="language-plaintext highlighter-rouge">editForm</code> block from the Magento_NewModule, we must follow:</p>
 
-<p><strong>Step 1.</strong> Create a <code class="highlighter-rouge">CatalogCategoryEdit.xml</code> page in the <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/NewModule/Test/Page/Adminhtml</code> directory.</p>
+<p><strong>Step 1.</strong> Create a <code class="language-plaintext highlighter-rouge">CatalogCategoryEdit.xml</code> page in the <code class="language-plaintext highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/NewModule/Test/Page/Adminhtml</code> directory.</p>
 
 <p><strong>Step 2.</strong> Assign page attributes</p>
 
 <ul>
   <li>with the same name as the page you want to merge</li>
-  <li>with the same <code class="highlighter-rouge">mca</code></li>
-  <li>without <code class="highlighter-rouge">module</code> and <code class="highlighter-rouge">area</code> attributes</li>
+  <li>with the same <code class="language-plaintext highlighter-rouge">mca</code></li>
+  <li>without <code class="language-plaintext highlighter-rouge">module</code> and <code class="language-plaintext highlighter-rouge">area</code> attributes</li>
 </ul>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>
@@ -2606,10 +2607,10 @@ A page serves as container for <a href="/devdocs/guides/v2.0/mtf/mtf_entities/mt
 
 <p>Enter in terminal:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php &lt;magento2_root_dir&gt;/dev/tests/functional/utils/generate.php
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php &lt;magento2_root_dir&gt;/dev/tests/functional/utils/generate.php
 </code></pre></div></div>
 
-<p>Now when you call <code class="highlighter-rouge">editForm</code> block from the <code class="highlighter-rouge">CatalogCategoryEdit</code> page, class <code class="highlighter-rouge">\Magento\NewModule\Test\Block\Adminhtml\Category\Edit\CategoryForm</code> will be used.</p>
+<p>Now when you call <code class="language-plaintext highlighter-rouge">editForm</code> block from the <code class="language-plaintext highlighter-rouge">CatalogCategoryEdit</code> page, class <code class="language-plaintext highlighter-rouge">\Magento\NewModule\Test\Block\Adminhtml\Category\Edit\CategoryForm</code> will be used.</p>
 
 <!-- LINK DEFINITIONS -->
 

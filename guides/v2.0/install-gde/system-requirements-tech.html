@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento 2.0.x technology stack requirements | Magento 2 Developer Documentation (copy)</title>
+	<title>Magento 2.0.x technology stack requirements | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/install-gde/system-requirements-tech.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/install-gde/system-requirements-tech.html">Magento 2.0</a></li>
 		
@@ -4440,7 +4441,7 @@
   <li>
     <p><a href="http://httpd.apache.org/download.cgi" target="_blank">Apache 2.2 or 2.4</a></p>
 
-    <p>In addition, the apache <code class="highlighter-rouge">mod_rewrite</code> module must be enabled. <code class="highlighter-rouge">mod_rewrite</code> enables the server to perform URL rewriting. For more information, see <a href="/devdocs/guides/v2.0/install-gde/prereq/apache.html">our Apache documentation</a>.</p>
+    <p>In addition, the apache <code class="language-plaintext highlighter-rouge">mod_rewrite</code> module must be enabled. <code class="language-plaintext highlighter-rouge">mod_rewrite</code> enables the server to perform URL rewriting. For more information, see <a href="/devdocs/guides/v2.0/install-gde/prereq/apache.html">our Apache documentation</a>.</p>
   </li>
   <li>
     <p><span term-uuid="b14ef3d8-51fd-48fe-94df-ed069afb2cdc" class="glossary-term" data-toggle="popover">nginx</span>
@@ -4514,7 +4515,7 @@
 
 <h4 id="php-settings">PHP settings</h4>
 
-<p>We recommend particular PHP configuration settings, such as <code class="highlighter-rouge">memory_limit</code>, that can avoid common problems when using Magento.</p>
+<p>We recommend particular PHP configuration settings, such as <code class="language-plaintext highlighter-rouge">memory_limit</code>, that can avoid common problems when using Magento.</p>
 
 <p>For more information, see our <a href="/devdocs/guides/v2.0/install-gde/prereq/php-settings.html">Required PHP settings</a>.</p>
 
@@ -4527,14 +4528,14 @@
   <li>
     <p>Transport Layer Security (TLS) requirement</p>
 
-    <p>PayPal and <code class="highlighter-rouge">repo.magento.com</code> both require TLS 1.1 or later</p>
+    <p>PayPal and <code class="language-plaintext highlighter-rouge">repo.magento.com</code> both require TLS 1.1 or later</p>
 
     <ul>
       <li>
         <p><a href="/devdocs/guides/v2.0/install-gde/system-requirements_tls1-2.html">More information about PayPal</a></p>
       </li>
       <li>
-        <p><a href="/devdocs/guides/v2.0/release-notes/tech_bull_tls-repo.html">More information about <code class="highlighter-rouge">repo.magento.com</code></a></p>
+        <p><a href="/devdocs/guides/v2.0/release-notes/tech_bull_tls-repo.html">More information about <code class="language-plaintext highlighter-rouge">repo.magento.com</code></a></p>
       </li>
     </ul>
   </li>
@@ -4550,7 +4551,7 @@
   <li><a href="/devdocs/guides/v2.0/config-guide/redis/config-redis.html">Redis</a> version 3.0 for page caching and session storage (the latter supported by Magento version 2.0.6 and later only)</li>
   <li><a href="/devdocs/guides/v2.0/config-guide/varnish/config-varnish.html">Varnish</a> version 3.0.5 or latest stable 4.x version for page caching</li>
   <li>
-    <p><a href="/devdocs/guides/v2.0/config-guide/memcache/memcache.html">memcached</a> latest stable version for session storage with either <code class="highlighter-rouge">memcache</code> or <code class="highlighter-rouge">memcached</code> PHP extensions (latest stable version)</p>
+    <p><a href="/devdocs/guides/v2.0/config-guide/memcache/memcache.html">memcached</a> latest stable version for session storage with either <code class="language-plaintext highlighter-rouge">memcache</code> or <code class="language-plaintext highlighter-rouge">memcached</code> PHP extensions (latest stable version)</p>
   </li>
   <li>
     <p>Magento Commerce only</p>
@@ -4582,7 +4583,7 @@
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>There is a known issue with <code class="highlighter-rouge">xdebug</code> that can affect Magento installations or access to the storefront or Magento Admin after installation.</p>
+  <p>There is a known issue with <code class="language-plaintext highlighter-rouge">xdebug</code> that can affect Magento installations or access to the storefront or Magento Admin after installation.</p>
 
   <p>For details, see <a href="/devdocs/guides/v2.0/install-gde/trouble/tshoot_install-issues.html#known-devbeta-xdebug">Known issue with xdebug</a>.</p>
 </div>

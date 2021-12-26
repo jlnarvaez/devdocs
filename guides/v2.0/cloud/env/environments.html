@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Configure environments | Magento 2 Developer Documentation (copy)</title>
+	<title>Configure environments | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/env/environments.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/env/environments.html">Magento 2.0</a></li>
 		
@@ -3556,16 +3557,16 @@
 
 <h2 id="env-branches">Environments and branches</h2>
 
-<p>Every Magento Commerce Cloud project starts with a <code class="highlighter-rouge">master</code> environment that corresponds to the <code class="highlighter-rouge">master</code> branch in Git. Each environment has an associated active Git branch of code.</p>
+<p>Every Magento Commerce Cloud project starts with a <code class="language-plaintext highlighter-rouge">master</code> environment that corresponds to the <code class="language-plaintext highlighter-rouge">master</code> branch in Git. Each environment has an associated active Git branch of code.</p>
 
 <ul>
   <li>For <a href="/devdocs/guides/v2.0/cloud/architecture/pro-develop-deploy-workflow.html">Pro</a>, we recommend branching from Integration.</li>
-  <li>For <a href="/devdocs/guides/v2.0/cloud/basic-information/starter-develop-deploy-workflow.html">Starter</a>, we recommend creating a <code class="highlighter-rouge">staging</code> branch, then creating additional code branches from <code class="highlighter-rouge">staging</code>.</li>
+  <li>For <a href="/devdocs/guides/v2.0/cloud/basic-information/starter-develop-deploy-workflow.html">Starter</a>, we recommend creating a <code class="language-plaintext highlighter-rouge">staging</code> branch, then creating additional code branches from <code class="language-plaintext highlighter-rouge">staging</code>.</li>
 </ul>
 
 <p>We recommend using GitHub for maintaining your code branches.</p>
 
-<p class="bs-callout bs-callout-info">Your project must have a <code class="highlighter-rouge">master</code> branch; it won’t function properly without one.</p>
+<p class="bs-callout bs-callout-info">Your project must have a <code class="language-plaintext highlighter-rouge">master</code> branch; it won’t function properly without one.</p>
 
 <p>You can create branches using the Project Web Interface or Git CLI commands. For this information, examples use Git or <a href="/devdocs/guides/v2.0/cloud/reference/cli-ref-topic.html">Magento Cloud CLI</a> commands.</p>
 
@@ -3575,28 +3576,28 @@
 
 <p>You begin by creating active branches and pushing code. You can use the following command to create an active branch from a parent branch:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:branch
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:branch
 </code></pre></div></div>
 
 <p>You have unlimited inactive Git branches. These branches do not receive an environment until it is made active. You can use the following command to activate an inactive branch:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:activate
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:activate
 </code></pre></div></div>
 
 <p>When you activate an inactive branch, or create a new active branch, the command deploys a new active environment with a web server and services.</p>
 
 <h2 id="hierarchy">Branch hierarchy, development, and deployment</h2>
 
-<p>For Starter and Pro plans, the <code class="highlighter-rouge">master</code> environment is ultimately the source or parent for all code in Magento Commerce Cloud.</p>
+<p>For Starter and Pro plans, the <code class="language-plaintext highlighter-rouge">master</code> environment is ultimately the source or parent for all code in Magento Commerce Cloud.</p>
 
 <ul>
-  <li>For Starter, <code class="highlighter-rouge">master</code> is your Production environment and branch. You create branches from <code class="highlighter-rouge">master</code> as your Integration environment.</li>
-  <li>For Pro, you have a <code class="highlighter-rouge">master</code> branch in Integration for creating your code branches. You deploy this branch to a matching <code class="highlighter-rouge">master</code> branch in Staging and Production environments.</li>
+  <li>For Starter, <code class="language-plaintext highlighter-rouge">master</code> is your Production environment and branch. You create branches from <code class="language-plaintext highlighter-rouge">master</code> as your Integration environment.</li>
+  <li>For Pro, you have a <code class="language-plaintext highlighter-rouge">master</code> branch in Integration for creating your code branches. You deploy this branch to a matching <code class="language-plaintext highlighter-rouge">master</code> branch in Staging and Production environments.</li>
 </ul>
 
-<p>Your Integration includes a number of branches and environments available to you per plan. When you branch from <code class="highlighter-rouge">master</code>, you create a child relationship to this parent. Every branching creates a parent-child relationship. Each child environment can synchronize code, data, or both from its parent. Syncing data to an environment results in a byte-for-byte copy of all services and media files.</p>
+<p>Your Integration includes a number of branches and environments available to you per plan. When you branch from <code class="language-plaintext highlighter-rouge">master</code>, you create a child relationship to this parent. Every branching creates a parent-child relationship. Each child environment can synchronize code, data, or both from its parent. Syncing data to an environment results in a byte-for-byte copy of all services and media files.</p>
 
-<p>You fully develop in these branches. When ready, you push the code to build and deploy to an Integration environment. In these Integration environments, you can test custom code, extensions, third party integrations, and more. When ready, you merge this child Integration branch up to a parent. When merged, the parent environment redeploys with the code changes of the child environment. For Pro, this is the Integration <code class="highlighter-rouge">master</code>. For Starter, it is an environment and branch of your choice.</p>
+<p>You fully develop in these branches. When ready, you push the code to build and deploy to an Integration environment. In these Integration environments, you can test custom code, extensions, third party integrations, and more. When ready, you merge this child Integration branch up to a parent. When merged, the parent environment redeploys with the code changes of the child environment. For Pro, this is the Integration <code class="language-plaintext highlighter-rouge">master</code>. For Starter, it is an environment and branch of your choice.</p>
 
 <p>For extensive details, see the following:</p>
 
@@ -3647,7 +3648,7 @@
 
 <p>After fully configuring your store, you should configure your environments. This includes specific files to manage builds, deployments, services, and routes. These settings may also affect your builds and deployments. The following information provides files, settings, and options for configuring services and settings in environments.</p>
 
-<p>For Starter, you can push these files across all environments including Production <code class="highlighter-rouge">master</code>.</p>
+<p>For Starter, you can push these files across all environments including Production <code class="language-plaintext highlighter-rouge">master</code>.</p>
 
 <p>For Pro, you need to enter a ticket to have these files and settings pushed to Staging and Production environments. You can push these files and settings across all Integration environments.</p>
 

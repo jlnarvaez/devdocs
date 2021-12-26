@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Configure Apache and Elasticsearch | Magento 2 Developer Documentation (copy)</title>
+	<title>Configure Apache and Elasticsearch | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/config-guide/elasticsearch/es-config-apache.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/config-guide/elasticsearch/es-config-apache.html">Magento 2.0</a></li>
 		
@@ -3674,7 +3675,7 @@
 
 <p>(An older term, Secure Sockets Layer (SSL), is frequently used interchangeably with TLS. In this topic, we refer to <em>TLS</em>.)</p>
 
-<p class="bs-callout bs-callout-warning">Unless otherwise noted, all commands in this topic must be entered as a user with <code class="highlighter-rouge">root</code> privileges.</p>
+<p class="bs-callout bs-callout-warning">Unless otherwise noted, all commands in this topic must be entered as a user with <code class="language-plaintext highlighter-rouge">root</code> privileges.</p>
 
 <h3 id="recommendations">Recommendations</h3>
 
@@ -3738,22 +3739,22 @@
 
 <ol>
   <li>
-    <p>Enable <code class="highlighter-rouge">mod_proxy</code> as follows:</p>
+    <p>Enable <code class="language-plaintext highlighter-rouge">mod_proxy</code> as follows:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>a2enmod proxy_http
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>a2enmod proxy_http
 </code></pre></div>    </div>
   </li>
-  <li>Use a text editor to open <code class="highlighter-rouge">/etc/apache2/sites-available/000-default.conf</code></li>
+  <li>Use a text editor to open <code class="language-plaintext highlighter-rouge">/etc/apache2/sites-available/000-default.conf</code></li>
   <li>
     <p>Add the following directive at the top of the file:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Listen 8080
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Listen 8080
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Add the following at the bottom of the file:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>    &lt;VirtualHost *:8080&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>    &lt;VirtualHost *:8080&gt;
        ProxyPass "/" "http://localhost:9200/"
        ProxyPassReverse "/" "http://localhost:9200/"
     &lt;/VirtualHost&gt;
@@ -3762,23 +3763,23 @@
   <li>
     <p>Restart Apache:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>service apache2 restart
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>service apache2 restart
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Verify the proxy works by entering the following command:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>    curl -i http://localhost:&lt;proxy port&gt;/_cluster/health
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>    curl -i http://localhost:&lt;proxy port&gt;/_cluster/health
 </code></pre></div>    </div>
 
     <p>For example, if your proxy uses port 8080:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>curl -i http://localhost:8080/_cluster/health
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>curl -i http://localhost:8080/_cluster/health
 </code></pre></div>    </div>
 
     <p>Messages similar to the following display to indicate success:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>HTTP/1.1 200 OK
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>HTTP/1.1 200 OK
 Date: Tue, 23 Feb 2016 20:38:03 GMT
 Content-Type: application/json; charset=UTF-8
 Content-Length: 389
@@ -3796,18 +3797,18 @@ Connection: keep-alive
 
 <ol>
   <li>
-    <p>As a user with <code class="highlighter-rouge">root</code> privileges, open <code class="highlighter-rouge">/etc/httpd/conf/httpd.conf</code> in a text editor.</p>
+    <p>As a user with <code class="language-plaintext highlighter-rouge">root</code> privileges, open <code class="language-plaintext highlighter-rouge">/etc/httpd/conf/httpd.conf</code> in a text editor.</p>
   </li>
   <li>
-    <p>Locate the <code class="highlighter-rouge">Listen</code> directive and add another listen port; for example:</p>
+    <p>Locate the <code class="language-plaintext highlighter-rouge">Listen</code> directive and add another listen port; for example:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Listen 8080
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Listen 8080
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Scroll to the bottom of the file and add the following lines:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>    &lt;VirtualHost *:8080&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>    &lt;VirtualHost *:8080&gt;
         ProxyPass http://localhost:9200/
         ProxyPassReverse http://localhost:9200/
     &lt;/VirtualHost&gt;
@@ -3817,24 +3818,24 @@ Connection: keep-alive
     <p>Restart Apache:</p>
 
     <ul>
-      <li>CentOS: <code class="highlighter-rouge">service httpd restart</code></li>
-      <li>Ubuntu: <code class="highlighter-rouge">service apache2 restart</code></li>
+      <li>CentOS: <code class="language-plaintext highlighter-rouge">service httpd restart</code></li>
+      <li>Ubuntu: <code class="language-plaintext highlighter-rouge">service apache2 restart</code></li>
     </ul>
   </li>
   <li>
     <p>Verify the proxy works by entering the following command:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>    curl -i http://localhost:&lt;proxy port&gt;/_cluster/health
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>    curl -i http://localhost:&lt;proxy port&gt;/_cluster/health
 </code></pre></div>    </div>
 
     <p>For example, if your proxy uses port 8080:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>curl -i http://localhost:8080/_cluster/health
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>curl -i http://localhost:8080/_cluster/health
 </code></pre></div>    </div>
 
     <p>Messages similar to the following display to indicate success:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>HTTP/1.1 200 OK
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>HTTP/1.1 200 OK
 Date: Tue, 23 Feb 2016 20:38:03 GMT
 Content-Type: application/json; charset=UTF-8
 Content-Length: 389
@@ -3937,7 +3938,7 @@ Connection: keep-alive
     <img src="/devdocs/common/images/solr_refresh-cache.png" alt="" width="600px" /></li>
 </ol>
 
-<p>To clean the cache using the command line, use the <a href="/devdocs/guides/v2.1/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean"><code class="highlighter-rouge">magento cache:clean</code></a> command.</p>
+<p>To clean the cache using the command line, use the <a href="/devdocs/guides/v2.1/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean"><code class="language-plaintext highlighter-rouge">magento cache:clean</code></a> command.</p>
 
 <p>To reindex using the command line:</p>
 
@@ -3948,12 +3949,12 @@ Connection: keep-alive
 
     <p>Enter the following command to reindex the catalog search index only:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php &lt;your Magento install dir&gt;/bin magento indexer:reindex catalogsearch_fulltext
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php &lt;your Magento install dir&gt;/bin magento indexer:reindex catalogsearch_fulltext
 </code></pre></div>    </div>
 
     <p>Enter the following command to reindex all indexers:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php &lt;your Magento install dir&gt;/bin magento indexer:reindex
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php &lt;your Magento install dir&gt;/bin magento indexer:reindex
 </code></pre></div>    </div>
   </li>
   <li>Wait while the reindexing completes.</li>
@@ -3983,32 +3984,32 @@ Connection: keep-alive
 
 <h4 id="install-htpasswd-if-necessary">Install htpasswd if necessary</h4>
 
-<p>First, see if you have the Apache <code class="highlighter-rouge">htpasswd</code> utility is installed as follows:</p>
+<p>First, see if you have the Apache <code class="language-plaintext highlighter-rouge">htpasswd</code> utility is installed as follows:</p>
 
 <ol>
   <li>
-    <p>Enter the following command to determine if <code class="highlighter-rouge">htpasswd</code> is already installed:</p>
+    <p>Enter the following command to determine if <code class="language-plaintext highlighter-rouge">htpasswd</code> is already installed:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>which htpasswd
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>which htpasswd
 </code></pre></div>    </div>
 
-    <p>If a path displays, it is installed; if the command returns no output, <code class="highlighter-rouge">htpasswd</code> is not installed.</p>
+    <p>If a path displays, it is installed; if the command returns no output, <code class="language-plaintext highlighter-rouge">htpasswd</code> is not installed.</p>
   </li>
   <li>
-    <p>If necessary, install <code class="highlighter-rouge">htpasswd</code>:</p>
+    <p>If necessary, install <code class="language-plaintext highlighter-rouge">htpasswd</code>:</p>
 
     <ul>
-      <li>Ubuntu: <code class="highlighter-rouge">apt-get -y install apache2-utils</code></li>
-      <li>CentOS: <code class="highlighter-rouge">yum -y install httpd-tools</code></li>
+      <li>Ubuntu: <code class="language-plaintext highlighter-rouge">apt-get -y install apache2-utils</code></li>
+      <li>CentOS: <code class="language-plaintext highlighter-rouge">yum -y install httpd-tools</code></li>
     </ul>
   </li>
 </ol>
 
 <h4 id="create-a-password-file">Create a password file</h4>
 
-<p>Enter the following commands as a user with <code class="highlighter-rouge">root</code> privileges:</p>
+<p>Enter the following commands as a user with <code class="language-plaintext highlighter-rouge">root</code> privileges:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mkdir -p /usr/local/apache/password
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mkdir -p /usr/local/apache/password
 htpasswd -c /usr/local/apache/password/.&lt;password file name&gt; &lt;username&gt;
 </code></pre></div></div>
 
@@ -4016,7 +4017,7 @@ htpasswd -c /usr/local/apache/password/.&lt;password file name&gt; &lt;username&
 
 <ul>
   <li>
-    <p><code class="highlighter-rouge">&lt;username&gt;</code> can be:</p>
+    <p><code class="language-plaintext highlighter-rouge">&lt;username&gt;</code> can be:</p>
 
     <ul>
       <li>
@@ -4025,12 +4026,12 @@ htpasswd -c /usr/local/apache/password/.&lt;password file name&gt; &lt;username&
         <p>In this example, we use the web server user but the choice of user is up to you.</p>
       </li>
       <li>
-        <p>Setting up Elasticsearch: the user is named <code class="highlighter-rouge">magento_elasticsearch</code> in this example</p>
+        <p>Setting up Elasticsearch: the user is named <code class="language-plaintext highlighter-rouge">magento_elasticsearch</code> in this example</p>
       </li>
     </ul>
   </li>
   <li>
-    <p><code class="highlighter-rouge">&lt;password file name&gt;</code> must be a hidden file (starts with <code class="highlighter-rouge">.</code>) and should reflect the name of the user. See the examples later in this section for details.</p>
+    <p><code class="language-plaintext highlighter-rouge">&lt;password file name&gt;</code> must be a hidden file (starts with <code class="language-plaintext highlighter-rouge">.</code>) and should reflect the name of the user. See the examples later in this section for details.</p>
   </li>
 </ul>
 
@@ -4041,22 +4042,22 @@ htpasswd -c /usr/local/apache/password/.&lt;password file name&gt; &lt;username&
 <p><strong>Example 1: cron</strong>
 You must set up authentication for only one user for cron; in this example, we use the web server user. To create a password file for the web server user, enter the following commands:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mkdir -p /usr/local/apache/password
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mkdir -p /usr/local/apache/password
 htpasswd -c /usr/local/apache/password/.htpasswd apache
 </code></pre></div></div>
 
 <p><strong>Example 2: Elasticsearch</strong>
 You must set up authentication for two users: one with access to nginx and one with access to Elasticsearch. To create password files for these users, enter the following commands:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mkdir -p /usr/local/apache/password
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mkdir -p /usr/local/apache/password
 htpasswd -c /usr/local/apache/password/.htpasswd_elasticsearch magento_elasticsearch
 </code></pre></div></div>
 
 <h4 id="add-additional-users">Add additional users</h4>
 
-<p>To add another user to your password file, enter the following command as a user with <code class="highlighter-rouge">root</code> privileges:</p>
+<p>To add another user to your password file, enter the following command as a user with <code class="language-plaintext highlighter-rouge">root</code> privileges:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>htpasswd /usr/local/apache/password/.htpasswd &lt;username&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>htpasswd /usr/local/apache/password/.htpasswd &lt;username&gt;
 </code></pre></div></div>
 
 <h3 id="es-ws-secure-finish">Step 2: Secure communication with Apache</h3>
@@ -4071,14 +4072,14 @@ htpasswd -c /usr/local/apache/password/.htpasswd_elasticsearch magento_elasticse
 
     <ul>
       <li>
-        <p>Apache 2.2: Depending on how you set up SSL, the Apache 2.2 SSL configuration might be located in <code class="highlighter-rouge">/etc/httpd/conf/httpd.conf</code> or <code class="highlighter-rouge">/etc/httpd/conf.d/ssl.conf</code>.</p>
+        <p>Apache 2.2: Depending on how you set up SSL, the Apache 2.2 SSL configuration might be located in <code class="language-plaintext highlighter-rouge">/etc/httpd/conf/httpd.conf</code> or <code class="language-plaintext highlighter-rouge">/etc/httpd/conf.d/ssl.conf</code>.</p>
       </li>
       <li>
-        <p>Apache 2.4: Edit <code class="highlighter-rouge">/etc/apache2/sites-available/default-ssl.conf</code></p>
+        <p>Apache 2.4: Edit <code class="language-plaintext highlighter-rouge">/etc/apache2/sites-available/default-ssl.conf</code></p>
       </li>
     </ul>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>    &lt;Proxy *&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>    &lt;Proxy *&gt;
       Order deny,allow
       Allow from all
 
@@ -4095,13 +4096,13 @@ htpasswd -c /usr/local/apache/password/.htpasswd_elasticsearch magento_elasticse
      &lt;/Proxy&gt;
 </code></pre></div>    </div>
   </li>
-  <li>If you added the preceding to your secure virtual host, remove <code class="highlighter-rouge">Listen 8080</code> and the <code class="highlighter-rouge">&lt;VirtualHost *:8080&gt;</code> directives you added earlier to your unsecure virtual host.</li>
+  <li>If you added the preceding to your secure virtual host, remove <code class="language-plaintext highlighter-rouge">Listen 8080</code> and the <code class="language-plaintext highlighter-rouge">&lt;VirtualHost *:8080&gt;</code> directives you added earlier to your unsecure virtual host.</li>
   <li>Save your changes, exit the text editor, and restart Apache:</li>
 </ol>
 
 <ul>
-  <li>CentOS: <code class="highlighter-rouge">service httpd restart</code></li>
-  <li>Ubuntu: <code class="highlighter-rouge">service apache2 restart</code></li>
+  <li>CentOS: <code class="language-plaintext highlighter-rouge">service httpd restart</code></li>
+  <li>Ubuntu: <code class="language-plaintext highlighter-rouge">service apache2 restart</code></li>
 </ul>
 
 <h2 id="es-ws-secure-verify">Verify communication is secure</h2>
@@ -4109,15 +4110,15 @@ htpasswd -c /usr/local/apache/password/.htpasswd_elasticsearch magento_elasticse
 <p>This section discusses two ways to verify that HTTP Basic authentication is working:</p>
 
 <ul>
-  <li>Using a <code class="highlighter-rouge">curl</code> command to verify you must enter a username and password to get cluster status</li>
+  <li>Using a <code class="language-plaintext highlighter-rouge">curl</code> command to verify you must enter a username and password to get cluster status</li>
   <li>Configuring HTTP Basic authentication in the Magento Admin</li>
 </ul>
 
-<h3 id="use-a-curl-command-to-verify-cluster-status">Use a <code class="highlighter-rouge">curl</code> command to verify cluster status</h3>
+<h3 id="use-a-curl-command-to-verify-cluster-status">Use a <code class="language-plaintext highlighter-rouge">curl</code> command to verify cluster status</h3>
 
 <p>Enter the following command:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>curl <span class="nt">-i</span> http://&lt;hostname, ip, or localhost&gt;:&lt;proxy port&gt;/_cluster/health
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>curl <span class="nt">-i</span> http://&lt;<span class="nb">hostname</span>, ip, or localhost&gt;:&lt;proxy port&gt;/_cluster/health
 </code></pre></div></div>
 
 <p>For example, if you enter the command on the Elasticsearch server and your proxy uses port 8080:</p>
@@ -4134,18 +4135,18 @@ Content-Length: 194
 Connection: keep-alive
 WWW-Authenticate: Basic realm="Restricted"
 
-</span><span class="gp">&lt;html&gt;</span>
-<span class="gp">&lt;head&gt;</span>&lt;title&gt;401 Authorization Required&lt;/title&gt;&lt;/head&gt;
-<span class="gp">&lt;body bgcolor="white"&gt;</span>
-<span class="gp">  &lt;center&gt;</span>&lt;h1&gt;401 Authorization Required&lt;/h1&gt;&lt;/center&gt;
+</span><span class="gp">&lt;html&gt;</span><span class="w">
+</span><span class="gp">&lt;head&gt;</span>&lt;title&gt;401 Authorization Required&lt;/title&gt;&lt;/head&gt;
+<span class="gp">&lt;body bgcolor="white"&gt;</span><span class="w">
+</span><span class="gp">  &lt;center&gt;</span>&lt;h1&gt;401 Authorization Required&lt;/h1&gt;&lt;/center&gt;
 <span class="go">
-</span><span class="gp">&lt;/body&gt;</span>
-<span class="gp">&lt;/html&gt;</span>
-</code></pre></div></div>
+</span><span class="gp">&lt;/body&gt;</span><span class="w">
+</span><span class="gp">&lt;/html&gt;</span><span class="w">
+</span></code></pre></div></div>
 
 <p>Now try the following command:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>curl <span class="nt">-i</span> <span class="nt">-u</span> &lt;username&gt;:&lt;password&gt; http://&lt;hostname, ip, or localhost&gt;:&lt;proxy port&gt;/_cluster/health
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>curl <span class="nt">-i</span> <span class="nt">-u</span> &lt;username&gt;:&lt;password&gt; http://&lt;<span class="nb">hostname</span>, ip, or localhost&gt;:&lt;proxy port&gt;/_cluster/health
 </code></pre></div></div>
 
 <p>For example:</p>
@@ -4157,7 +4158,7 @@ WWW-Authenticate: Basic realm="Restricted"
 
 <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="go">HTTP/1.1 200 OK
 Date: Tue, 23 Feb 2016 20:38:03 GMT
-</span><span class="gp">Content-Type: application/json;</span> <span class="nv">charset</span><span class="o">=</span>UTF-8
+</span><span class="gp">Content-Type: application/json;</span><span class="w"> </span><span class="nv">charset</span><span class="o">=</span>UTF-8
 <span class="go">Content-Length: 389
 Connection: keep-alive
 

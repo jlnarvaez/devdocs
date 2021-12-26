@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Routing | Magento 2 Developer Documentation (copy)</title>
+	<title>Routing | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/extension-dev-guide/routing.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/extension-dev-guide/routing.html">Magento 2.0</a></li>
 		
@@ -3477,12 +3478,12 @@ Magento routing uses the following flow:</p>
 
 <p>index.php -&gt; HTTP application -&gt; FrontController -&gt; Routing -&gt; Controller processing -&gt; etc</p>
 
-<h2 id="frontcontroller-class"><code class="highlighter-rouge">FrontController</code> class</h2>
+<h2 id="frontcontroller-class"><code class="language-plaintext highlighter-rouge">FrontController</code> class</h2>
 
-<p>The <a href="https://github.com/magento/magento2/blob/2.3/lib/internal/Magento/Framework/App/FrontController.php"><code class="highlighter-rouge">FrontController</code> class</a> class searches through a list of routers, provided by the <a href="https://github.com/magento/magento2/blob/2.3/lib/internal/Magento/Framework/App/RouterList.php"><code class="highlighter-rouge">RouterList</code></a> class, until it matches one that can process a request.
-When the <code class="highlighter-rouge">FrontController</code> finds a matching router, it dispatches the request to an <a href="#action-class">action class</a> returned by the router.</p>
+<p>The <a href="https://github.com/magento/magento2/blob/2.3/lib/internal/Magento/Framework/App/FrontController.php"><code class="language-plaintext highlighter-rouge">FrontController</code> class</a> class searches through a list of routers, provided by the <a href="https://github.com/magento/magento2/blob/2.3/lib/internal/Magento/Framework/App/RouterList.php"><code class="language-plaintext highlighter-rouge">RouterList</code></a> class, until it matches one that can process a request.
+When the <code class="language-plaintext highlighter-rouge">FrontController</code> finds a matching router, it dispatches the request to an <a href="#action-class">action class</a> returned by the router.</p>
 
-<p>If the <code class="highlighter-rouge">FrontController</code> cannot find a router to process a request, it uses the <a href="#default-router">default router</a>.</p>
+<p>If the <code class="language-plaintext highlighter-rouge">FrontController</code> cannot find a router to process a request, it uses the <a href="#default-router">default router</a>.</p>
 
 <h2 id="router-class">Router class</h2>
 
@@ -3490,7 +3491,7 @@ When the <code class="highlighter-rouge">FrontController</code> finds a matching
 
 <p>The following tables show the core routers that come with Magento:</p>
 
-<p><strong><code class="highlighter-rouge">frontend</code> area routers:</strong></p>
+<p><strong><code class="language-plaintext highlighter-rouge">frontend</code> area routers:</strong></p>
 
 <table style="table-layout:auto">
   <thead>
@@ -3504,7 +3505,7 @@ When the <code class="highlighter-rouge">FrontController</code> finds a matching
     <tr>
       <td><a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/Robots/Controller/Router.php">robots</a></td>
       <td>10</td>
-      <td>Matches request to the <code class="highlighter-rouge">robots.txt</code> file</td>
+      <td>Matches request to the <code class="language-plaintext highlighter-rouge">robots.txt</code> file</td>
     </tr>
     <tr>
       <td><a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/UrlRewrite/Controller/Router.php">urlrewrite</a></td>
@@ -3529,7 +3530,7 @@ When the <code class="highlighter-rouge">FrontController</code> finds a matching
   </tbody>
 </table>
 
-<p><strong><code class="highlighter-rouge">adminhtml</code> area routers:</strong></p>
+<p><strong><code class="language-plaintext highlighter-rouge">adminhtml</code> area routers:</strong></p>
 
 <table style="table-layout:auto">
   <thead>
@@ -3558,24 +3559,24 @@ When the <code class="highlighter-rouge">FrontController</code> finds a matching
 <p>A Magento   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>
  that uses the standard router has the following format:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;store-url&gt;/&lt;store-code&gt;/&lt;front-name&gt;/&lt;controller-name&gt;/&lt;action-name&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;store-url&gt;/&lt;store-code&gt;/&lt;front-name&gt;/&lt;controller-name&gt;/&lt;action-name&gt;
 </code></pre></div></div>
 
 <p>Where:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">&lt;store-url&gt;</code> - specifies the base URL for the Magento instance</li>
-  <li><code class="highlighter-rouge">&lt;store-code&gt;</code> - specifies the store context</li>
-  <li><code class="highlighter-rouge">&lt;front-name&gt;</code> - specifies the <code class="highlighter-rouge">frontName</code> of the <a href="#frontcontroller-class">FrontController</a> to use</li>
-  <li><code class="highlighter-rouge">&lt;controller-name&gt;</code> - specifies the name of the controller</li>
-  <li><code class="highlighter-rouge">&lt;action-name&gt;</code> - specifies the <a href="#action-class">action class</a> to execute on the controller class</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;store-url&gt;</code> - specifies the base URL for the Magento instance</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;store-code&gt;</code> - specifies the store context</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;front-name&gt;</code> - specifies the <code class="language-plaintext highlighter-rouge">frontName</code> of the <a href="#frontcontroller-class">FrontController</a> to use</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;controller-name&gt;</code> - specifies the name of the controller</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;action-name&gt;</code> - specifies the <a href="#action-class">action class</a> to execute on the controller class</li>
 </ul>
 
 <p>The standard router parses this URL format and matches it to the correct controller and action.</p>
 
 <h3 id="default-router">Default router</h3>
 
-<p>The default router, defined by the <a href="https://github.com/magento/magento2/blob/2.3/lib/internal/Magento/Framework/App/Router/DefaultRouter.php"><code class="highlighter-rouge">DefaultRouter</code></a> class, is the last router Magento checks during the routing process.
+<p>The default router, defined by the <a href="https://github.com/magento/magento2/blob/2.3/lib/internal/Magento/Framework/App/Router/DefaultRouter.php"><code class="language-plaintext highlighter-rouge">DefaultRouter</code></a> class, is the last router Magento checks during the routing process.
 Requests that reach this point often contain invalid URLs that previous routers cannot handle.</p>
 
 <p>Magento uses the default <a href="https://github.com/magento/magento2/blob/2.3/lib/internal/Magento/Framework/App/Router/NoRouteHandler.php">NoRouteHandler</a> to process these requests, but
@@ -3583,12 +3584,12 @@ you can write your own no-route handler by implementing the <a href="https://git
 
 <h3 id="custom-routers">Custom routers</h3>
 
-<p>Create an implementation of <a href="https://github.com/magento/magento2/blob/2.3/lib/internal/Magento/Framework/App/RouterInterface.php"><code class="highlighter-rouge">RouterInterface</code></a> to create a custom router, and
-define the <code class="highlighter-rouge">match()</code> function in this class to use your own route matching logic.</p>
+<p>Create an implementation of <a href="https://github.com/magento/magento2/blob/2.3/lib/internal/Magento/Framework/App/RouterInterface.php"><code class="language-plaintext highlighter-rouge">RouterInterface</code></a> to create a custom router, and
+define the <code class="language-plaintext highlighter-rouge">match()</code> function in this class to use your own route matching logic.</p>
 
-<p>If you need route configuration data, use the Route <a href="https://github.com/magento/magento2/blob/2.3/lib/internal/Magento/Framework/App/Route/ConfigInterface.php"><code class="highlighter-rouge">Config</code></a> class.</p>
+<p>If you need route configuration data, use the Route <a href="https://github.com/magento/magento2/blob/2.3/lib/internal/Magento/Framework/App/Route/ConfigInterface.php"><code class="language-plaintext highlighter-rouge">Config</code></a> class.</p>
 
-<p>To add your custom router to the list of routers for the <code class="highlighter-rouge">FrontController</code>, add the following entry in your module’s <code class="highlighter-rouge">di.xml</code> file:</p>
+<p>To add your custom router to the list of routers for the <code class="language-plaintext highlighter-rouge">FrontController</code>, add the following entry in your module’s <code class="language-plaintext highlighter-rouge">di.xml</code> file:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Framework\App\RouterList"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
@@ -3606,16 +3607,16 @@ define the <code class="highlighter-rouge">match()</code> function in this class
 <p>Where:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">%name%</code> - The unique name of your router in Magento.</li>
-  <li><code class="highlighter-rouge">%classpath%</code> - The path to your router class.  <br />
-  Example: <a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/Robots/etc/frontend/di.xml"><code class="highlighter-rouge">Magento\Robots\Controller\Router</code></a></li>
-  <li><code class="highlighter-rouge">%sortorder%</code> - The sort order of this entry in the router list.</li>
+  <li><code class="language-plaintext highlighter-rouge">%name%</code> - The unique name of your router in Magento.</li>
+  <li><code class="language-plaintext highlighter-rouge">%classpath%</code> - The path to your router class.  <br />
+  Example: <a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/Robots/etc/frontend/di.xml"><code class="language-plaintext highlighter-rouge">Magento\Robots\Controller\Router</code></a></li>
+  <li><code class="language-plaintext highlighter-rouge">%sortorder%</code> - The sort order of this entry in the router list.</li>
 </ul>
 
-<h2 id="routesxml"><code class="highlighter-rouge">routes.xml</code></h2>
+<h2 id="routesxml"><code class="language-plaintext highlighter-rouge">routes.xml</code></h2>
 
-<p>The <code class="highlighter-rouge">routes.xml</code> file maps which module to use for a URL with a specific <code class="highlighter-rouge">frontName</code> and area.
-The location of the <code class="highlighter-rouge">routes.xml</code> file in a module, either <code class="highlighter-rouge">etc/frontend</code> or <code class="highlighter-rouge">etc/adminhtml</code>, specifies where those routes are active.</p>
+<p>The <code class="language-plaintext highlighter-rouge">routes.xml</code> file maps which module to use for a URL with a specific <code class="language-plaintext highlighter-rouge">frontName</code> and area.
+The location of the <code class="language-plaintext highlighter-rouge">routes.xml</code> file in a module, either <code class="language-plaintext highlighter-rouge">etc/frontend</code> or <code class="language-plaintext highlighter-rouge">etc/adminhtml</code>, specifies where those routes are active.</p>
 
 <p>The content of this file uses the following format:</p>
 
@@ -3631,20 +3632,20 @@ The location of the <code class="highlighter-rouge">routes.xml</code> file in a 
 <p>Where:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">%routerId</code> - specifies the name of the router in Magento.  <br />
+  <li><code class="language-plaintext highlighter-rouge">%routerId</code> - specifies the name of the router in Magento.  <br />
   See the reference tables in the <a href="#router-class">Router class section</a>.</li>
-  <li><code class="highlighter-rouge">%routeId%</code> - specifies the unique node id for this route in Magento.</li>
-  <li><code class="highlighter-rouge">%frontName%</code> - specifies the first segment after the base URL of a request.</li>
-  <li><code class="highlighter-rouge">%moduleName%</code> - specifies the name of your module.</li>
+  <li><code class="language-plaintext highlighter-rouge">%routeId%</code> - specifies the unique node id for this route in Magento.</li>
+  <li><code class="language-plaintext highlighter-rouge">%frontName%</code> - specifies the first segment after the base URL of a request.</li>
+  <li><code class="language-plaintext highlighter-rouge">%moduleName%</code> - specifies the name of your module.</li>
 </ul>
 
-<p>For more details, see <a href="https://github.com/magento/magento2/blob/2.3/lib/internal/Magento/Framework/App/etc/routes.xsd"><code class="highlighter-rouge">routes.xsd</code></a>.</p>
+<p>For more details, see <a href="https://github.com/magento/magento2/blob/2.3/lib/internal/Magento/Framework/App/etc/routes.xsd"><code class="language-plaintext highlighter-rouge">routes.xsd</code></a>.</p>
 
 <h3 id="before-and-after-parameters">Before and after parameters</h3>
 
-<p>You can add a <code class="highlighter-rouge">before</code> or <code class="highlighter-rouge">after</code> parameter in the <code class="highlighter-rouge">module</code> entry to override or extend routes in existing modules.</p>
+<p>You can add a <code class="language-plaintext highlighter-rouge">before</code> or <code class="language-plaintext highlighter-rouge">after</code> parameter in the <code class="language-plaintext highlighter-rouge">module</code> entry to override or extend routes in existing modules.</p>
 
-<p><strong>Example: <code class="highlighter-rouge">routes.xml</code></strong></p>
+<p><strong>Example: <code class="language-plaintext highlighter-rouge">routes.xml</code></strong></p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:App/etc/routes.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;router</span> <span class="na">id=</span><span class="s">"standard"</span><span class="nt">&gt;</span>
@@ -3655,26 +3656,26 @@ The location of the <code class="highlighter-rouge">routes.xml</code> file in a 
 <span class="nt">&lt;/config&gt;</span>
 </code></pre></div></div>
 
-<p>This configuration tells the <code class="highlighter-rouge">FrontController</code> to look for actions in the <code class="highlighter-rouge">OrangeCompany_RoutingExample</code> module before searching in the <code class="highlighter-rouge">Magento_Customer</code> module.
-If <code class="highlighter-rouge">app/code/OrangeCompany/RoutingExample/Controller/Account/Login.php</code> exists, it will use that file for processing the login route instead of the original class.</p>
+<p>This configuration tells the <code class="language-plaintext highlighter-rouge">FrontController</code> to look for actions in the <code class="language-plaintext highlighter-rouge">OrangeCompany_RoutingExample</code> module before searching in the <code class="language-plaintext highlighter-rouge">Magento_Customer</code> module.
+If <code class="language-plaintext highlighter-rouge">app/code/OrangeCompany/RoutingExample/Controller/Account/Login.php</code> exists, it will use that file for processing the login route instead of the original class.</p>
 
 <h2 id="action-class">Action class</h2>
 
-<p>Action classes are extensions of the <a href="https://github.com/magento/magento2/blob/2.3/lib/internal/Magento/Framework/App/Action/Action.php"><code class="highlighter-rouge">Action</code></a> class that a router returns on matched requests. 
-The <code class="highlighter-rouge">execute()</code> function in these classes contain the logic for dispatching requests.</p>
+<p>Action classes are extensions of the <a href="https://github.com/magento/magento2/blob/2.3/lib/internal/Magento/Framework/App/Action/Action.php"><code class="language-plaintext highlighter-rouge">Action</code></a> class that a router returns on matched requests. 
+The <code class="language-plaintext highlighter-rouge">execute()</code> function in these classes contain the logic for dispatching requests.</p>
 
 <p>Each Action should implement one or more Magento\Framework\App\Action\Http<em>HTTP Method</em>ActionInterface to declare which HTTP request methods it can process.</p>
 
-<p>Magento has a <code class="highlighter-rouge">form key</code> validation in place for all <code class="highlighter-rouge">POST</code> non-AJAX requests - if your <code class="highlighter-rouge">Action</code> doesn’t need that validation or you want to modify it you can implement <code class="highlighter-rouge">CsrfAwareActionInterface</code>.</p>
+<p>Magento has a <code class="language-plaintext highlighter-rouge">form key</code> validation in place for all <code class="language-plaintext highlighter-rouge">POST</code> non-AJAX requests - if your <code class="language-plaintext highlighter-rouge">Action</code> doesn’t need that validation or you want to modify it you can implement <code class="language-plaintext highlighter-rouge">CsrfAwareActionInterface</code>.</p>
 
-<p>If you need to forward a request to another action in your class, use the <code class="highlighter-rouge">_forward()</code> function.</p>
+<p>If you need to forward a request to another action in your class, use the <code class="language-plaintext highlighter-rouge">_forward()</code> function.</p>
 
 <p><strong>Example:</strong></p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_forward</span><span class="p">(</span><span class="s1">'action'</span><span class="p">,</span> <span class="s1">'controller'</span><span class="p">,</span> <span class="s1">'Other_Module'</span><span class="p">)</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">_forward</span><span class="p">(</span><span class="s1">'action'</span><span class="p">,</span> <span class="s1">'controller'</span><span class="p">,</span> <span class="s1">'Other_Module'</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p class="bs-callout bs-callout-tip">Use the <a href="https://github.com/magento/magento2/blob/2.3/lib/internal/Magento/Framework/App/ActionFactory.php"><code class="highlighter-rouge">ActionFactory</code></a> in your router to create an instance of an <code class="highlighter-rouge">Action</code> class.</p>
+<p class="bs-callout bs-callout-tip">Use the <a href="https://github.com/magento/magento2/blob/2.3/lib/internal/Magento/Framework/App/ActionFactory.php"><code class="language-plaintext highlighter-rouge">ActionFactory</code></a> in your router to create an instance of an <code class="language-plaintext highlighter-rouge">Action</code> class.</p>
 
 
 			

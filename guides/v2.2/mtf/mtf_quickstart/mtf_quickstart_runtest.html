@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Quick start. Test run | Magento 2 Developer Documentation (copy)</title>
+	<title>Quick start. Test run | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/mtf/mtf_quickstart/mtf_quickstart_runtest.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_runtest.html">Magento 2.0</a></li>
 		
@@ -2292,9 +2293,9 @@
 	<h1 class="page-heading">Quick start. Test run</h1>
 </section>
 
-			<p>All tests classified by categories in corresponding directories in <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento</code>.</p>
+			<p>All tests classified by categories in corresponding directories in <code class="language-plaintext highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento</code>.</p>
 
-<p>FTF uses PHPUnit, which is located in <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/vendor/bin</code> directory.</p>
+<p>FTF uses PHPUnit, which is located in <code class="language-plaintext highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/vendor/bin</code> directory.</p>
 
 <p>Be sure that your system is ready for test run.</p>
 
@@ -2314,7 +2315,7 @@
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vendor/bin/phpunit
 </code></pre></div></div>
 
-<p>This command will run all tests from <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/</code>.</p>
+<p>This command will run all tests from <code class="language-plaintext highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/</code>.</p>
 
 <h3 id="mtf_quickstart_testrun_one">Run particular test</h3>
 
@@ -2329,7 +2330,7 @@
 
 <p>Example:</p>
 
-<p>Let’s check creating of new category. For this we should run <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Category/CreateCategoryEntityTest.php</code>. To run this test enter the following script in your terminal:</p>
+<p>Let’s check creating of new category. For this we should run <code class="language-plaintext highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Category/CreateCategoryEntityTest.php</code>. To run this test enter the following script in your terminal:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">cd</span> &lt;magento2_root_dir&gt;/dev/tests/functional
 </code></pre></div></div>

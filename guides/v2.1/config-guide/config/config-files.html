@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Module configuration files | Magento 2 Developer Documentation (copy)</title>
+	<title>Module configuration files | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/config-guide/config/config-files.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/config-guide/config/config-files.html">Magento 2.0</a></li>
 		
@@ -3668,7 +3669,7 @@
 
 			<h2 id="config-files-overview">Overview of module configuration files</h2>
 
-<p>The responsibilities of the <code class="highlighter-rouge">config.xml</code> configuration file used in earlier versions of Magento is now divided between several files, located in various   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
+<p>The responsibilities of the <code class="language-plaintext highlighter-rouge">config.xml</code> configuration file used in earlier versions of Magento is now divided between several files, located in various   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
  directories. Magento’s multiple configuration files load on demand only when a module requests a specific configuration type.</p>
 
 <p>You can use these files—also referred to as <em>configuration types</em>—to customize specific aspects of your module’s behavior.</p>
@@ -3682,10 +3683,10 @@
     <p><strong>Configuration object</strong>—The Magento library or class that is responsible for defining and validating the configuration type. For example, the configuration object for <code>config.xml</code> is <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/Config.php">Magento\Framework\App\Config</a>.</p>
   </li>
   <li>
-    <p><strong>Configuration stage</strong>—Stages are defined as <em>primary</em>, <em>global</em>, and <em>area</em>. Each stage determines when configuration type is loaded and merged with same-named configuration types. For example, <code class="highlighter-rouge">module.xml</code> files are merged with other <code class="highlighter-rouge">module.xml</code> files. For more information, see <a href="#config-files-loadmerge">Configuration load and merge</a>.</p>
+    <p><strong>Configuration stage</strong>—Stages are defined as <em>primary</em>, <em>global</em>, and <em>area</em>. Each stage determines when configuration type is loaded and merged with same-named configuration types. For example, <code class="language-plaintext highlighter-rouge">module.xml</code> files are merged with other <code class="language-plaintext highlighter-rouge">module.xml</code> files. For more information, see <a href="#config-files-loadmerge">Configuration load and merge</a>.</p>
   </li>
   <li>
-    <p><strong>Configuration scope</strong>—Complementary to a configuration stages, a scope defines the configuration type model. For example, <code class="highlighter-rouge">adminhtml</code> is an area scope that is loaded with at the stage with other modules’ <code class="highlighter-rouge">adminhtml</code> configurations. For more information, see <a href="/devdocs/guides/v2.1/architecture/archi_perspectives/components/modules/mod_and_areas.html">Modules and areas</a>.</p>
+    <p><strong>Configuration scope</strong>—Complementary to a configuration stages, a scope defines the configuration type model. For example, <code class="language-plaintext highlighter-rouge">adminhtml</code> is an area scope that is loaded with at the stage with other modules’ <code class="language-plaintext highlighter-rouge">adminhtml</code> configurations. For more information, see <a href="/devdocs/guides/v2.1/architecture/archi_perspectives/components/modules/mod_and_areas.html">Modules and areas</a>.</p>
   </li>
 </ul>
 
@@ -3698,31 +3699,31 @@
 
 <ul>
   <li>Primary configuration (<a href="https://github.com/magento/magento2/blob/2.0/app/etc/di.xml">app/etc/di.xml</a>). This file is used to bootstrap Magento.</li>
-  <li>Global configurations from modules (<code class="highlighter-rouge">&lt;your component base dir&gt;/&lt;vendorname&gt;/&lt;component-type&gt;-&lt;component-name&gt;/etc/*.xml</code>). Collects certain configuration files from all modules and merges them together.</li>
-  <li>Area-specific configuration from modules (<code class="highlighter-rouge">&lt;your component base dir&gt;/&lt;vendorname&gt;/&lt;component-type&gt;-&lt;component-name&gt;/etc/&lt;area&gt;/*.xml</code>). Collects configuration files from all modules and merges them into the global configuration. Some area-specific configurations can override or extend the global configuration.</li>
+  <li>Global configurations from modules (<code class="language-plaintext highlighter-rouge">&lt;your component base dir&gt;/&lt;vendorname&gt;/&lt;component-type&gt;-&lt;component-name&gt;/etc/*.xml</code>). Collects certain configuration files from all modules and merges them together.</li>
+  <li>Area-specific configuration from modules (<code class="language-plaintext highlighter-rouge">&lt;your component base dir&gt;/&lt;vendorname&gt;/&lt;component-type&gt;-&lt;component-name&gt;/etc/&lt;area&gt;/*.xml</code>). Collects configuration files from all modules and merges them into the global configuration. Some area-specific configurations can override or extend the global configuration.</li>
 </ul>
 
 <p>where</p>
 
 <ul>
-  <li><code class="highlighter-rouge">&lt;your component base dir&gt;</code> is the base directory in which your component is located. Typical values are <code class="highlighter-rouge">app/code</code> or <code class="highlighter-rouge">vendor</code> relative to the Magento installation directory.</li>
-  <li><code class="highlighter-rouge">&lt;vendorname&gt;</code> is the component’s vendor name; for example, Magento’s vendor name is <code class="highlighter-rouge">magento</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;your component base dir&gt;</code> is the base directory in which your component is located. Typical values are <code class="language-plaintext highlighter-rouge">app/code</code> or <code class="language-plaintext highlighter-rouge">vendor</code> relative to the Magento installation directory.</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;vendorname&gt;</code> is the component’s vendor name; for example, Magento’s vendor name is <code class="language-plaintext highlighter-rouge">magento</code>.</li>
   <li>
-    <p><code class="highlighter-rouge">&lt;component-type&gt;</code> is one of the following:</p>
+    <p><code class="language-plaintext highlighter-rouge">&lt;component-type&gt;</code> is one of the following:</p>
 
     <ul>
-      <li><code class="highlighter-rouge">module-</code>: An extension or module.</li>
-      <li><code class="highlighter-rouge">theme-</code>: Theme.</li>
-      <li><code class="highlighter-rouge">language-</code>: Language package.</li>
+      <li><code class="language-plaintext highlighter-rouge">module-</code>: An extension or module.</li>
+      <li><code class="language-plaintext highlighter-rouge">theme-</code>: Theme.</li>
+      <li><code class="language-plaintext highlighter-rouge">language-</code>: Language package.</li>
     </ul>
 
-    <p class="bs-callout bs-callout-info">Currently, themes are located under <code class="highlighter-rouge">&lt;your Magento install dir&gt;/app/design/frontend</code> or <code class="highlighter-rouge">&lt;your Magento install dir&gt;/app/design/adminhtml</code>.</p>
+    <p class="bs-callout bs-callout-info">Currently, themes are located under <code class="language-plaintext highlighter-rouge">&lt;your Magento install dir&gt;/app/design/frontend</code> or <code class="language-plaintext highlighter-rouge">&lt;your Magento install dir&gt;/app/design/adminhtml</code>.</p>
   </li>
-  <li><code class="highlighter-rouge">&lt;component-name&gt;</code>: Name of your component as defined in <a href="https://github.com/magento/magento2/blob/2.0/composer.json">composer.json</a>.</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;component-name&gt;</code>: Name of your component as defined in <a href="https://github.com/magento/magento2/blob/2.0/composer.json">composer.json</a>.</li>
 </ul>
 
 <h3 id="config-files-load-merge-merge">Configuration file merge</h3>
-<p>Nodes in configuration files are merged based on their fully qualified XPaths, which has a special attribute defined in <code class="highlighter-rouge">$idAttributes</code> array declared as its identifier. This identifier must be unique for all nodes nested under the same parent node.</p>
+<p>Nodes in configuration files are merged based on their fully qualified XPaths, which has a special attribute defined in <code class="language-plaintext highlighter-rouge">$idAttributes</code> array declared as its identifier. This identifier must be unique for all nodes nested under the same parent node.</p>
 
 <p>Magento’s merge algorithm follows:</p>
 
@@ -3758,31 +3759,31 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">config.php</code> and <code class="highlighter-rouge">env.php</code></td>
+      <td><code class="language-plaintext highlighter-rouge">config.php</code> and <code class="language-plaintext highlighter-rouge">env.php</code></td>
       <td><a href="/devdocs/guides/v2.1/config-guide/config/config-php.html">Deployment configuration</a></td>
       <td>Loads into memory when Magento initializes</td>
       <td>Has no object, cannot be customized</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">config.xml</code></td>
+      <td><code class="language-plaintext highlighter-rouge">config.xml</code></td>
       <td>System configuration</td>
       <td>primary, global</td>
       <td><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/Config.php">\Magento\Framework\App\Config</a></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">di.xml</code></td>
+      <td><code class="language-plaintext highlighter-rouge">di.xml</code></td>
       <td><a href="/devdocs/guides/v2.1/extension-dev-guide/depend-inj.html">Dependency injection</a> configuration</td>
       <td>primary, global, area</td>
       <td><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/ObjectManager/Config/Config.php">\Magento\Framework\ObjectManager\Config</a></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">events.xml</code></td>
+      <td><code class="language-plaintext highlighter-rouge">events.xml</code></td>
       <td>Event/observer configuration</td>
       <td>global, area</td>
       <td><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Event.php">\Magento\Framework\Event</a></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">routes.xml</code></td>
+      <td><code class="language-plaintext highlighter-rouge">routes.xml</code></td>
       <td><a href="/devdocs/guides/v2.1/extension-dev-guide/routing.html">Route</a> configuration</td>
       <td>area</td>
       <td><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/Route/Config.php">Magento\Framework\App\Route\Config</a></td>
@@ -3794,7 +3795,7 @@
 
 <p>You can interact with configuration files using interfaces under <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Config">Magento\Framework\Config</a>. You can also use these interfaces if you create a new configuration types.</p>
 
-<p><code class="highlighter-rouge">Magento\Framework\Config</code> provides the following interfaces:</p>
+<p><code class="language-plaintext highlighter-rouge">Magento\Framework\Config</code> provides the following interfaces:</p>
 
 <ul>
   <li><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Config/ConverterInterface.php">Framework\Config\ConverterInterface</a>, which converts the   <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span>

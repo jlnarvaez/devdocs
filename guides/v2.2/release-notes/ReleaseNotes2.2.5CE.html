@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento Open Source 2.2.5 Release Notes | Magento 2 Developer Documentation (copy)</title>
+	<title>Magento Open Source 2.2.5 Release Notes | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/release-notes/ReleaseNotes2.2.5CE.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/release-notes/ReleaseNotes2.2.5CE.html">Magento 2.0</a></li>
 		
@@ -2213,7 +2214,7 @@
 <ul>
   <li>
     <!--- MAGETWO-80789  MAGETWO-88808  MAGETWO-89545 -->
-    <p>Merchants can now  run the catalog search full text indexer and category product indexer in parallel mode by store view, which can significantly decrease  <code class="highlighter-rouge">indexer:reindex</code> execution time when running Magento with multiple store views and shared catalogs.</p>
+    <p>Merchants can now  run the catalog search full text indexer and category product indexer in parallel mode by store view, which can significantly decrease  <code class="language-plaintext highlighter-rouge">indexer:reindex</code> execution time when running Magento with multiple store views and shared catalogs.</p>
   </li>
   <li>
     <!--- MAGETWO-74154 -->
@@ -2298,7 +2299,7 @@
 
 <!--- MAGETWO-88107 -->
 <ul>
-  <li>The <code class="highlighter-rouge">Category\Collection::joinUrlRewrite</code> method now returns the URL of the store  whose <code class="highlighter-rouge">storeId</code> is set on the collection. Previously, this method returned the name of the default store. <em>Fix submitted by <a href="https://github.com/alepane21">Alessandro Pagnin</a> in pull request 13716</em>. <a href="https://github.com/magento/magento2/issues/13704">GitHub-13704</a></li>
+  <li>The <code class="language-plaintext highlighter-rouge">Category\Collection::joinUrlRewrite</code> method now returns the URL of the store  whose <code class="language-plaintext highlighter-rouge">storeId</code> is set on the collection. Previously, this method returned the name of the default store. <em>Fix submitted by <a href="https://github.com/alepane21">Alessandro Pagnin</a> in pull request 13716</em>. <a href="https://github.com/magento/magento2/issues/13704">GitHub-13704</a></li>
 </ul>
 
 <!--- MAGETWO-81957 -->
@@ -2318,7 +2319,7 @@
 
 <!--- MAGETWO-71936 -->
 <ul>
-  <li>Magento now successfully saves products when using a locale that formats dates in this way: DD/MM/YYYY. Previously, when you tried to save a product in a locale where dates were formatted this way, Magento did not save the product, and displayed this error: <code class="highlighter-rouge">Invalid input datetime format</code>. <a href="https://github.com/magento/magento2/issues/10485">GitHub-10485</a></li>
+  <li>Magento now successfully saves products when using a locale that formats dates in this way: DD/MM/YYYY. Previously, when you tried to save a product in a locale where dates were formatted this way, Magento did not save the product, and displayed this error: <code class="language-plaintext highlighter-rouge">Invalid input datetime format</code>. <a href="https://github.com/magento/magento2/issues/10485">GitHub-10485</a></li>
 </ul>
 
 <!--- MAGETWO-54740 -->
@@ -2330,7 +2331,7 @@
 
 <!--- MAGETWO-89281 -->
 <ul>
-  <li>When working in the media gallery, you can now successfully delete  any files and folders that are symlinked in <code class="highlighter-rouge">pub/media</code>. Previously, any files or folders that were symlinked inside the <code class="highlighter-rouge">pub/media</code> directory could not be deleted because there was a validation check that used <code class="highlighter-rouge">realpath</code> to test whether the file was outside the media directory base path. Since <code class="highlighter-rouge">realpath</code> resolved symlinks to actual paths, this check would fail if the actual path were outside  the base path, and would prevent action from being completed.</li>
+  <li>When working in the media gallery, you can now successfully delete  any files and folders that are symlinked in <code class="language-plaintext highlighter-rouge">pub/media</code>. Previously, any files or folders that were symlinked inside the <code class="language-plaintext highlighter-rouge">pub/media</code> directory could not be deleted because there was a validation check that used <code class="language-plaintext highlighter-rouge">realpath</code> to test whether the file was outside the media directory base path. Since <code class="language-plaintext highlighter-rouge">realpath</code> resolved symlinks to actual paths, this check would fail if the actual path were outside  the base path, and would prevent action from being completed.</li>
 </ul>
 
 <h3 id="configurable-products">Configurable products</h3>
@@ -2366,12 +2367,12 @@
 
 <!--- MAGETWO-85296 -->
 <ul>
-  <li>The product repository now uses <code class="highlighter-rouge">store_id</code> (if set)  when saving attributes for an existing product. Previously, Magento always saved attribute values for an existing product at the default store level. <em>Fix submitted by <a href="https://github.com/p-bystritsky">p-bystritsky</a> in pull request 967</em>. <a href="https://github.com/magento/magento2/issues/7720">GitHub-7720</a>, <a href="https://github.com/magento/magento2/issues/12395">GitHub-12395</a>, <a href="https://github.com/magento/magento2/issues/12186">GitHub-12186</a></li>
+  <li>The product repository now uses <code class="language-plaintext highlighter-rouge">store_id</code> (if set)  when saving attributes for an existing product. Previously, Magento always saved attribute values for an existing product at the default store level. <em>Fix submitted by <a href="https://github.com/p-bystritsky">p-bystritsky</a> in pull request 967</em>. <a href="https://github.com/magento/magento2/issues/7720">GitHub-7720</a>, <a href="https://github.com/magento/magento2/issues/12395">GitHub-12395</a>, <a href="https://github.com/magento/magento2/issues/12186">GitHub-12186</a></li>
 </ul>
 
 <!--- MAGETWO-82417 -->
 <ul>
-  <li>The placement of Google Tag Manager code now follows the guidelines in the <a href="https://developers.google.com/tag-manager/devguide">Google Tag Manager Developer Guide</a>. (Previously, the Google Tag Manager code was inserted before the <code class="highlighter-rouge">dataLayer</code> variable was defined.)</li>
+  <li>The placement of Google Tag Manager code now follows the guidelines in the <a href="https://developers.google.com/tag-manager/devguide">Google Tag Manager Developer Guide</a>. (Previously, the Google Tag Manager code was inserted before the <code class="language-plaintext highlighter-rouge">dataLayer</code> variable was defined.)</li>
 </ul>
 
 <!--- MAGETWO-77754 -->
@@ -2407,7 +2408,7 @@
 
 <!--- MAGETWO-86399 -->
 <ul>
-  <li>The performance and logic of <code class="highlighter-rouge">Magento\Sales\Helper\Guest</code> has been improved. <em>Fix submitted by <a href="https://github.com/Coderimus">Alexander Shkurko</a> in pull request 12893</em>.</li>
+  <li>The performance and logic of <code class="language-plaintext highlighter-rouge">Magento\Sales\Helper\Guest</code> has been improved. <em>Fix submitted by <a href="https://github.com/Coderimus">Alexander Shkurko</a> in pull request 12893</em>.</li>
 </ul>
 
 <h3 id="payment-methods">Payment methods</h3>
@@ -2421,7 +2422,7 @@
 
 <!--- MAGETWO-86745 -->
 <ul>
-  <li>We’ve removed the <code class="highlighter-rouge">count()</code> method from the condition section for some loops in a small subset of backend files. When this method is used in a loop condition,  it will be executed at every iteration, which can degrade performance. <em>Fix submitted by <a href="https://github.com/Coderimus">Alexander Shkurko</a> in pull request 13173</em>.</li>
+  <li>We’ve removed the <code class="language-plaintext highlighter-rouge">count()</code> method from the condition section for some loops in a small subset of backend files. When this method is used in a loop condition,  it will be executed at every iteration, which can degrade performance. <em>Fix submitted by <a href="https://github.com/Coderimus">Alexander Shkurko</a> in pull request 13173</em>.</li>
 </ul>
 
 <h3 id="search">Search</h3>
@@ -2463,17 +2464,17 @@
 
 <!--- MAGETWO-88291 -->
 <ul>
-  <li>You can now use REST to update the <code class="highlighter-rouge">available_payment_methods</code> company extension attribute. Previously, Magento set to null any value you passed to the database  <code class="highlighter-rouge">company_payment</code> table.</li>
+  <li>You can now use REST to update the <code class="language-plaintext highlighter-rouge">available_payment_methods</code> company extension attribute. Previously, Magento set to null any value you passed to the database  <code class="language-plaintext highlighter-rouge">company_payment</code> table.</li>
 </ul>
 
 <!--- MAGETWO-87487 -->
 <ul>
-  <li>The <code class="highlighter-rouge">phpunit.xml</code> configuration file is now blacklisted during schema validation static tests (particularly <code class="highlighter-rouge">Magento/Test/Integrity/Xml/SchemaTest.php</code>).</li>
+  <li>The <code class="language-plaintext highlighter-rouge">phpunit.xml</code> configuration file is now blacklisted during schema validation static tests (particularly <code class="language-plaintext highlighter-rouge">Magento/Test/Integrity/Xml/SchemaTest.php</code>).</li>
 </ul>
 
 <!--- MAGETWO-81742 MAGETWO-89250 -->
 <ul>
-  <li>The <code class="highlighter-rouge">\Magento\Test\Php\LiveCodeTest::testCodeStyle</code>  method now uses whitelist files. <em>Fix submitted by <a href="https://github.com/adrian-martinez-interactiv4">Adrian Martinez</a> in pull request 11376</em>. <a href="https://github.com/magento/magento2/issues/10559">GitHub-10559</a></li>
+  <li>The <code class="language-plaintext highlighter-rouge">\Magento\Test\Php\LiveCodeTest::testCodeStyle</code>  method now uses whitelist files. <em>Fix submitted by <a href="https://github.com/adrian-martinez-interactiv4">Adrian Martinez</a> in pull request 11376</em>. <a href="https://github.com/magento/magento2/issues/10559">GitHub-10559</a></li>
 </ul>
 
 <h3 id="url-rewrites">URL rewrites</h3>
@@ -2541,7 +2542,7 @@ MAGETWO-86046 MAGETWO-90074 MAGETWO-62150 MAGETWO-89547 MAGETWO-45775 MAGETWO-91
 
 <h2 id="known-issues">Known Issues</h2>
 
-<p>Merchants are unable to change a store view’s applied theme in Magento 2.2.5. When a merchant tries to change the <strong>Applied theme</strong> setting for a store view (<strong>Content</strong> &gt; <strong>Design</strong> &gt; <strong>Configuration</strong>), Magento does not change the theme, but instead displays this error: <code class="highlighter-rouge">Something went wrong while saving this configuration: Area is already set</code>. See <a href="https://github.com/magento/magento2/issues/14968">GitHub-14968</a> for more information. <strong>Workaround</strong>: Merchants who are running 2.2.5 should apply <a href="https://magento.com/tech-resources/download#download2224">patch MAGETWO-93036</a>  or  upgrade to 2.2.6 when it becomes available.</p>
+<p>Merchants are unable to change a store view’s applied theme in Magento 2.2.5. When a merchant tries to change the <strong>Applied theme</strong> setting for a store view (<strong>Content</strong> &gt; <strong>Design</strong> &gt; <strong>Configuration</strong>), Magento does not change the theme, but instead displays this error: <code class="language-plaintext highlighter-rouge">Something went wrong while saving this configuration: Area is already set</code>. See <a href="https://github.com/magento/magento2/issues/14968">GitHub-14968</a> for more information. <strong>Workaround</strong>: Merchants who are running 2.2.5 should apply <a href="https://magento.com/tech-resources/download#download2224">patch MAGETWO-93036</a>  or  upgrade to 2.2.6 when it becomes available.</p>
 
 <p>The Amazon Pay, Magento Shipping, and Vertex extensions have the following known issues:</p>
 
@@ -2553,7 +2554,7 @@ MAGETWO-86046 MAGETWO-90074 MAGETWO-62150 MAGETWO-89547 MAGETWO-45775 MAGETWO-91
 
 <!-- BUNDLE--1480 -->
 <ul>
-  <li>Magento throws the following exception during checkout if you disable Amazon Pay when installing Magento using the web wizard:  <code class="highlighter-rouge">Exception #0 (UnexpectedValueException): Payment model name is not provided in config!</code>.  Note that this error occurs only if one or two of the three Amazon modules shipped with Magento are disabled. If all three Amazon modules are disabled, this problem does not occur. <a href="https://github.com/magento/magento2/issues/16167">GitHub-16167</a> <!--- BUNDLE-1480 --></li>
+  <li>Magento throws the following exception during checkout if you disable Amazon Pay when installing Magento using the web wizard:  <code class="language-plaintext highlighter-rouge">Exception #0 (UnexpectedValueException): Payment model name is not provided in config!</code>.  Note that this error occurs only if one or two of the three Amazon modules shipped with Magento are disabled. If all three Amazon modules are disabled, this problem does not occur. <a href="https://github.com/magento/magento2/issues/16167">GitHub-16167</a> <!--- BUNDLE-1480 --></li>
 </ul>
 
 <!-- BUNDLE--15453 -->

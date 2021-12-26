@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Component dependency readiness check issues | Magento 2 Developer Documentation (copy)</title>
+	<title>Component dependency readiness check issues | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/install-gde/trouble/readiness/tshoot_rc_depend.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/install-gde/trouble/readiness/tshoot_rc_depend.html">Magento 2.0</a></li>
 		
@@ -4621,11 +4622,11 @@
 
   <h3 id="trouble-depend-conflict">Conflicting dependencies</h3>
 
-  <p>The message <code class="highlighter-rouge">We found conflicting component dependencies</code> displays if Composer cannot determine which components to install or update. To resolve component dependency issues, you should be a technical person who thoroughly understands how Composer works.</p>
+  <p>The message <code class="language-plaintext highlighter-rouge">We found conflicting component dependencies</code> displays if Composer cannot determine which components to install or update. To resolve component dependency issues, you should be a technical person who thoroughly understands how Composer works.</p>
 
   <p>Following is a sample failure message:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>We found conflicting component dependencies.
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>We found conflicting component dependencies.
 
 You are trying to update package(s) magento/module-sample-data to 1.0.0-beta
 We've detected conflicts with the following packages:
@@ -4634,17 +4635,17 @@ We've detected conflicts with the following packages:
 
   <p class="bs-callout bs-callout-info">The message you see will likely be different.</p>
 
-  <p>Typically, component dependency conflicts result from someone manually editing the Magento 2 <code class="highlighter-rouge">composer.json</code> file. It can also be caused by third-party modules that depend on earlier Magento components than the ones you have installed.</p>
+  <p>Typically, component dependency conflicts result from someone manually editing the Magento 2 <code class="language-plaintext highlighter-rouge">composer.json</code> file. It can also be caused by third-party modules that depend on earlier Magento components than the ones you have installed.</p>
 
-  <p>In the preceding example, the installed package <code class="highlighter-rouge">magento/sample-data version 0.74.0-beta15</code> cannot be upgraded to <code class="highlighter-rouge">1.0.0-beta</code>. However, 0.74.0-beta15 <em>can</em> be upgraded to <code class="highlighter-rouge">0.74.0-beta16</code> (or others).</p>
+  <p>In the preceding example, the installed package <code class="language-plaintext highlighter-rouge">magento/sample-data version 0.74.0-beta15</code> cannot be upgraded to <code class="language-plaintext highlighter-rouge">1.0.0-beta</code>. However, 0.74.0-beta15 <em>can</em> be upgraded to <code class="language-plaintext highlighter-rouge">0.74.0-beta16</code> (or others).</p>
 
-  <p>Edit <code class="highlighter-rouge">composer.json</code> to make any of these changes and try the readiness check again.</p>
+  <p>Edit <code class="language-plaintext highlighter-rouge">composer.json</code> to make any of these changes and try the readiness check again.</p>
 
   <h3 id="trouble-depend-permission">File system permissions issues</h3>
 
   <p>If the Magento file system owner doesn’t have permissions to write to directories on the Magento file system, a message similar to the following displays:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>file_put_contents(/var/www/html/magento2ce/var/composer_home/cache/repo/https---
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>file_put_contents(/var/www/html/magento2ce/var/composer_home/cache/repo/https---
 packagist.org/provider-doctrine$instantiator.json): failed to open stream: Permission denied
 </code></pre></div>  </div>
 
@@ -4652,7 +4653,7 @@ packagist.org/provider-doctrine$instantiator.json): failed to open stream: Permi
 
   <h3 id="trouble-depend-state">The Component Dependency Check status never changes</h3>
 
-  <p>In some cases, the status of the Component Dependency Check doesn’t change, even after you try to correct issues. In that case, you can either delete or rename files named <code class="highlighter-rouge">&lt;your Magento install dir&gt;/var/.update_cronjob_status</code> and <code class="highlighter-rouge">&lt;your Magento install dir&gt;/var/.setup_cronjob_status</code> and try running the Component Manager again.</p>
+  <p>In some cases, the status of the Component Dependency Check doesn’t change, even after you try to correct issues. In that case, you can either delete or rename files named <code class="language-plaintext highlighter-rouge">&lt;your Magento install dir&gt;/var/.update_cronjob_status</code> and <code class="language-plaintext highlighter-rouge">&lt;your Magento install dir&gt;/var/.setup_cronjob_status</code> and try running the Component Manager again.</p>
 
   <p>Renaming or removing these files forces the Component Manager to run the checks again.</p>
 

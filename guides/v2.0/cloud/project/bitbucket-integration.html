@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Bitbucket integration | Magento 2 Developer Documentation (copy)</title>
+	<title>Bitbucket integration | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/project/bitbucket-integration.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/project/bitbucket-integration.html">Magento 2.0</a></li>
 		
@@ -3554,7 +3555,7 @@
 <ul>
   <li>You must have a Magento Commerce Cloud project and you must be an administrator of the project.</li>
   <li>You must have a Bitbucket account and administrative access to the Bitbucket repository you want to integrate.</li>
-  <li>You must install the <a href="/devdocs/guides/v2.0/cloud/before/before-workspace-magento-prereqs.html#cloud-ssh-cli-cli-install"><code class="highlighter-rouge">magento-cloud</code> CLI</a> tool in your local environment.</li>
+  <li>You must install the <a href="/devdocs/guides/v2.0/cloud/before/before-workspace-magento-prereqs.html#cloud-ssh-cli-cli-install"><code class="language-plaintext highlighter-rouge">magento-cloud</code> CLI</a> tool in your local environment.</li>
 </ul>
 
 <h2 id="prepare-your-repository">Prepare your repository</h2>
@@ -3565,49 +3566,49 @@
   <li>
     <p>Open a terminal and log in to your Magento Commerce Cloud project:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud login
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud login
 </code></pre></div>    </div>
   </li>
   <li>
     <p>List your projects. With the project ID, you can complete additional commands:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud project:list
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud project:list
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Clone a project to your local environment:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud project:get &lt;project ID&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud project:get &lt;project ID&gt;
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Add your Bitbucket repository as a remote. Replace <code class="highlighter-rouge">&lt;user-name&gt;/&lt;repo-name&gt;</code> with your Bitbucket information.</p>
+    <p>Add your Bitbucket repository as a remote. Replace <code class="language-plaintext highlighter-rouge">&lt;user-name&gt;/&lt;repo-name&gt;</code> with your Bitbucket information.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git remote add origin git@bitbucket.org:&lt;user-name&gt;/&lt;repo-name&gt;.git
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git remote add origin git@bitbucket.org:&lt;user-name&gt;/&lt;repo-name&gt;.git
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Delete the default <code class="highlighter-rouge">magento</code> remote.</p>
+    <p>Delete the default <code class="language-plaintext highlighter-rouge">magento</code> remote.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git remote remove magento
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git remote remove magento
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Verify that you added the Bitbucket remote correctly:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git remote -v show
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git remote -v show
 </code></pre></div>    </div>
 
     <p>You should see the following:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>origin git@bitbucket.org:&lt;user-name&gt;/&lt;repo-name&gt;.git (fetch)
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>origin git@bitbucket.org:&lt;user-name&gt;/&lt;repo-name&gt;.git (fetch)
 origin git@bitbucket.org:&lt;user-name&gt;/&lt;repo-name&gt;.git (push)
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Push files to your new Bitbucket repository:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git push -u origin master
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git push -u origin master
 </code></pre></div>    </div>
   </li>
   <li>
@@ -3617,7 +3618,7 @@ origin git@bitbucket.org:&lt;user-name&gt;/&lt;repo-name&gt;.git (push)
 
 <h2 id="create-an-oauth-consumer">Create an OAuth consumer</h2>
 
-<p>The Bitbucket integration requires an <a href="https://confluence.atlassian.com/x/pwIwDg" target="_blank">OAuth consumer</a>. This section shows you how to create one in Bitbucket. You’ll need the OAuth <code class="highlighter-rouge">key</code> and <code class="highlighter-rouge">secret</code> from this consumer to complete the next section.</p>
+<p>The Bitbucket integration requires an <a href="https://confluence.atlassian.com/x/pwIwDg" target="_blank">OAuth consumer</a>. This section shows you how to create one in Bitbucket. You’ll need the OAuth <code class="language-plaintext highlighter-rouge">key</code> and <code class="language-plaintext highlighter-rouge">secret</code> from this consumer to complete the next section.</p>
 
 <ol>
   <li>Log in to your <a href="https://bitbucket.org/account/signin/" target="_blank">Bitbucket</a> account.</li>
@@ -3632,8 +3633,8 @@ origin git@bitbucket.org:&lt;user-name&gt;/&lt;repo-name&gt;.git (push)
     </div>
   </li>
   <li>Click <strong>Save</strong>.</li>
-  <li>Click the consumer <strong>Name</strong> to reveal your OAuth <code class="highlighter-rouge">key</code> and <code class="highlighter-rouge">secret</code>.</li>
-  <li>Copy your OAuth <code class="highlighter-rouge">key</code> and <code class="highlighter-rouge">secret</code>. You’ll need it to complete the next section.</li>
+  <li>Click the consumer <strong>Name</strong> to reveal your OAuth <code class="language-plaintext highlighter-rouge">key</code> and <code class="language-plaintext highlighter-rouge">secret</code>.</li>
+  <li>Copy your OAuth <code class="language-plaintext highlighter-rouge">key</code> and <code class="language-plaintext highlighter-rouge">secret</code>. You’ll need it to complete the next section.</li>
 </ol>
 
 <h2 id="configure-the-integration">Configure the integration</h2>
@@ -3641,28 +3642,28 @@ origin git@bitbucket.org:&lt;user-name&gt;/&lt;repo-name&gt;.git (push)
 <ol>
   <li>Open a terminal and navigate to your local Magento Commerce Cloud project directory.</li>
   <li>
-    <p>Create a temporary new file called <code class="highlighter-rouge">bitbucket.json</code> and add the following:</p>
+    <p>Create a temporary new file called <code class="language-plaintext highlighter-rouge">bitbucket.json</code> and add the following:</p>
 
     <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bitbucket"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"repository"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bitbucket-user-name/bitbucket-repo-name"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"app_credentials"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YOUR OAUTH CONSUMER KEY"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"secret"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YOUR OAUTH CONSUMER SECRET"</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bitbucket"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"repository"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bitbucket-user-name/bitbucket-repo-name"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"app_credentials"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YOUR OAUTH CONSUMER KEY"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"secret"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YOUR OAUTH CONSUMER SECRET"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"prune_branches"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fetch_branches"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"build_pull_requests"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"resync_pull_requests"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="nl">"prune_branches"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"fetch_branches"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"build_pull_requests"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resync_pull_requests"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>    </div>
 
     <p>Replace the following values with your information:</p>
 
     <ul>
-      <li><code class="highlighter-rouge">bitbucket-user-name/bitbucket-repo-name</code></li>
-      <li><code class="highlighter-rouge">YOUR OAUTH CONSUMER KEY</code></li>
-      <li><code class="highlighter-rouge">YOUR OAUTH CONSUMER SECRET</code></li>
+      <li><code class="language-plaintext highlighter-rouge">bitbucket-user-name/bitbucket-repo-name</code></li>
+      <li><code class="language-plaintext highlighter-rouge">YOUR OAUTH CONSUMER KEY</code></li>
+      <li><code class="language-plaintext highlighter-rouge">YOUR OAUTH CONSUMER SECRET</code></li>
     </ul>
 
     <div class="bs-callout bs-callout-tip">
@@ -3670,27 +3671,27 @@ origin git@bitbucket.org:&lt;user-name&gt;/&lt;repo-name&gt;.git (push)
     </div>
   </li>
   <li>
-    <p>Add the integration to your project using the <code class="highlighter-rouge">magento-cloud</code> CLI tool. Replace <code class="highlighter-rouge">PROJECT ID</code> with your Magento Commerce Cloud project ID.</p>
+    <p>Add the integration to your project using the <code class="language-plaintext highlighter-rouge">magento-cloud</code> CLI tool. Replace <code class="language-plaintext highlighter-rouge">PROJECT ID</code> with your Magento Commerce Cloud project ID.</p>
 
     <div class="bs-callout bs-callout-warning">
       <p>Running the following command overwrites <em>all</em> code in your Magento Commerce Cloud project with code from your Bitbucket repository. This includes all branches, including the master (production) branch. This action happens instantly and cannot be undone.</p>
     </div>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud project:curl -p 'PROJECT ID' /integrations -i -X POST -d "$(&lt; bitbucket.json)"
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud project:curl -p 'PROJECT ID' /integrations -i -X POST -d "$(&lt; bitbucket.json)"
 </code></pre></div>    </div>
 
     <p>This command returns a long HTTP response, including headers. The first line of the output should contain a 200 or 201 status code indicating successful integration. A status of 400 or above indicates that an error occurred.</p>
   </li>
   <li>
-    <p>Delete the temporary <code class="highlighter-rouge">bitbucket.json</code> file.</p>
+    <p>Delete the temporary <code class="language-plaintext highlighter-rouge">bitbucket.json</code> file.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>rm bitbucket.json
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>rm bitbucket.json
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Your Magento Commerce Cloud project, including all branches, is now synchronized with your Bitbucket repository. List the project’s integration with the following command:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud integrations -p 'PROJECT ID'
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud integrations -p 'PROJECT ID'
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -3703,13 +3704,13 @@ origin git@bitbucket.org:&lt;user-name&gt;/&lt;repo-name&gt;.git (push)
   <li>
     <p>Create a test file:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>touch test.md
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>touch test.md
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Commit and push it to your Bitbucket repository:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git add . &amp;&amp; git commit -m "Testing Bitbucket integration" &amp;&amp; git push
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git add . &amp;&amp; git commit -m "Testing Bitbucket integration" &amp;&amp; git push
 </code></pre></div>    </div>
   </li>
   <li>
@@ -3721,33 +3722,33 @@ origin git@bitbucket.org:&lt;user-name&gt;/&lt;repo-name&gt;.git (push)
 
 <h2 id="branching">Branching</h2>
 
-<p>The Bitbucket integration cannot create new environments in your project, so you must use the <code class="highlighter-rouge">magento-cloud</code> CLI tool to <a href="/devdocs/guides/v2.0/cloud/env/environments-start.html#getstarted">create branches</a>.</p>
+<p>The Bitbucket integration cannot create new environments in your project, so you must use the <code class="language-plaintext highlighter-rouge">magento-cloud</code> CLI tool to <a href="/devdocs/guides/v2.0/cloud/env/environments-start.html#getstarted">create branches</a>.</p>
 
-<p>After creating a new environment, you can push the corresponding branch up to your remote Bitbucket repository using regular git commands. For example, <code class="highlighter-rouge">git push -u origin &lt;your-branch&gt;</code>. Subsequent changes to your branch in Bitbucket will automatically build and deploy the environment.</p>
+<p>After creating a new environment, you can push the corresponding branch up to your remote Bitbucket repository using regular git commands. For example, <code class="language-plaintext highlighter-rouge">git push -u origin &lt;your-branch&gt;</code>. Subsequent changes to your branch in Bitbucket will automatically build and deploy the environment.</p>
 
 <h2 id="remove-the-integration">Remove the integration</h2>
 
 <p>You can safely remove the Bitbucket integration from your project without affecting your code.</p>
 
-<p>To remove the integration using the <code class="highlighter-rouge">magento-cloud</code> CLI tool:</p>
+<p>To remove the integration using the <code class="language-plaintext highlighter-rouge">magento-cloud</code> CLI tool:</p>
 
 <ol>
   <li>
     <p>Log in to your project.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud login
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud login
 </code></pre></div>    </div>
   </li>
   <li>
     <p>List your integrations. You need the Bitbucket integration ID to complete the next step.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud integration:list
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud integration:list
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Delete the integration.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud integration:delete &lt;ID&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud integration:delete &lt;ID&gt;
 </code></pre></div>    </div>
   </li>
 </ol>

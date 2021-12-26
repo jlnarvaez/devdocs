@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>RabbitMQ | Magento 2 Developer Documentation (copy)</title>
+	<title>RabbitMQ | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/install-gde/prereq/install-rabbitmq.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/install-gde/prereq/install-rabbitmq.html">Magento 2.0</a></li>
 		
@@ -4565,7 +4566,7 @@
 <h2 id="ubuntu-install">Install RabbitMQ on Ubuntu</h2>
 
 <p>To install RabbitMQ on Ubuntu 16 enter the following command:</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">sudo </span>apt install <span class="nt">-y</span> rabbitmq-server
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> rabbitmq-server
 </code></pre></div></div>
 
 <p>This command also installs the required Erlang packages.</p>
@@ -4575,7 +4576,7 @@
 
 <ol>
   <li>Download <a href="https://www.rabbitmq.com/releases/rabbitmq-server/v3.6.6/rabbitmq-server_3.6.6-1_all.deb" target="_blank">rabbitmq-server_3.6.6-1_all.deb</a>.</li>
-  <li>Install the package with <code class="highlighter-rouge">dpkg</code>.</li>
+  <li>Install the package with <code class="language-plaintext highlighter-rouge">dpkg</code>.</li>
 </ol>
 
 <p>Refer to <a href="https://www.rabbitmq.com/install-debian.html" target="_blank">Installing on Debian/Ubuntu</a> for more information.</p>
@@ -4605,7 +4606,7 @@
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>rpm <span class="nt">--import</span> https://www.rabbitmq.com/rabbitmq-signing-key-public.asc
 </code></pre></div></div>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>yum install rabbitmq-server-3.5.6-1.noarch.rpm
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>yum <span class="nb">install </span>rabbitmq-server-3.5.6-1.noarch.rpm
 </code></pre></div></div>
 
 <p>Refer to <a href="https://www.rabbitmq.com/install-rpm.html" target="_blank">Installing on RPM-based Linux</a> for more information.</p>
@@ -4626,7 +4627,7 @@
 
 <p>Add the following command line parameters when you install Magento Commerce:</p>
 
-<p><code class="highlighter-rouge">--amqp-host="&lt;hostname&gt;" --amqp-port="5672" --amqp-user="&lt;user_name&gt;" --amqp-password="&lt;password&gt;" --amqp-virtualhost="/"</code></p>
+<p><code class="language-plaintext highlighter-rouge">--amqp-host="&lt;hostname&gt;" --amqp-port="5672" --amqp-user="&lt;user_name&gt;" --amqp-password="&lt;password&gt;" --amqp-virtualhost="/"</code></p>
 
 <p>where:</p>
 
@@ -4639,24 +4640,24 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">amqp-host</code></td>
+      <td><code class="language-plaintext highlighter-rouge">amqp-host</code></td>
       <td>The hostname where RabbitMQ is installed.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">amqp-por</code>t</td>
-      <td>The port to use to connect to RabbitMQ. The default is <code class="highlighter-rouge">5672</code>.</td>
+      <td><code class="language-plaintext highlighter-rouge">amqp-por</code>t</td>
+      <td>The port to use to connect to RabbitMQ. The default is <code class="language-plaintext highlighter-rouge">5672</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">amqp-user</code></td>
-      <td>The username for connecting to RabbitMQ. Do not use the default user <code class="highlighter-rouge">guest</code>.</td>
+      <td><code class="language-plaintext highlighter-rouge">amqp-user</code></td>
+      <td>The username for connecting to RabbitMQ. Do not use the default user <code class="language-plaintext highlighter-rouge">guest</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">amqp-password</code></td>
-      <td>The password for connecting to RabbitMQ. Do not use the default password <code class="highlighter-rouge">guest</code>.</td>
+      <td><code class="language-plaintext highlighter-rouge">amqp-password</code></td>
+      <td>The password for connecting to RabbitMQ. Do not use the default password <code class="language-plaintext highlighter-rouge">guest</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">amqp-virtualhost</code></td>
-      <td>The virtual host for connecting to RabbitMQ. The default is <code class="highlighter-rouge">/</code>.</td>
+      <td><code class="language-plaintext highlighter-rouge">amqp-virtualhost</code></td>
+      <td>The virtual host for connecting to RabbitMQ. The default is <code class="language-plaintext highlighter-rouge">/</code>.</td>
     </tr>
   </tbody>
 </table>

@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Install the Magento software | Magento 2 Developer Documentation (copy)</title>
+	<title>Install the Magento software | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/install-gde/install/cli/install-cli-install.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/install-gde/install/cli/install-cli-install.html">Magento 2.0</a></li>
 		
@@ -4618,7 +4619,7 @@
   <li>Review the information discussed in <a href="/devdocs/guides/v2.3/install-gde/install/cli/install-cli-subcommands.html">Get started with the command-line installation</a>.</li>
 </ol>
 
-<p class="bs-callout bs-callout-info">You must install Magento from its <code class="highlighter-rouge">bin</code> subdirectory.</p>
+<p class="bs-callout bs-callout-info">You must install Magento from its <code class="language-plaintext highlighter-rouge">bin</code> subdirectory.</p>
 
 <p>The installer is designed to be run multiple times if necessary so you can:</p>
 
@@ -4632,7 +4633,7 @@
   <li>Install Magento in a different database instance</li>
 </ul>
 
-<p class="bs-callout bs-callout-info">By default, the installer doesn’t overwrite the Magento database if you install the Magento software in the same database instance. You can use the optional <code class="highlighter-rouge">cleanup-database</code> parameter to change this behavior.</p>
+<p class="bs-callout bs-callout-info">By default, the installer doesn’t overwrite the Magento database if you install the Magento software in the same database instance. You can use the optional <code class="language-plaintext highlighter-rouge">cleanup-database</code> parameter to change this behavior.</p>
 
 <p>See also <a href="/devdocs/guides/v2.3/install-gde/install/cli/install-cli-uninstall.html">Update, reinstall, uninstall</a>.</p>
 
@@ -4641,9 +4642,9 @@
 <p>To use Secure Sockets Layer (SSL), also referred to as HTTPS, for both the Magento Admin and the storefront, you must set all of the following parameters:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">--use-secure</code>: Set to <code class="highlighter-rouge">1</code></li>
-  <li><code class="highlighter-rouge">--base-url-secure</code>: Set to a secure URL (that is, starting with <code class="highlighter-rouge">https://</code>)</li>
-  <li><code class="highlighter-rouge">--use-secure-admin</code> Set to <code class="highlighter-rouge">1</code>
+  <li><code class="language-plaintext highlighter-rouge">--use-secure</code>: Set to <code class="language-plaintext highlighter-rouge">1</code></li>
+  <li><code class="language-plaintext highlighter-rouge">--base-url-secure</code>: Set to a secure URL (that is, starting with <code class="language-plaintext highlighter-rouge">https://</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">--use-secure-admin</code> Set to <code class="language-plaintext highlighter-rouge">1</code>
 <!-- *	`--base-url`: Set to a secure URL (that is, starting with `https://`) --></li>
 </ul>
 
@@ -4682,7 +4683,7 @@
 
 <p>The format of the install command follows:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento setup:install --&lt;option&gt;=&lt;value&gt; ... --&lt;option&gt;=&lt;value&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento setup:install --&lt;option&gt;=&lt;value&gt; ... --&lt;option&gt;=&lt;value&gt;
 </code></pre></div></div>
 
 <p>The following table discusses the meanings of installation option names and values. Examples are provided in <a href="#install-cli-example">Sample localhost installations</a>.</p>
@@ -4720,32 +4721,32 @@
     </tr>
     <tr>
       <td>–admin-password</td>
-      <td>Magento administrator user password. The password must be at least 7 characters in length and must include at least one alphabetic and at least one numeric character.<br /><br />We recommend a longer, more complex password. Enclose the entire password string in single quotes. For example, <code class="highlighter-rouge">--admin-password='A0b9%t3g'</code></td>
+      <td>Magento administrator user password. The password must be at least 7 characters in length and must include at least one alphabetic and at least one numeric character.<br /><br />We recommend a longer, more complex password. Enclose the entire password string in single quotes. For example, <code class="language-plaintext highlighter-rouge">--admin-password='A0b9%t3g'</code></td>
       <td>Yes</td>
     </tr>
     <tr>
       <td>–base-url</td>
-      <td>Base URL to use to access your Magento Admin and storefront in any of the following formats:<br /><br /><code class="highlighter-rouge">http[s]://&lt;host or ip&gt;/&lt;your Magento install dir&gt;/</code>.<br /><br /><strong>Note:</strong> The scheme (http:// or https://) and a trailing slash are both required.<br /><br /><code class="highlighter-rouge">&lt;your Magento install dir&gt;</code> is the docroot-relative path in which to install the Magento software. Depending on how you set up your web server and virtual hosts, the path might be magento2 or it might be blank.<br /><br />To access Magento on localhost, you can use either <code class="highlighter-rouge">http://127.0.0.1/&lt;your Magento install dir&gt;/</code> or <code class="highlighter-rouge">http://127.0.0.1/&lt;your Magento install dir&gt;/</code>.<br /><br />- `` which represents a base URL defined by a virtual host setting or by a virtualization environment like Docker. For example, if you set up a virtual host for Magento with the hostname magento.example.com, you can install the Magento software with <code class="highlighter-rouge">--base-url=</code> and access the Magento Admin with a URL like http://magento.example.com/admin.</td>
+      <td>Base URL to use to access your Magento Admin and storefront in any of the following formats:<br /><br /><code class="language-plaintext highlighter-rouge">http[s]://&lt;host or ip&gt;/&lt;your Magento install dir&gt;/</code>.<br /><br /><strong>Note:</strong> The scheme (http:// or https://) and a trailing slash are both required.<br /><br /><code class="language-plaintext highlighter-rouge">&lt;your Magento install dir&gt;</code> is the docroot-relative path in which to install the Magento software. Depending on how you set up your web server and virtual hosts, the path might be magento2 or it might be blank.<br /><br />To access Magento on localhost, you can use either <code class="language-plaintext highlighter-rouge">http://127.0.0.1/&lt;your Magento install dir&gt;/</code> or <code class="language-plaintext highlighter-rouge">http://127.0.0.1/&lt;your Magento install dir&gt;/</code>.<br /><br />- `` which represents a base URL defined by a virtual host setting or by a virtualization environment like Docker. For example, if you set up a virtual host for Magento with the hostname magento.example.com, you can install the Magento software with <code class="language-plaintext highlighter-rouge">--base-url=</code> and access the Magento Admin with a URL like http://magento.example.com/admin.</td>
       <td>No</td>
     </tr>
     <tr>
       <td>–backend-frontname</td>
-      <td>Uniform Resource Identifier (URI) to access the Magento Admin or omit this parameter to let Magento generate a random URI for you.<br /><br />We recommend a random URI for security purposes. A random URI is harder for hackers or malicious software to exploit.<br /><br />The URI displays at the end of the installation. You can display it later at any time using the magento info:adminuri command.<br /><br />If you choose to enter a value, we recommend you not use a common word like admin, backend, and so on. The Admin URI can contain alphanumeric values and the underscore character (<code class="highlighter-rouge">_</code>) only.</td>
+      <td>Uniform Resource Identifier (URI) to access the Magento Admin or omit this parameter to let Magento generate a random URI for you.<br /><br />We recommend a random URI for security purposes. A random URI is harder for hackers or malicious software to exploit.<br /><br />The URI displays at the end of the installation. You can display it later at any time using the magento info:adminuri command.<br /><br />If you choose to enter a value, we recommend you not use a common word like admin, backend, and so on. The Admin URI can contain alphanumeric values and the underscore character (<code class="language-plaintext highlighter-rouge">_</code>) only.</td>
       <td>No</td>
     </tr>
     <tr>
       <td>–db-host</td>
-      <td>Use any of the following:<br /><br />- The database server’s fully qualified hostname or IP address.<br /><br />- <code class="highlighter-rouge">localhost</code> (default) or <code class="highlighter-rouge">127.0.0.1</code> if your database server is on the same host as your web server.localhost means the MySQL client library uses UNIX sockets to connect to the database. <code class="highlighter-rouge">127.0.0.1</code> causes the client library to use the TCP protocol. For more information about sockets, see the <a href="http://php.net/manual/en/ref.pdo-mysql.php">PHP PDO_MYSQL documentation</a>.<br /><br /><strong>Note:</strong> You can optionally specify the database server port in its hostname like www.example.com:9000</td>
+      <td>Use any of the following:<br /><br />- The database server’s fully qualified hostname or IP address.<br /><br />- <code class="language-plaintext highlighter-rouge">localhost</code> (default) or <code class="language-plaintext highlighter-rouge">127.0.0.1</code> if your database server is on the same host as your web server.localhost means the MySQL client library uses UNIX sockets to connect to the database. <code class="language-plaintext highlighter-rouge">127.0.0.1</code> causes the client library to use the TCP protocol. For more information about sockets, see the <a href="http://php.net/manual/en/ref.pdo-mysql.php">PHP PDO_MYSQL documentation</a>.<br /><br /><strong>Note:</strong> You can optionally specify the database server port in its hostname like www.example.com:9000</td>
       <td>No</td>
     </tr>
     <tr>
       <td>–db-name</td>
-      <td>Name of the Magento database instance in which you want to install the Magento database tables.<br /><br />Default is <code class="highlighter-rouge">magento2</code>.</td>
+      <td>Name of the Magento database instance in which you want to install the Magento database tables.<br /><br />Default is <code class="language-plaintext highlighter-rouge">magento2</code>.</td>
       <td>No</td>
     </tr>
     <tr>
       <td>–db-user</td>
-      <td>Username of the Magento database instance owner.<br /><br />Default is <code class="highlighter-rouge">root</code>.</td>
+      <td>Username of the Magento database instance owner.<br /><br />Default is <code class="language-plaintext highlighter-rouge">root</code>.</td>
       <td>No</td>
     </tr>
     <tr>
@@ -4775,32 +4776,32 @@
     </tr>
     <tr>
       <td>–use-rewrites</td>
-      <td><code class="highlighter-rouge">1</code> means you use web server rewrites for generated links in the storefront and Admin.<br /><br /><code class="highlighter-rouge">0</code> disables the use of web server rewrites. This is the default.</td>
+      <td><code class="language-plaintext highlighter-rouge">1</code> means you use web server rewrites for generated links in the storefront and Admin.<br /><br /><code class="language-plaintext highlighter-rouge">0</code> disables the use of web server rewrites. This is the default.</td>
       <td>No</td>
     </tr>
     <tr>
       <td>–use-secure</td>
-      <td><code class="highlighter-rouge">1</code> enables the use of Secure Sockets Layer (SSL) in storefront URLs. Make sure your web server supports SSL before you select this option.<br /><br /><code class="highlighter-rouge">0</code> disables the use of SSL with Magento. In this case, all other secure URL options are assumed to also be 0. This is the default.</td>
+      <td><code class="language-plaintext highlighter-rouge">1</code> enables the use of Secure Sockets Layer (SSL) in storefront URLs. Make sure your web server supports SSL before you select this option.<br /><br /><code class="language-plaintext highlighter-rouge">0</code> disables the use of SSL with Magento. In this case, all other secure URL options are assumed to also be 0. This is the default.</td>
       <td>No</td>
     </tr>
     <tr>
       <td>–base-url-secure</td>
-      <td>Secure base URL to use to access your Magento Admin and storefront in the following format: <code class="highlighter-rouge">http[s]://&lt;host or ip&gt;/&lt;your Magento install dir&gt;/</code></td>
+      <td>Secure base URL to use to access your Magento Admin and storefront in the following format: <code class="language-plaintext highlighter-rouge">http[s]://&lt;host or ip&gt;/&lt;your Magento install dir&gt;/</code></td>
       <td>No</td>
     </tr>
     <tr>
       <td>–use-secure-admin</td>
-      <td><code class="highlighter-rouge">1</code> means you use SSL to access the Magento Admin. Make sure your web server supports SSL before you select this option.<br /><br /><code class="highlighter-rouge">0</code> means you do not use SSL with the Admin. This is the default.</td>
+      <td><code class="language-plaintext highlighter-rouge">1</code> means you use SSL to access the Magento Admin. Make sure your web server supports SSL before you select this option.<br /><br /><code class="language-plaintext highlighter-rouge">0</code> means you do not use SSL with the Admin. This is the default.</td>
       <td>No</td>
     </tr>
     <tr>
       <td>–admin-use-security-key</td>
-      <td>1 causes the Magento software to use a randomly generated key value to access pages in the Magento Admin and in forms. These key values help prevent cross-site script forgery attacks. This is the default.<br /><br /><code class="highlighter-rouge">0</code> disables the use of the key.</td>
+      <td>1 causes the Magento software to use a randomly generated key value to access pages in the Magento Admin and in forms. These key values help prevent cross-site script forgery attacks. This is the default.<br /><br /><code class="language-plaintext highlighter-rouge">0</code> disables the use of the key.</td>
       <td>No</td>
     </tr>
     <tr>
       <td>–session-save</td>
-      <td>Use any of the following:<br /><br />- <code class="highlighter-rouge">db</code> to store session data in the database. Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage.<br /><br />- <code class="highlighter-rouge">files</code> to store session data in the file system. File-based session storage is appropriate unless the Magento file system access is slow, you have a clustered database, or you want to store session data in Redis.<br /><br />- <code class="highlighter-rouge">redis</code> to store session data in Redis. If you will be using Redis for default or page caching, Redis must be already installed. See Use Redis for session storage for additional information about configuring support for Redis.</td>
+      <td>Use any of the following:<br /><br />- <code class="language-plaintext highlighter-rouge">db</code> to store session data in the database. Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage.<br /><br />- <code class="language-plaintext highlighter-rouge">files</code> to store session data in the file system. File-based session storage is appropriate unless the Magento file system access is slow, you have a clustered database, or you want to store session data in Redis.<br /><br />- <code class="language-plaintext highlighter-rouge">redis</code> to store session data in Redis. If you will be using Redis for default or page caching, Redis must be already installed. See Use Redis for session storage for additional information about configuring support for Redis.</td>
       <td>No</td>
     </tr>
     <tr>
@@ -4815,7 +4816,7 @@
     </tr>
     <tr>
       <td>–db-init-statements</td>
-      <td>Advanced MySQL configuration parameter. Uses database initialization statements to run when connecting to the MySQL database. Consult a reference similar to this one before you set any values.<br /><br />Default is <code class="highlighter-rouge">SET NAMES utf8;</code>.</td>
+      <td>Advanced MySQL configuration parameter. Uses database initialization statements to run when connecting to the MySQL database. Consult a reference similar to this one before you set any values.<br /><br />Default is <code class="language-plaintext highlighter-rouge">SET NAMES utf8;</code>.</td>
       <td>No</td>
     </tr>
     <tr>
@@ -4825,7 +4826,7 @@
     </tr>
     <tr>
       <td>–amqp-host</td>
-      <td>Magento Commerce only. Do not use the <code class="highlighter-rouge">--amqp</code> options unless you have already set up an installation of RabbitMQ. See RabbitMQ installation for more information about installing and configuring RabbitMQ.<br /><br />The hostname where RabbitMQ is installed.</td>
+      <td>Magento Commerce only. Do not use the <code class="language-plaintext highlighter-rouge">--amqp</code> options unless you have already set up an installation of RabbitMQ. See RabbitMQ installation for more information about installing and configuring RabbitMQ.<br /><br />The hostname where RabbitMQ is installed.</td>
       <td>No</td>
     </tr>
     <tr>
@@ -4835,22 +4836,22 @@
     </tr>
     <tr>
       <td>–amqp-user</td>
-      <td>Magento Commerce only. The username for connecting to RabbitMQ. Do not use the default user <code class="highlighter-rouge">guest</code>.</td>
+      <td>Magento Commerce only. The username for connecting to RabbitMQ. Do not use the default user <code class="language-plaintext highlighter-rouge">guest</code>.</td>
       <td>No</td>
     </tr>
     <tr>
       <td>–amqp-password</td>
-      <td>Magento Commerce only. The password for connecting to RabbitMQ. Do not use the default password <code class="highlighter-rouge">guest</code>.</td>
+      <td>Magento Commerce only. The password for connecting to RabbitMQ. Do not use the default password <code class="language-plaintext highlighter-rouge">guest</code>.</td>
       <td>No</td>
     </tr>
     <tr>
       <td>–amqp-virtualhost</td>
-      <td>Magento Commerce only. The virtual host for connecting to RabbitMQ. The default is <code class="highlighter-rouge">/</code>.</td>
+      <td>Magento Commerce only. The virtual host for connecting to RabbitMQ. The default is <code class="language-plaintext highlighter-rouge">/</code>.</td>
       <td>No</td>
     </tr>
     <tr>
       <td>–amqp-ssl</td>
-      <td>Magento Commerce only. Indicates whether to connect to RabbitMQ. The default is <code class="highlighter-rouge">false</code>. See RabbitMQ for information about setting up SSL for RabbitMQ.</td>
+      <td>Magento Commerce only. Indicates whether to connect to RabbitMQ. The default is <code class="language-plaintext highlighter-rouge">false</code>. See RabbitMQ for information about setting up SSL for RabbitMQ.</td>
       <td>No</td>
     </tr>
   </tbody>
@@ -4885,14 +4886,14 @@
 
 <ul>
   <li>
-    <p>The Magento software is installed in the <code class="highlighter-rouge">magento2</code> directory relative to the web server docroot on <code class="highlighter-rouge">localhost</code> and the path to the Magento Admin is <code class="highlighter-rouge">admin</code>; therefore:</p>
+    <p>The Magento software is installed in the <code class="language-plaintext highlighter-rouge">magento2</code> directory relative to the web server docroot on <code class="language-plaintext highlighter-rouge">localhost</code> and the path to the Magento Admin is <code class="language-plaintext highlighter-rouge">admin</code>; therefore:</p>
 
-    <p>Your storefront URL is <code class="highlighter-rouge">http://127.0.0.1</code></p>
+    <p>Your storefront URL is <code class="language-plaintext highlighter-rouge">http://127.0.0.1</code></p>
   </li>
   <li>
     <p>The database server is on the same host as the web server.</p>
 
-    <p>The database name is <code class="highlighter-rouge">magento</code>, and the username and password are both <code class="highlighter-rouge">magento</code></p>
+    <p>The database name is <code class="language-plaintext highlighter-rouge">magento</code>, and the username and password are both <code class="language-plaintext highlighter-rouge">magento</code></p>
   </li>
   <li>
     <p>Uses server rewrites</p>
@@ -4901,17 +4902,17 @@
     <p>The Magento administrator has the following properties:</p>
 
     <ul>
-      <li>First and last name are <code class="highlighter-rouge">Magento User</code></li>
-      <li>Username is <code class="highlighter-rouge">admin</code> and the password is <code class="highlighter-rouge">admin123</code></li>
-      <li>E-mail address is <code class="highlighter-rouge">user@example.com</code></li>
+      <li>First and last name are <code class="language-plaintext highlighter-rouge">Magento User</code></li>
+      <li>Username is <code class="language-plaintext highlighter-rouge">admin</code> and the password is <code class="language-plaintext highlighter-rouge">admin123</code></li>
+      <li>E-mail address is <code class="language-plaintext highlighter-rouge">user@example.com</code></li>
     </ul>
   </li>
-  <li>Default language is <code class="highlighter-rouge">en_US</code> (U.S. English)</li>
+  <li>Default language is <code class="language-plaintext highlighter-rouge">en_US</code> (U.S. English)</li>
   <li>Default currency is U.S. dollars</li>
   <li>
     <p>Default time zone is U.S. Central (America/Chicago)</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento setup:install --base-url=http://127.0.0.1/magento2/ \
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento setup:install --base-url=http://127.0.0.1/magento2/ \
 --db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
 --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
 --admin-user=admin --admin-password=admin123 --language=en_US \
@@ -4922,7 +4923,7 @@
 
 <p>Messages similar to the following display to indicate a successful installation:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Post installation file permissions check...
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Post installation file permissions check...
 For security, remove write permissions from these directories: '/var/www/html/magento2/app/etc'
 [Progress: 274 / 274]
 [SUCCESS]: Magento installation complete.
@@ -4935,34 +4936,34 @@ For security, remove write permissions from these directories: '/var/www/html/ma
 
 <ul>
   <li>
-    <p>The Magento software is installed in the <code class="highlighter-rouge">magento2</code> directory relative to the web server docroot on <code class="highlighter-rouge">localhost</code> and the path to the Magento Admin is <code class="highlighter-rouge">admin</code>; therefore:</p>
+    <p>The Magento software is installed in the <code class="language-plaintext highlighter-rouge">magento2</code> directory relative to the web server docroot on <code class="language-plaintext highlighter-rouge">localhost</code> and the path to the Magento Admin is <code class="language-plaintext highlighter-rouge">admin</code>; therefore:</p>
 
-    <p>Your storefront URL is <code class="highlighter-rouge">http://127.0.0.1</code></p>
+    <p>Your storefront URL is <code class="language-plaintext highlighter-rouge">http://127.0.0.1</code></p>
   </li>
   <li>
     <p>The database server is on the same host as the web server.</p>
 
-    <p>The database name is <code class="highlighter-rouge">magento</code>, and the username and password are both <code class="highlighter-rouge">magento</code></p>
+    <p>The database name is <code class="language-plaintext highlighter-rouge">magento</code>, and the username and password are both <code class="language-plaintext highlighter-rouge">magento</code></p>
   </li>
   <li>
     <p>The Magento administrator has the following properties:</p>
 
     <ul>
-      <li>First and last name are is <code class="highlighter-rouge">Magento User</code></li>
-      <li>Username is <code class="highlighter-rouge">admin</code> and the password is <code class="highlighter-rouge">admin123</code></li>
-      <li>E-mail address is <code class="highlighter-rouge">user@example.com</code></li>
+      <li>First and last name are is <code class="language-plaintext highlighter-rouge">Magento User</code></li>
+      <li>Username is <code class="language-plaintext highlighter-rouge">admin</code> and the password is <code class="language-plaintext highlighter-rouge">admin123</code></li>
+      <li>E-mail address is <code class="language-plaintext highlighter-rouge">user@example.com</code></li>
     </ul>
   </li>
-  <li>Default language is <code class="highlighter-rouge">en_US</code> (U.S. English)</li>
+  <li>Default language is <code class="language-plaintext highlighter-rouge">en_US</code> (U.S. English)</li>
   <li>Default currency is U.S. dollars</li>
   <li>Default time zone is U.S. Central (America/Chicago)</li>
   <li>The installer first cleans up the database before installing the tables and schema</li>
-  <li>You use a sales order increment prefix <code class="highlighter-rouge">ORD$</code> and because it contains a special character (<code class="highlighter-rouge">$</code>), the value must be enclosed in double quotes</li>
+  <li>You use a sales order increment prefix <code class="language-plaintext highlighter-rouge">ORD$</code> and because it contains a special character (<code class="language-plaintext highlighter-rouge">$</code>), the value must be enclosed in double quotes</li>
   <li>Session data is saved in the database</li>
   <li>
     <p>Uses server rewrites</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento setup:install --base-url=http://127.0.0.1/magento2/ \
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento setup:install --base-url=http://127.0.0.1/magento2/ \
 --db-host=localhost --db-name=magento \
 --db-user=magento --db-password=magento \
 --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
@@ -4975,14 +4976,14 @@ For security, remove write permissions from these directories: '/var/www/html/ma
 
 <p>Messages similar to the following display to indicate a successful installation:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Post installation file permissions check...
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Post installation file permissions check...
 For security, remove write permissions from these directories: '/var/www/html/magento2/app/etc'
 [Progress: 274 / 274]
 [SUCCESS]: Magento installation complete.
 [SUCCESS]: Admin Panel URI: /admin_puu71q
 </code></pre></div></div>
 
-<p class="bs-callout bs-callout-info">The command must be entered either on a single line or, as in the preceding example, with a <code class="highlighter-rouge">\</code> character at the end of each line.</p>
+<p class="bs-callout bs-callout-info">The command must be entered either on a single line or, as in the preceding example, with a <code class="language-plaintext highlighter-rouge">\</code> character at the end of each line.</p>
 
 <h4 id="next-step">Next step</h4>
 

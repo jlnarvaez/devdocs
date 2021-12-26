@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Manage prices for multiple products | Magento 2 Developer Documentation (copy)</title>
+	<title>Manage prices for multiple products | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/rest/modules/catalog-pricing.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/rest/modules/catalog-pricing.html">Magento 2.0</a></li>
 		
@@ -2448,9 +2449,9 @@
 
 <h2 id="manage-special-prices">Manage special prices</h2>
 
-<p>The  <code class="highlighter-rouge">SpecialPriceStorageInterface</code> service provides the means to efficiently schedule special prices for one or more products in a store’s catalog. When you use these calls, you do not provide detailed information about the product.</p>
+<p>The  <code class="language-plaintext highlighter-rouge">SpecialPriceStorageInterface</code> service provides the means to efficiently schedule special prices for one or more products in a store’s catalog. When you use these calls, you do not provide detailed information about the product.</p>
 
-<p>The <code class="highlighter-rouge">POST /V1/products/special-price</code> call sets special prices for the following product types:</p>
+<p>The <code class="language-plaintext highlighter-rouge">POST /V1/products/special-price</code> call sets special prices for the following product types:</p>
 
 <ul>
   <li>Simple</li>
@@ -2461,11 +2462,11 @@
 
 <p><strong>Service Name</strong></p>
 
-<p><code class="highlighter-rouge">SpecialPriceStorageInterface</code></p>
+<p><code class="language-plaintext highlighter-rouge">SpecialPriceStorageInterface</code></p>
 
 <p><strong>REST Endpoints</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>POST /V1/products/special-price
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>POST /V1/products/special-price
 POST /V1/products/special-price-information
 POST /V1/products/special-price-delete
 </code></pre></div></div>
@@ -2483,38 +2484,38 @@ POST /V1/products/special-price-delete
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">price</code></td>
+      <td><code class="language-plaintext highlighter-rouge">price</code></td>
       <td>The special price of the product</td>
       <td>float</td>
       <td>Required for setting or deleting a special price</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">store_id</code></td>
+      <td><code class="language-plaintext highlighter-rouge">store_id</code></td>
       <td>The store ID  to apply the special price</td>
       <td>integer</td>
       <td>Required for setting or deleting a special price</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">sku</code></td>
+      <td><code class="language-plaintext highlighter-rouge">sku</code></td>
       <td>The SKU of the product</td>
       <td>string</td>
       <td>Required for setting or deleting a special price</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">skus</code></td>
+      <td><code class="language-plaintext highlighter-rouge">skus</code></td>
       <td>An array of SKU values that is specified when retrieving a list of special prices</td>
       <td>array</td>
       <td>Required for retrievals</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">price_from</code></td>
-      <td>The date and time the special price goes into effect. The date/time format is <code class="highlighter-rouge">YYYY-MM-DD hh:mm:ss</code>. The specified time must be later than the current time.</td>
+      <td><code class="language-plaintext highlighter-rouge">price_from</code></td>
+      <td>The date and time the special price goes into effect. The date/time format is <code class="language-plaintext highlighter-rouge">YYYY-MM-DD hh:mm:ss</code>. The specified time must be later than the current time.</td>
       <td>string</td>
       <td>Required in Magento Commerce. Optional in Magento Open Source.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">price_to</code></td>
-      <td>The date and time the special price ends. The date/time format is <code class="highlighter-rouge">YYYY-MM-DD hh:mm:ss</code> If no value is specified, the special price does not expire.</td>
+      <td><code class="language-plaintext highlighter-rouge">price_to</code></td>
+      <td>The date and time the special price ends. The date/time format is <code class="language-plaintext highlighter-rouge">YYYY-MM-DD hh:mm:ss</code> If no value is specified, the special price does not expire.</td>
       <td>string</td>
       <td>Optional</td>
     </tr>
@@ -2523,40 +2524,40 @@ POST /V1/products/special-price-delete
 
 <h3 id="set-special-prices">Set special prices</h3>
 
-<p>All calls to set special prices must include the <code class="highlighter-rouge">store_id</code>, <code class="highlighter-rouge">sku</code>, and <code class="highlighter-rouge">price</code> parameters. If the call is sent to an Magento Commerce installation, the call must also include the <code class="highlighter-rouge">price_from</code> parameter. If the call is sent to a Magento Open Source installation, then the <code class="highlighter-rouge">price_from</code> parameter is optional.</p>
+<p>All calls to set special prices must include the <code class="language-plaintext highlighter-rouge">store_id</code>, <code class="language-plaintext highlighter-rouge">sku</code>, and <code class="language-plaintext highlighter-rouge">price</code> parameters. If the call is sent to an Magento Commerce installation, the call must also include the <code class="language-plaintext highlighter-rouge">price_from</code> parameter. If the call is sent to a Magento Open Source installation, then the <code class="language-plaintext highlighter-rouge">price_from</code> parameter is optional.</p>
 
-<p>For bundled products, the value of the <code class="highlighter-rouge">price</code> parameter must be expressed as a discount percentage.</p>
+<p>For bundled products, the value of the <code class="language-plaintext highlighter-rouge">price</code> parameter must be expressed as a discount percentage.</p>
 
 <p>You can set multiple special prices in a single call, as shown in the example below. The call sets special prices for a simple product, downloadable product, and bundle product for two days.</p>
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code class="highlighter-rouge">POST /V1/products/special-price</code></p>
+<p><code class="language-plaintext highlighter-rouge">POST /V1/products/special-price</code></p>
 
 <p><strong>Payload</strong></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">29.95</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"price_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15 00:00:00"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"price_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-16 23:59:59"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB06"</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">29.95</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15 00:00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-16 23:59:59"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB06"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">19.95</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"price_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15 00:00:00"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"price_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-16 23:59:59"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240-LV06"</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">19.95</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15 00:00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-16 23:59:59"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240-LV06"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"price_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15 00:00:00"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"price_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-16 23:59:59"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG080"</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15 00:00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-16 23:59:59"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG080"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -2565,7 +2566,7 @@ POST /V1/products/special-price-delete
 
 <p><strong>Response</strong></p>
 
-<p><code class="highlighter-rouge">[]</code> (an empty array)</p>
+<p><code class="language-plaintext highlighter-rouge">[]</code> (an empty array)</p>
 
 <h3 id="get-special-prices">Get special prices</h3>
 
@@ -2573,12 +2574,12 @@ POST /V1/products/special-price-delete
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code class="highlighter-rouge">POST /V1/products/special-price-information</code></p>
+<p><code class="language-plaintext highlighter-rouge">POST /V1/products/special-price-information</code></p>
 
 <p><strong>Payload</strong></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"skus"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"skus"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="s2">"24-WB06"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"240-LV06"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"24-WG080"</span><span class="w">
@@ -2590,61 +2591,61 @@ POST /V1/products/special-price-delete
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">29.949999999999999</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB06"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"price_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15 00:00:00"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"price_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-16 23:59:59"</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">29.949999999999999</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB06"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15 00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-16 23:59:59"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">19.949999999999999</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240-LV06"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"price_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15 00:00:00"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"price_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-16 23:59:59"</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">19.949999999999999</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240-LV06"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15 00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-16 23:59:59"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG080"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"price_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15 00:00:00"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"price_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-16 23:59:59"</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG080"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15 00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-16 23:59:59"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
 
 <h3 id="delete-a-special-price">Delete a special price</h3>
 
-<p>If any item to be deleted has an invalid <code class="highlighter-rouge">price</code>, <code class="highlighter-rouge">store_id</code>, <code class="highlighter-rouge">sku</code> or date, Magento marks the item as failed and excludes it from the delete list. Valid items are deleted as requested.</p>
+<p>If any item to be deleted has an invalid <code class="language-plaintext highlighter-rouge">price</code>, <code class="language-plaintext highlighter-rouge">store_id</code>, <code class="language-plaintext highlighter-rouge">sku</code> or date, Magento marks the item as failed and excludes it from the delete list. Valid items are deleted as requested.</p>
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code class="highlighter-rouge">POST /V1/products/special-price-delete</code></p>
+<p><code class="language-plaintext highlighter-rouge">POST /V1/products/special-price-delete</code></p>
 
 <p><strong>Payload</strong></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">29.95</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"price_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15 00:00:00"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"price_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-16 23:59:59"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB06"</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">29.95</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15 00:00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-16 23:59:59"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB06"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">19.95</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"price_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15 00:00:00"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"price_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-16 23:59:59"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240-LV06"</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">19.95</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15 00:00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-16 23:59:59"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240-LV06"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"price_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15 00:00:00"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"price_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-16 23:59:59"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG080"</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-15 00:00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-16 23:59:59"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WG080"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -2652,11 +2653,11 @@ POST /V1/products/special-price-delete
 
 <p><strong>Response</strong></p>
 
-<p><code class="highlighter-rouge">[]</code> (an empty array)</p>
+<p><code class="language-plaintext highlighter-rouge">[]</code> (an empty array)</p>
 
 <h2 id="manage-tier-prices">Manage tier prices</h2>
 
-<p>Tier pricing offers a quantity discount to members of a specific customer group and website.  The  <code class="highlighter-rouge">TierPriceStorageInterface</code> service provides an efficient means to set tier prices for one or more products without requiring detailed information about each product.</p>
+<p>Tier pricing offers a quantity discount to members of a specific customer group and website.  The  <code class="language-plaintext highlighter-rouge">TierPriceStorageInterface</code> service provides an efficient means to set tier prices for one or more products without requiring detailed information about each product.</p>
 
 <p>You can use REST endpoints to set tier prices for the following product types:</p>
 
@@ -2689,11 +2690,11 @@ POST /V1/products/special-price-delete
 
 <p><strong>Service Name</strong></p>
 
-<p><code class="highlighter-rouge">TierPriceStorageInterface</code></p>
+<p><code class="language-plaintext highlighter-rouge">TierPriceStorageInterface</code></p>
 
 <p><strong>REST Endpoints</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>POST /V1/products/tier-prices
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>POST /V1/products/tier-prices
 PUT /V1/products/tier-prices
 POST /V1/products/tier-prices-information
 POST /V1/products/tier-prices-delete
@@ -2712,43 +2713,43 @@ POST /V1/products/tier-prices-delete
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">price</code></td>
+      <td><code class="language-plaintext highlighter-rouge">price</code></td>
       <td>The discounted product price for the quantity purchased</td>
       <td>float</td>
       <td>Required to set, update, or delete a tier price</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">price_type</code></td>
-      <td>Must be <code class="highlighter-rouge">fixed</code> (the set price) or <code class="highlighter-rouge">discount</code> (percent discount)</td>
+      <td><code class="language-plaintext highlighter-rouge">price_type</code></td>
+      <td>Must be <code class="language-plaintext highlighter-rouge">fixed</code> (the set price) or <code class="language-plaintext highlighter-rouge">discount</code> (percent discount)</td>
       <td>string</td>
       <td>Required to set, update, or delete a tier price</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">website_id</code></td>
+      <td><code class="language-plaintext highlighter-rouge">website_id</code></td>
       <td>The website ID  to apply the tier price</td>
       <td>integer</td>
       <td>Required to set, update, or delete a tier price</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">sku</code></td>
+      <td><code class="language-plaintext highlighter-rouge">sku</code></td>
       <td>The SKU of the product</td>
       <td>string</td>
       <td>Required to set, update, or delete a tier price</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">skus</code></td>
+      <td><code class="language-plaintext highlighter-rouge">skus</code></td>
       <td>An array of SKU values that is specified when retrieving a list of tier prices</td>
       <td>array</td>
       <td>Required for retrievals</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">customer_group</code></td>
+      <td><code class="language-plaintext highlighter-rouge">customer_group</code></td>
       <td>A specific customer group that qualifies to receive the tier price discount</td>
       <td>string</td>
       <td>Required to set, update, or delete a tier price</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">quantity</code></td>
+      <td><code class="language-plaintext highlighter-rouge">quantity</code></td>
       <td>The quantity that must be purchased to receive the tier price</td>
       <td>integer</td>
       <td>Required to set, update, or delete a tier price</td>
@@ -2758,40 +2759,40 @@ POST /V1/products/tier-prices-delete
 
 <h3 id="set-tier-prices">Set tier prices</h3>
 
-<p>The <code class="highlighter-rouge">POST /V1/products/tier-prices</code> call adds new tier prices or updates existing prices. You can specify tier prices for multiple products in the same call.</p>
+<p>The <code class="language-plaintext highlighter-rouge">POST /V1/products/tier-prices</code> call adds new tier prices or updates existing prices. You can specify tier prices for multiple products in the same call.</p>
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code class="highlighter-rouge">POST /V1/products/tier-prices</code></p>
+<p><code class="language-plaintext highlighter-rouge">POST /V1/products/tier-prices</code></p>
 
 <p><strong>Payload</strong></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="w">
 </span><span class="p">{</span><span class="w">
-  </span><span class="s2">"prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -2799,37 +2800,37 @@ POST /V1/products/tier-prices-delete
 
 <p><strong>Response</strong></p>
 
-<p><code class="highlighter-rouge">[]</code> (an empty array)</p>
+<p><code class="language-plaintext highlighter-rouge">[]</code> (an empty array)</p>
 
 <h3 id="replace-existing-tier-prices">Replace existing tier prices</h3>
 
 <p>The replace request removes all existing tier prices for a specified product and adds new rows for this same product instead.</p>
 
-<p>The following example removes the $10 tier price for <code class="highlighter-rouge">sku</code> 24-UG04 and changes the customer group for the <code class="highlighter-rouge">sku</code>’s other tier prices.</p>
+<p>The following example removes the $10 tier price for <code class="language-plaintext highlighter-rouge">sku</code> 24-UG04 and changes the customer group for the <code class="language-plaintext highlighter-rouge">sku</code>’s other tier prices.</p>
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code class="highlighter-rouge">PUT /V1/products/tier-prices</code></p>
+<p><code class="language-plaintext highlighter-rouge">PUT /V1/products/tier-prices</code></p>
 
 <p><strong>Payload</strong></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOT LOGGED IN"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOT LOGGED IN"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOT LOGGED IN"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">310</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOT LOGGED IN"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">310</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -2837,20 +2838,20 @@ POST /V1/products/tier-prices-delete
 
 <p><strong>Response</strong></p>
 
-<p><code class="highlighter-rouge">[]</code> (an empty array)</p>
+<p><code class="language-plaintext highlighter-rouge">[]</code> (an empty array)</p>
 
 <h3 id="get-tier-prices">Get tier prices</h3>
 
-<p>Magento returns all active tier prices for the specified list of <code class="highlighter-rouge">skus</code>.</p>
+<p>Magento returns all active tier prices for the specified list of <code class="language-plaintext highlighter-rouge">skus</code>.</p>
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code class="highlighter-rouge">V1/products/tier-prices-information</code></p>
+<p><code class="language-plaintext highlighter-rouge">V1/products/tier-prices-information</code></p>
 
 <p><strong>Payload</strong></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"skus"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"skus"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"24-UG01"</span><span class="w">
   </span><span class="p">]</span><span class="w">
@@ -2861,36 +2862,36 @@ POST /V1/products/tier-prices-delete
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"discount"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG01"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"discount"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG01"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
@@ -2901,19 +2902,19 @@ POST /V1/products/tier-prices-delete
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code class="highlighter-rouge">POST /V1/products/tier-prices-delete</code></p>
+<p><code class="language-plaintext highlighter-rouge">POST /V1/products/tier-prices-delete</code></p>
 
 <p><strong>Payload</strong></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"customer_group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -2921,17 +2922,17 @@ POST /V1/products/tier-prices-delete
 
 <p><strong>Response</strong></p>
 
-<p><code class="highlighter-rouge">[]</code> (an empty array)</p>
+<p><code class="language-plaintext highlighter-rouge">[]</code> (an empty array)</p>
 
 <h2 id="manage-base-prices">Manage base prices</h2>
 
-<p>A base price is the price of a product, before any discounts or extra costs (such as shipping or taxes) are applied.  The  <code class="highlighter-rouge">BasePriceStorageInterface</code> service provides an efficient means to set base prices for one or more products without requiring detailed information about each product.</p>
+<p>A base price is the price of a product, before any discounts or extra costs (such as shipping or taxes) are applied.  The  <code class="language-plaintext highlighter-rouge">BasePriceStorageInterface</code> service provides an efficient means to set base prices for one or more products without requiring detailed information about each product.</p>
 
 <p class="bs-callout bs-callout-info">You cannot delete a base price. It can only be changed to another value (0 or greater).</p>
 
 <p><strong>REST Endpoints</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>POST /V1/products/base-prices
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>POST /V1/products/base-prices
 POST /V1/products/base-prices-information
 </code></pre></div></div>
 
@@ -2948,25 +2949,25 @@ POST /V1/products/base-prices-information
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">price</code></td>
+      <td><code class="language-plaintext highlighter-rouge">price</code></td>
       <td>The base price of the item</td>
       <td>float</td>
       <td>Required to set a base price</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">store_id</code></td>
+      <td><code class="language-plaintext highlighter-rouge">store_id</code></td>
       <td>The store ID  to apply the base price</td>
       <td>integer</td>
       <td>Required to set a base price</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">sku</code></td>
+      <td><code class="language-plaintext highlighter-rouge">sku</code></td>
       <td>The SKU of the product</td>
       <td>string</td>
       <td>Required to set a base price</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">skus</code></td>
+      <td><code class="language-plaintext highlighter-rouge">skus</code></td>
       <td>An array of SKU values that is specified when retrieving a list of base prices</td>
       <td>array</td>
       <td>Required for retrievals</td>
@@ -2976,7 +2977,7 @@ POST /V1/products/base-prices-information
 
 <h3 id="set-base-prices">Set base prices</h3>
 
-<p>The <code class="highlighter-rouge">POST /V1/products/base-price</code> call can set base prices for the following types of products:</p>
+<p>The <code class="language-plaintext highlighter-rouge">POST /V1/products/base-price</code> call can set base prices for the following types of products:</p>
 
 <ul>
   <li>Simple</li>
@@ -2989,21 +2990,21 @@ POST /V1/products/base-prices-information
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code class="highlighter-rouge">POST /V1/products/base-prices</code></p>
+<p><code class="language-plaintext highlighter-rouge">POST /V1/products/base-prices</code></p>
 
 <p><strong>Payload</strong></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="w">
+    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240-LV06"</span><span class="w">
+    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240-LV06"</span><span class="w">
   </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -3011,7 +3012,7 @@ POST /V1/products/base-prices-information
 
 <p><strong>Response</strong></p>
 
-<p><code class="highlighter-rouge">[]</code> (an empty array)</p>
+<p><code class="language-plaintext highlighter-rouge">[]</code> (an empty array)</p>
 
 <h3 id="get-base-prices">Get base prices</h3>
 
@@ -3019,11 +3020,11 @@ POST /V1/products/base-prices-information
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code class="highlighter-rouge">POST /V1/products/base-prices-information</code></p>
+<p><code class="language-plaintext highlighter-rouge">POST /V1/products/base-prices-information</code></p>
 
 <p><strong>Payload</strong></p>
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"skus"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"skus"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="s2">"24-UG04"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"240-LV06"</span><span class="w">
   </span><span class="p">]</span><span class="w">
@@ -3034,14 +3035,14 @@ POST /V1/products/base-prices-information
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="w">
+    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-UG04"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240-LV06"</span><span class="w">
+    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240-LV06"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
@@ -3052,7 +3053,7 @@ POST /V1/products/base-prices-information
 
 <p><strong>REST Endpoints</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>POST /V1/products/cost
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>POST /V1/products/cost
 POST /V1/products/cost-information
 POST /V1/products/cost-delete
 </code></pre></div></div>
@@ -3070,25 +3071,25 @@ POST /V1/products/cost-delete
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">cost</code></td>
+      <td><code class="language-plaintext highlighter-rouge">cost</code></td>
       <td>The amount the item costs</td>
       <td>float</td>
       <td>Required to set or delete a cost value</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">store_id</code></td>
+      <td><code class="language-plaintext highlighter-rouge">store_id</code></td>
       <td>The store ID  to apply the cost value</td>
       <td>integer</td>
       <td>Required to set or delete a cost value</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">sku</code></td>
+      <td><code class="language-plaintext highlighter-rouge">sku</code></td>
       <td>The SKU of the product</td>
       <td>string</td>
       <td>Required to set or delete a cost value</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">skus</code></td>
+      <td><code class="language-plaintext highlighter-rouge">skus</code></td>
       <td>An array of SKU values that is specified when retrieving a list of cost values</td>
       <td>array</td>
       <td>Required for retrievals</td>
@@ -3098,7 +3099,7 @@ POST /V1/products/cost-delete
 
 <h3 id="set-cost-values">Set cost values</h3>
 
-<p>The <code class="highlighter-rouge">POST /V1/products/cost</code> call can set the cost values for the following types of products:</p>
+<p>The <code class="language-plaintext highlighter-rouge">POST /V1/products/cost</code> call can set the cost values for the following types of products:</p>
 
 <ul>
   <li>Simple</li>
@@ -3110,21 +3111,21 @@ POST /V1/products/cost-delete
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code class="highlighter-rouge">POST /V1/products/cost</code></p>
+<p><code class="language-plaintext highlighter-rouge">POST /V1/products/cost</code></p>
 
 <p><strong>Payload</strong></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"cost"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB03"</span><span class="w">
+      </span><span class="nl">"cost"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB03"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"cost"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240-LV09"</span><span class="w">
+      </span><span class="nl">"cost"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240-LV09"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -3132,7 +3133,7 @@ POST /V1/products/cost-delete
 
 <p><strong>Response</strong></p>
 
-<p><code class="highlighter-rouge">[]</code> (an empty array)</p>
+<p><code class="language-plaintext highlighter-rouge">[]</code> (an empty array)</p>
 
 <h3 id="get-cost-values">Get cost values</h3>
 
@@ -3140,11 +3141,11 @@ POST /V1/products/cost-delete
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code class="highlighter-rouge">POST /V1/products/cost-information</code></p>
+<p><code class="language-plaintext highlighter-rouge">POST /V1/products/cost-information</code></p>
 
 <p><strong>Payload</strong></p>
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"skus"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"skus"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="s2">"24-WB03"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"240-LV09"</span><span class="w">
   </span><span class="p">]</span><span class="w">
@@ -3155,14 +3156,14 @@ POST /V1/products/cost-delete
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"cost"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB03"</span><span class="w">
+    </span><span class="nl">"cost"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB03"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"cost"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240-LV09"</span><span class="w">
+    </span><span class="nl">"cost"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240-LV09"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
@@ -3173,11 +3174,11 @@ POST /V1/products/cost-delete
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code class="highlighter-rouge">POST /V1/products/cost-delete</code></p>
+<p><code class="language-plaintext highlighter-rouge">POST /V1/products/cost-delete</code></p>
 
 <p><strong>Payload</strong></p>
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"skus"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"skus"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="s2">"24-WB03"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"240-LV09"</span><span class="w">
   </span><span class="p">]</span><span class="w">
@@ -3186,7 +3187,7 @@ POST /V1/products/cost-delete
 
 <p><strong>Response</strong></p>
 
-<p><code class="highlighter-rouge">true</code>, indicating the cost values were deleted</p>
+<p><code class="language-plaintext highlighter-rouge">true</code>, indicating the cost values were deleted</p>
 
 			
 		</div>

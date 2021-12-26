@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>The DataSource Component | Magento 2 Developer Documentation (copy)</title>
+	<title>The DataSource Component | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/ui_comp_guide/concepts/ui_comp_data_source.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/ui_comp_guide/concepts/ui_comp_data_source.html">Magento 2.0</a></li>
 		
@@ -3301,9 +3302,9 @@
 
 <h3 id="declaring-the-xml">Declaring the XML</h3>
 
-<p>The DataSource UI component can be included with the <code class="highlighter-rouge">&lt;dataSource /&gt;</code> node in the component’s top-level configuration file. The <code class="highlighter-rouge">name</code> attribute is recommended and should follow the <code class="highlighter-rouge">%instance_name%_data_source</code> pattern where <code class="highlighter-rouge">%instance_name%</code> is the name of the component.</p>
+<p>The DataSource UI component can be included with the <code class="language-plaintext highlighter-rouge">&lt;dataSource /&gt;</code> node in the component’s top-level configuration file. The <code class="language-plaintext highlighter-rouge">name</code> attribute is recommended and should follow the <code class="language-plaintext highlighter-rouge">%instance_name%_data_source</code> pattern where <code class="language-plaintext highlighter-rouge">%instance_name%</code> is the name of the component.</p>
 
-<p>The component’s data provider class is declared inside <code class="highlighter-rouge">&lt;dataSource /&gt;</code>. The following provides an example and demonstrates what nodes are required.</p>
+<p>The component’s data provider class is declared inside <code class="language-plaintext highlighter-rouge">&lt;dataSource /&gt;</code>. The following provides an example and demonstrates what nodes are required.</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"dataProvider"</span> <span class="na">xsi:type=</span><span class="s">"configurableObject"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"class"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>[YourNameSpace]\[YourModule]\Ui\DataProvider\[YourComponentName]DataProvider<span class="nt">&lt;/argument&gt;</span>
@@ -3315,18 +3316,18 @@
 
 <p>In the block of code above, [YourNameSpace][YourModule] would be the directory that contains all of the module’s files and directories. [YourComponentName] is the name of this instance of a component, which should be the file name as well.</p>
 
-<p>The main node of interest is <code class="highlighter-rouge">&lt;argument name="class" /&gt;.</code> This references a PHP class that must implement <code class="highlighter-rouge">\Magento\Framework\View\Element\UiComponent\DataProvider\DataProviderInterface</code>. To meet that requirement, it can extend <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/DataProvider/AbstractDataProvider.php"><code class="highlighter-rouge">\Magento\Ui\DataProvider\AbstractDataProvider</code></a>. The <code class="highlighter-rouge">AbstractDataProvider</code> class implements all of the required methods in the <code class="highlighter-rouge">DataProviderInterface</code>. The DataProvider class is the primary source of any data or   <span term-uuid="3f0f2ef1-ad38-41c6-bd1e-390daaa71d76" class="glossary-term" data-toggle="popover">metadata</span>
+<p>The main node of interest is <code class="language-plaintext highlighter-rouge">&lt;argument name="class" /&gt;.</code> This references a PHP class that must implement <code class="language-plaintext highlighter-rouge">\Magento\Framework\View\Element\UiComponent\DataProvider\DataProviderInterface</code>. To meet that requirement, it can extend <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/DataProvider/AbstractDataProvider.php"><code class="language-plaintext highlighter-rouge">\Magento\Ui\DataProvider\AbstractDataProvider</code></a>. The <code class="language-plaintext highlighter-rouge">AbstractDataProvider</code> class implements all of the required methods in the <code class="language-plaintext highlighter-rouge">DataProviderInterface</code>. The DataProvider class is the primary source of any data or   <span term-uuid="3f0f2ef1-ad38-41c6-bd1e-390daaa71d76" class="glossary-term" data-toggle="popover">metadata</span>
  that the component needs or will use.</p>
 
 <p>While the   <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span>
- tells Magento about the component’s data provider, Magento doesn’t do anything in particular with that unless you hook it up to the component’s main PHP class. To make the data available in javascript, add a <code class="highlighter-rouge">getDataSourceData()</code> method to the UI component’s PHP class and return <code class="highlighter-rouge">$this-&gt;getContext()-&gt;getDataProvider()-&gt;getData()</code>. This will output the result of the data provider’s <code class="highlighter-rouge">getData()</code> method into the JSON that is sent to the browser along with the rest of the UI component’s configuration.</p>
+ tells Magento about the component’s data provider, Magento doesn’t do anything in particular with that unless you hook it up to the component’s main PHP class. To make the data available in javascript, add a <code class="language-plaintext highlighter-rouge">getDataSourceData()</code> method to the UI component’s PHP class and return <code class="language-plaintext highlighter-rouge">$this-&gt;getContext()-&gt;getDataProvider()-&gt;getData()</code>. This will output the result of the data provider’s <code class="language-plaintext highlighter-rouge">getData()</code> method into the JSON that is sent to the browser along with the rest of the UI component’s configuration.</p>
 
-<p>Declare a <code class="highlighter-rouge">getData()</code> method in the data provider class that was referenced in the XML and return a value. Since that output will be part of the JSON rendered on the page, it is accessible via the   <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">javascript</span>
+<p>Declare a <code class="language-plaintext highlighter-rouge">getData()</code> method in the data provider class that was referenced in the XML and return a value. Since that output will be part of the JSON rendered on the page, it is accessible via the   <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">javascript</span>
  class that is associated with the UI component and handles its behavior. Magento’s Form Provider javascript class is often a good place to start.</p>
 
 <p class="bs-callout bs-callout-info">A Javascript “component” is actually a Javascript file loaded through RequireJS. It should return a Javascript object that defines a module or function. Do not confuse Javascript components with UI components.</p>
 
-<p>Include the Form Provider Javascript component by adding this inside the <code class="highlighter-rouge">&lt;dataSource /&gt;</code> node:</p>
+<p>Include the Form Provider Javascript component by adding this inside the <code class="language-plaintext highlighter-rouge">&lt;dataSource /&gt;</code> node:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"js_config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
@@ -3335,11 +3336,11 @@
 <span class="nt">&lt;/argument&gt;</span>
 </code></pre></div></div>
 
-<p>This will include <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/form/provider.js"><code class="highlighter-rouge">Magento/Ui/view/base/web/js/form/provider.js</code></a> on the page as part of this DataSource component. The Form Provider javascript can also be extended if the functionality doesn’t do what is necessary in your case.</p>
+<p>This will include <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/form/provider.js"><code class="language-plaintext highlighter-rouge">Magento/Ui/view/base/web/js/form/provider.js</code></a> on the page as part of this DataSource component. The Form Provider javascript can also be extended if the functionality doesn’t do what is necessary in your case.</p>
 
 <p>Remember that this data provider is still, technically speaking, a completely separate UI Component. To fully link it to the “base” component, there are a few things that need to happen so that the “base” UI component’s javascript can use the data provided by the data provider.</p>
 
-<p>A good way to keep configuration data out of the javascript is to declare a “provider” in the base component’s XML so it will be able to find that data provider component. Under the <code class="highlighter-rouge">&lt;argument name="data" /&gt;</code> node, add a node like this (where <code class="highlighter-rouge">[ComponentName]</code> is the name of the component):</p>
+<p>A good way to keep configuration data out of the javascript is to declare a “provider” in the base component’s XML so it will be able to find that data provider component. Under the <code class="language-plaintext highlighter-rouge">&lt;argument name="data" /&gt;</code> node, add a node like this (where <code class="language-plaintext highlighter-rouge">[ComponentName]</code> is the name of the component):</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"provider"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>[ComponentName].[ComponentName]_data_source<span class="nt">&lt;/item&gt;</span>
@@ -3350,43 +3351,43 @@
 
 <h1 id="javascript-template-literals">Javascript Template Literals</h1>
 
-<p>Throughout Magento’s core Javascript components there are strings like this: <code class="highlighter-rouge">'${ $.provider }:data.totalRecords'</code>. These are ES2015 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals">template literals</a>. The <code class="highlighter-rouge">${ }</code> surrounds an expression that will be parsed as Javascript. <code class="highlighter-rouge">$.provider</code> is the expression, in this example.</p>
+<p>Throughout Magento’s core Javascript components there are strings like this: <code class="language-plaintext highlighter-rouge">'${ $.provider }:data.totalRecords'</code>. These are ES2015 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals">template literals</a>. The <code class="language-plaintext highlighter-rouge">${ }</code> surrounds an expression that will be parsed as Javascript. <code class="language-plaintext highlighter-rouge">$.provider</code> is the expression, in this example.</p>
 
 <p>The template literal is in a single-quote string, however, not the back-ticks which are standard for ES2015. As a result, they would normally be treated as a string. Since Magento needs to support browsers that don’t recognize template literals a special interpreter was built for them. If the browser does support standard back-tick template literals, Magento will use that, and if not, it evaluates the value manually.</p>
 
-<p>When the component is initialized, it will automatically evaluate all string literals in properties. In the example above, <code class="highlighter-rouge">$.provider</code> will become  <code class="highlighter-rouge">[ComponentName].[ComponentName]_data_source</code>. The value of this <code class="highlighter-rouge">provider</code> was declared in the <code class="highlighter-rouge">js_config</code> block in the XML above. It is possible to pass nearly any configuration value this way and access it using template literals.</p>
+<p>When the component is initialized, it will automatically evaluate all string literals in properties. In the example above, <code class="language-plaintext highlighter-rouge">$.provider</code> will become  <code class="language-plaintext highlighter-rouge">[ComponentName].[ComponentName]_data_source</code>. The value of this <code class="language-plaintext highlighter-rouge">provider</code> was declared in the <code class="language-plaintext highlighter-rouge">js_config</code> block in the XML above. It is possible to pass nearly any configuration value this way and access it using template literals.</p>
 
 <p>But, XML is static and while that gets us the name of the data provider component, it still doesn’t actually provide data. There is one more important step in providing data to Javascript components.</p>
 
 <h1 id="javascript-component-linking">Javascript Component Linking</h1>
 
-<p>Every Javascript component should extend the core Element class in some way (mapped to <a href="/devdocs/guides/v2.3/ui_comp_guide/concepts/ui_comp_uielement_concept.html"><code class="highlighter-rouge">uiElement</code></a> with RequireJS and located in <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/core/element/element.js"><code class="highlighter-rouge">Magento/Ui/view/base/web/js/lib/core/element/element.js</code></a>.  When this class initializes it runs an <code class="highlighter-rouge">initLinks()</code> method. That method, in turn, passes a few class properties into a method that handles linking components together. This file (<code class="highlighter-rouge">lib/core/element/link.js</code>) binds the values of those parameters to actual components.</p>
+<p>Every Javascript component should extend the core Element class in some way (mapped to <a href="/devdocs/guides/v2.3/ui_comp_guide/concepts/ui_comp_uielement_concept.html"><code class="language-plaintext highlighter-rouge">uiElement</code></a> with RequireJS and located in <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/core/element/element.js"><code class="language-plaintext highlighter-rouge">Magento/Ui/view/base/web/js/lib/core/element/element.js</code></a>.  When this class initializes it runs an <code class="language-plaintext highlighter-rouge">initLinks()</code> method. That method, in turn, passes a few class properties into a method that handles linking components together. This file (<code class="language-plaintext highlighter-rouge">lib/core/element/link.js</code>) binds the values of those parameters to actual components.</p>
 
 <p>The properties Magento will parse are:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">imports</code></li>
-  <li><code class="highlighter-rouge">exports</code></li>
-  <li><code class="highlighter-rouge">links</code></li>
+  <li><code class="language-plaintext highlighter-rouge">imports</code></li>
+  <li><code class="language-plaintext highlighter-rouge">exports</code></li>
+  <li><code class="language-plaintext highlighter-rouge">links</code></li>
 </ul>
 
-<p>The <code class="highlighter-rouge">links</code> property is the same as duplicating a value in both <code class="highlighter-rouge">imports</code> and <code class="highlighter-rouge">exports</code>. Each of those properties expect an object that contains key/value pairs to bind the expression to. In the example above, it would appear in the <code class="highlighter-rouge">defaults</code> property like this:</p>
+<p>The <code class="language-plaintext highlighter-rouge">links</code> property is the same as duplicating a value in both <code class="language-plaintext highlighter-rouge">imports</code> and <code class="language-plaintext highlighter-rouge">exports</code>. Each of those properties expect an object that contains key/value pairs to bind the expression to. In the example above, it would appear in the <code class="language-plaintext highlighter-rouge">defaults</code> property like this:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>imports: {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>imports: {
     totalRecords: '${ $.provider }:data.totalRecords'
 }
 </code></pre></div></div>
 
-<p>When the Element class initializes, it will process the link that was declared in <code class="highlighter-rouge">imports</code>. Remember that one of the first things Magento does is process string literals, though, so it is actually working with something that looks more like the following (where <code class="highlighter-rouge">example</code> is the UI Component Name for clarity):</p>
+<p>When the Element class initializes, it will process the link that was declared in <code class="language-plaintext highlighter-rouge">imports</code>. Remember that one of the first things Magento does is process string literals, though, so it is actually working with something that looks more like the following (where <code class="language-plaintext highlighter-rouge">example</code> is the UI Component Name for clarity):</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>imports: {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>imports: {
     totalRecords: 'example.example_data_source:data.totalRecords'
 }
 </code></pre></div></div>
 
-<p>The <code class="highlighter-rouge">:</code> is a special separator that is used to divide the component name that it is to link to and the values it should access in the returned value. No <code class="highlighter-rouge">:</code> is necessary, though, and the expression, <code class="highlighter-rouge">$.provider</code> could be any key that was passed into the javascript configuration.</p>
+<p>The <code class="language-plaintext highlighter-rouge">:</code> is a special separator that is used to divide the component name that it is to link to and the values it should access in the returned value. No <code class="language-plaintext highlighter-rouge">:</code> is necessary, though, and the expression, <code class="language-plaintext highlighter-rouge">$.provider</code> could be any key that was passed into the javascript configuration.</p>
 
-<p>In the example above, it will return the <code class="highlighter-rouge">totalRecords</code> property of the <code class="highlighter-rouge">data</code> object in the <code class="highlighter-rouge">example.example_data_source</code> component. As a result of these connections, <code class="highlighter-rouge">totalRecords</code> will display the output of <code class="highlighter-rouge">DataProvider::getData()</code>.</p>
+<p>In the example above, it will return the <code class="language-plaintext highlighter-rouge">totalRecords</code> property of the <code class="language-plaintext highlighter-rouge">data</code> object in the <code class="language-plaintext highlighter-rouge">example.example_data_source</code> component. As a result of these connections, <code class="language-plaintext highlighter-rouge">totalRecords</code> will display the output of <code class="language-plaintext highlighter-rouge">DataProvider::getData()</code>.</p>
 
 			
 		</div>

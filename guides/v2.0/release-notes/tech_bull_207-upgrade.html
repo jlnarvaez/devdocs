@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Technical Bulletin | Magento 2 Developer Documentation (copy)</title>
+	<title>Technical Bulletin | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/release-notes/tech_bull_207-upgrade.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/release-notes/tech_bull_207-upgrade.html">Magento 2.0</a></li>
 		
@@ -1612,17 +1613,17 @@
   </li>
 </ul>
 
-<p>Patch <code class="highlighter-rouge">MDVA-449</code> supplies the fix for this potential upgrade issue.</p>
+<p>Patch <code class="language-plaintext highlighter-rouge">MDVA-449</code> supplies the fix for this potential upgrade issue.</p>
 
 <h3 id="issue-upgrade-failure-from-magento-installations-running-php-55x-and-updater-application-1001">Issue: Upgrade failure from Magento installations running PHP 5.5.x and Updater application 10.0.1</h3>
 
 <p>Magento Open Source  and Commerce upgrades fail if your server runs PHP 5.5.x and Setup application (also referred to as the <i>Updater application</i>) version 10.0.1 and you  try to upgrade to a later version of Magento.</p>
 
-<p>Magento 2.0.7 by default ships with Setup application version 10.0.1.  If you have not changed the default Setup application version that shipped with 2.0.7 and are running PHP 5.5.x, you must follow this bulletin. Failure to install patch <code class="highlighter-rouge">MDVA-449</code> will complicate attempts to upgrade from this version of Magento to any future versions, including 2.1. Installations using PHP 5.6.x and 7.0.x do not need this patch.</p>
+<p>Magento 2.0.7 by default ships with Setup application version 10.0.1.  If you have not changed the default Setup application version that shipped with 2.0.7 and are running PHP 5.5.x, you must follow this bulletin. Failure to install patch <code class="language-plaintext highlighter-rouge">MDVA-449</code> will complicate attempts to upgrade from this version of Magento to any future versions, including 2.1. Installations using PHP 5.6.x and 7.0.x do not need this patch.</p>
 
-<p>Here is the issue you might encounter when running <code class="highlighter-rouge">update/cron.php</code>:</p>
+<p>Here is the issue you might encounter when running <code class="language-plaintext highlighter-rouge">update/cron.php</code>:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>PHP Parse error: syntax error, unexpected '.', expecting ')' in /home/user/public_html/update/app/code/Magento/Update/UpdateLoggerFactory.php on line 31 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>PHP Parse error: syntax error, unexpected '.', expecting ')' in /home/user/public_html/update/app/code/Magento/Update/UpdateLoggerFactory.php on line 31 
 </code></pre></div></div>
 
 <p>The following table summarizes what you need to do.</p>
@@ -1672,7 +1673,7 @@
 </your>
   </li>
   <li>
-    <p>Look for the value of <code class="highlighter-rouge">"version"</code>. If the value of <code class="highlighter-rouge">"version"</code> is <code class="highlighter-rouge">"10.0.1"</code>, and you’re using PHP 5.5.x, you must make the changes discussed in this bulletin. For example,</p>
+    <p>Look for the value of <code class="language-plaintext highlighter-rouge">"version"</code>. If the value of <code class="language-plaintext highlighter-rouge">"version"</code> is <code class="language-plaintext highlighter-rouge">"10.0.1"</code>, and you’re using PHP 5.5.x, you must make the changes discussed in this bulletin. For example,</p>
 
     <p>“version”: “10.0.1”</p>
   </li>
@@ -1683,17 +1684,17 @@
 
 <h4 id="details">Details</h4>
 
-<p>The Setup application  that is packaged with Magento version 2.0.7 (version 10.0.1) has a line of code that is not compatible with PHP version 5.5.x. To ensure the success of future upgrades, download and install patch <code class="highlighter-rouge">MDVA-449</code>.</p>
+<p>The Setup application  that is packaged with Magento version 2.0.7 (version 10.0.1) has a line of code that is not compatible with PHP version 5.5.x. To ensure the success of future upgrades, download and install patch <code class="language-plaintext highlighter-rouge">MDVA-449</code>.</p>
 
 <h4 id="download-and-install-patch-mdva-449">Download and install patch MDVA-449</h4>
 
-<p>If your Magento server runs PHP 5.5.x and Setup application  10.0.1,  apply patch <code class="highlighter-rouge">MDVA-449</code>.</p>
+<p>If your Magento server runs PHP 5.5.x and Setup application  10.0.1,  apply patch <code class="language-plaintext highlighter-rouge">MDVA-449</code>.</p>
 
 <p>To apply this patch:</p>
 
 <ol>
   <li>
-    <p>Download one of the following patch archives. Patches are available in the following formats: <code class="highlighter-rouge">.zip</code> and <code class="highlighter-rouge">.tar.gz</code></p>
+    <p>Download one of the following patch archives. Patches are available in the following formats: <code class="language-plaintext highlighter-rouge">.zip</code> and <code class="language-plaintext highlighter-rouge">.tar.gz</code></p>
 
     <table>
 		
@@ -1733,7 +1734,7 @@
 </table>
 
     <div class="bs-callout bs-callout-info" id="info">
-      <p>Use patch <code class="highlighter-rouge">MDVA-449</code> whether or not you installed optional sample data.</p>
+      <p>Use patch <code class="language-plaintext highlighter-rouge">MDVA-449</code> whether or not you installed optional sample data.</p>
     </div>
   </li>
   <li>
@@ -1759,23 +1760,23 @@
 </tbody>
 </table>
 
-    <p>After extraction, Magento creates the <code class="highlighter-rouge">magento2-updater-10.0.2</code> directory within the installation directory.</p>
+    <p>After extraction, Magento creates the <code class="language-plaintext highlighter-rouge">magento2-updater-10.0.2</code> directory within the installation directory.</p>
   </li>
   <li>
-    <p>Copy the contents of the <code class="highlighter-rouge">magento2-updater-10.0.2</code> directory to the  <code class="highlighter-rouge">update</code> directory by executing this command:</p>
+    <p>Copy the contents of the <code class="language-plaintext highlighter-rouge">magento2-updater-10.0.2</code> directory to the  <code class="language-plaintext highlighter-rouge">update</code> directory by executing this command:</p>
 
-    <p><code class="highlighter-rouge">cp -R magento2-updater-10.0.2/*  update/</code></p>
+    <p><code class="language-plaintext highlighter-rouge">cp -R magento2-updater-10.0.2/*  update/</code></p>
 
     <div class="bs-callout bs-callout-tip">
-      <p>If you’re prompted to overwrite files repeatedly, cancel the operation and try the following command: <code class="highlighter-rouge">yes | cp -rf magento2-updater-10.0.2/* update/</code>. Also see <a href="http://magento.stackexchange.com/questions/119865/magento-2-patch-mdva-449-ssh-command" target="_blank">this article on stackexchange</a>.</p>
+      <p>If you’re prompted to overwrite files repeatedly, cancel the operation and try the following command: <code class="language-plaintext highlighter-rouge">yes | cp -rf magento2-updater-10.0.2/* update/</code>. Also see <a href="http://magento.stackexchange.com/questions/119865/magento-2-patch-mdva-449-ssh-command" target="_blank">this article on stackexchange</a>.</p>
     </div>
   </li>
   <li>
     <p>After copying all  patch-related files to their appropriate locations,  remove any unwanted files and directories by executing these commands:</p>
 
-    <p><code class="highlighter-rouge">rm -rf magento2-updater-10.0.2/</code></p>
+    <p><code class="language-plaintext highlighter-rouge">rm -rf magento2-updater-10.0.2/</code></p>
 
-    <p><code class="highlighter-rouge">rm -f MDVA-449.*</code></p>
+    <p><code class="language-plaintext highlighter-rouge">rm -f MDVA-449.*</code></p>
   </li>
 </ol>
 

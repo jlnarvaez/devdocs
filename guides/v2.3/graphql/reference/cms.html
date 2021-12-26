@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>CMS endpoints | Magento 2 Developer Documentation (copy)</title>
+	<title>CMS endpoints | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/graphql/reference/cms.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/graphql/reference/cms.html">Magento 2.0</a></li>
 		
@@ -2183,17 +2184,17 @@
 	<h1 class="page-heading">CMS endpoints</h1>
 </section>
 
-			<p>The <code class="highlighter-rouge">cmsPage</code> and <code class="highlighter-rouge">cmsBlock</code> endpoints return information about content pages and blocks that were developed with the Magento Content Management System (CMS).</p>
+			<p>The <code class="language-plaintext highlighter-rouge">cmsPage</code> and <code class="language-plaintext highlighter-rouge">cmsBlock</code> endpoints return information about content pages and blocks that were developed with the Magento Content Management System (CMS).</p>
 
 <h2 id="query-structures">Query structures</h2>
 
 <p>Return the contents of a CMS page:</p>
 
-<p><code class="highlighter-rouge">cmsPage(id: Int): CmsPage</code></p>
+<p><code class="language-plaintext highlighter-rouge">cmsPage(id: Int): CmsPage</code></p>
 
 <p>Return the contents of one or more CMS blocks:</p>
 
-<p><code class="highlighter-rouge">cmsBlocks(identifiers: [String]): CmsBlocks</code></p>
+<p><code class="language-plaintext highlighter-rouge">cmsBlocks(identifiers: [String]): CmsBlocks</code></p>
 
 <h3 id="input-attributes">Input attributes</h3>
 
@@ -2207,12 +2208,12 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">id</code></td>
+      <td><code class="language-plaintext highlighter-rouge">id</code></td>
       <td>Int</td>
       <td>The ID of a CMS page</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">identifiers</code></td>
+      <td><code class="language-plaintext highlighter-rouge">identifiers</code></td>
       <td>Array</td>
       <td>An array containing a comma-separated list of block identifiers</td>
     </tr>
@@ -2221,7 +2222,7 @@
 
 <h3 id="cmspage-output-attributes">CmsPage output attributes</h3>
 
-<p>The <code class="highlighter-rouge">CmsPage</code> object can contain the following attributes:</p>
+<p>The <code class="language-plaintext highlighter-rouge">CmsPage</code> object can contain the following attributes:</p>
 
 <table style="table-layout:auto;">
   <thead>
@@ -2233,51 +2234,51 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">content_heading</code></td>
+      <td><code class="language-plaintext highlighter-rouge">content_heading</code></td>
       <td>String</td>
       <td>The heading that displays at the top of the CMS page</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">content</code></td>
+      <td><code class="language-plaintext highlighter-rouge">content</code></td>
       <td>String</td>
       <td>The content of the CMS page in raw HTML</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">meta_description</code></td>
+      <td><code class="language-plaintext highlighter-rouge">meta_description</code></td>
       <td>String</td>
       <td>A brief description of the page for search results listings</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">meta_keywords</code></td>
+      <td><code class="language-plaintext highlighter-rouge">meta_keywords</code></td>
       <td>String</td>
       <td>A set of keywords that search engines can use to index the page</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">meta_title</code></td>
+      <td><code class="language-plaintext highlighter-rouge">meta_title</code></td>
       <td>String</td>
       <td>The title that appears in the browser title bar and tab</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">page_layout</code></td>
+      <td><code class="language-plaintext highlighter-rouge">page_layout</code></td>
       <td>String</td>
       <td>The design layout of the page, indicating the number of columns and navigation features used on the page</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">title</code></td>
+      <td><code class="language-plaintext highlighter-rouge">title</code></td>
       <td>String</td>
       <td>The name that appears in the breadcrumb trail navigation</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">url_key</code></td>
+      <td><code class="language-plaintext highlighter-rouge">url_key</code></td>
       <td>String</td>
-      <td>The URL key of the CMS page, which is often based on the <code class="highlighter-rouge">content_heading</code></td>
+      <td>The URL key of the CMS page, which is often based on the <code class="language-plaintext highlighter-rouge">content_heading</code></td>
     </tr>
   </tbody>
 </table>
 
 <h3 id="cmsblocks-output-attributes">CmsBlocks output attributes</h3>
 
-<p>The <code class="highlighter-rouge">CmsBlocks</code> object contains an array of <code class="highlighter-rouge">items</code>, each of which can contain the following attributes:</p>
+<p>The <code class="language-plaintext highlighter-rouge">CmsBlocks</code> object contains an array of <code class="language-plaintext highlighter-rouge">items</code>, each of which can contain the following attributes:</p>
 
 <table style="table-layout:auto;">
   <thead>
@@ -2289,17 +2290,17 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">content</code></td>
+      <td><code class="language-plaintext highlighter-rouge">content</code></td>
       <td>String</td>
       <td>The content of the CMS block in raw HTML</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">identifier</code></td>
+      <td><code class="language-plaintext highlighter-rouge">identifier</code></td>
       <td>String</td>
       <td>The CMS block identifier</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">title</code></td>
+      <td><code class="language-plaintext highlighter-rouge">title</code></td>
       <td>String</td>
       <td>The title assigned to the CMS block</td>
     </tr>
@@ -2314,7 +2315,7 @@
 
 <p><strong>Request</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>{
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>{
   cmsPage(id: 1) {
     url_key
     title
@@ -2331,16 +2332,16 @@
 <p><strong>Response</strong></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"cmsPage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"url_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-route"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"404 Not Found"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;dl&gt;</span><span class="se">\r\n</span><span class="s2">&lt;dt&gt;The page you requested was not found, and we have a fine guess why.&lt;/dt&gt;</span><span class="se">\r\n</span><span class="s2">&lt;dd&gt;</span><span class="se">\r\n</span><span class="s2">&lt;ul class=</span><span class="se">\"</span><span class="s2">disc</span><span class="se">\"</span><span class="s2">&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;If you typed the URL directly, please make sure the spelling is correct.&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;If you clicked on a link to get here, the link is outdated.&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;/ul&gt;&lt;/dd&gt;</span><span class="se">\r\n</span><span class="s2">&lt;/dl&gt;</span><span class="se">\r\n</span><span class="s2">&lt;dl&gt;</span><span class="se">\r\n</span><span class="s2">&lt;dt&gt;What can you do?&lt;/dt&gt;</span><span class="se">\r\n</span><span class="s2">&lt;dd&gt;Have no fear, help is near! There are many ways you can get back on track with Magento Store.&lt;/dd&gt;</span><span class="se">\r\n</span><span class="s2">&lt;dd&gt;</span><span class="se">\r\n</span><span class="s2">&lt;ul class=</span><span class="se">\"</span><span class="s2">disc</span><span class="se">\"</span><span class="s2">&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;&lt;a href=</span><span class="se">\"</span><span class="s2">#</span><span class="se">\"</span><span class="s2"> onclick=</span><span class="se">\"</span><span class="s2">history.go(-1); return false;</span><span class="se">\"</span><span class="s2">&gt;Go back&lt;/a&gt; to the previous page.&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Use the search bar at the top of the page to search for your products.&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Follow these links to get you back on track!&lt;br /&gt;&lt;a href=</span><span class="se">\"</span><span class="s2">http://magento2.vagrant193/</span><span class="se">\"</span><span class="s2">&gt;Store Home&lt;/a&gt; &lt;span class=</span><span class="se">\"</span><span class="s2">separator</span><span class="se">\"</span><span class="s2">&gt;|&lt;/span&gt; &lt;a href=</span><span class="se">\"</span><span class="s2">http://magento2.vagrant193/customer/account/</span><span class="se">\"</span><span class="s2">&gt;My Account&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/dd&gt;&lt;/dl&gt;</span><span class="se">\r\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"content_heading"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Whoops, our bad..."</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"page_layout"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2columns-right"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"meta_title"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"meta_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Page description"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"meta_keywords"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Page keywords"</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"cmsPage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"url_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no-route"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"404 Not Found"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;dl&gt;</span><span class="se">\r\n</span><span class="s2">&lt;dt&gt;The page you requested was not found, and we have a fine guess why.&lt;/dt&gt;</span><span class="se">\r\n</span><span class="s2">&lt;dd&gt;</span><span class="se">\r\n</span><span class="s2">&lt;ul class=</span><span class="se">\"</span><span class="s2">disc</span><span class="se">\"</span><span class="s2">&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;If you typed the URL directly, please make sure the spelling is correct.&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;If you clicked on a link to get here, the link is outdated.&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;/ul&gt;&lt;/dd&gt;</span><span class="se">\r\n</span><span class="s2">&lt;/dl&gt;</span><span class="se">\r\n</span><span class="s2">&lt;dl&gt;</span><span class="se">\r\n</span><span class="s2">&lt;dt&gt;What can you do?&lt;/dt&gt;</span><span class="se">\r\n</span><span class="s2">&lt;dd&gt;Have no fear, help is near! There are many ways you can get back on track with Magento Store.&lt;/dd&gt;</span><span class="se">\r\n</span><span class="s2">&lt;dd&gt;</span><span class="se">\r\n</span><span class="s2">&lt;ul class=</span><span class="se">\"</span><span class="s2">disc</span><span class="se">\"</span><span class="s2">&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;&lt;a href=</span><span class="se">\"</span><span class="s2">#</span><span class="se">\"</span><span class="s2"> onclick=</span><span class="se">\"</span><span class="s2">history.go(-1); return false;</span><span class="se">\"</span><span class="s2">&gt;Go back&lt;/a&gt; to the previous page.&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Use the search bar at the top of the page to search for your products.&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Follow these links to get you back on track!&lt;br /&gt;&lt;a href=</span><span class="se">\"</span><span class="s2">http://magento2.vagrant193/</span><span class="se">\"</span><span class="s2">&gt;Store Home&lt;/a&gt; &lt;span class=</span><span class="se">\"</span><span class="s2">separator</span><span class="se">\"</span><span class="s2">&gt;|&lt;/span&gt; &lt;a href=</span><span class="se">\"</span><span class="s2">http://magento2.vagrant193/customer/account/</span><span class="se">\"</span><span class="s2">&gt;My Account&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/dd&gt;&lt;/dl&gt;</span><span class="se">\r\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"content_heading"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Whoops, our bad..."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"page_layout"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2columns-right"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"meta_title"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"meta_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Page description"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"meta_keywords"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Page keywords"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -2348,11 +2349,11 @@
 
 <h3 id="query-a-cms-block">Query a CMS block</h3>
 
-<p>The following query returns information about the <code class="highlighter-rouge">login-data</code> block:</p>
+<p>The following query returns information about the <code class="language-plaintext highlighter-rouge">login-data</code> block:</p>
 
 <p><strong>Request</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>{
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>{
   cmsBlocks(identifiers: "login-data") {
     items {
       identifier
@@ -2366,13 +2367,13 @@
 <p><strong>Response</strong></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"cmsBlocks"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"cmsBlocks"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"login-data"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Login Info Block"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;div class=</span><span class="se">\"</span><span class="s2">message info</span><span class="se">\"</span><span class="s2"> style=</span><span class="se">\"</span><span class="s2">margin-top: 50px;</span><span class="se">\"</span><span class="s2">&gt;</span><span class="se">\n</span><span class="s2">    &lt;p&gt;&lt;strong&gt;Try Demo Customer Access&lt;/strong&gt;&lt;/p&gt;</span><span class="se">\n</span><span class="s2">    &lt;p&gt;&lt;span style=</span><span class="se">\"</span><span class="s2">display:inline-block; width: 80px; padding-right: 10px;</span><span class="se">\"</span><span class="s2">&gt;Email:&lt;/span&gt;roni_cost@example.com&lt;/p&gt;</span><span class="se">\n</span><span class="s2">    &lt;p&gt;&lt;span style=</span><span class="se">\"</span><span class="s2">display:inline-block; width: 80px; padding-right: 10px;</span><span class="se">\"</span><span class="s2">&gt;Password:&lt;/span&gt;roni_cost3@example.com&lt;/p&gt;</span><span class="se">\n</span><span class="s2">&lt;/div&gt;"</span><span class="w">
+          </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"login-data"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Login Info Block"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;div class=</span><span class="se">\"</span><span class="s2">message info</span><span class="se">\"</span><span class="s2"> style=</span><span class="se">\"</span><span class="s2">margin-top: 50px;</span><span class="se">\"</span><span class="s2">&gt;</span><span class="se">\n</span><span class="s2">    &lt;p&gt;&lt;strong&gt;Try Demo Customer Access&lt;/strong&gt;&lt;/p&gt;</span><span class="se">\n</span><span class="s2">    &lt;p&gt;&lt;span style=</span><span class="se">\"</span><span class="s2">display:inline-block; width: 80px; padding-right: 10px;</span><span class="se">\"</span><span class="s2">&gt;Email:&lt;/span&gt;roni_cost@example.com&lt;/p&gt;</span><span class="se">\n</span><span class="s2">    &lt;p&gt;&lt;span style=</span><span class="se">\"</span><span class="s2">display:inline-block; width: 80px; padding-right: 10px;</span><span class="se">\"</span><span class="s2">&gt;Password:&lt;/span&gt;roni_cost3@example.com&lt;/p&gt;</span><span class="se">\n</span><span class="s2">&lt;/div&gt;"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">

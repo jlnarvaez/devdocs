@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Manage branches with the Project Web Interface | Magento 2 Developer Documentation (copy)</title>
+	<title>Manage branches with the Project Web Interface | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/project/project-webint-branch.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/project/project-webint-branch.html">Magento 2.0</a></li>
 		
@@ -4349,22 +4350,22 @@
 <p>This topic discusses how to use the Project Web Interface to:</p>
 
 <ul>
-  <li>Add or delete an environment. You cannot add or delete the <code class="highlighter-rouge">master</code> branch for Pro plan Staging and Production. You can branch from Start plan Master.</li>
-  <li>Sync (<code class="highlighter-rouge">git pull</code>) from the environment’s parent</li>
-  <li>Merge (<code class="highlighter-rouge">git push</code>) to the environment’s parent</li>
+  <li>Add or delete an environment. You cannot add or delete the <code class="language-plaintext highlighter-rouge">master</code> branch for Pro plan Staging and Production. You can branch from Start plan Master.</li>
+  <li>Sync (<code class="language-plaintext highlighter-rouge">git pull</code>) from the environment’s parent</li>
+  <li>Merge (<code class="language-plaintext highlighter-rouge">git push</code>) to the environment’s parent</li>
 </ul>
 
-<p class="bs-callout bs-callout-info">You cannot create branches from Pro plan Staging and Production <code class="highlighter-rouge">master</code>. These environments include <code class="highlighter-rouge">master</code> branches that you deploy updated Git code to from Integration <code class="highlighter-rouge">master</code>.</p>
+<p class="bs-callout bs-callout-info">You cannot create branches from Pro plan Staging and Production <code class="language-plaintext highlighter-rouge">master</code>. These environments include <code class="language-plaintext highlighter-rouge">master</code> branches that you deploy updated Git code to from Integration <code class="language-plaintext highlighter-rouge">master</code>.</p>
 
 <p class="bs-callout bs-callout-info"><strong>Updating your Pro project</strong>: These sections include instructions for Pro projects with Staging and Production available in the Project Web Interface. To add Staging and Production to your interface, see <a href="/devdocs/guides/v2.3/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>. If you do not request this update, you must submit tickets to modify settings, variables, routes, and more for Pro plan Staging and Production environments.</p>
 
 <h2 id="project-branch-add">Add or delete an environment</h2>
 
-<p>Complete development of code and added extensions in a branch and, when complete, merge (<code class="highlighter-rouge">git push</code>) the branch with its parent or master.</p>
+<p>Complete development of code and added extensions in a branch and, when complete, merge (<code class="language-plaintext highlighter-rouge">git push</code>) the branch with its parent or master.</p>
 
 <ul>
-  <li>For Starter, we recommend you create a <code class="highlighter-rouge">staging</code> branch from Master, then branch from <code class="highlighter-rouge">staging</code> for development.</li>
-  <li>For Pro, you want to branch from Development (Integration <code class="highlighter-rouge">master</code>).</li>
+  <li>For Starter, we recommend you create a <code class="language-plaintext highlighter-rouge">staging</code> branch from Master, then branch from <code class="language-plaintext highlighter-rouge">staging</code> for development.</li>
+  <li>For Pro, you want to branch from Development (Integration <code class="language-plaintext highlighter-rouge">master</code>).</li>
 </ul>
 
 <p>For branching strategies, review <a href="/devdocs/guides/v2.3/cloud/basic-information/starter-architecture.html">Starter</a> and <a href="/devdocs/guides/v2.3/cloud/basic-information/starter-develop-deploy-workflow.html">Pro</a> architecture overviews.</p>
@@ -4390,7 +4391,7 @@
 
     <p>The environment <em>name</em> is different from the environment <em>ID</em> only if you use spaces or capital letters in the environment name. An environment ID consists of all lowercase letters, numbers, and allowed symbols. Capital letters in an environment name are converted to lowercase in the ID; spaces in an environment name are converted to dashes.</p>
 
-    <p>An environment name <strong>cannot</strong> include characters reserved for your Linux shell or for regular expressions. Forbidden characters include curly braces (<code class="highlighter-rouge">{ }</code>), parentheses, asterisk (<code class="highlighter-rouge">*</code>), angle brackets (<code class="highlighter-rouge">&gt;</code>), ampersand (<code class="highlighter-rouge">&amp;</code>), percent (<code>%</code>), and other characters.</p>
+    <p>An environment name <strong>cannot</strong> include characters reserved for your Linux shell or for regular expressions. Forbidden characters include curly braces (<code class="language-plaintext highlighter-rouge">{ }</code>), parentheses, asterisk (<code class="language-plaintext highlighter-rouge">*</code>), angle brackets (<code class="language-plaintext highlighter-rouge">&gt;</code>), ampersand (<code class="language-plaintext highlighter-rouge">&amp;</code>), percent (<code>%</code>), and other characters.</p>
   </li>
   <li>Click <strong>Branch</strong>.</li>
   <li>
@@ -4440,9 +4441,9 @@
 
 <h2 id="project-branch-sync">Sync from the environment’s parent</h2>
 
-<p>Syncing an environment (or branch) is the same as <code class="highlighter-rouge">git pull origin &lt;parent&gt;</code>. You sync to get updated code from a parent environment. You can use this feature through the interface for all Starter and Pro environments.</p>
+<p>Syncing an environment (or branch) is the same as <code class="language-plaintext highlighter-rouge">git pull origin &lt;parent&gt;</code>. You sync to get updated code from a parent environment. You can use this feature through the interface for all Starter and Pro environments.</p>
 
-<p>For Pro plan, you can also sync from Staging and Production to your Integration <code class="highlighter-rouge">master</code> branch. This sync only pulls and pushes code, not data. To sync data, you will need to dump the database data and push it to another environment’s database. For more information, see <a href="/devdocs/guides/v2.3/cloud/live/stage-prod-migrate.html">Migrate and deploy static files and data</a>.</p>
+<p>For Pro plan, you can also sync from Staging and Production to your Integration <code class="language-plaintext highlighter-rouge">master</code> branch. This sync only pulls and pushes code, not data. To sync data, you will need to dump the database data and push it to another environment’s database. For more information, see <a href="/devdocs/guides/v2.3/cloud/live/stage-prod-migrate.html">Migrate and deploy static files and data</a>.</p>
 
 <p>To sync an environment with its parent:</p>
 
@@ -4461,7 +4462,7 @@
 
 <h2 id="project-branch-merge">Merge with the environment’s parent</h2>
 
-<p>Merging an environment is the same as <code class="highlighter-rouge">git push origin</code>. You merge to push updated code from an environment to its parent environment (that is, a Git branch). You can merge this code up through the parent-child relationships to <code class="highlighter-rouge">master</code>. You can also deploy to Staging and Production using the merge command.</p>
+<p>Merging an environment is the same as <code class="language-plaintext highlighter-rouge">git push origin</code>. You merge to push updated code from an environment to its parent environment (that is, a Git branch). You can merge this code up through the parent-child relationships to <code class="language-plaintext highlighter-rouge">master</code>. You can also deploy to Staging and Production using the merge command.</p>
 
 <p>To merge an environment with its parent:</p>
 
@@ -4497,7 +4498,7 @@
 
 <h2 id="private">Pull code from a private Git repository</h2>
 
-<p>Your Magento Commerce Cloud project can include code located in a private Git repository. For example, you may have code for a custom module or theme in a private repo. To do so, you must add your project’s public SSH key to your private Git repository and update your project’s <code class="highlighter-rouge">composer.json</code>.</p>
+<p>Your Magento Commerce Cloud project can include code located in a private Git repository. For example, you may have code for a custom module or theme in a private repo. To do so, you must add your project’s public SSH key to your private Git repository and update your project’s <code class="language-plaintext highlighter-rouge">composer.json</code>.</p>
 
 <p>To add a deployment key to your private GitHub repository, you must be the administrator of that repository. GitHub allows you to use a deploy key for one repository only.</p>
 
@@ -4551,7 +4552,7 @@ access to the repositories it needs to manipulate.</p>
   <li>Follow the prompts on your screen to complete the task.</li>
 </ol>
 
-<p>In <code class="highlighter-rouge">composer.json</code>, use the <code class="highlighter-rouge">&lt;user&gt;@&lt;host&gt;:&lt;.git&lt;/code&gt;</code> format, or <code class="highlighter-rouge">ssh://&lt;user&gt;@&lt;host&gt;:&lt;port&gt;/&lt;path&gt;.git</code> if using a non-standard port.</p>
+<p>In <code class="language-plaintext highlighter-rouge">composer.json</code>, use the <code class="language-plaintext highlighter-rouge">&lt;user&gt;@&lt;host&gt;:&lt;.git&lt;/code&gt;</code> format, or <code class="language-plaintext highlighter-rouge">ssh://&lt;user&gt;@&lt;host&gt;:&lt;port&gt;/&lt;path&gt;.git</code> if using a non-standard port.</p>
 
 <h3 id="cloud-deploykey-bb">Enter your Bitbucket deployment key</h3>
 
@@ -4586,9 +4587,9 @@ access to the repositories it needs to manipulate.</p>
   <li>On the <strong>Settings</strong> tab, click <strong>ON</strong> for <strong>HTTP access control</strong> to enable secure access. You can choose between credentials or IP addresses to filter for access.</li>
   <li>To filter by credentials, click <strong>Add Login</strong>, enter a username and password, and click again <strong>Add Login</strong> to add.</li>
   <li>
-    <p>To filter by IP address, enter the IP addresses in a list with <code class="highlighter-rouge">deny</code> or <code class="highlighter-rouge">allow</code>. For example:</p>
+    <p>To filter by IP address, enter the IP addresses in a list with <code class="language-plaintext highlighter-rouge">deny</code> or <code class="language-plaintext highlighter-rouge">allow</code>. For example:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> 123.456.789.111/29 allow
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> 123.456.789.111/29 allow
  123.456.789.112/29 allow
  234.123.567.111/29 allow
  0.0.0.0/0 deny

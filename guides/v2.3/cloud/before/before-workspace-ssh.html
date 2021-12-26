@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Enable SSH keys | Magento 2 Developer Documentation (copy)</title>
+	<title>Enable SSH keys | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/before/before-workspace-ssh.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/before/before-workspace-ssh.html">Magento 2.0</a></li>
 		
@@ -4373,18 +4374,18 @@
 
 <h2 id="existing">Locate an existing SSH key pair</h2>
 
-<p>An existing SSH key pair is typically located in the <code class="highlighter-rouge">.ssh</code> subdirectory of the user’s home directory. This folder is hidden and may not display in the file manager or finder unless configured to display hidden files and folders.</p>
+<p>An existing SSH key pair is typically located in the <code class="language-plaintext highlighter-rouge">.ssh</code> subdirectory of the user’s home directory. This folder is hidden and may not display in the file manager or finder unless configured to display hidden files and folders.</p>
 
 <p>You can quickly verify if you have SSH keys by entering commands using terminal access.</p>
 
 <p>To check for SSH keys, enter the following command:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ls ~/.ssh
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ls ~/.ssh
 </code></pre></div></div>
 
 <p>If you have SSH keys, a directory listing is displayed similar to the following:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>id_rsa  id_rsa.pub  known_hosts
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>id_rsa  id_rsa.pub  known_hosts
 </code></pre></div></div>
 
 <p>If you don’t have SSH keys, you need to generate the keys for adding to your Magento ECE account and GitHub account. See <a href="#ssh-create-new-key-pair">Create a new SSH key pair</a>.</p>
@@ -4397,7 +4398,7 @@
 
 <h2 id="ssh-create-new-key-pair">Create a new SSH key pair</h2>
 
-<p>Use the <code class="highlighter-rouge">ssh-keygen</code> command to create an SSH key pair. <code class="highlighter-rouge">ssh-keygen</code> is typically installed on Linux systems.</p>
+<p>Use the <code class="language-plaintext highlighter-rouge">ssh-keygen</code> command to create an SSH key pair. <code class="language-plaintext highlighter-rouge">ssh-keygen</code> is typically installed on Linux systems.</p>
 
 <p>To create an SSH key pair:</p>
 
@@ -4405,10 +4406,10 @@
   <li>
     <p>The command syntax follows, entering the email used for your GitHub account:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> ssh-keygen -t rsa
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> ssh-keygen -t rsa
 </code></pre></div>    </div>
 
-    <p>GitHub also uses the key length <code class="highlighter-rouge">-b 4096</code> in the command.
+    <p>GitHub also uses the key length <code class="language-plaintext highlighter-rouge">-b 4096</code> in the command.
  Follow the prompts to complete the key.</p>
   </li>
   <li>
@@ -4422,7 +4423,7 @@
 
     <p>For Mac or Linux:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> $ eval "$(ssh-agent -s)"  For Mac, you may also want to edit the  `~/.ssh/config` file to automatically load keys into the ssh-agent and store passphrases in your keychain.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> $ eval "$(ssh-agent -s)"  For Mac, you may also want to edit the  `~/.ssh/config` file to automatically load keys into the ssh-agent and store passphrases in your keychain.
 
  Host *
      AddKeysToAgent yes
@@ -4432,20 +4433,20 @@
 
     <p>For Windows:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> $ eval $(ssh-agent -s)
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> $ eval $(ssh-agent -s)
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Add the SSH key to the ssh-agent. If you used a different name for the key file name, replace <code class="highlighter-rouge">id_rsa</code> with that file name.</p>
+    <p>Add the SSH key to the ssh-agent. If you used a different name for the key file name, replace <code class="language-plaintext highlighter-rouge">id_rsa</code> with that file name.</p>
 
     <p>For Mac:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> ssh-add -K ~/.ssh/id_rsa
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> ssh-add -K ~/.ssh/id_rsa
 </code></pre></div>    </div>
 
     <p>For Windows or Linux:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> ssh-add ~/.ssh/id_rsa
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> ssh-add ~/.ssh/id_rsa
 </code></pre></div>    </div>
   </li>
   <li>
@@ -4461,11 +4462,11 @@
   <li>
     <p>In the terminal, enter the following command:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> ssh -T git@github.com
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> ssh -T git@github.com
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>You may see a warning that the authenticity of the host can’t be established followed by an RSA fingerprint. Enter <code class="highlighter-rouge">yes</code> to continue.</p>
+    <p>You may see a warning that the authenticity of the host can’t be established followed by an RSA fingerprint. Enter <code class="language-plaintext highlighter-rouge">yes</code> to continue.</p>
   </li>
   <li>
     <p>If successful, you should receive a success message. If you receive a permission denied error, see <a href="https://help.github.com/articles/error-permission-denied-publickey">Error: Permission denied (publickey)</a> troubleshooting on GitHub.</p>
@@ -4493,13 +4494,13 @@
   <li>
     <p>Log in to your project:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud login
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud login
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Add the key:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud ssh-key:add ~/.ssh/id_rsa.pub
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud ssh-key:add ~/.ssh/id_rsa.pub
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -4541,7 +4542,7 @@
 
 <p>To set variables, enter the following commands on every workspace:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git config --global user.name "&lt;your name&gt;"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git config --global user.name "&lt;your name&gt;"
 git config --global user.email &lt;your e-mail address&gt;
 </code></pre></div></div>
 

@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Command-line upgrade | Magento 2 Developer Documentation (copy)</title>
+	<title>Command-line upgrade | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/comp-mgr/cli/cli-upgrade.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/comp-mgr/cli/cli-upgrade.html">Magento 2.0</a></li>
 		
@@ -2394,14 +2395,14 @@
 
 <ul>
   <li>Downloaded the   <span term-uuid="7490850a-0654-4ce1-83ff-d88c1d7d07fa" class="glossary-term" data-toggle="popover">metapackage</span>
- using <code class="highlighter-rouge">composer create-project</code></li>
+ using <code class="language-plaintext highlighter-rouge">composer create-project</code></li>
   <li>Installed the compressed archive</li>
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
   <ul>
     <li>If you cloned the Magento 2 GitHub repository, you <em>cannot</em> use this method to upgrade; instead, see <a href="/devdocs/guides/v2.0/install-gde/install/cli/dev_update-magento.html">Update the Magento application</a>.</li>
-    <li>If you configured Magento use use <code class="highlighter-rouge">pub</code> as its root directory, see the next section.</li>
+    <li>If you configured Magento use use <code class="language-plaintext highlighter-rouge">pub</code> as its root directory, see the next section.</li>
     <li>If you’re upgrading to Magento 2.1 (including a Release Candidate) from Magento 2.0.7 or earlier <em>and</em> you installed sample data, see <a href="/devdocs/guides/v2.0/comp-mgr/cli/cli-rc1-samp.html">Command-line upgrade to Magento 2.1 with sample data</a> instead of this topic.</li>
   </ul>
 </div>
@@ -2413,9 +2414,9 @@
   </ul>
 </div>
 
-<h2 id="upgrade-cli-pub">Prerequisite: <code class="highlighter-rouge">pub</code> directory root</h2>
+<h2 id="upgrade-cli-pub">Prerequisite: <code class="language-plaintext highlighter-rouge">pub</code> directory root</h2>
 
-<p>This section applies to you <em>only</em> if you set the Magento root directory to <code class="highlighter-rouge">&lt;your Magento install dir&gt;/pub</code>. If you did not do this, skip this section and continue with the next section.</p>
+<p>This section applies to you <em>only</em> if you set the Magento root directory to <code class="language-plaintext highlighter-rouge">&lt;your Magento install dir&gt;/pub</code>. If you did not do this, skip this section and continue with the next section.</p>
 
 <div class="collapsible">
     <b class="collapsible-title">If you use pub as your Magento root directory: </b>
@@ -2445,7 +2446,7 @@
   <li>
     <p>Enter the following command:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php &lt;your Magento install dir&gt;/bin/magento maintenance:enable
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php &lt;your Magento install dir&gt;/bin/magento maintenance:enable
 </code></pre></div>    </div>
 
     <p>For additional options, see <a href="/devdocs/guides/v2.0/install-gde/install/cli/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a>.</p>
@@ -2463,36 +2464,36 @@
   <li>
     <p>Change to the directory in which you installed the Magento software.</p>
 
-    <p>For example, <code class="highlighter-rouge">cd /var/www/html/magento2</code></p>
+    <p>For example, <code class="language-plaintext highlighter-rouge">cd /var/www/html/magento2</code></p>
   </li>
   <li>
     <p>Enter the following commands in the order shown:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer require &lt;product&gt; &lt;version&gt; --no-update
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer require &lt;product&gt; &lt;version&gt; --no-update
 composer update
 </code></pre></div>    </div>
 
     <p>For example, to upgrade to Magento Open Source version 2.0.13, enter:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer require magento/product-community-edition 2.0.13 --no-update
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer require magento/product-community-edition 2.0.13 --no-update
 composer update
 </code></pre></div>    </div>
 
     <p>To upgrade to Magento EE version 2.0.13, enter:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer require magento/product-enterprise-edition 2.0.13 --no-update
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer require magento/product-enterprise-edition 2.0.13 --no-update
 composer update
 </code></pre></div>    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
-      <p>If an error displays about a missing <code class="highlighter-rouge">.gitignore</code> files, see the <a href="/devdocs/guides/v2.0/release-notes/tech_bull_201-upgrade.html#resolution2">Technical Bulletin (1/28/16)</a>.</p>
+      <p>If an error displays about a missing <code class="language-plaintext highlighter-rouge">.gitignore</code> files, see the <a href="/devdocs/guides/v2.0/release-notes/tech_bull_201-upgrade.html#resolution2">Technical Bulletin (1/28/16)</a>.</p>
     </div>
   </li>
   <li>If prompted, enter your <a href="/devdocs/guides/v2.0/comp-mgr/prereq/prereq_auth-token.html">authentication keys</a>.</li>
   <li>
-    <p>Manually clear <code class="highlighter-rouge">var</code> subdirectories:</p>
+    <p>Manually clear <code class="language-plaintext highlighter-rouge">var</code> subdirectories:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>rm -rf &lt;Magento install dir&gt;/var/cache/*
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>rm -rf &lt;Magento install dir&gt;/var/cache/*
 rm -rf &lt;Magento install dir&gt;/var/page_cache/*
 rm -rf &lt;Magento install dir&gt;/var/generation/*
 </code></pre></div>    </div>
@@ -2504,19 +2505,19 @@ rm -rf &lt;Magento install dir&gt;/var/generation/*
   <li>
     <p>Update the database schema and data:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> php bin/magento setup:upgrade
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> php bin/magento setup:upgrade
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Put your storefront online (that is, cancel maintenance mode):</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php bin/magento maintenance:disable
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php bin/magento maintenance:disable
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Restart Varnish if you use it for page caching.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>service varnish restart
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>service varnish restart
 </code></pre></div>    </div>
   </li>
   <li>
@@ -2524,17 +2525,17 @@ rm -rf &lt;Magento install dir&gt;/var/generation/*
 
     <p>The following error might display:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>We're sorry, an error has occurred while generating this email.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>We're sorry, an error has occurred while generating this email.
 </code></pre></div>    </div>
 
     <p>If so, perform the following tasks:</p>
 
     <ol>
-      <li>Reset <a href="/devdocs/guides/v2.0/install-gde/prereq/file-system-perms.html">file system ownership and permissions</a> as a user with <code class="highlighter-rouge">root</code> privileges.</li>
+      <li>Reset <a href="/devdocs/guides/v2.0/install-gde/prereq/file-system-perms.html">file system ownership and permissions</a> as a user with <code class="language-plaintext highlighter-rouge">root</code> privileges.</li>
       <li>
         <p>Clear the following directories and try again:</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;your Magento install dir&gt;/var/cache
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;your Magento install dir&gt;/var/cache
 &lt;your Magento install dir&gt;/var/page_cache
 &lt;your Magento install dir&gt;/var/generation
 </code></pre></div>        </div>

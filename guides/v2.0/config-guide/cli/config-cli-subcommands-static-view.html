@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Deploy static view files | Magento 2 Developer Documentation (copy)</title>
+	<title>Deploy static view files | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/config-guide/cli/config-cli-subcommands-static-view.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html">Magento 2.0</a></li>
 		
@@ -3308,7 +3309,7 @@
   <li>“View” refers to the presentation layer (from MVC).</li>
 </ul>
 
-<p>Static view files are located in the <code class="highlighter-rouge">&lt;your Magento install dir&gt;/pub/static</code> directory, and some are cached in the <code class="highlighter-rouge">&lt;your Magento install dir&gt;/var/view_preprocessed</code> directory as well.</p>
+<p>Static view files are located in the <code class="language-plaintext highlighter-rouge">&lt;your Magento install dir&gt;/pub/static</code> directory, and some are cached in the <code class="language-plaintext highlighter-rouge">&lt;your Magento install dir&gt;/var/view_preprocessed</code> directory as well.</p>
 
 <p>Static view file deployment is affected by Magento modes as follows:</p>
 
@@ -3333,20 +3334,20 @@
 <ol>
   <li>Log in to the Magento server as, or <a href="/devdocs/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">switch to</a>, the   <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span>
 .</li>
-  <li>Delete the contents of <code class="highlighter-rouge">&lt;your Magento install dir&gt;/pub/static</code>.</li>
+  <li>Delete the contents of <code class="language-plaintext highlighter-rouge">&lt;your Magento install dir&gt;/pub/static</code>.</li>
   <li>
-    <p>Run the static view files deployment tool <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin/magento setup:static-content:deploy</code>.
+    <p>Run the static view files deployment tool <code class="language-plaintext highlighter-rouge">&lt;your Magento install dir&gt;/bin/magento setup:static-content:deploy</code>.
 <!-- 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. --></p>
 
     <div class="bs-callout bs-callout-info" id="info">
-      <p>If you enable static view file merging in the Magento Admin, the <code class="highlighter-rouge">pub/static</code> directory system must be writable.</p>
+      <p>If you enable static view file merging in the Magento Admin, the <code class="language-plaintext highlighter-rouge">pub/static</code> directory system must be writable.</p>
     </div>
   </li>
 </ol>
 
 <p>Command options:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento setup:static-content:deploy &lt;lang&gt; ... &lt;lang&gt; [--dry-run]
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento setup:static-content:deploy &lt;lang&gt; ... &lt;lang&gt; [--dry-run]
 </code></pre></div></div>
 
 <p>The following table explains this command’s parameters and values.</p>
@@ -3372,14 +3373,14 @@
 	</tbody>
 </table>
 
-<p>For example, to deploy static view files for the <code class="highlighter-rouge">pt_BR</code> language:</p>
+<p>For example, to deploy static view files for the <code class="language-plaintext highlighter-rouge">pt_BR</code> language:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento --ansi setup:static-content:deploy pt_BR
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento --ansi setup:static-content:deploy pt_BR
 </code></pre></div></div>
 
 <p>The following are some sample messages that display to indicate successful deployment:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Requested languages: pt_BR
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Requested languages: pt_BR
 === frontend -&gt; Magento/luma -&gt; pt_BR ===
 ... progress indicator ...
 Successful: 1613 files; errors: 0
@@ -3404,7 +3405,7 @@ New version of deployed files: 1430773903
 
 <p><strong>Symptom</strong>: The following error is displayed when you run the static view files deployment tool:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ERROR: You need to install the Magento application before running this utility.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ERROR: You need to install the Magento application before running this utility.
 </code></pre></div></div>
 
 <p><strong>Solution</strong>:</p>
@@ -3421,7 +3422,7 @@ New version of deployed files: 1430773903
     </ul>
   </li>
   <li>Log in to the Magento server as, or switch to, the <a href="/devdocs/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
-  <li>Delete the contents of <code class="highlighter-rouge">&lt;your Magento install dir&gt;/pub/static</code> directory.</li>
+  <li>Delete the contents of <code class="language-plaintext highlighter-rouge">&lt;your Magento install dir&gt;/pub/static</code> directory.</li>
   <li><a href="#config-cli-subcommands-xlate-dict">Run the static view files deployment tool</a>.</li>
 </ol>
 
@@ -3432,7 +3433,7 @@ New version of deployed files: 1430773903
 
 <p>One of the options for making it atomic, is writing to files stored in a temporary directory and copying or moving them to the destination directory (from where they are actually loaded to client side) once writing is over. For details about writing to files see <a href="http://php.net/manual/en/function.fwrite.php" target="_blank">http://php.net/manual/en/function.fwrite.php</a>.</p>
 
-<p>Please note, that the default Magento implementation of <code class="highlighter-rouge">\Magento\Framework\Filesystem\Directory\WriteInterface::writeFile</code> uses non-atomic write to file.</p>
+<p>Please note, that the default Magento implementation of <code class="language-plaintext highlighter-rouge">\Magento\Framework\Filesystem\Directory\WriteInterface::writeFile</code> uses non-atomic write to file.</p>
 
 <h2 id="related-topics">Related topics</h2>
 

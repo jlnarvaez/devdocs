@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Request Builder | Magento 2 Developer Documentation (copy)</title>
+	<title>Request Builder | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/payments-integrations/payment-gateway/request-builder.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/payments-integrations/payment-gateway/request-builder.html">Magento 2.0</a></li>
 		
@@ -1621,21 +1622,21 @@
 
 <h2 id="basic-interface">Basic interface</h2>
 
-<p>The basic interface for a request builder is <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Payment/Gateway/Request/BuilderInterface.php"><code class="highlighter-rouge">\Magento\Payment\Gateway\Request\BuilderInterface</code></a>.</p>
+<p>The basic interface for a request builder is <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Payment/Gateway/Request/BuilderInterface.php"><code class="language-plaintext highlighter-rouge">\Magento\Payment\Gateway\Request\BuilderInterface</code></a>.</p>
 
 <h2 id="builder-composite">Builder composite</h2>
 
-<p><code class="highlighter-rouge">\Magento\Payment\Gateway\Request\BuilderComposite</code> is a container for a list of <code class="highlighter-rouge">\Magento\Payment\Gateway\Request\BuilderInterface</code> implementations. It gets a list of classes, or types, or virtual type names, and performs a lazy instantiation on an actual <code class="highlighter-rouge">BuilderComposite::build([])</code> call. So that you can have as many objects, as required, but only those, which are needed for a request are instantiated.</p>
+<p><code class="language-plaintext highlighter-rouge">\Magento\Payment\Gateway\Request\BuilderComposite</code> is a container for a list of <code class="language-plaintext highlighter-rouge">\Magento\Payment\Gateway\Request\BuilderInterface</code> implementations. It gets a list of classes, or types, or virtual type names, and performs a lazy instantiation on an actual <code class="language-plaintext highlighter-rouge">BuilderComposite::build([])</code> call. So that you can have as many objects, as required, but only those, which are needed for a request are instantiated.</p>
 
-<p><code class="highlighter-rouge">BuilderComposite</code> implements the <a href="http://designpatternsphp.readthedocs.io/en/latest/Structural/Composite/README.html">composite design pattern</a>.</p>
+<p><code class="language-plaintext highlighter-rouge">BuilderComposite</code> implements the <a href="http://designpatternsphp.readthedocs.io/en/latest/Structural/Composite/README.html">composite design pattern</a>.</p>
 
-<p>The concatenation strategy is defined in the <code class="highlighter-rouge">BuilderComposite::merge()</code> method. So if you need to alter the strategy, you need to add your custom implementation of <code class="highlighter-rouge">BuilderComposite</code>.</p>
+<p>The concatenation strategy is defined in the <code class="language-plaintext highlighter-rouge">BuilderComposite::merge()</code> method. So if you need to alter the strategy, you need to add your custom implementation of <code class="language-plaintext highlighter-rouge">BuilderComposite</code>.</p>
 
 <h2 id="adding-a-builder-composite">Adding a builder composite</h2>
 
-<p>Builder composites are added using <a href="/devdocs/guides/v2.0/extension-dev-guide/depend-inj.html">dependency injection</a> in <code class="highlighter-rouge">di.xml</code>. A builder composite might comprise simple builders as well as other builder composites.</p>
+<p>Builder composites are added using <a href="/devdocs/guides/v2.0/extension-dev-guide/depend-inj.html">dependency injection</a> in <code class="language-plaintext highlighter-rouge">di.xml</code>. A builder composite might comprise simple builders as well as other builder composites.</p>
 
-<p>Example of adding composite builders for the Braintree payment provider (<a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Braintree/etc/di.xml"><code class="highlighter-rouge">app/code/Magento/Braintree/etc/di.xml</code></a>):</p>
+<p>Example of adding composite builders for the Braintree payment provider (<a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Braintree/etc/di.xml"><code class="language-plaintext highlighter-rouge">app/code/Magento/Braintree/etc/di.xml</code></a>):</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml">...
 <span class="c">&lt;!--  is a builder composite comprising a number of builders --&gt;</span>

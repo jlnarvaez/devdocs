@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Routing | Magento 2 Developer Documentation (copy)</title>
+	<title>Routing | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/extension-dev-guide/routing.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/extension-dev-guide/routing.html">Magento 2.0</a></li>
 		
@@ -2901,21 +2902,21 @@
 			<p>In the Magento system, a   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>
  has the following format:</p>
 
-<p><code class="highlighter-rouge">&lt;area front name&gt;/&lt;VendorName&gt;/&lt;ModuleName&gt;/&lt;controller name&gt;/&lt;action name&gt;</code></p>
+<p><code class="language-plaintext highlighter-rouge">&lt;area front name&gt;/&lt;VendorName&gt;/&lt;ModuleName&gt;/&lt;controller name&gt;/&lt;action name&gt;</code></p>
 
-<p><code class="highlighter-rouge">&lt;area front name&gt;</code> indicates it is at the “front” of the URL. (The <em>area name</em> is used internally to refer to the area in configuration files. Magento provides areas such as <code class="highlighter-rouge">frontend</code> for the storefront and <code class="highlighter-rouge">adminhtml</code> for the administration area.)</p>
+<p><code class="language-plaintext highlighter-rouge">&lt;area front name&gt;</code> indicates it is at the “front” of the URL. (The <em>area name</em> is used internally to refer to the area in configuration files. Magento provides areas such as <code class="language-plaintext highlighter-rouge">frontend</code> for the storefront and <code class="language-plaintext highlighter-rouge">adminhtml</code> for the administration area.)</p>
 
 <p>To assign a URL to a corresponding controller and action, use the router class.</p>
 
 <p>Router has an algorithm to find a matching controller, determined by request.</p>
 
-<p>Then, according to a route rule, controller is assigned to URL. Use the <code class="highlighter-rouge">routes.xml</code> file to review or change the route rules.</p>
+<p>Then, according to a route rule, controller is assigned to URL. Use the <code class="language-plaintext highlighter-rouge">routes.xml</code> file to review or change the route rules.</p>
 
 <h3 id="routers">Routers</h3>
 
-<p>The routers information for the modules is described in the <code class="highlighter-rouge">routerList</code> parameter of <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/RouterList.php" target="_blank">Magento\Framework\App\RouterList</a> type in your <code class="highlighter-rouge">di.xml</code>.</p>
+<p>The routers information for the modules is described in the <code class="language-plaintext highlighter-rouge">routerList</code> parameter of <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/RouterList.php" target="_blank">Magento\Framework\App\RouterList</a> type in your <code class="language-plaintext highlighter-rouge">di.xml</code>.</p>
 
-<p>Each area has its own set of the routers. The <code class="highlighter-rouge">Magento\Framework\App\RouterList</code> model is injected into <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/FrontController.php" target="_blank">FrontController</a>.</p>
+<p>Each area has its own set of the routers. The <code class="language-plaintext highlighter-rouge">Magento\Framework\App\RouterList</code> model is injected into <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/FrontController.php" target="_blank">FrontController</a>.</p>
 
 <p>You might need to customize the routers to change either the standard logic of processing the requests or the native Magento routers
 (such as,   <span term-uuid="f3944faf-127e-4097-9918-a2e9c647d44f" class="glossary-term" data-toggle="popover">CMS</span>
@@ -2924,7 +2925,7 @@ However, you must not customize the routers that are used in Magento core module
 
 <h3 id="routes">Routes</h3>
 
-<p>Configurations of the routes are stored in <code class="highlighter-rouge">routes.xml</code> in the scopes area.</p>
+<p>Configurations of the routes are stored in <code class="language-plaintext highlighter-rouge">routes.xml</code> in the scopes area.</p>
 
 <p>Only the standard   <span term-uuid="b00459e5-a793-44dd-98d5-852ab33fc344" class="glossary-term" data-toggle="popover">frontend</span>
  and   <span term-uuid="74d6d228-34bd-4475-a6f8-0c0f4d6d0d61" class="glossary-term" data-toggle="popover">backend</span>
@@ -2939,12 +2940,12 @@ However, you must not customize the routers that are used in Magento core module
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p><code class="highlighter-rouge">%routeId%</code> must be at least three characters in length and can consist of the following characters: <code class="highlighter-rouge">A-Z, a-z, 0-9, _</code>.</p>
+  <p><code class="language-plaintext highlighter-rouge">%routeId%</code> must be at least three characters in length and can consist of the following characters: <code class="language-plaintext highlighter-rouge">A-Z, a-z, 0-9, _</code>.</p>
 
-  <p><code class="highlighter-rouge">%frontName%</code> must be at least three characters in length and can consist of the following characters: <code class="highlighter-rouge">A-Z, a-z, 0-9, _, -</code>.</p>
+  <p><code class="language-plaintext highlighter-rouge">%frontName%</code> must be at least three characters in length and can consist of the following characters: <code class="language-plaintext highlighter-rouge">A-Z, a-z, 0-9, _, -</code>.</p>
 </div>
 
-<p>To retrieve the configuration for route for an area by the specified router, use the <code class="highlighter-rouge">Magento\App\Framework\Route\Config</code>.</p>
+<p>To retrieve the configuration for route for an area by the specified router, use the <code class="language-plaintext highlighter-rouge">Magento\App\Framework\Route\Config</code>.</p>
 
 <p>To replace the controller action in a route with custom one, add the custom controller class before the original controller.</p>
 
@@ -2954,9 +2955,9 @@ However, you must not customize the routers that are used in Magento core module
 
 <p>If you must reset a route and design, forward the request processing to another route:</p>
 
-<p><code class="highlighter-rouge">$this-&gt;_forward('other/controller/action')</code></p>
+<p><code class="language-plaintext highlighter-rouge">$this-&gt;_forward('other/controller/action')</code></p>
 
-<p>To remove the controller action, forward to <code class="highlighter-rouge">noroute</code>, for instance, in <code class="highlighter-rouge">app/code/Company/SomeExtension/Controller/Account/Create.php</code>:</p>
+<p>To remove the controller action, forward to <code class="language-plaintext highlighter-rouge">noroute</code>, for instance, in <code class="language-plaintext highlighter-rouge">app/code/Company/SomeExtension/Controller/Account/Create.php</code>:</p>
 
 <pre>
   <span term-uuid="621ef86b-7314-4fbc-a80d-ab7fa45a27cb" class="glossary-term" data-toggle="popover">namespace</span>
@@ -2976,20 +2977,20 @@ class Create extends \Magento\Framework\App\Action\Action
 <p>Routing is processed in the following way:</p>
 
 <ul>
-  <li>Modules provide information on their routers through the <code class="highlighter-rouge">routerList</code> parameter of <code class="highlighter-rouge">Magento\Framework\App\RouterList</code> type in <code class="highlighter-rouge">di.xml</code>.</li>
-  <li><code class="highlighter-rouge">FrontController</code> obtains active routers and checks whether a request can be processed.</li>
+  <li>Modules provide information on their routers through the <code class="language-plaintext highlighter-rouge">routerList</code> parameter of <code class="language-plaintext highlighter-rouge">Magento\Framework\App\RouterList</code> type in <code class="language-plaintext highlighter-rouge">di.xml</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">FrontController</code> obtains active routers and checks whether a request can be processed.</li>
   <li>If a request cannot be processed by any router, the default router is used.</li>
-  <li>If a request can be processed by a router, the router finds a route with matching <code class="highlighter-rouge">frontName</code> and looks through corresponding modules. If a   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
+  <li>If a request can be processed by a router, the router finds a route with matching <code class="language-plaintext highlighter-rouge">frontName</code> and looks through corresponding modules. If a   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
  has matching controller and action names, a router instantiates this controller.</li>
 </ul>
 
-<p>The <code class="highlighter-rouge">dispatch()</code> method of the <code class="highlighter-rouge">Magento\Framework\App\Action\Action</code> class requests an instance and returns its response.</p>
+<p>The <code class="language-plaintext highlighter-rouge">dispatch()</code> method of the <code class="language-plaintext highlighter-rouge">Magento\Framework\App\Action\Action</code> class requests an instance and returns its response.</p>
 
-<p>For this class, the <code class="highlighter-rouge">Magento\Framework\App\ActionInterface</code> processes the requests through its actions. Also, the following classes participate in processing the requests:</p>
+<p>For this class, the <code class="language-plaintext highlighter-rouge">Magento\Framework\App\ActionInterface</code> processes the requests through its actions. Also, the following classes participate in processing the requests:</p>
 
 <ul>
   <li>The <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/State.php" target="_blank">Magento\Framework\App\State</a>  class provides information on the state of the application, that is, current mode, installation date, and so on.</li>
-  <li>The <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/AreaList.php" target="_blank">Magento\Framework\App\Arealist</a> class serves to configure the application areas through the <code class="highlighter-rouge">di.xml</code> file</li>
+  <li>The <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/AreaList.php" target="_blank">Magento\Framework\App\Arealist</a> class serves to configure the application areas through the <code class="language-plaintext highlighter-rouge">di.xml</code> file</li>
   <li>The <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/Area/FrontNameResolverInterface.php" target="_blank">Magento\App\Area\FrontNameResolverInterface</a> class resolves the dynamic area’s front names</li>
 </ul>
 

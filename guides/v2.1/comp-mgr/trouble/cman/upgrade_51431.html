@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Troubleshoot upgrade issues | Magento 2 Developer Documentation (copy)</title>
+	<title>Troubleshoot upgrade issues | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/comp-mgr/trouble/cman/upgrade_51431.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/comp-mgr/trouble/cman/upgrade_51431.html">Magento 2.0</a></li>
 		
@@ -2517,10 +2518,10 @@
 
 <p>This section discusses upgrade issues to Magento version 2.0.4. Symptoms include any of the following errors during the upgrade process:</p>
 
-<h3 id="strict-notice-exception"><code class="highlighter-rouge">Strict Notice</code> exception</h3>
+<h3 id="strict-notice-exception"><code class="language-plaintext highlighter-rouge">Strict Notice</code> exception</h3>
 <p>Error text follows:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>[Exception]                                                                                                                                                
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>[Exception]                                                                                                                                                
 Strict Notice: Declaration of Magento\Store\Model\ResourceModel\Website\Interceptor::afterLoad() should be compatible with Magento\Framework\Model\ResourceModel\Db\AbstractDb::afterLoad(Magento\Framework\DataObject $object) in /var/www/html/magento2ce/var/generation/Magento/Store/Model/ResourceModel/Website/Interceptor.php on line 7   
 </code></pre></div></div>
 
@@ -2528,7 +2529,7 @@ Strict Notice: Declaration of Magento\Store\Model\ResourceModel\Website\Intercep
 
 <p>A snippet from this error follows:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>PHP Fatal error:  Cannot instantiate interface Magento\Framework\MessageQueue\ConfigInterface in /var/www/html/eddie/project-enterprise-edition/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php on line 73
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>PHP Fatal error:  Cannot instantiate interface Magento\Framework\MessageQueue\ConfigInterface in /var/www/html/eddie/project-enterprise-edition/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php on line 73
 PHP Stack trace:
 PHP   1. {main}() /var/www/html/eddie/project-enterprise-edition/bin/magento:0
 PHP   2. Magento\Framework\Console\Cli-&gt;__construct() /var/www/html/eddie/project-enterprise-edition/bin/magento:26
@@ -2549,7 +2550,7 @@ PHP   3. Symfony\Component\Console\Application-&gt;__construct() /var/www/html/e
   <li>
     <p>Remove the following files so you can upgrade again:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;your Magento install dir&gt;/var/.maintenance.flag
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;your Magento install dir&gt;/var/.maintenance.flag
 &lt;your Magento install dir&gt;/var/.update_in_progress.flag
 &lt;your Magento install dir&gt;/var/cache/*
 &lt;your Magento install dir&gt;/var/page_cache/*
@@ -2561,19 +2562,19 @@ PHP   3. Symfony\Component\Console\Application-&gt;__construct() /var/www/html/e
   </li>
 </ol>
 
-<h3 id="compman-upgr-perms"><code class="highlighter-rouge">var/session</code> permissions failure</h3>
-<p>If your Magento application is set to write session data to the <code class="highlighter-rouge">&lt;your Magento install dir&gt;/var/session</code> directory, you must set permissions on that directory before you upgrade.</p>
+<h3 id="compman-upgr-perms"><code class="language-plaintext highlighter-rouge">var/session</code> permissions failure</h3>
+<p>If your Magento application is set to write session data to the <code class="language-plaintext highlighter-rouge">&lt;your Magento install dir&gt;/var/session</code> directory, you must set permissions on that directory before you upgrade.</p>
 
 <p><a href="/devdocs/guides/v2.1/config-guide/sessions.html">How to find where Magento stores session files</a>.</p>
 
-<p>To verify whether or not sessions are stored in <code class="highlighter-rouge">&lt;your Magento install dir&gt;/var/session</code>, log in to your Magento server, or switch to, <a href="/devdocs/guides/v2.1/install-gde/prereq/apache-user.html">Magento file system owner</a> and enter the following command:</p>
+<p>To verify whether or not sessions are stored in <code class="language-plaintext highlighter-rouge">&lt;your Magento install dir&gt;/var/session</code>, log in to your Magento server, or switch to, <a href="/devdocs/guides/v2.1/install-gde/prereq/apache-user.html">Magento file system owner</a> and enter the following command:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ls &lt;your Magento file install dir&gt;/var/session
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ls &lt;your Magento file install dir&gt;/var/session
 </code></pre></div></div>
 
-<p>For example, if Magento is installed in <code class="highlighter-rouge">/var/www/magento2</code>, enter:</p>
+<p>For example, if Magento is installed in <code class="language-plaintext highlighter-rouge">/var/www/magento2</code>, enter:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ls /var/www/magento2/var/session
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ls /var/www/magento2/var/session
 </code></pre></div></div>
 
 <p>If there are files in that directory, you must set permissions; if there are no files in that directory, you can skip the remainder of this topic and continue with <a href="/devdocs/guides/v2.1/comp-mgr/upgrader/upgrade.html">Step 4. Upgrade</a>.</p>
@@ -2589,7 +2590,7 @@ PHP   3. Symfony\Component\Console\Application-&gt;__construct() /var/www/html/e
       <li>
         <p>One Magento user (typical of shared hosting):</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd &lt;your Magento install dir&gt;
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd &lt;your Magento install dir&gt;
 find var -type f -exec chmod u+w {} +
 find var -type d -exec chmod u+w {} +
 </code></pre></div>        </div>
@@ -2599,15 +2600,15 @@ find var -type d -exec chmod u+w {} +
       <li>
         <p>Two Magento users:</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd &lt;your Magento install dir&gt;
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd &lt;your Magento install dir&gt;
 find var -type f -exec chmod g+w {} +
 find var -type d -exec chmod g+ws {} +
 chown -R :&lt;web server group&gt; .
 </code></pre></div>        </div>
 
-        <p>For example, on CentOS where the web server group is typically <code class="highlighter-rouge">apache</code>:</p>
+        <p>For example, on CentOS where the web server group is typically <code class="language-plaintext highlighter-rouge">apache</code>:</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd /var/www/html/magento2
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd /var/www/html/magento2
 find var -type f -exec chmod g+w {} +
 find var -type d -exec chmod g+ws {} +
 chown -R :apache .

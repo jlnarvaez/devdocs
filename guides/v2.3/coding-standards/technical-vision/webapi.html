@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Web API technical vision | Magento 2 Developer Documentation (copy)</title>
+	<title>Web API technical vision | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/coding-standards/technical-vision/webapi.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/coding-standards/technical-vision/webapi.html">Magento 2.0</a></li>
 		
@@ -1885,24 +1886,24 @@
 
 <h4 id="declare-a-new-rest-and-soap-endpoint">Declare a new REST and SOAP endpoint</h4>
 
-<p>Any <a href="/devdocs/guides/v2.3/extension-dev-guide/service-contracts/service-contracts.html">service contract</a> can be <a href="/devdocs/guides/v2.3/extension-dev-guide/service-contracts/service-to-web-service.html">exposed as REST and SOAP</a> endpoints via configuration in a module’s <code class="highlighter-rouge">webapi.xml</code> file.</p>
+<p>Any <a href="/devdocs/guides/v2.3/extension-dev-guide/service-contracts/service-contracts.html">service contract</a> can be <a href="/devdocs/guides/v2.3/extension-dev-guide/service-contracts/service-to-web-service.html">exposed as REST and SOAP</a> endpoints via configuration in a module’s <code class="language-plaintext highlighter-rouge">webapi.xml</code> file.</p>
 
 <h4 id="declare-a-new-graphql-querymutation">Declare a new GraphQL query/mutation</h4>
 
 <ol>
   <li>Create custom resolvers.</li>
-  <li>Declare a custom query/mutation and all necessary types in <code class="highlighter-rouge">schema.graphqls</code>.</li>
+  <li>Declare a custom query/mutation and all necessary types in <code class="language-plaintext highlighter-rouge">schema.graphqls</code>.</li>
 </ol>
 
-<p>If the target module is called <code class="highlighter-rouge">MyModule</code>, then create the resolvers and configuration files in a new module called <code class="highlighter-rouge">MyModuleGraphQl</code>.</p>
+<p>If the target module is called <code class="language-plaintext highlighter-rouge">MyModule</code>, then create the resolvers and configuration files in a new module called <code class="language-plaintext highlighter-rouge">MyModuleGraphQl</code>.</p>
 
 <p>See the <a href="/devdocs/guides/v2.3/graphql/index.html">GraphQL documentation</a> for more information.</p>
 
 <h4 id="add-a-custom-authentication-mechanism">Add a custom authentication mechanism</h4>
 
 <ol>
-  <li>Provide a custom implementation of <code class="highlighter-rouge">\Magento\Authorization\Model\UserContextInterface</code>, that verifies a user’s identity using a  custom authentication mechanism.</li>
-  <li>Declare custom user context in the composite user context for the target area(s) (<code class="highlighter-rouge">webapi_rest</code>, <code class="highlighter-rouge">webapi_soap</code>, <code class="highlighter-rouge">webapi_graphql</code>) :</li>
+  <li>Provide a custom implementation of <code class="language-plaintext highlighter-rouge">\Magento\Authorization\Model\UserContextInterface</code>, that verifies a user’s identity using a  custom authentication mechanism.</li>
+  <li>Declare custom user context in the composite user context for the target area(s) (<code class="language-plaintext highlighter-rouge">webapi_rest</code>, <code class="language-plaintext highlighter-rouge">webapi_soap</code>, <code class="language-plaintext highlighter-rouge">webapi_graphql</code>) :</li>
 </ol>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Authorization\Model\CompositeUserContext"</span><span class="nt">&gt;</span>
@@ -1927,10 +1928,10 @@
 
 <ol>
   <li>
-    <p>Add a <code class="highlighter-rouge">schema.graphqls</code> file to the <code class="highlighter-rouge">&lt;ModuleName&gt;GraphQl</code> module. Magento merges this file with configurations from other modules using the same merge rules as other types of configuration.</p>
+    <p>Add a <code class="language-plaintext highlighter-rouge">schema.graphqls</code> file to the <code class="language-plaintext highlighter-rouge">&lt;ModuleName&gt;GraphQl</code> module. Magento merges this file with configurations from other modules using the same merge rules as other types of configuration.</p>
   </li>
   <li>
-    <p>Write any necessary plugins for existing resolvers related to the query, or create a custom resolver and enable it via override in <code class="highlighter-rouge">schema.graphqls</code></p>
+    <p>Write any necessary plugins for existing resolvers related to the query, or create a custom resolver and enable it via override in <code class="language-plaintext highlighter-rouge">schema.graphqls</code></p>
   </li>
 </ol>
 
@@ -1943,12 +1944,12 @@
 <ol>
   <li>REST and SOAP must be designed for Admin Panel integrations and be equal in terms of coverage. GraphQL should be designed for storefront scenarios.</li>
   <li>Any identifier exposed in guest APIs (for example, cart ID) must be masked to prevent the possibility of unauthorized access to the data of other guest users.</li>
-  <li>Authentication must be done via <code class="highlighter-rouge">\Magento\Authorization\Model\UserContextInterface</code>.</li>
+  <li>Authentication must be done via <code class="language-plaintext highlighter-rouge">\Magento\Authorization\Model\UserContextInterface</code>.</li>
   <li>Customer-specific identifiers (such as customer ID or cart ID) must be deducted from the record of the successfully authenticated customer. They must not be accepted via request parameters.</li>
   <li>All new web API endpoints must be covered with web API functional tests.
     <ul>
-      <li>For REST and SOAP, by default, the same test will be executed in the scope of different continuous integration jobs. The base class for REST and SOAP tests is <code class="highlighter-rouge">\Magento\TestFramework\TestCase\WebapiAbstract</code></li>
-      <li>The base class for GraphQL tests is: <code class="highlighter-rouge">\Magento\TestFramework\TestCase\GraphQlAbstract</code></li>
+      <li>For REST and SOAP, by default, the same test will be executed in the scope of different continuous integration jobs. The base class for REST and SOAP tests is <code class="language-plaintext highlighter-rouge">\Magento\TestFramework\TestCase\WebapiAbstract</code></li>
+      <li>The base class for GraphQL tests is: <code class="language-plaintext highlighter-rouge">\Magento\TestFramework\TestCase\GraphQlAbstract</code></li>
     </ul>
   </li>
   <li>Web API requests must be processed by custom front controllers with optimized routing to prevent the admin and storefront areas from executing routers.</li>
@@ -1965,7 +1966,7 @@
   <li>Unlimited nesting should be supported during requests for related entities. (For example, get Order =&gt; Order Items =&gt; Products =&gt; Related Products)</li>
   <li>Field filtration must be performed with SQL queries. Do not filter on the application layer after you’ve fetched all possible fields.</li>
   <li>Third-party customizations must be done separately for Service Contracts and for GraphQL</li>
-  <li>For modularity purposes, GraphQL configuration must be declared in a separate module. For example, to expose GraphQL for the module <code class="highlighter-rouge">MyModule</code>, you must create the <code class="highlighter-rouge">schema.graphqls</code> file in the <code class="highlighter-rouge">MyModuleGraphQl</code> module.</li>
+  <li>For modularity purposes, GraphQL configuration must be declared in a separate module. For example, to expose GraphQL for the module <code class="language-plaintext highlighter-rouge">MyModule</code>, you must create the <code class="language-plaintext highlighter-rouge">schema.graphqls</code> file in the <code class="language-plaintext highlighter-rouge">MyModuleGraphQl</code> module.</li>
   <li>GraphQL is primarily designed for store-front one-page apps and mobile applications. It supports token and cookie authentication, as well as guest access to public queries</li>
   <li>All queries must return the 200 HTTP status code. If an error occurs, return the error in the response body. A 500 status code is allowed when an exception occurs when generating a schema, but not during requests.</li>
   <li>The Store code should be passed via headers.</li>
@@ -1974,7 +1975,7 @@
 <p><strong>REST</strong></p>
 
 <ol>
-  <li>The resource URL should be versioned (for example: V1). The version must be specified in the following format: <code class="highlighter-rouge">V\d.+</code></li>
+  <li>The resource URL should be versioned (for example: V1). The version must be specified in the following format: <code class="language-plaintext highlighter-rouge">V\d.+</code></li>
   <li>Resource names in a URL should be in plural form (for example: products, carts)</li>
   <li>ID parameters for operations on entities should be part of the resource URL (for example: /V1/products/<strong>:sku</strong> )</li>
   <li>POST should be used to create an entity.
@@ -1982,7 +1983,7 @@ PUT should be used to update an entity.
 PATCH should be used to patch (update only selected fields) an entity(s) update.</li>
   <li>REST is designed for system integrations, mobile app integrations, as well as for one-page apps. It supports tokens, cookies and OAuth 1.0 with token exchange. It also supports guest access to public resources.</li>
   <li>Responses must return responses with standard <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">HTTP status codes</a>.</li>
-  <li>The store code must be passed via URL. For example <code class="highlighter-rouge">GET /rest/frenchStoreView/V1/products</code>. Persistence operations that should be performed for all stores at once, should have ‘all’ store code in the URL.</li>
+  <li>The store code must be passed via URL. For example <code class="language-plaintext highlighter-rouge">GET /rest/frenchStoreView/V1/products</code>. Persistence operations that should be performed for all stores at once, should have ‘all’ store code in the URL.</li>
 </ol>
 
 <p><strong>SOAP</strong></p>

@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Set up a remote MySQL database connection | Magento 2 Developer Documentation (copy)</title>
+	<title>Set up a remote MySQL database connection | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/install-gde/prereq/mysql_remote.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/install-gde/prereq/mysql_remote.html">Magento 2.0</a></li>
 		
@@ -4611,7 +4612,7 @@
 
 <p>This topic discusses how to set up a connection from your Magento web node to a MySQL server on another host. If you have a separate database host, you must perform the tasks discussed in this topic to install and use the Magento software. (The Magento <em>web node</em> is the server on which you installed the Magento software and that runs your web server.)</p>
 
-<p class="bs-callout bs-callout-info">This is an advanced topic that should be used only by an experienced network administrator or database administrator. You must have <code class="highlighter-rouge">root</code> access to the file system and you must be able to log in to MySQL as <code class="highlighter-rouge">root</code>.</p>
+<p class="bs-callout bs-callout-info">This is an advanced topic that should be used only by an experienced network administrator or database administrator. You must have <code class="language-plaintext highlighter-rouge">root</code> access to the file system and you must be able to log in to MySQL as <code class="language-plaintext highlighter-rouge">root</code>.</p>
 
 <h3 id="prerequisites">Prerequisites</h3>
 
@@ -4646,29 +4647,29 @@
 
 <ol>
   <li>
-    <p>On your database server, as a user with <code class="highlighter-rouge">root</code> privileges, open your MySQL configuration file.</p>
+    <p>On your database server, as a user with <code class="language-plaintext highlighter-rouge">root</code> privileges, open your MySQL configuration file.</p>
 
     <p>To locate it, enter the following command:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql --help
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql --help
 </code></pre></div>    </div>
 
     <p>The location displays similar to the following:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Default options are read from the following files in the given order:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Default options are read from the following files in the given order:
 /etc/my.cnf /etc/mysql/my.cnf /usr/etc/my.cnf ~/.my.cnf
 </code></pre></div>    </div>
 
-  		On Ubuntu 16, the path is typically <code class="highlighter-rouge">/etc/mysql/mysql.conf.d/mysqld.cnf</code>.
+  		On Ubuntu 16, the path is typically <code class="language-plaintext highlighter-rouge">/etc/mysql/mysql.conf.d/mysqld.cnf</code>.
   </li>
   <li>
-    <p>Search the configuration file for <code class="highlighter-rouge">bind-address</code>.</p>
+    <p>Search the configuration file for <code class="language-plaintext highlighter-rouge">bind-address</code>.</p>
 
     <p>If it exists, change the value as follows.</p>
 
-    <p>If it doesn’t exist, add it anywhere except the <code class="highlighter-rouge">[mysqld]</code> section.</p>
+    <p>If it doesn’t exist, add it anywhere except the <code class="language-plaintext highlighter-rouge">[mysqld]</code> section.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bind-address = &lt;ip address of your Magento web node&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bind-address = &lt;ip address of your Magento web node&gt;
 </code></pre></div>    </div>
 
     <p>See <a href="https://dev.mysql.com/doc/refman/5.6/en/server-options.html">MySQL documentation</a>, especially if you have a clustered web server.</p>
@@ -4677,9 +4678,9 @@
   <li>
     <p>Restart the MySQL service:</p>
 
-    <p>CentOS: <code class="highlighter-rouge">service mysqld restart</code></p>
+    <p>CentOS: <code class="language-plaintext highlighter-rouge">service mysqld restart</code></p>
 
-    <p>Ubuntu: <code class="highlighter-rouge">service mysql restart</code></p>
+    <p>Ubuntu: <code class="language-plaintext highlighter-rouge">service mysql restart</code></p>
   </li>
 </ol>
 
@@ -4689,22 +4690,22 @@
 
 <p>To enable your web node to connect to the database server, you must grant a web node database user access to the database on the remote server.</p>
 
-<p>This example grants the <code class="highlighter-rouge">root</code> database user full access to the database on the remote host.</p>
+<p>This example grants the <code class="language-plaintext highlighter-rouge">root</code> database user full access to the database on the remote host.</p>
 
 <p>To grant access to a database user:</p>
 
 <ol>
   <li>Log in to the database server.</li>
-  <li>Connect to the MySQL database as the <code class="highlighter-rouge">root</code> user.</li>
+  <li>Connect to the MySQL database as the <code class="language-plaintext highlighter-rouge">root</code> user.</li>
   <li>
     <p>Enter the following command:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>GRANT ALL ON &lt;local database name&gt;.* TO &lt;remote web node username&gt;@&lt;remote web node server ip address&gt; IDENTIFIED BY '&lt;database user password&gt;';
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>GRANT ALL ON &lt;local database name&gt;.* TO &lt;remote web node username&gt;@&lt;remote web node server ip address&gt; IDENTIFIED BY '&lt;database user password&gt;';
 </code></pre></div>    </div>
 
     <p>For example,</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>GRANT ALL ON magento_remote.* TO dbuser@192.0.2.50 IDENTIFIED BY 'dbuserpassword';
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>GRANT ALL ON magento_remote.* TO dbuser@192.0.2.50 IDENTIFIED BY 'dbuserpassword';
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -4715,12 +4716,12 @@
 
 <p>On your web node host, enter the following command to verify the connection works:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql -u &lt;local database username&gt; -h &lt;database server ip address&gt; -p
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql -u &lt;local database username&gt; -h &lt;database server ip address&gt; -p
 </code></pre></div></div>
 
 <p>If the MySQL monitor displays as follows, the database is ready for the Magento software:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Welcome to the MySQL monitor.  Commands end with ; or \g.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 213
 Server version: 5.6.26 MySQL Community Server (GPL)
 

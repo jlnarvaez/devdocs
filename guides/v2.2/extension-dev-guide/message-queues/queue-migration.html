@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Migrate message queue configuration | Magento 2 Developer Documentation (copy)</title>
+	<title>Migrate message queue configuration | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/extension-dev-guide/message-queues/queue-migration.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/extension-dev-guide/message-queues/queue-migration.html">Magento 2.0</a></li>
 		
@@ -3256,24 +3257,24 @@
 
 			<h3 id="migrate-from-magento-21-to-22">Migrate from Magento 2.1 to 2.2</h3>
 
-<p>To upgrade the message queues from Magento 2.1, you must create the following files in the <code class="highlighter-rouge">&lt;module&gt;/etc</code> directory for each   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
+<p>To upgrade the message queues from Magento 2.1, you must create the following files in the <code class="language-plaintext highlighter-rouge">&lt;module&gt;/etc</code> directory for each   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
  that will use the message queue framework.</p>
 
 <ul>
-  <li><code class="highlighter-rouge">queue_consumer.xml</code> - Defines the relationship between an existing queue and its consumer.</li>
-  <li><code class="highlighter-rouge">queue_topology.xml</code>- Defines the message routing rules and declares queues and exchanges.</li>
-  <li><code class="highlighter-rouge">queue_publisher.xml</code> -   Defines the exchange where a topic is published.</li>
+  <li><code class="language-plaintext highlighter-rouge">queue_consumer.xml</code> - Defines the relationship between an existing queue and its consumer.</li>
+  <li><code class="language-plaintext highlighter-rouge">queue_topology.xml</code>- Defines the message routing rules and declares queues and exchanges.</li>
+  <li><code class="language-plaintext highlighter-rouge">queue_publisher.xml</code> -   Defines the exchange where a topic is published.</li>
 </ul>
 
-<p>The existing <code class="highlighter-rouge">queue.xml</code> file is deprecated.</p>
+<p>The existing <code class="language-plaintext highlighter-rouge">queue.xml</code> file is deprecated.</p>
 
 <p>For complete details about these files, see <a href="/devdocs/guides/v2.2/extension-dev-guide/message-queues/config-mq.html">Configure message queues</a></p>
 
-<p class="bs-callout bs-callout-warning">The Magento 2.1 <code class="highlighter-rouge">communication.xml</code> file has not changed for Magento 2.2.</p>
+<p class="bs-callout bs-callout-warning">The Magento 2.1 <code class="language-plaintext highlighter-rouge">communication.xml</code> file has not changed for Magento 2.2.</p>
 
-<h4 id="create-the-queue_consumerxml-file">Create the <code class="highlighter-rouge">queue_consumer.xml</code> file</h4>
+<h4 id="create-the-queue_consumerxml-file">Create the <code class="language-plaintext highlighter-rouge">queue_consumer.xml</code> file</h4>
 
-<p>The first column in the following table lists the all the parameters in the <code class="highlighter-rouge">queue_consumer.xml</code> file. The second column lists where in the Magento 2.1 <code class="highlighter-rouge">queue.xml</code> file the equivalent parameters are located.</p>
+<p>The first column in the following table lists the all the parameters in the <code class="language-plaintext highlighter-rouge">queue_consumer.xml</code> file. The second column lists where in the Magento 2.1 <code class="language-plaintext highlighter-rouge">queue.xml</code> file the equivalent parameters are located.</p>
 
 <table>
   <thead>
@@ -3284,35 +3285,35 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">&lt;consumer&gt;/name</code></td>
-      <td><code class="highlighter-rouge">&lt;broker&gt;/&lt;queue&gt;/consumer</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;consumer&gt;/name</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;broker&gt;/&lt;queue&gt;/consumer</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;consumer&gt;/queue</code></td>
-      <td><code class="highlighter-rouge">&lt;broker&gt;/&lt;queue&gt;/name</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;consumer&gt;/queue</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;broker&gt;/&lt;queue&gt;/name</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;consumer&gt;/handler</code></td>
-      <td><code class="highlighter-rouge">&lt;broker&gt;/&lt;queue&gt;/handler</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;consumer&gt;/handler</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;broker&gt;/&lt;queue&gt;/handler</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;consumer&gt;/consumerInstance</code></td>
-      <td><code class="highlighter-rouge">&lt;broker&gt;/&lt;queue&gt;/consumerInstance</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;consumer&gt;/consumerInstance</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;broker&gt;/&lt;queue&gt;/consumerInstance</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;consumer&gt;/connection</code></td>
-      <td><code class="highlighter-rouge">&lt;broker&gt;/type</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;consumer&gt;/connection</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;broker&gt;/type</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;consumer&gt;/maxMessages</code></td>
-      <td><code class="highlighter-rouge">&lt;broker&gt;/&lt;queue&gt;/maxMessages</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;consumer&gt;/maxMessages</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;broker&gt;/&lt;queue&gt;/maxMessages</code></td>
     </tr>
   </tbody>
 </table>
 
-<h4 id="create-the-queue_topologyxml-file">Create the <code class="highlighter-rouge">queue_topology.xml</code> file</h4>
+<h4 id="create-the-queue_topologyxml-file">Create the <code class="language-plaintext highlighter-rouge">queue_topology.xml</code> file</h4>
 
-<p>The first column in the following table lists the all the parameters in the <code class="highlighter-rouge">queue_topology.xml</code> file. The second column lists where in the Magento 2.1 <code class="highlighter-rouge">queue.xml</code> file the equivalent parameters are located.</p>
+<p>The first column in the following table lists the all the parameters in the <code class="language-plaintext highlighter-rouge">queue_topology.xml</code> file. The second column lists where in the Magento 2.1 <code class="language-plaintext highlighter-rouge">queue.xml</code> file the equivalent parameters are located.</p>
 
 <table>
   <thead>
@@ -3323,59 +3324,59 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">&lt;exchange&gt;/name</code></td>
-      <td><code class="highlighter-rouge">&lt;broker&gt;/exchange</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;exchange&gt;/name</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;broker&gt;/exchange</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;exchange&gt;/type</code></td>
-      <td>Not present in 2.1. Set this value to <code class="highlighter-rouge">topic</code>.</td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;exchange&gt;/type</code></td>
+      <td>Not present in 2.1. Set this value to <code class="language-plaintext highlighter-rouge">topic</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;exchange&gt;/connection</code></td>
-      <td><code class="highlighter-rouge">&lt;broker&gt;/type</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;exchange&gt;/connection</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;broker&gt;/type</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;exchange&gt;/durable</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;exchange&gt;/durable</code></td>
       <td>Not present in 2.1. Omit this parameter to accept the default value.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;exchange&gt;/autoDelete</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;exchange&gt;/autoDelete</code></td>
       <td>Not present in 2.1. Omit this parameter to accept the default value.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;exchange&gt;/internal</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;exchange&gt;/internal</code></td>
       <td>Not present in 2.1. Omit this parameter to accept the default value.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;exchange&gt;/&lt;binding&gt;/id</code></td>
-      <td>Not present in 2.1. It is recommended that you concatenate the 2.1 exchange name, topic name, and queue name to create a value for the <code class="highlighter-rouge">id</code> parameter.</td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;exchange&gt;/&lt;binding&gt;/id</code></td>
+      <td>Not present in 2.1. It is recommended that you concatenate the 2.1 exchange name, topic name, and queue name to create a value for the <code class="language-plaintext highlighter-rouge">id</code> parameter.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;exchange&gt;/&lt;binding&gt;/topic</code></td>
-      <td><code class="highlighter-rouge">&lt;broker&gt;/topic</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;exchange&gt;/&lt;binding&gt;/topic</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;broker&gt;/topic</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;exchange&gt;/&lt;binding&gt;/destinationType</code></td>
-      <td>Not present in 2.1. This value must be set to <code class="highlighter-rouge">queue</code>.</td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;exchange&gt;/&lt;binding&gt;/destinationType</code></td>
+      <td>Not present in 2.1. This value must be set to <code class="language-plaintext highlighter-rouge">queue</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;exchange&gt;/&lt;binding&gt;/destination</code></td>
-      <td><code class="highlighter-rouge">&lt;broker&gt;/&lt;queue&gt;/name</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;exchange&gt;/&lt;binding&gt;/destination</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;broker&gt;/&lt;queue&gt;/name</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;exchange&gt;/&lt;binding&gt;/disabled</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;exchange&gt;/&lt;binding&gt;/disabled</code></td>
       <td>Not present in 2.1. Omit this parameter to accept the default value.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;exchange&gt;/&lt;arguments&gt;</code> and <code class="highlighter-rouge">&lt;exchange&gt;/&lt;binding&gt;/&lt;arguments&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;exchange&gt;/&lt;arguments&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;exchange&gt;/&lt;binding&gt;/&lt;arguments&gt;</code></td>
       <td>Not present in 2.1. Omit this element.</td>
     </tr>
   </tbody>
 </table>
 
-<h4 id="create-the-queue_publisherxml-file">Create the <code class="highlighter-rouge">queue_publisher.xml</code> file</h4>
+<h4 id="create-the-queue_publisherxml-file">Create the <code class="language-plaintext highlighter-rouge">queue_publisher.xml</code> file</h4>
 
-<p>The first column in the following table lists the all the parameters in the <code class="highlighter-rouge">queue_publisher.xml</code> file. The second column lists where in the Magento 2.1 <code class="highlighter-rouge">queue.xml</code> file the equivalent parameters are located.</p>
+<p>The first column in the following table lists the all the parameters in the <code class="language-plaintext highlighter-rouge">queue_publisher.xml</code> file. The second column lists where in the Magento 2.1 <code class="language-plaintext highlighter-rouge">queue.xml</code> file the equivalent parameters are located.</p>
 
 <table>
   <thead>
@@ -3386,23 +3387,23 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">&lt;publisher&gt;/topic</code></td>
-      <td><code class="highlighter-rouge">&lt;broker&gt;/topic</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;publisher&gt;/topic</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;broker&gt;/topic</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;publisher&gt;/disabled</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;publisher&gt;/disabled</code></td>
       <td>Not present in 2.1. Omit this parameter to accept the default value.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;publisher&gt;/&lt;connection&gt;/name</code></td>
-      <td><code class="highlighter-rouge">&lt;broker&gt;/type</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;publisher&gt;/&lt;connection&gt;/name</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;broker&gt;/type</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;publisher&gt;/&lt;connection&gt;/exchange</code></td>
-      <td><code class="highlighter-rouge">&lt;broker&gt;exchange</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;publisher&gt;/&lt;connection&gt;/exchange</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;broker&gt;exchange</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;publisher&gt;/&lt;connection&gt;/disabled</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;publisher&gt;/&lt;connection&gt;/disabled</code></td>
       <td>Not present in 2.1. Omit this parameter to accept the default value.</td>
     </tr>
   </tbody>
@@ -3410,22 +3411,22 @@
 
 <h3 id="migrate-from-magento-20-to-22">Migrate from Magento 2.0 to 2.2</h3>
 
-<p>To upgrade from Magento 2.0, you must create the following files in the <code class="highlighter-rouge">&lt;module&gt;/etc</code> directory for each module that will use the message queue framework.</p>
+<p>To upgrade from Magento 2.0, you must create the following files in the <code class="language-plaintext highlighter-rouge">&lt;module&gt;/etc</code> directory for each module that will use the message queue framework.</p>
 
 <ul>
-  <li><code class="highlighter-rouge">queue_consumer.xml</code> - Defines the relationship between an existing queue and its consumer.</li>
-  <li><code class="highlighter-rouge">queue_topology.xml</code>- Defines the message routing rules.</li>
-  <li><code class="highlighter-rouge">queue_publisher.xml</code> - Defines the relationship between a topic and its   <span term-uuid="d5777fe2-f786-45d9-b052-cca8a10120d9" class="glossary-term" data-toggle="popover">publisher</span>
+  <li><code class="language-plaintext highlighter-rouge">queue_consumer.xml</code> - Defines the relationship between an existing queue and its consumer.</li>
+  <li><code class="language-plaintext highlighter-rouge">queue_topology.xml</code>- Defines the message routing rules.</li>
+  <li><code class="language-plaintext highlighter-rouge">queue_publisher.xml</code> - Defines the relationship between a topic and its   <span term-uuid="d5777fe2-f786-45d9-b052-cca8a10120d9" class="glossary-term" data-toggle="popover">publisher</span>
 .</li>
 </ul>
 
-<p>The existing <code class="highlighter-rouge">queue.xml</code> file is deprecated.</p>
+<p>The existing <code class="language-plaintext highlighter-rouge">queue.xml</code> file is deprecated.</p>
 
 <p>For complete details about these files, see <a href="/devdocs/guides/v2.2/extension-dev-guide/message-queues/config-mq.html">Configure message queues</a></p>
 
-<h4 id="create-the-queue_consumerxml-file-1">Create the <code class="highlighter-rouge">queue_consumer.xml</code> file</h4>
+<h4 id="create-the-queue_consumerxml-file-1">Create the <code class="language-plaintext highlighter-rouge">queue_consumer.xml</code> file</h4>
 
-<p>The first column in the following table lists the all the parameters in the <code class="highlighter-rouge">queue_consumer.xml</code> file. The second column lists where in the Magento 2.0 <code class="highlighter-rouge">queue.xml</code> file the equivalent parameters are located.</p>
+<p>The first column in the following table lists the all the parameters in the <code class="language-plaintext highlighter-rouge">queue_consumer.xml</code> file. The second column lists where in the Magento 2.0 <code class="language-plaintext highlighter-rouge">queue.xml</code> file the equivalent parameters are located.</p>
 
 <table>
   <thead>
@@ -3436,35 +3437,35 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">&lt;consumer&gt;/name</code></td>
-      <td><code class="highlighter-rouge">&lt;consumer&gt;/name</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;consumer&gt;/name</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;consumer&gt;/name</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;consumer&gt;/queue</code></td>
-      <td><code class="highlighter-rouge">&lt;consumer&gt;/queue</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;consumer&gt;/queue</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;consumer&gt;/queue</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;consumer&gt;/handler</code></td>
-      <td>Use the values from <code class="highlighter-rouge">&lt;consumer&gt;/class</code> and <code class="highlighter-rouge">&lt;consumer&gt;/method</code> in the format <code class="highlighter-rouge">&lt;Vendor&gt;\Module\&lt;ServiceName&gt;::&lt;methodName&gt;</code>.</td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;consumer&gt;/handler</code></td>
+      <td>Use the values from <code class="language-plaintext highlighter-rouge">&lt;consumer&gt;/class</code> and <code class="language-plaintext highlighter-rouge">&lt;consumer&gt;/method</code> in the format <code class="language-plaintext highlighter-rouge">&lt;Vendor&gt;\Module\&lt;ServiceName&gt;::&lt;methodName&gt;</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;consumer&gt;/consumerInstance</code></td>
-      <td><code class="highlighter-rouge">&lt;consumer&gt;/executor</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;consumer&gt;/consumerInstance</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;consumer&gt;/executor</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;consumer&gt;/connection</code></td>
-      <td><code class="highlighter-rouge">&lt;consumer&gt;/connection</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;consumer&gt;/connection</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;consumer&gt;/connection</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;consumer&gt;/maxMessages</code></td>
-      <td><code class="highlighter-rouge">&lt;consumer&gt;/max_messages</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;consumer&gt;/maxMessages</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;consumer&gt;/max_messages</code></td>
     </tr>
   </tbody>
 </table>
 
-<h4 id="create-the-queue_topologyxml-file-1">Create the <code class="highlighter-rouge">queue_topology.xml</code> file</h4>
+<h4 id="create-the-queue_topologyxml-file-1">Create the <code class="language-plaintext highlighter-rouge">queue_topology.xml</code> file</h4>
 
-<p>The first column in the following table lists the all the parameters in the <code class="highlighter-rouge">queue_topology.xml</code> file. The second column lists where in the Magento 2.0 <code class="highlighter-rouge">queue.xml</code> file the equivalent parameters are located.</p>
+<p>The first column in the following table lists the all the parameters in the <code class="language-plaintext highlighter-rouge">queue_topology.xml</code> file. The second column lists where in the Magento 2.0 <code class="language-plaintext highlighter-rouge">queue.xml</code> file the equivalent parameters are located.</p>
 
 <table>
   <thead>
@@ -3475,59 +3476,59 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">&lt;exchange&gt;/name</code></td>
-      <td><code class="highlighter-rouge">&lt;publisher&gt;/exchange</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;exchange&gt;/name</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;publisher&gt;/exchange</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;exchange&gt;/type</code></td>
-      <td>Not present in 2.0. Set this value to <code class="highlighter-rouge">topic</code>.</td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;exchange&gt;/type</code></td>
+      <td>Not present in 2.0. Set this value to <code class="language-plaintext highlighter-rouge">topic</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;exchange&gt;/connection</code></td>
-      <td><code class="highlighter-rouge">&lt;publisher&gt;/connection</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;exchange&gt;/connection</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;publisher&gt;/connection</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;exchange&gt;/durable</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;exchange&gt;/durable</code></td>
       <td>Not present in 2.0. Omit this parameter to accept the default value.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;exchange&gt;/autoDelete</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;exchange&gt;/autoDelete</code></td>
       <td>Not present in 2.0. Omit this parameter to accept the default value.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;exchange&gt;/internal</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;exchange&gt;/internal</code></td>
       <td>Not present in 2.0. Omit this parameter to accept the default value.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;exchange&gt;/&lt;binding&gt;/id</code></td>
-      <td>Not present in 2.0. It is recommended that you concatenate the 2.1 exchange name, topic name, and queue name to create a value for the <code class="highlighter-rouge">id</code> parameter.</td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;exchange&gt;/&lt;binding&gt;/id</code></td>
+      <td>Not present in 2.0. It is recommended that you concatenate the 2.1 exchange name, topic name, and queue name to create a value for the <code class="language-plaintext highlighter-rouge">id</code> parameter.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;exchange&gt;/&lt;binding&gt;/topic</code></td>
-      <td><code class="highlighter-rouge">&lt;bind&gt;/topic</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;exchange&gt;/&lt;binding&gt;/topic</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;bind&gt;/topic</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;exchange&gt;/&lt;binding&gt;/destinationType</code></td>
-      <td>Not present in 2.0. This value must be set to <code class="highlighter-rouge">queue</code>.</td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;exchange&gt;/&lt;binding&gt;/destinationType</code></td>
+      <td>Not present in 2.0. This value must be set to <code class="language-plaintext highlighter-rouge">queue</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;exchange&gt;/&lt;binding&gt;/destination</code></td>
-      <td><code class="highlighter-rouge">&lt;bind&gt;/queue</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;exchange&gt;/&lt;binding&gt;/destination</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;bind&gt;/queue</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;exchange&gt;/&lt;binding&gt;/disabled</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;exchange&gt;/&lt;binding&gt;/disabled</code></td>
       <td>Not present in 2.0. Omit this parameter to accept the default value.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;arguments&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;arguments&gt;</code></td>
       <td>Not present in 2.0. Omit this element.</td>
     </tr>
   </tbody>
 </table>
 
-<h4 id="create-the-queue_publisherxml-file-1">Create the <code class="highlighter-rouge">queue_publisher.xml</code> file</h4>
+<h4 id="create-the-queue_publisherxml-file-1">Create the <code class="language-plaintext highlighter-rouge">queue_publisher.xml</code> file</h4>
 
-<p>The first column in the following table lists the all the parameters in the <code class="highlighter-rouge">queue_publisher.xml</code> file. The second column lists where in the Magento 2.0 <code class="highlighter-rouge">queue.xml</code> file the equivalent parameters are located.</p>
+<p>The first column in the following table lists the all the parameters in the <code class="language-plaintext highlighter-rouge">queue_publisher.xml</code> file. The second column lists where in the Magento 2.0 <code class="language-plaintext highlighter-rouge">queue.xml</code> file the equivalent parameters are located.</p>
 
 <table>
   <thead>
@@ -3538,23 +3539,23 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">&lt;publisher&gt;/topic</code></td>
-      <td><code class="highlighter-rouge">&lt;topic&gt;/name</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;publisher&gt;/topic</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;topic&gt;/name</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;publisher&gt;/disabled</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;publisher&gt;/disabled</code></td>
       <td>Not present in 2.0. Omit this parameter to accept the default value.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;publisher&gt;/&lt;connection&gt;/name</code></td>
-      <td><code class="highlighter-rouge">&lt;publisher&gt;/connection</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;publisher&gt;/&lt;connection&gt;/name</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;publisher&gt;/connection</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;publisher&gt;/&lt;connection&gt;/exchange</code></td>
-      <td><code class="highlighter-rouge">&lt;publisher&gt;/exchange</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;publisher&gt;/&lt;connection&gt;/exchange</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;publisher&gt;/exchange</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;publisher&gt;/&lt;connection&gt;/disabled</code></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;publisher&gt;/&lt;connection&gt;/disabled</code></td>
       <td>Not present in 2.0. Omit this parameter to accept the default value.</td>
     </tr>
   </tbody>

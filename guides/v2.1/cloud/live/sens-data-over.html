@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Configuration management for store settings | Magento 2 Developer Documentation (copy)</title>
+	<title>Configuration management for store settings | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/live/sens-data-over.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/live/sens-data-over.html">Magento 2.0</a></li>
 		
@@ -4233,7 +4234,7 @@
 <ul>
   <li>Better way to <a href="#cloud-confman-over">manage and synchronize</a> the configuration across your Integration, Staging, and Production environments.</li>
   <li>Less time required to <a href="#cloud-confman-scd-over">build</a> and deploy your project by moving static file deployment from the deploy to the build phase. Your site is in maintenance mode until deployment completes. For details, see <a href="/devdocs/guides/v2.1/cloud/reference/discover-deploy.html">Deployment Process</a>.</li>
-  <li>Sensitive data is automatically added into an environment variables file (<code class="highlighter-rouge">/app/etc/env.php</code>). You can also manually add sensitive environment variables using the Project Web Interface, the CLI, or directly in the Magento Admin. For example, payment processor passwords and API keys.</li>
+  <li>Sensitive data is automatically added into an environment variables file (<code class="language-plaintext highlighter-rouge">/app/etc/env.php</code>). You can also manually add sensitive environment variables using the Project Web Interface, the CLI, or directly in the Magento Admin. For example, payment processor passwords and API keys.</li>
 </ul>
 
 <p class="bs-callout bs-callout-info">These new methods are optional but strongly recommended. The process ensures faster deployments and consistent configurations across your environments.</p>
@@ -4244,36 +4245,36 @@
 
 <h2 id="cloud-confman-over">How it works</h2>
 
-<p>Magento’s store configurations are stored in the database. When updating configurations in development/Integration, Staging, and Production environments, you would need to make those changes in the Magento Admin per environment. By using these commands, you generate a file, exporting all Magento configuration settings into a single text file: <code class="highlighter-rouge">app/etc/config.local.php</code>.</p>
+<p>Magento’s store configurations are stored in the database. When updating configurations in development/Integration, Staging, and Production environments, you would need to make those changes in the Magento Admin per environment. By using these commands, you generate a file, exporting all Magento configuration settings into a single text file: <code class="language-plaintext highlighter-rouge">app/etc/config.local.php</code>.</p>
 
 <p>After configuring your environment, generate the file using one of the following commands:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">php bin/magento magento-cloud:scd-dump</code>: <strong>Recommended</strong>. Exports only modified configuration settings</li>
-  <li><code class="highlighter-rouge">php ./vendor/bin/ece-tools config:dump</code>: Exports every configuration setting, including modified and default settings</li>
+  <li><code class="language-plaintext highlighter-rouge">php bin/magento magento-cloud:scd-dump</code>: <strong>Recommended</strong>. Exports only modified configuration settings</li>
+  <li><code class="language-plaintext highlighter-rouge">php ./vendor/bin/ece-tools config:dump</code>: Exports every configuration setting, including modified and default settings</li>
 </ul>
 
-<p class="bs-callout bs-callout-warning">For Magento Commerce Cloud, we <strong>do not recommend</strong> <code class="highlighter-rouge">app:config:dump</code> as this command pulls and locks all values as read-only. This will affect Fastly and other important modules. Specifically, this affects customizing your extensions across environments.</p>
+<p class="bs-callout bs-callout-warning">For Magento Commerce Cloud, we <strong>do not recommend</strong> <code class="language-plaintext highlighter-rouge">app:config:dump</code> as this command pulls and locks all values as read-only. This will affect Fastly and other important modules. Specifically, this affects customizing your extensions across environments.</p>
 
 <p>Any data that exports to the file becomes locked. The corresponding field in the Magento Admin becomes read-only. This ensures consistent configurations as you push the file across all environments.</p>
 
-<p>By using the <code class="highlighter-rouge">scd-dump</code> command, you can configure only the settings you want copied across all environments. After you merge the code, you can configure additional settings in Staging and Production. For sensitive configurations, you can also add those settings to environment variables. For example, you may want to add different PayPal merchant account credentials for Staging (sandbox) and Production (live).</p>
+<p>By using the <code class="language-plaintext highlighter-rouge">scd-dump</code> command, you can configure only the settings you want copied across all environments. After you merge the code, you can configure additional settings in Staging and Production. For sensitive configurations, you can also add those settings to environment variables. For example, you may want to add different PayPal merchant account credentials for Staging (sandbox) and Production (live).</p>
 
-<p>If sensitive data is found in your configurations, it is generated as environment variables to <code class="highlighter-rouge">env.php</code>. This file remains in the environment and should not be added to your Git environment.</p>
+<p>If sensitive data is found in your configurations, it is generated as environment variables to <code class="language-plaintext highlighter-rouge">env.php</code>. This file remains in the environment and should not be added to your Git environment.</p>
 
 <h3 id="commands">Switching between commands</h3>
 
-<p>Can you switch between using <code class="highlighter-rouge">php bin/magento magento-cloud:scd-dump</code> and <code class="highlighter-rouge">php ./vendor/bin/ece-tools config:dump</code>? Yes, you can.</p>
+<p>Can you switch between using <code class="language-plaintext highlighter-rouge">php bin/magento magento-cloud:scd-dump</code> and <code class="language-plaintext highlighter-rouge">php ./vendor/bin/ece-tools config:dump</code>? Yes, you can.</p>
 
-<p>For 2.1.4 and later (not 2.2.X), you can always delete the <code class="highlighter-rouge">config.local.php</code> file and regenerate it with either command. Remember, <code class="highlighter-rouge">scd-dump</code> only pulls configured values (not defaults) and <code class="highlighter-rouge">config:dump</code> captures all values (default and modified).</p>
+<p>For 2.1.4 and later (not 2.2.X), you can always delete the <code class="language-plaintext highlighter-rouge">config.local.php</code> file and regenerate it with either command. Remember, <code class="language-plaintext highlighter-rouge">scd-dump</code> only pulls configured values (not defaults) and <code class="language-plaintext highlighter-rouge">config:dump</code> captures all values (default and modified).</p>
 
 <h3 id="data">Configuration data</h3>
 
 <p>System settings refer to the configurations in the Magento Admin in <strong>Stores</strong> &gt; <strong>Settings</strong> &gt; <strong>Configuration</strong>. Depending on the command used, all or just modified system configurations save to the file.</p>
 
-<p>This file can include all system configuration settings for stores, sites, extensions, and static file optimization settings. System values related to static content deployment (for example, static file optimization) are also stored in <code class="highlighter-rouge">app/etc/config.local.php</code>. <em>Static file optimization</em> means merging and minifying JavaScript and Cascading Style Sheets, and minifying HTML templates.</p>
+<p>This file can include all system configuration settings for stores, sites, extensions, and static file optimization settings. System values related to static content deployment (for example, static file optimization) are also stored in <code class="language-plaintext highlighter-rouge">app/etc/config.local.php</code>. <em>Static file optimization</em> means merging and minifying JavaScript and Cascading Style Sheets, and minifying HTML templates.</p>
 
-<p>Sensitive values are <em>not</em> stored in <code class="highlighter-rouge">app/etc/config.local.php</code>. Any sensitive configurations should export to <code class="highlighter-rouge">app/etc/config.php</code> during the <code class="highlighter-rouge">scd-dump</code> process. You should create environment variables using CLI commands or the Project Web Interface.</p>
+<p>Sensitive values are <em>not</em> stored in <code class="language-plaintext highlighter-rouge">app/etc/config.local.php</code>. Any sensitive configurations should export to <code class="language-plaintext highlighter-rouge">app/etc/config.php</code> during the <code class="language-plaintext highlighter-rouge">scd-dump</code> process. You should create environment variables using CLI commands or the Project Web Interface.</p>
 
 <p class="bs-callout bs-callout-info">You can set <em>any</em> value using environment variables, but we recommend using environment variables for sensitive values.</p>
 
@@ -4283,9 +4284,9 @@
 
 <p>Depending on the size of your store, you may have a large amount of static content files to deploy. Normally, static content deploys during the <a href="/devdocs/guides/v2.1/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook">deploy phase</a>, which is in Maintenance mode. To move the deployment of static content to the <a href="/devdocs/guides/v2.1/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build">build phase</a>, generate the configuration file.</p>
 
-<p>If you generate <code class="highlighter-rouge">config.local.php</code>, the build and deploy hooks identify the file and deploy all static files during the build phase. This helps reduce the time spent in Maintenance mode during the deploy phase.</p>
+<p>If you generate <code class="language-plaintext highlighter-rouge">config.local.php</code>, the build and deploy hooks identify the file and deploy all static files during the build phase. This helps reduce the time spent in Maintenance mode during the deploy phase.</p>
 
-<p class="bs-callout bs-callout-info">Before deploying static files, the build and deploy phases compress static content using <code class="highlighter-rouge">gzip</code>. Compressing static files reduces server loads and increases site performance. Refer to <a href="/devdocs/guides/v2.2/cloud/env/variables-build.html">Magento build options</a> to learn about customizing or disabling file compression.</p>
+<p class="bs-callout bs-callout-info">Before deploying static files, the build and deploy phases compress static content using <code class="language-plaintext highlighter-rouge">gzip</code>. Compressing static files reduces server loads and increases site performance. Refer to <a href="/devdocs/guides/v2.2/cloud/env/variables-build.html">Magento build options</a> to learn about customizing or disabling file compression.</p>
 
 <h2 id="configuration-selection-flow">Configuration selection flow</h2>
 
@@ -4293,15 +4294,15 @@
 
 <ol>
   <li>If an environment variable exists, use the custom configuration and ignore the default configuration.</li>
-  <li>If an environment variable does not exist, use the configuration from a <code class="highlighter-rouge">MAGENTO_CLOUD_RELATIONSHIPS</code> name-value pair in the <code class="highlighter-rouge">.magento.app.yaml</code> file. Ignore the default configuration.</li>
-  <li>If an environment variable does not exist and <code class="highlighter-rouge">MAGENTO_CLOUD_RELATIONSHIPS</code> does not contain a name-value pair, remove all customized configuration and use the values from the default configuration.</li>
+  <li>If an environment variable does not exist, use the configuration from a <code class="language-plaintext highlighter-rouge">MAGENTO_CLOUD_RELATIONSHIPS</code> name-value pair in the <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> file. Ignore the default configuration.</li>
+  <li>If an environment variable does not exist and <code class="language-plaintext highlighter-rouge">MAGENTO_CLOUD_RELATIONSHIPS</code> does not contain a name-value pair, remove all customized configuration and use the values from the default configuration.</li>
 </ol>
 
 <h2 id="cloud-clp-settings">Configuration settings you can change</h2>
 
-<p>The following table shows the configuration settings affected by the <code class="highlighter-rouge">bin/magento magento-cloud:scd-dump</code> command. These are the configuration settings that you can manage in Git. If you use <code class="highlighter-rouge">php ./vendor/bin/ece-tools config:dump</code>, all settings are exported.</p>
+<p>The following table shows the configuration settings affected by the <code class="language-plaintext highlighter-rouge">bin/magento magento-cloud:scd-dump</code> command. These are the configuration settings that you can manage in Git. If you use <code class="language-plaintext highlighter-rouge">php ./vendor/bin/ece-tools config:dump</code>, all settings are exported.</p>
 
-<p>The <code class="highlighter-rouge">config.local.php</code> file includes the following settings and configuration values:</p>
+<p>The <code class="language-plaintext highlighter-rouge">config.local.php</code> file includes the following settings and configuration values:</p>
 
 <table>
 <tbody>
@@ -4342,9 +4343,9 @@
 
 <h2 id="cloud-config-specific-recomm">Recommended procedure to manage your settings</h2>
 
-<p>Managing store configuration is a complex task mostly up to you. What locales do you want to use? What custom themes do you need? Instead of making these changes in every environment, you can use the <code class="highlighter-rouge">config.local.php</code> file, which contains a number of configuration properties that you can adjust as needed.</p>
+<p>Managing store configuration is a complex task mostly up to you. What locales do you want to use? What custom themes do you need? Instead of making these changes in every environment, you can use the <code class="language-plaintext highlighter-rouge">config.local.php</code> file, which contains a number of configuration properties that you can adjust as needed.</p>
 
-<p>We <strong>strongly recommend</strong> using the <code class="highlighter-rouge">scd-dump</code> command to generate a <code class="highlighter-rouge">config.local.php</code> file. This file includes only the settings you configure without locking the default values. It also ensures that all extensions used in the Staging and Production environments do not break due to read-only configurations, especially Fastly.</p>
+<p>We <strong>strongly recommend</strong> using the <code class="language-plaintext highlighter-rouge">scd-dump</code> command to generate a <code class="language-plaintext highlighter-rouge">config.local.php</code> file. This file includes only the settings you configure without locking the default values. It also ensures that all extensions used in the Staging and Production environments do not break due to read-only configurations, especially Fastly.</p>
 
 <p>To fully understand the process, please see <a href="/devdocs/guides/v2.1/cloud/live/sens-data-initial.html">our extensive example</a>.</p>
 
@@ -4371,73 +4372,73 @@
   </li>
   <li>Create and configure all store settings. These configurations do not include the actual products unless you plan on dumping the database from this environment to Staging and Production. Typically development databases do not include your full store data.</li>
   <li>
-    <p>Open a terminal on your local and use an SSH command to generate <code class="highlighter-rouge">/app/etc/config.local.php</code> on the environment:</p>
+    <p>Open a terminal on your local and use an SSH command to generate <code class="language-plaintext highlighter-rouge">/app/etc/config.local.php</code> on the environment:</p>
 
-    <p><code class="highlighter-rouge">ssh &lt;SSH URL&gt; "&lt;Command&gt;"</code></p>
+    <p><code class="language-plaintext highlighter-rouge">ssh &lt;SSH URL&gt; "&lt;Command&gt;"</code></p>
   </li>
 </ol>
 
 <p>For example, for Pro on the Integration branch:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
 </code></pre></div></div>
 
 <h3 id="transfer-file">Step 2: Transfer and add the file to Git</h3>
 
-<p>Push <code class="highlighter-rouge">config.local.php</code> to Git. To push this file to the <code class="highlighter-rouge">master</code> Git branch, you need to complete a few extra steps because this environment is read-only.</p>
+<p>Push <code class="language-plaintext highlighter-rouge">config.local.php</code> to Git. To push this file to the <code class="language-plaintext highlighter-rouge">master</code> Git branch, you need to complete a few extra steps because this environment is read-only.</p>
 
 <ol>
   <li>
-    <p>Transfer <code class="highlighter-rouge">config.local.php</code> to your local system using <code class="highlighter-rouge">rsync</code> or <code class="highlighter-rouge">scp</code>. You can only add this file to the Git branch through your local.</p>
+    <p>Transfer <code class="language-plaintext highlighter-rouge">config.local.php</code> to your local system using <code class="language-plaintext highlighter-rouge">rsync</code> or <code class="language-plaintext highlighter-rouge">scp</code>. You can only add this file to the Git branch through your local.</p>
 
-    <p><code class="highlighter-rouge">rsync &lt;SSH URL&gt;:app/etc/config.local.php ./app/etc/config.local.php</code></p>
+    <p><code class="language-plaintext highlighter-rouge">rsync &lt;SSH URL&gt;:app/etc/config.local.php ./app/etc/config.local.php</code></p>
   </li>
   <li>
-    <p>Add and push <code class="highlighter-rouge">config.local.php</code> to the Git master branch.</p>
+    <p>Add and push <code class="language-plaintext highlighter-rouge">config.local.php</code> to the Git master branch.</p>
 
-    <p><code class="highlighter-rouge">git add app/etc/config.local.php &amp;&amp; git commit -m "Add system-specific configuration" &amp;&amp; git push origin master</code></p>
+    <p><code class="language-plaintext highlighter-rouge">git add app/etc/config.local.php &amp;&amp; git commit -m "Add system-specific configuration" &amp;&amp; git push origin master</code></p>
   </li>
 </ol>
 
 <h3 id="push-git">Step 3 &amp; 4: Push Git branch to Staging and Production</h3>
 
-<p>Log in to the Magento Admin in those environments to verify the settings. If you used <code class="highlighter-rouge">scd-dump</code>, only configured settings display. You can continue configuring the environment if needed.</p>
+<p>Log in to the Magento Admin in those environments to verify the settings. If you used <code class="language-plaintext highlighter-rouge">scd-dump</code>, only configured settings display. You can continue configuring the environment if needed.</p>
 
-<p>For Starter, when you push, the updated code pushes to the active environment. Merge the branch to Staging and finally <code class="highlighter-rouge">master</code> for Production. Complete any additional configurations in Staging and Production as needed.</p>
+<p>For Starter, when you push, the updated code pushes to the active environment. Merge the branch to Staging and finally <code class="language-plaintext highlighter-rouge">master</code> for Production. Complete any additional configurations in Staging and Production as needed.</p>
 
 <p>For Pro, when you push to the Git branch, the Integration environment updates. Deploy this branch to Staging and Production. Complete any additional configurations in Staging and Production as needed.</p>
 
 <h2 id="update-configurations">Update configurations</h2>
 
-<p>If you need to change any configuration settings in the <code class="highlighter-rouge">config.local.php</code> file, repeat the process with an extra step. For Starter, complete the changes in an active, development environment. For Pro, use the Integration environment.</p>
+<p>If you need to change any configuration settings in the <code class="language-plaintext highlighter-rouge">config.local.php</code> file, repeat the process with an extra step. For Starter, complete the changes in an active, development environment. For Pro, use the Integration environment.</p>
 
-<p>If you need to make a small change, you can edit the <code class="highlighter-rouge">config.local.php</code> file in a local development branch and redeploy across environments.</p>
+<p>If you need to make a small change, you can edit the <code class="language-plaintext highlighter-rouge">config.local.php</code> file in a local development branch and redeploy across environments.</p>
 
 <p>To complete extensive changes:</p>
 
 <ol>
   <li>
-    <p>Delete the <code class="highlighter-rouge">config.local.php</code>file in your Integration branch.</p>
+    <p>Delete the <code class="language-plaintext highlighter-rouge">config.local.php</code>file in your Integration branch.</p>
 
     <p>You must delete the file to change settings. All configurations exist in the database, displaying as editable in your Magento Admin panel. Remember, the stored configurations in the file are blocked from editing in the Admin console until you delete the file. For example, if you want to change a store name, you can not edit the name until this file is removed.</p>
   </li>
   <li>Make configuration changes in the Admin on the Integration environment.</li>
-  <li>Repeat the process to re-create <code class="highlighter-rouge">config.local.php</code> and deploy. You do not need to make additional configurations in Staging and Production unless you need to. Recreating this file should not affect those environment specific settings.</li>
+  <li>Repeat the process to re-create <code class="language-plaintext highlighter-rouge">config.local.php</code> and deploy. You do not need to make additional configurations in Staging and Production unless you need to. Recreating this file should not affect those environment specific settings.</li>
 </ol>
 
 <h2 id="change-locales">Change locales</h2>
 
 <p>You can change your store locales without following a complex configuration import and export process, <em>if</em> you have <a href="/devdocs/guides/v2.1/cloud/env/variables-global.html#scd_on_demand">SCD_ON_DEMAND</a> enabled. You can update the locales using the Admin panel.</p>
 
-<p>You can add another locale to the Staging or Production environment by enabling <code class="highlighter-rouge">SCD_ON_DEMAND</code> in an Integration branch, generate an updated <code class="highlighter-rouge">config.local.php</code> file with the new locale information, and copy the configuration file to the target environment.</p>
+<p>You can add another locale to the Staging or Production environment by enabling <code class="language-plaintext highlighter-rouge">SCD_ON_DEMAND</code> in an Integration branch, generate an updated <code class="language-plaintext highlighter-rouge">config.local.php</code> file with the new locale information, and copy the configuration file to the target environment.</p>
 
 <p class="bs-callout bs-callout-warning">This process <strong>overwrites</strong> the store configuration; only do the following if the environments contain the same stores.</p>
 
 <ol>
-  <li>From your Integration environment, enable the <code class="highlighter-rouge">SCD_ON_DEMAND</code> variable.</li>
+  <li>From your Integration environment, enable the <code class="language-plaintext highlighter-rouge">SCD_ON_DEMAND</code> variable.</li>
   <li>Add the necessary locales using your Admin panel.</li>
   <li>
-    <p>Generate the <code class="highlighter-rouge">app/etc/config.local.php</code> file containing all locales.</p>
+    <p>Generate the <code class="language-plaintext highlighter-rouge">app/etc/config.local.php</code> file containing all locales.</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php ./vendor/bin/ece-tools config:dump
 </code></pre></div>    </div>
@@ -4451,7 +4452,7 @@
   <li>Push code changes to the remote.</li>
 </ol>
 
-<p class="bs-callout bs-callout-warning">While you can manually edit the <code class="highlighter-rouge">config.local.php</code> file in the Staging and Production environments, we do not recommend it. The file helps to keep all configurations consistent across all environments. Never delete the <code class="highlighter-rouge">config.local.php</code> file to rebuild it. Deleting the file can remove specific configurations and settings required for build and deploy processes.</p>
+<p class="bs-callout bs-callout-warning">While you can manually edit the <code class="language-plaintext highlighter-rouge">config.local.php</code> file in the Staging and Production environments, we do not recommend it. The file helps to keep all configurations consistent across all environments. Never delete the <code class="language-plaintext highlighter-rouge">config.local.php</code> file to rebuild it. Deleting the file can remove specific configurations and settings required for build and deploy processes.</p>
 
 			
 		</div>

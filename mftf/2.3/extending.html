@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Extending | Magento 2 Developer Documentation (copy)</title>
+	<title>Extending | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -2157,8 +2156,7 @@
 	<h1 class="page-heading">Extending</h1>
 </section>
 
-			
-<p style="text-align: right"><em>This topic was updated due to the 2.3.0 MFTF release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.3.0 MFTF release.</em></p>
 
 <p>There are cases when you need to create many tests that are very similar to each other.
 For example, only one or two parameters (for example, URL) might vary between tests.
@@ -2166,9 +2164,9 @@ To avoid copy-pasting and to save some time the Magento Functional Testing Frame
 You can create or update any component of the parent body in your new test/action group/entity.</p>
 
 <ul>
-  <li>A test starting with <code class="highlighter-rouge">&lt;test name="SampleTest" extends="ParentTest"&gt;</code> creates a test <code class="highlighter-rouge">SampleTest</code> that takes body of existing test <code class="highlighter-rouge">ParentTest</code> and adds to it the body of <code class="highlighter-rouge">SampleTest</code>.</li>
-  <li>An action group starting with <code class="highlighter-rouge">&lt;actionGroup name="SampleActionGroup" extends="ParentActionGroup"&gt;</code> creates an action group based on the <code class="highlighter-rouge">ParentActionGroup</code>, but with the changes specified in <code class="highlighter-rouge">SampleActionGroup</code>.</li>
-  <li>An entity starting with <code class="highlighter-rouge">&lt;entity name="SampleEntity" extends="ParentEntity"&gt;</code> creates an entity <code class="highlighter-rouge">SampleEntity</code> that is equivalent to merging the <code class="highlighter-rouge">SampleEntity</code> with the <code class="highlighter-rouge">ParentEntity</code>.</li>
+  <li>A test starting with <code class="language-plaintext highlighter-rouge">&lt;test name="SampleTest" extends="ParentTest"&gt;</code> creates a test <code class="language-plaintext highlighter-rouge">SampleTest</code> that takes body of existing test <code class="language-plaintext highlighter-rouge">ParentTest</code> and adds to it the body of <code class="language-plaintext highlighter-rouge">SampleTest</code>.</li>
+  <li>An action group starting with <code class="language-plaintext highlighter-rouge">&lt;actionGroup name="SampleActionGroup" extends="ParentActionGroup"&gt;</code> creates an action group based on the <code class="language-plaintext highlighter-rouge">ParentActionGroup</code>, but with the changes specified in <code class="language-plaintext highlighter-rouge">SampleActionGroup</code>.</li>
+  <li>An entity starting with <code class="language-plaintext highlighter-rouge">&lt;entity name="SampleEntity" extends="ParentEntity"&gt;</code> creates an entity <code class="language-plaintext highlighter-rouge">SampleEntity</code> that is equivalent to merging the <code class="language-plaintext highlighter-rouge">SampleEntity</code> with the <code class="language-plaintext highlighter-rouge">ParentEntity</code>.</li>
 </ul>
 
 <p>Specify needed variations for a parent object and produce a copy of the original that incorporates the specified changes (the “delta”).</p>
@@ -2179,7 +2177,7 @@ You can create or update any component of the parent body in your new test/actio
 
 <h3 id="update-a-test-step">Update a test step</h3>
 
-<p><strong>Use case</strong>: Create two similar tests with different <code class="highlighter-rouge">url</code> (<code class="highlighter-rouge">""</code> and <code class="highlighter-rouge">""</code>) in a test step.</p>
+<p><strong>Use case</strong>: Create two similar tests with different <code class="language-plaintext highlighter-rouge">url</code> (<code class="language-plaintext highlighter-rouge">""</code> and <code class="language-plaintext highlighter-rouge">""</code>) in a test step.</p>
 
 <blockquote>
   <p>Test with “extends”:</p>
@@ -2232,8 +2230,8 @@ You can create or update any component of the parent body in your new test/actio
 <p><strong>Use case</strong>: Create two similar tests where the second test contains two additional steps:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">checkOption</code> before <code class="highlighter-rouge">click</code> (<code class="highlighter-rouge">stepKey="clickLogin"</code>)</li>
-  <li><code class="highlighter-rouge">seeInCurrentUrl</code> after <code class="highlighter-rouge">click</code> in the <code class="highlighter-rouge">LogInAsAdminTest</code> test (in the <code class="highlighter-rouge">.../Backend/Test/LogInAsAdminTest.xml</code> file)</li>
+  <li><code class="language-plaintext highlighter-rouge">checkOption</code> before <code class="language-plaintext highlighter-rouge">click</code> (<code class="language-plaintext highlighter-rouge">stepKey="clickLogin"</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">seeInCurrentUrl</code> after <code class="language-plaintext highlighter-rouge">click</code> in the <code class="language-plaintext highlighter-rouge">LogInAsAdminTest</code> test (in the <code class="language-plaintext highlighter-rouge">.../Backend/Test/LogInAsAdminTest.xml</code> file)</li>
 </ul>
 
 <blockquote>
@@ -2281,11 +2279,11 @@ You can create or update any component of the parent body in your new test/actio
 
 <h3 id="update-a-test-annotation">Update a test annotation</h3>
 
-<p><strong>Use case</strong>: Create two similar tests where the second one contains two additional actions in the <code class="highlighter-rouge">before</code> hook:</p>
+<p><strong>Use case</strong>: Create two similar tests where the second one contains two additional actions in the <code class="language-plaintext highlighter-rouge">before</code> hook:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">checkOption</code> before <code class="highlighter-rouge">click</code> (<code class="highlighter-rouge">stepKey="clickLogin"</code>)</li>
-  <li><code class="highlighter-rouge">seeInCurrentUrl</code> after <code class="highlighter-rouge">click</code> in the <code class="highlighter-rouge">LogInAsAdminTest</code> test (in the <code class="highlighter-rouge">.../Backend/Test/LogInAsAdminTest.xml</code> file)</li>
+  <li><code class="language-plaintext highlighter-rouge">checkOption</code> before <code class="language-plaintext highlighter-rouge">click</code> (<code class="language-plaintext highlighter-rouge">stepKey="clickLogin"</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">seeInCurrentUrl</code> after <code class="language-plaintext highlighter-rouge">click</code> in the <code class="language-plaintext highlighter-rouge">LogInAsAdminTest</code> test (in the <code class="language-plaintext highlighter-rouge">.../Backend/Test/LogInAsAdminTest.xml</code> file)</li>
 </ul>
 
 <blockquote>
@@ -2345,7 +2343,7 @@ You can create or update any component of the parent body in your new test/actio
 
 <h3 id="update-an-action">Update an action</h3>
 
-<p><strong>Use case</strong>: The <code class="highlighter-rouge">CountProductA</code> test counts the particular product.
+<p><strong>Use case</strong>: The <code class="language-plaintext highlighter-rouge">CountProductA</code> test counts the particular product.
 Modify the action group to use another product.</p>
 
 <blockquote>
@@ -2401,8 +2399,8 @@ Modify the action group to use another product.</p>
 
 <h3 id="add-an-action">Add an action</h3>
 
-<p><strong>Use case</strong>: The <code class="highlighter-rouge">GetProductCount</code> action group returns the count of products.
-Add a new test <code class="highlighter-rouge">VerifyProductCount</code> that asserts the count of products:</p>
+<p><strong>Use case</strong>: The <code class="language-plaintext highlighter-rouge">GetProductCount</code> action group returns the count of products.
+Add a new test <code class="language-plaintext highlighter-rouge">VerifyProductCount</code> that asserts the count of products:</p>
 
 <blockquote>
   <p>Action groups with “extends”:</p>
@@ -2460,7 +2458,7 @@ Add a new test <code class="highlighter-rouge">VerifyProductCount</code> that as
 
 <h3 id="update-a-data-entry">Update a data entry</h3>
 
-<p><strong>Use case</strong>: Create an entity named <code class="highlighter-rouge">DivPanelGreen</code>, which is similar to the <code class="highlighter-rouge">DivPanel</code> entity, except that it is green.</p>
+<p><strong>Use case</strong>: Create an entity named <code class="language-plaintext highlighter-rouge">DivPanelGreen</code>, which is similar to the <code class="language-plaintext highlighter-rouge">DivPanel</code> entity, except that it is green.</p>
 
 <blockquote>
   <p>Entities with “extends”:</p>
@@ -2498,7 +2496,7 @@ Add a new test <code class="highlighter-rouge">VerifyProductCount</code> that as
 
 <h3 id="add-a-data-entry">Add a data entry</h3>
 
-<p><strong>Use case</strong>: Create an entity named <code class="highlighter-rouge">DivPanelGreen</code>, which is similar to the <code class="highlighter-rouge">DivPanel</code> entity, except that it has a specific panel color.</p>
+<p><strong>Use case</strong>: Create an entity named <code class="language-plaintext highlighter-rouge">DivPanelGreen</code>, which is similar to the <code class="language-plaintext highlighter-rouge">DivPanel</code> entity, except that it has a specific panel color.</p>
 
 <blockquote>
   <p>Entities with “extends”:</p>

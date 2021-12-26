@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Using DocBlock Annotations | Magento 2 Developer Documentation (copy)</title>
+	<title>Using DocBlock Annotations | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/test/integration/annotations.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/test/integration/annotations.html">Magento 2.0</a></li>
 		
@@ -1672,44 +1673,44 @@
   <tbody>
     <tr>
       <td>Application Isolation</td>
-      <td><code class="highlighter-rouge">@magentoAppIsolation</code></td>
-      <td><code class="highlighter-rouge">@magentoAppIsolation enabled|disabled</code></td>
+      <td><code class="language-plaintext highlighter-rouge">@magentoAppIsolation</code></td>
+      <td><code class="language-plaintext highlighter-rouge">@magentoAppIsolation enabled|disabled</code></td>
       <td>Enables or disables application isolation when you run tests. When enabled, an application state after a test run will be the same as before the test run. For example, you should enable it, when you want to create sessions in a test, but you don’t want them to affect other tests.</td>
     </tr>
     <tr>
       <td>Configuration Fixture</td>
-      <td><code class="highlighter-rouge">@magentoConfigFixture</code></td>
-      <td><code class="highlighter-rouge">@magentoConfigFixture [&lt;store_code&gt;_store] &lt;config_path&gt; &lt;config_value&gt;</code></td>
-      <td>Sets up configuration settings for a particular test. The list of settings is stored in the <code class="highlighter-rouge">core_config_data</code> database table. After the test execution, the settings revert to their original state.</td>
+      <td><code class="language-plaintext highlighter-rouge">@magentoConfigFixture</code></td>
+      <td><code class="language-plaintext highlighter-rouge">@magentoConfigFixture [&lt;store_code&gt;_store] &lt;config_path&gt; &lt;config_value&gt;</code></td>
+      <td>Sets up configuration settings for a particular test. The list of settings is stored in the <code class="language-plaintext highlighter-rouge">core_config_data</code> database table. After the test execution, the settings revert to their original state.</td>
     </tr>
     <tr>
       <td>Database Isolation</td>
-      <td><code class="highlighter-rouge">@magentoDbIsolation</code></td>
-      <td><code class="highlighter-rouge">@magentoDbIsolation enabled|disabled</code></td>
-      <td>Enables or disables database isolation. Disabled by default, unless you are using <code class="highlighter-rouge">@magentoDataFixture</code>, in which case it is enabled by default. All data, required for a test, live during transaction only. Any test results won’t be written in a database.</td>
+      <td><code class="language-plaintext highlighter-rouge">@magentoDbIsolation</code></td>
+      <td><code class="language-plaintext highlighter-rouge">@magentoDbIsolation enabled|disabled</code></td>
+      <td>Enables or disables database isolation. Disabled by default, unless you are using <code class="language-plaintext highlighter-rouge">@magentoDataFixture</code>, in which case it is enabled by default. All data, required for a test, live during transaction only. Any test results won’t be written in a database.</td>
     </tr>
     <tr>
       <td>Data Fixture</td>
-      <td><code class="highlighter-rouge">@magentoDataFixture</code></td>
-      <td><code class="highlighter-rouge">@magentoDataFixture &lt;script_filename&gt;|&lt;method_name&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">@magentoDataFixture</code></td>
+      <td><code class="language-plaintext highlighter-rouge">@magentoDataFixture &lt;script_filename&gt;|&lt;method_name&gt;</code></td>
       <td>Points to a class or a method which creates testing entities (fixtures) for test execution.</td>
     </tr>
     <tr>
       <td>Application Area</td>
-      <td><code class="highlighter-rouge">@magentoAppArea</code></td>
-      <td><code class="highlighter-rouge">@magentoAppArea adminhtml|frontend|global</code></td>
+      <td><code class="language-plaintext highlighter-rouge">@magentoAppArea</code></td>
+      <td><code class="language-plaintext highlighter-rouge">@magentoAppArea adminhtml|frontend|global</code></td>
       <td>Configures test environment in the context of specified application area.</td>
     </tr>
     <tr>
       <td>Enable/Disable Cache</td>
-      <td><code class="highlighter-rouge">@magentoCache</code></td>
-      <td><code class="highlighter-rouge">@magentoCache &lt;type&gt;|all enabled|disabled</code></td>
+      <td><code class="language-plaintext highlighter-rouge">@magentoCache</code></td>
+      <td><code class="language-plaintext highlighter-rouge">@magentoCache &lt;type&gt;|all enabled|disabled</code></td>
       <td>Enables or disables certain cache segment or all of them to prevent isolation problems.</td>
     </tr>
     <tr>
       <td>Register Components</td>
-      <td><code class="highlighter-rouge">@magentoComponentsDir</code></td>
-      <td><code class="highlighter-rouge">@magentoComponentsDir &lt;dir_path&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">@magentoComponentsDir</code></td>
+      <td><code class="language-plaintext highlighter-rouge">@magentoComponentsDir &lt;dir_path&gt;</code></td>
       <td>Registers fixture components from specified directory (recursively). Unregisters the components after the test is finished.</td>
     </tr>
   </tbody>
@@ -1720,13 +1721,13 @@
 <p>The Magento-specific annotations for integration tests are applied in the following order:</p>
 
 <ol>
-  <li><code class="highlighter-rouge">@magentoAppIsolation</code></li>
-  <li><code class="highlighter-rouge">@magentoDbIsolation</code></li>
-  <li><code class="highlighter-rouge">@magentoDataFixture</code></li>
-  <li><code class="highlighter-rouge">@magentoComponentsDir</code></li>
-  <li><code class="highlighter-rouge">@magentoAppArea</code></li>
-  <li><code class="highlighter-rouge">@magentoCache</code></li>
-  <li><code class="highlighter-rouge">@magentoConfigFixture</code></li>
+  <li><code class="language-plaintext highlighter-rouge">@magentoAppIsolation</code></li>
+  <li><code class="language-plaintext highlighter-rouge">@magentoDbIsolation</code></li>
+  <li><code class="language-plaintext highlighter-rouge">@magentoDataFixture</code></li>
+  <li><code class="language-plaintext highlighter-rouge">@magentoComponentsDir</code></li>
+  <li><code class="language-plaintext highlighter-rouge">@magentoAppArea</code></li>
+  <li><code class="language-plaintext highlighter-rouge">@magentoCache</code></li>
+  <li><code class="language-plaintext highlighter-rouge">@magentoConfigFixture</code></li>
 </ol>
 
 <p>This order is necessary to meet the requirement of setting up the store-scoped configuration values for fixture stores (stores that are created by data fixtures).</p>

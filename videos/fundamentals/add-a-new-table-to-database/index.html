@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>How to Add a New Table to a Database | Magento 2 Developer Documentation (copy)</title>
+	<title>How to Add a New Table to a Database | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -1626,7 +1625,7 @@ The install scripts run only once, while the upgrade scripts are executed every 
 <p>To look at all four script types, we’ll complete the following greeting page tasks:</p>
 
 <ul>
-  <li>Create a <code class="highlighter-rouge">greeting_message</code> table with the columns greeting_id and message.</li>
+  <li>Create a <code class="language-plaintext highlighter-rouge">greeting_message</code> table with the columns greeting_id and message.</li>
   <li>Add two records: “Happy New Year” and “Happy Holidays”.</li>
   <li>Modify the table by adding another field, “season”, to which we add the records “Happy Thanksgiving” and “Fall’”.</li>
   <li>Update the types for the first and second records.</li>
@@ -1646,37 +1645,37 @@ The install scripts run only once, while the upgrade scripts are executed every 
 
 <h2 id="step-1-create-a-new-module">Step 1: Create a new module</h2>
 
-<p>Create a new module called <code class="highlighter-rouge">Learning_GreetingMessage</code>.</p>
+<p>Create a new module called <code class="language-plaintext highlighter-rouge">Learning_GreetingMessage</code>.</p>
 
-<p>Navigate to the <code class="highlighter-rouge">app/code</code> folder and create the folders <code class="highlighter-rouge">Learning</code> and <code class="highlighter-rouge">Learning/GreetingMessage</code>:</p>
+<p>Navigate to the <code class="language-plaintext highlighter-rouge">app/code</code> folder and create the folders <code class="language-plaintext highlighter-rouge">Learning</code> and <code class="language-plaintext highlighter-rouge">Learning/GreetingMessage</code>:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>$ cd &lt;magento2_root&gt;/app/code
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>$ cd &lt;magento2_root&gt;/app/code
 $ mkdir Learning
 $ mkdir Learning/GreetingMessage
 </code></pre></div></div>
 
 <p>Now create two files:</p>
 
-<p><code class="highlighter-rouge">Learning/GreetingMessage/registration.php</code></p>
+<p><code class="language-plaintext highlighter-rouge">Learning/GreetingMessage/registration.php</code></p>
 
 <div class="collapsible">
     <b class="collapsible-title">Show code </b>
-    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cd">/**
 * Copyright © 2016 Magento. All rights reserved.
 * See COPYING.txt for license details.
 */</span>
 
-<span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="na">register</span><span class="p">(</span>
-  <span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="na">MODULE</span><span class="p">,</span>
+<span class="err">\</span><span class="nc">Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="nf">register</span><span class="p">(</span>
+  <span class="err">\</span><span class="nc">Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="no">MODULE</span><span class="p">,</span>
   <span class="s1">'Learning_GreetingMessage'</span><span class="p">,</span>
-  <span class="nx">__DIR__</span>
+  <span class="k">__DIR__</span>
 <span class="p">);</span></code></pre></figure>
 </div>
   </div>
 
 <p><br /></p>
 
-<p><code class="highlighter-rouge">Learning/GreetingMessage/etc/module.xml</code></p>
+<p><code class="language-plaintext highlighter-rouge">Learning/GreetingMessage/etc/module.xml</code></p>
 
 <div class="collapsible">
     <b class="collapsible-title">Show code </b>
@@ -1696,57 +1695,57 @@ $ mkdir Learning/GreetingMessage
 
 <h2 id="step-2-create-an-installschema-script">Step 2: Create an InstallSchema script</h2>
 
-<p>To create an InstallSchema script, navigate to the <code class="highlighter-rouge">app/code/Learning/GreetingMessage</code> folder and create a <code class="highlighter-rouge">Setup</code> folder.</p>
+<p>To create an InstallSchema script, navigate to the <code class="language-plaintext highlighter-rouge">app/code/Learning/GreetingMessage</code> folder and create a <code class="language-plaintext highlighter-rouge">Setup</code> folder.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>$ cd &lt;magento2_root&gt;/app/code/Learning/GreetingMessage
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>$ cd &lt;magento2_root&gt;/app/code/Learning/GreetingMessage
 $ mkdir Setup
 </code></pre></div></div>
 
-<p>Create the file <code class="highlighter-rouge">Setup/InstallSchema.php</code>.</p>
+<p>Create the file <code class="language-plaintext highlighter-rouge">Setup/InstallSchema.php</code>.</p>
 
 <div class="collapsible">
     <b class="collapsible-title">Show code </b>
-    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cd">/**
 * Copyright © 2016 Magento. All rights reserved.
 * See COPYING.txt for license details.
 */</span>
 
-<span class="k">namespace</span> <span class="nx">Learning\GreetingMessage\Setup</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Framework\Setup\InstallSchemaInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Framework\Setup\ModuleContextInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Framework\Setup\SchemaSetupInterface</span><span class="p">;</span>
+<span class="kn">namespace</span> <span class="nn">Learning\GreetingMessage\Setup</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Framework\Setup\InstallSchemaInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Framework\Setup\ModuleContextInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Framework\Setup\SchemaSetupInterface</span><span class="p">;</span>
 
-<span class="sd">/**
+<span class="cd">/**
  * @codeCoverageIgnore
  */</span>
-<span class="k">class</span> <span class="nc">InstallSchema</span> <span class="k">implements</span> <span class="nx">InstallSchemaInterface</span>
+<span class="kd">class</span> <span class="nc">InstallSchema</span> <span class="kd">implements</span> <span class="nc">InstallSchemaInterface</span>
 <span class="p">{</span>
-    <span class="sd">/**
+    <span class="cd">/**
     * {@inheritdoc}
     * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">install</span><span class="p">(</span><span class="nx">SchemaSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="nx">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">install</span><span class="p">(</span><span class="kt">SchemaSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="kt">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
     <span class="p">{</span>
-          <span class="sd">/**
+          <span class="cd">/**
           * Create table 'greeting_message'
           */</span>
-          <span class="nv">$table</span> <span class="o">=</span> <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">getConnection</span><span class="p">()</span>
-              <span class="o">-&gt;</span><span class="na">newTable</span><span class="p">(</span><span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">getTable</span><span class="p">(</span><span class="s1">'greeting_message'</span><span class="p">))</span>
-              <span class="o">-&gt;</span><span class="na">addColumn</span><span class="p">(</span>
+          <span class="nv">$table</span> <span class="o">=</span> <span class="nv">$setup</span><span class="o">-&gt;</span><span class="nf">getConnection</span><span class="p">()</span>
+              <span class="o">-&gt;</span><span class="nf">newTable</span><span class="p">(</span><span class="nv">$setup</span><span class="o">-&gt;</span><span class="nf">getTable</span><span class="p">(</span><span class="s1">'greeting_message'</span><span class="p">))</span>
+              <span class="o">-&gt;</span><span class="nf">addColumn</span><span class="p">(</span>
                   <span class="s1">'greeting_id'</span><span class="p">,</span>
-                  <span class="nx">\Magento\Framework\DB\Ddl\Table</span><span class="o">::</span><span class="na">TYPE_INTEGER</span><span class="p">,</span>
+                  <span class="err">\</span><span class="nc">Magento\Framework\DB\Ddl\Table</span><span class="o">::</span><span class="no">TYPE_INTEGER</span><span class="p">,</span>
                   <span class="kc">null</span><span class="p">,</span>
                   <span class="p">[</span><span class="s1">'identity'</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span> <span class="s1">'unsigned'</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span> <span class="s1">'nullable'</span> <span class="o">=&gt;</span> <span class="kc">false</span><span class="p">,</span> <span class="s1">'primary'</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">],</span>
                   <span class="s1">'Greeting ID'</span>
               <span class="p">)</span>
-              <span class="o">-&gt;</span><span class="na">addColumn</span><span class="p">(</span>
+              <span class="o">-&gt;</span><span class="nf">addColumn</span><span class="p">(</span>
                   <span class="s1">'message'</span><span class="p">,</span>
-                  <span class="nx">\Magento\Framework\DB\Ddl\Table</span><span class="o">::</span><span class="na">TYPE_TEXT</span><span class="p">,</span>
+                  <span class="err">\</span><span class="nc">Magento\Framework\DB\Ddl\Table</span><span class="o">::</span><span class="no">TYPE_TEXT</span><span class="p">,</span>
                   <span class="mi">255</span><span class="p">,</span>
                   <span class="p">[</span><span class="s1">'nullable'</span> <span class="o">=&gt;</span> <span class="kc">false</span><span class="p">,</span> <span class="s1">'default'</span> <span class="o">=&gt;</span> <span class="s1">''</span><span class="p">],</span>
                     <span class="s1">'Message'</span>
-              <span class="p">)</span><span class="o">-&gt;</span><span class="na">setComment</span><span class="p">(</span><span class="s2">"Greeting Message table"</span><span class="p">);</span>
-          <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">getConnection</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">createTable</span><span class="p">(</span><span class="nv">$table</span><span class="p">);</span>
+              <span class="p">)</span><span class="o">-&gt;</span><span class="nf">setComment</span><span class="p">(</span><span class="s2">"Greeting Message table"</span><span class="p">);</span>
+          <span class="nv">$setup</span><span class="o">-&gt;</span><span class="nf">getConnection</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">createTable</span><span class="p">(</span><span class="nv">$table</span><span class="p">);</span>
       <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 </div>
@@ -1755,46 +1754,46 @@ $ mkdir Setup
 <p>Let’s take a minute to look at the code.</p>
 
 <p>The InstallSchema files are all very typical.
-The main code is located in the <code class="highlighter-rouge">install()</code> method, which has a <code class="highlighter-rouge">$setup</code> parameter.
-This is a key parameter, because it gives access to the <code class="highlighter-rouge">Connection()</code> object that allows database manipulations.</p>
+The main code is located in the <code class="language-plaintext highlighter-rouge">install()</code> method, which has a <code class="language-plaintext highlighter-rouge">$setup</code> parameter.
+This is a key parameter, because it gives access to the <code class="language-plaintext highlighter-rouge">Connection()</code> object that allows database manipulations.</p>
 
-<p>The connection is an instance of the <code class="highlighter-rouge">Magento\Framework\DB\Adapter\Pdo\Mysql</code> class.</p>
+<p>The connection is an instance of the <code class="language-plaintext highlighter-rouge">Magento\Framework\DB\Adapter\Pdo\Mysql</code> class.</p>
 
 <p>Magento uses DDL (Data Definition Language) to manipulate the database.
 You can find various examples of DDL in the Magento 2 core code.</p>
 
 <h2 id="step-3-create-an-installdata-script">Step 3: Create an InstallData script</h2>
 
-<p>Let’s create the <code class="highlighter-rouge">Setup/InstallData.php</code> file:</p>
+<p>Let’s create the <code class="language-plaintext highlighter-rouge">Setup/InstallData.php</code> file:</p>
 
 <div class="collapsible">
     <b class="collapsible-title">Show code </b>
-    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cd">/**
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */</span>
 
-<span class="k">namespace</span> <span class="nx">Learning\GreetingMessage\Setup</span><span class="p">;</span>
+<span class="kn">namespace</span> <span class="nn">Learning\GreetingMessage\Setup</span><span class="p">;</span>
 
-<span class="k">use</span> <span class="nx">Magento\Framework\Setup\InstallDataInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Framework\Setup\ModuleContextInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Framework\Setup\ModuleDataSetupInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Framework\Setup\InstallDataInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Framework\Setup\ModuleContextInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Framework\Setup\ModuleDataSetupInterface</span><span class="p">;</span>
 
-<span class="sd">/**
+<span class="cd">/**
  * @codeCoverageIgnore
  */</span>
-<span class="k">class</span> <span class="nc">InstallData</span> <span class="k">implements</span> <span class="nx">InstallDataInterface</span>
+<span class="kd">class</span> <span class="nc">InstallData</span> <span class="kd">implements</span> <span class="nc">InstallDataInterface</span>
 <span class="p">{</span>
 
-    <span class="sd">/**
+    <span class="cd">/**
      * {@inheritdoc}
      * @SuppressWarnings(PHPMD.CyclomaticComplexity)
      * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
      * @SuppressWarnings(PHPMD.NPathComplexity)
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">install</span><span class="p">(</span><span class="nx">ModuleDataSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="nx">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">install</span><span class="p">(</span><span class="kt">ModuleDataSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="kt">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
     <span class="p">{</span>
-          <span class="sd">/**
+          <span class="cd">/**
            * Install messages
            */</span>
           <span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
@@ -1802,8 +1801,8 @@ You can find various examples of DDL in the Magento 2 core code.</p>
               <span class="p">[</span><span class="s1">'message'</span> <span class="o">=&gt;</span> <span class="s1">'Merry Christmas'</span><span class="p">]</span>
           <span class="p">];</span>
           <span class="k">foreach</span> <span class="p">(</span><span class="nv">$data</span> <span class="k">as</span> <span class="nv">$bind</span><span class="p">)</span> <span class="p">{</span>
-              <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">getConnection</span><span class="p">()</span>
-                <span class="o">-&gt;</span><span class="na">insertForce</span><span class="p">(</span><span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">getTable</span><span class="p">(</span><span class="s1">'greeting_message'</span><span class="p">),</span> <span class="nv">$bind</span><span class="p">);</span>
+              <span class="nv">$setup</span><span class="o">-&gt;</span><span class="nf">getConnection</span><span class="p">()</span>
+                <span class="o">-&gt;</span><span class="nf">insertForce</span><span class="p">(</span><span class="nv">$setup</span><span class="o">-&gt;</span><span class="nf">getTable</span><span class="p">(</span><span class="s1">'greeting_message'</span><span class="p">),</span> <span class="nv">$bind</span><span class="p">);</span>
           <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
@@ -1812,17 +1811,17 @@ You can find various examples of DDL in the Magento 2 core code.</p>
 
 <h2 id="step-4-add-a-new-module-and-verify-that-a-table-with-data-was-created">Step 4: Add a new module and verify that a table with data was created</h2>
 
-<p>Run the <code class="highlighter-rouge">setup:upgrade</code> script to verify that a table with the initial data is there:</p>
+<p>Run the <code class="language-plaintext highlighter-rouge">setup:upgrade</code> script to verify that a table with the initial data is there:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>$ cd &lt;magento2_root&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>$ cd &lt;magento2_root&gt;
 $ php bin/magento setup:upgrade
 </code></pre></div></div>
 
-<p>You should see a long list of modules that contain <code class="highlighter-rouge">Learning_GreetingMessage</code>.</p>
+<p>You should see a long list of modules that contain <code class="language-plaintext highlighter-rouge">Learning_GreetingMessage</code>.</p>
 
-<p>Connect to the database: <code class="highlighter-rouge">mysql -u&lt;user&gt; -p&lt;password&gt; &lt;database&gt;</code>.</p>
+<p>Connect to the database: <code class="language-plaintext highlighter-rouge">mysql -u&lt;user&gt; -p&lt;password&gt; &lt;database&gt;</code>.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>SHOW TABLES LIKE “%greeting%”
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>SHOW TABLES LIKE “%greeting%”
 
 +------------------------------------+
 | Tables_in_magento_210 (%greeting%) |
@@ -1842,11 +1841,11 @@ SELECT * FROM greeting_message;
 
 <h3 id="check-that-the-table-and-data-are-there">Check that the table and data are there</h3>
 
-<p>When you create a new module and run the <code class="highlighter-rouge">bin/magento setup:upgrade</code> script, Magento checks the codebase to see if there are modules that were not installed.
+<p>When you create a new module and run the <code class="language-plaintext highlighter-rouge">bin/magento setup:upgrade</code> script, Magento checks the codebase to see if there are modules that were not installed.
 If it finds any, it checks whether there are any install scripts and if so, runs them.
-Magento then updates the table <code class="highlighter-rouge">setup_module</code> and puts information about the module and its version there:</p>
+Magento then updates the table <code class="language-plaintext highlighter-rouge">setup_module</code> and puts information about the module and its version there:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>SELECT * FROM setup_module WHERE module='Learning_GreetingMessage';
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>SELECT * FROM setup_module WHERE module='Learning_GreetingMessage';
 
 +--------------------------+----------------+--------------+
 | module                   | schema_version | data_version |
@@ -1855,7 +1854,7 @@ Magento then updates the table <code class="highlighter-rouge">setup_module</cod
 +--------------------------+----------------+--------------+
 </code></pre></div></div>
 
-<p>The next time you run the <code class="highlighter-rouge">bin/magento setup:upgrade</code> script, it will find a record in the database and will compare the current version against the one in database.
+<p>The next time you run the <code class="language-plaintext highlighter-rouge">bin/magento setup:upgrade</code> script, it will find a record in the database and will compare the current version against the one in database.
 If the versions match, it will do nothing.
 If the current version is higher, it will run the upgrade scripts (discussed next).</p>
 
@@ -1863,43 +1862,43 @@ If the current version is higher, it will run the upgrade scripts (discussed nex
 
 <p>To see how the upgrade scripts work, we’ll add some data to the database.</p>
 
-<p>First, change the version in the <code class="highlighter-rouge">etc/module.xml</code> file to 0.0.2:</p>
+<p>First, change the version in the <code class="language-plaintext highlighter-rouge">etc/module.xml</code> file to 0.0.2:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;module name="Learning_GreetingMessage" setup_version="0.0.2"&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;module name="Learning_GreetingMessage" setup_version="0.0.2"&gt;
 </code></pre></div></div>
 
-<p>Then create the file <code class="highlighter-rouge">Setup/UpgradeSchema.php</code>:</p>
+<p>Then create the file <code class="language-plaintext highlighter-rouge">Setup/UpgradeSchema.php</code>:</p>
 
 <div class="collapsible">
     <b class="collapsible-title">Show code </b>
-    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cd">/**
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */</span>
 
-<span class="k">namespace</span> <span class="nx">Learning\GreetingMessage\Setup</span><span class="p">;</span>
+<span class="kn">namespace</span> <span class="nn">Learning\GreetingMessage\Setup</span><span class="p">;</span>
 
-<span class="k">use</span> <span class="nx">Magento\Framework\Setup\UpgradeSchemaInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Framework\Setup\ModuleContextInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Framework\Setup\SchemaSetupInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Framework\Setup\UpgradeSchemaInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Framework\Setup\ModuleContextInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Framework\Setup\SchemaSetupInterface</span><span class="p">;</span>
 
-<span class="sd">/**
+<span class="cd">/**
  * Upgrade the Catalog module DB scheme
  */</span>
-<span class="k">class</span> <span class="nc">UpgradeSchema</span> <span class="k">implements</span> <span class="nx">UpgradeSchemaInterface</span>
+<span class="kd">class</span> <span class="nc">UpgradeSchema</span> <span class="kd">implements</span> <span class="nc">UpgradeSchemaInterface</span>
 <span class="p">{</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * {@inheritdoc}
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">upgrade</span><span class="p">(</span><span class="nx">SchemaSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="nx">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">upgrade</span><span class="p">(</span><span class="kt">SchemaSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="kt">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">startSetup</span><span class="p">();</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nb">version_compare</span><span class="p">(</span><span class="nv">$context</span><span class="o">-&gt;</span><span class="na">getVersion</span><span class="p">(),</span> <span class="s1">'0.0.2'</span><span class="p">,</span> <span class="s1">'&lt;'</span><span class="p">))</span> <span class="p">{</span>
-            <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">getConnection</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">addColumn</span><span class="p">(</span>
-                <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">getTable</span><span class="p">(</span><span class="s1">'greeting_message'</span><span class="p">),</span>
+        <span class="nv">$setup</span><span class="o">-&gt;</span><span class="nf">startSetup</span><span class="p">();</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">version_compare</span><span class="p">(</span><span class="nv">$context</span><span class="o">-&gt;</span><span class="nf">getVersion</span><span class="p">(),</span> <span class="s1">'0.0.2'</span><span class="p">,</span> <span class="s1">'&lt;'</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nv">$setup</span><span class="o">-&gt;</span><span class="nf">getConnection</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">addColumn</span><span class="p">(</span>
+                <span class="nv">$setup</span><span class="o">-&gt;</span><span class="nf">getTable</span><span class="p">(</span><span class="s1">'greeting_message'</span><span class="p">),</span>
                 <span class="s1">'season'</span><span class="p">,</span>
                 <span class="p">[</span>
-                    <span class="s1">'type'</span> <span class="o">=&gt;</span> <span class="nx">\Magento\Framework\DB\Ddl\Table</span><span class="o">::</span><span class="na">TYPE_TEXT</span><span class="p">,</span>
+                    <span class="s1">'type'</span> <span class="o">=&gt;</span> <span class="err">\</span><span class="nc">Magento\Framework\DB\Ddl\Table</span><span class="o">::</span><span class="no">TYPE_TEXT</span><span class="p">,</span>
                     <span class="s1">'length'</span> <span class="o">=&gt;</span> <span class="mi">16</span><span class="p">,</span>
                     <span class="s1">'nullable'</span> <span class="o">=&gt;</span> <span class="kc">false</span><span class="p">,</span>
                     <span class="s1">'default'</span> <span class="o">=&gt;</span> <span class="s1">''</span><span class="p">,</span>
@@ -1907,58 +1906,58 @@ If the current version is higher, it will run the upgrade scripts (discussed nex
                 <span class="p">]</span>
             <span class="p">);</span>
         <span class="p">}</span>
-        <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">endSetup</span><span class="p">();</span>
+        <span class="nv">$setup</span><span class="o">-&gt;</span><span class="nf">endSetup</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 </div>
   </div>
 
 <p>Review the “version_compare” line.
-As described earlier, the UpgradeScript will be executed every time the version in <code class="highlighter-rouge">module.xml</code> has changed.
+As described earlier, the UpgradeScript will be executed every time the version in <code class="language-plaintext highlighter-rouge">module.xml</code> has changed.
 So we only want the current version upgrade script to execute, and not previous upgrades.
 That’s why we put upgrades into “if” clauses.</p>
 
 <h2 id="step-6-create-the-upgradedata-script">Step 6: Create the UpgradeData script</h2>
 
-<p>To create the <code class="highlighter-rouge">Setup/UpgradeData.php</code> file:</p>
+<p>To create the <code class="language-plaintext highlighter-rouge">Setup/UpgradeData.php</code> file:</p>
 
 <div class="collapsible">
     <b class="collapsible-title">Show code </b>
-    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cd">/**
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */</span>
 
-<span class="k">namespace</span> <span class="nx">Learning\GreetingMessage\Setup</span><span class="p">;</span>
+<span class="kn">namespace</span> <span class="nn">Learning\GreetingMessage\Setup</span><span class="p">;</span>
 
-<span class="k">use</span> <span class="nx">Magento\Framework\Setup\UpgradeDataInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Framework\Setup\ModuleContextInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Framework\Setup\ModuleDataSetupInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Framework\Setup\UpgradeDataInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Framework\Setup\ModuleContextInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Framework\Setup\ModuleDataSetupInterface</span><span class="p">;</span>
 
-<span class="sd">/**
+<span class="cd">/**
  * Upgrade Data script
  */</span>
 
-<span class="k">class</span> <span class="nc">UpgradeData</span> <span class="k">implements</span> <span class="nx">UpgradeDataInterface</span>
+<span class="kd">class</span> <span class="nc">UpgradeData</span> <span class="kd">implements</span> <span class="nc">UpgradeDataInterface</span>
 <span class="p">{</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * {@inheritdoc}
      * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">upgrade</span><span class="p">(</span><span class="nx">ModuleDataSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="nx">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">upgrade</span><span class="p">(</span><span class="kt">ModuleDataSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="kt">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">startSetup</span><span class="p">();</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nv">$context</span><span class="o">-&gt;</span><span class="na">getVersion</span><span class="p">()</span>
-            <span class="o">&amp;&amp;</span> <span class="nb">version_compare</span><span class="p">(</span><span class="nv">$context</span><span class="o">-&gt;</span><span class="na">getVersion</span><span class="p">(),</span> <span class="s1">'0.0.2'</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span>
+        <span class="nv">$setup</span><span class="o">-&gt;</span><span class="nf">startSetup</span><span class="p">();</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$context</span><span class="o">-&gt;</span><span class="nf">getVersion</span><span class="p">()</span>
+            <span class="o">&amp;&amp;</span> <span class="nb">version_compare</span><span class="p">(</span><span class="nv">$context</span><span class="o">-&gt;</span><span class="nf">getVersion</span><span class="p">(),</span> <span class="s1">'0.0.2'</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span>
         <span class="p">)</span> <span class="p">{</span>
-            <span class="nv">$table</span> <span class="o">=</span> <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">getTable</span><span class="p">(</span><span class="s1">'greeting_message'</span><span class="p">);</span>
-            <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">getConnection</span><span class="p">()</span>
-                <span class="o">-&gt;</span><span class="na">insertForce</span><span class="p">(</span><span class="nv">$table</span><span class="p">,</span> <span class="p">[</span><span class="s1">'message'</span> <span class="o">=&gt;</span> <span class="s1">'Happy Thanksgiving'</span><span class="p">,</span> <span class="s1">'season'</span> <span class="o">=&gt;</span> <span class="s1">'fall'</span><span class="p">]);</span>
+            <span class="nv">$table</span> <span class="o">=</span> <span class="nv">$setup</span><span class="o">-&gt;</span><span class="nf">getTable</span><span class="p">(</span><span class="s1">'greeting_message'</span><span class="p">);</span>
+            <span class="nv">$setup</span><span class="o">-&gt;</span><span class="nf">getConnection</span><span class="p">()</span>
+                <span class="o">-&gt;</span><span class="nf">insertForce</span><span class="p">(</span><span class="nv">$table</span><span class="p">,</span> <span class="p">[</span><span class="s1">'message'</span> <span class="o">=&gt;</span> <span class="s1">'Happy Thanksgiving'</span><span class="p">,</span> <span class="s1">'season'</span> <span class="o">=&gt;</span> <span class="s1">'fall'</span><span class="p">]);</span>
 
-            <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">getConnection</span><span class="p">()</span>
-                <span class="o">-&gt;</span><span class="na">update</span><span class="p">(</span><span class="nv">$table</span><span class="p">,</span> <span class="p">[</span><span class="s1">'season'</span> <span class="o">=&gt;</span> <span class="s1">'winter'</span><span class="p">],</span> <span class="s1">'greeting_id IN (1,2)'</span><span class="p">);</span>
+            <span class="nv">$setup</span><span class="o">-&gt;</span><span class="nf">getConnection</span><span class="p">()</span>
+                <span class="o">-&gt;</span><span class="nf">update</span><span class="p">(</span><span class="nv">$table</span><span class="p">,</span> <span class="p">[</span><span class="s1">'season'</span> <span class="o">=&gt;</span> <span class="s1">'winter'</span><span class="p">],</span> <span class="s1">'greeting_id IN (1,2)'</span><span class="p">);</span>
         <span class="p">}</span>
-        <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">endSetup</span><span class="p">();</span>
+        <span class="nv">$setup</span><span class="o">-&gt;</span><span class="nf">endSetup</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 </div>
@@ -1968,13 +1967,13 @@ That’s why we put upgrades into “if” clauses.</p>
 
 <p>Run the SetupUpgrade script again:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>$ cd &lt;magento2_root&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>$ cd &lt;magento2_root&gt;
 $ php bin/magento setup:upgrade
 </code></pre></div></div>
 
 <p>We can now connect to the database and verify that our changes are there:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>select * from greeting_message;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>select * from greeting_message;
 
 +-------------+--------------------+--------+
 | greeting_id | message            | season |
@@ -1992,7 +1991,7 @@ $ php bin/magento setup:upgrade
 <p>It is very important to understand that the data is added only once, and should be installed when the module is created.</p>
 
 <p>Magento 2 uses multiple tools to manipulate the database from the code – Model/Resource models and collections, which are beyond the scope of this video.
-So if you need an interface which saves or fetches data from the database, you will use a <code class="highlighter-rouge">Model/Resource/Collection</code> for that, not an UpgradeData script.</p>
+So if you need an interface which saves or fetches data from the database, you will use a <code class="language-plaintext highlighter-rouge">Model/Resource/Collection</code> for that, not an UpgradeData script.</p>
 
 
 			<div class="adjaced-pages">

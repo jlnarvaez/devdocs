@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Module version dependencies | Magento 2 Developer Documentation (copy)</title>
+	<title>Module version dependencies | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/extension-dev-guide/versioning/dependencies.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/extension-dev-guide/versioning/dependencies.html">Magento 2.0</a></li>
 		
@@ -2903,7 +2904,7 @@
 <p>To achieve this, all third-party modules must obey the following rules:</p>
 
 <ol>
-  <li>You must specify the dependency on all modules listed in the ‘require’ section of your module’s <code class="highlighter-rouge">composer.json</code> file.</li>
+  <li>You must specify the dependency on all modules listed in the ‘require’ section of your module’s <code class="language-plaintext highlighter-rouge">composer.json</code> file.</li>
   <li>Do not specify a dependency on meta packages (e.g. ‘product-community-edition’).</li>
   <li>Specify a module’s MAJOR and optionally MINOR version number if you use any of that module’s customization points.</li>
   <li>Specify a module’s MAJOR, MINOR, and PATCH versions if you call or customize a module’s private code.</li>
@@ -2933,8 +2934,8 @@ APIs and SPIs are not mutually exclusive. Therefore, we do not distinguish them 
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
     </span><span class="err">...</span><span class="w">
-    </span><span class="s2">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"magento/customer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"magento/customer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.0"</span><span class="p">,</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="err">...</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
@@ -2946,8 +2947,8 @@ APIs and SPIs are not mutually exclusive. Therefore, we do not distinguish them 
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
     </span><span class="err">...</span><span class="w">
-    </span><span class="s2">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"magento/customer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"magento/customer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.0.0"</span><span class="p">,</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="err">...</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
@@ -2967,7 +2968,7 @@ Use this table to set the appropriate version dependency on a module based on ho
   </thead>
   <tbody>
     <tr>
-      <td><strong>PHP Interface</strong> (marked with <code class="highlighter-rouge">@api</code>)</td>
+      <td><strong>PHP Interface</strong> (marked with <code class="language-plaintext highlighter-rouge">@api</code>)</td>
       <td>Inject in a constructor and/or call methods</td>
       <td>MAJOR</td>
     </tr>
@@ -2978,7 +2979,7 @@ Use this table to set the appropriate version dependency on a module based on ho
     </tr>
     <tr>
       <td> </td>
-      <td>Re-define the interface preference in <code class="highlighter-rouge">di.xml</code></td>
+      <td>Re-define the interface preference in <code class="language-plaintext highlighter-rouge">di.xml</code></td>
       <td>MINOR</td>
     </tr>
     <tr>
@@ -2989,7 +2990,7 @@ Use this table to set the appropriate version dependency on a module based on ho
   </tbody>
   <tbody>
     <tr>
-      <td><strong>PHP Class</strong> (marked with <code class="highlighter-rouge">@api</code>)</td>
+      <td><strong>PHP Class</strong> (marked with <code class="language-plaintext highlighter-rouge">@api</code>)</td>
       <td>Inject in a constructor</td>
       <td>MAJOR</td>
     </tr>
@@ -3005,18 +3006,18 @@ Use this table to set the appropriate version dependency on a module based on ho
     </tr>
     <tr>
       <td> </td>
-      <td>Configure class preference in <code class="highlighter-rouge">di.xml</code></td>
+      <td>Configure class preference in <code class="language-plaintext highlighter-rouge">di.xml</code></td>
       <td>MAJOR</td>
     </tr>
     <tr>
       <td> </td>
-      <td>Configure constructor argument in <code class="highlighter-rouge">di.xml</code></td>
+      <td>Configure constructor argument in <code class="language-plaintext highlighter-rouge">di.xml</code></td>
       <td>MAJOR</td>
     </tr>
   </tbody>
   <tbody>
     <tr>
-      <td><strong>JavaScript Interface</strong> (marked with <code class="highlighter-rouge">@api</code>)</td>
+      <td><strong>JavaScript Interface</strong> (marked with <code class="language-plaintext highlighter-rouge">@api</code>)</td>
       <td>Inject in a constructor and/or call methods</td>
       <td>MAJOR</td>
     </tr>
@@ -3028,7 +3029,7 @@ Use this table to set the appropriate version dependency on a module based on ho
   </tbody>
   <tbody>
     <tr>
-      <td><strong>JavaScript class</strong> (marked with <code class="highlighter-rouge">@api</code>)</td>
+      <td><strong>JavaScript class</strong> (marked with <code class="language-plaintext highlighter-rouge">@api</code>)</td>
       <td>Inject in a constructor</td>
       <td>MAJOR</td>
     </tr>
@@ -3051,7 +3052,7 @@ Use this table to set the appropriate version dependency on a module based on ho
   <tbody>
     <tr>
       <td><strong>Virtual Type</strong></td>
-      <td>Configure a virtual type in the <code class="highlighter-rouge">di.xml</code> file as a class dependency</td>
+      <td>Configure a virtual type in the <code class="language-plaintext highlighter-rouge">di.xml</code> file as a class dependency</td>
       <td>MAJOR</td>
     </tr>
   </tbody>

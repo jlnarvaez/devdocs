@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Generate data for performance testing | Magento 2 Developer Documentation (copy)</title>
+	<title>Generate data for performance testing | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/config-guide/cli/config-cli-subcommands-perf-data.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/config-guide/cli/config-cli-subcommands-perf-data.html">Magento 2.0</a></li>
 		
@@ -3687,9 +3688,9 @@
 
 <p>The following table provides details about the data generator profiles (small, medium, large, and extra large).</p>
 
-<p>Profiles are located in <code class="highlighter-rouge">&lt;your Magento install dir&gt;/setup/performance-toolkit/profiles/&lt;ce or ee&gt;</code></p>
+<p>Profiles are located in <code class="language-plaintext highlighter-rouge">&lt;your Magento install dir&gt;/setup/performance-toolkit/profiles/&lt;ce or ee&gt;</code></p>
 
-<p>For example, <code class="highlighter-rouge">/var/www/html/magento2/setup/performance-toolkit/profiles/ce</code></p>
+<p>For example, <code class="language-plaintext highlighter-rouge">/var/www/html/magento2/setup/performance-toolkit/profiles/ce</code></p>
 
 <table>
     <tbody>
@@ -3810,19 +3811,19 @@
 
 <p>Command options:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento setup:perf:generate-fixtures {path to profile}
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento setup:perf:generate-fixtures {path to profile}
 </code></pre></div></div>
 
-<p>Where <code class="highlighter-rouge">&lt;path to profile&gt;</code> specifies the absolute file system path to, and name of, a profile.</p>
+<p>Where <code class="language-plaintext highlighter-rouge">&lt;path to profile&gt;</code> specifies the absolute file system path to, and name of, a profile.</p>
 
 <p>For example,</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento setup:perf:generate-fixtures /var/www/html/magento2/setup/performance-toolkit/profiles/ce/small.xml
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento setup:perf:generate-fixtures /var/www/html/magento2/setup/performance-toolkit/profiles/ce/small.xml
 </code></pre></div></div>
 
 <p>Sample output for the small profile:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Generating profile with following params:
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Generating profile with following params:
  |- Websites: 1
  |- Store Groups: 1
  |- Store Views: 1

@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Add site map and search engine robots | Magento 2 Developer Documentation (copy)</title>
+	<title>Add site map and search engine robots | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/trouble/robots-sitemap.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/trouble/robots-sitemap.html">Magento 2.0</a></li>
 		
@@ -3543,20 +3544,20 @@
 	<h1 class="page-heading">Add site map and search engine robots</h1>
 </section>
 
-			<p>The <code class="highlighter-rouge">pub</code> directory is <em>read only</em> in the Magento Commerce Cloud Integration, Staging, and Production environments. An attempt to generate and write the <code class="highlighter-rouge">sitemap.xml</code> file to the root directory results in the following error:</p>
+			<p>The <code class="language-plaintext highlighter-rouge">pub</code> directory is <em>read only</em> in the Magento Commerce Cloud Integration, Staging, and Production environments. An attempt to generate and write the <code class="language-plaintext highlighter-rouge">sitemap.xml</code> file to the root directory results in the following error:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>The path ".:///app/app/" is not writable.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>The path ".:///app/app/" is not writable.
 Path "/app/pub/static/sitemap.xml" is protected and cannot be used.
 </code></pre></div></div>
 
-<p>To avoid this error, you can only write to specific directories, such as <code class="highlighter-rouge">var</code>, <code class="highlighter-rouge">pub/media</code>, or <code class="highlighter-rouge">app/etc</code>. When using Magento Commerce Cloud, you must use a redirect in the <em>read-only</em> environments.  Generate the files on your local workstation and upload them to one of the write-enabled directories using the following, appropriate environment:</p>
+<p>To avoid this error, you can only write to specific directories, such as <code class="language-plaintext highlighter-rouge">var</code>, <code class="language-plaintext highlighter-rouge">pub/media</code>, or <code class="language-plaintext highlighter-rouge">app/etc</code>. When using Magento Commerce Cloud, you must use a redirect in the <em>read-only</em> environments.  Generate the files on your local workstation and upload them to one of the write-enabled directories using the following, appropriate environment:</p>
 
 <ul>
-  <li>For Starter, access the <code class="highlighter-rouge">staging</code> branch</li>
-  <li>For Pro, access the <code class="highlighter-rouge">integration</code> branch</li>
+  <li>For Starter, access the <code class="language-plaintext highlighter-rouge">staging</code> branch</li>
+  <li>For Pro, access the <code class="language-plaintext highlighter-rouge">integration</code> branch</li>
 </ul>
 
-<h4 id="to-add-a-sitemapxml-file">To add a <code class="highlighter-rouge">sitemap.xml</code> file:</h4>
+<h4 id="to-add-a-sitemapxml-file">To add a <code class="language-plaintext highlighter-rouge">sitemap.xml</code> file:</h4>
 
 <ol>
   <li>On your local branch, access the Magento Admin panel.</li>
@@ -3566,20 +3567,20 @@ Path "/app/pub/static/sitemap.xml" is protected and cannot be used.
     <p>In the <em>New Site Map</em> view, enter the following values:</p>
 
     <ul>
-      <li><strong>Filename</strong>:<code class="highlighter-rouge">sitemap.xml</code></li>
-      <li><strong>Path</strong>:<code class="highlighter-rouge">/pub/media/</code></li>
+      <li><strong>Filename</strong>:<code class="language-plaintext highlighter-rouge">sitemap.xml</code></li>
+      <li><strong>Path</strong>:<code class="language-plaintext highlighter-rouge">/pub/media/</code></li>
     </ul>
   </li>
   <li>Click <strong>Save &amp; Generate</strong>.</li>
-  <li>Import the generated files to the <code class="highlighter-rouge">pub/media</code> directory on the server.</li>
+  <li>Import the generated files to the <code class="language-plaintext highlighter-rouge">pub/media</code> directory on the server.</li>
   <li>Log in to the remote environment using SSH.</li>
   <li>
-    <p>Move the files into the <code class="highlighter-rouge">/pub/media/</code> directory using the rsync command:</p>
+    <p>Move the files into the <code class="language-plaintext highlighter-rouge">/pub/media/</code> directory using the rsync command:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>rsync <span class="nt">-azvP</span> pub/media/ &lt;user_name&gt;@&lt;environment_IP_address&gt;:pub/media/
 </code></pre></div>    </div>
   </li>
-  <li>This results in a <code class="highlighter-rouge">www.example.com/media/sitemap.xml</code> path, so you must submit a Support ticket to apply a redirect for your generated files.</li>
+  <li>This results in a <code class="language-plaintext highlighter-rouge">www.example.com/media/sitemap.xml</code> path, so you must submit a Support ticket to apply a redirect for your generated files.</li>
 </ol>
 
 <!-- Available note types: "info", "warning", "tip" -->
@@ -3588,31 +3589,31 @@ Path "/app/pub/static/sitemap.xml" is protected and cannot be used.
   <p>Do not change the location of the files during deployment.</p>
 </div>
 
-<h4 id="to-add-a-robotstxt-file">To add a <code class="highlighter-rouge">robots.txt</code> file:</h4>
+<h4 id="to-add-a-robotstxt-file">To add a <code class="language-plaintext highlighter-rouge">robots.txt</code> file:</h4>
 
 <ol>
   <li>On your local branch, access the Magento Admin panel.</li>
   <li>On the <em>Content</em> menu, click <strong>Configuration</strong>.</li>
   <li>In the <em>Design Configuration</em> view, click <strong>Edit</strong> for the Global Website.</li>
   <li>In the <em>Main Website</em> view, click <strong>Search Engine Robots</strong> in the <em>Other Settings</em> section.</li>
-  <li>Select options and update the <code class="highlighter-rouge">robots.txt</code> file.</li>
+  <li>Select options and update the <code class="language-plaintext highlighter-rouge">robots.txt</code> file.</li>
   <li>Click <strong>Save Configuration</strong>.</li>
 </ol>
 
 <h2 id="rewrite-using-fastly-vcl-snippet">Rewrite using Fastly VCL snippet</h2>
 
-<p>You can generate the <code class="highlighter-rouge">sitemap.xml</code> file in the Magento Admin panel as described above, but you can avoid a Support ticket by creating a custom Fastly VCL snippet to manage the redirect. See <a href="/devdocs/guides/v2.0/cloud/cdn/cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a>.</p>
+<p>You can generate the <code class="language-plaintext highlighter-rouge">sitemap.xml</code> file in the Magento Admin panel as described above, but you can avoid a Support ticket by creating a custom Fastly VCL snippet to manage the redirect. See <a href="/devdocs/guides/v2.0/cloud/cdn/cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a>.</p>
 
 <h4 id="to-use-a-fastly-vcl-snippet-for-redirect">To use a Fastly VCL snippet for redirect:</h4>
 
-<p>Create a custom VCL snippet to rewrite the path for <code class="highlighter-rouge">sitemap.xml</code> to <code class="highlighter-rouge">/media/sitemap.xml</code> using the <code class="highlighter-rouge">type</code> and <code class="highlighter-rouge">content</code> key and value pairs.</p>
+<p>Create a custom VCL snippet to rewrite the path for <code class="language-plaintext highlighter-rouge">sitemap.xml</code> to <code class="language-plaintext highlighter-rouge">/media/sitemap.xml</code> using the <code class="language-plaintext highlighter-rouge">type</code> and <code class="language-plaintext highlighter-rouge">content</code> key and value pairs.</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w"> 
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sitemapxml_rewrite"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"dynamic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"recv"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"priority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"90"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"if ( req.url.path ~ </span><span class="se">\"</span><span class="s2">^/?sitemap.xml$</span><span class="se">\"</span><span class="s2"> ) { set req.url = </span><span class="se">\"</span><span class="s2">/media/sitemap.xml</span><span class="se">\"</span><span class="s2">; }"</span><span class="w"> 
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sitemapxml_rewrite"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"dynamic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"recv"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"priority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"90"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"if ( req.url.path ~ </span><span class="se">\"</span><span class="s2">^/?sitemap.xml$</span><span class="se">\"</span><span class="s2"> ) { set req.url = </span><span class="se">\"</span><span class="s2">/media/sitemap.xml</span><span class="se">\"</span><span class="s2">; }"</span><span class="w"> 
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 

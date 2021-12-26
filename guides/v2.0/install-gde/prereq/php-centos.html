@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>PHP 5.5, 5.6, or 7.0&mdash;CentOS | Magento 2 Developer Documentation (copy)</title>
+	<title>PHP 5.5, 5.6, or 7.0&mdash;CentOS | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/install-gde/prereq/php-centos.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/install-gde/prereq/php-centos.html">Magento 2.0</a></li>
 		
@@ -4468,16 +4469,16 @@
 
 <h2 id="centos-verify-php">Verify PHP is installed</h2>
 
-<p>To verify if PHP is installed already, enter <code class="highlighter-rouge">php -v</code>. If   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
+<p>To verify if PHP is installed already, enter <code class="language-plaintext highlighter-rouge">php -v</code>. If   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
  is installed, messages similar to the following display:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>PHP 5.6.4 (cli) (built: Dec 20 2014 17:30:46)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>PHP 5.6.4 (cli) (built: Dec 20 2014 17:30:46)
 Copyright (c) 1997-2014 The PHP Group
 Zend Engine v2.6.0, Copyright (c) 1998-2014 Zend Technologies
 with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
 </code></pre></div></div>
 
-<p class="bs-callout bs-callout-info">The preceding message confirms that the <code class="highlighter-rouge">Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p>
+<p class="bs-callout bs-callout-info">The preceding message confirms that the <code class="language-plaintext highlighter-rouge">Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p>
 
 <p>If PHP is installed, continue with the next prerequisite, <a href="/devdocs/guides/v2.0/install-gde/prereq/mysql.html">MySQL</a>.</p>
 
@@ -4522,7 +4523,7 @@ with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
   <li>
     <p><em>CentOS 6</em>. Enter the following commands in the order shown:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>yum -y update
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>yum -y update
 yum -y install epel-release
 wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
 wget https://centos6.iuscommunity.org/ius-release.rpm
@@ -4533,40 +4534,40 @@ yum -y update
   <li>
     <p><em>CentOS 7</em>. Enter the following commands:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>yum install -y http://dl.iuscommunity.org/pub/ius/stable/CentOS/7/x86_64/ius-release-1.0-14.ius.centos7.noarch.rpm
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>yum install -y http://dl.iuscommunity.org/pub/ius/stable/CentOS/7/x86_64/ius-release-1.0-14.ius.centos7.noarch.rpm
 yum -y update
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Enter the following command:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>yum -y install php70u php70u-pdo php70u-mysqlnd php70u-opcache php70u-xml php70u-mcrypt php70u-gd php70u-devel php70u-mysql php70u-intl php70u-mbstring php70u-bcmath php70u-json php70u-iconv php70u-soap
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>yum -y install php70u php70u-pdo php70u-mysqlnd php70u-opcache php70u-xml php70u-mcrypt php70u-gd php70u-devel php70u-mysql php70u-intl php70u-mbstring php70u-bcmath php70u-json php70u-iconv php70u-soap
 </code></pre></div>    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
-      <p>The <code class="highlighter-rouge">bcmath</code> extension is required for Magento Commerce only.</p>
+      <p>The <code class="language-plaintext highlighter-rouge">bcmath</code> extension is required for Magento Commerce only.</p>
 
     </div>
   </li>
   <li>
-    <p>Restart Apache: <code class="highlighter-rouge">service httpd restart</code></p>
+    <p>Restart Apache: <code class="language-plaintext highlighter-rouge">service httpd restart</code></p>
   </li>
   <li>
     <p>Enter the following command to verify that PHP 7.x is installed:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php -v
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php -v
 </code></pre></div>    </div>
 
     <p>The following response indicates that PHP 7.0.3 is installed properly:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>PHP 7.0.3 (cli) (built: Feb  4 2016 08:51:10) ( NTS )
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>PHP 7.0.3 (cli) (built: Feb  4 2016 08:51:10) ( NTS )
 Copyright (c) 1997-2016 The PHP Group
 Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies
 with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
 </code></pre></div>    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
-      <p>The preceding message confirms that the <code class="highlighter-rouge">Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p>
+      <p>The preceding message confirms that the <code class="language-plaintext highlighter-rouge">Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p>
 
     </div>
   </li>
@@ -4587,7 +4588,7 @@ with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
   <li>
     <p><em>CentOS 6</em>. Enter the following commands in the order shown:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>yum -y update
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>yum -y update
 yum -y install epel-release
 wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
 wget https://centos6.iuscommunity.org/ius-release.rpm
@@ -4597,14 +4598,14 @@ yum -y install php56u php56u-opcache php56u-xml php56u-mcrypt php56u-gd php56u-d
 </code></pre></div>    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
-      <p>The <code class="highlighter-rouge">bcmath</code> extension is required for Magento Commerce only.</p>
+      <p>The <code class="language-plaintext highlighter-rouge">bcmath</code> extension is required for Magento Commerce only.</p>
 
     </div>
   </li>
   <li>
     <p><em>CentOS 7</em>. Enter the following commands in the order shown:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>yum -y update
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>yum -y update
 yum -y install epel-release
 wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 wget https://centos7.iuscommunity.org/ius-release.rpm
@@ -4614,29 +4615,29 @@ yum -y install php56u php56u-opcache php56u-xml php56u-mcrypt php56u-gd php56u-d
 </code></pre></div>    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
-      <p>The <code class="highlighter-rouge">bcmath</code> extension is required for Magento Commerce only.</p>
+      <p>The <code class="language-plaintext highlighter-rouge">bcmath</code> extension is required for Magento Commerce only.</p>
 
     </div>
   </li>
   <li>
-    <p>Restart Apache: <code class="highlighter-rouge">service httpd restart</code></p>
+    <p>Restart Apache: <code class="language-plaintext highlighter-rouge">service httpd restart</code></p>
   </li>
   <li>
     <p>Enter the following command to verify that PHP 5.6 is installed:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php -v
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php -v
 </code></pre></div>    </div>
 
     <p>The following response indicates that PHP 5.6 is installed properly:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>PHP 5.6.18 (cli) (built: Feb  4 2016 09:29:52)
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>PHP 5.6.18 (cli) (built: Feb  4 2016 09:29:52)
 Copyright (c) 1997-2016 The PHP Group
 Zend Engine v2.6.0, Copyright (c) 1998-2016 Zend Technologies
 with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
 </code></pre></div>    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
-      <p>The preceding message confirms that the <code class="highlighter-rouge">Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p>
+      <p>The preceding message confirms that the <code class="language-plaintext highlighter-rouge">Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p>
 
     </div>
   </li>
@@ -4657,7 +4658,7 @@ with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
   <li>
     <p>Enter the following commands in the order shown.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>yum -y update
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>yum -y update
 yum -y install epel-release
 wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
 wget https://centos6.iuscommunity.org/ius-release.rpm
@@ -4667,25 +4668,25 @@ yum -y install php55u php55u-opcache php55u-xml php55u-mcrypt php55u-gd php55u-d
 </code></pre></div>    </div>
 
     <div class="bs-callout bs-callout-info" id="info">
-      <p>The <code class="highlighter-rouge">bcmath</code> extension is required for Magento Commerce only.</p>
+      <p>The <code class="language-plaintext highlighter-rouge">bcmath</code> extension is required for Magento Commerce only.</p>
 
     </div>
   </li>
   <li>
     <p>Enter the following command to verify the version:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php -v
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php -v
 </code></pre></div>    </div>
 
     <p>The following messages display:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>PHP 5.5.32 (cli) (built: Feb  4 2016 09:30:35)
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>PHP 5.5.32 (cli) (built: Feb  4 2016 09:30:35)
 Copyright (c) 1997-2015 The PHP Group
 Zend Engine v2.5.0, Copyright (c) 1998-2015 Zend Technologies
 with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2015, by Zend Technologies
 </code></pre></div>    </div>
   </li>
-  <li>Restart Apache: <code class="highlighter-rouge">service httpd restart</code></li>
+  <li>Restart Apache: <code class="language-plaintext highlighter-rouge">service httpd restart</code></li>
   <li>Continue with <a href="/devdocs/guides/v2.0/install-gde/prereq/php-settings.html">Required PHP settings</a>.</li>
 </ol>
 </div>

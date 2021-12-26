@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Payment method facade | Magento 2 Developer Documentation (copy)</title>
+	<title>Payment method facade | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/payments-integrations/base-integration/facade-configuration.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/payments-integrations/base-integration/facade-configuration.html">Magento 2.0</a></li>
 		
@@ -2160,7 +2161,7 @@
 process payment actions between Magento Sales Management and payment processor.</p>
 
 <p>Add the <a href="/devdocs/guides/v2.2/extension-dev-guide/depend-inj.html">dependency injection (DI)</a> configuration for   <span term-uuid="422b0fa8-b181-4c7c-93a2-c553abb34efd" class="glossary-term" data-toggle="popover">payment method</span>
- facade in your <code class="highlighter-rouge">%Vendor_Module%/etc/di.xml</code>.</p>
+ facade in your <code class="language-plaintext highlighter-rouge">%Vendor_Module%/etc/di.xml</code>.</p>
 
 <p>The following sample is an illustration of such configuration (<a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Braintree/etc/di.xml#L10">app/code/Magento/Braintree/etc/di.xml#L10</a>):</p>
 
@@ -2186,27 +2187,27 @@ process payment actions between Magento Sales Management and payment processor.<
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">code</code></td>
+      <td><code class="language-plaintext highlighter-rouge">code</code></td>
       <td>Payment method’s code.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">formBlockType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">formBlockType</code></td>
       <td>Name of the block class responsible for payment provider gateway form rendering. This block is used in the Admin panel only, because on the storefront the form is rendered using knockout.js. See the <a href="/devdocs/guides/v2.2/payments-integrations/base-integration/formblocktype.html">Admin integration</a> topic for details.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">infoBlockType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">infoBlockType</code></td>
       <td>Name of the block class responsible for Transaction/Payment Information details rendering in Order block in Admin panel or customer account on storefront. In most cases it will be enough to specify the default implementation of <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Payment/Block/ConfigurableInfo.php">Configurable Info</a>, but for customizations you can specify your own implementation.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">valueHandlerPool</code></td>
+      <td><code class="language-plaintext highlighter-rouge">valueHandlerPool</code></td>
       <td>Pool of value handlers used for queries to configuration. For details see the <a href="#value_handlers_pool">following paragraph</a>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">validatorPool</code></td>
+      <td><code class="language-plaintext highlighter-rouge">validatorPool</code></td>
       <td><a href="#validators_pool">Pool of validators</a>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">commandPool</code></td>
+      <td><code class="language-plaintext highlighter-rouge">commandPool</code></td>
       <td><a href="/devdocs/guides/v2.2/payments-integrations/payment-gateway/command-pool.html">Pool of gateway commands</a>.</td>
     </tr>
   </tbody>
@@ -2216,7 +2217,7 @@ process payment actions between Magento Sales Management and payment processor.<
 
 <p>Let’s look closer at the value handlers pool of a payment method. This pool enables you to set payment configuration that is based on certain conditions.</p>
 
-<p>For example, the <code class="highlighter-rouge">can_void</code> configuration option might depend on payment transaction status or paid amount. The following sample shows how to set the corresponding configuration (<a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Braintree/etc/di.xml#L296">app/code/Magento/Braintree/etc/di.xml#L296</a>):</p>
+<p>For example, the <code class="language-plaintext highlighter-rouge">can_void</code> configuration option might depend on payment transaction status or paid amount. The following sample shows how to set the corresponding configuration (<a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Braintree/etc/di.xml#L296">app/code/Magento/Braintree/etc/di.xml#L296</a>):</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"BraintreeValueHandlerPool"</span> <span class="na">type=</span><span class="s">"Magento\Payment\Gateway\Config\ValueHandlerPool"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
@@ -2236,14 +2237,14 @@ process payment actions between Magento Sales Management and payment processor.<
     <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/virtualType&gt;</span></code></pre></figure>
 
-<p>In your configuration you can use default <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Payment/Gateway/Config/Config.php">Magento\Payment\Gateway\Config\Config</a>. Or you can add a custom config interface. It must implement the <code class="highlighter-rouge">Magento\Payment\Gateway\ConfigInterface</code> interface.</p>
+<p>In your configuration you can use default <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Payment/Gateway/Config/Config.php">Magento\Payment\Gateway\Config\Config</a>. Or you can add a custom config interface. It must implement the <code class="language-plaintext highlighter-rouge">Magento\Payment\Gateway\ConfigInterface</code> interface.</p>
 
-<p><code class="highlighter-rouge">Magento\Payment\Gateway\Config\Config</code> can read configuration by payment method code, so is useful to use it or extend it for your own purposes.</p>
+<p><code class="language-plaintext highlighter-rouge">Magento\Payment\Gateway\Config\Config</code> can read configuration by payment method code, so is useful to use it or extend it for your own purposes.</p>
 
 <p>And <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Braintree/Gateway/Config/Config.php">Magento\Braintree\Gateway\Config\Config</a> reads
 configuration from database or payment config file.</p>
 
-<p>Other handlers contain some logic, for example, <code class="highlighter-rouge">can_cancel</code> option is the same as <code class="highlighter-rouge">can_void</code> and depends on whether the order has paid amount (invoiced).</p>
+<p>Other handlers contain some logic, for example, <code class="language-plaintext highlighter-rouge">can_cancel</code> option is the same as <code class="language-plaintext highlighter-rouge">can_void</code> and depends on whether the order has paid amount (invoiced).</p>
 
 <p>Your custom handlers must implement the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Payment/Gateway/Config/ValueHandlerInterface.php">Value Handler interface</a>.</p>
 
@@ -2252,29 +2253,29 @@ configuration from database or payment config file.</p>
 <p>You can configure the pool of validators, which allows processing various payment method validations. Below are the examples of such validators:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">country</code> — checks if billing country is allowed for the payment method</li>
-  <li><code class="highlighter-rouge">currency</code> — checks if the selected currency is allowed for the payment method</li>
-  <li><code class="highlighter-rouge">availability</code> — checks if the payment method is available</li>
-  <li><code class="highlighter-rouge">global</code> — the validation that is called before placing an order</li>
+  <li><code class="language-plaintext highlighter-rouge">country</code> — checks if billing country is allowed for the payment method</li>
+  <li><code class="language-plaintext highlighter-rouge">currency</code> — checks if the selected currency is allowed for the payment method</li>
+  <li><code class="language-plaintext highlighter-rouge">availability</code> — checks if the payment method is available</li>
+  <li><code class="language-plaintext highlighter-rouge">global</code> — the validation that is called before placing an order</li>
 </ul>
 
-<p>A custom validator should implement the <code class="highlighter-rouge">\Magento\Payment\Gateway\Validator\ValidatorInterface</code>. In the most cases, it is enough
-to extend the <code class="highlighter-rouge">\Magento\Payment\Gateway\Validator\AbstractValidator</code> and create an implementation of the <code class="highlighter-rouge">validate</code> method:</p>
+<p>A custom validator should implement the <code class="language-plaintext highlighter-rouge">\Magento\Payment\Gateway\Validator\ValidatorInterface</code>. In the most cases, it is enough
+to extend the <code class="language-plaintext highlighter-rouge">\Magento\Payment\Gateway\Validator\AbstractValidator</code> and create an implementation of the <code class="language-plaintext highlighter-rouge">validate</code> method:</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="k">class</span> <span class="nc">CountryValidator</span> <span class="k">extends</span> <span class="nx">AbstractValidator</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="kd">class</span> <span class="nc">CountryValidator</span> <span class="kd">extends</span> <span class="nc">AbstractValidator</span>
 <span class="p">{</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * @inheritdoc
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">validate</span><span class="p">(</span><span class="k">array</span> <span class="nv">$validationSubject</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">validate</span><span class="p">(</span><span class="kt">array</span> <span class="nv">$validationSubject</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="nv">$isValid</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
         <span class="nv">$storeId</span> <span class="o">=</span> <span class="nv">$validationSubject</span><span class="p">[</span><span class="s1">'storeId'</span><span class="p">];</span>
 
-        <span class="k">if</span> <span class="p">((</span><span class="nx">int</span><span class="p">)</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">config</span><span class="o">-&gt;</span><span class="na">getValue</span><span class="p">(</span><span class="s1">'allowspecific'</span><span class="p">,</span> <span class="nv">$storeId</span><span class="p">)</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">((</span><span class="n">int</span><span class="p">)</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">config</span><span class="o">-&gt;</span><span class="nf">getValue</span><span class="p">(</span><span class="s1">'allowspecific'</span><span class="p">,</span> <span class="nv">$storeId</span><span class="p">)</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
             <span class="nv">$availableCountries</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span>
                 <span class="s1">','</span><span class="p">,</span>
-                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">config</span><span class="o">-&gt;</span><span class="na">getValue</span><span class="p">(</span><span class="s1">'specificcountry'</span><span class="p">,</span> <span class="nv">$storeId</span><span class="p">)</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">config</span><span class="o">-&gt;</span><span class="nf">getValue</span><span class="p">(</span><span class="s1">'specificcountry'</span><span class="p">,</span> <span class="nv">$storeId</span><span class="p">)</span>
             <span class="p">);</span>
 
             <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">in_array</span><span class="p">(</span><span class="nv">$validationSubject</span><span class="p">[</span><span class="s1">'country'</span><span class="p">],</span> <span class="nv">$availableCountries</span><span class="p">))</span> <span class="p">{</span>
@@ -2282,7 +2283,7 @@ to extend the <code class="highlighter-rouge">\Magento\Payment\Gateway\Validator
             <span class="p">}</span>
         <span class="p">}</span>
 
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">createResult</span><span class="p">(</span><span class="nv">$isValid</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">createResult</span><span class="p">(</span><span class="nv">$isValid</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>

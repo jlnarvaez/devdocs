@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>PHP coding standard | Magento 2 Developer Documentation (copy)</title>
+	<title>PHP coding standard | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/coding-standards/code-standard-php.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/coding-standards/code-standard-php.html">Magento 2.0</a></li>
 		
@@ -1825,12 +1826,12 @@
 			<p>The Magento core development team uses the <a href="http://www.php-fig.org/psr/psr-1/" target="_blank">PSR-1: Basic Coding Standard</a> and <a href="http://www.php-fig.org/psr/psr-2/" target="_blank">PSR-2: Coding Style Guide</a>.
 Magento recommends that developers who create Magento extensions and customizations also use these standards.</p>
 
-<p>Where possible, use <a href="https://github.com/squizlabs/PHP_CodeSniffer" target="_blank"><code class="highlighter-rouge">PHP_CodeSniffer</code></a> to automatically enforce these standards.
+<p>Where possible, use <a href="https://github.com/squizlabs/PHP_CodeSniffer" target="_blank"><code class="language-plaintext highlighter-rouge">PHP_CodeSniffer</code></a> to automatically enforce these standards.
 Otherwise, you must apply these standards and requirements through rigorous code review.</p>
 
 <h3 id="class-name-resolution-standard">Class name resolution standard</h3>
 
-<p>For class name resolution, use the <a href="http://php.net/manual/en/language.oop5.basic.php#language.oop5.basic.class.class" target="_blank"><code class="highlighter-rouge">::class</code></a>   <span term-uuid="caa46cea-25d7-4e4f-bce1-11430ada59dc" class="glossary-term" data-toggle="popover">keyword</span>
+<p>For class name resolution, use the <a href="http://php.net/manual/en/language.oop5.basic.php#language.oop5.basic.class.class" target="_blank"><code class="language-plaintext highlighter-rouge">::class</code></a>   <span term-uuid="caa46cea-25d7-4e4f-bce1-11430ada59dc" class="glossary-term" data-toggle="popover">keyword</span>
  instead of a string literal for every class name reference outside of that class.
 This includes references to:</p>
 
@@ -1844,9 +1845,9 @@ This includes references to:</p>
 
 <p>Examples:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="nx">ClassName</span><span class="o">::</span><span class="na">class</span><span class="p">);</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">get</span><span class="p">(</span><span class="nc">ClassName</span><span class="o">::</span><span class="n">class</span><span class="p">);</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="nx">\Magento\Path\To\Class</span><span class="o">::</span><span class="na">class</span><span class="p">);</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">get</span><span class="p">(</span><span class="err">\</span><span class="nc">Magento\Path\To\Class</span><span class="o">::</span><span class="n">class</span><span class="p">);</span></code></pre></figure>
 
 
 			

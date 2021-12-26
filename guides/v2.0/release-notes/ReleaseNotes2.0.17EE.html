@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento Commerce 2.0.17 Release Notes | Magento 2 Developer Documentation (copy)</title>
+	<title>Magento Commerce 2.0.17 Release Notes | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/release-notes/ReleaseNotes2.0.17EE.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/release-notes/ReleaseNotes2.0.17EE.html">Magento 2.0</a></li>
 		
@@ -1656,12 +1657,12 @@
 <!--- 58792 -->
 <ul>
   <li>The   <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>
- now displays images that Magento resizes during product save operations, rather than resizing the product on the storefront. Previously, the image path contained <code class="highlighter-rouge">store_id</code>, and during save operations, Magento resized images for  the default store only. </li>
+ now displays images that Magento resizes during product save operations, rather than resizing the product on the storefront. Previously, the image path contained <code class="language-plaintext highlighter-rouge">store_id</code>, and during save operations, Magento resized images for  the default store only. </li>
 </ul>
 
 <!--- 61798 -->
 <ul>
-  <li>When you delete an image in the Admin, Magento no longer deletes it on the server. Previously, Magento deleted it from the server as well, which caused errors for other products (example error message: <code class="highlighter-rouge">Cannot gather stats! Warning!stat(): stat failed for</code>).</li>
+  <li>When you delete an image in the Admin, Magento no longer deletes it on the server. Previously, Magento deleted it from the server as well, which caused errors for other products (example error message: <code class="language-plaintext highlighter-rouge">Cannot gather stats! Warning!stat(): stat failed for</code>).</li>
 </ul>
 
 <!--- 61143 -->
@@ -1671,12 +1672,12 @@
 
 <!--- 63657 -->
 <ul>
-  <li>The product attribute <code class="highlighter-rouge">category_ids</code> can have only <strong>Global</strong> scope. Previously, you could change the scope value of <code class="highlighter-rouge">category_ids</code> to <strong>Store</strong>.</li>
+  <li>The product attribute <code class="language-plaintext highlighter-rouge">category_ids</code> can have only <strong>Global</strong> scope. Previously, you could change the scope value of <code class="language-plaintext highlighter-rouge">category_ids</code> to <strong>Store</strong>.</li>
 </ul>
 
 <!--- 66345 -->
 <ul>
-  <li>The <code class="highlighter-rouge">\Magento\CatalogInventory\Model\Stock\Status::getStockId()</code> call now returns the stock ID as expected. Previously, it returned the website ID.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">\Magento\CatalogInventory\Model\Stock\Status::getStockId()</code> call now returns the stock ID as expected. Previously, it returned the website ID.</li>
 </ul>
 
 <h3 id="configurable-products">Configurable products</h3>
@@ -1717,7 +1718,7 @@
 
 <!--- 63651 -->
 <ul>
-  <li>Magento now moves the <code class="highlighter-rouge">sequence_*</code> table to the correct database after implementing a split database.</li>
+  <li>Magento now moves the <code class="language-plaintext highlighter-rouge">sequence_*</code> table to the correct database after implementing a split database.</li>
 </ul>
 
 <!--- 61564 -->
@@ -1777,7 +1778,7 @@
 
 <!--- 64962 -->
 <ul>
-  <li>Log entries no longer show the <code class="highlighter-rouge">current_password</code> field, which should be hidden.</li>
+  <li>Log entries no longer show the <code class="language-plaintext highlighter-rouge">current_password</code> field, which should be hidden.</li>
 </ul>
 
 <!--- 56380 -->
@@ -1830,7 +1831,7 @@
 
 <!--- 58392 -->
 <ul>
-  <li>Magento now imports customer data as expected after the data passes the pre-import validation step. Previously, although data passed this validation step, an error would occur during import, and Magento displayed this message: <code class="highlighter-rouge">Invalid data for insert</code>. <a href="https://github.com/magento/magento2/issues/4921">GitHub-4921</a>, <a href="https://github.com/magento/magento2/issues/9469">GitHub-9469</a></li>
+  <li>Magento now imports customer data as expected after the data passes the pre-import validation step. Previously, although data passed this validation step, an error would occur during import, and Magento displayed this message: <code class="language-plaintext highlighter-rouge">Invalid data for insert</code>. <a href="https://github.com/magento/magento2/issues/4921">GitHub-4921</a>, <a href="https://github.com/magento/magento2/issues/9469">GitHub-9469</a></li>
 </ul>
 
 <h3 id="order-management">Order management</h3>
@@ -1863,7 +1864,7 @@
 
 <!--- 44060 -->
 <ul>
-  <li>The SOAP API no longer fails after you run <code class="highlighter-rouge">bin/magento setup:di:compile</code>.</li>
+  <li>The SOAP API no longer fails after you run <code class="language-plaintext highlighter-rouge">bin/magento setup:di:compile</code>.</li>
 </ul>
 
 <!--- 61908 -->
@@ -1899,16 +1900,16 @@
 
 <h3 id="install-rc-composer" class="no_toc">Get Magento Commerce using Composer</h3>
 
-<p>This software is available from <code class="highlighter-rouge">repo.magento.com</code>. Before installing the Magento Commerce software using Composer, familiarize yourself with the Composer <a href="/devdocs/guides/v2.0/install-gde/prereq/integrator_install.html">metapackage</a>, then run:</p>
+<p>This software is available from <code class="language-plaintext highlighter-rouge">repo.magento.com</code>. Before installing the Magento Commerce software using Composer, familiarize yourself with the Composer <a href="/devdocs/guides/v2.0/install-gde/prereq/integrator_install.html">metapackage</a>, then run:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer create-project --repository=https://repo.magento.com/ magento/project-enterprise-edition=&lt;version&gt; &lt;installation directory name&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer create-project --repository=https://repo.magento.com/ magento/project-enterprise-edition=&lt;version&gt; &lt;installation directory name&gt;
 </code></pre></div></div>
 
-<p>where <code class="highlighter-rouge">&lt;version&gt;</code> matches the version you want (for example, <code class="highlighter-rouge">2.0.10</code>)</p>
+<p>where <code class="language-plaintext highlighter-rouge">&lt;version&gt;</code> matches the version you want (for example, <code class="language-plaintext highlighter-rouge">2.0.10</code>)</p>
 
-<p>For example, to install 2.0.10 in the <code class="highlighter-rouge">magento2</code> directory:</p>
+<p>For example, to install 2.0.10 in the <code class="language-plaintext highlighter-rouge">magento2</code> directory:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer create-project --repository=https://repo.magento.com/ magento/project-enterprise-edition=2.0.10 magento2
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer create-project --repository=https://repo.magento.com/ magento/project-enterprise-edition=2.0.10 magento2
 </code></pre></div></div>
 
 <h3 id="get-zip" class="no_toc">Get Magento Commerce using a compressed archive</h3>
@@ -1922,7 +1923,7 @@
 
 <p>These packages are easy to get and install. You don’t need to use Composer, all you need to do is to upload a package to your Magento server or hosted platform, unpack it, and run the web-based Setup Wizard.</p>
 
-<p>Archives are available in the following formats: <code class="highlighter-rouge">.zip</code>, <code class="highlighter-rouge">.tar.bz2</code>, <code class="highlighter-rouge">.tar.gz</code></p>
+<p>Archives are available in the following formats: <code class="language-plaintext highlighter-rouge">.zip</code>, <code class="language-plaintext highlighter-rouge">.tar.bz2</code>, <code class="language-plaintext highlighter-rouge">.tar.gz</code></p>
 
 <p>To get the Magento Commerce archive:</p>
 
@@ -1935,8 +1936,8 @@
     <p>Follow the instructions on your screen to complete the Magento Commerce download:</p>
 
     <ul>
-      <li><code class="highlighter-rouge">Magento-EE-&lt;version&gt;.*</code> (without sample data)</li>
-      <li><code class="highlighter-rouge">Magento-EE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
+      <li><code class="language-plaintext highlighter-rouge">Magento-EE-&lt;version&gt;.*</code> (without sample data)</li>
+      <li><code class="language-plaintext highlighter-rouge">Magento-EE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
     </ul>
   </li>
   <li>Transfer the installation package to your development system.</li>

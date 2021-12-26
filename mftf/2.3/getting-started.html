@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Getting started | Magento 2 Developer Documentation (copy)</title>
+	<title>Getting started | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -2157,8 +2156,7 @@
 	<h1 class="page-heading">Getting started</h1>
 </section>
 
-			
-<p style="text-align: right"><em>This topic was updated after 2.3.8 MFTF release.</em></p>
+			<p style="text-align: right"><em>This topic was updated after 2.3.8 MFTF release.</em></p>
 
 <p class="bs-callout bs-callout-info"><a href="./introduction.html#find-version">Find out your version</a> of the MFTF.
 If your version is 2.2, see the <a href="/devdocs/mftf/2.2/introduction.html">MFTF 2.2 documentation</a>.</p>
@@ -2212,10 +2210,10 @@ If your version is 2.2, see the <a href="/devdocs/mftf/2.2/introduction.html">MF
 <h2 id="setup-framework">Set up an embedded MFTF</h2>
 
 <p>This is a default setup that you would need to start using the MFTF to cover your Magento project with functional testing.
-It installs the framework using an existing Composer dependency such as <code class="highlighter-rouge">magento/magento2-functional-testing-framework</code>.
+It installs the framework using an existing Composer dependency such as <code class="language-plaintext highlighter-rouge">magento/magento2-functional-testing-framework</code>.
 If you want to set up the MFTF as a standalone tool, refer to <a href="#set-up-a-standalone-mftf">Set up a standalone MFTF</a>.</p>
 
-<h3 id="clone-magento">Step 1. Clone the <code class="highlighter-rouge">magento2</code> source code repository</h3>
+<h3 id="clone-magento">Step 1. Clone the <code class="language-plaintext highlighter-rouge">magento2</code> source code repository</h3>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git clone https://github.com/magento/magento2.git
 </code></pre></div></div>
@@ -2237,12 +2235,12 @@ If you want to set up the MFTF as a standalone tool, refer to <a href="#set-up-a
 
 <p>Install the Magento application.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer install
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer <span class="nb">install</span>
 </code></pre></div></div>
 
 <p>Install the MFTF.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer install <span class="nt">-d</span> dev/tests/acceptance/
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer <span class="nb">install</span> <span class="nt">-d</span> dev/tests/acceptance/
 </code></pre></div></div>
 
 <h3 id="build-project">Step 3. Build the project</h3>
@@ -2260,20 +2258,20 @@ If you want to set up the MFTF as a standalone tool, refer to <a href="#set-up-a
   <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vendor/bin/mftf generate:urn-catalog .idea/
 </code></pre></div>  </div>
 
-  <p>If the file does not exist, add the <code class="highlighter-rouge">--force</code> option to create it:</p>
+  <p>If the file does not exist, add the <code class="language-plaintext highlighter-rouge">--force</code> option to create it:</p>
 
   <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vendor/bin/mftf generate:urn-catalog <span class="nt">--force</span> .idea/
 </code></pre></div>  </div>
 
-  <p>See <a href="commands/mftf.html#generateurn-catalog"><code class="highlighter-rouge">generate:urn-catalog</code></a> for more details.</p>
+  <p>See <a href="commands/mftf.html#generateurn-catalog"><code class="language-plaintext highlighter-rouge">generate:urn-catalog</code></a> for more details.</p>
 </div>
 
-<p class="bs-callout bs-callout-tip">You can simplify command entry by adding the  absolute  path to the <code class="highlighter-rouge">vendor/bin</code> directory path to your PATH environment variable.
-After adding the path, you can run <code class="highlighter-rouge">mftf</code> without having to include <code class="highlighter-rouge">vendor/bin</code>.</p>
+<p class="bs-callout bs-callout-tip">You can simplify command entry by adding the  absolute  path to the <code class="language-plaintext highlighter-rouge">vendor/bin</code> directory path to your PATH environment variable.
+After adding the path, you can run <code class="language-plaintext highlighter-rouge">mftf</code> without having to include <code class="language-plaintext highlighter-rouge">vendor/bin</code>.</p>
 
 <h3 id="environment-settings">Step 4. Edit environmental settings</h3>
 
-<p>In the <code class="highlighter-rouge">magento2/dev/tests/acceptance/</code> directory, edit the <code class="highlighter-rouge">.env</code> file to match your system.</p>
+<p>In the <code class="language-plaintext highlighter-rouge">magento2/dev/tests/acceptance/</code> directory, edit the <code class="language-plaintext highlighter-rouge">.env</code> file to match your system.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vim dev/tests/acceptance/.env
 </code></pre></div></div>
@@ -2282,37 +2280,37 @@ After adding the path, you can run <code class="highlighter-rouge">mftf</code> w
 
 <ul>
   <li>
-    <p><code class="highlighter-rouge">MAGENTO_BASE_URL</code> must contain a domain name of the Magento instance that will be tested.
-Example: <code class="highlighter-rouge">MAGENTO_BASE_URL=http://magento.test</code></p>
+    <p><code class="language-plaintext highlighter-rouge">MAGENTO_BASE_URL</code> must contain a domain name of the Magento instance that will be tested.
+Example: <code class="language-plaintext highlighter-rouge">MAGENTO_BASE_URL=http://magento.test</code></p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">MAGENTO_BACKEND_NAME</code> must contain the relative path for the Admin area.
-Example: <code class="highlighter-rouge">MAGENTO_BACKEND_NAME=admin</code></p>
+    <p><code class="language-plaintext highlighter-rouge">MAGENTO_BACKEND_NAME</code> must contain the relative path for the Admin area.
+Example: <code class="language-plaintext highlighter-rouge">MAGENTO_BACKEND_NAME=admin</code></p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">MAGENTO_ADMIN_USERNAME</code> must contain the username required for authorization in the Admin area.
-Example: <code class="highlighter-rouge">MAGENTO_ADMIN_USERNAME=admin</code></p>
+    <p><code class="language-plaintext highlighter-rouge">MAGENTO_ADMIN_USERNAME</code> must contain the username required for authorization in the Admin area.
+Example: <code class="language-plaintext highlighter-rouge">MAGENTO_ADMIN_USERNAME=admin</code></p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">MAGENTO_ADMIN_PASSWORD</code> must contain the user password required for authorization in the Admin area.
-Example: <code class="highlighter-rouge">MAGENTO_ADMIN_PASSWORD=123123q</code></p>
+    <p><code class="language-plaintext highlighter-rouge">MAGENTO_ADMIN_PASSWORD</code> must contain the user password required for authorization in the Admin area.
+Example: <code class="language-plaintext highlighter-rouge">MAGENTO_ADMIN_PASSWORD=123123q</code></p>
   </li>
 </ul>
 
-<p class="bs-callout bs-callout-info">If the <code class="highlighter-rouge">MAGENTO_BASE_URL</code> contains a subdirectory like <code class="highlighter-rouge">http://magento.test/magento2ce</code>, specify <code class="highlighter-rouge">MAGENTO_CLI_COMMAND_PATH</code>.</p>
+<p class="bs-callout bs-callout-info">If the <code class="language-plaintext highlighter-rouge">MAGENTO_BASE_URL</code> contains a subdirectory like <code class="language-plaintext highlighter-rouge">http://magento.test/magento2ce</code>, specify <code class="language-plaintext highlighter-rouge">MAGENTO_CLI_COMMAND_PATH</code>.</p>
 
 <p>Learn more about environmental settings in <a href="configuration.html">Configuration</a>.</p>
 
 <h3 id="step-5-enable-the-magento-cli-commands">Step 5. Enable the Magento CLI commands</h3>
 
-<p>In the <code class="highlighter-rouge">magento2/dev/tests/acceptance</code> directory, run the following command to enable the MFTF to send Magento CLI commands to your Magento instance.</p>
+<p>In the <code class="language-plaintext highlighter-rouge">magento2/dev/tests/acceptance</code> directory, run the following command to enable the MFTF to send Magento CLI commands to your Magento instance.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cp dev/tests/acceptance/.htaccess.sample dev/tests/acceptance/.htaccess
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">cp </span>dev/tests/acceptance/.htaccess.sample dev/tests/acceptance/.htaccess
 </code></pre></div></div>
 
 <h3 id="run-tests">Step 6. Generate and run tests</h3>
 
-<p>To run tests, you need a running Selenium server and <a href="commands/mftf.html"><code class="highlighter-rouge">mftf</code></a> commands.</p>
+<p>To run tests, you need a running Selenium server and <a href="commands/mftf.html"><code class="language-plaintext highlighter-rouge">mftf</code></a> commands.</p>
 
 <h4 id="selenium-server">Run the Selenium server</h4>
 
@@ -2336,16 +2334,16 @@ For example, the following commands run the Selenium server for Google Chrome:</
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vendor/bin/codecept run functional
 </code></pre></div></div>
 
-<p>See more commands in <a href="commands/codeception.html"><code class="highlighter-rouge">codecept</code></a>.</p>
+<p>See more commands in <a href="commands/codeception.html"><code class="language-plaintext highlighter-rouge">codecept</code></a>.</p>
 
 <h4 id="run-test">Run a simple test</h4>
 
-<p>To clean up the previously generated tests, and then generate and run a single test <code class="highlighter-rouge">AdminLoginTest</code>, run:</p>
+<p>To clean up the previously generated tests, and then generate and run a single test <code class="language-plaintext highlighter-rouge">AdminLoginTest</code>, run:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vendor/bin/mftf run:test AdminLoginTest <span class="nt">--remove</span>
 </code></pre></div></div>
 
-<p>See more commands in <a href="commands/mftf.html"><code class="highlighter-rouge">mftf</code></a>.</p>
+<p>See more commands in <a href="commands/mftf.html"><code class="language-plaintext highlighter-rouge">mftf</code></a>.</p>
 
 <h3 id="reports">Step 7. Generate reports</h3>
 
@@ -2355,7 +2353,7 @@ To view the reports in GUI:</p>
 
 <ul>
   <li><a href="https://github.com/allure-framework/allure2#download">Install Allure</a></li>
-  <li>Run the tool to serve the artifacts in <code class="highlighter-rouge">dev/tests/acceptance/tests/_output/allure-results/</code>:</li>
+  <li>Run the tool to serve the artifacts in <code class="language-plaintext highlighter-rouge">dev/tests/acceptance/tests/_output/allure-results/</code>:</li>
 </ul>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>allure serve dev/tests/acceptance/tests/_output/allure-results/
@@ -2372,7 +2370,7 @@ These guidelines demonstrate how to set up and run Magento acceptance functional
 <h3 id="prerequisites">Prerequisites</h3>
 
 <p>This installation requires a local instance of the Magento application.
-The MFTF uses the <a href="introduction.html#mftf-tests">tests from Magento modules</a> as well as the <code class="highlighter-rouge">app/autoload.php</code> file.</p>
+The MFTF uses the <a href="introduction.html#mftf-tests">tests from Magento modules</a> as well as the <code class="language-plaintext highlighter-rouge">app/autoload.php</code> file.</p>
 
 <h3 id="step-1-clone-the-mftf-repository">Step 1. Clone the MFTF repository</h3>
 
@@ -2384,7 +2382,7 @@ For contribution guidelines, refer to the <a href="https://github.com/magento/ma
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">cd </span>magento2-functional-testing-framework
 </code></pre></div></div>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer install
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer <span class="nb">install</span>
 </code></pre></div></div>
 
 <h3 id="build-project">Step 3. Build the project</h3>
@@ -2394,16 +2392,16 @@ For contribution guidelines, refer to the <a href="https://github.com/magento/ma
 
 <h3 id="step-4-edit-environment-settings">Step 4. Edit environment settings</h3>
 
-<p>In the <code class="highlighter-rouge">dev/.env</code> file, define the <a href="configuration.html#basic-configuration">basic configuration</a> and <a href="configuration.html#magento_bp"><code class="highlighter-rouge">MAGENTO_BP</code></a> parameters.</p>
+<p>In the <code class="language-plaintext highlighter-rouge">dev/.env</code> file, define the <a href="configuration.html#basic-configuration">basic configuration</a> and <a href="configuration.html#magento_bp"><code class="language-plaintext highlighter-rouge">MAGENTO_BP</code></a> parameters.</p>
 
 <h3 id="add-cli-commands">Step 5. Enable the Magento CLI commands</h3>
 
-<p>Copy the <code class="highlighter-rouge">etc/config/command.php</code> file into your Magento installation at <code class="highlighter-rouge">&lt;magento root directory&gt;/dev/tests/acceptance/utils/</code>.
-Create the <code class="highlighter-rouge">utils/</code> directory, if you didn’t find it.</p>
+<p>Copy the <code class="language-plaintext highlighter-rouge">etc/config/command.php</code> file into your Magento installation at <code class="language-plaintext highlighter-rouge">&lt;magento root directory&gt;/dev/tests/acceptance/utils/</code>.
+Create the <code class="language-plaintext highlighter-rouge">utils/</code> directory, if you didn’t find it.</p>
 
 <h3 id="step-6-remove-the-mftf-package-dependency-in-magento">Step 6. Remove the MFTF package dependency in Magento</h3>
 
-<p>The MFTF uses the Magento <code class="highlighter-rouge">app/autoload.php</code> file to read Magento modules.
+<p>The MFTF uses the Magento <code class="language-plaintext highlighter-rouge">app/autoload.php</code> file to read Magento modules.
 The MFTF dependency in Magento supersedes the standalone registered namespaces unless it is removed at a Composer level.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer remove magento/magento2-functional-testing-framework <span class="nt">--dev</span> <span class="nt">-d</span> &lt;path to the Magento root directory&gt;
@@ -2416,11 +2414,11 @@ The MFTF dependency in Magento supersedes the standalone registered namespaces u
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/mftf run:test AdminLoginTest
 </code></pre></div></div>
 
-<p>You can find the generated test at <code class="highlighter-rouge">dev/tests/functional/tests/MFTF/_generated/default/</code>.</p>
+<p>You can find the generated test at <code class="language-plaintext highlighter-rouge">dev/tests/functional/tests/MFTF/_generated/default/</code>.</p>
 
 <h3 id="step-8-generate-allure-reports">Step 8. Generate Allure reports</h3>
 
-<p>The standalone MFTF generates Allure reports at <code class="highlighter-rouge">dev/tests/_output/allure-results/</code>.
+<p>The standalone MFTF generates Allure reports at <code class="language-plaintext highlighter-rouge">dev/tests/_output/allure-results/</code>.
 Run the Allure server pointing to this directory:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>allure serve dev/tests/_output/allure-results/

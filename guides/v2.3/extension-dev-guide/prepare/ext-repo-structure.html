@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Extension Repository Structure | Magento 2 Developer Documentation (copy)</title>
+	<title>Extension Repository Structure | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/extension-dev-guide/prepare/ext-repo-structure.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/extension-dev-guide/prepare/ext-repo-structure.html">Magento 2.0</a></li>
 		
@@ -3486,7 +3487,7 @@
 
 <h3 id="flatter-hierarchy">Flatter hierarchy</h3>
 
-<p>Your repository structure should no longer include <code class="highlighter-rouge">app/code/&lt;Vendor&gt;/</code> directories.</p>
+<p>Your repository structure should no longer include <code class="language-plaintext highlighter-rouge">app/code/&lt;Vendor&gt;/</code> directories.</p>
 
 <p><em>Before:</em></p>
 
@@ -3535,7 +3536,7 @@
 </code></pre>
 <h3 id="one-component-per-repository">One component per repository</h3>
 
-<p>If your extension requires only one component, your <code class="highlighter-rouge">&lt;component_root&gt;</code> directory and your <code class="highlighter-rouge">&lt;repo_root&gt;</code> directory will be the same to reduce unnecessary hierarchy in the directory structure:</p>
+<p>If your extension requires only one component, your <code class="language-plaintext highlighter-rouge">&lt;component_root&gt;</code> directory and your <code class="language-plaintext highlighter-rouge">&lt;repo_root&gt;</code> directory will be the same to reduce unnecessary hierarchy in the directory structure:</p>
 
 <pre><code class="language-tree">&lt;MyModule_repo_root&gt;
 ├── Api
@@ -3556,9 +3557,9 @@
 
 <h3 id="test-suites">Test Suites</h3>
 
-<p>Function tests can be added to a <code class="highlighter-rouge">Test</code> directory within each module of your extension.</p>
+<p>Function tests can be added to a <code class="language-plaintext highlighter-rouge">Test</code> directory within each module of your extension.</p>
 
-<p>Note: Currently, only Unit and MFTF tests can be run from within a <code class="highlighter-rouge">&lt;Module&gt;</code> directory.</p>
+<p>Note: Currently, only Unit and MFTF tests can be run from within a <code class="language-plaintext highlighter-rouge">&lt;Module&gt;</code> directory.</p>
 
 <pre><code class="language-tree">&lt;extension_repo_root&gt;
 ├── &lt;Module1&gt;

@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Modify Media Library folder permissions | Magento 2 Developer Documentation (copy)</title>
+	<title>Modify Media Library folder permissions | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/ext-best-practices/tutorials/modify-image-library-permissions">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/ext-best-practices/tutorials/modify-image-library-permissions">Magento 2.0</a></li>
 		
@@ -1985,32 +1986,32 @@
 The <a href="https://github.com/magento/magento2ce/blob/2.3/app/code/Magento/Cms/Model/Wysiwyg/Images/Storage.php">Storage class</a> for images in Magento’s CMS module manages image file uploads, file retrievals, and directory creation.</p>
 
 <p>For security purposes, Magento does not provide Media Library access to contents in specific folders.
-This configuration is set in the CMS module’s <code class="highlighter-rouge">di.xml</code> file and injected into the Storage class constructor.</p>
+This configuration is set in the CMS module’s <code class="language-plaintext highlighter-rouge">di.xml</code> file and injected into the Storage class constructor.</p>
 
-<p>By default, Magento allows Media Library access to all directories under <code class="highlighter-rouge">/pub/media</code> except the following:</p>
+<p>By default, Magento allows Media Library access to all directories under <code class="language-plaintext highlighter-rouge">/pub/media</code> except the following:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">captcha</code></li>
-  <li><code class="highlighter-rouge">catalog/product</code></li>
-  <li><code class="highlighter-rouge">customer</code></li>
-  <li><code class="highlighter-rouge">downloadable</code></li>
-  <li><code class="highlighter-rouge">import</code></li>
-  <li><code class="highlighter-rouge">theme</code></li>
-  <li><code class="highlighter-rouge">theme_customization</code></li>
-  <li><code class="highlighter-rouge">tmp</code></li>
+  <li><code class="language-plaintext highlighter-rouge">captcha</code></li>
+  <li><code class="language-plaintext highlighter-rouge">catalog/product</code></li>
+  <li><code class="language-plaintext highlighter-rouge">customer</code></li>
+  <li><code class="language-plaintext highlighter-rouge">downloadable</code></li>
+  <li><code class="language-plaintext highlighter-rouge">import</code></li>
+  <li><code class="language-plaintext highlighter-rouge">theme</code></li>
+  <li><code class="language-plaintext highlighter-rouge">theme_customization</code></li>
+  <li><code class="language-plaintext highlighter-rouge">tmp</code></li>
 </ul>
 
-<p>In this tutorial, you will learn how to specify Media Library view permissions for folders using the <code class="highlighter-rouge">di.xml</code> file.</p>
+<p>In this tutorial, you will learn how to specify Media Library view permissions for folders using the <code class="language-plaintext highlighter-rouge">di.xml</code> file.</p>
 
-<h2 id="step-1-create-dixml-file">Step 1: Create <code class="highlighter-rouge">di.xml</code> file</h2>
+<h2 id="step-1-create-dixml-file">Step 1: Create <code class="language-plaintext highlighter-rouge">di.xml</code> file</h2>
 
-<p>If your module does not have one, create a <a href="/devdocs/guides/v2.3/extension-dev-guide/build/di-xml-file.html"><code class="highlighter-rouge">di.xml</code></a> file under the <code class="highlighter-rouge">etc</code> directory.</p>
+<p>If your module does not have one, create a <a href="/devdocs/guides/v2.3/extension-dev-guide/build/di-xml-file.html"><code class="language-plaintext highlighter-rouge">di.xml</code></a> file under the <code class="language-plaintext highlighter-rouge">etc</code> directory.</p>
 
 <h2 id="step-2-specify-class-type-configuration">Step 2: Specify class type configuration</h2>
 
-<p>To work with the constructor arguments for the <code class="highlighter-rouge">Storage</code> class, create a new <code class="highlighter-rouge">type</code> element with the <code class="highlighter-rouge">name</code> property set to <code class="highlighter-rouge">Magento\Cms\Model\Wysiwyg\Images\Storage</code> in the <code class="highlighter-rouge">di.xml</code> file.</p>
+<p>To work with the constructor arguments for the <code class="language-plaintext highlighter-rouge">Storage</code> class, create a new <code class="language-plaintext highlighter-rouge">type</code> element with the <code class="language-plaintext highlighter-rouge">name</code> property set to <code class="language-plaintext highlighter-rouge">Magento\Cms\Model\Wysiwyg\Images\Storage</code> in the <code class="language-plaintext highlighter-rouge">di.xml</code> file.</p>
 
-<p>Under the <code class="highlighter-rouge">type</code> element, create an <code class="highlighter-rouge">arguments</code> element.</p>
+<p>Under the <code class="language-plaintext highlighter-rouge">type</code> element, create an <code class="language-plaintext highlighter-rouge">arguments</code> element.</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Cms\Model\Wysiwyg\Images\Storage"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
@@ -2020,7 +2021,7 @@ This configuration is set in the CMS module’s <code class="highlighter-rouge">
 
 <h2 id="step-3-specify-argument-name">Step 3: Specify argument name</h2>
 
-<p>To change the content of the <code class="highlighter-rouge">dirs</code> argument provided to the constructor, create a new <code class="highlighter-rouge">argument</code> array element with the name <code class="highlighter-rouge">dirs</code> under <code class="highlighter-rouge">arguments</code>.</p>
+<p>To change the content of the <code class="language-plaintext highlighter-rouge">dirs</code> argument provided to the constructor, create a new <code class="language-plaintext highlighter-rouge">argument</code> array element with the name <code class="language-plaintext highlighter-rouge">dirs</code> under <code class="language-plaintext highlighter-rouge">arguments</code>.</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Cms\Model\Wysiwyg\Images\Storage"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
@@ -2034,9 +2035,9 @@ This configuration is set in the CMS module’s <code class="highlighter-rouge">
 
 <h3 id="step-4a-exclude-a-directory">Step 4a: Exclude a directory</h3>
 
-<p>Add entries to the <code class="highlighter-rouge">exclude</code> array to extend the list of view restricted directories.</p>
+<p>Add entries to the <code class="language-plaintext highlighter-rouge">exclude</code> array to extend the list of view restricted directories.</p>
 
-<p>The following configuration restricts Media Library access to content under <code class="highlighter-rouge">pub/media/private-directory/</code>:</p>
+<p>The following configuration restricts Media Library access to content under <code class="language-plaintext highlighter-rouge">pub/media/private-directory/</code>:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Cms\Model\Wysiwyg\Images\Storage"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
@@ -2054,9 +2055,9 @@ This configuration is set in the CMS module’s <code class="highlighter-rouge">
 
 <h3 id="step-4b-include-an-excluded-directory">Step 4b: Include an excluded directory</h3>
 
-<p>Add entries to the <code class="highlighter-rouge">include</code> array to override directory restrictions.</p>
+<p>Add entries to the <code class="language-plaintext highlighter-rouge">include</code> array to override directory restrictions.</p>
 
-<p>The following configuration overrides the default directory restriction for the <code class="highlighter-rouge">pub/media/downloadable/</code> directory:</p>
+<p>The following configuration overrides the default directory restriction for the <code class="language-plaintext highlighter-rouge">pub/media/downloadable/</code> directory:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Cms\Model\Wysiwyg\Images\Storage"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>

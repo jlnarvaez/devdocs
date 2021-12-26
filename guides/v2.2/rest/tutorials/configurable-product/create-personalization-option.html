@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Step 5. Create the personalization option | Magento 2 Developer Documentation (copy)</title>
+	<title>Step 5. Create the personalization option | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/rest/tutorials/configurable-product/create-personalization-option.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/rest/tutorials/configurable-product/create-personalization-option.html">Magento 2.0</a></li>
 		
@@ -1556,24 +1557,24 @@
 
 			<p>Let’s add a text box to the product page that allows the customer to add his name (up to 15 characters) to the back of shirt.</p>
 
-<p>The <code class="highlighter-rouge">product_sku</code> is the <code class="highlighter-rouge">sku</code> of the configurable product. The <code class="highlighter-rouge">sku</code> specified in the payload is a string that is appended to the <code class="highlighter-rouge">product_sku</code> when a customer decides to purchase this option. Likewise, the <code class="highlighter-rouge">price</code> supplied in the payload is added to the configurable product price.</p>
+<p>The <code class="language-plaintext highlighter-rouge">product_sku</code> is the <code class="language-plaintext highlighter-rouge">sku</code> of the configurable product. The <code class="language-plaintext highlighter-rouge">sku</code> specified in the payload is a string that is appended to the <code class="language-plaintext highlighter-rouge">product_sku</code> when a customer decides to purchase this option. Likewise, the <code class="language-plaintext highlighter-rouge">price</code> supplied in the payload is added to the configurable product price.</p>
 
 <p><strong>Endpoint</strong></p>
 
-<p><code class="highlighter-rouge">POST V1/products/options</code></p>
+<p><code class="language-plaintext highlighter-rouge">POST V1/products/options</code></p>
 
 <p><strong>Payload</strong></p>
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"option"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"product_sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MS-Champ"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Add Your Name (Max 15 Characters)"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"field"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"sort_order"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"is_require"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Personalized"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"max_characters"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="w">
+  </span><span class="nl">"option"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"product_sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MS-Champ"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Add Your Name (Max 15 Characters)"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"field"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sort_order"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"is_require"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Personalized"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"max_characters"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
@@ -1582,16 +1583,16 @@
 <p><strong>Response</strong></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"product_sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MS-Champ"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"option_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Add Your Name (Max 15 Characters)"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"field"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"sort_order"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"is_require"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Personalized"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"max_characters"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="w">
+    </span><span class="nl">"product_sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MS-Champ"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"option_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Add Your Name (Max 15 Characters)"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"field"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sort_order"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"is_require"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"price_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Personalized"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"max_characters"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -1604,7 +1605,7 @@
     <p><img src="/devdocs/guides/v2.2/rest/images/options-section.png" alt="Product page with configurable and simple products" /></p>
   </li>
   <li>
-    <p>On the Luma storefront page, search for <code class="highlighter-rouge">Champ</code>. Then click on the Champ Tee product.</p>
+    <p>On the Luma storefront page, search for <code class="language-plaintext highlighter-rouge">Champ</code>. Then click on the Champ Tee product.</p>
 
     <p><img src="/devdocs/guides/v2.2/rest/images/add-your-name.png" alt="Search results" /></p>
 

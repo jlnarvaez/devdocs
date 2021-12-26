@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>How to add CLI commands | Magento 2 Developer Documentation (copy)</title>
+	<title>How to add CLI commands | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/extension-dev-guide/cli-cmds/cli-howto.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/extension-dev-guide/cli-cmds/cli-howto.html">Magento 2.0</a></li>
 		
@@ -3030,7 +3031,7 @@
 <p>Magento enables your component to add commands to our Symfony-like command-line interface (CLI).</p>
 
 <h3 id="about-the-magento-cli">About the Magento CLI</h3>
-<p>Magento has one command-line interface that performs both installation and configuration tasks: <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin/magento</code>. The new interface performs multiple tasks, including:</p>
+<p>Magento has one command-line interface that performs both installation and configuration tasks: <code class="language-plaintext highlighter-rouge">&lt;your Magento install dir&gt;/bin/magento</code>. The new interface performs multiple tasks, including:</p>
 
 <ul>
   <li>Installing Magento (and related tasks such as creating or updating the database schema, creating the deployment configuration, and so on).</li>
@@ -3045,7 +3046,7 @@
 <p>Other benefits:</p>
 
 <ul>
-  <li>A single command (<code class="highlighter-rouge">php &lt;your Magento install dir&gt;/bin/magento list</code>) lists all available installation and configuration commands.</li>
+  <li>A single command (<code class="language-plaintext highlighter-rouge">php &lt;your Magento install dir&gt;/bin/magento list</code>) lists all available installation and configuration commands.</li>
   <li>Consistent user interface based on Symfony.</li>
   <li>The CLI is extensible so third party developers can “plug in” to it. This has the additional benefit of eliminating users’ learning curve.</li>
   <li>Commands for disabled modules do not display.</li>
@@ -3072,22 +3073,22 @@
 
 <h2 id="cli-sample">Add CLI commands using dependency injection</h2>
 <p>The Magento 2 sample modules provide a demonstration of many programming techniques, including adding a CLI command using   <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span>
-. Look at the <a href="https://github.com/magento/magento2-samples/tree/master/sample-module-command" target="_blank"><code class="highlighter-rouge">sample-module-command</code></a> for an example. The module’s <a href="https://github.com/magento/magento2-samples/blob/master/sample-module-command/README.md" target="_blank">README.md</a> discusses how to install it.</p>
+. Look at the <a href="https://github.com/magento/magento2-samples/tree/master/sample-module-command" target="_blank"><code class="language-plaintext highlighter-rouge">sample-module-command</code></a> for an example. The module’s <a href="https://github.com/magento/magento2-samples/blob/master/sample-module-command/README.md" target="_blank">README.md</a> discusses how to install it.</p>
 
 <p>Following is a summary of the process:</p>
 
 <ol>
   <li>
-    <p>Create a Command class (the recommended location is <code class="highlighter-rouge">&lt;your component root dir&gt;/Console/Command</code>).</p>
+    <p>Create a Command class (the recommended location is <code class="language-plaintext highlighter-rouge">&lt;your component root dir&gt;/Console/Command</code>).</p>
 
-    <p>See <code class="highlighter-rouge">app/code/Magento/CommandExample/Console/Command</code> for examples.</p>
+    <p>See <code class="language-plaintext highlighter-rouge">app/code/Magento/CommandExample/Console/Command</code> for examples.</p>
   </li>
-  <li>Declare your Command class in <code class="highlighter-rouge">Magento\Framework\Console\CommandListInterface</code> using dependency injection (<code class="highlighter-rouge">&lt;your component root dir&gt;/etc/di.xml</code>).</li>
+  <li>Declare your Command class in <code class="language-plaintext highlighter-rouge">Magento\Framework\Console\CommandListInterface</code> using dependency injection (<code class="language-plaintext highlighter-rouge">&lt;your component root dir&gt;/etc/di.xml</code>).</li>
   <li>
     <p>Clean the   <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>
  and compiled code directories:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd &lt;your Magento install dir&gt;/var
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd &lt;your Magento install dir&gt;/var
 rm -rf cache/* page_cache/* di/* generation/* 
 </code></pre></div>    </div>
   </li>

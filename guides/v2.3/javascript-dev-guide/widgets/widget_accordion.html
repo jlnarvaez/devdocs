@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Accordion widget | Magento 2 Developer Documentation (copy)</title>
+	<title>Accordion widget | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/javascript-dev-guide/widgets/widget_accordion.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/javascript-dev-guide/widgets/widget_accordion.html">Magento 2.0</a></li>
 		
@@ -2194,34 +2195,34 @@
 
 <h3 id="initialize-accordion-in-js-components">Initialize accordion in JS components</h3>
 
-<h4 id="initialize-accordion-with-data--attributes-specified">Initialize accordion with <code class="highlighter-rouge">data-*</code> attributes specified</h4>
+<h4 id="initialize-accordion-with-data--attributes-specified">Initialize accordion with <code class="language-plaintext highlighter-rouge">data-*</code> attributes specified</h4>
 
 <p>Generally the accordion widget is instantiated like following:</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nx">$</span><span class="p">(</span><span class="s2">"#element"</span><span class="p">).</span><span class="nx">accordion</span><span class="p">();</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#element</span><span class="dl">"</span><span class="p">).</span><span class="nx">accordion</span><span class="p">();</span>
 </code></pre></div></div>
 
 <p>Where:</p>
 <ul>
-  <li><code class="highlighter-rouge">#element</code> is the selector of the element for accordion is initialized.</li>
-  <li><code class="highlighter-rouge">#element</code> has children with the following attributes specified:
+  <li><code class="language-plaintext highlighter-rouge">#element</code> is the selector of the element for accordion is initialized.</li>
+  <li><code class="language-plaintext highlighter-rouge">#element</code> has children with the following attributes specified:
     <ul>
-      <li><code class="highlighter-rouge">data-role="title"</code></li>
-      <li><code class="highlighter-rouge">data-role="content"</code></li>
+      <li><code class="language-plaintext highlighter-rouge">data-role="title"</code></li>
+      <li><code class="language-plaintext highlighter-rouge">data-role="content"</code></li>
     </ul>
   </li>
 </ul>
 
 <p>Optionally, you can specify the following:</p>
 <ul>
-  <li>If you want the trigger to be different from the title, add the <code class="highlighter-rouge">data-role="content"</code> attribute for the element</li>
-  <li>To have the content updated using Ajax, add the <code class="highlighter-rouge">data-ajax="true"</code> attribute for the element containing the URL for request.</li>
+  <li>If you want the trigger to be different from the title, add the <code class="language-plaintext highlighter-rouge">data-role="content"</code> attribute for the element</li>
+  <li>To have the content updated using Ajax, add the <code class="language-plaintext highlighter-rouge">data-ajax="true"</code> attribute for the element containing the URL for request.</li>
 </ul>
 
 <p>Accordions support arbitrary markup, but the following requirements should be kept:</p>
 
 <ol>
   <li>Titles and contents are specified in the same order in DOM: first title, then contents.</li>
-  <li>The header, trigger and content are specified, either by adding the <code class="highlighter-rouge">data-*</code> attributes for the corresponding children elements or by specifying these elements with selectors as options.</li>
+  <li>The header, trigger and content are specified, either by adding the <code class="language-plaintext highlighter-rouge">data-*</code> attributes for the corresponding children elements or by specifying these elements with selectors as options.</li>
 </ol>
 
 <p>Mark-up examples:</p>
@@ -2251,9 +2252,9 @@
 
 <span class="nt">&lt;script&gt;</span>
     <span class="nx">require</span><span class="p">([</span>
-        <span class="s1">'jquery'</span><span class="p">,</span>
-        <span class="s1">'accordion'</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">$</span><span class="p">(</span><span class="s2">"#element"</span><span class="p">).</span><span class="nx">accordion</span><span class="p">();</span>
+        <span class="dl">'</span><span class="s1">jquery</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">accordion</span><span class="dl">'</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#element</span><span class="dl">"</span><span class="p">).</span><span class="nx">accordion</span><span class="p">();</span>
     <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
 </code></pre></div></div>
@@ -2262,17 +2263,17 @@
 
 <p>You can specify the header, content, trigger as options when you initialize the widget.
 For example:</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nx">$</span><span class="p">(</span><span class="s2">"#element"</span><span class="p">).</span><span class="nx">accordion</span><span class="p">({</span>
-    <span class="na">header</span> <span class="p">:</span> <span class="s2">"#title-1"</span><span class="p">,</span>
-    <span class="na">content</span> <span class="p">:</span> <span class="s2">"#content-1"</span><span class="p">,</span>
-    <span class="na">trigger</span> <span class="p">:</span> <span class="s2">"#trigger-1"</span><span class="p">,</span>
-    <span class="na">ajaxUrlElement</span><span class="p">:</span> <span class="s2">"a"</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#element</span><span class="dl">"</span><span class="p">).</span><span class="nx">accordion</span><span class="p">({</span>
+    <span class="na">header</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">#title-1</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">content</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">#content-1</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">trigger</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">#trigger-1</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">ajaxUrlElement</span><span class="p">:</span> <span class="dl">"</span><span class="s2">a</span><span class="dl">"</span>
  <span class="p">});</span>
 </code></pre></div></div>
 
 <h3 id="initialize-accordion-in-a-template">Initialize accordion in a template</h3>
 
-<p>The accordion widget can be initialized using the <code class="highlighter-rouge">data-mage-init</code> attribute or <code class="highlighter-rouge">&lt;script&gt;</code> element, as described in <a href="/devdocs/guides/v2.3/javascript-dev-guide/javascript/js_init.html#data_mage_init">JavaScript initialization</a>.</p>
+<p>The accordion widget can be initialized using the <code class="language-plaintext highlighter-rouge">data-mage-init</code> attribute or <code class="language-plaintext highlighter-rouge">&lt;script&gt;</code> element, as described in <a href="/devdocs/guides/v2.3/javascript-dev-guide/javascript/js_init.html#data_mage_init">JavaScript initialization</a>.</p>
 
 <h2 id="accordion_options">Options</h2>
 
@@ -2283,44 +2284,44 @@ For example:</p>
   <li><a href="#collaps_open">openOnFocus</a></li>
 </ul>
 
-<h3 id="collaps_active"><code class="highlighter-rouge">active</code></h3>
+<h3 id="collaps_active"><code class="language-plaintext highlighter-rouge">active</code></h3>
 
 <p>Defines which tab is active when the widget gets instantiated.</p>
 
 <p><strong>Type</strong>: Array, String</p>
 
-<p><strong>Default value</strong>: <code class="highlighter-rouge">0</code></p>
+<p><strong>Default value</strong>: <code class="language-plaintext highlighter-rouge">0</code></p>
 
 <p>Example of the accordion initialization with the <code>active</code> option specified:</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nx">$</span><span class="p">(</span><span class="s2">"#element"</span><span class="p">).</span><span class="nx">accordion</span><span class="p">({</span> <span class="na">active</span><span class="p">:</span> <span class="s2">"0 1"</span><span class="p">});</span>
-<span class="nx">$</span><span class="p">(</span><span class="s2">"#element"</span><span class="p">).</span><span class="nx">accordion</span><span class="p">({</span> <span class="na">active</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]});</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#element</span><span class="dl">"</span><span class="p">).</span><span class="nx">accordion</span><span class="p">({</span> <span class="na">active</span><span class="p">:</span> <span class="dl">"</span><span class="s2">0 1</span><span class="dl">"</span><span class="p">});</span>
+<span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#element</span><span class="dl">"</span><span class="p">).</span><span class="nx">accordion</span><span class="p">({</span> <span class="na">active</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]});</span>
 </code></pre></div></div>
 
-<h3 id="collaps_multi"><code class="highlighter-rouge">multipleCollapsible</code></h3>
+<h3 id="collaps_multi"><code class="language-plaintext highlighter-rouge">multipleCollapsible</code></h3>
 <p>Defines if multiple panels can be expanded at the same time.</p>
 
 <p><strong>Type</strong>: Boolean</p>
 
-<p><strong>Default value</strong>: <code class="highlighter-rouge">false</code></p>
+<p><strong>Default value</strong>: <code class="language-plaintext highlighter-rouge">false</code></p>
 
-<p>Example of the accordion initialization with the <code class="highlighter-rouge">multipleCollapsible</code> option specified:</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nx">$</span><span class="p">(</span><span class="s2">"#element"</span><span class="p">).</span><span class="nx">accordion</span><span class="p">({</span> <span class="na">multipleCollapsible</span><span class="p">:</span> <span class="kc">false</span><span class="p">});</span>
+<p>Example of the accordion initialization with the <code class="language-plaintext highlighter-rouge">multipleCollapsible</code> option specified:</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#element</span><span class="dl">"</span><span class="p">).</span><span class="nx">accordion</span><span class="p">({</span> <span class="na">multipleCollapsible</span><span class="p">:</span> <span class="kc">false</span><span class="p">});</span>
 </code></pre></div></div>
 
-<p>Get or set the <code class="highlighter-rouge">multipleCollapsible</code> option, after initialization:</p>
+<p>Get or set the <code class="language-plaintext highlighter-rouge">multipleCollapsible</code> option, after initialization:</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="c1">//getter</span>
-<span class="kd">var</span> <span class="nx">multipleCollapsible</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#element"</span><span class="p">).</span><span class="nx">accordion</span><span class="p">(</span><span class="s2">"option"</span><span class="p">,</span><span class="s2">"multipleCollapsible"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">multipleCollapsible</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#element</span><span class="dl">"</span><span class="p">).</span><span class="nx">accordion</span><span class="p">(</span><span class="dl">"</span><span class="s2">option</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">multipleCollapsible</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="c1">//setter</span>
-<span class="nx">$</span><span class="p">(</span><span class="s2">"#element"</span><span class="p">).</span><span class="nx">tabs</span><span class="p">(</span><span class="s2">"option"</span><span class="p">,</span><span class="s2">"multipleCollapsible"</span><span class="p">,</span><span class="kc">false</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#element</span><span class="dl">"</span><span class="p">).</span><span class="nx">tabs</span><span class="p">(</span><span class="dl">"</span><span class="s2">option</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">multipleCollapsible</span><span class="dl">"</span><span class="p">,</span><span class="kc">false</span><span class="p">);</span>
 </code></pre></div></div>
 
-<h3 id="collaps_open"><code class="highlighter-rouge">openOnFocus</code></h3>
+<h3 id="collaps_open"><code class="language-plaintext highlighter-rouge">openOnFocus</code></h3>
 <p>For keyboard navigation defines if the accordion expands when the title gets in focus.</p>
 
 <p><strong>Type</strong>: Boolean</p>
 
-<p><strong>Default value</strong>: <code class="highlighter-rouge">false</code></p>
+<p><strong>Default value</strong>: <code class="language-plaintext highlighter-rouge">false</code></p>
 
 <h2 id="accordion_methods">Methods</h2>
 
@@ -2332,22 +2333,22 @@ For example:</p>
   <li><a href="#meth_deact">deactivate()</a></li>
 </ul>
 
-<h3 id="meth_act"><code class="highlighter-rouge">activate(index)</code></h3>
-<p>Activate a tab with the specified <code class="highlighter-rouge">index</code>.</p>
+<h3 id="meth_act"><code class="language-plaintext highlighter-rouge">activate(index)</code></h3>
+<p>Activate a tab with the specified <code class="language-plaintext highlighter-rouge">index</code>.</p>
 
 <p><strong>Type</strong>: Number, Array.</p>
 
-<p>If no <code class="highlighter-rouge">index</code> is passed, all panels are activated.</p>
+<p>If no <code class="language-plaintext highlighter-rouge">index</code> is passed, all panels are activated.</p>
 
 <p>Code examples:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nx">$</span><span class="p">(</span> <span class="s2">"#element"</span> <span class="p">).</span><span class="nx">accordion</span><span class="p">(</span> <span class="s2">"activate"</span> <span class="p">);</span>
-<span class="nx">$</span><span class="p">(</span> <span class="s2">"#element"</span> <span class="p">).</span><span class="nx">accordion</span><span class="p">(</span> <span class="s2">"activate"</span><span class="p">,</span> <span class="mi">1</span> <span class="p">);</span>
-<span class="nx">$</span><span class="p">(</span> <span class="s2">"#element"</span> <span class="p">).</span><span class="nx">accordion</span><span class="p">(</span> <span class="s2">"activate"</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nx">$</span><span class="p">(</span> <span class="dl">"</span><span class="s2">#element</span><span class="dl">"</span> <span class="p">).</span><span class="nx">accordion</span><span class="p">(</span> <span class="dl">"</span><span class="s2">activate</span><span class="dl">"</span> <span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span> <span class="dl">"</span><span class="s2">#element</span><span class="dl">"</span> <span class="p">).</span><span class="nx">accordion</span><span class="p">(</span> <span class="dl">"</span><span class="s2">activate</span><span class="dl">"</span><span class="p">,</span> <span class="mi">1</span> <span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span> <span class="dl">"</span><span class="s2">#element</span><span class="dl">"</span> <span class="p">).</span><span class="nx">accordion</span><span class="p">(</span> <span class="dl">"</span><span class="s2">activate</span><span class="dl">"</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]);</span>
 </code></pre></div></div>
 
-<h3 id="meth_deact"><code class="highlighter-rouge">deactivate(index)</code></h3>
-<p>Deactivate a tab with the specified <code class="highlighter-rouge">index</code>.</p>
+<h3 id="meth_deact"><code class="language-plaintext highlighter-rouge">deactivate(index)</code></h3>
+<p>Deactivate a tab with the specified <code class="language-plaintext highlighter-rouge">index</code>.</p>
 
 <p><strong>Type</strong>: Number, Array.</p>
 
@@ -2355,9 +2356,9 @@ For example:</p>
 
 <p>Code examples:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nx">$</span><span class="p">(</span> <span class="s2">"#element"</span> <span class="p">).</span><span class="nx">accordion</span><span class="p">(</span> <span class="s2">"deactivate"</span> <span class="p">);</span>
-<span class="nx">$</span><span class="p">(</span> <span class="s2">"#element"</span> <span class="p">).</span><span class="nx">accordion</span><span class="p">(</span> <span class="s2">"deactivate"</span><span class="p">,</span> <span class="mi">1</span> <span class="p">);</span>
-<span class="nx">$</span><span class="p">(</span> <span class="s2">"#element"</span> <span class="p">).</span><span class="nx">accordion</span><span class="p">(</span> <span class="s2">"deactivate"</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nx">$</span><span class="p">(</span> <span class="dl">"</span><span class="s2">#element</span><span class="dl">"</span> <span class="p">).</span><span class="nx">accordion</span><span class="p">(</span> <span class="dl">"</span><span class="s2">deactivate</span><span class="dl">"</span> <span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span> <span class="dl">"</span><span class="s2">#element</span><span class="dl">"</span> <span class="p">).</span><span class="nx">accordion</span><span class="p">(</span> <span class="dl">"</span><span class="s2">deactivate</span><span class="dl">"</span><span class="p">,</span> <span class="mi">1</span> <span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span> <span class="dl">"</span><span class="s2">#element</span><span class="dl">"</span> <span class="p">).</span><span class="nx">accordion</span><span class="p">(</span> <span class="dl">"</span><span class="s2">deactivate</span><span class="dl">"</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]);</span>
 </code></pre></div></div>
 
 

@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Set up cron jobs | Magento 2 Developer Documentation (copy)</title>
+	<title>Set up cron jobs | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/configure/setup-cron-jobs.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/configure/setup-cron-jobs.html">Magento 2.0</a></li>
 		
@@ -4314,11 +4315,11 @@
 	<h1 class="page-heading">Set up cron jobs</h1>
 </section>
 
-			<p>Magento uses cron jobs for numerous features to schedule activities. You can add cron jobs to <code class="highlighter-rouge">.magento.app.yaml</code> and push it to your branches for deployment. For specific information for configuring and setting up cron in Magento, see <a href="#croninfo">Magento Commerce cron information</a>. The following information is specific to creating and deploying cron jobs in Magento Commerce Cloud.</p>
+			<p>Magento uses cron jobs for numerous features to schedule activities. You can add cron jobs to <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> and push it to your branches for deployment. For specific information for configuring and setting up cron in Magento, see <a href="#croninfo">Magento Commerce cron information</a>. The following information is specific to creating and deploying cron jobs in Magento Commerce Cloud.</p>
 
 <h2 id="croninfo">Cron information</h2>
 
-<p>The following links provide more information on crons for Magento Commerce. You can use this information for setting up and understanding cron jobs in Magento. When you want to add cron jobs for Magento Commerce Cloud, you manage all crons through <code class="highlighter-rouge">.magento.app.yaml</code>. For more information, review this topic.</p>
+<p>The following links provide more information on crons for Magento Commerce. You can use this information for setting up and understanding cron jobs in Magento. When you want to add cron jobs for Magento Commerce Cloud, you manage all crons through <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code>. For more information, review this topic.</p>
 
 <ul>
   <li><a href="/devdocs/guides/v2.2/install-gde/install/post-install-config.html">Set up cron</a></li>
@@ -4328,9 +4329,9 @@
 
 <h2 id="build">Build a cron job</h2>
 
-<p>A cron job includes the specification for scheduling and timing and the command to run at that time. For example, the general format is: <code class="highlighter-rouge">* * * * * &lt;command&gt;</code></p>
+<p>A cron job includes the specification for scheduling and timing and the command to run at that time. For example, the general format is: <code class="language-plaintext highlighter-rouge">* * * * * &lt;command&gt;</code></p>
 
-<p>You will add the cron job to <code class="highlighter-rouge">.magento.app.yaml</code> in the <code class="highlighter-rouge">crons</code> section. The general format is <code class="highlighter-rouge">spec</code> for scheduling and <code class="highlighter-rouge">cmd</code> for the script. For example:</p>
+<p>You will add the cron job to <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> in the <code class="language-plaintext highlighter-rouge">crons</code> section. The general format is <code class="language-plaintext highlighter-rouge">spec</code> for scheduling and <code class="language-plaintext highlighter-rouge">cmd</code> for the script. For example:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="na">crons</span><span class="pi">:</span>
     <span class="na">productcatalog</span><span class="pi">:</span>
@@ -4350,7 +4351,7 @@
 
 <p class="bs-callout bs-callout-info">We use only this one cron for cloud due to the read-only nature of the environments. This is different from Magento Commerce which has three default cron jobs.</p>
 
-<p>Magento uses a five value specification for a cron job. The numbers per each <code class="highlighter-rouge">* * * * *</code> is as follows:</p>
+<p>Magento uses a five value specification for a cron job. The numbers per each <code class="language-plaintext highlighter-rouge">* * * * *</code> is as follows:</p>
 
 <ul>
   <li>Minute (0-59)  For all Start environments and Pro Integration environments, the minimum frequency supported for crons is five minutes. You may need to configure settings in your Magento Admin.</li>
@@ -4363,17 +4364,17 @@
 <p>For example:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">00 */3 * * *</code> runs every 3 hours at the first minute (12:00 am, 3:00 am, 6:00 am, and so on)</li>
-  <li><code class="highlighter-rouge">20 */3 * * *</code> runs every 3 hours at minute 20 (12:20 am, 3:20 am, 6:20 am, and so on)</li>
-  <li><code class="highlighter-rouge">00 00 * * *</code> runs once a day at midnight</li>
-  <li><code class="highlighter-rouge">00 * * * 1</code> runs once a week on Monday at midnight</li>
+  <li><code class="language-plaintext highlighter-rouge">00 */3 * * *</code> runs every 3 hours at the first minute (12:00 am, 3:00 am, 6:00 am, and so on)</li>
+  <li><code class="language-plaintext highlighter-rouge">20 */3 * * *</code> runs every 3 hours at minute 20 (12:20 am, 3:20 am, 6:20 am, and so on)</li>
+  <li><code class="language-plaintext highlighter-rouge">00 00 * * *</code> runs once a day at midnight</li>
+  <li><code class="language-plaintext highlighter-rouge">00 * * * 1</code> runs once a week on Monday at midnight</li>
 </ul>
 
 <p>When determining the scheduling of your cron jobs, consider the time it takes to complete the task. For example, if you run a job every three hours and the task takes 40 minutes to complete, you may want to change the scheduled timing.</p>
 
 <p>For the command script, the format includes:</p>
 
-<p><code class="highlighter-rouge">&lt;path to php binary&gt; &lt;magento install dir&gt;/&lt;script with command&gt;</code></p>
+<p><code class="language-plaintext highlighter-rouge">&lt;path to php binary&gt; &lt;magento install dir&gt;/&lt;script with command&gt;</code></p>
 
 <p>The following is an example cron job:</p>
 
@@ -4385,14 +4386,14 @@
 <p>With the settings:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">&lt;path to php binary&gt;</code> is <code class="highlighter-rouge">/usr/bin/php</code></li>
-  <li><code class="highlighter-rouge">/app/abc123edf890</code> is the install directory, which includes the Project ID for this example</li>
-  <li><code class="highlighter-rouge">bin/magento indexer:reindex catalog_category_product</code> is the script actions</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;path to php binary&gt;</code> is <code class="language-plaintext highlighter-rouge">/usr/bin/php</code></li>
+  <li><code class="language-plaintext highlighter-rouge">/app/abc123edf890</code> is the install directory, which includes the Project ID for this example</li>
+  <li><code class="language-plaintext highlighter-rouge">bin/magento indexer:reindex catalog_category_product</code> is the script actions</li>
 </ul>
 
 <h2 id="add-cron">Add cron jobs to .magento.app.yaml</h2>
 
-<p>You should add all cron jobs to your <a href="/devdocs/guides/v2.2/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a> file in the <code class="highlighter-rouge">crons</code> section.</p>
+<p>You should add all cron jobs to your <a href="/devdocs/guides/v2.2/cloud/project/project-conf-files_magento-app.html"><code class="language-plaintext highlighter-rouge">.magento.app.yaml</code></a> file in the <code class="language-plaintext highlighter-rouge">crons</code> section.</p>
 
 <p class="bs-callout bs-callout-info">The default cron interval for all environments provisioned in the us-3, eu-3, and ap-3 regions is 1 minute. The default cron interval in all other regions is 5 minutes for Pro Integration environments and 1 minute for Pro Staging and Production environments. You cannot configure more frequent intervals than the default minimums.</p>
 
@@ -4407,9 +4408,9 @@
 </code></pre></div></div>
 
 <ol>
-  <li>Edit <code class="highlighter-rouge">.magento.app.yaml</code> in the root directory of the Magento code in the Git branch.</li>
+  <li>Edit <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> in the root directory of the Magento code in the Git branch.</li>
   <li>
-    <p>Locate the <code class="highlighter-rouge">crons</code> section in the file and add your custom cron code.</p>
+    <p>Locate the <code class="language-plaintext highlighter-rouge">crons</code> section in the file and add your custom cron code.</p>
 
     <p>For example, you could add a reindexer cron job to run every three hours, 20 minutes after the hour (such as 12:20 am, 3:20 am, and so on):</p>
 
@@ -4430,19 +4431,19 @@
 <p>When you push the code, the cron jobs will be added to and run in the following environments:</p>
 
 <ul>
-  <li>Starter: All environments you push to including <code class="highlighter-rouge">Master</code></li>
-  <li>Pro: Only Integration environments you push to including <code class="highlighter-rouge">Master</code></li>
+  <li>Starter: All environments you push to including <code class="language-plaintext highlighter-rouge">Master</code></li>
+  <li>Pro: Only Integration environments you push to including <code class="language-plaintext highlighter-rouge">Master</code></li>
 </ul>
 
-<p>To add the cron jobs to Pro plan Staging and Production, you must <a href="/devdocs/guides/v2.2/cloud/trouble/trouble.html">enter a ticket to Support</a>. Request to have the cron jobs in <code class="highlighter-rouge">.magento.app.yaml</code> added to those environments. We recommend pushing the updates through to the Integration <code class="highlighter-rouge">master</code> branch.</p>
+<p>To add the cron jobs to Pro plan Staging and Production, you must <a href="/devdocs/guides/v2.2/cloud/trouble/trouble.html">enter a ticket to Support</a>. Request to have the cron jobs in <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> added to those environments. We recommend pushing the updates through to the Integration <code class="language-plaintext highlighter-rouge">master</code> branch.</p>
 
 <p>We manage cron jobs on Pro plan Staging and Production environments using Jenkins. These cron jobs do not run precisely against the system clock. If Jenkins encounters lag, the cron jobs may run occasionally late.</p>
 
 <h2 id="update">Update cron jobs</h2>
 
-<p>If you need to change or update your cron jobs, update the crons section in your <code class="highlighter-rouge">.magento.app.yaml</code> file. Push the file to your Git branch and deploy across environments.</p>
+<p>If you need to change or update your cron jobs, update the crons section in your <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> file. Push the file to your Git branch and deploy across environments.</p>
 
-<p>For Pro plan Staging and Production environments, please <a href="/devdocs/guides/v2.2/cloud/trouble/trouble.html">enter a ticket to Support</a> to review, remove, or modify these cron jobs. To update a cron job, we recommend pushing the updates through to the Integration <code class="highlighter-rouge">master</code> branch in the <code class="highlighter-rouge">.magento.app.yaml</code> file. Cron jobs for Pro plan Staging and Production environments are not available through a Cron tab.</p>
+<p>For Pro plan Staging and Production environments, please <a href="/devdocs/guides/v2.2/cloud/trouble/trouble.html">enter a ticket to Support</a> to review, remove, or modify these cron jobs. To update a cron job, we recommend pushing the updates through to the Integration <code class="language-plaintext highlighter-rouge">master</code> branch in the <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> file. Cron jobs for Pro plan Staging and Production environments are not available through a Cron tab.</p>
 
 			
 		</div>

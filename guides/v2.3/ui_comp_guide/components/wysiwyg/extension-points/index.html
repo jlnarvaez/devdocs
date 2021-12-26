@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>WYSIWYG Extension Points | Magento 2 Developer Documentation (copy)</title>
+	<title>WYSIWYG Extension Points | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/ui_comp_guide/components/wysiwyg/extension-points">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/ui_comp_guide/components/wysiwyg/extension-points">Magento 2.0</a></li>
 		
@@ -3308,57 +3309,57 @@ for most editors, it usually involves creating an icon or button for the plugin 
 
 <p>Create the appropriate plugin directory structure for the entity inside your editor’s directory.</p>
 
-<p>For example, both TinyMCE3 and CKEditor editors both have a <code class="highlighter-rouge">plugins</code> directory that holds all available plugins.</p>
+<p>For example, both TinyMCE3 and CKEditor editors both have a <code class="language-plaintext highlighter-rouge">plugins</code> directory that holds all available plugins.</p>
 
-<p>This folder should be inside your module’s <code class="highlighter-rouge">/view/&lt;area&gt;</code> directory so it will be published to the <code class="highlighter-rouge">pub/static</code> directory.</p>
+<p>This folder should be inside your module’s <code class="language-plaintext highlighter-rouge">/view/&lt;area&gt;</code> directory so it will be published to the <code class="language-plaintext highlighter-rouge">pub/static</code> directory.</p>
 
 <h3 id="step-2-copy-editor-icon">Step 2. Copy editor icon</h3>
 
 <p>Copy the appropriate icon file into your plugin’s specific icon or image directory:</p>
 
-<p><strong>Variable</strong>: <code class="highlighter-rouge">lib/web/mage/adminhtml/wysiwyg/tiny_mce/plugins/magentovariable/img/icon.png</code></p>
+<p><strong>Variable</strong>: <code class="language-plaintext highlighter-rouge">lib/web/mage/adminhtml/wysiwyg/tiny_mce/plugins/magentovariable/img/icon.png</code></p>
 
-<p><strong>Widget</strong>: <code class="highlighter-rouge">lib/web/mage/adminhtml/wysiwyg/tiny_mce/plugins/magentowidget/img/icon.png</code></p>
+<p><strong>Widget</strong>: <code class="language-plaintext highlighter-rouge">lib/web/mage/adminhtml/wysiwyg/tiny_mce/plugins/magentowidget/img/icon.png</code></p>
 
 <p><strong>Media Gallery</strong>: No icon needed.</p>
 
 <p>For example, in a CKEditor4 plugin, these icons would be found copied to the following locations:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">app/code/CKEditor/CKEditor4/view/base/web/js/ckeditor4/plugins/variable/icons/variable.png</code></li>
-  <li><code class="highlighter-rouge">app/code/CKEditor/CKEditor4/view/base/web/js/ckeditor4/plugins/widget/icons/widget.png</code></li>
+  <li><code class="language-plaintext highlighter-rouge">app/code/CKEditor/CKEditor4/view/base/web/js/ckeditor4/plugins/variable/icons/variable.png</code></li>
+  <li><code class="language-plaintext highlighter-rouge">app/code/CKEditor/CKEditor4/view/base/web/js/ckeditor4/plugins/widget/icons/widget.png</code></li>
 </ul>
 
 <h3 id="step-3-implement-plugin-functionality">Step 3. Implement plugin functionality</h3>
 
 <h4 id="variable-entity">Variable Entity</h4>
 
-<p>Use the <a href="https://github.com/magento/magento2/blob/2.3/lib/web/mage/adminhtml/wysiwyg/tiny_mce/plugins/magentovariable/editor_plugin.js"><code class="highlighter-rouge">MagentovariablePlugin</code></a> object to implement the plugin functionality for the variable entity.</p>
+<p>Use the <a href="https://github.com/magento/magento2/blob/2.3/lib/web/mage/adminhtml/wysiwyg/tiny_mce/plugins/magentovariable/editor_plugin.js"><code class="language-plaintext highlighter-rouge">MagentovariablePlugin</code></a> object to implement the plugin functionality for the variable entity.</p>
 
-<p><strong>Example:</strong> <code class="highlighter-rouge">editor_plugin.js</code> for <code class="highlighter-rouge">magentovariable</code> in the TinyMCE3 module</p>
+<p><strong>Example:</strong> <code class="language-plaintext highlighter-rouge">editor_plugin.js</code> for <code class="language-plaintext highlighter-rouge">magentovariable</code> in the TinyMCE3 module</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="cm">/**
  * @param {tinymce.Editor} ed - Editor instance that the plugin is initialized in.
  * @param {String} url - Absolute URL to where the plugin is located.
  */</span>
 <span class="nx">init</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">ed</span><span class="p">,</span> <span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">ed</span><span class="p">.</span><span class="nx">addCommand</span><span class="p">(</span><span class="s1">'mceMagentovariable'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">pluginSettings</span> <span class="o">=</span> <span class="nx">ed</span><span class="p">.</span><span class="nx">settings</span><span class="p">.</span><span class="nx">magentoPluginsOptions</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'magentovariable'</span><span class="p">);</span>
+    <span class="nx">ed</span><span class="p">.</span><span class="nx">addCommand</span><span class="p">(</span><span class="dl">'</span><span class="s1">mceMagentovariable</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">pluginSettings</span> <span class="o">=</span> <span class="nx">ed</span><span class="p">.</span><span class="nx">settings</span><span class="p">.</span><span class="nx">magentoPluginsOptions</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">magentovariable</span><span class="dl">'</span><span class="p">);</span>
 
         <span class="nx">MagentovariablePlugin</span><span class="p">.</span><span class="nx">setEditor</span><span class="p">(</span><span class="nx">ed</span><span class="p">);</span>
         <span class="nx">MagentovariablePlugin</span><span class="p">.</span><span class="nx">loadChooser</span><span class="p">(</span><span class="nx">pluginSettings</span><span class="p">.</span><span class="nx">url</span><span class="p">,</span> <span class="nx">ed</span><span class="p">.</span><span class="nx">settings</span><span class="p">.</span><span class="nx">elements</span><span class="p">);</span>
     <span class="p">});</span>
 
     <span class="c1">// Register Widget plugin button</span>
-    <span class="nx">ed</span><span class="p">.</span><span class="nx">addButton</span><span class="p">(</span><span class="s1">'magentovariable'</span><span class="p">,</span> <span class="p">{</span>
-        <span class="na">title</span><span class="p">:</span> <span class="s1">'magentovariable.insert_variable'</span><span class="p">,</span>
-        <span class="na">cmd</span><span class="p">:</span> <span class="s1">'mceMagentovariable'</span><span class="p">,</span>
-        <span class="na">image</span><span class="p">:</span> <span class="nx">url</span> <span class="o">+</span> <span class="s1">'/img/icon.gif'</span>
+    <span class="nx">ed</span><span class="p">.</span><span class="nx">addButton</span><span class="p">(</span><span class="dl">'</span><span class="s1">magentovariable</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">magentovariable.insert_variable</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">cmd</span><span class="p">:</span> <span class="dl">'</span><span class="s1">mceMagentovariable</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">image</span><span class="p">:</span> <span class="nx">url</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">/img/icon.gif</span><span class="dl">'</span>
     <span class="p">});</span>
 <span class="p">},</span>
 </code></pre></div></div>
 
-<p><strong>Example:</strong> <code class="highlighter-rouge">plugin.js</code> for <code class="highlighter-rouge">variable</code> plugin for CKEditor4</p>
+<p><strong>Example:</strong> <code class="language-plaintext highlighter-rouge">plugin.js</code> for <code class="language-plaintext highlighter-rouge">variable</code> plugin for CKEditor4</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="cm">/**
  * Copyright © Magento, Inc. All rights reserved.
@@ -3367,8 +3368,8 @@ for most editors, it usually involves creating an icon or button for the plugin 
 
 <span class="cm">/* global CKEDITOR, MagentovariablePlugin, varienGlobalEvents, Base64 */</span>
 <span class="cm">/* eslint-disable strict */</span>
-<span class="nx">CKEDITOR</span><span class="p">.</span><span class="nx">plugins</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'variable'</span><span class="p">,</span> <span class="p">{</span>
-    <span class="na">icons</span><span class="p">:</span> <span class="s1">'variable'</span><span class="p">,</span>
+<span class="nx">CKEDITOR</span><span class="p">.</span><span class="nx">plugins</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">variable</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">icons</span><span class="p">:</span> <span class="dl">'</span><span class="s1">variable</span><span class="dl">'</span><span class="p">,</span>
 
     <span class="cm">/**
      * Initialize editor plugin.
@@ -3378,14 +3379,14 @@ for most editors, it usually involves creating an icon or button for the plugin 
         <span class="cm">/**
          * Add new command to open variables selector slideout.
          */</span>
-        <span class="nx">editor</span><span class="p">.</span><span class="nx">addCommand</span><span class="p">(</span><span class="s1">'openVariablesSlideout'</span><span class="p">,</span> <span class="p">{</span>
+        <span class="nx">editor</span><span class="p">.</span><span class="nx">addCommand</span><span class="p">(</span><span class="dl">'</span><span class="s1">openVariablesSlideout</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
             <span class="na">exec</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">editor</span><span class="p">)</span> <span class="p">{</span>
 
                 <span class="nx">require</span><span class="p">([</span>
-                    <span class="s1">'CKEditor_CKEditor4/js/ckeditor4/ckeditor'</span>
+                    <span class="dl">'</span><span class="s1">CKEditor_CKEditor4/js/ckeditor4/ckeditor</span><span class="dl">'</span>
                 <span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">ckeditor</span><span class="p">)</span> <span class="p">{</span>
                     <span class="c1">//we need this code to transfer config</span>
-                    <span class="kd">var</span> <span class="nx">pluginSettings</span> <span class="o">=</span> <span class="nx">ckeditor</span><span class="p">.</span><span class="nx">settings</span><span class="p">.</span><span class="nx">magentoPluginsOptions</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'variable'</span><span class="p">);</span>
+                    <span class="kd">var</span> <span class="nx">pluginSettings</span> <span class="o">=</span> <span class="nx">ckeditor</span><span class="p">.</span><span class="nx">settings</span><span class="p">.</span><span class="nx">magentoPluginsOptions</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">variable</span><span class="dl">'</span><span class="p">);</span>
 
                     <span class="nx">MagentovariablePlugin</span><span class="p">.</span><span class="nx">setEditor</span><span class="p">(</span><span class="nx">editor</span><span class="p">);</span>
                     <span class="nx">MagentovariablePlugin</span><span class="p">.</span><span class="nx">loadChooser</span><span class="p">(</span><span class="nx">pluginSettings</span><span class="p">.</span><span class="nx">url</span><span class="p">,</span> <span class="nx">ckeditor</span><span class="p">.</span><span class="nx">settings</span><span class="p">.</span><span class="nx">elements</span><span class="p">);</span>
@@ -3396,10 +3397,10 @@ for most editors, it usually involves creating an icon or button for the plugin 
         <span class="cm">/**
          * Add button to the editor toolbar.
          */</span>
-        <span class="nx">editor</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">addButton</span><span class="p">(</span><span class="s1">'variable'</span><span class="p">,</span> <span class="p">{</span>
-            <span class="na">label</span><span class="p">:</span> <span class="nx">jQuery</span><span class="p">.</span><span class="nx">mage</span><span class="p">.</span><span class="nx">__</span><span class="p">(</span><span class="s1">'Insert Variable'</span><span class="p">),</span>
-            <span class="na">command</span><span class="p">:</span> <span class="s1">'openVariablesSlideout'</span><span class="p">,</span>
-            <span class="na">toolbar</span><span class="p">:</span> <span class="s1">'insert'</span>
+        <span class="nx">editor</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">addButton</span><span class="p">(</span><span class="dl">'</span><span class="s1">variable</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+            <span class="na">label</span><span class="p">:</span> <span class="nx">jQuery</span><span class="p">.</span><span class="nx">mage</span><span class="p">.</span><span class="nx">__</span><span class="p">(</span><span class="dl">'</span><span class="s1">Insert Variable</span><span class="dl">'</span><span class="p">),</span>
+            <span class="na">command</span><span class="p">:</span> <span class="dl">'</span><span class="s1">openVariablesSlideout</span><span class="dl">'</span><span class="p">,</span>
+            <span class="na">toolbar</span><span class="p">:</span> <span class="dl">'</span><span class="s1">insert</span><span class="dl">'</span>
 
         <span class="p">});</span>
     <span class="p">},</span>
@@ -3410,43 +3411,43 @@ for most editors, it usually involves creating an icon or button for the plugin 
 
 <ul>
   <li>
-    <p>backend URL to load the <code class="highlighter-rouge">variable_modal</code></p>
+    <p>backend URL to load the <code class="language-plaintext highlighter-rouge">variable_modal</code></p>
 
     <p><strong>Example:</strong> method that returns this url</p>
     <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="kr">public</span> <span class="kd">function</span> <span class="nx">getVariablesWysiwygActionUrl</span><span class="p">()</span>
 <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">$this</span><span class="o">-&gt;</span><span class="nx">_url</span><span class="o">-&gt;</span><span class="nx">getUrl</span><span class="p">(</span><span class="s1">'mui/index/render'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'namespace'</span> <span class="o">=&gt;</span> <span class="s1">'variables_modal'</span><span class="p">]);</span>
+  <span class="k">return</span> <span class="nx">$this</span><span class="o">-&gt;</span><span class="nx">_url</span><span class="o">-&gt;</span><span class="nx">getUrl</span><span class="p">(</span><span class="dl">'</span><span class="s1">mui/index/render</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span><span class="dl">'</span><span class="s1">namespace</span><span class="dl">'</span> <span class="o">=&gt;</span> <span class="dl">'</span><span class="s1">variables_modal</span><span class="dl">'</span><span class="p">]);</span>
 <span class="p">}</span>
 </code></pre></div>    </div>
   </li>
   <li>
     <p>htmlId of the WYSIWYG editor.
-For CKEditor4, you can get this by calling <code class="highlighter-rouge">editor.element.getId()</code>.</p>
+For CKEditor4, you can get this by calling <code class="language-plaintext highlighter-rouge">editor.element.getId()</code>.</p>
   </li>
 </ul>
 
 <h4 id="widget-entity">Widget Entity</h4>
 
-<p>Use the global <a href="https://github.com/magento/magento2/blob/2.3/lib/web/mage/adminhtml/wysiwyg/tiny_mce/plugins/magentowidget/editor_plugin.js"><code class="highlighter-rouge">widgetTools</code></a> object to implement the plugin functionality for the widget entity.</p>
+<p>Use the global <a href="https://github.com/magento/magento2/blob/2.3/lib/web/mage/adminhtml/wysiwyg/tiny_mce/plugins/magentowidget/editor_plugin.js"><code class="language-plaintext highlighter-rouge">widgetTools</code></a> object to implement the plugin functionality for the widget entity.</p>
 
-<p><strong>Example:</strong> <code class="highlighter-rouge">editor_plugin.js</code> for <code class="highlighter-rouge">magentowidget</code> in the TinyMCE3 module</p>
+<p><strong>Example:</strong> <code class="language-plaintext highlighter-rouge">editor_plugin.js</code> for <code class="language-plaintext highlighter-rouge">magentowidget</code> in the TinyMCE3 module</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="cm">/**
  * @param {tinymceDeprecated.Editor} ed - Editor instance that the plugin is initialized in.
  * @param {String} url - Absolute URL to where the plugin is located.
  */</span>
 <span class="nx">init</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">ed</span><span class="p">,</span> <span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">ed</span><span class="p">.</span><span class="nx">addCommand</span><span class="p">(</span><span class="s1">'mceMagentowidget'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">ed</span><span class="p">.</span><span class="nx">addCommand</span><span class="p">(</span><span class="dl">'</span><span class="s1">mceMagentowidget</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
         <span class="nx">widgetTools</span><span class="p">.</span><span class="nx">openDialog</span><span class="p">(</span>
-            <span class="nx">ed</span><span class="p">.</span><span class="nx">settings</span><span class="p">[</span><span class="s1">'magentowidget_url'</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'widget_target_id/'</span> <span class="o">+</span> <span class="nx">ed</span><span class="p">.</span><span class="nx">getElement</span><span class="p">().</span><span class="nx">id</span> <span class="o">+</span> <span class="s1">'/'</span>
+            <span class="nx">ed</span><span class="p">.</span><span class="nx">settings</span><span class="p">[</span><span class="dl">'</span><span class="s1">magentowidget_url</span><span class="dl">'</span><span class="p">]</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">widget_target_id/</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">ed</span><span class="p">.</span><span class="nx">getElement</span><span class="p">().</span><span class="nx">id</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">/</span><span class="dl">'</span>
         <span class="p">);</span>
     <span class="p">});</span>
 
     <span class="c1">// Register Widget plugin button</span>
-    <span class="nx">ed</span><span class="p">.</span><span class="nx">addButton</span><span class="p">(</span><span class="s1">'magentowidget'</span><span class="p">,</span> <span class="p">{</span>
-        <span class="na">title</span><span class="p">:</span> <span class="s1">'magentowidget.insert_widget'</span><span class="p">,</span>
-        <span class="na">cmd</span><span class="p">:</span> <span class="s1">'mceMagentowidget'</span><span class="p">,</span>
-        <span class="na">image</span><span class="p">:</span> <span class="nx">url</span> <span class="o">+</span> <span class="s1">'/img/icon.gif'</span>
+    <span class="nx">ed</span><span class="p">.</span><span class="nx">addButton</span><span class="p">(</span><span class="dl">'</span><span class="s1">magentowidget</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+        <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">magentowidget.insert_widget</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">cmd</span><span class="p">:</span> <span class="dl">'</span><span class="s1">mceMagentowidget</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">image</span><span class="p">:</span> <span class="nx">url</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">/img/icon.gif</span><span class="dl">'</span>
     <span class="p">});</span>
 
     <span class="c1">// Add a node change handler, selects the button in the UI when a image is selected</span>
@@ -3454,14 +3455,14 @@ For CKEditor4, you can get this by calling <code class="highlighter-rouge">edito
         <span class="kd">var</span> <span class="nx">widgetCode</span><span class="p">;</span>
 
         <span class="nx">widgetTools</span><span class="p">.</span><span class="nx">setEditMode</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-        <span class="nx">cm</span><span class="p">.</span><span class="nx">setActive</span><span class="p">(</span><span class="s1">'magentowidget'</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+        <span class="nx">cm</span><span class="p">.</span><span class="nx">setActive</span><span class="p">(</span><span class="dl">'</span><span class="s1">magentowidget</span><span class="dl">'</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
 
-        <span class="k">if</span> <span class="p">(</span><span class="nx">n</span><span class="p">.</span><span class="nx">id</span> <span class="o">&amp;&amp;</span> <span class="nx">n</span><span class="p">.</span><span class="nx">nodeName</span> <span class="o">==</span> <span class="s1">'IMG'</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//eslint-disable-line eqeqeq</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">n</span><span class="p">.</span><span class="nx">id</span> <span class="o">&amp;&amp;</span> <span class="nx">n</span><span class="p">.</span><span class="nx">nodeName</span> <span class="o">==</span> <span class="dl">'</span><span class="s1">IMG</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//eslint-disable-line eqeqeq</span>
             <span class="nx">widgetCode</span> <span class="o">=</span> <span class="nx">Base64</span><span class="p">.</span><span class="nx">idDecode</span><span class="p">(</span><span class="nx">n</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
 
-            <span class="k">if</span> <span class="p">(</span><span class="nx">widgetCode</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">'{{widget'</span><span class="p">)</span> <span class="o">!==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">widgetCode</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">{{widget</span><span class="dl">'</span><span class="p">)</span> <span class="o">!==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
                 <span class="nx">widgetTools</span><span class="p">.</span><span class="nx">setEditMode</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
-                <span class="nx">cm</span><span class="p">.</span><span class="nx">setActive</span><span class="p">(</span><span class="s1">'magentowidget'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+                <span class="nx">cm</span><span class="p">.</span><span class="nx">setActive</span><span class="p">(</span><span class="dl">'</span><span class="s1">magentowidget</span><span class="dl">'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">});</span>
@@ -3471,19 +3472,19 @@ For CKEditor4, you can get this by calling <code class="highlighter-rouge">edito
         <span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">,</span>
         <span class="nx">widgetCode</span><span class="p">;</span>
 
-        <span class="k">if</span> <span class="p">(</span><span class="nx">n</span><span class="p">.</span><span class="nx">id</span> <span class="o">&amp;&amp;</span> <span class="nx">n</span><span class="p">.</span><span class="nx">nodeName</span> <span class="o">==</span> <span class="s1">'IMG'</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//eslint-disable-line eqeqeq</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">n</span><span class="p">.</span><span class="nx">id</span> <span class="o">&amp;&amp;</span> <span class="nx">n</span><span class="p">.</span><span class="nx">nodeName</span> <span class="o">==</span> <span class="dl">'</span><span class="s1">IMG</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//eslint-disable-line eqeqeq</span>
             <span class="nx">widgetCode</span> <span class="o">=</span> <span class="nx">Base64</span><span class="p">.</span><span class="nx">idDecode</span><span class="p">(</span><span class="nx">n</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
 
-            <span class="k">if</span> <span class="p">(</span><span class="nx">widgetCode</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">'{{widget'</span><span class="p">)</span> <span class="o">!==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">widgetCode</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">{{widget</span><span class="dl">'</span><span class="p">)</span> <span class="o">!==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
                 <span class="nx">widgetTools</span><span class="p">.</span><span class="nx">setEditMode</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
-                <span class="nx">edi</span><span class="p">.</span><span class="nx">execCommand</span><span class="p">(</span><span class="s1">'mceMagentowidget'</span><span class="p">);</span>
+                <span class="nx">edi</span><span class="p">.</span><span class="nx">execCommand</span><span class="p">(</span><span class="dl">'</span><span class="s1">mceMagentowidget</span><span class="dl">'</span><span class="p">);</span>
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">});</span>
 <span class="p">},</span>
 </code></pre></div></div>
 
-<p><strong>Example:</strong> <code class="highlighter-rouge">plugin.js</code> for <code class="highlighter-rouge">widget</code> plugin for CKEditor4</p>
+<p><strong>Example:</strong> <code class="language-plaintext highlighter-rouge">plugin.js</code> for <code class="language-plaintext highlighter-rouge">widget</code> plugin for CKEditor4</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="cm">/**
  * Copyright © Magento, Inc. All rights reserved.
@@ -3492,8 +3493,8 @@ For CKEditor4, you can get this by calling <code class="highlighter-rouge">edito
 
 <span class="cm">/* global CKEDITOR, MagentovariablePlugin, varienGlobalEvents, Base64 */</span>
 <span class="cm">/* eslint-disable strict */</span>
-<span class="nx">CKEDITOR</span><span class="p">.</span><span class="nx">plugins</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'widget'</span><span class="p">,</span> <span class="p">{</span>
-    <span class="na">icons</span><span class="p">:</span> <span class="s1">'widget'</span><span class="p">,</span>
+<span class="nx">CKEDITOR</span><span class="p">.</span><span class="nx">plugins</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">widget</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">icons</span><span class="p">:</span> <span class="dl">'</span><span class="s1">widget</span><span class="dl">'</span><span class="p">,</span>
 
     <span class="cm">/**
      * Initialize editor plugin.
@@ -3505,8 +3506,8 @@ For CKEditor4, you can get this by calling <code class="highlighter-rouge">edito
         <span class="kd">var</span> <span class="nb">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
 
         <span class="nx">require</span><span class="p">([</span>
-            <span class="s1">'Magento_Variable/js/config-directive-generator'</span><span class="p">,</span>
-            <span class="s1">'Magento_Variable/js/custom-directive-generator'</span>
+            <span class="dl">'</span><span class="s1">Magento_Variable/js/config-directive-generator</span><span class="dl">'</span><span class="p">,</span>
+            <span class="dl">'</span><span class="s1">Magento_Variable/js/custom-directive-generator</span><span class="dl">'</span>
         <span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">configDirectiveGenerator</span><span class="p">,</span> <span class="nx">customDirectiveGenerator</span><span class="p">)</span> <span class="p">{</span>
             <span class="nb">self</span><span class="p">.</span><span class="nx">configDirectiveGenerator</span> <span class="o">=</span> <span class="nx">configDirectiveGenerator</span><span class="p">;</span>
             <span class="nb">self</span><span class="p">.</span><span class="nx">customDirectiveGenerator</span> <span class="o">=</span> <span class="nx">customDirectiveGenerator</span><span class="p">;</span>
@@ -3515,14 +3516,14 @@ For CKEditor4, you can get this by calling <code class="highlighter-rouge">edito
         <span class="cm">/**
          * Add new command to open variables selector slideout.
          */</span>
-        <span class="nx">editor</span><span class="p">.</span><span class="nx">addCommand</span><span class="p">(</span><span class="s1">'mceMagentowidget'</span><span class="p">,</span> <span class="p">{</span>
+        <span class="nx">editor</span><span class="p">.</span><span class="nx">addCommand</span><span class="p">(</span><span class="dl">'</span><span class="s1">mceMagentowidget</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
             <span class="na">exec</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">editor</span><span class="p">)</span> <span class="p">{</span>
 
                 <span class="nx">require</span><span class="p">([</span>
-                    <span class="s1">'CKEditor_CKEditor4/js/ckeditor4/ckeditor'</span>
+                    <span class="dl">'</span><span class="s1">CKEditor_CKEditor4/js/ckeditor4/ckeditor</span><span class="dl">'</span>
                 <span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">ckeditor</span><span class="p">)</span> <span class="p">{</span>
                     <span class="nx">widgetTools</span><span class="p">.</span><span class="nx">openDialog</span><span class="p">(</span>
-                        <span class="nx">ckeditor</span><span class="p">.</span><span class="nx">settings</span><span class="p">[</span><span class="s1">'widget_window_url'</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'widget_target_id/'</span> <span class="o">+</span> <span class="nx">editor</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">getId</span><span class="p">()</span><span class="o">+</span> <span class="s1">'/'</span>
+                        <span class="nx">ckeditor</span><span class="p">.</span><span class="nx">settings</span><span class="p">[</span><span class="dl">'</span><span class="s1">widget_window_url</span><span class="dl">'</span><span class="p">]</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">widget_target_id/</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">editor</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">getId</span><span class="p">()</span><span class="o">+</span> <span class="dl">'</span><span class="s1">/</span><span class="dl">'</span>
                     <span class="p">);</span>
                 <span class="p">});</span>
             <span class="p">}</span>
@@ -3531,10 +3532,10 @@ For CKEditor4, you can get this by calling <code class="highlighter-rouge">edito
         <span class="cm">/**
          * Add button to the editor toolbar.
          */</span>
-        <span class="nx">editor</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">addButton</span><span class="p">(</span><span class="s1">'widget'</span><span class="p">,</span> <span class="p">{</span>
-            <span class="na">label</span><span class="p">:</span> <span class="nx">jQuery</span><span class="p">.</span><span class="nx">mage</span><span class="p">.</span><span class="nx">__</span><span class="p">(</span><span class="s1">'Insert Widget'</span><span class="p">),</span>
-            <span class="na">command</span><span class="p">:</span> <span class="s1">'mceMagentowidget'</span><span class="p">,</span>
-            <span class="na">toolbar</span><span class="p">:</span> <span class="s1">'insert'</span>
+        <span class="nx">editor</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">addButton</span><span class="p">(</span><span class="dl">'</span><span class="s1">widget</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+            <span class="na">label</span><span class="p">:</span> <span class="nx">jQuery</span><span class="p">.</span><span class="nx">mage</span><span class="p">.</span><span class="nx">__</span><span class="p">(</span><span class="dl">'</span><span class="s1">Insert Widget</span><span class="dl">'</span><span class="p">),</span>
+            <span class="na">command</span><span class="p">:</span> <span class="dl">'</span><span class="s1">mceMagentowidget</span><span class="dl">'</span><span class="p">,</span>
+            <span class="na">toolbar</span><span class="p">:</span> <span class="dl">'</span><span class="s1">insert</span><span class="dl">'</span>
 
         <span class="p">});</span>
     <span class="p">}</span>
@@ -3544,46 +3545,46 @@ For CKEditor4, you can get this by calling <code class="highlighter-rouge">edito
 <p>To integrate the default Magento UI for widgets, you need access to the following data:</p>
 
 <ul>
-  <li>The backend <code class="highlighter-rouge">widget_window_url</code> (<code class="highlighter-rouge">\Magento\Widget\Model\Widget\Config::getWidgetWindowUrl</code>)</li>
+  <li>The backend <code class="language-plaintext highlighter-rouge">widget_window_url</code> (<code class="language-plaintext highlighter-rouge">\Magento\Widget\Model\Widget\Config::getWidgetWindowUrl</code>)</li>
   <li>htmlId of the WYSIWYG editor.
-For CKEditor4, you can get this by calling <code class="highlighter-rouge">editor.element.getId()</code>.</li>
+For CKEditor4, you can get this by calling <code class="language-plaintext highlighter-rouge">editor.element.getId()</code>.</li>
 </ul>
 
 <h4 id="media-gallery-entity">Media Gallery Entity</h4>
 
-<p>Use the global <a href="https://github.com/magento/magento2/blob/2.3/lib/web/mage/adminhtml/browser.js"><code class="highlighter-rouge">MediabrowserUtility</code></a> object to implement or override image browsing functionality in the editor.</p>
+<p>Use the global <a href="https://github.com/magento/magento2/blob/2.3/lib/web/mage/adminhtml/browser.js"><code class="language-plaintext highlighter-rouge">MediabrowserUtility</code></a> object to implement or override image browsing functionality in the editor.</p>
 
-<p><strong>Example:</strong> <code class="highlighter-rouge">tinymce3Adapter.js</code> in the TinyMCE3 module</p>
+<p><strong>Example:</strong> <code class="language-plaintext highlighter-rouge">tinymce3Adapter.js</code> in the TinyMCE3 module</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="cm">/**
  * @param {Object} o
  */</span>
 <span class="nx">openFileBrowser</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">o</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">typeTitle</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">translate</span><span class="p">(</span><span class="s1">'Select Images'</span><span class="p">),</span>
-        <span class="nx">storeId</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">config</span><span class="p">[</span><span class="s1">'store_id'</span><span class="p">]</span> <span class="o">!==</span> <span class="kc">null</span> <span class="p">?</span> <span class="k">this</span><span class="p">.</span><span class="nx">config</span><span class="p">[</span><span class="s1">'store_id'</span><span class="p">]</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="nx">frameDialog</span> <span class="o">=</span> <span class="nx">jQuery</span><span class="p">(</span><span class="nx">o</span><span class="p">.</span><span class="nx">win</span><span class="p">.</span><span class="nx">frameElement</span><span class="p">).</span><span class="nx">parents</span><span class="p">(</span><span class="s1">'[role="dialog"]'</span><span class="p">),</span>
-        <span class="nx">wUrl</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">config</span><span class="p">[</span><span class="s1">'files_browser_window_url'</span><span class="p">]</span> <span class="o">+</span>
-            <span class="s1">'target_element_id/'</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">id</span> <span class="o">+</span> <span class="s1">'/'</span> <span class="o">+</span>
-            <span class="s1">'store/'</span> <span class="o">+</span> <span class="nx">storeId</span> <span class="o">+</span> <span class="s1">'/'</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">typeTitle</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">translate</span><span class="p">(</span><span class="dl">'</span><span class="s1">Select Images</span><span class="dl">'</span><span class="p">),</span>
+        <span class="nx">storeId</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">config</span><span class="p">[</span><span class="dl">'</span><span class="s1">store_id</span><span class="dl">'</span><span class="p">]</span> <span class="o">!==</span> <span class="kc">null</span> <span class="p">?</span> <span class="k">this</span><span class="p">.</span><span class="nx">config</span><span class="p">[</span><span class="dl">'</span><span class="s1">store_id</span><span class="dl">'</span><span class="p">]</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nx">frameDialog</span> <span class="o">=</span> <span class="nx">jQuery</span><span class="p">(</span><span class="nx">o</span><span class="p">.</span><span class="nx">win</span><span class="p">.</span><span class="nx">frameElement</span><span class="p">).</span><span class="nx">parents</span><span class="p">(</span><span class="dl">'</span><span class="s1">[role="dialog"]</span><span class="dl">'</span><span class="p">),</span>
+        <span class="nx">wUrl</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">config</span><span class="p">[</span><span class="dl">'</span><span class="s1">files_browser_window_url</span><span class="dl">'</span><span class="p">]</span> <span class="o">+</span>
+            <span class="dl">'</span><span class="s1">target_element_id/</span><span class="dl">'</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">id</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">/</span><span class="dl">'</span> <span class="o">+</span>
+            <span class="dl">'</span><span class="s1">store/</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">storeId</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">;</span>
 
     <span class="k">this</span><span class="p">.</span><span class="nx">mediaBrowserOpener</span> <span class="o">=</span> <span class="nx">o</span><span class="p">.</span><span class="nx">win</span><span class="p">;</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">mediaBrowserTargetElementId</span> <span class="o">=</span> <span class="nx">o</span><span class="p">.</span><span class="nx">field</span><span class="p">;</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">o</span><span class="p">.</span><span class="nx">type</span> <span class="o">!=</span> <span class="s1">'undefined'</span> <span class="o">&amp;&amp;</span> <span class="nx">o</span><span class="p">.</span><span class="nx">type</span> <span class="o">!=</span> <span class="s1">''</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//eslint-disable-line eqeqeq</span>
-        <span class="nx">wUrl</span> <span class="o">=</span> <span class="nx">wUrl</span> <span class="o">+</span> <span class="s1">'type/'</span> <span class="o">+</span> <span class="nx">o</span><span class="p">.</span><span class="nx">type</span> <span class="o">+</span> <span class="s1">'/'</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">o</span><span class="p">.</span><span class="nx">type</span> <span class="o">!=</span> <span class="dl">'</span><span class="s1">undefined</span><span class="dl">'</span> <span class="o">&amp;&amp;</span> <span class="nx">o</span><span class="p">.</span><span class="nx">type</span> <span class="o">!=</span> <span class="dl">''</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//eslint-disable-line eqeqeq</span>
+        <span class="nx">wUrl</span> <span class="o">=</span> <span class="nx">wUrl</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">type/</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">o</span><span class="p">.</span><span class="nx">type</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">;</span>
     <span class="p">}</span>
 
     <span class="nx">frameDialog</span><span class="p">.</span><span class="nx">hide</span><span class="p">();</span>
-    <span class="nx">jQuery</span><span class="p">(</span><span class="s1">'#mceModalBlocker'</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+    <span class="nx">jQuery</span><span class="p">(</span><span class="dl">'</span><span class="s1">#mceModalBlocker</span><span class="dl">'</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
 
-    <span class="nx">require</span><span class="p">([</span><span class="s1">'mage/adminhtml/browser'</span><span class="p">],</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">require</span><span class="p">([</span><span class="dl">'</span><span class="s1">mage/adminhtml/browser</span><span class="dl">'</span><span class="p">],</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
         <span class="nx">MediabrowserUtility</span><span class="p">.</span><span class="nx">openDialog</span><span class="p">(</span><span class="nx">wUrl</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nx">typeTitle</span><span class="p">,</span> <span class="p">{</span>
             <span class="cm">/**
             * Closed.
             */</span>
             <span class="na">closed</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
                 <span class="nx">frameDialog</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span>
-                <span class="nx">jQuery</span><span class="p">(</span><span class="s1">'#mceModalBlocker'</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span>
+                <span class="nx">jQuery</span><span class="p">(</span><span class="dl">'</span><span class="s1">#mceModalBlocker</span><span class="dl">'</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span>
             <span class="p">}</span>
         <span class="p">});</span>
     <span class="p">});</span>
@@ -3594,21 +3595,21 @@ For CKEditor4, you can get this by calling <code class="highlighter-rouge">edito
 
 <p>Use the editor specific command or steps needed to register your plugin with the editor.</p>
 
-<p>For example, TinyMCE3 has a <code class="highlighter-rouge">PluginManager.add()</code> method while CKEditor requires you to modify a configuration file.</p>
+<p>For example, TinyMCE3 has a <code class="language-plaintext highlighter-rouge">PluginManager.add()</code> method while CKEditor requires you to modify a configuration file.</p>
 
 <h2 id="configuration">Configuration</h2>
 
 <p>Configuration for the WYSIWYG editor and available entities is implemented in the following class:</p>
 
-<p><a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/Cms/Model/Wysiwyg/Config.php"><code class="highlighter-rouge">Magento\Cms\Model\Wysiwyg\Config</code></a></p>
+<p><a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/Cms/Model/Wysiwyg/Config.php"><code class="language-plaintext highlighter-rouge">Magento\Cms\Model\Wysiwyg\Config</code></a></p>
 
-<p>This class has a <code class="highlighter-rouge">getConfig()</code> method that returns the all available configurations as an array.</p>
+<p>This class has a <code class="language-plaintext highlighter-rouge">getConfig()</code> method that returns the all available configurations as an array.</p>
 
 <p>The class that aggregates the data in the array is the configuration provider class:</p>
 
-<p><code class="highlighter-rouge">Magento\Cms\Model\Wysiwyg\CompositeConfigProvider</code></p>
+<p><code class="language-plaintext highlighter-rouge">Magento\Cms\Model\Wysiwyg\CompositeConfigProvider</code></p>
 
-<p>In your module’s <a href="/devdocs/guides/v2.3/extension-dev-guide/build/di-xml-file.html"><code class="highlighter-rouge">di.xml</code></a> file, you can define a <a href="/devdocs/guides/v2.3/extension-dev-guide/build/di-xml-file.html#virtual-types">virtual type</a> of this class to substitute or modify the following configuration providers:</p>
+<p>In your module’s <a href="/devdocs/guides/v2.3/extension-dev-guide/build/di-xml-file.html"><code class="language-plaintext highlighter-rouge">di.xml</code></a> file, you can define a <a href="/devdocs/guides/v2.3/extension-dev-guide/build/di-xml-file.html#virtual-types">virtual type</a> of this class to substitute or modify the following configuration providers:</p>
 
 <table>
   <thead>
@@ -3619,19 +3620,19 @@ For CKEditor4, you can get this by calling <code class="highlighter-rouge">edito
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">variablePluginConfigProvider</code></td>
+      <td><code class="language-plaintext highlighter-rouge">variablePluginConfigProvider</code></td>
       <td>Provider for variable plugin configuration</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">widgetPluginConfigProvider</code></td>
+      <td><code class="language-plaintext highlighter-rouge">widgetPluginConfigProvider</code></td>
       <td>Provider for widget plugin configuration</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">galleryConfigProvider</code></td>
+      <td><code class="language-plaintext highlighter-rouge">galleryConfigProvider</code></td>
       <td>Provider for the media gallery configuration</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">wysiwygConfigPostProcessor</code></td>
+      <td><code class="language-plaintext highlighter-rouge">wysiwygConfigPostProcessor</code></td>
       <td>Provider for WYSIWYG editor configuration</td>
     </tr>
   </tbody>
@@ -3639,7 +3640,7 @@ For CKEditor4, you can get this by calling <code class="highlighter-rouge">edito
 
 <p>If your implementation does not require any modifications to the configuration, you can use the default implementation:</p>
 
-<p><code class="highlighter-rouge">Magento\Cms\Mode\WysiwygDefaultConfig</code></p>
+<p><code class="language-plaintext highlighter-rouge">Magento\Cms\Mode\WysiwygDefaultConfig</code></p>
 
 <p><strong>Example di.xml file entry for TinyMCE3 editor:</strong></p>
 
@@ -3663,15 +3664,15 @@ For CKEditor4, you can get this by calling <code class="highlighter-rouge">edito
 
 <h3 id="configuration-providers">Configuration providers</h3>
 
-<p>Configuration providers are classes with a <code class="highlighter-rouge">getConfig()</code> method that returns the configuration for a specific entity.
+<p>Configuration providers are classes with a <code class="language-plaintext highlighter-rouge">getConfig()</code> method that returns the configuration for a specific entity.
 These classes are implementations of the following interface:</p>
 
-<p><code class="highlighter-rouge">Magento\Framework\Data\Wysiwyg\ConfigProviderInterface</code></p>
+<p><code class="language-plaintext highlighter-rouge">Magento\Framework\Data\Wysiwyg\ConfigProviderInterface</code></p>
 
-<p>The <code class="highlighter-rouge">name</code> attribute for the configuration provider in the <code class="highlighter-rouge">di.xml</code> entry must match the editor’s registered option value.
-In the example provided, this value is <code class="highlighter-rouge">Magento_Tinymce3/tinymce3Adapter</code> defined in:</p>
+<p>The <code class="language-plaintext highlighter-rouge">name</code> attribute for the configuration provider in the <code class="language-plaintext highlighter-rouge">di.xml</code> entry must match the editor’s registered option value.
+In the example provided, this value is <code class="language-plaintext highlighter-rouge">Magento_Tinymce3/tinymce3Adapter</code> defined in:</p>
 
-<p><code class="highlighter-rouge">Magento\Tinymce3\Model\Config\Source\Wysiwyg\Editor</code></p>
+<p><code class="language-plaintext highlighter-rouge">Magento\Tinymce3\Model\Config\Source\Wysiwyg\Editor</code></p>
 
 
 			

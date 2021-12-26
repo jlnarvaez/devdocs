@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Enable vault | Magento 2 Developer Documentation (copy)</title>
+	<title>Enable vault | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/payments-integrations/vault/enabler.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/payments-integrations/vault/enabler.html">Magento 2.0</a></li>
 		
@@ -2076,7 +2077,7 @@ Magento out-of-the-box provides mechanisms for adding this ability, but you stil
 
 <ol>
   <li>Adding vault enabling controls.</li>
-  <li>Modifying the payment component (updating of the <code class="highlighter-rouge">additional_data</code> property must be added).</li>
+  <li>Modifying the payment component (updating of the <code class="language-plaintext highlighter-rouge">additional_data</code> property must be added).</li>
   <li>Creating a request data builder.</li>
 </ol>
 
@@ -2112,20 +2113,20 @@ Magento out-of-the-box provides mechanisms for adding this ability, but you stil
 
 <h2 id="modifying-the-payment-component">Modifying the payment component</h2>
 
-<p>The payment component must process the state of the vault-enabling control and update payment <code class="highlighter-rouge">additional_data</code> before it is sent to the   <span term-uuid="74d6d228-34bd-4475-a6f8-0c0f4d6d0d61" class="glossary-term" data-toggle="popover">backend</span>
+<p>The payment component must process the state of the vault-enabling control and update payment <code class="language-plaintext highlighter-rouge">additional_data</code> before it is sent to the   <span term-uuid="74d6d228-34bd-4475-a6f8-0c0f4d6d0d61" class="glossary-term" data-toggle="popover">backend</span>
 .</p>
 
 <p>Magento has a default vault enabler   <span term-uuid="9bcc648c-bd08-4feb-906d-1e24c4f2f422" class="glossary-term" data-toggle="popover">UI component</span>
- (<code class="highlighter-rouge">Magento_Vault/js/view/payment/vault-enabler</code>). In the payment component, you just need to call its <code class="highlighter-rouge">visitAdditionalData</code> to update the <code class="highlighter-rouge">additional_data</code> property. The rest is done by the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Observer/VaultEnableAssigner.php"><code class="highlighter-rouge">\Magento\Vault\Observer\VaultEnableAssigner</code></a> observer.</p>
+ (<code class="language-plaintext highlighter-rouge">Magento_Vault/js/view/payment/vault-enabler</code>). In the payment component, you just need to call its <code class="language-plaintext highlighter-rouge">visitAdditionalData</code> to update the <code class="language-plaintext highlighter-rouge">additional_data</code> property. The rest is done by the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Observer/VaultEnableAssigner.php"><code class="language-plaintext highlighter-rouge">\Magento\Vault\Observer\VaultEnableAssigner</code></a> observer.</p>
 
 <p>Example: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Braintree/view/frontend/web/js/view/payment/method-renderer/hosted-fields.js">the Braintree payment UI component</a></p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">define</span><span class="p">([</span>
     <span class="p">...</span>
-    <span class="s1">'Magento_Braintree/js/view/payment/method-renderer/cc-form'</span><span class="p">,</span>
-    <span class="s1">'Magento_Vault/js/view/payment/vault-enabler'</span>
+    <span class="dl">'</span><span class="s1">Magento_Braintree/js/view/payment/method-renderer/cc-form</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">Magento_Vault/js/view/payment/vault-enabler</span><span class="dl">'</span>
 <span class="p">],</span> <span class="kd">function</span> <span class="p">(...</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">VaultEnabler</span><span class="p">)</span> <span class="p">{</span>
-    <span class="s1">'use strict'</span><span class="p">;</span>
+    <span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
 
     <span class="k">return</span> <span class="nx">Component</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
 
@@ -2175,29 +2176,29 @@ Magento out-of-the-box provides mechanisms for adding this ability, but you stil
 
 <p>You can create a new request builder, or update the existing request builder of the payment method.</p>
 
-<p>In the Braintree request builder, to pass the data, we set <code class="highlighter-rouge">storeInVaultOnSuccess</code> in transaction request:</p>
+<p>In the Braintree request builder, to pass the data, we set <code class="language-plaintext highlighter-rouge">storeInVaultOnSuccess</code> in transaction request:</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="k">class</span> <span class="nc">VaultDataBuilder</span> <span class="k">implements</span> <span class="nx">BuilderInterface</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="kd">class</span> <span class="nc">VaultDataBuilder</span> <span class="kd">implements</span> <span class="nc">BuilderInterface</span>
 <span class="p">{</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * Additional options in request to gateway
      */</span>
     <span class="k">const</span> <span class="no">OPTIONS</span> <span class="o">=</span> <span class="s1">'options'</span><span class="p">;</span>
 
-    <span class="sd">/**
+    <span class="cd">/**
      * The option that determines whether the payment method associated with
      * the successful transaction should be stored in the Vault.
      */</span>
     <span class="k">const</span> <span class="no">STORE_IN_VAULT_ON_SUCCESS</span> <span class="o">=</span> <span class="s1">'storeInVaultOnSuccess'</span><span class="p">;</span>
 
-    <span class="sd">/**
+    <span class="cd">/**
      * @inheritdoc
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">build</span><span class="p">(</span><span class="k">array</span> <span class="nv">$buildSubject</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">build</span><span class="p">(</span><span class="kt">array</span> <span class="nv">$buildSubject</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="k">return</span> <span class="p">[</span>
-            <span class="nx">self</span><span class="o">::</span><span class="na">OPTIONS</span> <span class="o">=&gt;</span> <span class="p">[</span>
-                <span class="nx">self</span><span class="o">::</span><span class="na">STORE_IN_VAULT_ON_SUCCESS</span> <span class="o">=&gt;</span> <span class="kc">true</span>
+            <span class="k">self</span><span class="o">::</span><span class="no">OPTIONS</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                <span class="k">self</span><span class="o">::</span><span class="no">STORE_IN_VAULT_ON_SUCCESS</span> <span class="o">=&gt;</span> <span class="kc">true</span>
             <span class="p">]</span>
         <span class="p">];</span>
     <span class="p">}</span>
@@ -2205,7 +2206,7 @@ Magento out-of-the-box provides mechanisms for adding this ability, but you stil
 </code></pre></div></div>
 
 <p>The builder must be added to the payment authorize request in the DI configuration. 
-Example from the Braintree <code class="highlighter-rouge">di.xml</code>:</p>
+Example from the Braintree <code class="language-plaintext highlighter-rouge">di.xml</code>:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"BraintreeAuthorizeRequest"</span> <span class="na">type=</span><span class="s">"Magento\Payment\Gateway\Request\BuilderComposite"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>

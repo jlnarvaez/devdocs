@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Locate JavaScript components | Magento 2 Developer Documentation (copy)</title>
+	<title>Locate JavaScript components | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/javascript-dev-guide/javascript/js_debug.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/javascript-dev-guide/javascript/js_debug.html">Magento 2.0</a></li>
 		
@@ -2087,21 +2088,21 @@
 <p>To locate scripts used for a certain element:</p>
 
 <ol>
-  <li>Open the store page in a browser, and locate the element's <code class="highlighter-rouge">class</code> or <code class="highlighter-rouge">id</code> using browser debugging tools, such as Firebug (Firefox) or Inspect Element (Chrome).</li>
+  <li>Open the store page in a browser, and locate the element's <code class="language-plaintext highlighter-rouge">class</code> or <code class="language-plaintext highlighter-rouge">id</code> using browser debugging tools, such as Firebug (Firefox) or Inspect Element (Chrome).</li>
   <li>Select to view the page source.</li>
-  <li>Find the corresponding element in the page source and see if there are <code class="highlighter-rouge">data-mage-init</code> or <code class="highlighter-rouge">&lt;script type="text/x-magento-init"&gt;</code> calls on this element, its children or parents. The calls contain the names of the scripts, as described in <a href="/devdocs/videos/fundamentals/add-a-javascript-module/">JavaScript initialization</a>.</li>
+  <li>Find the corresponding element in the page source and see if there are <code class="language-plaintext highlighter-rouge">data-mage-init</code> or <code class="language-plaintext highlighter-rouge">&lt;script type="text/x-magento-init"&gt;</code> calls on this element, its children or parents. The calls contain the names of the scripts, as described in <a href="/devdocs/videos/fundamentals/add-a-javascript-module/">JavaScript initialization</a>.</li>
   <li>To find the source file of the used script:
     <ol>
-      <li>In the <code class="highlighter-rouge">&lt;head&gt;&lt;/head&gt;</code> section of the page source, click link to <code class="highlighter-rouge">requirejs-config.js</code> file. The file contains the Magento RequireJS configuration, collected from all modules of the current   <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>
+      <li>In the <code class="language-plaintext highlighter-rouge">&lt;head&gt;&lt;/head&gt;</code> section of the page source, click link to <code class="language-plaintext highlighter-rouge">requirejs-config.js</code> file. The file contains the Magento RequireJS configuration, collected from all modules of the current   <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>
 .
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>    Alternatively, you can open the `requirejs-config.js` file from the file system: `pub/static/_requirejs/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;/requirejs-config.js`
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>    Alternatively, you can open the `requirejs-config.js` file from the file system: `pub/static/_requirejs/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;/requirejs-config.js`
 </code></pre></div>        </div>
       </li>
-      <li>In the <code class="highlighter-rouge">var config = {...}</code> section of <code class="highlighter-rouge">requirejs-config.js</code>, find the required script name, and view the path to its source file. This path is relative to certain directories, depending on whether it contains   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
+      <li>In the <code class="language-plaintext highlighter-rouge">var config = {...}</code> section of <code class="language-plaintext highlighter-rouge">requirejs-config.js</code>, find the required script name, and view the path to its source file. This path is relative to certain directories, depending on whether it contains   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
  reference:
         <ul>
-          <li>If the module context is not specified, the path is relative to <code class="highlighter-rouge">&lt;theme_dir&gt;/web</code> (current theme). If the file is not found there, according to the <a href="/devdocs/guides/v2.1/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static">assets fallback</a>, it is searched for in parent theme <code class="highlighter-rouge">web</code> directory, and then <code class="highlighter-rouge">lib/web</code>(library) directory.</li>
-          <li>If the module context is specified, the path is relative to <code class="highlighter-rouge">&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web</code> (current theme module). If the file is not found there, according to the assets fallback, it is searched for in the same location in the parent theme files, and then in the <code class="highlighter-rouge">&lt;module_dir&gt;</code> (module) directory.</li>
+          <li>If the module context is not specified, the path is relative to <code class="language-plaintext highlighter-rouge">&lt;theme_dir&gt;/web</code> (current theme). If the file is not found there, according to the <a href="/devdocs/guides/v2.1/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static">assets fallback</a>, it is searched for in parent theme <code class="language-plaintext highlighter-rouge">web</code> directory, and then <code class="language-plaintext highlighter-rouge">lib/web</code>(library) directory.</li>
+          <li>If the module context is specified, the path is relative to <code class="language-plaintext highlighter-rouge">&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web</code> (current theme module). If the file is not found there, according to the assets fallback, it is searched for in the same location in the parent theme files, and then in the <code class="language-plaintext highlighter-rouge">&lt;module_dir&gt;</code> (module) directory.</li>
         </ul>
       </li>
     </ol>
@@ -2113,33 +2114,33 @@
 <p>As we discussed in the preceding section, you use browser debugging tools to define which JavaScript component or   <span term-uuid="f0dcf847-ce21-4b88-8b45-83e1cbf08100" class="glossary-term" data-toggle="popover">widget</span>
  is used for an element. An example follows. To find what JS components are used for displaying the main navigation menu in the Luma theme:</p>
 
-<p>Using the Inspect Element feature of the browser, define that the menu section <code class="highlighter-rouge">id</code> is <code class="highlighter-rouge">store.menu</code>:</p>
+<p>Using the Inspect Element feature of the browser, define that the menu section <code class="language-plaintext highlighter-rouge">id</code> is <code class="language-plaintext highlighter-rouge">store.menu</code>:</p>
 
 <p><img src="/devdocs/common/images/fdg_js_debug1.png" alt="Using the Inspect Element define the id" /></p>
 
-<p>Search the page source for <code class="highlighter-rouge">store.menu</code> (illustration follows):</p>
+<p>Search the page source for <code class="language-plaintext highlighter-rouge">store.menu</code> (illustration follows):</p>
 
 <p><img src="/devdocs/common/images/fdg_js_debug2.png" alt="Search the page source for the store.menu string" /></p>
 
-<p>We can see that there's a <code class="highlighter-rouge">data-mage-init</code> attribute in the scope of the <code class="highlighter-rouge">&lt;div id= "store.menu"&gt;&lt;/div&gt;</code></p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}
+<p>We can see that there's a <code class="language-plaintext highlighter-rouge">data-mage-init</code> attribute in the scope of the <code class="language-plaintext highlighter-rouge">&lt;div id= "store.menu"&gt;&lt;/div&gt;</code></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}
 </code></pre></div></div>
 
-<p>According to the JS components initialization notation, this means that this code calls <code class="highlighter-rouge">menu.js</code>.</p>
+<p>According to the JS components initialization notation, this means that this code calls <code class="language-plaintext highlighter-rouge">menu.js</code>.</p>
 
-<p>To find the source file of <code class="highlighter-rouge">menu.js</code>, open <code class="highlighter-rouge">requirejs-config.js</code> by clicking the link to it in the section of the page source. The path to <code class="highlighter-rouge">menu.js</code> is specified there as follows:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>    "menu":                   "mage/menu",
+<p>To find the source file of <code class="language-plaintext highlighter-rouge">menu.js</code>, open <code class="language-plaintext highlighter-rouge">requirejs-config.js</code> by clicking the link to it in the section of the page source. The path to <code class="language-plaintext highlighter-rouge">menu.js</code> is specified there as follows:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>    "menu":                   "mage/menu",
 </code></pre></div></div>
 
-<p>This means we should check for <code class="highlighter-rouge">mage/menu.js</code> the following locations, in the following priority order (according to the <a href="/devdocs/guides/v2.1/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static">assets fallback rules</a>):</p>
+<p>This means we should check for <code class="language-plaintext highlighter-rouge">mage/menu.js</code> the following locations, in the following priority order (according to the <a href="/devdocs/guides/v2.1/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static">assets fallback rules</a>):</p>
 
 <ol>
-  <li><code class="highlighter-rouge">&lt;Magento_Luma_theme_dir&gt;/web/js</code> (current theme JS files)</li>
-  <li><code class="highlighter-rouge">&lt;Magento_Blank_theme_dir&gt;/web/js</code> (parent theme JS files)</li>
-  <li><code class="highlighter-rouge">lib/web</code> (library files)</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;Magento_Luma_theme_dir&gt;/web/js</code> (current theme JS files)</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;Magento_Blank_theme_dir&gt;/web/js</code> (parent theme JS files)</li>
+  <li><code class="language-plaintext highlighter-rouge">lib/web</code> (library files)</li>
 </ol>
 
-<p>There is no <code class="highlighter-rouge">mage/menu.js</code> in the current theme or parent theme JS files, so the source file for menu component used for the main navigation menu is <a href="https://github.com/magento/magento2/blob/2.1//lib/web/mage/menu.js"><code class="highlighter-rouge">lib/web/mage/menu.js</code></a></p>
+<p>There is no <code class="language-plaintext highlighter-rouge">mage/menu.js</code> in the current theme or parent theme JS files, so the source file for menu component used for the main navigation menu is <a href="https://github.com/magento/magento2/blob/2.1//lib/web/mage/menu.js"><code class="language-plaintext highlighter-rouge">lib/web/mage/menu.js</code></a></p>
 
 
 			

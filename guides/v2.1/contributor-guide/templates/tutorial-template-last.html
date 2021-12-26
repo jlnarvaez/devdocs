@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Step X. Finish the tutorial | Magento 2 Developer Documentation (copy)</title>
+	<title>Step X. Finish the tutorial | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/contributor-guide/templates/tutorial-template-last.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/contributor-guide/templates/tutorial-template-last.html">Magento 2.0</a></li>
 		
@@ -1496,43 +1497,43 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">layout:</code></td>
-      <td>Must be <code class="highlighter-rouge">tutorial</code>.</td>
+      <td><code class="language-plaintext highlighter-rouge">layout:</code></td>
+      <td>Must be <code class="language-plaintext highlighter-rouge">tutorial</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">level3_subgroup:</code></td>
+      <td><code class="language-plaintext highlighter-rouge">level3_subgroup:</code></td>
       <td>A group name that binds the tutorial topics together. This value must be specified on each topic in the tutorial.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">title:</code></td>
-      <td>The title of the topic. This value should be in the form <em>Step X. Perform this task</em>. (For example, <code class="highlighter-rouge">Step 1. Configure the Store</code>)</td>
+      <td><code class="language-plaintext highlighter-rouge">title:</code></td>
+      <td>The title of the topic. This value should be in the form <em>Step X. Perform this task</em>. (For example, <code class="language-plaintext highlighter-rouge">Step 1. Configure the Store</code>)</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">menu_title:</code></td>
+      <td><code class="language-plaintext highlighter-rouge">menu_title:</code></td>
       <td>Optional. Use this parameter only if you don’t want the title in the left navigation to match the topic title.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">subtitle</code></td>
-      <td>The title of the tutorial. This value should match the <code class="highlighter-rouge">title</code> value in the index file.</td>
+      <td><code class="language-plaintext highlighter-rouge">subtitle</code></td>
+      <td>The title of the tutorial. This value should match the <code class="language-plaintext highlighter-rouge">title</code> value in the index file.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">menu_order:</code></td>
+      <td><code class="language-plaintext highlighter-rouge">menu_order:</code></td>
       <td>The sequence number of the topic. For the index page in a multi-step tutorial, set this 0. Otherwise set it to the step number.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">return_to:</code></td>
-      <td>Defines the tutorial’s parent page. The parent page title is displayed in the left navigation above the tutorial steps. Do not specify a value for the <code class="highlighter-rouge">return_to:</code> parameter. Instead, specify values for these second-level parameters:<br /><br /><code class="highlighter-rouge">title:</code> The title of the parent topic<br /><br /><code class="highlighter-rouge">url:</code> The URL of the parent topic</td>
+      <td><code class="language-plaintext highlighter-rouge">return_to:</code></td>
+      <td>Defines the tutorial’s parent page. The parent page title is displayed in the left navigation above the tutorial steps. Do not specify a value for the <code class="language-plaintext highlighter-rouge">return_to:</code> parameter. Instead, specify values for these second-level parameters:<br /><br /><code class="language-plaintext highlighter-rouge">title:</code> The title of the parent topic<br /><br /><code class="language-plaintext highlighter-rouge">url:</code> The URL of the parent topic</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">ee_only:</code></td>
-      <td>Optional. If set to <code class="highlighter-rouge">true</code>, graphics/cues indicating that the article applies to Magento Commerce are displayed on devdocs.</td>
+      <td><code class="language-plaintext highlighter-rouge">ee_only:</code></td>
+      <td>Optional. If set to <code class="language-plaintext highlighter-rouge">true</code>, graphics/cues indicating that the article applies to Magento Commerce are displayed on devdocs.</td>
     </tr>
   </tbody>
 </table>
 
 <p>Example:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>layout: tutorial
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>layout: tutorial
 level3_subgroup: order-tutorial
 title: Step 9. Create a shipment
 subtitle: Order processing tutorial
@@ -1544,7 +1545,7 @@ menu_order: 9
 
 <h2 id="secondary-heading">Secondary heading</h2>
 
-<p>Use a Head2 (<code class="highlighter-rouge">## Heading</code>) as the highest-level heading in this topic.</p>
+<p>Use a Head2 (<code class="language-plaintext highlighter-rouge">## Heading</code>) as the highest-level heading in this topic.</p>
 
 <h2 class="no_toc" id="congratulations-youve-finished">Congratulations! You’ve finished.</h2>
 

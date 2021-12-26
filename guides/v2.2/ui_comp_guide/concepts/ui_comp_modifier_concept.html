@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>About PHP modifiers in UI components | Magento 2 Developer Documentation (copy)</title>
+	<title>About PHP modifiers in UI components | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/ui_comp_guide/concepts/ui_comp_modifier_concept.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/ui_comp_guide/concepts/ui_comp_modifier_concept.html">Magento 2.0</a></li>
 		
@@ -3137,7 +3138,7 @@
 
 <h2 id="general-implementation-overview">General implementation overview</h2>
 
-<p><code class="highlighter-rouge">DataProvider()</code> is a PHP part of a UI component, a class responsible for the component’s data and metadata preparation. The pool of modifiers (virtual type) is injected to this data provider using the <code class="highlighter-rouge">__construct()</code> method. The pool’s preference is defined in <code class="highlighter-rouge">di.xml</code>.</p>
+<p><code class="language-plaintext highlighter-rouge">DataProvider()</code> is a PHP part of a UI component, a class responsible for the component’s data and metadata preparation. The pool of modifiers (virtual type) is injected to this data provider using the <code class="language-plaintext highlighter-rouge">__construct()</code> method. The pool’s preference is defined in <code class="language-plaintext highlighter-rouge">di.xml</code>.</p>
 
 <p>So in runtime, the component structure set in the modifier is merged with the configuration that comes from the   <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span>
  configuration.</p>
@@ -3148,11 +3149,11 @@
 
 <p><strong>Step 1</strong></p>
 
-<p>In your custom module, add a class that implements <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/DataProvider/Modifier/ModifierInterface.php"><code class="highlighter-rouge">\Magento\Ui\DataProvider\Modifier\ModifierInterface</code></a> with the following methods:</p>
+<p>In your custom module, add a class that implements <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/DataProvider/Modifier/ModifierInterface.php"><code class="language-plaintext highlighter-rouge">\Magento\Ui\DataProvider\Modifier\ModifierInterface</code></a> with the following methods:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">modifyData()</code>: for modifying UI component’s data (for example, the list of options for a select element)</li>
-  <li><code class="highlighter-rouge">modifyMeta()</code>: for modifying UI component’s   <span term-uuid="3f0f2ef1-ad38-41c6-bd1e-390daaa71d76" class="glossary-term" data-toggle="popover">metadata</span>
+  <li><code class="language-plaintext highlighter-rouge">modifyData()</code>: for modifying UI component’s data (for example, the list of options for a select element)</li>
+  <li><code class="language-plaintext highlighter-rouge">modifyMeta()</code>: for modifying UI component’s   <span term-uuid="3f0f2ef1-ad38-41c6-bd1e-390daaa71d76" class="glossary-term" data-toggle="popover">metadata</span>
  (for example, name, label, description, type)</li>
 </ul>
 
@@ -3160,17 +3161,17 @@
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="cp">&lt;?php</span>
 
-<span class="k">use</span> <span class="nx">Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\AbstractModifier</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\AbstractModifier</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">Example</span> <span class="k">extends</span> <span class="nx">AbstractModifier</span>
+<span class="kd">class</span> <span class="nc">Example</span> <span class="kd">extends</span> <span class="nc">AbstractModifier</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">modifyMeta</span><span class="p">(</span><span class="k">array</span> <span class="nv">$meta</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">modifyMeta</span><span class="p">(</span><span class="kt">array</span> <span class="nv">$meta</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="nv">$meta</span><span class="p">[</span><span class="s1">'test_fieldset_name'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
             <span class="s1">'arguments'</span> <span class="o">=&gt;</span> <span class="p">[</span>
                 <span class="s1">'data'</span> <span class="o">=&gt;</span> <span class="p">[</span>
                     <span class="s1">'config'</span> <span class="o">=&gt;</span> <span class="p">[</span>
-                        <span class="s1">'label'</span> <span class="o">=&gt;</span> <span class="nx">__</span><span class="p">(</span><span class="s1">'Label For Fieldset'</span><span class="p">),</span>
+                        <span class="s1">'label'</span> <span class="o">=&gt;</span> <span class="nf">__</span><span class="p">(</span><span class="s1">'Label For Fieldset'</span><span class="p">),</span>
                         <span class="s1">'sortOrder'</span> <span class="o">=&gt;</span> <span class="mi">50</span><span class="p">,</span>
                         <span class="s1">'collapsible'</span> <span class="o">=&gt;</span> <span class="kc">true</span>
                     <span class="p">]</span>
@@ -3190,7 +3191,7 @@
                                 <span class="p">],</span>
                                 <span class="s1">'visible'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
                                 <span class="s1">'required'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-                                <span class="s1">'label'</span> <span class="o">=&gt;</span> <span class="nx">__</span><span class="p">(</span><span class="s1">'Label For Element'</span><span class="p">)</span>
+                                <span class="s1">'label'</span> <span class="o">=&gt;</span> <span class="nf">__</span><span class="p">(</span><span class="s1">'Label For Element'</span><span class="p">)</span>
                             <span class="p">]</span>
                         <span class="p">]</span>
                     <span class="p">]</span>
@@ -3201,10 +3202,10 @@
  <span class="k">return</span> <span class="nv">$meta</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="sd">/**
+    <span class="cd">/**
      * {@inheritdoc}
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">modifyData</span><span class="p">(</span><span class="k">array</span> <span class="nv">$data</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">modifyData</span><span class="p">(</span><span class="kt">array</span> <span class="nv">$data</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
     <span class="p">}</span>
@@ -3213,7 +3214,7 @@
 
 <p><strong>Step 2</strong></p>
 
-<p>Declare your modifier in your module Di configuration <code class="highlighter-rouge">&lt;Your_Module_dir&gt;/etc/adminhtml/di.xml</code>. This declaration looks like the following:</p>
+<p>Declare your modifier in your module Di configuration <code class="language-plaintext highlighter-rouge">&lt;Your_Module_dir&gt;/etc/adminhtml/di.xml</code>. This declaration looks like the following:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"%YourNamespace\YourModule\DataProvider\Modifier\Pool%"</span> <span class="na">type=</span><span class="s">"Magento\Ui\DataProvider\Modifier\Pool"</span><span class="nt">&gt;</span>
      <span class="nt">&lt;arguments&gt;</span>
@@ -3227,13 +3228,13 @@
 <span class="nt">&lt;/virtualType&gt;</span>
 </code></pre></div></div>
 
-<p>, where <code class="highlighter-rouge">YourNamespace\YourModule\DataProvider\Modifier\Pool</code> is a <a href="/devdocs/guides/v2.2/extension-dev-guide/depend-inj.html#dependency-types">virtual class</a>.</p>
+<p>, where <code class="language-plaintext highlighter-rouge">YourNamespace\YourModule\DataProvider\Modifier\Pool</code> is a <a href="/devdocs/guides/v2.2/extension-dev-guide/depend-inj.html#dependency-types">virtual class</a>.</p>
 
-<p>(If you want to use this sample in your <code class="highlighter-rouge">di.xml</code>, replace the sample values with the real names of your entities.)</p>
+<p>(If you want to use this sample in your <code class="language-plaintext highlighter-rouge">di.xml</code>, replace the sample values with the real names of your entities.)</p>
 
 <p><strong>Step 3</strong></p>
 
-<p>To use your modifier, add a dependency on <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/DataProvider/Modifier/PoolInterface.php"><code class="highlighter-rouge">\Magento\Ui\DataProvider\Modifier\PoolInterface</code></a> to your UI component data provider. For illustration see <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Catalog/Ui/DataProvider/Product/Form/ProductDataProvider.php"><code class="highlighter-rouge">\Magento\Catalog\Ui\DataProvider\Product\Form\ProductDataProvider</code></a></p>
+<p>To use your modifier, add a dependency on <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/DataProvider/Modifier/PoolInterface.php"><code class="language-plaintext highlighter-rouge">\Magento\Ui\DataProvider\Modifier\PoolInterface</code></a> to your UI component data provider. For illustration see <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Catalog/Ui/DataProvider/Product/Form/ProductDataProvider.php"><code class="language-plaintext highlighter-rouge">\Magento\Catalog\Ui\DataProvider\Product\Form\ProductDataProvider</code></a></p>
 
 <h2 id="related-reading">Related reading</h2>
 

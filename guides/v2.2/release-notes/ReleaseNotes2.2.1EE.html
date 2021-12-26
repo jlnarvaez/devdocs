@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento Commerce 2.2.1 Release Notes | Magento 2 Developer Documentation (copy)</title>
+	<title>Magento Commerce 2.2.1 Release Notes | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/release-notes/ReleaseNotes2.2.1EE.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/release-notes/ReleaseNotes2.2.1EE.html">Magento 2.0</a></li>
 		
@@ -2214,12 +2215,12 @@
 
 <!--- 80225 -->
 <ul>
-  <li>We’ve improved the message that Magento displays during upgrade if any schema or data version in the <code class="highlighter-rouge">setup_modules</code> database is higher than the current module version in the code. <em>Fix submitted by community member <a href="https://github.com/schmengler" target="_blank">Fabian Schmengler</a> in pull request <a href="https://github.com/magento/magento2/pull/11064" target="_blank">11064</a>.</em></li>
+  <li>We’ve improved the message that Magento displays during upgrade if any schema or data version in the <code class="language-plaintext highlighter-rouge">setup_modules</code> database is higher than the current module version in the code. <em>Fix submitted by community member <a href="https://github.com/schmengler" target="_blank">Fabian Schmengler</a> in pull request <a href="https://github.com/magento/magento2/pull/11064" target="_blank">11064</a>.</em></li>
 </ul>
 
 <!--- 71893 -->
 <ul>
-  <li>If you do not specify <code class="highlighter-rouge">—base_url</code> during installation, all URLs now use the host and port of the current request to create URLs.</li>
+  <li>If you do not specify <code class="language-plaintext highlighter-rouge">—base_url</code> during installation, all URLs now use the host and port of the current request to create URLs.</li>
 </ul>
 
 <!--- 75452 -->
@@ -2229,14 +2230,14 @@
 
 <!--- 80201 -->
 <ul>
-  <li>We’ve resolved a fatal error in the repository generator. Both <code class="highlighter-rouge">InputException</code> and <code class="highlighter-rouge">NoSuchEntityException</code> now require a Phrase object as their first constructor argument.  <a href="https://github.com/magento/magento2/issues/10601">GitHub-10601</a></li>
+  <li>We’ve resolved a fatal error in the repository generator. Both <code class="language-plaintext highlighter-rouge">InputException</code> and <code class="language-plaintext highlighter-rouge">NoSuchEntityException</code> now require a Phrase object as their first constructor argument.  <a href="https://github.com/magento/magento2/issues/10601">GitHub-10601</a></li>
 </ul>
 
 <h3 id="amqp">AMQP</h3>
 
 <!--- 72288 -->
 <ul>
-  <li>The <code class="highlighter-rouge">inventoryQtyCounter</code> consumer now works without having RabbitMQ installed.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">inventoryQtyCounter</code> consumer now works without having RabbitMQ installed.</li>
 </ul>
 
 <h3 id="catalog">Catalog</h3>
@@ -2258,7 +2259,7 @@
 
 <!--- 75460 -->
 <ul>
-  <li><code class="highlighter-rouge">LowestPriceOptionsProvider</code> now returns products with the <code class="highlighter-rouge">tax_class_id</code> attribute, which is used for price calculation operations such as  tax adjustment. <a href="https://github.com/magento/magento2/issues/6729">GitHub-6729</a>, <a href="https://github.com/magento/magento2/issues/6457">GitHub-6457</a>, <a href="https://github.com/magento/magento2/issues/7362">GitHub-7362</a></li>
+  <li><code class="language-plaintext highlighter-rouge">LowestPriceOptionsProvider</code> now returns products with the <code class="language-plaintext highlighter-rouge">tax_class_id</code> attribute, which is used for price calculation operations such as  tax adjustment. <a href="https://github.com/magento/magento2/issues/6729">GitHub-6729</a>, <a href="https://github.com/magento/magento2/issues/6457">GitHub-6457</a>, <a href="https://github.com/magento/magento2/issues/7362">GitHub-7362</a></li>
 </ul>
 
 <!--- 75453 -->
@@ -2268,7 +2269,7 @@
 
 <!--- 75221 -->
 <ul>
-  <li>We’ve fixed an issue with <code class="highlighter-rouge">priceScope</code> that had resulted in the storefront not displaying product prices that should be displayed.</li>
+  <li>We’ve fixed an issue with <code class="language-plaintext highlighter-rouge">priceScope</code> that had resulted in the storefront not displaying product prices that should be displayed.</li>
 </ul>
 
 <h3 id="cart-and-checkout">Cart and checkout</h3>
@@ -2309,37 +2310,37 @@
 
 <!--- 72860 -->
 <ul>
-  <li>Magento now properly loads default values for <code class="highlighter-rouge">ArraySerialized</code> fields.</li>
+  <li>Magento now properly loads default values for <code class="language-plaintext highlighter-rouge">ArraySerialized</code> fields.</li>
 </ul>
 
 <!--- 75458 -->
 <ul>
-  <li>You can now set a default value to fields with config field type <code class="highlighter-rouge">image</code> or <code class="highlighter-rouge">file</code>. <a href="https://github.com/magento/magento2/issues/10253">GitHub-10253</a></li>
+  <li>You can now set a default value to fields with config field type <code class="language-plaintext highlighter-rouge">image</code> or <code class="language-plaintext highlighter-rouge">file</code>. <a href="https://github.com/magento/magento2/issues/10253">GitHub-10253</a></li>
 </ul>
 
 <!--- 80178, 80179, 80185  -->
 <ul>
-  <li>We’ve removed <code class="highlighter-rouge">Zend_Json</code> from the data object, test suite, and package information. <a href="https://github.com/magento/magento2/issues/10306">GitHub-10306</a>, <a href="https://github.com/magento/magento2/issues/10320">GitHub-10320</a>, <a href="https://github.com/magento/magento2/issues/10340">GitHub-10340</a></li>
+  <li>We’ve removed <code class="language-plaintext highlighter-rouge">Zend_Json</code> from the data object, test suite, and package information. <a href="https://github.com/magento/magento2/issues/10306">GitHub-10306</a>, <a href="https://github.com/magento/magento2/issues/10320">GitHub-10320</a>, <a href="https://github.com/magento/magento2/issues/10340">GitHub-10340</a></li>
 </ul>
 
 <!--- 80180 -->
 <ul>
-  <li>We’ve replaced the usage of <code class="highlighter-rouge">Zend_Json::encode</code>  in the setup marketplace tests. <a href="https://github.com/magento/magento2/issues/10329">GitHub-10329</a></li>
+  <li>We’ve replaced the usage of <code class="language-plaintext highlighter-rouge">Zend_Json::encode</code>  in the setup marketplace tests. <a href="https://github.com/magento/magento2/issues/10329">GitHub-10329</a></li>
 </ul>
 
 <!--- 80187 -->
 <ul>
-  <li>We’ve removed the usage of <code class="highlighter-rouge">Zend_Json</code> from the JSON controller. <a href="https://github.com/magento/magento2/issues/10342">GitHub-10342</a></li>
+  <li>We’ve removed the usage of <code class="language-plaintext highlighter-rouge">Zend_Json</code> from the JSON controller. <a href="https://github.com/magento/magento2/issues/10342">GitHub-10342</a></li>
 </ul>
 
 <!--- 80186 -->
 <ul>
-  <li>We’ve removed <code class="highlighter-rouge">Zend_Json</code> from <code class="highlighter-rouge">Setup/Migration.php</code>. <a href="https://github.com/magento/magento2/issues/10341">GitHub-10341</a></li>
+  <li>We’ve removed <code class="language-plaintext highlighter-rouge">Zend_Json</code> from <code class="language-plaintext highlighter-rouge">Setup/Migration.php</code>. <a href="https://github.com/magento/magento2/issues/10341">GitHub-10341</a></li>
 </ul>
 
 <!--- 80177 -->
 <ul>
-  <li>We have replaced <code class="highlighter-rouge">Zend_Json</code>  with <code class="highlighter-rouge">\Magento\Framework\Serialize\JsonConverter::convert</code> in customer data.  <a href="https://github.com/magento/magento2/issues/10259">GitHub-10259</a></li>
+  <li>We have replaced <code class="language-plaintext highlighter-rouge">Zend_Json</code>  with <code class="language-plaintext highlighter-rouge">\Magento\Framework\Serialize\JsonConverter::convert</code> in customer data.  <a href="https://github.com/magento/magento2/issues/10259">GitHub-10259</a></li>
 </ul>
 
 <h3 id="general">General</h3>
@@ -2411,7 +2412,7 @@
 
 <!--- 75457 -->
 <ul>
-  <li>We’ve fixed an issue where Magento did not retrieve relevant data when displaying reviews if <code class="highlighter-rouge">$displayIfNoReviews</code> was set to false. <a href="https://github.com/magento/magento2/issues/4530">GitHub-4530</a></li>
+  <li>We’ve fixed an issue where Magento did not retrieve relevant data when displaying reviews if <code class="language-plaintext highlighter-rouge">$displayIfNoReviews</code> was set to false. <a href="https://github.com/magento/magento2/issues/4530">GitHub-4530</a></li>
 </ul>
 
 <!--- 71980 -->
@@ -2440,7 +2441,7 @@
 
 <!--- 80102 -->
 <ul>
-  <li>We’ve added a <code class="highlighter-rouge">name</code> attribute to the layout default renderer, and you can now add a new column to the <strong>Admin Sales &gt; Order table</strong>. Previously,  the layout default renderer lacked a <code class="highlighter-rouge">name</code> attribute. <em>Fix submitted by community member <a href="https://github.com/gsomoza" target="_blank">Gabriel Somoza</a> in pull request <a href="https://github.com/magento/magento2/pull/11076" target="_blank">11076</a>.</em></li>
+  <li>We’ve added a <code class="language-plaintext highlighter-rouge">name</code> attribute to the layout default renderer, and you can now add a new column to the <strong>Admin Sales &gt; Order table</strong>. Previously,  the layout default renderer lacked a <code class="language-plaintext highlighter-rouge">name</code> attribute. <em>Fix submitted by community member <a href="https://github.com/gsomoza" target="_blank">Gabriel Somoza</a> in pull request <a href="https://github.com/magento/magento2/pull/11076" target="_blank">11076</a>.</em></li>
 </ul>
 
 <h3 id="payment-methods">Payment methods</h3>
@@ -2452,7 +2453,7 @@
 
 <!--- 71050 -->
 <ul>
-  <li>Magento now completes processing an order if the customer needs to re-enter credit card information during the order process. Previously, Magento returned this error <code class="highlighter-rouge">No such entity with customerId = 0</code>.</li>
+  <li>Magento now completes processing an order if the customer needs to re-enter credit card information during the order process. Previously, Magento returned this error <code class="language-plaintext highlighter-rouge">No such entity with customerId = 0</code>.</li>
 </ul>
 
 <h3 id="search">Search</h3>
@@ -2724,16 +2725,16 @@
 
 <h3 id="install-rc-composer" class="no_toc">Get Magento Commerce using Composer</h3>
 
-<p>Magento Commerce (formerly Enterprise Edition) is available from <code class="highlighter-rouge">repo.magento.com</code>. Before installing the Magento Commerce software using Composer,  familiarize yourself with these  <a href="/devdocs/guides/v2.2/install-gde/composer.html">prerequisites</a>, then run:</p>
+<p>Magento Commerce (formerly Enterprise Edition) is available from <code class="language-plaintext highlighter-rouge">repo.magento.com</code>. Before installing the Magento Commerce software using Composer,  familiarize yourself with these  <a href="/devdocs/guides/v2.2/install-gde/composer.html">prerequisites</a>, then run:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer create-project --repository=https://repo.magento.com/ magento/project-enterprise-edition=&lt;version&gt; &lt;installation directory name&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer create-project --repository=https://repo.magento.com/ magento/project-enterprise-edition=&lt;version&gt; &lt;installation directory name&gt;
 </code></pre></div></div>
 
-<p>where <code class="highlighter-rouge">&lt;version&gt;</code> is <code class="highlighter-rouge">2.1.0</code>, <code class="highlighter-rouge">2.1.1</code>, and so on</p>
+<p>where <code class="language-plaintext highlighter-rouge">&lt;version&gt;</code> is <code class="language-plaintext highlighter-rouge">2.1.0</code>, <code class="language-plaintext highlighter-rouge">2.1.1</code>, and so on</p>
 
-<p>For example, to install 2.1.1 in the <code class="highlighter-rouge">magento2</code> directory:</p>
+<p>For example, to install 2.1.1 in the <code class="language-plaintext highlighter-rouge">magento2</code> directory:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer create-project --repository=https://repo.magento.com/ magento/project-enterprise-edition=2.1.1 magento2
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer create-project --repository=https://repo.magento.com/ magento/project-enterprise-edition=2.1.1 magento2
 </code></pre></div></div>
 
 <h3 id="get-zip" class="no_toc">Get Magento Commerce using a compressed archive</h3>
@@ -2747,7 +2748,7 @@
 
 <p>These packages are easy to get and install. You don’t need to use Composer, all you need to do is to upload a package to your Magento server or hosted platform, unpack it, and run the web-based Setup Wizard.</p>
 
-<p>Archives are available in the following formats: <code class="highlighter-rouge">.zip</code>, <code class="highlighter-rouge">.tar.bz2</code>, <code class="highlighter-rouge">.tar.gz</code></p>
+<p>Archives are available in the following formats: <code class="language-plaintext highlighter-rouge">.zip</code>, <code class="language-plaintext highlighter-rouge">.tar.bz2</code>, <code class="language-plaintext highlighter-rouge">.tar.gz</code></p>
 
 <p>To get the Magento Commerce archive:</p>
 
@@ -2760,8 +2761,8 @@
     <p>Follow the instructions on your screen to complete the Magento Commerce download:</p>
 
     <ul>
-      <li><code class="highlighter-rouge">Magento-EE-&lt;version&gt;.*</code> (without sample data)</li>
-      <li><code class="highlighter-rouge">Magento-EE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
+      <li><code class="language-plaintext highlighter-rouge">Magento-EE-&lt;version&gt;.*</code> (without sample data)</li>
+      <li><code class="language-plaintext highlighter-rouge">Magento-EE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
     </ul>
   </li>
   <li>Transfer the installation package to your development system.</li>

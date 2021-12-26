@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Install the B2B extension | Magento 2 Developer Documentation (copy)</title>
+	<title>Install the B2B extension | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/comp-mgr/install-extensions/b2b-installation.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/comp-mgr/install-extensions/b2b-installation.html">Magento 2.0</a></li>
 		
@@ -2744,14 +2745,14 @@
 
 <ol>
   <li>
-    <p>Change to your Magento installation directory and enter the following command to update your <code class="highlighter-rouge">composer.json</code> file and install the Magento Commerce for B2B extension:</p>
+    <p>Change to your Magento installation directory and enter the following command to update your <code class="language-plaintext highlighter-rouge">composer.json</code> file and install the Magento Commerce for B2B extension:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer require magento/extension-b2b=^1.1
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer require magento/extension-b2b=^1.1
 </code></pre></div>    </div>
 
-    <p>If you get an error when trying to install the B2B module for a local instance of Magento Commerce (for example: <code class="highlighter-rouge">[InvalidArgumentException] Could not find a matching version of package magento/extension-b2b. Check the package spelling, your version constraint and that the package is available in a stability which matches your minimum-stability (stable).</code>), you need to create an <code class="highlighter-rouge">auth.json</code> file in the Magento root directory and add the following code, using the actual values of your public_key and private_key for <code class="highlighter-rouge">username</code> and <code class="highlighter-rouge">password</code>:</p>
+    <p>If you get an error when trying to install the B2B module for a local instance of Magento Commerce (for example: <code class="language-plaintext highlighter-rouge">[InvalidArgumentException] Could not find a matching version of package magento/extension-b2b. Check the package spelling, your version constraint and that the package is available in a stability which matches your minimum-stability (stable).</code>), you need to create an <code class="language-plaintext highlighter-rouge">auth.json</code> file in the Magento root directory and add the following code, using the actual values of your public_key and private_key for <code class="language-plaintext highlighter-rouge">username</code> and <code class="language-plaintext highlighter-rouge">password</code>:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>{
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>{
    "http-basic": {
       "repo.magento.com": {
          "username": "&lt;public_key&gt;",
@@ -2762,12 +2763,12 @@
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>When prompted, enter your <a href="/devdocs/guides/v2.3/install-gde/prereq/connect-auth.html">authentication keys</a>. Your <em>public key</em> is your username; your <em>private key</em> is your password. If you have stored your public and private keys in <code class="highlighter-rouge">auth.json</code>, you won’t be asked to enter them here.</p>
+    <p>When prompted, enter your <a href="/devdocs/guides/v2.3/install-gde/prereq/connect-auth.html">authentication keys</a>. Your <em>public key</em> is your username; your <em>private key</em> is your password. If you have stored your public and private keys in <code class="language-plaintext highlighter-rouge">auth.json</code>, you won’t be asked to enter them here.</p>
   </li>
   <li>
     <p>Run the following commands after Composer finishes updating modules:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento setup:upgrade
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento setup:upgrade
 
 bin/magento setup:di:compile
 
@@ -2790,35 +2791,35 @@ bin/magento setup:static-content:deploy -f
   <li>
     <p>List the available message consumers:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento queue:consumers:list
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento queue:consumers:list
 </code></pre></div>    </div>
 
     <p>You should see the following consumers:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>sharedCatalogUpdatePrice
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>sharedCatalogUpdatePrice
 sharedCatalogUpdateCategoryPermissions
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Start each consumer separately:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento queue:consumers:start &lt;consumer_name&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento queue:consumers:start &lt;consumer_name&gt;
 </code></pre></div>    </div>
 
     <p>For example:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento queue:consumers:start sharedCatalogUpdatePrice
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento queue:consumers:start sharedCatalogUpdatePrice
 </code></pre></div>    </div>
   </li>
 </ol>
 
-<p class="bs-callout bs-callout-tip">Append <code class="highlighter-rouge">&amp;</code> to the command to run it in the background, return to a prompt, and continue running commands (e.g., <code class="highlighter-rouge">bin/magento queue:consumers:start sharedCatalogUpdatePrice &amp;</code>).</p>
+<p class="bs-callout bs-callout-tip">Append <code class="language-plaintext highlighter-rouge">&amp;</code> to the command to run it in the background, return to a prompt, and continue running commands (e.g., <code class="language-plaintext highlighter-rouge">bin/magento queue:consumers:start sharedCatalogUpdatePrice &amp;</code>).</p>
 
 <p>Refer to <a href="/devdocs/guides/v2.3/config-guide/mq/manage-mysql.html">Manage message queues</a> for more information.</p>
 
 <h3 id="add-message-consumers-to-cron">Add message consumers to cron</h3>
 
-<p>You may also add these two message consumers to the cron job (optional). For this, add these lines in your <code class="highlighter-rouge">crontab</code>:</p>
+<p>You may also add these two message consumers to the cron job (optional). For this, add these lines in your <code class="language-plaintext highlighter-rouge">crontab</code>:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml">* * * * * ps ax | grep [s]haredCatalogUpdateCategoryPermissions &gt;&gt;/dev/null 2&gt;<span class="err">&amp;</span>1 || nohup php /var/www/html/magento2/bin/magento queue:consumers:start sharedCatalogUpdateCategoryPermissions <span class="err">&amp;</span>
 * * * * * ps ax | grep [s]haredCatalogUpdatePrice &gt;&gt;/dev/null 2&gt;<span class="err">&amp;</span>1 || nohup php /var/www/html/magento2/bin/magento queue:consumers:start sharedCatalogUpdatePrice <span class="err">&amp;</span></code></pre></figure>
@@ -2829,10 +2830,10 @@ sharedCatalogUpdateCategoryPermissions
 
 <ul>
   <li>
-    <p><code class="highlighter-rouge">--max-messages</code>: manages the consumer’s lifetime and allows you to specify the maximum number of messages processed by the consumer. The best practice for a PHP application is to restart long-running processes to prevent possible memory leaks.</p>
+    <p><code class="language-plaintext highlighter-rouge">--max-messages</code>: manages the consumer’s lifetime and allows you to specify the maximum number of messages processed by the consumer. The best practice for a PHP application is to restart long-running processes to prevent possible memory leaks.</p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">--batch-size</code>: allows you to limit the system resources consumed by the consumers (CPU, memory). Using smaller batches reduces resource usage and, thus, leads to slower processing.</p>
+    <p><code class="language-plaintext highlighter-rouge">--batch-size</code>: allows you to limit the system resources consumed by the consumers (CPU, memory). Using smaller batches reduces resource usage and, thus, leads to slower processing.</p>
   </li>
 </ul>
 

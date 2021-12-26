@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Run unit tests | Magento 2 Developer Documentation (copy)</title>
+	<title>Run unit tests | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/config-guide/cli/config-cli-subcommands-test.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/config-guide/cli/config-cli-subcommands-test.html">Magento 2.0</a></li>
 		
@@ -3305,41 +3306,41 @@
 
 <ul>
   <li>
-    <p>The <code class="highlighter-rouge">Magento_Developer</code>   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
+    <p>The <code class="language-plaintext highlighter-rouge">Magento_Developer</code>   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
  must be enabled. You can enable it as follows:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento module:enable [--force] Magento_Developer
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento module:enable [--force] Magento_Developer
 </code></pre></div>    </div>
 
-    <p>Use the <code class="highlighter-rouge">--force</code> option only if it’s necessary.</p>
+    <p>Use the <code class="language-plaintext highlighter-rouge">--force</code> option only if it’s necessary.</p>
   </li>
   <li>
     <p>Your system must be set up to run the desired tests.</p>
   </li>
 </ul>
 
-<p>For example, to run integration tests, you should copy <code class="highlighter-rouge">dev/tests/integration/etc/install-config-mysql.php.dist</code> to <code class="highlighter-rouge">dev/tests/integration/etc/install-config-mysql.php</code> and modify it to suit your environment.</p>
+<p>For example, to run integration tests, you should copy <code class="language-plaintext highlighter-rouge">dev/tests/integration/etc/install-config-mysql.php.dist</code> to <code class="language-plaintext highlighter-rouge">dev/tests/integration/etc/install-config-mysql.php</code> and modify it to suit your environment.</p>
 
 <h2 id="running-tests">Running tests</h2>
 
 <p>Command usage:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento dev:tests:run &lt;test&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento dev:tests:run &lt;test&gt;
 </code></pre></div></div>
 
 <p>To list the available test types:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento dev:tests:run --help
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento dev:tests:run --help
 </code></pre></div></div>
 
 <p>This gives you a list similar to the following:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>all, unit, integration, integration-all, static, static-all, integrity, legacy, default
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>all, unit, integration, integration-all, static, static-all, integrity, legacy, default
 </code></pre></div></div>
 
 <p>For example, to run integration tests:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento dev:tests:run integration
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento dev:tests:run integration
 </code></pre></div></div>
 
 <h4 id="related-topics">Related topics</h4>

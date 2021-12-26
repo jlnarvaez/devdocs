@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento Commerce 2.1.15 Release Notes | Magento 2 Developer Documentation (copy)</title>
+	<title>Magento Commerce 2.1.15 Release Notes | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/release-notes/ReleaseNotes2.1.15EE.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/release-notes/ReleaseNotes2.1.15EE.html">Magento 2.0</a></li>
 		
@@ -2847,12 +2848,12 @@
 
 <!--- ENGCOM-1685 -->
 <ul>
-  <li>The <code class="highlighter-rouge">Magento\Catalog\Model\ResourceModel\Category\Collection::joinUrlRewrite</code> method now uses the <code class="highlighter-rouge">storeId</code> value  set on the actual collection of the store rather than the <code class="highlighter-rouge">storeId</code> retrieved from the store manager. <em>Fix submitted by <a href="https://github.com/alepane21">Alessandro Pagnin</a> in pull request <a href="https://github.com/magento/magento2/pull/13756">13756</a></em>. <a href="https://github.com/magento/magento2/issues/13704">GitHub-13704</a></li>
+  <li>The <code class="language-plaintext highlighter-rouge">Magento\Catalog\Model\ResourceModel\Category\Collection::joinUrlRewrite</code> method now uses the <code class="language-plaintext highlighter-rouge">storeId</code> value  set on the actual collection of the store rather than the <code class="language-plaintext highlighter-rouge">storeId</code> retrieved from the store manager. <em>Fix submitted by <a href="https://github.com/alepane21">Alessandro Pagnin</a> in pull request <a href="https://github.com/magento/magento2/pull/13756">13756</a></em>. <a href="https://github.com/magento/magento2/issues/13704">GitHub-13704</a></li>
 </ul>
 
 <!--- ENGCOM-1842 -->
 <ul>
-  <li>Magento now uses <code class="highlighter-rouge">data-container="product-list"</code> instead of  <code class="highlighter-rouge">data-container="product-grid"</code> when displaying a product list. <em>Fix submitted by <a href="https://github.com/viral-wagento">Viral Vasara</a> in pull request <a href="https://github.com/magento/magento2/pull/15816">15816</a></em>. <a href="https://github.com/magento/magento2/issues/15319">GitHub-15319</a></li>
+  <li>Magento now uses <code class="language-plaintext highlighter-rouge">data-container="product-list"</code> instead of  <code class="language-plaintext highlighter-rouge">data-container="product-grid"</code> when displaying a product list. <em>Fix submitted by <a href="https://github.com/viral-wagento">Viral Vasara</a> in pull request <a href="https://github.com/magento/magento2/pull/15816">15816</a></em>. <a href="https://github.com/magento/magento2/issues/15319">GitHub-15319</a></li>
 </ul>
 
 <!--- ENGCOM-1907 -->
@@ -2871,19 +2872,19 @@
 
 <!--- MAGETWO-84366 -->
 <ul>
-  <li>You can now successfully upload logo images in Internet Explorer.  Previously, Magento did not upload the image, but instead displayed this error: <code class="highlighter-rouge">Object doesn't support property or method 'set'</code>.</li>
+  <li>You can now successfully upload logo images in Internet Explorer.  Previously, Magento did not upload the image, but instead displayed this error: <code class="language-plaintext highlighter-rouge">Object doesn't support property or method 'set'</code>.</li>
 </ul>
 
 <!--- MAGETWO-67162 -->
 <ul>
-  <li>CSS minification is now compatible with CSS3 <code class="highlighter-rouge">calc()</code> function. <a href="https://github.com/magento/magento2/issues/8552">GitHub-8552</a></li>
+  <li>CSS minification is now compatible with CSS3 <code class="language-plaintext highlighter-rouge">calc()</code> function. <a href="https://github.com/magento/magento2/issues/8552">GitHub-8552</a></li>
 </ul>
 
 <h3 id="customer">Customer</h3>
 
 <!--- ENGCOM-1337 -->
 <ul>
-  <li>Magento now preserves the user group ID when using <code class="highlighter-rouge">/V1/customers/:customerId</code> (PUT). Previously, Magento set the customer group ID to 1 when you called  <code class="highlighter-rouge">/V1/customers/:customerId</code> (PUT) and the customer had an assigned group ID. <em>Fix submitted by <a href="https://github.com/ferrazzuk">André Ferraz</a> in pull request <a href="https://github.com/magento/magento2/pull/14757">14757</a></em>. <a href="https://github.com/magento/magento2/issues/14663">GitHub-14663</a></li>
+  <li>Magento now preserves the user group ID when using <code class="language-plaintext highlighter-rouge">/V1/customers/:customerId</code> (PUT). Previously, Magento set the customer group ID to 1 when you called  <code class="language-plaintext highlighter-rouge">/V1/customers/:customerId</code> (PUT) and the customer had an assigned group ID. <em>Fix submitted by <a href="https://github.com/ferrazzuk">André Ferraz</a> in pull request <a href="https://github.com/magento/magento2/pull/14757">14757</a></em>. <a href="https://github.com/magento/magento2/issues/14663">GitHub-14663</a></li>
 </ul>
 
 <h3 id="directory">Directory</h3>
@@ -2897,14 +2898,14 @@
 
 <!--- MAGETWO-92721 -->
 <ul>
-  <li>Administrators can now add a parameter to <code class="highlighter-rouge">app/etc/env.php: user_admin_email</code>. This parameter ensures that when a new administrator account is created, Magento sends an email to default store’s email and, if present, to an email address defined in <code class="highlighter-rouge">user_admin_email</code>.</li>
+  <li>Administrators can now add a parameter to <code class="language-plaintext highlighter-rouge">app/etc/env.php: user_admin_email</code>. This parameter ensures that when a new administrator account is created, Magento sends an email to default store’s email and, if present, to an email address defined in <code class="language-plaintext highlighter-rouge">user_admin_email</code>.</li>
 </ul>
 
 <h3 id="framework">Framework</h3>
 
 <!--- ENGCOM-1262 -->
 <ul>
-  <li>Magento now leaves at least one record after cleaning up the changelog tables after restarting MySQL. Previously, the product <code class="highlighter-rouge">version_id</code> lost the most recent  <code class="highlighter-rouge">auro_increment</code> value after restarting MySQL. <em>Fix submitted by <a href="https://github.com/swnsma">Oleksandr Kravchuk</a> in pull request <a href="https://github.com/magento/magento2/pull/14471">14471</a></em>. <a href="https://github.com/magento/magento2/issues/14465">GitHub-14465</a></li>
+  <li>Magento now leaves at least one record after cleaning up the changelog tables after restarting MySQL. Previously, the product <code class="language-plaintext highlighter-rouge">version_id</code> lost the most recent  <code class="language-plaintext highlighter-rouge">auro_increment</code> value after restarting MySQL. <em>Fix submitted by <a href="https://github.com/swnsma">Oleksandr Kravchuk</a> in pull request <a href="https://github.com/magento/magento2/pull/14471">14471</a></em>. <a href="https://github.com/magento/magento2/issues/14465">GitHub-14465</a></li>
 </ul>
 
 <!--- ENGCOM-1410 -->
@@ -2937,7 +2938,7 @@
 
 <!--- ENGCOM-2233 -->
 <ul>
-  <li>The <code class="highlighter-rouge">transport</code> event parameter has been changed from type <code class="highlighter-rouge">Array()</code> to type <code class="highlighter-rouge">DataObject</code>. This is a reversion of a change that was made in an earlier release. <em>Fix submitted by <a href="https://github.com/gwharton">gwharton</a> in pull request <a href="https://github.com/magento/magento2/pull/16601">16601</a></em>. <a href="https://github.com/magento/magento2/issues/10210">GitHub-10210</a></li>
+  <li>The <code class="language-plaintext highlighter-rouge">transport</code> event parameter has been changed from type <code class="language-plaintext highlighter-rouge">Array()</code> to type <code class="language-plaintext highlighter-rouge">DataObject</code>. This is a reversion of a change that was made in an earlier release. <em>Fix submitted by <a href="https://github.com/gwharton">gwharton</a> in pull request <a href="https://github.com/magento/magento2/pull/16601">16601</a></em>. <a href="https://github.com/magento/magento2/issues/10210">GitHub-10210</a></li>
 </ul>
 
 <!--- ENGCOM-1639 -->
@@ -2947,7 +2948,7 @@
 
 <!--- ENGCOM-1699 -->
 <ul>
-  <li>Magento now sets the <code class="highlighter-rouge">trigger_recollect</code> attribute  back to 0 after collecting total amounts for the quote. Previously, Magento timed out if a customer tried to reload a quote. <em>Fix submitted by <a href="https://github.com/rogyar">Yaroslav Rogoza</a> in pull request <a href="https://github.com/magento/magento2/pull/15522">15522</a></em>. <a href="https://github.com/magento/magento2/issues/9580">GitHub-9580</a></li>
+  <li>Magento now sets the <code class="language-plaintext highlighter-rouge">trigger_recollect</code> attribute  back to 0 after collecting total amounts for the quote. Previously, Magento timed out if a customer tried to reload a quote. <em>Fix submitted by <a href="https://github.com/rogyar">Yaroslav Rogoza</a> in pull request <a href="https://github.com/magento/magento2/pull/15522">15522</a></em>. <a href="https://github.com/magento/magento2/issues/9580">GitHub-9580</a></li>
 </ul>
 
 <!--- ENGCOM-1693 -->
@@ -2957,22 +2958,22 @@
 
 <!--- ENGCOM-1777 -->
 <ul>
-  <li>The annotation for the <code class="highlighter-rouge">formatDateTime</code> function in the <code class="highlighter-rouge">lib/internal/Magento/Framework/Stdlib/DateTime/TimezoneInterface.php</code> file has been corrected. The <code class="highlighter-rouge">locale</code> and <code class="highlighter-rouge">timezone</code> have been changed to <code class="highlighter-rouge">param string|null $locale</code> and <code class="highlighter-rouge">@param string|null $timezone</code>.  <em>Fix submitted by <a href="https://github.com/gelanivishal">Vishal Gelani</a> in pull request <a href="https://github.com/magento/magento2/pull/15668">15668</a></em>. <a href="https://github.com/magento/magento2/issues/15668">GitHub-15668</a></li>
+  <li>The annotation for the <code class="language-plaintext highlighter-rouge">formatDateTime</code> function in the <code class="language-plaintext highlighter-rouge">lib/internal/Magento/Framework/Stdlib/DateTime/TimezoneInterface.php</code> file has been corrected. The <code class="language-plaintext highlighter-rouge">locale</code> and <code class="language-plaintext highlighter-rouge">timezone</code> have been changed to <code class="language-plaintext highlighter-rouge">param string|null $locale</code> and <code class="language-plaintext highlighter-rouge">@param string|null $timezone</code>.  <em>Fix submitted by <a href="https://github.com/gelanivishal">Vishal Gelani</a> in pull request <a href="https://github.com/magento/magento2/pull/15668">15668</a></em>. <a href="https://github.com/magento/magento2/issues/15668">GitHub-15668</a></li>
 </ul>
 
 <!--- ENGCOM-1778 -->
 <ul>
-  <li>The annotation for the <code class="highlighter-rouge">formatDateTime</code> function in the <code class="highlighter-rouge">lib/internal/Magento/Framework/Stdlib/DateTime/TimezoneInterface.php</code> file has been corrected. The <code class="highlighter-rouge">locale</code> and <code class="highlighter-rouge">timezone</code> have been changed to <code class="highlighter-rouge">param string|null $locale</code> and <code class="highlighter-rouge">@param string|null $timezone</code>. <em>Fix submitted by <a href="https://github.com/gelanivishal">Vishal Gelani</a> in pull request <a href="https://github.com/magento/magento2/pull/15669">15669</a></em>. <a href="https://github.com/magento/magento2/issues/15601">GitHub-15601</a></li>
+  <li>The annotation for the <code class="language-plaintext highlighter-rouge">formatDateTime</code> function in the <code class="language-plaintext highlighter-rouge">lib/internal/Magento/Framework/Stdlib/DateTime/TimezoneInterface.php</code> file has been corrected. The <code class="language-plaintext highlighter-rouge">locale</code> and <code class="language-plaintext highlighter-rouge">timezone</code> have been changed to <code class="language-plaintext highlighter-rouge">param string|null $locale</code> and <code class="language-plaintext highlighter-rouge">@param string|null $timezone</code>. <em>Fix submitted by <a href="https://github.com/gelanivishal">Vishal Gelani</a> in pull request <a href="https://github.com/magento/magento2/pull/15669">15669</a></em>. <a href="https://github.com/magento/magento2/issues/15601">GitHub-15601</a></li>
 </ul>
 
 <!--- ENGCOM-1804 -->
 <ul>
-  <li>We’ve refactored the JavaScript code in the <code class="highlighter-rouge">split.phtml</code> template file for the button widget. <em>Fix submitted by <a href="https://github.com/vijay-wagento">Vijay Golani</a> in pull request <a href="https://github.com/magento/magento2/pull/15736">15736</a></em>. <a href="https://github.com/magento/magento2/issues/15354">GitHub-15354</a></li>
+  <li>We’ve refactored the JavaScript code in the <code class="language-plaintext highlighter-rouge">split.phtml</code> template file for the button widget. <em>Fix submitted by <a href="https://github.com/vijay-wagento">Vijay Golani</a> in pull request <a href="https://github.com/magento/magento2/pull/15736">15736</a></em>. <a href="https://github.com/magento/magento2/issues/15354">GitHub-15354</a></li>
 </ul>
 
 <!--- ENGCOM-1841 -->
 <ul>
-  <li>The misspelling of <code class="highlighter-rouge">setCategoryIds</code> has been corrected throughout the code base. <em>Fix submitted by <a href="https://github.com/viral-wagento">Viral Vasara</a> in pull request <a href="https://github.com/magento/magento2/pull/15814">15814</a></em>.</li>
+  <li>The misspelling of <code class="language-plaintext highlighter-rouge">setCategoryIds</code> has been corrected throughout the code base. <em>Fix submitted by <a href="https://github.com/viral-wagento">Viral Vasara</a> in pull request <a href="https://github.com/magento/magento2/pull/15814">15814</a></em>.</li>
 </ul>
 
 <!--- ENGCOM-1859 -->
@@ -2982,7 +2983,7 @@
 
 <!--- ENGCOM-1849 -->
 <ul>
-  <li><code class="highlighter-rouge">select</code> elements now display with the styles you set in <code class="highlighter-rouge">_theme.less</code> as expected. <em>Fix submitted by <a href="https://github.com/hitesh-wagento">Hitesh</a> in pull request <a href="https://github.com/magento/magento2/pull/15796">15796</a></em>. <a href="https://github.com/magento/magento2/issues/15608">GitHub-15608</a></li>
+  <li><code class="language-plaintext highlighter-rouge">select</code> elements now display with the styles you set in <code class="language-plaintext highlighter-rouge">_theme.less</code> as expected. <em>Fix submitted by <a href="https://github.com/hitesh-wagento">Hitesh</a> in pull request <a href="https://github.com/magento/magento2/pull/15796">15796</a></em>. <a href="https://github.com/magento/magento2/issues/15608">GitHub-15608</a></li>
 </ul>
 
 <!--- ENGCOM-1930, ENGCOM-2096 -->
@@ -3006,22 +3007,22 @@
 
 <!--- ENGCOM-1881 -->
 <ul>
-  <li><code class="highlighter-rouge">.limiter</code> now has the same parent selectors (similar to <code class="highlighter-rouge">.pages</code>) to prevent clashes between styles and layouts. Previously, <code class="highlighter-rouge">.limiter</code> was too generic and was used as single selector for floating the element. <em>Fix submitted by <a href="https://github.com/hitesh-wagento">Hitesh</a> in pull request <a href="https://github.com/magento/magento2/pull/15880">15880</a></em>. <a href="https://github.com/magento/magento2/issues/15323">GitHub-15323</a></li>
+  <li><code class="language-plaintext highlighter-rouge">.limiter</code> now has the same parent selectors (similar to <code class="language-plaintext highlighter-rouge">.pages</code>) to prevent clashes between styles and layouts. Previously, <code class="language-plaintext highlighter-rouge">.limiter</code> was too generic and was used as single selector for floating the element. <em>Fix submitted by <a href="https://github.com/hitesh-wagento">Hitesh</a> in pull request <a href="https://github.com/magento/magento2/pull/15880">15880</a></em>. <a href="https://github.com/magento/magento2/issues/15323">GitHub-15323</a></li>
 </ul>
 
 <!--- ENGCOM-1903 -->
 <ul>
-  <li>Changing the <code class="highlighter-rouge">@tab-content__border</code> variable now affects on the tabs content border as expected. <em>Fix submitted by <a href="https://github.com/hitesh-wagento">Hitesh</a> in pull request <a href="https://github.com/magento/magento2/pull/15917">15917</a></em>. <a href="https://github.com/magento/magento2/issues/14999">GitHub-14999</a></li>
+  <li>Changing the <code class="language-plaintext highlighter-rouge">@tab-content__border</code> variable now affects on the tabs content border as expected. <em>Fix submitted by <a href="https://github.com/hitesh-wagento">Hitesh</a> in pull request <a href="https://github.com/magento/magento2/pull/15917">15917</a></em>. <a href="https://github.com/magento/magento2/issues/14999">GitHub-14999</a></li>
 </ul>
 
 <!--- ENGCOM-1870 -->
 <ul>
-  <li>The <strong>Multiple Payment Methods Enabled</strong> setting now works as expected. Previously, Magento threw this error when this setting was enabled: <code class="highlighter-rouge">Found 3 Elements with non-unique Id</code>. <em>Fix submitted by <a href="https://github.com/viral-wagento">Viral Vasara</a> in pull request <a href="https://github.com/magento/magento2/pull/15834">15834</a></em>. <a href="https://github.com/magento/magento2/issues/15348">GitHub-15348</a></li>
+  <li>The <strong>Multiple Payment Methods Enabled</strong> setting now works as expected. Previously, Magento threw this error when this setting was enabled: <code class="language-plaintext highlighter-rouge">Found 3 Elements with non-unique Id</code>. <em>Fix submitted by <a href="https://github.com/viral-wagento">Viral Vasara</a> in pull request <a href="https://github.com/magento/magento2/pull/15834">15834</a></em>. <a href="https://github.com/magento/magento2/issues/15348">GitHub-15348</a></li>
 </ul>
 
 <!--- ENGCOM-1989 -->
 <ul>
-  <li>Primary buttons now have new LESS variables that permit you to change  <code class="highlighter-rouge">font-weight</code>, <code class="highlighter-rouge">font-size</code>, and <code class="highlighter-rouge">font-family</code> without changing default button attributes. <em>Fix submitted by <a href="https://github.com/chirag-wagento">Chirag Matholiya</a> in pull request <a href="https://github.com/magento/magento2/pull/16037">16037</a></em>. <a href="https://github.com/magento/magento2/issues/15832">GitHub-15832</a></li>
+  <li>Primary buttons now have new LESS variables that permit you to change  <code class="language-plaintext highlighter-rouge">font-weight</code>, <code class="language-plaintext highlighter-rouge">font-size</code>, and <code class="language-plaintext highlighter-rouge">font-family</code> without changing default button attributes. <em>Fix submitted by <a href="https://github.com/chirag-wagento">Chirag Matholiya</a> in pull request <a href="https://github.com/magento/magento2/pull/16037">16037</a></em>. <a href="https://github.com/magento/magento2/issues/15832">GitHub-15832</a></li>
 </ul>
 
 <!--- ENGCOM-2048 -->
@@ -3041,7 +3042,7 @@
 
 <!--- ENGCOM-2068 -->
 <ul>
-  <li>The JavaScript code in the <code class="highlighter-rouge">app/code/Magento/Tax/view/adminhtml/templates/class/page/edit.phtml</code> file has been refactored to meet Magento coding standards. <em>Fix submitted by <a href="https://github.com/gelanivishal">Vishal Gelani</a> in pull request <a href="https://github.com/magento/magento2/pull/16270">16270</a></em>. <a href="https://github.com/magento/magento2/issues/15352">GitHub-15352</a></li>
+  <li>The JavaScript code in the <code class="language-plaintext highlighter-rouge">app/code/Magento/Tax/view/adminhtml/templates/class/page/edit.phtml</code> file has been refactored to meet Magento coding standards. <em>Fix submitted by <a href="https://github.com/gelanivishal">Vishal Gelani</a> in pull request <a href="https://github.com/magento/magento2/pull/16270">16270</a></em>. <a href="https://github.com/magento/magento2/issues/15352">GitHub-15352</a></li>
 </ul>
 
 <!--- ENGCOM-2084 -->
@@ -3051,29 +3052,29 @@
 
 <!--- ENGCOM-2108 -->
 <ul>
-  <li>Fixed issues with the <code class="highlighter-rouge">jQuery UI DatePicker</code>’s display of sequential months. <em>Fix submitted by <a href="https://github.com/vasilii-b">Burlacu Vasilii</a> in pull request <a href="https://github.com/magento/magento2/pull/16280">16280</a></em>. <a href="https://github.com/magento/magento2/issues/7379">GitHub-7379</a></li>
+  <li>Fixed issues with the <code class="language-plaintext highlighter-rouge">jQuery UI DatePicker</code>’s display of sequential months. <em>Fix submitted by <a href="https://github.com/vasilii-b">Burlacu Vasilii</a> in pull request <a href="https://github.com/magento/magento2/pull/16280">16280</a></em>. <a href="https://github.com/magento/magento2/issues/7379">GitHub-7379</a></li>
 </ul>
 
 <!--- ENGCOM-2244 -->
 <ul>
-  <li>The <code class="highlighter-rouge">clickableOverlay</code> option in modals now works as expected. <em>Fix submitted by <a href="https://github.com/mageprince">Prince Patel</a> in pull request <a href="https://github.com/magento/magento2/pull/16665">16665</a></em>. <a href="https://github.com/magento/magento2/issues/7399">GitHub-7399</a></li>
+  <li>The <code class="language-plaintext highlighter-rouge">clickableOverlay</code> option in modals now works as expected. <em>Fix submitted by <a href="https://github.com/mageprince">Prince Patel</a> in pull request <a href="https://github.com/magento/magento2/pull/16665">16665</a></em>. <a href="https://github.com/magento/magento2/issues/7399">GitHub-7399</a></li>
 </ul>
 
 <!--- MAGETWO-86935 -->
 <ul>
-  <li>Users assigned a Restricted User role no longer receive the message <code class="highlighter-rouge">Something went wrong</code> when viewing orders.</li>
+  <li>Users assigned a Restricted User role no longer receive the message <code class="language-plaintext highlighter-rouge">Something went wrong</code> when viewing orders.</li>
 </ul>
 
 <!--- MAGETWO-70329 -->
 <ul>
-  <li>Magento no longer unnecessarily displays this warning when a customer opens a product page: <code class="highlighter-rouge">The property price is not valid</code>. <a href="https://github.com/magento/magento2/issues/7173">GitHub-7173</a></li>
+  <li>Magento no longer unnecessarily displays this warning when a customer opens a product page: <code class="language-plaintext highlighter-rouge">The property price is not valid</code>. <a href="https://github.com/magento/magento2/issues/7173">GitHub-7173</a></li>
 </ul>
 
 <h3 id="infrastructure">Infrastructure</h3>
 
 <!--- MAGETWO-64616 -->
 <ul>
-  <li>The <code class="highlighter-rouge">Layout.eventManager</code> now correctly dispatches the <code class="highlighter-rouge">layout_render_before</code> events <em>before</em> Magento renders the current layout.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">Layout.eventManager</code> now correctly dispatches the <code class="language-plaintext highlighter-rouge">layout_render_before</code> events <em>before</em> Magento renders the current layout.</li>
 </ul>
 
 <h3 id="javascript">JavaScript</h3>
@@ -3094,7 +3095,7 @@
 
 <!--- ENGCOM-1962 -->
 <ul>
-  <li>Magento no longer throws an error when trying to load the quote item collection using the <code class="highlighter-rouge">Magento\Quote\Model\ResourceModel\QuoteItem\Collection::getItems()</code> method. <em>Fix submitted by <a href="https://github.com/neeta-wagento">Neeta Kangiya</a> in pull request <a href="https://github.com/magento/magento2/pull/15829">15829</a></em>.</li>
+  <li>Magento no longer throws an error when trying to load the quote item collection using the <code class="language-plaintext highlighter-rouge">Magento\Quote\Model\ResourceModel\QuoteItem\Collection::getItems()</code> method. <em>Fix submitted by <a href="https://github.com/neeta-wagento">Neeta Kangiya</a> in pull request <a href="https://github.com/magento/magento2/pull/15829">15829</a></em>.</li>
 </ul>
 
 <h3 id="sales">Sales</h3>
@@ -3132,14 +3133,14 @@
 
 <!--- ENGCOM-1935 -->
 <ul>
-  <li>The REST API schema is now  compatible with search criteria. The <code class="highlighter-rouge">searchCriteria</code> parameters builder now contains a zero index to the array signifier, which supports generation of the correct response when a user tests a  method with  search criteria parameters in Swagger. <em>Fix submitted by <a href="https://github.com/gelanivishal">Vishal Gelani</a> in pull request <a href="https://github.com/magento/magento2/pull/15945">15945</a></em>. <a href="https://github.com/magento/magento2/issues/11477">GitHub-11477</a></li>
+  <li>The REST API schema is now  compatible with search criteria. The <code class="language-plaintext highlighter-rouge">searchCriteria</code> parameters builder now contains a zero index to the array signifier, which supports generation of the correct response when a user tests a  method with  search criteria parameters in Swagger. <em>Fix submitted by <a href="https://github.com/gelanivishal">Vishal Gelani</a> in pull request <a href="https://github.com/magento/magento2/pull/15945">15945</a></em>. <a href="https://github.com/magento/magento2/issues/11477">GitHub-11477</a></li>
 </ul>
 
 <h3 id="translations">Translations</h3>
 
 <!--- ENGCOM-2036 -->
 <ul>
-  <li>You can now translate the <code class="highlighter-rouge">moreButtonText</code> text string. <em>Fix submitted by <a href="https://github.com/Karlasa">Karla Saaremäe</a> in pull request <a href="https://github.com/magento/magento2/pull/16229">16229</a></em>. <a href="https://github.com/magento/magento2/issues/16079">GitHub-16079</a></li>
+  <li>You can now translate the <code class="language-plaintext highlighter-rouge">moreButtonText</code> text string. <em>Fix submitted by <a href="https://github.com/Karlasa">Karla Saaremäe</a> in pull request <a href="https://github.com/magento/magento2/pull/16229">16229</a></em>. <a href="https://github.com/magento/magento2/issues/16079">GitHub-16079</a></li>
 </ul>
 
 <!--- not needed MAGETWO-93205 MAGETWO-90840 MAGETWO-92177 MAGETWO-93150 MAGETWO-92174 MAGETWO-81310 MAGETWO-88659 MAGETWO-72050 MAGETWO-93265 MAGETWO-93085 MAGETWO-61209 MAGETWO-92199 MAGETWO-92196 MAGETWO-88656 MAGETWO-88668 MAGETWO-83492 MAGETWO-92164 MAGETWO-88593 MAGETWO-88599 MAGETWO-72023 MAGETWO-81472 MAGETWO-91894 MAGETWO-88605 MAGETWO-89747 MAGETWO-92190 MAGETWO-88587 MAGETWO-90411 MAGETWO-90395 MAGETWO-88714  -->

@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Example bulk operations implementation | Magento 2 Developer Documentation (copy)</title>
+	<title>Example bulk operations implementation | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/extension-dev-guide/message-queues/implement-bulk.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/extension-dev-guide/message-queues/implement-bulk.html">Magento 2.0</a></li>
 		
@@ -3483,61 +3484,61 @@
 
 <h3 id="createpublisher">Create a publisher</h3>
 
-<p>A publisher’s duties include scheduling a bulk operation. It must generate a <code class="highlighter-rouge">bulkUuid</code> for each operation, send each operation to the message queue, and report on the status of each operations.</p>
+<p>A publisher’s duties include scheduling a bulk operation. It must generate a <code class="language-plaintext highlighter-rouge">bulkUuid</code> for each operation, send each operation to the message queue, and report on the status of each operations.</p>
 
 <p>The following code sample shows how these duties can be completed.</p>
 
 <div class="collapsible">
     <b class="collapsible-title">Code sample: </b>
     <div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="sd">/**
+<span class="cd">/**
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */</span>
 
-<span class="k">use</span> <span class="nx">Magento\Framework\Bulk\BulkManagementInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\AsynchronousOperations\Api\Data\OperationInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\AsynchronousOperations\Api\Data\OperationInterfaceFactory</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Framework\DataObject\IdentityGeneratorInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Authorization\Model\UserContextInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Framework\UrlInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Framework\Bulk\BulkManagementInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\AsynchronousOperations\Api\Data\OperationInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\AsynchronousOperations\Api\Data\OperationInterfaceFactory</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Framework\DataObject\IdentityGeneratorInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Authorization\Model\UserContextInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Framework\UrlInterface</span><span class="p">;</span>
 
-<span class="sd">/**
+<span class="cd">/**
  * Class ScheduleBulk
  */</span>
-<span class="k">class</span> <span class="nc">ScheduleBulk</span>
+<span class="kd">class</span> <span class="nc">ScheduleBulk</span>
 <span class="p">{</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * @var BulkManagementInterface
      */</span>
     <span class="k">private</span> <span class="nv">$bulkManagement</span><span class="p">;</span>
 
-    <span class="sd">/**
+    <span class="cd">/**
      * @var OperationInterfaceFactory
      */</span>
     <span class="k">private</span> <span class="nv">$operationFactory</span><span class="p">;</span>
 
-    <span class="sd">/**
+    <span class="cd">/**
      * @var IdentityGeneratorInterface
      */</span>
     <span class="k">private</span> <span class="nv">$identityService</span><span class="p">;</span>
 
-    <span class="sd">/**
+    <span class="cd">/**
      * @var UrlInterface
      */</span>
     <span class="k">private</span> <span class="nv">$urlBuilder</span><span class="p">;</span>
 
-    <span class="sd">/**
+    <span class="cd">/**
      * @var UserContextInterface
      */</span>
     <span class="k">private</span> <span class="nv">$userContext</span><span class="p">;</span>
 
-    <span class="sd">/**
+    <span class="cd">/**
      * @var \Magento\Framework\Json\Helper\Data
      */</span>
     <span class="k">private</span> <span class="nv">$jsonHelper</span><span class="p">;</span>
 
-    <span class="sd">/**
+    <span class="cd">/**
      * ScheduleBulk constructor.
      *
      * @param BulkManagementInterface $bulkManagement
@@ -3546,68 +3547,68 @@
      * @param UserContextInterface $userContextInterface
      * @param UrlInterface $urlBuilder
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
-        <span class="nx">BulkManagementInterface</span> <span class="nv">$bulkManagement</span><span class="p">,</span>
-        <span class="nx">OperationInterfaceFactory</span> <span class="nv">$operartionFactory</span><span class="p">,</span>
-        <span class="nx">IdentityGeneratorInterface</span> <span class="nv">$identityService</span><span class="p">,</span>
-        <span class="nx">UserContextInterface</span> <span class="nv">$userContextInterface</span><span class="p">,</span>
-        <span class="nx">UrlInterface</span> <span class="nv">$urlBuilder</span><span class="p">,</span>
-        <span class="nx">\Magento\Framework\Json\Helper\Data</span> <span class="nv">$jsonHelper</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span>
+        <span class="kt">BulkManagementInterface</span> <span class="nv">$bulkManagement</span><span class="p">,</span>
+        <span class="kt">OperationInterfaceFactory</span> <span class="nv">$operartionFactory</span><span class="p">,</span>
+        <span class="kt">IdentityGeneratorInterface</span> <span class="nv">$identityService</span><span class="p">,</span>
+        <span class="kt">UserContextInterface</span> <span class="nv">$userContextInterface</span><span class="p">,</span>
+        <span class="kt">UrlInterface</span> <span class="nv">$urlBuilder</span><span class="p">,</span>
+        <span class="err">\</span><span class="nc">Magento\Framework\Json\Helper\Data</span> <span class="nv">$jsonHelper</span>
     <span class="p">)</span> <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">userContext</span> <span class="o">=</span> <span class="nv">$userContextInterface</span><span class="p">;</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">bulkManagement</span> <span class="o">=</span> <span class="nv">$bulkManagement</span><span class="p">;</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">operationFactory</span> <span class="o">=</span> <span class="nv">$operartionFactory</span><span class="p">;</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">identityService</span> <span class="o">=</span> <span class="nv">$identityService</span><span class="p">;</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">urlBuilder</span> <span class="o">=</span> <span class="nv">$urlBuilder</span><span class="p">;</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">jsonHelper</span> <span class="o">=</span> <span class="nv">$jsonHelper</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">userContext</span> <span class="o">=</span> <span class="nv">$userContextInterface</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">bulkManagement</span> <span class="o">=</span> <span class="nv">$bulkManagement</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">operationFactory</span> <span class="o">=</span> <span class="nv">$operartionFactory</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">identityService</span> <span class="o">=</span> <span class="nv">$identityService</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">urlBuilder</span> <span class="o">=</span> <span class="nv">$urlBuilder</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">jsonHelper</span> <span class="o">=</span> <span class="nv">$jsonHelper</span><span class="p">;</span>
 
     <span class="p">}</span>
 
-    <span class="sd">/**
+    <span class="cd">/**
      * Schedule new bulk operation
      *
      * @param array $operationData
      * @throws \Magento\Framework\Exception\LocalizedException
      * @return void
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">(</span><span class="nv">$operationData</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">execute</span><span class="p">(</span><span class="nv">$operationData</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="nv">$operationCount</span> <span class="o">=</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$operationData</span><span class="p">);</span>
         <span class="k">if</span> <span class="p">(</span><span class="nv">$operationCount</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nv">$bulkUuid</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">identityService</span><span class="o">-&gt;</span><span class="na">generateId</span><span class="p">();</span>
+            <span class="nv">$bulkUuid</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">identityService</span><span class="o">-&gt;</span><span class="nf">generateId</span><span class="p">();</span>
             <span class="nv">$bulkDescription</span> <span class="o">=</span> <span class="s1">'Specify here your bulk description'</span><span class="p">;</span>
 
             <span class="nv">$operations</span> <span class="o">=</span> <span class="p">[];</span>
             <span class="k">foreach</span> <span class="p">(</span><span class="nv">$operationData</span> <span class="k">as</span> <span class="nv">$operation</span><span class="p">)</span> <span class="p">{</span>
 
                 <span class="nv">$serializedData</span> <span class="o">=</span> <span class="p">[</span>
-                    <span class="c1">//this data will be displayed in Failed item grid in ID column
-</span>                    <span class="s1">'entity_id'</span> <span class="o">=&gt;</span> <span class="nv">$operation</span><span class="p">[</span><span class="s1">'entity_id'</span><span class="p">],</span>
-                    <span class="c1">//add here logic to add url for your entity(this link will be displayed in the Failed item grid)
-</span>                    <span class="s1">'entity_link'</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">urlBuilder</span><span class="o">-&gt;</span><span class="na">getUrl</span><span class="p">(</span><span class="s1">'your_url'</span><span class="p">),</span>
-                    <span class="c1">//this data will be displayed in Failed item grid in the column "Meta Info"
-</span>                    <span class="s1">'meta_information'</span> <span class="o">=&gt;</span> <span class="s1">'Specify here meta information for your entity'</span><span class="p">,</span><span class="c1">//this data will be displayed in Failed item grid in the column "Meta Info"
-</span>                <span class="p">];</span>
+                    <span class="c1">//this data will be displayed in Failed item grid in ID column</span>
+                    <span class="s1">'entity_id'</span> <span class="o">=&gt;</span> <span class="nv">$operation</span><span class="p">[</span><span class="s1">'entity_id'</span><span class="p">],</span>
+                    <span class="c1">//add here logic to add url for your entity(this link will be displayed in the Failed item grid)</span>
+                    <span class="s1">'entity_link'</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">urlBuilder</span><span class="o">-&gt;</span><span class="nf">getUrl</span><span class="p">(</span><span class="s1">'your_url'</span><span class="p">),</span>
+                    <span class="c1">//this data will be displayed in Failed item grid in the column "Meta Info"</span>
+                    <span class="s1">'meta_information'</span> <span class="o">=&gt;</span> <span class="s1">'Specify here meta information for your entity'</span><span class="p">,</span><span class="c1">//this data will be displayed in Failed item grid in the column "Meta Info"</span>
+                <span class="p">];</span>
                 <span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
                     <span class="s1">'data'</span> <span class="o">=&gt;</span> <span class="p">[</span>
                         <span class="s1">'bulk_uuid'</span> <span class="o">=&gt;</span> <span class="nv">$bulkUuid</span><span class="p">,</span>
-                        <span class="c1">//topic name must be equal to data specified in the queue configuration files
-</span>                        <span class="s1">'topic_name'</span> <span class="o">=&gt;</span> <span class="s1">'%your_topic name%'</span><span class="p">,</span>
-                        <span class="s1">'serialized_data'</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">jsonHelper</span><span class="o">-&gt;</span><span class="na">jsonEncode</span><span class="p">(</span><span class="nv">$serializedData</span><span class="p">),</span>
-                        <span class="s1">'status'</span> <span class="o">=&gt;</span> <span class="nx">OperationInterface</span><span class="o">::</span><span class="na">STATUS_TYPE_OPEN</span><span class="p">,</span>
+                        <span class="c1">//topic name must be equal to data specified in the queue configuration files</span>
+                        <span class="s1">'topic_name'</span> <span class="o">=&gt;</span> <span class="s1">'%your_topic name%'</span><span class="p">,</span>
+                        <span class="s1">'serialized_data'</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">jsonHelper</span><span class="o">-&gt;</span><span class="nf">jsonEncode</span><span class="p">(</span><span class="nv">$serializedData</span><span class="p">),</span>
+                        <span class="s1">'status'</span> <span class="o">=&gt;</span> <span class="nc">OperationInterface</span><span class="o">::</span><span class="no">STATUS_TYPE_OPEN</span><span class="p">,</span>
                     <span class="p">]</span>
                 <span class="p">];</span>
 
-                <span class="sd">/** @var OperationInterface $operation */</span>
-                <span class="nv">$operation</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">operationFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+                <span class="cd">/** @var OperationInterface $operation */</span>
+                <span class="nv">$operation</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">operationFactory</span><span class="o">-&gt;</span><span class="nf">create</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
                 <span class="nv">$operations</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$operation</span><span class="p">;</span>
 
             <span class="p">}</span>
-            <span class="nv">$userId</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">userContext</span><span class="o">-&gt;</span><span class="na">getUserId</span><span class="p">();</span>
-            <span class="nv">$result</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">bulkManagement</span><span class="o">-&gt;</span><span class="na">scheduleBulk</span><span class="p">(</span><span class="nv">$bulkUuid</span><span class="p">,</span> <span class="nv">$operations</span><span class="p">,</span> <span class="nv">$bulkDescription</span><span class="p">,</span> <span class="nv">$userId</span><span class="p">);</span>
+            <span class="nv">$userId</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">userContext</span><span class="o">-&gt;</span><span class="nf">getUserId</span><span class="p">();</span>
+            <span class="nv">$result</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">bulkManagement</span><span class="o">-&gt;</span><span class="nf">scheduleBulk</span><span class="p">(</span><span class="nv">$bulkUuid</span><span class="p">,</span> <span class="nv">$operations</span><span class="p">,</span> <span class="nv">$bulkDescription</span><span class="p">,</span> <span class="nv">$userId</span><span class="p">);</span>
             <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$result</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">throw</span> <span class="k">new</span> <span class="nx">\Magento\Framework\Exception\LocalizedException</span><span class="p">(</span>
-                    <span class="nx">__</span><span class="p">(</span><span class="s1">'Something went wrong while processing the request.'</span><span class="p">)</span>
+                <span class="k">throw</span> <span class="k">new</span> <span class="err">\</span><span class="nf">Magento\Framework\Exception\LocalizedException</span><span class="p">(</span>
+                    <span class="nf">__</span><span class="p">(</span><span class="s1">'Something went wrong while processing the request.'</span><span class="p">)</span>
                 <span class="p">);</span>
             <span class="p">}</span>
         <span class="p">}</span>
@@ -3623,113 +3624,113 @@
 <div class="collapsible">
     <b class="collapsible-title">Code sample: </b>
     <div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="sd">/**
+<span class="cd">/**
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */</span>
 
-<span class="k">namespace</span> <span class="nx">Magento\SharedCatalog\Model\ResourceModel\ProductItem\Price</span><span class="p">;</span>
+<span class="kn">namespace</span> <span class="nn">Magento\SharedCatalog\Model\ResourceModel\ProductItem\Price</span><span class="p">;</span>
 
-<span class="k">use</span> <span class="nx">Magento\Framework\Bulk\BulkManagementInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\AsynchronousOperations\Api\Data\OperationInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\AsynchronousOperations\Api\Data\OperationInterfaceFactory</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Framework\DB\Adapter\ConnectionException</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Framework\DB\Adapter\DeadlockException</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Framework\DB\Adapter\LockWaitException</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Framework\Exception\TemporaryStateExceptionInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Framework\Bulk\BulkManagementInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\AsynchronousOperations\Api\Data\OperationInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\AsynchronousOperations\Api\Data\OperationInterfaceFactory</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Framework\DB\Adapter\ConnectionException</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Framework\DB\Adapter\DeadlockException</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Framework\DB\Adapter\LockWaitException</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Framework\Exception\TemporaryStateExceptionInterface</span><span class="p">;</span>
 
-<span class="sd">/**
+<span class="cd">/**
  * Class Consumer
  */</span>
-<span class="k">class</span> <span class="nc">Consumer</span>
+<span class="kd">class</span> <span class="nc">Consumer</span>
 <span class="p">{</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * @var \Psr\Log\LoggerInterface
      */</span>
     <span class="k">private</span> <span class="nv">$logger</span><span class="p">;</span>
 
-    <span class="sd">/**
+    <span class="cd">/**
      * @var \Magento\Framework\Json\Helper\Data
      */</span>
     <span class="k">private</span> <span class="nv">$jsonHelper</span><span class="p">;</span>
 
-    <span class="sd">/**
+    <span class="cd">/**
      * @var \Magento\BulkOperations\Model\OperationManagement
      */</span>
     <span class="k">private</span> <span class="nv">$operationManagement</span><span class="p">;</span>
 
-    <span class="sd">/**
+    <span class="cd">/**
      * Consumer constructor.
      *
      * @param \Psr\Log\LoggerInterface $logger
      * @param \Magento\Framework\Json\Helper\Data $jsonHelper
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
-        <span class="nx">\Psr\Log\LoggerInterface</span> <span class="nv">$logger</span><span class="p">,</span>
-        <span class="nx">\Magento\Framework\Json\Helper\Data</span> <span class="nv">$jsonHelper</span><span class="p">,</span>
-        <span class="nx">\Magento\Framework\Bulk\OperationManagementInterface</span> <span class="nv">$operationManagement</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span>
+        <span class="err">\</span><span class="nc">Psr\Log\LoggerInterface</span> <span class="nv">$logger</span><span class="p">,</span>
+        <span class="err">\</span><span class="nc">Magento\Framework\Json\Helper\Data</span> <span class="nv">$jsonHelper</span><span class="p">,</span>
+        <span class="err">\</span><span class="nc">Magento\Framework\Bulk\OperationManagementInterface</span> <span class="nv">$operationManagement</span>
     <span class="p">)</span> <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span> <span class="o">=</span> <span class="nv">$logger</span><span class="p">;</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">jsonHelper</span> <span class="o">=</span> <span class="nv">$jsonHelper</span><span class="p">;</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">operationManagement</span> <span class="o">=</span> <span class="nv">$operationManagement</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">logger</span> <span class="o">=</span> <span class="nv">$logger</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">jsonHelper</span> <span class="o">=</span> <span class="nv">$jsonHelper</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">operationManagement</span> <span class="o">=</span> <span class="nv">$operationManagement</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="sd">/**
+    <span class="cd">/**
      * Processing operation for update price
      *
      * @param \Magento\AsynchronousOperations\Api\Data\OperationInterface $operation
      * @return void
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">processOperation</span><span class="p">(</span><span class="nx">\Magento\AsynchronousOperations\Api\Data\OperationInterface</span> <span class="nv">$operation</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">processOperation</span><span class="p">(</span><span class="err">\</span><span class="nc">Magento\AsynchronousOperations\Api\Data\OperationInterface</span> <span class="nv">$operation</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="nv">$status</span> <span class="o">=</span> <span class="nx">OperationInterface</span><span class="o">::</span><span class="na">STATUS_TYPE_COMPLETE</span><span class="p">;</span>
+        <span class="nv">$status</span> <span class="o">=</span> <span class="nc">OperationInterface</span><span class="o">::</span><span class="no">STATUS_TYPE_COMPLETE</span><span class="p">;</span>
         <span class="nv">$errorCode</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
         <span class="nv">$message</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
-        <span class="nv">$serializedData</span> <span class="o">=</span> <span class="nv">$operation</span><span class="o">-&gt;</span><span class="na">getSerializedData</span><span class="p">();</span>
-        <span class="nv">$unserializedData</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">jsonHelper</span><span class="o">-&gt;</span><span class="na">jsonDecode</span><span class="p">(</span><span class="nv">$serializedData</span><span class="p">);</span>
+        <span class="nv">$serializedData</span> <span class="o">=</span> <span class="nv">$operation</span><span class="o">-&gt;</span><span class="nf">getSerializedData</span><span class="p">();</span>
+        <span class="nv">$unserializedData</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">jsonHelper</span><span class="o">-&gt;</span><span class="nf">jsonDecode</span><span class="p">(</span><span class="nv">$serializedData</span><span class="p">);</span>
         <span class="k">try</span> <span class="p">{</span>
-            <span class="c1">//add here your own logic for async operations
-</span>        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\Zend_Db_Adapter_Exception</span>  <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
-            <span class="c1">//here sample how to process exceptions if they occurred
-</span>            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span><span class="o">-&gt;</span><span class="na">critical</span><span class="p">(</span><span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">());</span>
-            <span class="c1">//you can add here your own type of exception when operation can be retried
-</span>            <span class="k">if</span> <span class="p">(</span>
-                <span class="nv">$e</span> <span class="nx">instanceof</span> <span class="nx">LockWaitException</span>
-                <span class="o">||</span> <span class="nv">$e</span> <span class="nx">instanceof</span> <span class="nx">DeadlockException</span>
-                <span class="o">||</span> <span class="nv">$e</span> <span class="nx">instanceof</span> <span class="nx">ConnectionException</span>
+            <span class="c1">//add here your own logic for async operations</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="err">\</span><span class="n">Zend_Db_Adapter_Exception</span>  <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">//here sample how to process exceptions if they occurred</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">logger</span><span class="o">-&gt;</span><span class="nf">critical</span><span class="p">(</span><span class="nv">$e</span><span class="o">-&gt;</span><span class="nf">getMessage</span><span class="p">());</span>
+            <span class="c1">//you can add here your own type of exception when operation can be retried</span>
+            <span class="k">if</span> <span class="p">(</span>
+                <span class="nv">$e</span> <span class="k">instanceof</span> <span class="nc">LockWaitException</span>
+                <span class="o">||</span> <span class="nv">$e</span> <span class="k">instanceof</span> <span class="nc">DeadlockException</span>
+                <span class="o">||</span> <span class="nv">$e</span> <span class="k">instanceof</span> <span class="nc">ConnectionException</span>
             <span class="p">)</span> <span class="p">{</span>
-                <span class="nv">$status</span> <span class="o">=</span> <span class="nx">OperationInterface</span><span class="o">::</span><span class="na">STATUS_TYPE_RETRIABLY_FAILED</span><span class="p">;</span>
-                <span class="nv">$errorCode</span> <span class="o">=</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getCode</span><span class="p">();</span>
-                <span class="nv">$message</span> <span class="o">=</span> <span class="nx">__</span><span class="p">(</span><span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">());</span>
+                <span class="nv">$status</span> <span class="o">=</span> <span class="nc">OperationInterface</span><span class="o">::</span><span class="no">STATUS_TYPE_RETRIABLY_FAILED</span><span class="p">;</span>
+                <span class="nv">$errorCode</span> <span class="o">=</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="nf">getCode</span><span class="p">();</span>
+                <span class="nv">$message</span> <span class="o">=</span> <span class="nf">__</span><span class="p">(</span><span class="nv">$e</span><span class="o">-&gt;</span><span class="nf">getMessage</span><span class="p">());</span>
             <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                <span class="nv">$status</span> <span class="o">=</span> <span class="nx">OperationInterface</span><span class="o">::</span><span class="na">STATUS_TYPE_NOT_RETRIABLY_FAILED</span><span class="p">;</span>
-                <span class="nv">$errorCode</span> <span class="o">=</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getCode</span><span class="p">();</span>
-                <span class="nv">$message</span> <span class="o">=</span> <span class="nx">__</span><span class="p">(</span><span class="s1">'Sorry, something went wrong during product prices update. Please see log for details.'</span><span class="p">);</span>
+                <span class="nv">$status</span> <span class="o">=</span> <span class="nc">OperationInterface</span><span class="o">::</span><span class="no">STATUS_TYPE_NOT_RETRIABLY_FAILED</span><span class="p">;</span>
+                <span class="nv">$errorCode</span> <span class="o">=</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="nf">getCode</span><span class="p">();</span>
+                <span class="nv">$message</span> <span class="o">=</span> <span class="nf">__</span><span class="p">(</span><span class="s1">'Sorry, something went wrong during product prices update. Please see log for details.'</span><span class="p">);</span>
             <span class="p">}</span>
 
-        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\Magento\Framework\Exception\NoSuchEntityException</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span><span class="o">-&gt;</span><span class="na">critical</span><span class="p">(</span><span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">());</span>
-            <span class="nv">$status</span> <span class="o">=</span> <span class="p">(</span><span class="nv">$e</span> <span class="nx">instanceof</span> <span class="nx">TemporaryStateExceptionInterface</span><span class="p">)</span> <span class="o">?</span> <span class="nx">OperationInterface</span><span class="o">::</span><span class="na">STATUS_TYPE_NOT_RETRIABLY_FAILED</span> <span class="o">:</span> <span class="nx">OperationInterface</span><span class="o">::</span><span class="na">STATUS_TYPE_NOT_RETRIABLY_FAILED</span><span class="p">;</span>
-            <span class="nv">$errorCode</span> <span class="o">=</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getCode</span><span class="p">();</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="err">\</span><span class="nc">Magento\Framework\Exception\NoSuchEntityException</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">logger</span><span class="o">-&gt;</span><span class="nf">critical</span><span class="p">(</span><span class="nv">$e</span><span class="o">-&gt;</span><span class="nf">getMessage</span><span class="p">());</span>
+            <span class="nv">$status</span> <span class="o">=</span> <span class="p">(</span><span class="nv">$e</span> <span class="k">instanceof</span> <span class="nc">TemporaryStateExceptionInterface</span><span class="p">)</span> <span class="o">?</span> <span class="nc">OperationInterface</span><span class="o">::</span><span class="no">STATUS_TYPE_NOT_RETRIABLY_FAILED</span> <span class="o">:</span> <span class="nc">OperationInterface</span><span class="o">::</span><span class="no">STATUS_TYPE_NOT_RETRIABLY_FAILED</span><span class="p">;</span>
+            <span class="nv">$errorCode</span> <span class="o">=</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="nf">getCode</span><span class="p">();</span>
 
-            <span class="nv">$message</span> <span class="o">=</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">();</span>
+            <span class="nv">$message</span> <span class="o">=</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="nf">getMessage</span><span class="p">();</span>
             <span class="nb">unset</span><span class="p">(</span><span class="nv">$unserializedData</span><span class="p">[</span><span class="s1">'entity_link'</span><span class="p">]);</span>
-            <span class="nv">$serializedData</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">jsonHelper</span><span class="o">-&gt;</span><span class="na">jsonEncode</span><span class="p">(</span><span class="nv">$unserializedData</span><span class="p">);</span>
-        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\Magento\Framework\Exception\LocalizedException</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span><span class="o">-&gt;</span><span class="na">critical</span><span class="p">(</span><span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">());</span>
-            <span class="nv">$status</span> <span class="o">=</span> <span class="nx">OperationInterface</span><span class="o">::</span><span class="na">STATUS_TYPE_NOT_RETRIABLY_FAILED</span><span class="p">;</span>
-            <span class="nv">$errorCode</span> <span class="o">=</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getCode</span><span class="p">();</span>
-            <span class="nv">$message</span> <span class="o">=</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">();</span>
-        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\Exception</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span><span class="o">-&gt;</span><span class="na">critical</span><span class="p">(</span><span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">());</span>
-            <span class="nv">$status</span> <span class="o">=</span> <span class="nx">OperationInterface</span><span class="o">::</span><span class="na">STATUS_TYPE_NOT_RETRIABLY_FAILED</span><span class="p">;</span>
-            <span class="nv">$errorCode</span> <span class="o">=</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getCode</span><span class="p">();</span>
-            <span class="nv">$message</span> <span class="o">=</span> <span class="nx">__</span><span class="p">(</span><span class="s1">'Sorry, something went wrong during product prices update. Please see log for details.'</span><span class="p">);</span>
+            <span class="nv">$serializedData</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">jsonHelper</span><span class="o">-&gt;</span><span class="nf">jsonEncode</span><span class="p">(</span><span class="nv">$unserializedData</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="err">\</span><span class="nc">Magento\Framework\Exception\LocalizedException</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">logger</span><span class="o">-&gt;</span><span class="nf">critical</span><span class="p">(</span><span class="nv">$e</span><span class="o">-&gt;</span><span class="nf">getMessage</span><span class="p">());</span>
+            <span class="nv">$status</span> <span class="o">=</span> <span class="nc">OperationInterface</span><span class="o">::</span><span class="no">STATUS_TYPE_NOT_RETRIABLY_FAILED</span><span class="p">;</span>
+            <span class="nv">$errorCode</span> <span class="o">=</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="nf">getCode</span><span class="p">();</span>
+            <span class="nv">$message</span> <span class="o">=</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="nf">getMessage</span><span class="p">();</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="err">\</span><span class="nc">Exception</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">logger</span><span class="o">-&gt;</span><span class="nf">critical</span><span class="p">(</span><span class="nv">$e</span><span class="o">-&gt;</span><span class="nf">getMessage</span><span class="p">());</span>
+            <span class="nv">$status</span> <span class="o">=</span> <span class="nc">OperationInterface</span><span class="o">::</span><span class="no">STATUS_TYPE_NOT_RETRIABLY_FAILED</span><span class="p">;</span>
+            <span class="nv">$errorCode</span> <span class="o">=</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="nf">getCode</span><span class="p">();</span>
+            <span class="nv">$message</span> <span class="o">=</span> <span class="nf">__</span><span class="p">(</span><span class="s1">'Sorry, something went wrong during product prices update. Please see log for details.'</span><span class="p">);</span>
         <span class="p">}</span>
 
-        <span class="c1">//update operation status based on result performing operation(it was successfully executed or exception occurs
-</span>        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">operationManagement</span><span class="o">-&gt;</span><span class="na">changeOperationStatus</span><span class="p">(</span>
-            <span class="nv">$operation</span><span class="o">-&gt;</span><span class="na">getId</span><span class="p">(),</span>
+        <span class="c1">//update operation status based on result performing operation(it was successfully executed or exception occurs</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">operationManagement</span><span class="o">-&gt;</span><span class="nf">changeOperationStatus</span><span class="p">(</span>
+            <span class="nv">$operation</span><span class="o">-&gt;</span><span class="nf">getId</span><span class="p">(),</span>
             <span class="nv">$status</span><span class="p">,</span>
             <span class="nv">$errorCode</span><span class="p">,</span>
             <span class="nv">$message</span><span class="p">,</span>
@@ -3742,21 +3743,21 @@
 
 <h3 id="configmq">Configure message queues</h3>
 
-<p>The message queue topology must be configured to implement bulk operations. Create or edit the following files in the module’s <code class="highlighter-rouge">app/code/&lt;vendor&gt;/&lt;module_name&gt;/etc</code> directory.</p>
+<p>The message queue topology must be configured to implement bulk operations. Create or edit the following files in the module’s <code class="language-plaintext highlighter-rouge">app/code/&lt;vendor&gt;/&lt;module_name&gt;/etc</code> directory.</p>
 
 <ul>
-  <li><code class="highlighter-rouge">communication.xml</code></li>
-  <li><code class="highlighter-rouge">di.xml</code></li>
-  <li><code class="highlighter-rouge">queue_consumer.xml</code></li>
-  <li><code class="highlighter-rouge">queue_publisher.xml</code></li>
-  <li><code class="highlighter-rouge">queue_topology.xml</code></li>
+  <li><code class="language-plaintext highlighter-rouge">communication.xml</code></li>
+  <li><code class="language-plaintext highlighter-rouge">di.xml</code></li>
+  <li><code class="language-plaintext highlighter-rouge">queue_consumer.xml</code></li>
+  <li><code class="language-plaintext highlighter-rouge">queue_publisher.xml</code></li>
+  <li><code class="language-plaintext highlighter-rouge">queue_topology.xml</code></li>
 </ul>
 
-<p>For more information about the <code class="highlighter-rouge">di.xml</code> file, see <a href="/devdocs/guides/v2.3/extension-dev-guide/depend-inj.html">Dependency Injection</a>. For information the other files, see <a href="/devdocs/guides/v2.3/extension-dev-guide/message-queues/config-mq.html">Configure message queues</a>.</p>
+<p>For more information about the <code class="language-plaintext highlighter-rouge">di.xml</code> file, see <a href="/devdocs/guides/v2.3/extension-dev-guide/depend-inj.html">Dependency Injection</a>. For information the other files, see <a href="/devdocs/guides/v2.3/extension-dev-guide/message-queues/config-mq.html">Configure message queues</a>.</p>
 
-<h4 id="create-communicationxml">Create <code class="highlighter-rouge">communication.xml</code></h4>
+<h4 id="create-communicationxml">Create <code class="language-plaintext highlighter-rouge">communication.xml</code></h4>
 
-<p>The <code class="highlighter-rouge">communication.xml</code> file defines aspects of the message queue system that apply to all topics for the   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
+<p>The <code class="language-plaintext highlighter-rouge">communication.xml</code> file defines aspects of the message queue system that apply to all topics for the   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
 . Create this file with the following contents:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:Communication/etc/communication.xsd"</span><span class="nt">&gt;</span>
@@ -3765,9 +3766,9 @@
     <span class="nt">&lt;/topic&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
-<h4 id="create-dixml">Create <code class="highlighter-rouge">di.xml</code></h4>
+<h4 id="create-dixml">Create <code class="language-plaintext highlighter-rouge">di.xml</code></h4>
 
-<p>Add the following type to the module’s <code class="highlighter-rouge">di.xml</code> file.</p>
+<p>Add the following type to the module’s <code class="language-plaintext highlighter-rouge">di.xml</code> file.</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Framework\MessageQueue\MergerFactory"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
@@ -3777,25 +3778,25 @@
     <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/type&gt;</span></code></pre></figure>
 
-<h4 id="create-queue_consumerxml">Create <code class="highlighter-rouge">queue_consumer.xml</code></h4>
+<h4 id="create-queue_consumerxml">Create <code class="language-plaintext highlighter-rouge">queue_consumer.xml</code></h4>
 
-<p>The <code class="highlighter-rouge">queue_consumer.xml</code> file defines the relationship between a queue and its consumer. Create this file with the following contents:</p>
+<p>The <code class="language-plaintext highlighter-rouge">queue_consumer.xml</code> file defines the relationship between a queue and its consumer. Create this file with the following contents:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework-message-queue:etc/consumer.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;consumer</span> <span class="na">name=</span><span class="s">"&lt;consumer_name&gt;"</span> <span class="na">queue=</span><span class="s">"&lt;queue_name&gt;"</span> <span class="na">connection=</span><span class="s">"amqp"</span> <span class="na">consumerInstance=</span><span class="s">"Magento\Framework\MessageQueue\Consumer"</span> <span class="na">handler=</span><span class="s">"&lt;Consumer_Class&gt;::&lt;Consumer_method&gt;"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
-<h4 id="create-queue_publisherxml">Create <code class="highlighter-rouge">queue_publisher.xml</code></h4>
+<h4 id="create-queue_publisherxml">Create <code class="language-plaintext highlighter-rouge">queue_publisher.xml</code></h4>
 
-<p>The <code class="highlighter-rouge">queue_publisher.xml</code> file defines the exchange where a topic is published. Create this file with the following contents:</p>
+<p>The <code class="language-plaintext highlighter-rouge">queue_publisher.xml</code> file defines the exchange where a topic is published. Create this file with the following contents:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework-message-queue:etc/consumer.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;consumer</span> <span class="na">name=</span><span class="s">"&lt;consumer_name&gt;"</span> <span class="na">queue=</span><span class="s">"&lt;queue_name&gt;"</span> <span class="na">connection=</span><span class="s">"amqp"</span> <span class="na">consumerInstance=</span><span class="s">"Magento\Framework\MessageQueue\Consumer"</span> <span class="na">handler=</span><span class="s">"Consumer_Class::Consumer_method"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
-<h4 id="create-queue_topologyxml">Create <code class="highlighter-rouge">queue_topology.xml</code></h4>
+<h4 id="create-queue_topologyxml">Create <code class="language-plaintext highlighter-rouge">queue_topology.xml</code></h4>
 
-<p>The <code class="highlighter-rouge">queue_topology.xml</code> file defines the message routing rules and declares queues and exchanges. Create this file with the following contents:</p>
+<p>The <code class="language-plaintext highlighter-rouge">queue_topology.xml</code> file defines the message routing rules and declares queues and exchanges. Create this file with the following contents:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework-message-queue:etc/topology.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;exchange</span> <span class="na">name=</span><span class="s">"magento"</span> <span class="na">type=</span><span class="s">"topic"</span> <span class="na">connection=</span><span class="s">"amqp"</span><span class="nt">&gt;</span>

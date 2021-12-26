@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento Open Source 2.1.16 Release Notes | Magento 2 Developer Documentation (copy)</title>
+	<title>Magento Open Source 2.1.16 Release Notes | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/release-notes/ReleaseNotes2.1.16CE.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/release-notes/ReleaseNotes2.1.16CE.html">Magento 2.0</a></li>
 		
@@ -2858,12 +2859,12 @@
 
 <!--- ENGCOM-2877 -->
 <ul>
-  <li>The <code class="highlighter-rouge">setterName</code> method is now correctly set. <em>Fix submitted by <a href="https://github.com/insanityinside">insanityinside</a> in pull request <a href="https://github.com/magento/magento2/pull/17774">17774</a></em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">setterName</code> method is now correctly set. <em>Fix submitted by <a href="https://github.com/insanityinside">insanityinside</a> in pull request <a href="https://github.com/magento/magento2/pull/17774">17774</a></em>.</li>
 </ul>
 
 <!--- ENGCOM-2913 -->
 <ul>
-  <li><code class="highlighter-rouge">setterName</code> in <code class="highlighter-rouge">app/code/Magento/Catalog/Model/ProductLink/Repository.php</code> now implements <code class="highlighter-rouge">SimpleDataObjectConverter::snakeCaseToUpperCamelCase</code>. <em>Fix submitted by <a href="https://github.com/insanityinside">insanityinside</a> in pull request <a href="https://github.com/magento/magento2/pull/17883">17883</a></em>.</li>
+  <li><code class="language-plaintext highlighter-rouge">setterName</code> in <code class="language-plaintext highlighter-rouge">app/code/Magento/Catalog/Model/ProductLink/Repository.php</code> now implements <code class="language-plaintext highlighter-rouge">SimpleDataObjectConverter::snakeCaseToUpperCamelCase</code>. <em>Fix submitted by <a href="https://github.com/insanityinside">insanityinside</a> in pull request <a href="https://github.com/magento/magento2/pull/17883">17883</a></em>.</li>
 </ul>
 
 <!--- ENGCOM-2795 -->
@@ -2875,14 +2876,14 @@
 
 <!--- ENGCOM-2652 -->
 <ul>
-  <li>Minor CSS issues in <code class="highlighter-rouge">lib/internal/Magento/Framework/View/Test/Unit/Url/_files/sourceImport.css</code> have been fixed. <em>Fix submitted by <a href="https://github.com/arnoudhgz">Arnoud Beekman</a> in pull request <a href="https://github.com/magento/magento2/pull/17366">17366</a></em>.</li>
+  <li>Minor CSS issues in <code class="language-plaintext highlighter-rouge">lib/internal/Magento/Framework/View/Test/Unit/Url/_files/sourceImport.css</code> have been fixed. <em>Fix submitted by <a href="https://github.com/arnoudhgz">Arnoud Beekman</a> in pull request <a href="https://github.com/magento/magento2/pull/17366">17366</a></em>.</li>
 </ul>
 
 <h3 id="eav">EAV</h3>
 
 <!--- ENGCOM-2707 -->
 <ul>
-  <li>The Product Attribute Repository’s incorrect return values have been replaced with values that now adhere to <code class="highlighter-rouge">Magento\Catalog\Api\ProductAttributeRepositoryInterface</code> (extends <code class="highlighter-rouge">Magento\Framework\Api\MetadataServiceInterface</code>) as expected. <em>Fix submitted by <a href="https://github.com/julianvdrielen">julianvdrielen</a> in pull request <a href="https://github.com/magento/magento2/pull/15688">15688</a></em>. <a href="https://github.com/magento/magento2/issues/4803">GitHub-4803</a></li>
+  <li>The Product Attribute Repository’s incorrect return values have been replaced with values that now adhere to <code class="language-plaintext highlighter-rouge">Magento\Catalog\Api\ProductAttributeRepositoryInterface</code> (extends <code class="language-plaintext highlighter-rouge">Magento\Framework\Api\MetadataServiceInterface</code>) as expected. <em>Fix submitted by <a href="https://github.com/julianvdrielen">julianvdrielen</a> in pull request <a href="https://github.com/magento/magento2/pull/15688">15688</a></em>. <a href="https://github.com/magento/magento2/issues/4803">GitHub-4803</a></li>
 </ul>
 
 <h3 id="email">Email</h3>
@@ -2896,7 +2897,7 @@
 
 <!--- ENGCOM-2706 -->
 <ul>
-  <li>Parent theme image height settings (specified in <code class="highlighter-rouge">view.xml</code>) no longer override the height settings assigned to individual images. <em>Fix submitted by <a href="https://github.com/quisse">Tommy Quissens</a> in pull request <a href="https://github.com/magento/magento2/pull/17439">17439</a></em>. <a href="https://github.com/magento/magento2/issues/12250">GitHub-12250</a></li>
+  <li>Parent theme image height settings (specified in <code class="language-plaintext highlighter-rouge">view.xml</code>) no longer override the height settings assigned to individual images. <em>Fix submitted by <a href="https://github.com/quisse">Tommy Quissens</a> in pull request <a href="https://github.com/magento/magento2/pull/17439">17439</a></em>. <a href="https://github.com/magento/magento2/issues/12250">GitHub-12250</a></li>
 </ul>
 
 <!--- ENGCOM-2324 -->
@@ -2930,7 +2931,7 @@
 
 <!--- ENGCOM-2696 -->
 <ul>
-  <li>The sidebars for the wishlist on the catalog, my account, and checkout pages now render special characters correctly. Previously, the browser displayed <code class="highlighter-rouge">&amp;trade;</code> instead of rendered special characters on these pages. <em>Fix submitted by <a href="https://github.com/mage2pratik">Pratik Oza</a> in pull request <a href="https://github.com/magento/magento2/pull/17422">17422</a></em>.</li>
+  <li>The sidebars for the wishlist on the catalog, my account, and checkout pages now render special characters correctly. Previously, the browser displayed <code class="language-plaintext highlighter-rouge">&amp;trade;</code> instead of rendered special characters on these pages. <em>Fix submitted by <a href="https://github.com/mage2pratik">Pratik Oza</a> in pull request <a href="https://github.com/magento/magento2/pull/17422">17422</a></em>.</li>
 </ul>
 
 <h3 id="password">Password</h3>
@@ -2951,19 +2952,19 @@
 
 <!--- ENGCOM-2806 -->
 <ul>
-  <li>Magento now displays a <code class="highlighter-rouge">404 page not found</code> error when a customer tries to navigate to a product review that is not accessible. Previously. Magento displayed a PHP error code. <em>Fix submitted by <a href="https://github.com/mage2pratik">Pratik Oza</a> in pull request <a href="https://github.com/magento/magento2/pull/17632">17632</a></em>. <a href="https://github.com/magento/magento2/issues/13102">GitHub-13102</a></li>
+  <li>Magento now displays a <code class="language-plaintext highlighter-rouge">404 page not found</code> error when a customer tries to navigate to a product review that is not accessible. Previously. Magento displayed a PHP error code. <em>Fix submitted by <a href="https://github.com/mage2pratik">Pratik Oza</a> in pull request <a href="https://github.com/magento/magento2/pull/17632">17632</a></em>. <a href="https://github.com/magento/magento2/issues/13102">GitHub-13102</a></li>
 </ul>
 
 <h3 id="sales">Sales</h3>
 
 <!--- ENGCOM-2933 -->
 <ul>
-  <li>When you define an extension attribute for the <code class="highlighter-rouge">OrderInterface</code> with a join table, the specified attribute code value is now returned as expected in REST calls. Previously, the JSON response did not contain <code class="highlighter-rouge">some_id</code> in the extension attributes property. <em>Fix submitted by <a href="https://github.com/Scarraban">Sam Butler Thompson</a> in pull request <a href="https://github.com/magento/magento2/pull/16169">16169</a></em>. <a href="https://github.com/magento/magento2/issues/8035">GitHub-8035</a></li>
+  <li>When you define an extension attribute for the <code class="language-plaintext highlighter-rouge">OrderInterface</code> with a join table, the specified attribute code value is now returned as expected in REST calls. Previously, the JSON response did not contain <code class="language-plaintext highlighter-rouge">some_id</code> in the extension attributes property. <em>Fix submitted by <a href="https://github.com/Scarraban">Sam Butler Thompson</a> in pull request <a href="https://github.com/magento/magento2/pull/16169">16169</a></em>. <a href="https://github.com/magento/magento2/issues/8035">GitHub-8035</a></li>
 </ul>
 
 <!--- ENGCOM-2691 -->
 <ul>
-  <li>The <code class="highlighter-rouge">Magento\Sales\Block\Adminhtml\Order\Totalbar</code> class and totalbar template files have been deprecated. These components were formerly included but never implemented in the invoice create and credit memo create layout files. <em>Fix submitted by <a href="https://github.com/dverkade">Danny Verkade</a> in pull request <a href="https://github.com/magento/magento2/pull/17413">17413</a></em>. <a href="https://github.com/magento/magento2/issues/16653">GitHub-16653</a>, <a href="https://github.com/magento/magento2/issues/16655">GitHub-16655</a></li>
+  <li>The <code class="language-plaintext highlighter-rouge">Magento\Sales\Block\Adminhtml\Order\Totalbar</code> class and totalbar template files have been deprecated. These components were formerly included but never implemented in the invoice create and credit memo create layout files. <em>Fix submitted by <a href="https://github.com/dverkade">Danny Verkade</a> in pull request <a href="https://github.com/magento/magento2/pull/17413">17413</a></em>. <a href="https://github.com/magento/magento2/issues/16653">GitHub-16653</a>, <a href="https://github.com/magento/magento2/issues/16655">GitHub-16655</a></li>
 </ul>
 
 <h3 id="shipping">Shipping</h3>
@@ -2975,36 +2976,36 @@
 
 <!--- ENGCOM-2325 -->
 <ul>
-  <li>Multishipping checkout now works as expected. Previously, Magento displayed the <code class="highlighter-rouge">Shipping address is not set</code>  error message  when checking out an order with multiple addresses. <em>Fix submitted by <a href="https://github.com/dmytro-ch">Dmytro Cheshun</a> in pull request <a href="https://github.com/magento/magento2/pull/16783">16783</a></em>. <a href="https://github.com/magento/magento2/issues/16555">GitHub-16555</a></li>
+  <li>Multishipping checkout now works as expected. Previously, Magento displayed the <code class="language-plaintext highlighter-rouge">Shipping address is not set</code>  error message  when checking out an order with multiple addresses. <em>Fix submitted by <a href="https://github.com/dmytro-ch">Dmytro Cheshun</a> in pull request <a href="https://github.com/magento/magento2/pull/16783">16783</a></em>. <a href="https://github.com/magento/magento2/issues/16555">GitHub-16555</a></li>
 </ul>
 
 <h3 id="store">Store</h3>
 
 <!--- ENGCOM-2627 -->
 <ul>
-  <li>The <code class="highlighter-rouge">$product-&gt;getUrlInStore()</code> method now returns more compact URLs. <em>Fix submitted by <a href="https://github.com/vasilii-b">Burlacu Vasilii</a> in pull request <a href="https://github.com/magento/magento2/pull/16310">16310</a></em>. <a href="https://github.com/magento/magento2/issues/16273">GitHub-16273</a></li>
+  <li>The <code class="language-plaintext highlighter-rouge">$product-&gt;getUrlInStore()</code> method now returns more compact URLs. <em>Fix submitted by <a href="https://github.com/vasilii-b">Burlacu Vasilii</a> in pull request <a href="https://github.com/magento/magento2/pull/16310">16310</a></em>. <a href="https://github.com/magento/magento2/issues/16273">GitHub-16273</a></li>
 </ul>
 
 <h3 id="testing">Testing</h3>
 
 <!--- ENGCOM-2844 -->
 <ul>
-  <li><code class="highlighter-rouge">\Magento\Cms\Model\Block</code> is now covered by unit tests. <em>Fix submitted by <a href="https://github.com/dmytro-ch">Dmytro Cheshun</a> in pull request <a href="https://github.com/magento/magento2/pull/17682">17682</a></em>.</li>
+  <li><code class="language-plaintext highlighter-rouge">\Magento\Cms\Model\Block</code> is now covered by unit tests. <em>Fix submitted by <a href="https://github.com/dmytro-ch">Dmytro Cheshun</a> in pull request <a href="https://github.com/magento/magento2/pull/17682">17682</a></em>.</li>
 </ul>
 
 <!--- ENGCOM-2889 -->
 <ul>
-  <li>The <code class="highlighter-rouge">\Magento\Catalog\Test\Unit\Cron\AvailabilityCheckerTest</code> and <code class="highlighter-rouge">\Magento\Catalog\Test\Unit\Cron\DeleteOutdatedPriceValuesTest</code> classes are now covered by unit tests. <em>Fix submitted by <a href="https://github.com/jignesh-baldha">Jignesh Baldha</a> in pull request <a href="https://github.com/magento/magento2/pull/17606">17606</a></em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">\Magento\Catalog\Test\Unit\Cron\AvailabilityCheckerTest</code> and <code class="language-plaintext highlighter-rouge">\Magento\Catalog\Test\Unit\Cron\DeleteOutdatedPriceValuesTest</code> classes are now covered by unit tests. <em>Fix submitted by <a href="https://github.com/jignesh-baldha">Jignesh Baldha</a> in pull request <a href="https://github.com/magento/magento2/pull/17606">17606</a></em>.</li>
 </ul>
 
 <!--- ENGCOM-2909 -->
 <ul>
-  <li>The <code class="highlighter-rouge">\Magento\Search\Model\SynonymAnalyzer</code> and <code class="highlighter-rouge">\Magento\Search\Model\SynonymAnalyzer</code> classes are now covered by unit tests. <em>Fix submitted by <a href="https://github.com/furseyev">Zebra</a> in pull request <a href="https://github.com/magento/magento2/pull/17839">17839</a></em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">\Magento\Search\Model\SynonymAnalyzer</code> and <code class="language-plaintext highlighter-rouge">\Magento\Search\Model\SynonymAnalyzer</code> classes are now covered by unit tests. <em>Fix submitted by <a href="https://github.com/furseyev">Zebra</a> in pull request <a href="https://github.com/magento/magento2/pull/17839">17839</a></em>.</li>
 </ul>
 
 <!--- ENGCOM-2928 -->
 <ul>
-  <li><code class="highlighter-rouge">\Magento\Sales\Model\Validator</code> is now covered by unit tests. <em>Fix submitted by <a href="https://github.com/dmytro-ch">Dmytro Cheshun</a> in pull request <a href="https://github.com/magento/magento2/pull/17940">17940</a></em>.</li>
+  <li><code class="language-plaintext highlighter-rouge">\Magento\Sales\Model\Validator</code> is now covered by unit tests. <em>Fix submitted by <a href="https://github.com/dmytro-ch">Dmytro Cheshun</a> in pull request <a href="https://github.com/magento/magento2/pull/17940">17940</a></em>.</li>
 </ul>
 
 <h3 id="theme">Theme</h3>
@@ -3028,7 +3029,7 @@
 
 <!--- ENGCOM-2898 -->
 <ul>
-  <li><code class="highlighter-rouge">.png</code> images from the GD2 image library that have transparent backgrounds now retain their  transparent backgrounds after upload. Previously, these transparent backgrounds were rendered black when you displayed these images after upload. <em>Fix submitted by <a href="https://github.com/eduard13">Eduard Chitoraga</a> in pull request <a href="https://github.com/magento/magento2/pull/17855">17855</a></em>. <a href="https://github.com/magento/magento2/issues/14248">GitHub-14248</a></li>
+  <li><code class="language-plaintext highlighter-rouge">.png</code> images from the GD2 image library that have transparent backgrounds now retain their  transparent backgrounds after upload. Previously, these transparent backgrounds were rendered black when you displayed these images after upload. <em>Fix submitted by <a href="https://github.com/eduard13">Eduard Chitoraga</a> in pull request <a href="https://github.com/magento/magento2/pull/17855">17855</a></em>. <a href="https://github.com/magento/magento2/issues/14248">GitHub-14248</a></li>
 </ul>
 
 <h2 id="community-contributions">Community contributions</h2>

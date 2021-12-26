@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Using UI components client-side | Magento 2 Developer Documentation (copy)</title>
+	<title>Using UI components client-side | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/ui-components/ui_components_js.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/ui-components/ui_components_js.html">Magento 2.0</a></li>
 		
@@ -1849,7 +1850,7 @@
     <p>The available configuration options and methods for components of a certain type, defined in the component’s .js file.</p>
   </li>
   <li>
-    <p>The actual configuration and structure of a particular component, specified in the component’s configuration <code class="highlighter-rouge">.xml</code> file, in the scope of the <code class="highlighter-rouge">&lt;argument&gt;&lt;/argument&gt;</code> node. The configuration file also extends properties, specifies the component’s template and the path to the component’s <code class="highlighter-rouge">.js</code> file.</p>
+    <p>The actual configuration and structure of a particular component, specified in the component’s configuration <code class="language-plaintext highlighter-rouge">.xml</code> file, in the scope of the <code class="language-plaintext highlighter-rouge">&lt;argument&gt;&lt;/argument&gt;</code> node. The configuration file also extends properties, specifies the component’s template and the path to the component’s <code class="language-plaintext highlighter-rouge">.js</code> file.</p>
   </li>
 </ul>
 
@@ -1861,25 +1862,25 @@
  are the following:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">component</code>: the path to the component’s <code class="highlighter-rouge">.js</code> file in terms of RequireJS.</li>
+  <li><code class="language-plaintext highlighter-rouge">component</code>: the path to the component’s <code class="language-plaintext highlighter-rouge">.js</code> file in terms of RequireJS.</li>
 </ul>
 
 <p>Example:
-The <code class="highlighter-rouge">.js</code> file of the bookmark component is <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js">Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js</a></p>
+The <code class="language-plaintext highlighter-rouge">.js</code> file of the bookmark component is <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js">Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js</a></p>
 
-<p>So the <code class="highlighter-rouge">component</code> property is set in the <code class="highlighter-rouge">.xml</code> configuration file like following:</p>
+<p>So the <code class="language-plaintext highlighter-rouge">component</code> property is set in the <code class="language-plaintext highlighter-rouge">.xml</code> configuration file like following:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"component"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>Magento_Ui/js/grid/controls/bookmarks/bookmarks<span class="nt">&lt;/item&gt;</span>
 <span class="nt">&lt;/argument&gt;</span></code></pre></figure>
 
 <ul>
-  <li><code class="highlighter-rouge">template</code>: path to the component’s <code class="highlighter-rouge">.html</code> template.</li>
+  <li><code class="language-plaintext highlighter-rouge">template</code>: path to the component’s <code class="language-plaintext highlighter-rouge">.html</code> template.</li>
 </ul>
 
 <p>Example:</p>
 
-<p>The <code class="highlighter-rouge">.html</code> template of the bookmarks component is <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Ui/view/base/web/templates/grid/controls/bookmarks/bookmarks.html">Magento/Ui/view/base/web/templates/grid/controls/bookmarks/bookmarks.html</a>.</p>
+<p>The <code class="language-plaintext highlighter-rouge">.html</code> template of the bookmarks component is <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Ui/view/base/web/templates/grid/controls/bookmarks/bookmarks.html">Magento/Ui/view/base/web/templates/grid/controls/bookmarks/bookmarks.html</a>.</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"template"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>ui/grid/controls/bookmarks/bookmarks<span class="nt">&lt;/item&gt;</span>
@@ -1887,25 +1888,25 @@ The <code class="highlighter-rouge">.js</code> file of the bookmark component is
 
 <ul>
   <li>
-    <p>children: is a general name for the nested components of a certain component. Children can be specified in the <code class="highlighter-rouge">.xml</code> configuration of the parent component (all nodes except <code class="highlighter-rouge">&lt;argument/&gt;</code> and <code class="highlighter-rouge">&lt;dataSource/&gt;</code> are considered children) and in the Knockout JS templates: children are the keys of the <code class="highlighter-rouge">elems</code> property.</p>
+    <p>children: is a general name for the nested components of a certain component. Children can be specified in the <code class="language-plaintext highlighter-rouge">.xml</code> configuration of the parent component (all nodes except <code class="language-plaintext highlighter-rouge">&lt;argument/&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;dataSource/&gt;</code> are considered children) and in the Knockout JS templates: children are the keys of the <code class="language-plaintext highlighter-rouge">elems</code> property.</p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">name</code>: the name of the component specified in the <code class="highlighter-rouge">.xml</code> configuration file of the parent UI component. In the run-time in a browser this value is transformed to a complex string. This string represents hierarchy of components in the run-time.
-For example, <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Cms/view/adminhtml/ui_component/cms_block_listing.xml#L57"><code class="highlighter-rouge">app/code/Magento/Cms/view/adminhtml/ui_component/cms_block_listing.xml:57</code></a>:</p>
+    <p><code class="language-plaintext highlighter-rouge">name</code>: the name of the component specified in the <code class="language-plaintext highlighter-rouge">.xml</code> configuration file of the parent UI component. In the run-time in a browser this value is transformed to a complex string. This string represents hierarchy of components in the run-time.
+For example, <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Cms/view/adminhtml/ui_component/cms_block_listing.xml#L57"><code class="language-plaintext highlighter-rouge">app/code/Magento/Cms/view/adminhtml/ui_component/cms_block_listing.xml:57</code></a>:</p>
   </li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"> 
 <span class="nt">&lt;component</span> <span class="na">name=</span><span class="s">"columns_controls"</span><span class="nt">&gt;</span></code></pre></figure>
 
-<p>In the run-time <code class="highlighter-rouge">columns_controls</code> is transformed to the following string: <code class="highlighter-rouge">cms_block_listing.cms_block_listing.listing_top.columns_controls</code>.</p>
+<p>In the run-time <code class="language-plaintext highlighter-rouge">columns_controls</code> is transformed to the following string: <code class="language-plaintext highlighter-rouge">cms_block_listing.cms_block_listing.listing_top.columns_controls</code>.</p>
 
 <p>This string is constructed from the following values:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">cms_block_listing.cms_block_listing</code>: the full name of the root component.</li>
-  <li><code class="highlighter-rouge">listing_top</code>: the value of the <code class="highlighter-rouge">name</code> attribute of the parent <code class="highlighter-rouge">&lt;container name="listing_top"&gt;</code> component.</li>
-  <li><code class="highlighter-rouge">columns_controls</code>: the value of the <code class="highlighter-rouge">name</code> attribute of the component itself.</li>
+  <li><code class="language-plaintext highlighter-rouge">cms_block_listing.cms_block_listing</code>: the full name of the root component.</li>
+  <li><code class="language-plaintext highlighter-rouge">listing_top</code>: the value of the <code class="language-plaintext highlighter-rouge">name</code> attribute of the parent <code class="language-plaintext highlighter-rouge">&lt;container name="listing_top"&gt;</code> component.</li>
+  <li><code class="language-plaintext highlighter-rouge">columns_controls</code>: the value of the <code class="language-plaintext highlighter-rouge">name</code> attribute of the component itself.</li>
 </ul>
 
 <h2 id="comp_link">UI Component properties used for linking</h2>
@@ -1914,26 +1915,26 @@ For example, <a href="https://github.com/magento/magento2/blob/2.0/app/code/Mage
 
 <ul>
   <li>
-    <p><code class="highlighter-rouge">exports</code>: used to notify some external entity about property changing. <code class="highlighter-rouge">exports</code>s value is an object, composed of the following:</p>
+    <p><code class="language-plaintext highlighter-rouge">exports</code>: used to notify some external entity about property changing. <code class="language-plaintext highlighter-rouge">exports</code>s value is an object, composed of the following:</p>
 
     <ul>
-      <li><code class="highlighter-rouge">key</code>: name of the internal property or method which is tracked for changes.</li>
-      <li><code class="highlighter-rouge">value</code>: name of the property or method which receives the notification. Can use string templates.</li>
+      <li><code class="language-plaintext highlighter-rouge">key</code>: name of the internal property or method which is tracked for changes.</li>
+      <li><code class="language-plaintext highlighter-rouge">value</code>: name of the property or method which receives the notification. Can use string templates.</li>
     </ul>
   </li>
 </ul>
 
-<p>Example of setting <code class="highlighter-rouge">exports</code> in a component’s <code class="highlighter-rouge">.js</code> file:</p>
+<p>Example of setting <code class="language-plaintext highlighter-rouge">exports</code> in a component’s <code class="language-plaintext highlighter-rouge">.js</code> file:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
-  <span class="s1">'exports'</span><span class="p">:</span> <span class="p">{</span>
-   <span class="s1">'visible'</span><span class="p">:</span> <span class="s1">'${ $.provider }.visibility'</span>
+  <span class="dl">'</span><span class="s1">exports</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
+   <span class="dl">'</span><span class="s1">visible</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">${ $.provider }.visibility</span><span class="dl">'</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>Here <code class="highlighter-rouge">visible</code> is the <code class="highlighter-rouge">key</code>, <code class="highlighter-rouge">${ $.provider }.visibility</code> is the <code class="highlighter-rouge">value</code>.</p>
+<p>Here <code class="language-plaintext highlighter-rouge">visible</code> is the <code class="language-plaintext highlighter-rouge">key</code>, <code class="language-plaintext highlighter-rouge">${ $.provider }.visibility</code> is the <code class="language-plaintext highlighter-rouge">value</code>.</p>
 
-<p>Example of setting <code class="highlighter-rouge">exports</code> in a component’s configuration <code class="highlighter-rouge">.xml</code> file:</p>
+<p>Example of setting <code class="language-plaintext highlighter-rouge">exports</code> in a component’s configuration <code class="language-plaintext highlighter-rouge">.xml</code> file:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
@@ -1943,28 +1944,28 @@ For example, <a href="https://github.com/magento/magento2/blob/2.0/app/code/Mage
        <span class="nt">&lt;/item&gt;</span>
 <span class="nt">&lt;/argument&gt;</span></code></pre></figure>
 
-<p>In this example, <code class="highlighter-rouge">visible</code> is the <code class="highlighter-rouge">key</code>, <code class="highlighter-rouge">sample_config.sample_provider.visibility</code> is the <code class="highlighter-rouge">value</code>.</p>
+<p>In this example, <code class="language-plaintext highlighter-rouge">visible</code> is the <code class="language-plaintext highlighter-rouge">key</code>, <code class="language-plaintext highlighter-rouge">sample_config.sample_provider.visibility</code> is the <code class="language-plaintext highlighter-rouge">value</code>.</p>
 
 <ul>
   <li>
-    <p><code class="highlighter-rouge">imports</code>: used for tracking changes of an external entity property. <code class="highlighter-rouge">imports</code>’s value is an object, composed of the following:</p>
+    <p><code class="language-plaintext highlighter-rouge">imports</code>: used for tracking changes of an external entity property. <code class="language-plaintext highlighter-rouge">imports</code>’s value is an object, composed of the following:</p>
 
     <ul>
-      <li><code class="highlighter-rouge">key</code>: name of the internal property or method which receives the notifications.</li>
-      <li><code class="highlighter-rouge">value</code>: name of the property or method which is tracked for changes. Can use string templates.</li>
+      <li><code class="language-plaintext highlighter-rouge">key</code>: name of the internal property or method which receives the notifications.</li>
+      <li><code class="language-plaintext highlighter-rouge">value</code>: name of the property or method which is tracked for changes. Can use string templates.</li>
     </ul>
   </li>
 </ul>
 
-<p>Example of using <code class="highlighter-rouge">imports</code> in a component’s <code class="highlighter-rouge">.js</code> file:</p>
+<p>Example of using <code class="language-plaintext highlighter-rouge">imports</code> in a component’s <code class="language-plaintext highlighter-rouge">.js</code> file:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
-  <span class="s1">'imports'</span><span class="p">:</span> <span class="p">{</span>
-   <span class="s1">'visible'</span><span class="p">:</span> <span class="s1">'${ $.provider }.visibility'</span>
+  <span class="dl">'</span><span class="s1">imports</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
+   <span class="dl">'</span><span class="s1">visible</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">${ $.provider }.visibility</span><span class="dl">'</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>Example of using <code class="highlighter-rouge">imports</code> in a component’s configuration <code class="highlighter-rouge">.xml</code> file:</p>
+<p>Example of using <code class="language-plaintext highlighter-rouge">imports</code> in a component’s configuration <code class="language-plaintext highlighter-rouge">.xml</code> file:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
@@ -1976,24 +1977,24 @@ For example, <a href="https://github.com/magento/magento2/blob/2.0/app/code/Mage
 
 <ul>
   <li>
-    <p><code class="highlighter-rouge">links</code>: used for mutual tracking property changes. <code class="highlighter-rouge">links</code>’s value is an object, composed of the following:</p>
+    <p><code class="language-plaintext highlighter-rouge">links</code>: used for mutual tracking property changes. <code class="language-plaintext highlighter-rouge">links</code>’s value is an object, composed of the following:</p>
 
     <ul>
-      <li><code class="highlighter-rouge">key</code>: name of the internal property or method which sends and receives the notifications.</li>
-      <li><code class="highlighter-rouge">value</code> - name of the property or method which sends and receives the notifications. Can use string templates.</li>
+      <li><code class="language-plaintext highlighter-rouge">key</code>: name of the internal property or method which sends and receives the notifications.</li>
+      <li><code class="language-plaintext highlighter-rouge">value</code> - name of the property or method which sends and receives the notifications. Can use string templates.</li>
     </ul>
   </li>
 </ul>
 
-<p>Example of using <code class="highlighter-rouge">links</code> in a component’s <code class="highlighter-rouge">.js</code> file:</p>
+<p>Example of using <code class="language-plaintext highlighter-rouge">links</code> in a component’s <code class="language-plaintext highlighter-rouge">.js</code> file:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
-  <span class="s1">'links'</span><span class="p">:</span> <span class="p">{</span>
-   <span class="s1">'visible'</span><span class="p">:</span> <span class="s1">'${ $.provider }.visibility'</span>
+  <span class="dl">'</span><span class="s1">links</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
+   <span class="dl">'</span><span class="s1">visible</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">${ $.provider }.visibility</span><span class="dl">'</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>Example of using <code class="highlighter-rouge">links</code> in a component’s configuration <code class="highlighter-rouge">.xml</code> file:</p>
+<p>Example of using <code class="language-plaintext highlighter-rouge">links</code> in a component’s configuration <code class="language-plaintext highlighter-rouge">.xml</code> file:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
@@ -2004,23 +2005,23 @@ For example, <a href="https://github.com/magento/magento2/blob/2.0/app/code/Mage
 <span class="nt">&lt;/argument&gt;</span></code></pre></figure>
 
 <ul>
-  <li><code class="highlighter-rouge">listens</code>: used to track the changes of a component’s property.
+  <li><code class="language-plaintext highlighter-rouge">listens</code>: used to track the changes of a component’s property.
     <ul>
-      <li><code class="highlighter-rouge">key</code> - name of the internal property which listens to the changes.</li>
-      <li><code class="highlighter-rouge">value</code> - name of the property or method which is tracked for changes. Can use string templates.</li>
+      <li><code class="language-plaintext highlighter-rouge">key</code> - name of the internal property which listens to the changes.</li>
+      <li><code class="language-plaintext highlighter-rouge">value</code> - name of the property or method which is tracked for changes. Can use string templates.</li>
     </ul>
   </li>
 </ul>
 
-<p>Example of using <code class="highlighter-rouge">listens</code> in a component’s <code class="highlighter-rouge">.js</code> file :</p>
+<p>Example of using <code class="language-plaintext highlighter-rouge">listens</code> in a component’s <code class="language-plaintext highlighter-rouge">.js</code> file :</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
-  <span class="s1">'listens'</span><span class="p">:</span> <span class="p">{</span>
-   <span class="s1">'visible'</span><span class="p">:</span> <span class="s1">'${ $.provider }.visibility'</span>
+  <span class="dl">'</span><span class="s1">listens</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
+   <span class="dl">'</span><span class="s1">visible</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">${ $.provider }.visibility</span><span class="dl">'</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>Example of using <code class="highlighter-rouge">listens</code> in a component’s configuration <code class="highlighter-rouge">.xml</code> file:</p>
+<p>Example of using <code class="language-plaintext highlighter-rouge">listens</code> in a component’s configuration <code class="language-plaintext highlighter-rouge">.xml</code> file:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
@@ -2034,47 +2035,47 @@ For example, <a href="https://github.com/magento/magento2/blob/2.0/app/code/Mage
 
 <p>This section is a brief description of the most frequently used additional UI components.</p>
 
-<h3 id="uiclass"><code class="highlighter-rouge">uiClass</code></h3>
+<h3 id="uiclass"><code class="language-plaintext highlighter-rouge">uiClass</code></h3>
 <p>Enables OOP pattern implementation.</p>
 
-<h3 id="uielement"><code class="highlighter-rouge">uiElement</code></h3>
-<p>Extends <code class="highlighter-rouge">uiClass</code>. Adds the following:</p>
+<h3 id="uielement"><code class="language-plaintext highlighter-rouge">uiElement</code></h3>
+<p>Extends <code class="language-plaintext highlighter-rouge">uiClass</code>. Adds the following:</p>
 
 <ul>
-  <li>the <code class="highlighter-rouge">defaults</code> property</li>
+  <li>the <code class="language-plaintext highlighter-rouge">defaults</code> property</li>
   <li>events handling</li>
-  <li>handling properties linking (the <code class="highlighter-rouge">imports</code>, <code class="highlighter-rouge">exports</code>, <code class="highlighter-rouge">links</code> and <code class="highlighter-rouge">listens</code> properties)</li>
+  <li>handling properties linking (the <code class="language-plaintext highlighter-rouge">imports</code>, <code class="language-plaintext highlighter-rouge">exports</code>, <code class="language-plaintext highlighter-rouge">links</code> and <code class="language-plaintext highlighter-rouge">listens</code> properties)</li>
   <li>ability to add itself to the UI registry</li>
 </ul>
 
-<h3 id="uicollection"><code class="highlighter-rouge">uiCollection</code></h3>
+<h3 id="uicollection"><code class="language-plaintext highlighter-rouge">uiCollection</code></h3>
 
-<p>Extends <code class="highlighter-rouge">uiElement</code>. Adds the following:</p>
+<p>Extends <code class="language-plaintext highlighter-rouge">uiElement</code>. Adds the following:</p>
 
 <ul>
-  <li>managing child elements (the <code class="highlighter-rouge">elems</code> property)</li>
+  <li>managing child elements (the <code class="language-plaintext highlighter-rouge">elems</code> property)</li>
   <li>by default uses the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Ui/view/base/web/templates/collection.html">app/code/Magento/Ui/view/base/web/templates/collection.html</a> template</li>
 </ul>
 
-<h3 id="uiregistry"><code class="highlighter-rouge">uiRegistry</code></h3>
-<p>In-memory storage. Plain storage of entities by keys. Implements the <code class="highlighter-rouge">get()</code>, <code class="highlighter-rouge">set()</code>, and <code class="highlighter-rouge">has()</code> methods.</p>
+<h3 id="uiregistry"><code class="language-plaintext highlighter-rouge">uiRegistry</code></h3>
+<p>In-memory storage. Plain storage of entities by keys. Implements the <code class="language-plaintext highlighter-rouge">get()</code>, <code class="language-plaintext highlighter-rouge">set()</code>, and <code class="language-plaintext highlighter-rouge">has()</code> methods.</p>
 
-<p>All the components described in this section are aliases in terms of RequireJS. So they can be directly requested in the component’s <code class="highlighter-rouge">.js</code> file or used in a component’s configuration <code class="highlighter-rouge">.xml</code> file (except <code class="highlighter-rouge">uiRegistry</code>, which by its nature is not expected to be used in a configuration file).</p>
+<p>All the components described in this section are aliases in terms of RequireJS. So they can be directly requested in the component’s <code class="language-plaintext highlighter-rouge">.js</code> file or used in a component’s configuration <code class="language-plaintext highlighter-rouge">.xml</code> file (except <code class="language-plaintext highlighter-rouge">uiRegistry</code>, which by its nature is not expected to be used in a configuration file).</p>
 
-<p>Example for the <code class="highlighter-rouge">uiClass</code> property request:</p>
+<p>Example for the <code class="language-plaintext highlighter-rouge">uiClass</code> property request:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">(</span> <span class="p">[</span><span class="s1">'uiClass'</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">abstractClass</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">(</span> <span class="p">[</span><span class="dl">'</span><span class="s1">uiClass</span><span class="dl">'</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">abstractClass</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">abstractClass</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span> 
       <span class="p">...</span> <span class="c1">// needed methods here</span>
    <span class="p">};</span>
 <span class="p">});</span></code></pre></figure>
 
-<p>Example of using the <code class="highlighter-rouge">uiClass</code> property in a configuration file:</p>
+<p>Example of using the <code class="language-plaintext highlighter-rouge">uiClass</code> property in a configuration file:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js">  <span class="o">&lt;</span><span class="nx">container</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"some_custom_component"</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"data"</span> <span class="nx">xsi</span><span class="p">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">"array"</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"config"</span> <span class="nx">xsi</span><span class="p">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">"array"</span><span class="o">&gt;</span>
-                <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"component"</span> <span class="nx">xsi</span><span class="p">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">"string"</span><span class="o">&gt;</span><span class="nx">uiClass</span><span class="o">&lt;</span><span class="sr">/item</span><span class="err">&gt;
+<figure class="highlight"><pre><code class="language-js" data-lang="js">  <span class="o">&lt;</span><span class="nx">container</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">some_custom_component</span><span class="dl">"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">data</span><span class="dl">"</span> <span class="nx">xsi</span><span class="p">:</span><span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">array</span><span class="dl">"</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">config</span><span class="dl">"</span> <span class="nx">xsi</span><span class="p">:</span><span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">array</span><span class="dl">"</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">component</span><span class="dl">"</span> <span class="nx">xsi</span><span class="p">:</span><span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">string</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">uiClass</span><span class="o">&lt;</span><span class="sr">/item</span><span class="err">&gt;
 </span>            <span class="o">&lt;</span><span class="sr">/item</span><span class="err">&gt;
 </span>        <span class="o">&lt;</span><span class="sr">/argument</span><span class="err">&gt;
 </span>    <span class="o">&lt;</span><span class="sr">/container&gt;</span></code></pre></figure>
@@ -2090,8 +2091,8 @@ For example, <a href="https://github.com/magento/magento2/blob/2.0/app/code/Mage
 <ol>
   <li>Open the required page in a browser.</li>
   <li>Select to view the page source.</li>
-  <li>Search for <code class="highlighter-rouge">data-bind="scope:</code>. The string after <code class="highlighter-rouge">scope</code> is the full name of the component.</li>
-  <li>Open developers tools and in the console tab run <code class="highlighter-rouge">require('uiRegistry').get('&lt;full_component_name&gt;')</code>. Where <code class="highlighter-rouge">&lt;full_component_name&gt;</code> is the name you defined on the previous step. The name and the configuration of the UI component instance is displayed once the command is executed.</li>
+  <li>Search for <code class="language-plaintext highlighter-rouge">data-bind="scope:</code>. The string after <code class="language-plaintext highlighter-rouge">scope</code> is the full name of the component.</li>
+  <li>Open developers tools and in the console tab run <code class="language-plaintext highlighter-rouge">require('uiRegistry').get('&lt;full_component_name&gt;')</code>. Where <code class="language-plaintext highlighter-rouge">&lt;full_component_name&gt;</code> is the name you defined on the previous step. The name and the configuration of the UI component instance is displayed once the command is executed.</li>
 </ol>
 
 <p>For illustration, let’s find out what UI components are used on the   <span term-uuid="8d40d668-4996-4856-9f81-b1386cf4b14f" class="glossary-term" data-toggle="popover">Catalog</span>
@@ -2100,11 +2101,11 @@ For example, <a href="https://github.com/magento/magento2/blob/2.0/app/code/Mage
 
 <p><img src="/devdocs/common/images/ui_debug1.png" alt="The catalog page" /></p>
 
-<p>According to the described procedure, open the page source and search for “<code class="highlighter-rouge">data-bind="scope:</code>”</p>
+<p>According to the described procedure, open the page source and search for “<code class="language-plaintext highlighter-rouge">data-bind="scope:</code>”</p>
 
 <p><img src="/devdocs/common/images/ui_debug2.png" alt="searching for data-bind=scope:" /></p>
 
-<p>So we find out that the main UI component used on this page is product listing, with <code class="highlighter-rouge">product_listing.product_listing</code> as a full name. To see its configuration, child components and data source, in the in the <strong>Console</strong> tab we run <code class="highlighter-rouge">require('uiRegistry').get('product_listing.product_listing')</code>:</p>
+<p>So we find out that the main UI component used on this page is product listing, with <code class="language-plaintext highlighter-rouge">product_listing.product_listing</code> as a full name. To see its configuration, child components and data source, in the in the <strong>Console</strong> tab we run <code class="language-plaintext highlighter-rouge">require('uiRegistry').get('product_listing.product_listing')</code>:</p>
 
 <p><img src="/devdocs/common/images/ui_debug3.png" alt="run the command in Console" /></p>
 

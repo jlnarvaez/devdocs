@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento Open Source 2.1.14 Release Notes | Magento 2 Developer Documentation (copy)</title>
+	<title>Magento Open Source 2.1.14 Release Notes | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/release-notes/ReleaseNotes2.1.14CE.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/release-notes/ReleaseNotes2.1.14CE.html">Magento 2.0</a></li>
 		
@@ -2825,22 +2826,22 @@
 
 <!--- ENGCOM-902 -->
 <ul>
-  <li>The <code class="highlighter-rouge">magento cron:run</code> command now runs scheduled jobs as expected. Previously, cron generated only one job, no matter how many jobs were scheduled. <em>Fix submitted by <a href="https://github.com/simpleadm">Sergey P</a> in pull request 14096</em>. <a href="https://github.com/magento/magento2/issues/4173">GitHub-4173</a></li>
+  <li>The <code class="language-plaintext highlighter-rouge">magento cron:run</code> command now runs scheduled jobs as expected. Previously, cron generated only one job, no matter how many jobs were scheduled. <em>Fix submitted by <a href="https://github.com/simpleadm">Sergey P</a> in pull request 14096</em>. <a href="https://github.com/magento/magento2/issues/4173">GitHub-4173</a></li>
 </ul>
 
 <!--- ENGCOM-707 -->
 <ul>
-  <li>The misspelling in the name of the namespace in <code class="highlighter-rouge">Magento\Cron\Observer\ProcessCronQueueObserver.php</code> has been fixed. Previously, this misspelling resulted in a  fatal error when this class was instantiated and run. <em>Fix submitted by <a href="https://github.com/simpleadm">Sergey P</a> in pull request 13949</em>. <a href="https://github.com/magento/magento2/issues/4173">GitHub-4173</a></li>
+  <li>The misspelling in the name of the namespace in <code class="language-plaintext highlighter-rouge">Magento\Cron\Observer\ProcessCronQueueObserver.php</code> has been fixed. Previously, this misspelling resulted in a  fatal error when this class was instantiated and run. <em>Fix submitted by <a href="https://github.com/simpleadm">Sergey P</a> in pull request 13949</em>. <a href="https://github.com/magento/magento2/issues/4173">GitHub-4173</a></li>
 </ul>
 
 <!--- ENGCOM-846 -->
 <ul>
-  <li>The <code class="highlighter-rouge">magento setup:di:compile</code> command now supports quoting for base paths. Previously, this command tried to exclude paths from the compilation process via regex in the <code class="highlighter-rouge">excludedPathsList</code> property. However, that property does not use quoting but instead contains the full path to Magento, which resulted in the failure to exclude some paths (for example,<code class="highlighter-rouge">/var/www/magento (1)/</code>). <em>Fix submitted by <a href="https://github.com/Ethan3600">Ethan Yehuda</a> in pull request 13806</em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">magento setup:di:compile</code> command now supports quoting for base paths. Previously, this command tried to exclude paths from the compilation process via regex in the <code class="language-plaintext highlighter-rouge">excludedPathsList</code> property. However, that property does not use quoting but instead contains the full path to Magento, which resulted in the failure to exclude some paths (for example,<code class="language-plaintext highlighter-rouge">/var/www/magento (1)/</code>). <em>Fix submitted by <a href="https://github.com/Ethan3600">Ethan Yehuda</a> in pull request 13806</em>.</li>
 </ul>
 
 <!--- ENGCOM-949 -->
 <ul>
-  <li><code class="highlighter-rouge">Store getConfig()</code> now respects  valid false return values. Previously, the system represented the <strong>no</strong> setting as a string value of 0 (and 0 equals false), and as a result, this method fetched the default configuration values when a configuration value was set to <strong>no</strong>.    <em>Fix submitted by <a href="https://github.com/JeroenVanLeusden">Jeroen</a> in pull request 13654</em>.</li>
+  <li><code class="language-plaintext highlighter-rouge">Store getConfig()</code> now respects  valid false return values. Previously, the system represented the <strong>no</strong> setting as a string value of 0 (and 0 equals false), and as a result, this method fetched the default configuration values when a configuration value was set to <strong>no</strong>.    <em>Fix submitted by <a href="https://github.com/JeroenVanLeusden">Jeroen</a> in pull request 13654</em>.</li>
 </ul>
 
 <!--- ENGCOM-1200 -->
@@ -2850,14 +2851,14 @@
 
 <!--- MAGETWO-87870 -->
 <ul>
-  <li>We’ve added the <code class="highlighter-rouge">web/unsecure/base_url</code> config to both website and store scopes. <em>Fix submitted by <a href="https://github.com/JeroenVanLeusden">Jeroen</a> in pull request 13658</em>.</li>
+  <li>We’ve added the <code class="language-plaintext highlighter-rouge">web/unsecure/base_url</code> config to both website and store scopes. <em>Fix submitted by <a href="https://github.com/JeroenVanLeusden">Jeroen</a> in pull request 13658</em>.</li>
 </ul>
 
 <h3 id="catalog">Catalog</h3>
 
 <!--- ENGCOM-1223 -->
 <ul>
-  <li>Magento now checks if <code class="highlighter-rouge">storeId</code> is not null rather than checking if it is empty. Previously, when <code class="highlighter-rouge">storeId 0 is_empty</code> returned <code class="highlighter-rouge">true</code>, Magento could not create a CMS page for all store views. <em>Fix submitted by <a href="https://github.com/quisse">Tommy Quissens</a> in pull request 14505</em>.</li>
+  <li>Magento now checks if <code class="language-plaintext highlighter-rouge">storeId</code> is not null rather than checking if it is empty. Previously, when <code class="language-plaintext highlighter-rouge">storeId 0 is_empty</code> returned <code class="language-plaintext highlighter-rouge">true</code>, Magento could not create a CMS page for all store views. <em>Fix submitted by <a href="https://github.com/quisse">Tommy Quissens</a> in pull request 14505</em>.</li>
 </ul>
 
 <!--- ENGCOM-1172 -->
@@ -2867,19 +2868,19 @@
 
 <!--- ENGCOM-820 -->
 <ul>
-  <li>The layout of <code class="highlighter-rouge">catalog_rule_promo_catalog_edit.xml</code> has been changed to adjust sidebar settings. Specifically, the layout attribute value has been changed from  <code class="highlighter-rouge">admin-2columns-left</code> to <code class="highlighter-rouge">admin-1column</code>. <em>Fix submitted by <a href="https://github.com/Karlasa">Karla Saaremäe</a> in pull request 14022</em>.</li>
+  <li>The layout of <code class="language-plaintext highlighter-rouge">catalog_rule_promo_catalog_edit.xml</code> has been changed to adjust sidebar settings. Specifically, the layout attribute value has been changed from  <code class="language-plaintext highlighter-rouge">admin-2columns-left</code> to <code class="language-plaintext highlighter-rouge">admin-1column</code>. <em>Fix submitted by <a href="https://github.com/Karlasa">Karla Saaremäe</a> in pull request 14022</em>.</li>
 </ul>
 
 <!--- MAGETWO-87573 -->
 <ul>
-  <li>The Catalog Price rule’s <code class="highlighter-rouge">contains</code> condition now works as expected when the <code class="highlighter-rouge">contains</code> condition allows multiple options. <em>Fix submitted by <a href="https://github.com/hostep">Pieter Hoste</a> in pull request 13546</em>. <a href="https://github.com/magento/magento2/issues/7723">GitHub-7723</a></li>
+  <li>The Catalog Price rule’s <code class="language-plaintext highlighter-rouge">contains</code> condition now works as expected when the <code class="language-plaintext highlighter-rouge">contains</code> condition allows multiple options. <em>Fix submitted by <a href="https://github.com/hostep">Pieter Hoste</a> in pull request 13546</em>. <a href="https://github.com/magento/magento2/issues/7723">GitHub-7723</a></li>
 </ul>
 
 <h3 id="cart-and-checkout">Cart and checkout</h3>
 
 <!--- ENGCOM-780 -->
 <ul>
-  <li>Enhancements to LESS code include moving several LESS variables  to <code class="highlighter-rouge">.lib-dropdown()</code> variables and adding <code class="highlighter-rouge">font-weight</code> variable to <code class="highlighter-rouge">navigation.less</code>. <em>Fix submitted by <a href="https://github.com/Karlasa">Karla Saaremäe</a> in pull request 13987</em>.</li>
+  <li>Enhancements to LESS code include moving several LESS variables  to <code class="language-plaintext highlighter-rouge">.lib-dropdown()</code> variables and adding <code class="language-plaintext highlighter-rouge">font-weight</code> variable to <code class="language-plaintext highlighter-rouge">navigation.less</code>. <em>Fix submitted by <a href="https://github.com/Karlasa">Karla Saaremäe</a> in pull request 13987</em>.</li>
 </ul>
 
 <!--- ENGCOM-776 -->
@@ -2889,7 +2890,7 @@
 
 <!--- ENGCOM-920 -->
 <ul>
-  <li>You can now successfully override settings in <code class="highlighter-rouge">module-directory/etc/zip_codes.xml</code>. Previously, when you tried to override these settings, Magento displayed only the last pattern from the module’s <code class="highlighter-rouge">zip_codes.xml</code>. <em>Fix submitted by <a href="https://github.com/simpleadm">Sergey P</a> in pull request 14117</em>. <a href="https://github.com/magento/magento2/issues/6694">GitHub-6694</a></li>
+  <li>You can now successfully override settings in <code class="language-plaintext highlighter-rouge">module-directory/etc/zip_codes.xml</code>. Previously, when you tried to override these settings, Magento displayed only the last pattern from the module’s <code class="language-plaintext highlighter-rouge">zip_codes.xml</code>. <em>Fix submitted by <a href="https://github.com/simpleadm">Sergey P</a> in pull request 14117</em>. <a href="https://github.com/magento/magento2/issues/6694">GitHub-6694</a></li>
 </ul>
 
 <h3 id="configurable-products">Configurable products</h3>
@@ -2903,77 +2904,77 @@
 
 <!--- ENGCOM-937 -->
 <ul>
-  <li>You can now successfully save an address with a blank address field. Previously, when you saved an address that contained no text in an optional address field, Magento threw this error, <code class="highlighter-rouge">'Exception' with message 'Notice: Array to string conversion on line 2903 in lib/internal/Magento/Framework/DB/Adapter/Pdo/Mysql.php will be raised</code>. <em>Fix submitted by <a href="https://github.com/simpleadm">Sergey P</a> in pull request 14115</em>.</li>
+  <li>You can now successfully save an address with a blank address field. Previously, when you saved an address that contained no text in an optional address field, Magento threw this error, <code class="language-plaintext highlighter-rouge">'Exception' with message 'Notice: Array to string conversion on line 2903 in lib/internal/Magento/Framework/DB/Adapter/Pdo/Mysql.php will be raised</code>. <em>Fix submitted by <a href="https://github.com/simpleadm">Sergey P</a> in pull request 14115</em>.</li>
 </ul>
 
 <!--- ENGCOM-1147 -->
 <ul>
-  <li>We’ve removed <code class="highlighter-rouge">&lt;title&gt;Billing Agreements&lt;/title&gt;</code> from the <code class="highlighter-rouge">customer_account.xml</code> file in the PayPal module. <em>Fix submitted by <a href="https://github.com/mikewhitby">Mike Whitby</a> in pull request 14323</em>.</li>
+  <li>We’ve removed <code class="language-plaintext highlighter-rouge">&lt;title&gt;Billing Agreements&lt;/title&gt;</code> from the <code class="language-plaintext highlighter-rouge">customer_account.xml</code> file in the PayPal module. <em>Fix submitted by <a href="https://github.com/mikewhitby">Mike Whitby</a> in pull request 14323</em>.</li>
 </ul>
 
 <h3 id="email">Email</h3>
 
 <!--- ENGCOM-1212 -->
 <ul>
-  <li>The color of the button on the email template when a user hovers over it has been changed from <code class="highlighter-rouge">@button-primary__color</code> to <code class="highlighter-rouge">@button-primary__hover__color</code>. <em>Fix submitted by <a href="https://github.com/Karlasa">Karla Saaremäe</a> in pull request 14497</em>.</li>
+  <li>The color of the button on the email template when a user hovers over it has been changed from <code class="language-plaintext highlighter-rouge">@button-primary__color</code> to <code class="language-plaintext highlighter-rouge">@button-primary__hover__color</code>. <em>Fix submitted by <a href="https://github.com/Karlasa">Karla Saaremäe</a> in pull request 14497</em>.</li>
 </ul>
 
 <h3 id="framework">Framework</h3>
 
 <!--- ENGCOM-1121 -->
 <ul>
-  <li>We’ve added JSON and XML support to the post method in the <code class="highlighter-rouge">\Magento\Framework\HTTP\Client\Socket</code> class. <em>Fix submitted by <a href="https://github.com/simpleadm">Sergey P</a> in pull request 14348</em>.</li>
+  <li>We’ve added JSON and XML support to the post method in the <code class="language-plaintext highlighter-rouge">\Magento\Framework\HTTP\Client\Socket</code> class. <em>Fix submitted by <a href="https://github.com/simpleadm">Sergey P</a> in pull request 14348</em>.</li>
 </ul>
 
 <!--- ENGCOM-1074 -->
 <ul>
-  <li>Navigation menus without the <code class="highlighter-rouge">display: inline-block</code> setting now work as expected on deployments running on Internet Explorer 11.x. Previously, after a page refresh, navigation menus on pages running Luma or Blank themes would not work. <em>Fix submitted by <a href="https://github.com/sergiy-v">Sergiy</a> in pull request 14332</em>.</li>
+  <li>Navigation menus without the <code class="language-plaintext highlighter-rouge">display: inline-block</code> setting now work as expected on deployments running on Internet Explorer 11.x. Previously, after a page refresh, navigation menus on pages running Luma or Blank themes would not work. <em>Fix submitted by <a href="https://github.com/sergiy-v">Sergiy</a> in pull request 14332</em>.</li>
 </ul>
 
 <!--- ENGCOM-1062 -->
 <ul>
-  <li>You can now successfully prevent the removal of a block or container by setting the <code class="highlighter-rouge">remove</code> attribute to <strong>false</strong>. Previously, setting this attribute to <strong>false</strong> did not cancel the removal of a block or container. <em>Fix submitted by <a href="https://github.com/quisse">Tommy Quissens</a> in pull request 14198</em>. <a href="https://github.com/magento/magento2/issues/1931">GitHub-1931</a></li>
+  <li>You can now successfully prevent the removal of a block or container by setting the <code class="language-plaintext highlighter-rouge">remove</code> attribute to <strong>false</strong>. Previously, setting this attribute to <strong>false</strong> did not cancel the removal of a block or container. <em>Fix submitted by <a href="https://github.com/quisse">Tommy Quissens</a> in pull request 14198</em>. <a href="https://github.com/magento/magento2/issues/1931">GitHub-1931</a></li>
 </ul>
 
 <!--- ENGCOM-947 -->
 <ul>
-  <li><code class="highlighter-rouge">String</code> type was added to <code class="highlighter-rouge">\Magento\Framework\HTTP\Client\Curl</code>  to support sending JSON or XML requests. <em>Fix submitted by <a href="https://github.com/simpleadm">Sergey P</a> in pull request 14151</em>. <a href="https://github.com/magento/magento2/issues/3489">GitHub-3489</a></li>
+  <li><code class="language-plaintext highlighter-rouge">String</code> type was added to <code class="language-plaintext highlighter-rouge">\Magento\Framework\HTTP\Client\Curl</code>  to support sending JSON or XML requests. <em>Fix submitted by <a href="https://github.com/simpleadm">Sergey P</a> in pull request 14151</em>. <a href="https://github.com/magento/magento2/issues/3489">GitHub-3489</a></li>
 </ul>
 
 <!--- ENGCOM-944 -->
 <ul>
-  <li>We’ve improved the ability to store passwords using different hashing algorithms. These improvements include changes to <code class="highlighter-rouge">\Magento\Framework\Encryption\Encryptor::getHash</code>, which previously ignored the specified hashing algorithm version that was supplied. 
+  <li>We’ve improved the ability to store passwords using different hashing algorithms. These improvements include changes to <code class="language-plaintext highlighter-rouge">\Magento\Framework\Encryption\Encryptor::getHash</code>, which previously ignored the specified hashing algorithm version that was supplied. 
 <em>Fix submitted by <a href="https://github.com/k4emic">Mads Nielsen</a> in pull request 13886</em>. <a href="https://github.com/magento/magento2/issues/5463">GitHub-5463</a></li>
 </ul>
 
 <!--- MAGETWO-69715 -->
 <ul>
-  <li>You can now cancel the removal of a block or container from a layout by setting the <code class="highlighter-rouge">remove</code> attribute value to <code class="highlighter-rouge">false</code>. <a href="https://github.com/magento/magento2/issues/1931">GitHub-1931</a></li>
+  <li>You can now cancel the removal of a block or container from a layout by setting the <code class="language-plaintext highlighter-rouge">remove</code> attribute value to <code class="language-plaintext highlighter-rouge">false</code>. <a href="https://github.com/magento/magento2/issues/1931">GitHub-1931</a></li>
 </ul>
 
 <h4 id="configuration-framework">Configuration framework</h4>
 
 <!--- ENGCOM-1011 -->
 <ul>
-  <li>You can now add an XML comment node as a parameter when adding a new widget declaration to <code class="highlighter-rouge">widget.xml</code>. Previously, if you added a comment as a parameter to a widget declaration, Magento displayed a 500 error. <em>Fix submitted by <a href="https://github.com/hostep">Pieter Hoste</a> in pull request 14219</em>. <a href="https://github.com/magento/magento2/issues/3882">GitHub-3882</a></li>
+  <li>You can now add an XML comment node as a parameter when adding a new widget declaration to <code class="language-plaintext highlighter-rouge">widget.xml</code>. Previously, if you added a comment as a parameter to a widget declaration, Magento displayed a 500 error. <em>Fix submitted by <a href="https://github.com/hostep">Pieter Hoste</a> in pull request 14219</em>. <a href="https://github.com/magento/magento2/issues/3882">GitHub-3882</a></li>
 </ul>
 
 <h3 id="general">General</h3>
 
 <!--- ENGCOM-1251 -->
 <ul>
-  <li>The  <code class="highlighter-rouge">setAttributeFilter</code> method now specifies the relevant table when calling the <code class="highlighter-rouge">addFieldToFilter</code> method. This method is called as part of the process of adding a field to the filter for the collection <code class="highlighter-rouge">Eav/Model/ResourceModel/Entity/Attribute/Option/Collection.php</code>. Previously, Magento displayed an error (<code class="highlighter-rouge">ambiguous column name</code>) when you joined tables containing column <code class="highlighter-rouge">attribute_id</code>.<br />
+  <li>The  <code class="language-plaintext highlighter-rouge">setAttributeFilter</code> method now specifies the relevant table when calling the <code class="language-plaintext highlighter-rouge">addFieldToFilter</code> method. This method is called as part of the process of adding a field to the filter for the collection <code class="language-plaintext highlighter-rouge">Eav/Model/ResourceModel/Entity/Attribute/Option/Collection.php</code>. Previously, Magento displayed an error (<code class="language-plaintext highlighter-rouge">ambiguous column name</code>) when you joined tables containing column <code class="language-plaintext highlighter-rouge">attribute_id</code>.<br />
 <em>Fix submitted by <a href="https://github.com/PierreLeMaguer">Pierre Le Maguer</a> in pull request 14596</em>. <a href="https://github.com/magento/magento2/issues/14572">GitHub-14572</a></li>
 </ul>
 
 <!--- ENGCOM-926 -->
 <ul>
-  <li>We’ve added a CodeTriage badge to the <code class="highlighter-rouge">magento/magento2</code> GitHub repository. See <a href="https://www.codetriage.com/magento/magento2">CodeTriage</a> for more information. <em>Fix submitted by <a href="https://github.com/ishakhsuvarov">Eugene Shakhsuvarov</a> in pull request 1454</em>.</li>
+  <li>We’ve added a CodeTriage badge to the <code class="language-plaintext highlighter-rouge">magento/magento2</code> GitHub repository. See <a href="https://www.codetriage.com/magento/magento2">CodeTriage</a> for more information. <em>Fix submitted by <a href="https://github.com/ishakhsuvarov">Eugene Shakhsuvarov</a> in pull request 1454</em>.</li>
 </ul>
 
 <!--- ENGCOM-903 -->
 <ul>
-  <li>The catalog gallery <code class="highlighter-rouge">allowfullscreen</code> setting In the theme’s <code class="highlighter-rouge">view.xml</code> file now works as expected. Previously, when you set the gallery’s <code class="highlighter-rouge">allowfullscreen</code> variable to <strong>false</strong>, Magento displayed a white page (instead of the product page) when a customer tapped on a product image while using a mobile device. <em>Fix submitted by <a href="https://github.com/simpleadm">Sergey P</a> in pull request 14098</em>. <a href="https://github.com/magento/magento2/issues/5808">GitHub-5808</a></li>
+  <li>The catalog gallery <code class="language-plaintext highlighter-rouge">allowfullscreen</code> setting In the theme’s <code class="language-plaintext highlighter-rouge">view.xml</code> file now works as expected. Previously, when you set the gallery’s <code class="language-plaintext highlighter-rouge">allowfullscreen</code> variable to <strong>false</strong>, Magento displayed a white page (instead of the product page) when a customer tapped on a product image while using a mobile device. <em>Fix submitted by <a href="https://github.com/simpleadm">Sergey P</a> in pull request 14098</em>. <a href="https://github.com/magento/magento2/issues/5808">GitHub-5808</a></li>
 </ul>
 
 <!--- ENGCOM-1138 -->
@@ -2983,17 +2984,17 @@
 
 <!--- ENGCOM-1145 -->
 <ul>
-  <li>Magento now installs the AdminGws module after it installs <code class="highlighter-rouge">Magento_Authorization</code>. <em>Fix submitted by <a href="https://github.com/ajpevers">Anton Evers</a> in pull request 58</em>.</li>
+  <li>Magento now installs the AdminGws module after it installs <code class="language-plaintext highlighter-rouge">Magento_Authorization</code>. <em>Fix submitted by <a href="https://github.com/ajpevers">Anton Evers</a> in pull request 58</em>.</li>
 </ul>
 
 <!--- MAGETWO-88277 -->
 <ul>
-  <li>We added a RewriteBase directive template to the <code class="highlighter-rouge">.htaccess</code> file in the  <code class="highlighter-rouge">pub/static</code> folder. Previously, if you set this directive in the <code class="highlighter-rouge">.htaccess</code> file in your Magento root directory, the Apache web server would miss files.  <em>Fix submitted by <a href="https://github.com/ccasciotti">Cristiano Casciotti</a> in pull request 13812</em>.</li>
+  <li>We added a RewriteBase directive template to the <code class="language-plaintext highlighter-rouge">.htaccess</code> file in the  <code class="language-plaintext highlighter-rouge">pub/static</code> folder. Previously, if you set this directive in the <code class="language-plaintext highlighter-rouge">.htaccess</code> file in your Magento root directory, the Apache web server would miss files.  <em>Fix submitted by <a href="https://github.com/ccasciotti">Cristiano Casciotti</a> in pull request 13812</em>.</li>
 </ul>
 
 <!--- MAGETWO-87606 -->
 <ul>
-  <li>The <code class="highlighter-rouge">robots.txt</code> response header content type is now plain text. <em>Fix submitted by <a href="https://github.com/hostep">Pieter Hoste</a> in pull request 13550</em>. <a href="https://github.com/magento/magento2/issues/13214">GitHub-13214</a></li>
+  <li>The <code class="language-plaintext highlighter-rouge">robots.txt</code> response header content type is now plain text. <em>Fix submitted by <a href="https://github.com/hostep">Pieter Hoste</a> in pull request 13550</em>. <a href="https://github.com/magento/magento2/issues/13214">GitHub-13214</a></li>
 </ul>
 
 <!--- MAGETWO-87571 -->
@@ -3029,7 +3030,7 @@
 
 <!--- ENGCOM-952 -->
 <ul>
-  <li>We’ve added a <code class="highlighter-rouge">mage/translate</code> component to the customer AJAX login action component, which enables the translation of the  message that Magento displays if an AJAX call fails (<code class="highlighter-rouge">Could not authenticate. Please try again later</code>). Previously, Magento printed that message in English only, regardless of the storefront’s language setting. <em>Fix submitted by <a href="https://github.com/ccasciotti">Cristiano Casciotti</a> in pull request 14168</em>.</li>
+  <li>We’ve added a <code class="language-plaintext highlighter-rouge">mage/translate</code> component to the customer AJAX login action component, which enables the translation of the  message that Magento displays if an AJAX call fails (<code class="language-plaintext highlighter-rouge">Could not authenticate. Please try again later</code>). Previously, Magento printed that message in English only, regardless of the storefront’s language setting. <em>Fix submitted by <a href="https://github.com/ccasciotti">Cristiano Casciotti</a> in pull request 14168</em>.</li>
 </ul>
 
 <!--- NOT NEEDED   MAGETWO-90925   MAGETWO-90394  MAGETWO-90069  MAGETWO-90063 MAGETWO-89614 MAGETWO-89611 MAGETWO-88653 MAGETWO-88648 MAGETWO-88647 MAGETWO-88644 MAGETWO-88606 MAGETWO-88602 MAGETWO-86797 MAGETWO-85137 MAGETWO-85983 ENGCOM-644-->

@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Locator functions | Magento 2 Developer Documentation (copy)</title>
+	<title>Locator functions | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -2091,32 +2090,31 @@
 	<h1 class="page-heading">Locator functions</h1>
 </section>
 
-			
-<p style="text-align: right"><em>This topic was updated due to the 2.0.2 MFTF release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.0.2 MFTF release.</em></p>
 
 <h2 id="define-locatorfunctions-in-elements">Define Locator::functions in elements</h2>
 
 <p>Codeception has a set of very useful <a href="http://codeception.com/docs/reference/Locator">Locator functions</a> that may be used by elements inside a <a href="../section.html">section</a>.</p>
 
-<p>Declare an element with a <code class="highlighter-rouge">locatorFunction</code>:</p>
+<p>Declare an element with a <code class="language-plaintext highlighter-rouge">locatorFunction</code>:</p>
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"simpleLocator"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">locatorFunction=</span><span class="s">"Locator::contains('label', 'Name')"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<p>When using the <code class="highlighter-rouge">locatorFunction</code>, omit <code class="highlighter-rouge">Locator::</code> for code simplicity:</p>
+<p>When using the <code class="language-plaintext highlighter-rouge">locatorFunction</code>, omit <code class="language-plaintext highlighter-rouge">Locator::</code> for code simplicity:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"simpleLocatorShorthand"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">locatorFunction=</span><span class="s">"contains('label', 'Name')"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<p>An element’s <code class="highlighter-rouge">locatorFunction</code> can also be parameterized the same way as <a href="./parameterized-selectors.html">parameterized selectors</a>:</p>
+<p>An element’s <code class="language-plaintext highlighter-rouge">locatorFunction</code> can also be parameterized the same way as <a href="./parameterized-selectors.html">parameterized selectors</a>:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"simpleLocatorTwoParam"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">locatorFunction=</span><span class="s">"contains({{arg1}}, {{arg2}})"</span> <span class="na">parameterized=</span><span class="s">"true"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<p>An element cannot, however, have both a <code class="highlighter-rouge">selector</code> and a <code class="highlighter-rouge">locatorFunction</code>.</p>
+<p>An element cannot, however, have both a <code class="language-plaintext highlighter-rouge">selector</code> and a <code class="language-plaintext highlighter-rouge">locatorFunction</code>.</p>
 
 <h2 id="call-elements-that-use-locatorfunction">Call Elements that use locatorFunction</h2>
 
-<p>Given the above element definitions, you call the elements in a test just like any other element. No special reference is required, as you are still just referring to an <code class="highlighter-rouge">element</code> inside a <code class="highlighter-rouge">section</code>:</p>
+<p>Given the above element definitions, you call the elements in a test just like any other element. No special reference is required, as you are still just referring to an <code class="language-plaintext highlighter-rouge">element</code> inside a <code class="language-plaintext highlighter-rouge">section</code>:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;test</span> <span class="na">name=</span><span class="s">"LocatorFuctionTest"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">"{{LocatorFunctionSection.simpleLocator}}"</span> <span class="na">stepKey=</span><span class="s">"SimpleLocator"</span><span class="nt">/&gt;</span>

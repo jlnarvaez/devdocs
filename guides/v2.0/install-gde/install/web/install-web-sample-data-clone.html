@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Install by cloning repositories | Magento 2 Developer Documentation (copy)</title>
+	<title>Install by cloning repositories | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/install-gde/install/web/install-web-sample-data-clone.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/install-gde/install/web/install-web-sample-data-clone.html">Magento 2.0</a></li>
 		
@@ -4436,7 +4437,7 @@
   <li>You <a href="/devdocs/guides/v2.0/install-gde/prereq/dev_install.html">cloned the Magento 2 repository</a>.</li>
 </ul>
 
-<p class="bs-callout bs-callout-warning">You can use sample data with either the <code class="highlighter-rouge">develop</code> branch (more current) or a released branch (such as <code class="highlighter-rouge">2.2</code> or <code class="highlighter-rouge">2.2.5</code> (more stable)). We recommend you use a released branch because it’s more stable. If you’re contributing code to the Magento 2 repository and you need the most recent code, use the <code class="highlighter-rouge">develop</code> branch. Regardless of the branch you choose, you must <a href="/devdocs/guides/v2.0/install-gde/prereq/dev_install.html">clone</a> the corresponding branch of the Magento 2 GitHub repository. For example, sample data for the <code class="highlighter-rouge">develop</code> branch can be used <em>only</em> with the Magento 2 <code class="highlighter-rouge">develop</code> branch.</p>
+<p class="bs-callout bs-callout-warning">You can use sample data with either the <code class="language-plaintext highlighter-rouge">develop</code> branch (more current) or a released branch (such as <code class="language-plaintext highlighter-rouge">2.2</code> or <code class="language-plaintext highlighter-rouge">2.2.5</code> (more stable)). We recommend you use a released branch because it’s more stable. If you’re contributing code to the Magento 2 repository and you need the most recent code, use the <code class="language-plaintext highlighter-rouge">develop</code> branch. Regardless of the branch you choose, you must <a href="/devdocs/guides/v2.0/install-gde/prereq/dev_install.html">clone</a> the corresponding branch of the Magento 2 GitHub repository. For example, sample data for the <code class="language-plaintext highlighter-rouge">develop</code> branch can be used <em>only</em> with the Magento 2 <code class="language-plaintext highlighter-rouge">develop</code> branch.</p>
 
 <p>See the following sections:</p>
 
@@ -4471,46 +4472,46 @@
   <li>
     <p>Change to your web server’s docroot directory.</p>
 
-    <p>Typically, for Ubuntu, it’s <code class="highlighter-rouge">/var/www</code> and for CentOS it’s <code class="highlighter-rouge">/var/www/html</code>.</p>
+    <p>Typically, for Ubuntu, it’s <code class="language-plaintext highlighter-rouge">/var/www</code> and for CentOS it’s <code class="language-plaintext highlighter-rouge">/var/www/html</code>.</p>
 
     <p>Need <a href="/devdocs/guides/v2.0/install-gde/basics/basics_docroot.html">help locating the docroot?</a></p>
   </li>
   <li>
-    <p>Enter <code class="highlighter-rouge">git clone</code> and paste the value you obtained from step 1.</p>
+    <p>Enter <code class="language-plaintext highlighter-rouge">git clone</code> and paste the value you obtained from step 1.</p>
 
     <p>An example follows:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git clone git@github.com:magento/magento2-sample-data.git
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git clone git@github.com:magento/magento2-sample-data.git
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Wait for the repository to clone on your server.</p>
 
     <p class="bs-callout bs-callout-info">If the following error displays, make sure you <a href="https://help.github.com/articles/generating-ssh-keys/">shared your SSH key</a> with GitHub:<br /></p>
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Cloning into 'magento2'...
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Cloning into 'magento2'...
 Permission denied (publickey).
 fatal: The remote end hung up unexpectedly
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Ensure you checkout the branch of the sample data repository that corresponds with the branch you used from the main <code class="highlighter-rouge">magento2</code> repository.</p>
+    <p>Ensure you checkout the branch of the sample data repository that corresponds with the branch you used from the main <code class="language-plaintext highlighter-rouge">magento2</code> repository.</p>
 
     <p>For example:</p>
 
-    <p>If you used the <code class="highlighter-rouge">2.2-develop</code> branch of the Magento 2 repository, the Sample Data branch should be <code class="highlighter-rouge">2.2-develop</code>.</p>
+    <p>If you used the <code class="language-plaintext highlighter-rouge">2.2-develop</code> branch of the Magento 2 repository, the Sample Data branch should be <code class="language-plaintext highlighter-rouge">2.2-develop</code>.</p>
 
-    <p>If you used the <code class="highlighter-rouge">2.2.5</code> branch of the Magento 2 repository, the Sample Data branch should be <code class="highlighter-rouge">2.2.5</code>.</p>
+    <p>If you used the <code class="language-plaintext highlighter-rouge">2.2.5</code> branch of the Magento 2 repository, the Sample Data branch should be <code class="language-plaintext highlighter-rouge">2.2.5</code>.</p>
 
-    <p>To checkout the correct branch, run the following command from the sample data repository’s root directory (assuming you need the <code class="highlighter-rouge">2.2.5</code> branch):</p>
+    <p>To checkout the correct branch, run the following command from the sample data repository’s root directory (assuming you need the <code class="language-plaintext highlighter-rouge">2.2.5</code> branch):</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git checkout 2.2.5
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git checkout 2.2.5
 </code></pre></div>    </div>
   </li>
-  <li>Change to <code class="highlighter-rouge">&lt;your Magento installation directory&gt;</code>.</li>
+  <li>Change to <code class="language-plaintext highlighter-rouge">&lt;your Magento installation directory&gt;</code>.</li>
   <li>
     <p>Enter the following command to create symbolic links between the files you just cloned so sample data works properly:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php -f &lt;sample-data_clone_dir&gt;/dev/tools/build-sample-data.php -- --ce-source="&lt;path_to_your_magento_instance&gt;"
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php -f &lt;sample-data_clone_dir&gt;/dev/tools/build-sample-data.php -- --ce-source="&lt;path_to_your_magento_instance&gt;"
 </code></pre></div>    </div>
   </li>
   <li>
@@ -4536,52 +4537,52 @@ fatal: The remote end hung up unexpectedly
   <li>
     <p>Change to your web server’s docroot directory.</p>
 
-    <p>Typically, for Ubuntu, it’s <code class="highlighter-rouge">/var/www</code> and for CentOS it’s <code class="highlighter-rouge">/var/www/html</code>.</p>
+    <p>Typically, for Ubuntu, it’s <code class="language-plaintext highlighter-rouge">/var/www</code> and for CentOS it’s <code class="language-plaintext highlighter-rouge">/var/www/html</code>.</p>
   </li>
   <li>
-    <p>Enter <code class="highlighter-rouge">git clone</code> and paste the value you obtained from step 1.</p>
+    <p>Enter <code class="language-plaintext highlighter-rouge">git clone</code> and paste the value you obtained from step 1.</p>
 
     <p>An example follows:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git clone https://github.com/magento/magento2-sample-data.git
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git clone https://github.com/magento/magento2-sample-data.git
 </code></pre></div>    </div>
   </li>
   <li>Wait for the repository to clone on your server.</li>
   <li>
-    <p>Ensure you checkout the branch of the sample data repository that corresponds with the branch you used from the main <code class="highlighter-rouge">magento2</code> repository.</p>
+    <p>Ensure you checkout the branch of the sample data repository that corresponds with the branch you used from the main <code class="language-plaintext highlighter-rouge">magento2</code> repository.</p>
 
     <p>For example:</p>
 
-    <p>If you used the <code class="highlighter-rouge">2.2-develop</code> branch of the Magento 2 repository, the Sample Data branch should be <code class="highlighter-rouge">2.2-develop</code>.</p>
+    <p>If you used the <code class="language-plaintext highlighter-rouge">2.2-develop</code> branch of the Magento 2 repository, the Sample Data branch should be <code class="language-plaintext highlighter-rouge">2.2-develop</code>.</p>
 
-    <p>If you used the <code class="highlighter-rouge">2.2.5</code> branch of the Magento 2 repository, the Sample Data branch should be <code class="highlighter-rouge">2.2.5</code>.</p>
+    <p>If you used the <code class="language-plaintext highlighter-rouge">2.2.5</code> branch of the Magento 2 repository, the Sample Data branch should be <code class="language-plaintext highlighter-rouge">2.2.5</code>.</p>
 
-    <p>To checkout the correct branch, run the following command from the sample data repository’s root directory (assuming you need the <code class="highlighter-rouge">2.2.5</code> branch):</p>
+    <p>To checkout the correct branch, run the following command from the sample data repository’s root directory (assuming you need the <code class="language-plaintext highlighter-rouge">2.2.5</code> branch):</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git checkout 2.2.5
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git checkout 2.2.5
 </code></pre></div>    </div>
   </li>
-  <li>Change to <code class="highlighter-rouge">&lt;your Magento installation directory&gt;</code>.</li>
+  <li>Change to <code class="language-plaintext highlighter-rouge">&lt;your Magento installation directory&gt;</code>.</li>
   <li>
     <p>Enter the following command to create symbolic links between the files you just cloned so sample data works properly:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php -f &lt;sample-data_clone_dir&gt;/dev/tools/build-sample-data.php -- --ce-source="&lt;path_to_your_magento_instance&gt;"
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php -f &lt;sample-data_clone_dir&gt;/dev/tools/build-sample-data.php -- --ce-source="&lt;path_to_your_magento_instance&gt;"
 </code></pre></div>    </div>
 
     <p>For example,</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php -f &lt;sample-data_clone_dir&gt;/dev/tools/build-sample-data.php -- --ce-source="/var/www/magento2"
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php -f &lt;sample-data_clone_dir&gt;/dev/tools/build-sample-data.php -- --ce-source="/var/www/magento2"
 </code></pre></div>    </div>
   </li>
   <li>Wait for the command to complete.</li>
   <li>See the next section.</li>
 </ol>
 
-<p class="bs-callout bs-callout-warning">If you’re installing sample data <em>after</em> installing Magento, you must also run the following command to update the database and schema: <code class="highlighter-rouge">php &lt;your Magento install dir&gt;/bin/magento setup:upgrade</code>.</p>
+<p class="bs-callout bs-callout-warning">If you’re installing sample data <em>after</em> installing Magento, you must also run the following command to update the database and schema: <code class="language-plaintext highlighter-rouge">php &lt;your Magento install dir&gt;/bin/magento setup:upgrade</code>.</p>
 
 <h2 id="samp-data-perms">Set file system ownership and permissions</h2>
 
-<p>Because the <code class="highlighter-rouge">php build-sample-data.php</code> script creates symlinks between the sample data repository and your Magento 2 repository, you must set file system permissions and ownership in the sample data repository. Failure to do so results in errors accessing the storefront.</p>
+<p>Because the <code class="language-plaintext highlighter-rouge">php build-sample-data.php</code> script creates symlinks between the sample data repository and your Magento 2 repository, you must set file system permissions and ownership in the sample data repository. Failure to do so results in errors accessing the storefront.</p>
 
 <p>To set file system permissions and ownership on the sample data repository:</p>
 
@@ -4590,25 +4591,25 @@ fatal: The remote end hung up unexpectedly
   <li>
     <p>Set ownership:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>chown -R :&lt;your web server group name&gt; .
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>chown -R :&lt;your web server group name&gt; .
 </code></pre></div>    </div>
 
     <p>Typical examples:</p>
 
-    <p>CentOS: <code class="highlighter-rouge">chown -R :apache .</code></p>
+    <p>CentOS: <code class="language-plaintext highlighter-rouge">chown -R :apache .</code></p>
 
-    <p>Ubuntu: <code class="highlighter-rouge">chown -R :www-data .</code></p>
+    <p>Ubuntu: <code class="language-plaintext highlighter-rouge">chown -R :www-data .</code></p>
   </li>
   <li>
     <p>Set permissions:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>find . -type d -exec chmod g+ws {} +
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>find . -type d -exec chmod g+ws {} +
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Clear static files:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd &lt;your Magento Open Source install dir&gt;/var
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd &lt;your Magento Open Source install dir&gt;/var
 rm -rf cache/* page_cache/* generation/*
 </code></pre></div>    </div>
   </li>

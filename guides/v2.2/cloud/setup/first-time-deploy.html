@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>First time deployment | Magento 2 Developer Documentation (copy)</title>
+	<title>First time deployment | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/setup/first-time-deploy.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/setup/first-time-deploy.html">Magento 2.0</a></li>
 		
@@ -4319,15 +4320,15 @@
 <h4 id="previous-step">Previous step:</h4>
 <p><a href="/devdocs/guides/v2.2/cloud/before/before-setup-env-install.html">Install Magento</a></p>
 
-<p class="bs-callout bs-callout-info">You only need to complete this step one time for a new <strong>Pro project</strong>. This code is already on <code class="highlighter-rouge">master</code> for the Starter project. As a best practice, you need to have the template Magento Commerce project (or <code class="highlighter-rouge">master</code> branch) fully deployed across all environments to ensure all future code pushes correctly deploy.</p>
+<p class="bs-callout bs-callout-info">You only need to complete this step one time for a new <strong>Pro project</strong>. This code is already on <code class="language-plaintext highlighter-rouge">master</code> for the Starter project. As a best practice, you need to have the template Magento Commerce project (or <code class="language-plaintext highlighter-rouge">master</code> branch) fully deployed across all environments to ensure all future code pushes correctly deploy.</p>
 
-<p>After fully setting up your local workspace, for <strong>Pro</strong> you should have the cloned Integration <code class="highlighter-rouge">master</code> branch on your local. To finish your initial setup, we <strong>strongly recommend fully deploying</strong> <code class="highlighter-rouge">master</code> branch to Staging and Production environments. You only need to push this branch from Integration to Staging and Production once without any changes. This fully installs the base Magento Commerce application into those environments.</p>
+<p>After fully setting up your local workspace, for <strong>Pro</strong> you should have the cloned Integration <code class="language-plaintext highlighter-rouge">master</code> branch on your local. To finish your initial setup, we <strong>strongly recommend fully deploying</strong> <code class="language-plaintext highlighter-rouge">master</code> branch to Staging and Production environments. You only need to push this branch from Integration to Staging and Production once without any changes. This fully installs the base Magento Commerce application into those environments.</p>
 
 <p>This initial push provides the following benefits:</p>
 
 <ul>
   <li>Fully installs Magento in each environment</li>
-  <li>Allows the build/deploy scripts to use the <code class="highlighter-rouge">setup:upgrade</code> command instead of <code class="highlighter-rouge">setup:install</code> (important for adding extensions)</li>
+  <li>Allows the build/deploy scripts to use the <code class="language-plaintext highlighter-rouge">setup:upgrade</code> command instead of <code class="language-plaintext highlighter-rouge">setup:install</code> (important for adding extensions)</li>
   <li>Pushes the Magento encryption key across all environments</li>
   <li>
     <p>Protects against errors and failures when installing with added modules and extensions</p>
@@ -4341,7 +4342,7 @@
 <p>To deploy, you need the following:</p>
 
 <ul>
-  <li>A project with an unmodified Magento Commerce template <code class="highlighter-rouge">master</code> branch (projects created using the import option may encounter issues)</li>
+  <li>A project with an unmodified Magento Commerce template <code class="language-plaintext highlighter-rouge">master</code> branch (projects created using the import option may encounter issues)</li>
   <li>Staging and Production environments provisioned</li>
   <li>SSH access to Staging and Production environments</li>
 </ul>
@@ -4372,7 +4373,7 @@
 
 <h2 id="ssh">Deploy using SSH</h2>
 
-<p>If you prefer to use CLI for deploying, you will need to configure additional SSH settings and Git remotes to use commands. You can SSH into the Staging and Production environments to push the <code class="highlighter-rouge">master</code> branch.</p>
+<p>If you prefer to use CLI for deploying, you will need to configure additional SSH settings and Git remotes to use commands. You can SSH into the Staging and Production environments to push the <code class="language-plaintext highlighter-rouge">master</code> branch.</p>
 
 <p>You’ll need the SSH and Git with your project ID. The formats are as follows:</p>
 
@@ -4381,16 +4382,16 @@
     <p>Git URL format:</p>
 
     <ul>
-      <li>Staging: <code class="highlighter-rouge">git@git.ent.magento.cloud:&lt;project ID&gt;_stg.git</code></li>
-      <li>Production: <code class="highlighter-rouge">git@git.ent.magento.cloud:&lt;project ID&gt;.git</code></li>
+      <li>Staging: <code class="language-plaintext highlighter-rouge">git@git.ent.magento.cloud:&lt;project ID&gt;_stg.git</code></li>
+      <li>Production: <code class="language-plaintext highlighter-rouge">git@git.ent.magento.cloud:&lt;project ID&gt;.git</code></li>
     </ul>
   </li>
   <li>
     <p>SSH URL format:</p>
 
     <ul>
-      <li>Staging: <code class="highlighter-rouge">&lt;project ID&gt;_stg@&lt;project ID&gt;.ent.magento.cloud</code></li>
-      <li>Production: <code class="highlighter-rouge">&lt;project ID&gt;@&lt;project ID&gt;.ent.magento.cloud</code></li>
+      <li>Staging: <code class="language-plaintext highlighter-rouge">&lt;project ID&gt;_stg@&lt;project ID&gt;.ent.magento.cloud</code></li>
+      <li>Production: <code class="language-plaintext highlighter-rouge">&lt;project ID&gt;@&lt;project ID&gt;.ent.magento.cloud</code></li>
     </ul>
   </li>
 </ul>
@@ -4410,12 +4411,12 @@
 
 <p>Command syntax:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git remote add &lt;remote repository name&gt; &lt;remote repository URL&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git remote add &lt;remote repository name&gt; &lt;remote repository URL&gt;
 </code></pre></div></div>
 
 <p>For example,</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git remote add staging git@git.ent.magento.cloud:dr5q6no7mhqip_stg.git
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git remote add staging git@git.ent.magento.cloud:dr5q6no7mhqip_stg.git
 git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
 </code></pre></div></div>
 
@@ -4432,19 +4433,19 @@ git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
   <li>
     <p>Enter the following command:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ssh-add -l
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ssh-add -l
 </code></pre></div>    </div>
 
     <p>One of the following messages displays:</p>
 
     <ul>
       <li>
-        <p>Working SSH agent: <code class="highlighter-rouge">2048 ab:de:56:94:e3:1e:71:c3:4f:df:e1:62:8d:29:a5:c0 /home/magento_user/.ssh/id_rsa (RSA)</code></p>
+        <p>Working SSH agent: <code class="language-plaintext highlighter-rouge">2048 ab:de:56:94:e3:1e:71:c3:4f:df:e1:62:8d:29:a5:c0 /home/magento_user/.ssh/id_rsa (RSA)</code></p>
 
         <p>Skip the next step and continue with step 4.</p>
       </li>
       <li>
-        <p>SSH agent not started: <code class="highlighter-rouge">Could not open a connection to your authentication agent.</code></p>
+        <p>SSH agent not started: <code class="language-plaintext highlighter-rouge">Could not open a connection to your authentication agent.</code></p>
 
         <p>Continue with step 3.</p>
       </li>
@@ -4453,7 +4454,7 @@ git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
   <li>
     <p>To start the SSH agent, enter the following command:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>  eval $(ssh-agent -s)
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>  eval $(ssh-agent -s)
 </code></pre></div>    </div>
 
     <p>The agent’s process ID (PID) displays.</p>
@@ -4461,12 +4462,12 @@ git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
   <li>
     <p>Add your SSH key to the agent:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>  ssh-add ~/.ssh/id_rsa
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>  ssh-add ~/.ssh/id_rsa
 </code></pre></div>    </div>
 
     <p>A message similar to the following displays:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>  Identity added: /home/magento_user/.ssh/id_rsa (/home/magento_user/.ssh/id_rsa)
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>  Identity added: /home/magento_user/.ssh/id_rsa (/home/magento_user/.ssh/id_rsa)
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -4480,14 +4481,14 @@ git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
     <p>Open an SSH connection to your Staging or Production environment:</p>
 
     <ul>
-      <li>Staging: <code class="highlighter-rouge">ssh -A &lt;project ID&gt;_stg@&lt;project ID&gt;.ent.magento.cloud</code></li>
-      <li>Production: <code class="highlighter-rouge">ssh -A &lt;project ID&gt;@&lt;project ID&gt;.ent.magento.cloud</code></li>
+      <li>Staging: <code class="language-plaintext highlighter-rouge">ssh -A &lt;project ID&gt;_stg@&lt;project ID&gt;.ent.magento.cloud</code></li>
+      <li>Production: <code class="language-plaintext highlighter-rouge">ssh -A &lt;project ID&gt;@&lt;project ID&gt;.ent.magento.cloud</code></li>
     </ul>
   </li>
   <li>
-    <p>Pull the <code class="highlighter-rouge">master</code> branch to the server.</p>
+    <p>Pull the <code class="language-plaintext highlighter-rouge">master</code> branch to the server.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> git pull origin master
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> git pull origin master
 </code></pre></div>    </div>
   </li>
 </ol>

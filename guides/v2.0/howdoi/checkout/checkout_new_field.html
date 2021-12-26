@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Add a new field in address form | Magento 2 Developer Documentation (copy)</title>
+	<title>Add a new field in address form | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/howdoi/checkout/checkout_new_field.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/howdoi/checkout/checkout_new_field.html">Magento 2.0</a></li>
 		
@@ -1444,17 +1445,17 @@ take the steps described further.</p>
 
 <h2 id="add">Step 1: Add the field to layout</h2>
 
-<p>Both shipping address and billing address forms are <a href="/devdocs/guides/v2.0/howdoi/checkout/checkout_form.html#dynamic_form">generated dynamically</a>. To modify its layout, you need to create a <a href="/devdocs/guides/v2.0/extension-dev-guide/plugins.html">plugin</a> for the <code class="highlighter-rouge">\Magento\Checkout\Block\Checkout\LayoutProcessor::process</code> method.</p>
+<p>Both shipping address and billing address forms are <a href="/devdocs/guides/v2.0/howdoi/checkout/checkout_form.html#dynamic_form">generated dynamically</a>. To modify its layout, you need to create a <a href="/devdocs/guides/v2.0/extension-dev-guide/plugins.html">plugin</a> for the <code class="language-plaintext highlighter-rouge">\Magento\Checkout\Block\Checkout\LayoutProcessor::process</code> method.</p>
 
-<p>The following is a sample logic for a plugin method adding a field named <code class="highlighter-rouge">Custom Attribute</code> to the shipping address form:</p>
+<p>The following is a sample logic for a plugin method adding a field named <code class="language-plaintext highlighter-rouge">Custom Attribute</code> to the shipping address form:</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="o">&lt;?</span><span class="nx">php</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="o">&lt;?</span><span class="n">php</span>
 <span class="nv">$customAttributeCode</span> <span class="o">=</span> <span class="s1">'custom_field'</span><span class="p">;</span>
 <span class="nv">$customField</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">'component'</span> <span class="o">=&gt;</span> <span class="s1">'Magento_Ui/js/form/element/abstract'</span><span class="p">,</span>
     <span class="s1">'config'</span> <span class="o">=&gt;</span> <span class="p">[</span>
-        <span class="c1">// customScope is used to group elements within a single form (e.g. they can be validated separately)
-</span>        <span class="s1">'customScope'</span> <span class="o">=&gt;</span> <span class="s1">'shippingAddress.custom_attributes'</span><span class="p">,</span>
+        <span class="c1">// customScope is used to group elements within a single form (e.g. they can be validated separately)</span>
+        <span class="s1">'customScope'</span> <span class="o">=&gt;</span> <span class="s1">'shippingAddress.custom_attributes'</span><span class="p">,</span>
         <span class="s1">'customEntry'</span> <span class="o">=&gt;</span> <span class="kc">null</span><span class="p">,</span>
         <span class="s1">'template'</span> <span class="o">=&gt;</span> <span class="s1">'ui/form/field'</span><span class="p">,</span>
         <span class="s1">'elementTmpl'</span> <span class="o">=&gt;</span> <span class="s1">'ui/form/element/input'</span><span class="p">,</span>
@@ -1462,7 +1463,7 @@ take the steps described further.</p>
             <span class="s1">'description'</span> <span class="o">=&gt;</span> <span class="s1">'this is what the field is for'</span><span class="p">,</span>
         <span class="p">],</span>
     <span class="p">],</span>
-    <span class="s1">'dataScope'</span> <span class="o">=&gt;</span> <span class="s1">'shippingAddress.custom_attributes'</span> <span class="o">.</span> <span class="s1">'.'</span> <span class="o">.</span> <span class="nv">$customAttributeCode</span><span class="p">,</span>
+    <span class="s1">'dataScope'</span> <span class="o">=&gt;</span> <span class="s1">'shippingAddress.custom_attributes'</span> <span class="mf">.</span> <span class="s1">'.'</span> <span class="mf">.</span> <span class="nv">$customAttributeCode</span><span class="p">,</span>
     <span class="s1">'label'</span> <span class="o">=&gt;</span> <span class="s1">'Custom Attribute'</span><span class="p">,</span>
     <span class="s1">'provider'</span> <span class="o">=&gt;</span> <span class="s1">'checkoutProvider'</span><span class="p">,</span>
     <span class="s1">'sortOrder'</span> <span class="o">=&gt;</span> <span class="mi">0</span><span class="p">,</span>
@@ -1478,12 +1479,12 @@ take the steps described further.</p>
 <span class="nv">$jsLayout</span><span class="p">[</span><span class="s1">'components'</span><span class="p">][</span><span class="s1">'checkout'</span><span class="p">][</span><span class="s1">'children'</span><span class="p">][</span><span class="s1">'steps'</span><span class="p">][</span><span class="s1">'children'</span><span class="p">][</span><span class="s1">'shipping-step'</span><span class="p">][</span><span class="s1">'children'</span><span class="p">][</span><span class="s1">'shippingAddress'</span><span class="p">][</span><span class="s1">'children'</span><span class="p">][</span><span class="s1">'shipping-address-fieldset'</span><span class="p">][</span><span class="s1">'children'</span><span class="p">][</span><span class="nv">$customAttributeCode</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$customField</span><span class="p">;</span>
 </code></pre></div></div>
 
-<p>This way, your field is added to the <code class="highlighter-rouge">customAttributes</code> property of <code class="highlighter-rouge">'Magento_Checkout/js/model/new-customer-address.js</code>, a JS object that lists all predefined address attributes and matches the corresponding server-side interface <code class="highlighter-rouge">\Magento\Quote\Api\Data\AddressInterface</code>. The <code class="highlighter-rouge">customAttributes</code> property was designed to contain custom EAV address attributes and is related to <code class="highlighter-rouge">\Magento\Quote\Model\Quote\Address\CustomAttributeListInterface::getAttributes</code> method. The code above will automatically handle local storage persistence on   <span term-uuid="b00459e5-a793-44dd-98d5-852ab33fc344" class="glossary-term" data-toggle="popover">frontend</span>
+<p>This way, your field is added to the <code class="language-plaintext highlighter-rouge">customAttributes</code> property of <code class="language-plaintext highlighter-rouge">'Magento_Checkout/js/model/new-customer-address.js</code>, a JS object that lists all predefined address attributes and matches the corresponding server-side interface <code class="language-plaintext highlighter-rouge">\Magento\Quote\Api\Data\AddressInterface</code>. The <code class="language-plaintext highlighter-rouge">customAttributes</code> property was designed to contain custom EAV address attributes and is related to <code class="language-plaintext highlighter-rouge">\Magento\Quote\Model\Quote\Address\CustomAttributeListInterface::getAttributes</code> method. The code above will automatically handle local storage persistence on   <span term-uuid="b00459e5-a793-44dd-98d5-852ab33fc344" class="glossary-term" data-toggle="popover">frontend</span>
 .</p>
 
-<p>Optionally, instead of adding a plugin, you can use <a href="/devdocs/guides/v2.0/extension-dev-guide/depend-inj.html">dependency injection (DI)</a>. For this, in <code class="highlighter-rouge">&lt;your_module_dir&gt;/Block/Checkout/</code> directory, add the <code class="highlighter-rouge">LayoutProcessor</code> class adding the custom field to the address form. The class must implement the <code class="highlighter-rouge">\Magento\Checkout\Block\Checkout\LayoutProcessorInterface</code> interface. You can use the code sample above as an example of the <code class="highlighter-rouge">\Magento\Checkout\Block\Checkout\LayoutProcessorInterface::process()</code> method implementation.</p>
+<p>Optionally, instead of adding a plugin, you can use <a href="/devdocs/guides/v2.0/extension-dev-guide/depend-inj.html">dependency injection (DI)</a>. For this, in <code class="language-plaintext highlighter-rouge">&lt;your_module_dir&gt;/Block/Checkout/</code> directory, add the <code class="language-plaintext highlighter-rouge">LayoutProcessor</code> class adding the custom field to the address form. The class must implement the <code class="language-plaintext highlighter-rouge">\Magento\Checkout\Block\Checkout\LayoutProcessorInterface</code> interface. You can use the code sample above as an example of the <code class="language-plaintext highlighter-rouge">\Magento\Checkout\Block\Checkout\LayoutProcessorInterface::process()</code> method implementation.</p>
 
-<p>To add your <code class="highlighter-rouge">LayoutProcessor</code> class the corresponding pool of processors, in the <code class="highlighter-rouge">&lt;your_module_dir&gt;/etc/frontend/di.xml</code> file specify the following where <code class="highlighter-rouge">%unique_name%</code> and <code class="highlighter-rouge">%path\to\your\LayoutProcessor%</code> must be replaced by your real values.:</p>
+<p>To add your <code class="language-plaintext highlighter-rouge">LayoutProcessor</code> class the corresponding pool of processors, in the <code class="language-plaintext highlighter-rouge">&lt;your_module_dir&gt;/etc/frontend/di.xml</code> file specify the following where <code class="language-plaintext highlighter-rouge">%unique_name%</code> and <code class="language-plaintext highlighter-rouge">%path\to\your\LayoutProcessor%</code> must be replaced by your real values.:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Checkout\Block\Onepage"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;arguments&gt;</span>
@@ -1498,28 +1499,28 @@ take the steps described further.</p>
 
 <p>Add a JS   <span term-uuid="1a305bdb-9be8-44aa-adad-98758821d6a7" class="glossary-term" data-toggle="popover">mixin</span>
  to change the behavior of the component responsible for the data submission to the   <span term-uuid="ebe2cd14-d6d4-4d75-b3d7-a4f2384e5af9" class="glossary-term" data-toggle="popover">server side</span>
-. In your custom module, define a mixin as a separate AMD module that returns a callback function. Add the mixin file anywhere in the <code class="highlighter-rouge">&lt;your_module_dir&gt;/view/frontend/web</code> directory. There are no strict requirements for the mixin file naming.</p>
+. In your custom module, define a mixin as a separate AMD module that returns a callback function. Add the mixin file anywhere in the <code class="language-plaintext highlighter-rouge">&lt;your_module_dir&gt;/view/frontend/web</code> directory. There are no strict requirements for the mixin file naming.</p>
 
-<p>The following is a sample mixin modifying the behavior of <code class="highlighter-rouge">Magento_Checkout/js/action/set-shipping-information</code> (this component is responsible for data submission between shipping and billing checkout steps):</p>
+<p>The following is a sample mixin modifying the behavior of <code class="language-plaintext highlighter-rouge">Magento_Checkout/js/action/set-shipping-information</code> (this component is responsible for data submission between shipping and billing checkout steps):</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="cm">/*jshint browser:true jquery:true*/</span>
 <span class="cm">/*global alert*/</span>
 <span class="nx">define</span><span class="p">([</span>
-    <span class="s1">'jquery'</span><span class="p">,</span>
-    <span class="s1">'mage/utils/wrapper'</span><span class="p">,</span>
-    <span class="s1">'Magento_Checkout/js/model/quote'</span>
+    <span class="dl">'</span><span class="s1">jquery</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">mage/utils/wrapper</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">Magento_Checkout/js/model/quote</span><span class="dl">'</span>
 <span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$</span><span class="p">,</span> <span class="nx">wrapper</span><span class="p">,</span> <span class="nx">quote</span><span class="p">)</span> <span class="p">{</span>
-    <span class="s1">'use strict'</span><span class="p">;</span>
+    <span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
 
     <span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">setShippingInformationAction</span><span class="p">)</span> <span class="p">{</span>
 
         <span class="k">return</span> <span class="nx">wrapper</span><span class="p">.</span><span class="nx">wrap</span><span class="p">(</span><span class="nx">setShippingInformationAction</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">originalAction</span><span class="p">)</span> <span class="p">{</span>
             <span class="kd">var</span> <span class="nx">shippingAddress</span> <span class="o">=</span> <span class="nx">quote</span><span class="p">.</span><span class="nx">shippingAddress</span><span class="p">();</span>
-            <span class="k">if</span> <span class="p">(</span><span class="nx">shippingAddress</span><span class="p">[</span><span class="s1">'extension_attributes'</span><span class="p">]</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
-                <span class="nx">shippingAddress</span><span class="p">[</span><span class="s1">'extension_attributes'</span><span class="p">]</span> <span class="o">=</span> <span class="p">{};</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">shippingAddress</span><span class="p">[</span><span class="dl">'</span><span class="s1">extension_attributes</span><span class="dl">'</span><span class="p">]</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">shippingAddress</span><span class="p">[</span><span class="dl">'</span><span class="s1">extension_attributes</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="p">{};</span>
             <span class="p">}</span>
 
-            <span class="nx">shippingAddress</span><span class="p">[</span><span class="s1">'extension_attributes'</span><span class="p">][</span><span class="s1">'custom_field'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">shippingAddress</span><span class="p">.</span><span class="nx">customAttributes</span><span class="p">[</span><span class="s1">'custom_field'</span><span class="p">];</span>
+            <span class="nx">shippingAddress</span><span class="p">[</span><span class="dl">'</span><span class="s1">extension_attributes</span><span class="dl">'</span><span class="p">][</span><span class="dl">'</span><span class="s1">custom_field</span><span class="dl">'</span><span class="p">]</span> <span class="o">=</span> <span class="nx">shippingAddress</span><span class="p">.</span><span class="nx">customAttributes</span><span class="p">[</span><span class="dl">'</span><span class="s1">custom_field</span><span class="dl">'</span><span class="p">];</span>
             <span class="c1">// pass execution to original action ('Magento_Checkout/js/action/set-shipping-information')</span>
             <span class="k">return</span> <span class="nx">originalAction</span><span class="p">();</span>
         <span class="p">});</span>
@@ -1527,20 +1528,20 @@ take the steps described further.</p>
 <span class="p">});</span>
 </code></pre></div></div>
 
-<p>When adding a field to the billing address form, you need to modify the behavior of one of the following components: <code class="highlighter-rouge">Magento_Checkout/js/action/place-order</code> or <code class="highlighter-rouge">Magento_Checkout/js/action/set-payment-information</code>, depending on when do you need the custom field valued to be passed to the server side. For example of a mixin, modifying one of these components, see the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/CheckoutAgreements/view/frontend/web/js/model/place-order-mixin.js">place-order-mixin.js</a> in the Magento_CheckoutAgreements   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
+<p>When adding a field to the billing address form, you need to modify the behavior of one of the following components: <code class="language-plaintext highlighter-rouge">Magento_Checkout/js/action/place-order</code> or <code class="language-plaintext highlighter-rouge">Magento_Checkout/js/action/set-payment-information</code>, depending on when do you need the custom field valued to be passed to the server side. For example of a mixin, modifying one of these components, see the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/CheckoutAgreements/view/frontend/web/js/model/place-order-mixin.js">place-order-mixin.js</a> in the Magento_CheckoutAgreements   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
 .</p>
 
 <h2 id="load_mixin">Step 3: Load your mixin</h2>
 
-<p>Instruct Magento to load your mixin for the corresponding JS component. For this, in the <code class="highlighter-rouge">&lt;YourModule_dir&gt;/view/frontend/</code> directory, add the <code class="highlighter-rouge">requirejs-config.js</code>.</p>
+<p>Instruct Magento to load your mixin for the corresponding JS component. For this, in the <code class="language-plaintext highlighter-rouge">&lt;YourModule_dir&gt;/view/frontend/</code> directory, add the <code class="language-plaintext highlighter-rouge">requirejs-config.js</code>.</p>
 
-<p>The following is a sample of such <code class="highlighter-rouge">requirejs-config.js</code> for the sample mixin added earlier:</p>
+<p>The following is a sample of such <code class="language-plaintext highlighter-rouge">requirejs-config.js</code> for the sample mixin added earlier:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">config</span><span class="p">:</span> <span class="p">{</span>
         <span class="na">mixins</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s1">'Magento_Checkout/js/action/set-shipping-information'</span><span class="p">:</span> <span class="p">{</span>
-                <span class="s1">'&lt;YourNamespace_YourModule&gt;/js/action/set-shipping-information-mixin'</span><span class="p">:</span> <span class="kc">true</span>
+            <span class="dl">'</span><span class="s1">Magento_Checkout/js/action/set-shipping-information</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
+                <span class="dl">'</span><span class="s1">&lt;YourNamespace_YourModule&gt;/js/action/set-shipping-information-mixin</span><span class="dl">'</span><span class="p">:</span> <span class="kc">true</span>
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}</span>
@@ -1549,9 +1550,9 @@ take the steps described further.</p>
 
 <h2 id="field">Step 4: Add field to address model</h2>
 
-<p>To add the field to the address model on the server side, add the <code class="highlighter-rouge">extension_attributes.xml</code> file in the <code class="highlighter-rouge">&lt;YourModule_dir&gt;/etc/</code> directory.</p>
+<p>To add the field to the address model on the server side, add the <code class="language-plaintext highlighter-rouge">extension_attributes.xml</code> file in the <code class="language-plaintext highlighter-rouge">&lt;YourModule_dir&gt;/etc/</code> directory.</p>
 
-<p>Following is a sample <code class="highlighter-rouge">extension_attributes.xml</code>:</p>
+<p>Following is a sample <code class="language-plaintext highlighter-rouge">extension_attributes.xml</code>:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
 
@@ -1566,7 +1567,7 @@ take the steps described further.</p>
 
 <p>If you took all the steps described in these steps, Magento will generate the interface that includes your custom attribute. You can access your field value like this:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>$value = $address-&gt;getExtensionAttributes()-&gt;getCustomField();
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>$value = $address-&gt;getExtensionAttributes()-&gt;getCustomField();
 </code></pre></div></div>
 
 <h4 id="related-topics">Related topics</h4>

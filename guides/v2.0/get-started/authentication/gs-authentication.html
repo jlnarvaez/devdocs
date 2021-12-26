@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Authentication | Magento 2 Developer Documentation (copy)</title>
+	<title>Authentication | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/get-started/authentication/gs-authentication.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/get-started/authentication/gs-authentication.html">Magento 2.0</a></li>
 		
@@ -1686,7 +1687,7 @@ Here are more details on exposing <a href="/devdocs/guides/v2.0/extension-dev-gu
 <p>The list of resources that you can access depends on your user type. All customers have the same permissions, and as a result the same resources accessible. The preceding statement is true for guest users as well.
 Each administrator or integration user can have a unique set of permissions which is configured in the   <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>
 .
-Permissions required to access particular resource are configured in the <code class="highlighter-rouge">webapi.xml</code> file. This table lists the resources that each user type can access:</p>
+Permissions required to access particular resource are configured in the <code class="language-plaintext highlighter-rouge">webapi.xml</code> file. This table lists the resources that each user type can access:</p>
 
 <table>
   <tbody>
@@ -1696,15 +1697,15 @@ Permissions required to access particular resource are configured in the <code c
     </tr>
     <tr>
       <td>Administrator or Integration</td>
-      <td>Resources for which administrators or integrators are authorized. For example, if administrators are authorized for the <code class="highlighter-rouge">Magento_Customer::group</code> resource, they can make a <code class="highlighter-rouge">GET /V1/customerGroups/:id</code> call.</td>
+      <td>Resources for which administrators or integrators are authorized. For example, if administrators are authorized for the <code class="language-plaintext highlighter-rouge">Magento_Customer::group</code> resource, they can make a <code class="language-plaintext highlighter-rouge">GET /V1/customerGroups/:id</code> call.</td>
     </tr>
     <tr>
       <td>Customer</td>
-      <td>Resources with <code class="highlighter-rouge">anonymous</code> or <code class="highlighter-rouge">self</code> permission.</td>
+      <td>Resources with <code class="language-plaintext highlighter-rouge">anonymous</code> or <code class="language-plaintext highlighter-rouge">self</code> permission.</td>
     </tr>
     <tr>
       <td>Guest user</td>
-      <td>Resources with <code class="highlighter-rouge">anonymous</code> permission.</td>
+      <td>Resources with <code class="language-plaintext highlighter-rouge">anonymous</code> permission.</td>
     </tr>
   </tbody>
 </table>
@@ -1713,7 +1714,7 @@ Permissions required to access particular resource are configured in the <code c
 
 <p>The <code>acl.xml</code> file defines the access control list (ACL) for a given   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
 . It defines available set of permissions to access the resources.
-<code class="highlighter-rouge">acl.xml</code> files across all Magento modules are consolidated to build an ACL tree which is used to select allowed   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>
+<code class="language-plaintext highlighter-rouge">acl.xml</code> files across all Magento modules are consolidated to build an ACL tree which is used to select allowed   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>
  role resources or third party Integration’s access (System &gt;   <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">Extension</span></p>
 <blockquote>
   <p>Integration &gt; Add New Integration &gt; Available APIs).</p>
@@ -1771,15 +1772,15 @@ Permissions required to access particular resource are configured in the <code c
 .....
 ...</code></pre></figure>
 
-<p>For example, in the preceding <code class="highlighter-rouge">webapi.xml</code> for the customerGroups resource, only a user with <code class="highlighter-rouge">Magento_Customer::group</code> authorization can <code class="highlighter-rouge">GET /V1/customerGroups/:id</code>. On the other hand, you can create a customer using <code class="highlighter-rouge">POST /V1/customers</code> anonymously (or by a guest).</p>
+<p>For example, in the preceding <code class="language-plaintext highlighter-rouge">webapi.xml</code> for the customerGroups resource, only a user with <code class="language-plaintext highlighter-rouge">Magento_Customer::group</code> authorization can <code class="language-plaintext highlighter-rouge">GET /V1/customerGroups/:id</code>. On the other hand, you can create a customer using <code class="language-plaintext highlighter-rouge">POST /V1/customers</code> anonymously (or by a guest).</p>
 
 <p><span term-uuid="34ecb0ab-b8a3-42d9-a728-0b893e8c0417" class="glossary-term" data-toggle="popover">Authorization</span>
  is granted to either an administrator (or an integration) defined in the Magento Admin with the customer group selected as one of the resources in the ACL tree.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>A guest or anonymous is a special permission that doesn’t need to be defined in <code class="highlighter-rouge">acl.xml</code> (and will not show up in the permissions tree in the Magento Admin). It just indicates that the current resource in <code class="highlighter-rouge">webapi.xml</code> can be accessed without the need for authentication.</p>
+  <p>A guest or anonymous is a special permission that doesn’t need to be defined in <code class="language-plaintext highlighter-rouge">acl.xml</code> (and will not show up in the permissions tree in the Magento Admin). It just indicates that the current resource in <code class="language-plaintext highlighter-rouge">webapi.xml</code> can be accessed without the need for authentication.</p>
 
-  <p>Similarly, self is a special access used if you already have an authenticated session with the system. Self access enables a user to access resources they own. For example, <code class="highlighter-rouge">GET /V1/customers/me</code> fetches the logged-in customer’s details. This is typically useful for JavaScript-based widgets.</p>
+  <p>Similarly, self is a special access used if you already have an authenticated session with the system. Self access enables a user to access resources they own. For example, <code class="language-plaintext highlighter-rouge">GET /V1/customers/me</code> fetches the logged-in customer’s details. This is typically useful for JavaScript-based widgets.</p>
 </div>
 
 <h3 id="webapi-clients">Web API clients and authentication methods</h3>

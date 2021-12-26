@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>UI-select component | Magento 2 Developer Documentation (copy)</title>
+	<title>UI-select component | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/ui_comp_guide/components/ui-secondary-uiselect.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/ui_comp_guide/components/ui-secondary-uiselect.html">Magento 2.0</a></li>
 		
@@ -3292,7 +3293,7 @@
 	<h1 class="page-heading">UI-select component</h1>
 </section>
 
-			<p>The UI-select component is a single select/multiple select component that enables the selection of a collection of items. It extends all <code class="highlighter-rouge">abstract</code> configuration and can be configured in two modes:</p>
+			<p>The UI-select component is a single select/multiple select component that enables the selection of a collection of items. It extends all <code class="language-plaintext highlighter-rouge">abstract</code> configuration and can be configured in two modes:</p>
 <ul>
   <li>Single - checkbox isn’t displayed</li>
   <li>Multiple - checkboxes are displayed</li>
@@ -3303,7 +3304,7 @@
 <!-- Available note types: "info", "warning", "tip" -->
 
 <div class="bs-callout bs-callout-tip" id="tip">
-  <p>You must create a controller for <code class="highlighter-rouge">searchUrl</code>. If you’d like to use other data for the request, you can override the <code class="highlighter-rouge">processRequest</code> method in your component.</p>
+  <p>You must create a controller for <code class="language-plaintext highlighter-rouge">searchUrl</code>. If you’d like to use other data for the request, you can override the <code class="language-plaintext highlighter-rouge">processRequest</code> method in your component.</p>
 </div>
 
 <table style="table-layout:auto;">
@@ -3319,7 +3320,7 @@
     <td>
     
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">imports</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nl">options</span><span class="p">:</span> <span class="s1">'${ $.optionsConfig.name }:options'</span>
+        <span class="nl">options</span><span class="p">:</span> <span class="dl">'</span><span class="s1">${ $.optionsConfig.name }:options</span><span class="dl">'</span>
     <span class="p">}</span></code></pre></figure>
 </td>
     <td>Yes</td>
@@ -3331,20 +3332,20 @@
         
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">        <span class="nx">actions</span><span class="p">:</span> <span class="p">[</span>
             <span class="p">{</span>
-                <span class="na">value</span><span class="p">:</span> <span class="s1">'selectAll'</span><span class="p">,</span>
-                <span class="na">label</span><span class="p">:</span> <span class="nx">$t</span><span class="p">(</span><span class="s1">'Select all'</span><span class="p">)</span>
+                <span class="na">value</span><span class="p">:</span> <span class="dl">'</span><span class="s1">selectAll</span><span class="dl">'</span><span class="p">,</span>
+                <span class="na">label</span><span class="p">:</span> <span class="nx">$t</span><span class="p">(</span><span class="dl">'</span><span class="s1">Select all</span><span class="dl">'</span><span class="p">)</span>
             <span class="p">},</span>
             <span class="p">{</span>
-                <span class="na">value</span><span class="p">:</span> <span class="s1">'deselectAll'</span><span class="p">,</span>
-                <span class="na">label</span><span class="p">:</span> <span class="nx">$t</span><span class="p">(</span><span class="s1">'Deselect all'</span><span class="p">)</span>
+                <span class="na">value</span><span class="p">:</span> <span class="dl">'</span><span class="s1">deselectAll</span><span class="dl">'</span><span class="p">,</span>
+                <span class="na">label</span><span class="p">:</span> <span class="nx">$t</span><span class="p">(</span><span class="dl">'</span><span class="s1">Deselect all</span><span class="dl">'</span><span class="p">)</span>
             <span class="p">},</span> 
             <span class="p">{</span>
-                <span class="na">value</span><span class="p">:</span> <span class="s1">'selectPage'</span><span class="p">,</span>
-                <span class="na">label</span><span class="p">:</span> <span class="nx">$t</span><span class="p">(</span><span class="s1">'Select all on this page'</span><span class="p">)</span>
+                <span class="na">value</span><span class="p">:</span> <span class="dl">'</span><span class="s1">selectPage</span><span class="dl">'</span><span class="p">,</span>
+                <span class="na">label</span><span class="p">:</span> <span class="nx">$t</span><span class="p">(</span><span class="dl">'</span><span class="s1">Select all on this page</span><span class="dl">'</span><span class="p">)</span>
             <span class="p">},</span>
             <span class="p">{</span>
-                <span class="na">value</span><span class="p">:</span> <span class="s1">'deselectPage'</span><span class="p">,</span>
-                <span class="na">label</span><span class="p">:</span> <span class="nx">$t</span><span class="p">(</span><span class="s1">'Deselect all on this page'</span><span class="p">)</span>
+                <span class="na">value</span><span class="p">:</span> <span class="dl">'</span><span class="s1">deselectPage</span><span class="dl">'</span><span class="p">,</span>
+                <span class="na">label</span><span class="p">:</span> <span class="nx">$t</span><span class="p">(</span><span class="dl">'</span><span class="s1">Deselect all on this page</span><span class="dl">'</span><span class="p">)</span>
             <span class="p">}</span>
         <span class="p">]</span>
         </code></pre></figure>
@@ -3369,161 +3370,161 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">chipsEnabled</code></td>
+      <td><code class="language-plaintext highlighter-rouge">chipsEnabled</code></td>
       <td>Selected options are shown in UI-select’s header as deletable chips.</td>
       <td>Boolean</td>
       <td>True</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">closeBtn</code></td>
+      <td><code class="language-plaintext highlighter-rouge">closeBtn</code></td>
       <td>Shows the button that closes the dropdown</td>
       <td>Boolean</td>
       <td>True</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">closeBtnLabel</code></td>
-      <td><code class="highlighter-rouge">$t('Done')</code></td>
+      <td><code class="language-plaintext highlighter-rouge">closeBtnLabel</code></td>
+      <td><code class="language-plaintext highlighter-rouge">$t('Done')</code></td>
       <td>Label</td>
       <td>String</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">deviation</code></td>
+      <td><code class="language-plaintext highlighter-rouge">deviation</code></td>
       <td>Handles scroll download behavior</td>
       <td>Number</td>
       <td>30</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">emptyOptionsHtml</code></td>
+      <td><code class="language-plaintext highlighter-rouge">emptyOptionsHtml</code></td>
       <td>Specifies the HTML to display content if there are no options to display</td>
       <td>String</td>
       <td>Empty string</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">filterPlaceholder</code></td>
+      <td><code class="language-plaintext highlighter-rouge">filterPlaceholder</code></td>
       <td>Specifies captions for the filter placeholder</td>
       <td>String</td>
       <td>Empty string</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">isDisplayMissingValuePlaceholder</code></td>
+      <td><code class="language-plaintext highlighter-rouge">isDisplayMissingValuePlaceholder</code></td>
       <td>Specifies whether the display is missing the value placeholder</td>
       <td>Boolean</td>
       <td>False</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">isRemoveSelectedIcon</code></td>
+      <td><code class="language-plaintext highlighter-rouge">isRemoveSelectedIcon</code></td>
       <td>Specifies whether the “x” is present to enable removal of chosen entity</td>
       <td>Boolean</td>
       <td>False</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">levelsVisibility</code></td>
+      <td><code class="language-plaintext highlighter-rouge">levelsVisibility</code></td>
       <td>If true, all levels are visible; if it is a number, the number of levels are visible.</td>
       <td>Boolean/number</td>
       <td>True</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">loading</code></td>
+      <td><code class="language-plaintext highlighter-rouge">loading</code></td>
       <td>Displays a loader to find options if a request is sent to the backend</td>
       <td>Boolean</td>
       <td>False</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">missingValuePlaceholder</code></td>
+      <td><code class="language-plaintext highlighter-rouge">missingValuePlaceholder</code></td>
       <td>Specifies the text to display if the entity that was chosen no longer exists</td>
       <td>String</td>
-      <td><code class="highlighter-rouge">'Entity with ID: %s doesn\'t exist'</code></td>
+      <td><code class="language-plaintext highlighter-rouge">'Entity with ID: %s doesn\'t exist'</code></td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">options.&lt; option name &gt;.label</code></td>
+      <td><code class="language-plaintext highlighter-rouge">options.&lt; option name &gt;.label</code></td>
       <td>Options label</td>
       <td>String</td>
       <td>Undefined</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">options.&lt; option name &gt;.value</code></td>
+      <td><code class="language-plaintext highlighter-rouge">options.&lt; option name &gt;.value</code></td>
       <td>Options value</td>
       <td>String</td>
       <td>Undefined</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">options.&lt; option name &gt;.optgroup</code></td>
+      <td><code class="language-plaintext highlighter-rouge">options.&lt; option name &gt;.optgroup</code></td>
       <td>Nested level of options</td>
       <td>Object</td>
       <td>Undefined</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">openLevelsAction</code></td>
+      <td><code class="language-plaintext highlighter-rouge">openLevelsAction</code></td>
       <td>Expands a tree to the child level</td>
       <td>Boolean</td>
       <td>True</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">pageLimit</code></td>
+      <td><code class="language-plaintext highlighter-rouge">pageLimit</code></td>
       <td>Page limit for search</td>
       <td>Number</td>
       <td>50</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">searchOptions</code></td>
+      <td><code class="language-plaintext highlighter-rouge">searchOptions</code></td>
       <td>Include search options</td>
       <td>Boolean</td>
       <td>False</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">searchUrl</code></td>
+      <td><code class="language-plaintext highlighter-rouge">searchUrl</code></td>
       <td>Sends a request to load options</td>
       <td>Boolean</td>
       <td>False</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">separator</code></td>
+      <td><code class="language-plaintext highlighter-rouge">separator</code></td>
       <td>Group options in select</td>
       <td>String</td>
-      <td><code class="highlighter-rouge">optgroup</code></td>
+      <td><code class="language-plaintext highlighter-rouge">optgroup</code></td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">showCheckbox</code></td>
+      <td><code class="language-plaintext highlighter-rouge">showCheckbox</code></td>
       <td>Shows the checkbox just before the option label; select options by checking</td>
       <td>Boolean</td>
       <td>True</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">showOpenLevelsActionIcon</code></td>
+      <td><code class="language-plaintext highlighter-rouge">showOpenLevelsActionIcon</code></td>
       <td>—</td>
       <td>Boolean</td>
       <td>True</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">showTree</code></td>
+      <td><code class="language-plaintext highlighter-rouge">showTree</code></td>
       <td>—</td>
       <td>Boolean</td>
       <td>False</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">validationLoading</code></td>
+      <td><code class="language-plaintext highlighter-rouge">validationLoading</code></td>
       <td>Displays a loading icon to show that the chosen option is loading; icon will show if the display is set to true</td>
       <td>Boolean</td>
       <td>False</td>
@@ -3544,36 +3545,36 @@
 
 <h2 id="modes">Modes</h2>
 
-<h3 id="simple-mode"><strong><code class="highlighter-rouge">simple</code> mode</strong></h3>
+<h3 id="simple-mode"><strong><code class="language-plaintext highlighter-rouge">simple</code> mode</strong></h3>
 
-<p><code class="highlighter-rouge">simple</code> mode sets the following values to <code class="highlighter-rouge">false</code>:</p>
+<p><code class="language-plaintext highlighter-rouge">simple</code> mode sets the following values to <code class="language-plaintext highlighter-rouge">false</code>:</p>
 <ul>
-  <li><code class="highlighter-rouge">showCheckbox</code></li>
-  <li><code class="highlighter-rouge">chipsEnabled</code></li>
-  <li><code class="highlighter-rouge">closeBtn</code></li>
+  <li><code class="language-plaintext highlighter-rouge">showCheckbox</code></li>
+  <li><code class="language-plaintext highlighter-rouge">chipsEnabled</code></li>
+  <li><code class="language-plaintext highlighter-rouge">closeBtn</code></li>
 </ul>
 
-<h3 id="optgroup-mode"><strong><code class="highlighter-rouge">optgroup</code> mode</strong></h3>
+<h3 id="optgroup-mode"><strong><code class="language-plaintext highlighter-rouge">optgroup</code> mode</strong></h3>
 
-<p><code class="highlighter-rouge">optgroup</code> mode sets the following values to <code class="highlighter-rouge">false</code>:</p>
+<p><code class="language-plaintext highlighter-rouge">optgroup</code> mode sets the following values to <code class="language-plaintext highlighter-rouge">false</code>:</p>
 <ul>
-  <li><code class="highlighter-rouge">showCheckbox</code></li>
-  <li><code class="highlighter-rouge">openLevelsAction</code></li>
+  <li><code class="language-plaintext highlighter-rouge">showCheckbox</code></li>
+  <li><code class="language-plaintext highlighter-rouge">openLevelsAction</code></li>
 </ul>
 
-<p><code class="highlighter-rouge">optgroup</code> sets the following values to <code class="highlighter-rouge">true</code>:</p>
+<p><code class="language-plaintext highlighter-rouge">optgroup</code> sets the following values to <code class="language-plaintext highlighter-rouge">true</code>:</p>
 <ul>
-  <li><code class="highlighter-rouge">lastSelectable</code></li>
-  <li><code class="highlighter-rouge">optgroupLabels</code></li>
-  <li><code class="highlighter-rouge">labelsDecoration</code></li>
+  <li><code class="language-plaintext highlighter-rouge">lastSelectable</code></li>
+  <li><code class="language-plaintext highlighter-rouge">optgroupLabels</code></li>
+  <li><code class="language-plaintext highlighter-rouge">labelsDecoration</code></li>
 </ul>
 
 <h2 id="examples">Examples</h2>
 
-<h3 id="use-cms_page_listingxml">Use <code class="highlighter-rouge">cms_page_listing.xml</code></h3>
+<h3 id="use-cms_page_listingxml">Use <code class="language-plaintext highlighter-rouge">cms_page_listing.xml</code></h3>
 
 <blockquote>
-  <p><code class="highlighter-rouge">&lt;Magento_Cms&gt;/view/adminhtml/ui_component/cms_page_listing.xml</code></p>
+  <p><code class="language-plaintext highlighter-rouge">&lt;Magento_Cms&gt;/view/adminhtml/ui_component/cms_page_listing.xml</code></p>
 </blockquote>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;listing</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Ui:etc/ui_configuration.xsd"</span><span class="nt">&gt;</span>
@@ -3605,11 +3606,11 @@
 <p>Navigation keys:</p>
 
 <ul>
-  <li><strong><code class="highlighter-rouge">Enter</code></strong>: if focus is on the caption a list of options opens; if focus is on the same option it will select or deselect the current option</li>
-  <li><strong><code class="highlighter-rouge">Space</code></strong>: copies the <code class="highlighter-rouge">Enter</code> key functionality</li>
-  <li><strong><code class="highlighter-rouge">Escape</code></strong>: closes the list of options</li>
-  <li><strong><code class="highlighter-rouge">PageUp</code></strong>: sets focus to the previous option</li>
-  <li><strong><code class="highlighter-rouge">PageDown</code></strong>: sets focus to the next option</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">Enter</code></strong>: if focus is on the caption a list of options opens; if focus is on the same option it will select or deselect the current option</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">Space</code></strong>: copies the <code class="language-plaintext highlighter-rouge">Enter</code> key functionality</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">Escape</code></strong>: closes the list of options</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">PageUp</code></strong>: sets focus to the previous option</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">PageDown</code></strong>: sets focus to the next option</li>
 </ul>
 
 <h2 id="source-files">Source files</h2>

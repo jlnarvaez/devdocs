@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Using Grunt for Magento tasks | Magento 2 Developer Documentation (copy)</title>
+	<title>Using Grunt for Magento tasks | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/frontend-dev-guide/tools/using_grunt.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/frontend-dev-guide/tools/using_grunt.html">Magento 2.0</a></li>
 		
@@ -2902,20 +2903,20 @@
   <li>
     <p>Install Grunt CLI tool globally. To do this, run the following command in a command prompt:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>npm install -g grunt-cli
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>npm install -g grunt-cli
 </code></pre></div>    </div>
   </li>
   <li>Rename the following files in your Magento root directory:
     <ul>
-      <li><code class="highlighter-rouge">package.json.sample</code> to <code class="highlighter-rouge">package.json</code></li>
-      <li><code class="highlighter-rouge">Gruntfile.js.sample</code> to <code class="highlighter-rouge">Gruntfile.js</code></li>
-      <li><code class="highlighter-rouge">grunt-config.json.sample</code> to <code class="highlighter-rouge">grunt-config.json</code></li>
+      <li><code class="language-plaintext highlighter-rouge">package.json.sample</code> to <code class="language-plaintext highlighter-rouge">package.json</code></li>
+      <li><code class="language-plaintext highlighter-rouge">Gruntfile.js.sample</code> to <code class="language-plaintext highlighter-rouge">Gruntfile.js</code></li>
+      <li><code class="language-plaintext highlighter-rouge">grunt-config.json.sample</code> to <code class="language-plaintext highlighter-rouge">grunt-config.json</code></li>
     </ul>
   </li>
   <li>
-    <p>Install (or refresh) the <code class="highlighter-rouge">node.js</code> project dependency, including Grunt, for your Magento instance. To do this, run the following commands in a command prompt:</p>
+    <p>Install (or refresh) the <code class="language-plaintext highlighter-rouge">node.js</code> project dependency, including Grunt, for your Magento instance. To do this, run the following commands in a command prompt:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd your_Magento_instance_directory
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd your_Magento_instance_directory
 npm install
 npm update
 </code></pre></div>    </div>
@@ -2925,7 +2926,7 @@ npm update
 
 <h2 id="grunt_config">Grunt configuration file</h2>
 
-<p>If installed as described above, Grunt will use the default configuration files located in the <code class="highlighter-rouge">dev/tools/grunt/configs/</code> directory. For example, the default configuration file for working with themes is <code class="highlighter-rouge">dev/tools/grunt/configs/themes.js</code>.</p>
+<p>If installed as described above, Grunt will use the default configuration files located in the <code class="language-plaintext highlighter-rouge">dev/tools/grunt/configs/</code> directory. For example, the default configuration file for working with themes is <code class="language-plaintext highlighter-rouge">dev/tools/grunt/configs/themes.js</code>.</p>
 
 <p>The problem with using the default configuration files is that they can get overwritten during code updates, together with your changes in them. To avoid this, you can use custom configuration files. The ability to use custom configuration files is implemented by the file router mechanism added by Magento.</p>
 
@@ -2939,16 +2940,16 @@ npm update
 
 <ol>
   <li>Copy the default configuration file to the preferred location in the Magento instance directory. Do not change the file name</li>
-  <li>Open the <code class="highlighter-rouge">grunt-config.json</code> file in the Magento root and set configurations object as follows
+  <li>Open the <code class="language-plaintext highlighter-rouge">grunt-config.json</code> file in the Magento root and set configurations object as follows
     <ul>
       <li>key: file alias</li>
       <li>value: path to your custom file</li>
     </ul>
 
     <p>Example:
-If your custom configuration file <code class="highlighter-rouge">local-themes.js</code> is located in the <code class="highlighter-rouge">&lt;magento_root&gt;/dev/tools/grunt/configs</code> directory, the following is already set in your <code class="highlighter-rouge">grunt-config.json</code>:</p>
+If your custom configuration file <code class="language-plaintext highlighter-rouge">local-themes.js</code> is located in the <code class="language-plaintext highlighter-rouge">&lt;magento_root&gt;/dev/tools/grunt/configs</code> directory, the following is already set in your <code class="language-plaintext highlighter-rouge">grunt-config.json</code>:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>{
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>{
     "themes": "dev/tools/grunt/configs/local-themes"
 } This path is also added to your .gitignore by default
 </code></pre></div>    </div>
@@ -2961,15 +2962,15 @@ If your custom configuration file <code class="highlighter-rouge">local-themes.j
 
 <ol>
   <li>
-    <p>In your Grunt related scripts, in the file router set the alias and path to the default configuration file. For example, for the <code class="highlighter-rouge">themes.js</code> configuration file this would look like following:</p>
+    <p>In your Grunt related scripts, in the file router set the alias and path to the default configuration file. For example, for the <code class="language-plaintext highlighter-rouge">themes.js</code> configuration file this would look like following:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>filesRouter.set('themes', 'dev/tools/grunt/configs/themes');
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>filesRouter.set('themes', 'dev/tools/grunt/configs/themes');
 </code></pre></div>    </div>
 
-    <p>It must be added earlier, than the <code class="highlighter-rouge">get()</code> method with  this alias is called.</p>
+    <p>It must be added earlier, than the <code class="language-plaintext highlighter-rouge">get()</code> method with  this alias is called.</p>
   </li>
   <li>
-    <p>In the <code class="highlighter-rouge">dev/tools/grunt/configs/</code> directory, create a copy of the default configuration file. Change its name by adding the “.loc” suffix. For example, your copy of <code class="highlighter-rouge">themes.js</code> will be <code class="highlighter-rouge">themes.loc.js</code>.</p>
+    <p>In the <code class="language-plaintext highlighter-rouge">dev/tools/grunt/configs/</code> directory, create a copy of the default configuration file. Change its name by adding the “.loc” suffix. For example, your copy of <code class="language-plaintext highlighter-rouge">themes.js</code> will be <code class="language-plaintext highlighter-rouge">themes.loc.js</code>.</p>
   </li>
 </ol>
 
@@ -2981,15 +2982,15 @@ If your custom configuration file <code class="highlighter-rouge">local-themes.j
   <li>
     <p>Require file-router:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>var fileRouter = require('/files-router');
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>var fileRouter = require('/files-router');
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Call the <code class="highlighter-rouge">get(%file_alias%)</code> method to get the configuration file.</p>
+    <p>Call the <code class="language-plaintext highlighter-rouge">get(%file_alias%)</code> method to get the configuration file.</p>
 
     <p>Example:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>var themes = fileRouter.get('themes');
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>var themes = fileRouter.get('themes');
 </code></pre></div>    </div>
   </li>
 </ol>

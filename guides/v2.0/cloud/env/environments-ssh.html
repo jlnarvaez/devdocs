@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>SSH and sFTP | Magento 2 Developer Documentation (copy)</title>
+	<title>SSH and sFTP | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/env/environments-ssh.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/env/environments-ssh.html">Magento 2.0</a></li>
 		
@@ -3583,18 +3584,18 @@
 
 <h2 id="existing">Locate an existing SSH key pair</h2>
 
-<p>An existing SSH key pair is typically located in the <code class="highlighter-rouge">.ssh</code> subdirectory of the user’s home directory. This folder is hidden and may not display in the file manager or finder unless configured to display hidden files and folders.</p>
+<p>An existing SSH key pair is typically located in the <code class="language-plaintext highlighter-rouge">.ssh</code> subdirectory of the user’s home directory. This folder is hidden and may not display in the file manager or finder unless configured to display hidden files and folders.</p>
 
 <p>You can quickly verify if you have SSH keys by entering commands using terminal access.</p>
 
 <p>To check for SSH keys, enter the following command:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ls ~/.ssh
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ls ~/.ssh
 </code></pre></div></div>
 
 <p>If you have SSH keys, a directory listing is displayed similar to the following:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>id_rsa  id_rsa.pub  known_hosts
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>id_rsa  id_rsa.pub  known_hosts
 </code></pre></div></div>
 
 <p>If you don’t have SSH keys, you need to generate the keys for adding to your Magento ECE account and GitHub account. See <a href="#ssh-create-new-key-pair">Create a new SSH key pair</a>.</p>
@@ -3607,7 +3608,7 @@
 
 <h2 id="ssh-create-new-key-pair">Create a new SSH key pair</h2>
 
-<p>Use the <code class="highlighter-rouge">ssh-keygen</code> command to create an SSH key pair. <code class="highlighter-rouge">ssh-keygen</code> is typically installed on Linux systems.</p>
+<p>Use the <code class="language-plaintext highlighter-rouge">ssh-keygen</code> command to create an SSH key pair. <code class="language-plaintext highlighter-rouge">ssh-keygen</code> is typically installed on Linux systems.</p>
 
 <p>To create an SSH key pair:</p>
 
@@ -3615,10 +3616,10 @@
   <li>
     <p>The command syntax follows, entering the email used for your GitHub account:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> ssh-keygen -t rsa
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> ssh-keygen -t rsa
 </code></pre></div>    </div>
 
-    <p>GitHub also uses the key length <code class="highlighter-rouge">-b 4096</code> in the command.
+    <p>GitHub also uses the key length <code class="language-plaintext highlighter-rouge">-b 4096</code> in the command.
  Follow the prompts to complete the key.</p>
   </li>
   <li>
@@ -3632,7 +3633,7 @@
 
     <p>For Mac or Linux:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> $ eval "$(ssh-agent -s)"  For Mac, you may also want to edit the  `~/.ssh/config` file to automatically load keys into the ssh-agent and store passphrases in your keychain.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> $ eval "$(ssh-agent -s)"  For Mac, you may also want to edit the  `~/.ssh/config` file to automatically load keys into the ssh-agent and store passphrases in your keychain.
 
  Host *
      AddKeysToAgent yes
@@ -3642,20 +3643,20 @@
 
     <p>For Windows:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> $ eval $(ssh-agent -s)
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> $ eval $(ssh-agent -s)
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Add the SSH key to the ssh-agent. If you used a different name for the key file name, replace <code class="highlighter-rouge">id_rsa</code> with that file name.</p>
+    <p>Add the SSH key to the ssh-agent. If you used a different name for the key file name, replace <code class="language-plaintext highlighter-rouge">id_rsa</code> with that file name.</p>
 
     <p>For Mac:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> ssh-add -K ~/.ssh/id_rsa
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> ssh-add -K ~/.ssh/id_rsa
 </code></pre></div>    </div>
 
     <p>For Windows or Linux:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> ssh-add ~/.ssh/id_rsa
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> ssh-add ~/.ssh/id_rsa
 </code></pre></div>    </div>
   </li>
   <li>
@@ -3671,11 +3672,11 @@
   <li>
     <p>In the terminal, enter the following command:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> ssh -T git@github.com
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> ssh -T git@github.com
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>You may see a warning that the authenticity of the host can’t be established followed by an RSA fingerprint. Enter <code class="highlighter-rouge">yes</code> to continue.</p>
+    <p>You may see a warning that the authenticity of the host can’t be established followed by an RSA fingerprint. Enter <code class="language-plaintext highlighter-rouge">yes</code> to continue.</p>
   </li>
   <li>
     <p>If successful, you should receive a success message. If you receive a permission denied error, see <a href="https://help.github.com/articles/error-permission-denied-publickey">Error: Permission denied (publickey)</a> troubleshooting on GitHub.</p>
@@ -3703,13 +3704,13 @@
   <li>
     <p>Log in to your project:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud login
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud login
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Add the key:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud ssh-key:add ~/.ssh/id_rsa.pub
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud ssh-key:add ~/.ssh/id_rsa.pub
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -3751,7 +3752,7 @@
 
 <p>To set variables, enter the following commands on every workspace:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git config --global user.name "&lt;your name&gt;"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git config --global user.name "&lt;your name&gt;"
 git config --global user.email &lt;your e-mail address&gt;
 </code></pre></div></div>
 
@@ -3782,25 +3783,25 @@ git config --global user.email &lt;your e-mail address&gt;
   <li>
     <p>Log in to the project:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud login
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud login
 </code></pre></div>    </div>
   </li>
   <li>
     <p>List the project IDs:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud project:list
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud project:list
 </code></pre></div>    </div>
   </li>
   <li>
     <p>List the environments in that project:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:list -p &lt;project ID&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:list -p &lt;project ID&gt;
 </code></pre></div>    </div>
   </li>
   <li>
     <p>SSH to the environment:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud ssh -p &lt;project ID&gt; -e &lt;environment ID&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud ssh -p &lt;project ID&gt; -e &lt;environment ID&gt;
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -3825,7 +3826,7 @@ git config --global user.email &lt;your e-mail address&gt;
 
 <p>Example SSH command:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ssh abcdefg123abc-smith-a12b34c--mymagento@ssh.us-2.magento.cloud
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ssh abcdefg123abc-smith-a12b34c--mymagento@ssh.us-2.magento.cloud
 </code></pre></div></div>
 
 <h3 id="pro">Git SSH commands for Pro Staging and Production</h3>
@@ -3837,13 +3838,13 @@ git config --global user.email &lt;your e-mail address&gt;
 <p>For the URLs, see the following:</p>
 
 <ul>
-  <li>Staging: <code class="highlighter-rouge">http[s]://staging.&lt;your domain&gt;.c.&lt;project ID&gt;.ent.magento.cloud</code></li>
+  <li>Staging: <code class="language-plaintext highlighter-rouge">http[s]://staging.&lt;your domain&gt;.c.&lt;project ID&gt;.ent.magento.cloud</code></li>
   <li>
     <p>Production:</p>
 
     <ul>
-      <li>Load balancer URL: <code class="highlighter-rouge">http[s]://&lt;your domain&gt;.c.&lt;project ID&gt;.ent.magento.cloud</code></li>
-      <li>Direct access to one of the three redundant servers: <code class="highlighter-rouge">http[s]://&lt;your domain&gt;.{1|2|3}.&lt;project ID&gt;.ent.magento.cloud</code></li>
+      <li>Load balancer URL: <code class="language-plaintext highlighter-rouge">http[s]://&lt;your domain&gt;.c.&lt;project ID&gt;.ent.magento.cloud</code></li>
+      <li>Direct access to one of the three redundant servers: <code class="language-plaintext highlighter-rouge">http[s]://&lt;your domain&gt;.{1|2|3}.&lt;project ID&gt;.ent.magento.cloud</code></li>
     </ul>
   </li>
 </ul>
@@ -3854,38 +3855,38 @@ git config --global user.email &lt;your e-mail address&gt;
 
 <p>Use a terminal application to log in and issue commands.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud login
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud login
 </code></pre></div></div>
 
 <p>First, you may want to check if any tunnels are already open using the following command:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud tunnel:list
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud tunnel:list
 </code></pre></div></div>
 
 <p>To build a tunnel, you must know the name of the app to which to tunnel. Use the following commands to list those applications:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd &lt;project directory&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd &lt;project directory&gt;
 magento-cloud project:list
 magento-cloud apps
 </code></pre></div></div>
 
-<p>For information on the command, you can enter <code class="highlighter-rouge">magento-cloud apps --help</code>.</p>
+<p>For information on the command, you can enter <code class="language-plaintext highlighter-rouge">magento-cloud apps --help</code>.</p>
 
 <h3 id="tunnel-setup">Set up the SSH tunnel</h3>
 
 <p>Use the following command:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud tunnel:open -e &lt;environment ID&gt; --app &lt;app name&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud tunnel:open -e &lt;environment ID&gt; --app &lt;app name&gt;
 </code></pre></div></div>
 
-<p>For example, to open a tunnel to the <code class="highlighter-rouge">sprint5</code> branch in a project with an app named <code class="highlighter-rouge">mymagento</code>, enter</p>
+<p>For example, to open a tunnel to the <code class="language-plaintext highlighter-rouge">sprint5</code> branch in a project with an app named <code class="language-plaintext highlighter-rouge">mymagento</code>, enter</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud tunnel:open -e sprint5 --app mymagento
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud tunnel:open -e sprint5 --app mymagento
 </code></pre></div></div>
 
 <p>Messages similar to the following display:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>SSH tunnel opened on port 30003 to relationship: solr
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>SSH tunnel opened on port 30003 to relationship: solr
 SSH tunnel opened on port 30004 to relationship: redis
 SSH tunnel opened on port 30005 to relationship: database
 Logs are written to: /home/magento_user/.magento/tunnels.log
@@ -3899,7 +3900,7 @@ Close tunnels with: magento-cloud tunnel:close
 
 <p>To display information about your tunnel, enter:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud tunnel:info -e &lt;environment ID&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud tunnel:info -e &lt;environment ID&gt;
 </code></pre></div></div>
 
 <h3 id="tunnel-services">Connect to services</h3>
@@ -3908,14 +3909,14 @@ Close tunnels with: magento-cloud tunnel:close
 
 <p>For example, to connect to the database, use the following command:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql --host=127.0.0.1 --user='&lt;database username&gt;' --pass='&lt;user password&gt;' --database='&lt;name&gt;' --port='&lt;port&gt;'
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql --host=127.0.0.1 --user='&lt;database username&gt;' --pass='&lt;user password&gt;' --database='&lt;name&gt;' --port='&lt;port&gt;'
 </code></pre></div></div>
 
-<p>Details about the service display if you use the <code class="highlighter-rouge">magento-cloud tunnel:info</code> command.</p>
+<p>Details about the service display if you use the <code class="language-plaintext highlighter-rouge">magento-cloud tunnel:info</code> command.</p>
 
 <h2 id="sftp">sFTP to environments</h2>
 
-<p>Typically, you want to use SSH for secure access to your environments and <a href="/devdocs/guides/v2.0/cloud/live/stage-prod-migrate.html">migrate files</a> with <code class="highlighter-rouge">rsync</code> commands. We also support accessing your environments using sFTP (secure FTP) with SSH authentication.</p>
+<p>Typically, you want to use SSH for secure access to your environments and <a href="/devdocs/guides/v2.0/cloud/live/stage-prod-migrate.html">migrate files</a> with <code class="language-plaintext highlighter-rouge">rsync</code> commands. We also support accessing your environments using sFTP (secure FTP) with SSH authentication.</p>
 
 <p>You need the following requirements to sFTP into cloud environments:</p>
 
@@ -3927,9 +3928,9 @@ Close tunnels with: magento-cloud tunnel:close
 <p>When configuring sFTP, use your SSH public key and the following information for access:</p>
 
 <ul>
-  <li>Username: All content before the <code class="highlighter-rouge">@</code> in your public SSH key.</li>
+  <li>Username: All content before the <code class="language-plaintext highlighter-rouge">@</code> in your public SSH key.</li>
   <li>Password: You do not need a password for sFTP. sFTP access uses the SSH key based authentication.</li>
-  <li>Host: All content after the <code class="highlighter-rouge">@</code> in your public SSH key.</li>
+  <li>Host: All content after the <code class="language-plaintext highlighter-rouge">@</code> in your public SSH key.</li>
   <li>Port: 22, which is the default SSH port.</li>
 </ul>
 
@@ -3937,17 +3938,17 @@ Close tunnels with: magento-cloud tunnel:close
 
 <ol>
   <li>Use a text editor to open your generated SSH public key. Locate and edit the file in the directory location you generated it into.</li>
-  <li>Copy and paste all content before the <code class="highlighter-rouge">@</code> in the file for the client Username.</li>
+  <li>Copy and paste all content before the <code class="language-plaintext highlighter-rouge">@</code> in the file for the client Username.</li>
   <li>Leave Password empty.</li>
-  <li>Copy and paste all content after the <code class="highlighter-rouge">@</code> in the file for the client Host.</li>
+  <li>Copy and paste all content after the <code class="language-plaintext highlighter-rouge">@</code> in the file for the client Host.</li>
   <li>For the Port, enter 22.</li>
 </ol>
 
 <p>Depending on the client, you may need to enter additional options and setup to complete SSH authentication for sFTP. Review the documentation for your selected client.</p>
 
-<p>For <strong>Starter environments and Pro Integration environments</strong>, you may also want to consider <a href="/devdocs/guides/v2.0/cloud/project/project-conf-files_magento-app.html#mounts">adding a mount</a> for access to a specific directory. You would add the mount to your <code class="highlighter-rouge">.magento.app.yaml</code> file. For a list of writable directories, see <a href="/devdocs/guides/v2.0/cloud/project/project-start.html">Project structure</a>. This mount point will only work in those environments.</p>
+<p>For <strong>Starter environments and Pro Integration environments</strong>, you may also want to consider <a href="/devdocs/guides/v2.0/cloud/project/project-conf-files_magento-app.html#mounts">adding a mount</a> for access to a specific directory. You would add the mount to your <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> file. For a list of writable directories, see <a href="/devdocs/guides/v2.0/cloud/project/project-start.html">Project structure</a>. This mount point will only work in those environments.</p>
 
-<p>For <strong>Pro Staging and Production environments</strong>, you need to enter a <a href="/devdocs/guides/v2.0/cloud/trouble/trouble.html">Support ticket</a> to request sFTP access in those environments. We can then create a mount point and provide access to the specific <code class="highlighter-rouge">pub/media</code> folder.</p>
+<p>For <strong>Pro Staging and Production environments</strong>, you need to enter a <a href="/devdocs/guides/v2.0/cloud/trouble/trouble.html">Support ticket</a> to request sFTP access in those environments. We can then create a mount point and provide access to the specific <code class="language-plaintext highlighter-rouge">pub/media</code> folder.</p>
 
 			
 		</div>

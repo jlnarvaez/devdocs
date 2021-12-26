@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>git push details | Magento 2 Developer Documentation (copy)</title>
+	<title>git push details | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/project/admin-git-push.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/project/admin-git-push.html">Magento 2.0</a></li>
 		
@@ -1378,22 +1379,22 @@
 	<h1 class="page-heading">git push details</h1>
 </section>
 
-			<h1 id="step-by-step-walk-through-of-git-push-output">Step by step walk-through of <code class="highlighter-rouge">git push</code> output</h1>
+			<h1 id="step-by-step-walk-through-of-git-push-output">Step by step walk-through of <code class="language-plaintext highlighter-rouge">git push</code> output</h1>
 
-<p>To better grasp what is happening here, we will show you what the output of the <code class="highlighter-rouge">git push</code> command might look like with Magento Commerce Cloud.</p>
+<p>To better grasp what is happening here, we will show you what the output of the <code class="language-plaintext highlighter-rouge">git push</code> command might look like with Magento Commerce Cloud.</p>
 
-<p>For this example, we use a sample PHP project with multiple data backends, MySQL, Redis, and Elasticsearch. It has its PHP dependencies in a <code class="highlighter-rouge">composer.json</code> file. It uses the Ruby library <code class="highlighter-rouge">sass</code> to compile the SCSS during its build process.</p>
+<p>For this example, we use a sample PHP project with multiple data backends, MySQL, Redis, and Elasticsearch. It has its PHP dependencies in a <code class="language-plaintext highlighter-rouge">composer.json</code> file. It uses the Ruby library <code class="language-plaintext highlighter-rouge">sass</code> to compile the SCSS during its build process.</p>
 
-<p>A developer wants to work on a new feature for the store. They created a new environment by running <code class="highlighter-rouge">magento-cloud environment:branch maximal</code>, where <code class="highlighter-rouge">maximal</code> is the name of the branch.</p>
+<p>A developer wants to work on a new feature for the store. They created a new environment by running <code class="language-plaintext highlighter-rouge">magento-cloud environment:branch maximal</code>, where <code class="language-plaintext highlighter-rouge">maximal</code> is the name of the branch.</p>
 
 <p>After modifying some files, the developer pushed the changes using:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>$ git push
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>$ git push
 </code></pre></div></div>
 
 <p>This is what the output looks like:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Counting objects: 4, done.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Counting objects: 4, done.
 Delta compression using up to 4 threads.
 Compressing objects: 100% (4/4), done.
 Writing objects: 100% (4/4), 428 bytes | 0 bytes/s, done.
@@ -1408,61 +1409,61 @@ Total 4 (delta 3), reused 0 (delta 0)
 
 <p>The output for each deployed application would have been similar to what you see below for a single application.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Validating configuration files.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Validating configuration files.
 </code></pre></div></div>
 
 <p>Magento Commerce Cloud now checks that your configuration files make sense. Errors display if you used tabs instead of spaces in your yaml files. It does many other validations and tries to provide you with useful error messages.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Processing activity: **Shelly** pushed to **maximal**
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Processing activity: **Shelly** pushed to **maximal**
     Found 1 new commit.
 </code></pre></div></div>
 
 <p>Now, the deployment process starts building your application(s).</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Building application 'myapp' (runtime type: php, tree: 551ee89)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Building application 'myapp' (runtime type: php, tree: 551ee89)
     Generating runtime configuration.
 </code></pre></div></div>
 
-<p>Based on what you put in your <code class="highlighter-rouge">.magento.app.yaml</code>, it is going to build for each application a container with the correct configuration.</p>
+<p>Based on what you put in your <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code>, it is going to build for each application a container with the correct configuration.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Installing build dependencies...
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Installing build dependencies...
     Installing ruby build dependencies: sass
 </code></pre></div></div>
 
-<p>In this case we have a dependency on the Ruby  <code class="highlighter-rouge">sass</code>   <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span>
- so it has installed it. (Again, this comes from <code class="highlighter-rouge">.magento.app.yaml</code>.)</p>
+<p>In this case we have a dependency on the Ruby  <code class="language-plaintext highlighter-rouge">sass</code>   <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span>
+ so it has installed it. (Again, this comes from <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code>.)</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Found a `composer.json`, installing dependencies.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Found a `composer.json`, installing dependencies.
 </code></pre></div></div>
 
-<p>Magento Commerce Cloud found <code class="highlighter-rouge">composer.json</code>, so it is going to automatically fetch and install all the PHP dependencies.</p>
+<p>Magento Commerce Cloud found <code class="language-plaintext highlighter-rouge">composer.json</code>, so it is going to automatically fetch and install all the PHP dependencies.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Executing post-build hook...
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Executing post-build hook...
     Building...
     Success!
 </code></pre></div></div>
 
-<p>We supplied a build hook in <code class="highlighter-rouge">.magento.app.yaml</code> (here it is transforming SCSS files to CSS). It is a good time to run  anything that needs to change the main file system. (Because after the build hook, the file system becomes read-only.)</p>
+<p>We supplied a build hook in <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> (here it is transforming SCSS files to CSS). It is a good time to run  anything that needs to change the main file system. (Because after the build hook, the file system becomes read-only.)</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Executing pre-flight checks...
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Executing pre-flight checks...
 </code></pre></div></div>
 
 <p>Magento Commerce Cloud just ran some static security checks on the code. There are some vulnerabilities it will refuse to deploy. (You can force it, but it’s not a good idea.)</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Compressing application.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Compressing application.
 Beaming package to its final destination.
 </code></pre></div></div>
 
 <p>Building is over. Magento Commerce Cloud creates an archive of the application and is going to send it to one of the hosts on the grid where it will be mounted.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Re-deploying environment mswy7hzcuhcjy-maximal.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Re-deploying environment mswy7hzcuhcjy-maximal.
 </code></pre></div></div>
 
 <p>The environment with all its applications has been deployed (here there is just one) and Magento Commerce Cloud will now give you an overview of its configuration.</p>
 
 <p>You will not be able to see output from the “deploy” hook as these happen in the context of the deployed application. But you could SSH to the environment and inspect the log files.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Environment configuration:
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Environment configuration:
     myapp (type: php, size: S, disk: 200)
     cache (type: redis, size: S)
     database (type: mysql, size: S, disk: 200)
@@ -1471,16 +1472,16 @@ Beaming package to its final destination.
 
 <p>We can see the five different data backends were deployed (started, and initialized with the data from the parent environment). Magento Commerce Cloud also  configured the network so your application container can access them.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Environment routes:
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Environment routes:
     http://maximal-mswy7hzcuhcjy.example.magento.com/ is served by application `myapp`
     http://www---maximal-mswy7hzcuhcjy.example.magento.com/ redirects to http://maximal-mswy7hzcuhcjy.example.magento.com/
     https://maximal-mswy7hzcuhcjy.example.magento.com/ is served by application `myapp`
     https://www---maximal-mswy7hzcuhcjy.example.magento.com/ redirects to http://maximal-mswy7hzcuhcjy.example.magento.com/
 </code></pre></div></div>
 
-<p>Finally, Magento Commerce Cloud gives you the different routes that are served by your application. Here you can see the “mangled” routes on a non-live environment where the <code class="highlighter-rouge">www.</code> part was replaced by <code class="highlighter-rouge">www---</code> you can visit those in a browser. The site is live.</p>
+<p>Finally, Magento Commerce Cloud gives you the different routes that are served by your application. Here you can see the “mangled” routes on a non-live environment where the <code class="language-plaintext highlighter-rouge">www.</code> part was replaced by <code class="language-plaintext highlighter-rouge">www---</code> you can visit those in a browser. The site is live.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>To mswy7hzcuhcjy@git.example.magento.com:mswy7hzcuhcjy.git
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>To mswy7hzcuhcjy@git.example.magento.com:mswy7hzcuhcjy.git
     31ed214..f32e741  maximal -&gt; maximal
 </code></pre></div></div>
 

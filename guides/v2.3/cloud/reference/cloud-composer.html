@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Composer | Magento 2 Developer Documentation (copy)</title>
+	<title>Composer | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/reference/cloud-composer.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/reference/cloud-composer.html">Magento 2.0</a></li>
 		
@@ -4344,15 +4345,15 @@
 
 			<p>We use <a href="https://getcomposer.org/doc">Composer</a> to manage Magento Commerce Cloud dependencies and upgrades and provide context about the included packages, what the packages do, and how they fit together. We highly recommend experience with Composer.</p>
 
-<p>Composer manages required libraries and dependencies for your project and installs them in the <code class="highlighter-rouge">vendor</code> directory.</p>
+<p>Composer manages required libraries and dependencies for your project and installs them in the <code class="language-plaintext highlighter-rouge">vendor</code> directory.</p>
 
 <h2 id="files">Composer files</h2>
 
-<p>For Magento Commerce Cloud, we use the <code class="highlighter-rouge">composer.json</code> and <code class="highlighter-rouge">composer.lock</code> files, located in the project root directory, to manage the modules list, packages, dependencies, and so on for determining upgrades, patches, hotfixes, and more.</p>
+<p>For Magento Commerce Cloud, we use the <code class="language-plaintext highlighter-rouge">composer.json</code> and <code class="language-plaintext highlighter-rouge">composer.lock</code> files, located in the project root directory, to manage the modules list, packages, dependencies, and so on for determining upgrades, patches, hotfixes, and more.</p>
 
-<p>Magento extension and module developers use the <code class="highlighter-rouge">composer.json</code> file to manage product installations and upgrades. See <a href="/devdocs/guides/v2.3/cloud/howtos/install-components.html">Install, manage, and upgrade extensions</a>.</p>
+<p>Magento extension and module developers use the <code class="language-plaintext highlighter-rouge">composer.json</code> file to manage product installations and upgrades. See <a href="/devdocs/guides/v2.3/cloud/howtos/install-components.html">Install, manage, and upgrade extensions</a>.</p>
 
-<p>The <code class="highlighter-rouge">composer.lock</code> file stores a set of exact version dependencies that satisfy all of the version constraints of every requirement for every package in the dependency tree of the project.</p>
+<p>The <code class="language-plaintext highlighter-rouge">composer.lock</code> file stores a set of exact version dependencies that satisfy all of the version constraints of every requirement for every package in the dependency tree of the project.</p>
 
 <p><strong>Common commands</strong></p>
 
@@ -4365,12 +4366,12 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">composer update</code></td>
-      <td>Updates to the latest versions of the dependencies. You must update every time you edit dependencies in the <code class="highlighter-rouge">composer.json</code> file. This updates the <code class="highlighter-rouge">composer.lock</code> file.</td>
+      <td><code class="language-plaintext highlighter-rouge">composer update</code></td>
+      <td>Updates to the latest versions of the dependencies. You must update every time you edit dependencies in the <code class="language-plaintext highlighter-rouge">composer.json</code> file. This updates the <code class="language-plaintext highlighter-rouge">composer.lock</code> file.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">composer install</code></td>
-      <td>Reads the <code class="highlighter-rouge">composer.lock</code> file to download dependencies. You must keep an up-to-date copy of <code class="highlighter-rouge">composer.lock</code> in your Magento Commerce Cloud repository.</td>
+      <td><code class="language-plaintext highlighter-rouge">composer install</code></td>
+      <td>Reads the <code class="language-plaintext highlighter-rouge">composer.lock</code> file to download dependencies. You must keep an up-to-date copy of <code class="language-plaintext highlighter-rouge">composer.lock</code> in your Magento Commerce Cloud repository.</td>
     </tr>
   </tbody>
 </table>
@@ -4378,25 +4379,25 @@
 <p>The workflow is as follows:</p>
 
 <ol>
-  <li>Make a change to <code class="highlighter-rouge">composer.json</code>. For example, edit this file when installing an extension or module.</li>
-  <li>Run <code class="highlighter-rouge">composer update</code>.</li>
-  <li>Add <code class="highlighter-rouge">composer.lock</code> to or update it in your Cloud Git repository.</li>
+  <li>Make a change to <code class="language-plaintext highlighter-rouge">composer.json</code>. For example, edit this file when installing an extension or module.</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">composer update</code>.</li>
+  <li>Add <code class="language-plaintext highlighter-rouge">composer.lock</code> to or update it in your Cloud Git repository.</li>
   <li>Push the changes to the Cloud environment, which causes Cloud to build and deploy the environment.</li>
 </ol>
 
-<p>During the <a href="/devdocs/guides/v2.3/cloud/reference/discover-deploy.html">build phase</a>, the Cloud environment runs <code class="highlighter-rouge">composer install</code> on a fresh clone of your Git branch to retrieve the latest dependencies.</p>
+<p>During the <a href="/devdocs/guides/v2.3/cloud/reference/discover-deploy.html">build phase</a>, the Cloud environment runs <code class="language-plaintext highlighter-rouge">composer install</code> on a fresh clone of your Git branch to retrieve the latest dependencies.</p>
 
 <h2 id="cloud-composer-cloudmeta">magento/magento-cloud-metapackage</h2>
 
-<p>The <code class="highlighter-rouge">vendor/magento/magento-cloud-metapackage</code> should be the only package in the <code class="highlighter-rouge">require</code> section of your <code class="highlighter-rouge">composer.json</code>. This is a <a href="https://getcomposer.org/doc/04-schema.md#type"><em>metapackage</em></a> and does not contain any code.</p>
+<p>The <code class="language-plaintext highlighter-rouge">vendor/magento/magento-cloud-metapackage</code> should be the only package in the <code class="language-plaintext highlighter-rouge">require</code> section of your <code class="language-plaintext highlighter-rouge">composer.json</code>. This is a <a href="https://getcomposer.org/doc/04-schema.md#type"><em>metapackage</em></a> and does not contain any code.</p>
 
-<p>The metapackage depends on the appropriate versions of <code class="highlighter-rouge">vendor/magento/ece-patches</code>, <a href="#ece-tools"><code class="highlighter-rouge">vendor/magento/ece-tools</code></a>, and <a href="#cloud-composer-prodee"><code class="highlighter-rouge">vendor/magento/product-enterprise-edition</code></a>. At any given version, this package requires the same version of <code class="highlighter-rouge">magento/product-enterprise-edition</code>. For example, to use Magento Commerce version 2.2.0, for example, <code class="highlighter-rouge">composer.json</code> must specify a requirement for <code class="highlighter-rouge">magento/magento-cloud-metapackage</code> version 2.2.0.</p>
+<p>The metapackage depends on the appropriate versions of <code class="language-plaintext highlighter-rouge">vendor/magento/ece-patches</code>, <a href="#ece-tools"><code class="language-plaintext highlighter-rouge">vendor/magento/ece-tools</code></a>, and <a href="#cloud-composer-prodee"><code class="language-plaintext highlighter-rouge">vendor/magento/product-enterprise-edition</code></a>. At any given version, this package requires the same version of <code class="language-plaintext highlighter-rouge">magento/product-enterprise-edition</code>. For example, to use Magento Commerce version 2.2.0, for example, <code class="language-plaintext highlighter-rouge">composer.json</code> must specify a requirement for <code class="language-plaintext highlighter-rouge">magento/magento-cloud-metapackage</code> version 2.2.0.</p>
 
-<p>This package depends on a floating version of <code class="highlighter-rouge">vendor/magento/magento-cloud-configuration</code> (abbreviated <em>MCC</em>). It depends on the major and minor version of MCC that correspond to the specified Magento Commerce version, and floats on the patch version so that compatible updates to this packages can be automatically pulled by running <code class="highlighter-rouge">composer update</code>.</p>
+<p>This package depends on a floating version of <code class="language-plaintext highlighter-rouge">vendor/magento/magento-cloud-configuration</code> (abbreviated <em>MCC</em>). It depends on the major and minor version of MCC that correspond to the specified Magento Commerce version, and floats on the patch version so that compatible updates to this packages can be automatically pulled by running <code class="language-plaintext highlighter-rouge">composer update</code>.</p>
 
 <h2 id="ece-tools">vendor/magento/ece-tools</h2>
 
-<p>The <code class="highlighter-rouge">ece-tools</code> package is compatible with Magento Commerce version 2.1.4 and later to provide a rich set of features you can use to manage your Magento Commerce Cloud project. It contains scripts and Magento Commerce Cloud commands designed to help manage your code and automatically build and deploy your projects.</p>
+<p>The <code class="language-plaintext highlighter-rouge">ece-tools</code> package is compatible with Magento Commerce version 2.1.4 and later to provide a rich set of features you can use to manage your Magento Commerce Cloud project. It contains scripts and Magento Commerce Cloud commands designed to help manage your code and automatically build and deploy your projects.</p>
 
 <h2 id="cloud-composer-prodee">vendor/magento/product-enterprise-edition</h2>
 
@@ -4405,18 +4406,18 @@
 
 <h2 id="base-packages-and-file-marshalling">Base packages and file marshalling</h2>
 
-<p>Magento contains two base packages: <code class="highlighter-rouge">magento/magento2-base</code> and <code class="highlighter-rouge">magento/magento2-ee-base</code>. These packages contain interstitial files that cannot be classified as extensions, themes, frameworks, or language packages; for example, sample server configuration files,   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
+<p>Magento contains two base packages: <code class="language-plaintext highlighter-rouge">magento/magento2-base</code> and <code class="language-plaintext highlighter-rouge">magento/magento2-ee-base</code>. These packages contain interstitial files that cannot be classified as extensions, themes, frameworks, or language packages; for example, sample server configuration files,   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
  entry points, and so on.</p>
 
-<p>These files are location-dependent, and cannot reside in the <code class="highlighter-rouge">vendor</code> directory. They are distributed as part of the base packages, and they rely on hooks located in the <code class="highlighter-rouge">magento/magento-composer-installer</code> package, which marshals them to the appropriate locations.</p>
+<p>These files are location-dependent, and cannot reside in the <code class="language-plaintext highlighter-rouge">vendor</code> directory. They are distributed as part of the base packages, and they rely on hooks located in the <code class="language-plaintext highlighter-rouge">magento/magento-composer-installer</code> package, which marshals them to the appropriate locations.</p>
 
-<p>One way in which Magento Commerce Cloud deploys differently than other Magento installations is that it does not marshal base packages on the Cloud environment. This could change in a future Cloud release, but for now, on the Cloud environment—specifically, the marshalling functionality of <code class="highlighter-rouge">magento/magento-composer-installer</code>—it is disabled.</p>
+<p>One way in which Magento Commerce Cloud deploys differently than other Magento installations is that it does not marshal base packages on the Cloud environment. This could change in a future Cloud release, but for now, on the Cloud environment—specifically, the marshalling functionality of <code class="language-plaintext highlighter-rouge">magento/magento-composer-installer</code>—it is disabled.</p>
 
 <p>When upgrading to a new Magento Commerce Cloud version or adding, removing, or changing any packages that rely on file marshaling, you must:</p>
 
 <ol>
   <li>
-    <p>Run <code class="highlighter-rouge">composer update</code> locally.</p>
+    <p>Run <code class="language-plaintext highlighter-rouge">composer update</code> locally.</p>
 
     <p>The new version of the base packages are marshalled out into the Cloud project root directory, which means files are added, removed, and changed.</p>
 

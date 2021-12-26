@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Using custom fonts | Magento 2 Developer Documentation (copy)</title>
+	<title>Using custom fonts | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/frontend-dev-guide/css-topics/using-fonts.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/frontend-dev-guide/css-topics/using-fonts.html">Magento 2.0</a></li>
 		
@@ -2748,13 +2749,13 @@
 
 <ol>
   <li>
-    <p>Add font files to your local theme directory. For example, <code class="highlighter-rouge">app/design/frontend/&lt;your_vendor_name&gt;/&lt;your_theme_name&gt;/web/fonts</code>.</p>
+    <p>Add font files to your local theme directory. For example, <code class="language-plaintext highlighter-rouge">app/design/frontend/&lt;your_vendor_name&gt;/&lt;your_theme_name&gt;/web/fonts</code>.</p>
 
     <p class="bs-callout bs-callout-info">To add <em>external</em> fonts, add font references to the page configuration file as described in <a href="/devdocs/guides/v2.1/frontend-dev-guide/layouts/xml-manage.html#layout_markup_css">Include static resources (JavaScript, CSS, fonts)</a>.</p>
   </li>
   <li>
-    <p>If you build a theme using the Magento UI library, declare the font by adding the <code class="highlighter-rouge">.lib-font-face</code>   <span term-uuid="1a305bdb-9be8-44aa-adad-98758821d6a7" class="glossary-term" data-toggle="popover">mixin</span>
- to the <code class="highlighter-rouge">app/design/frontend/&lt;your_vendor_name&gt;/&lt;your_theme_name&gt;/web/css/source/_typography.less</code> file:</p>
+    <p>If you build a theme using the Magento UI library, declare the font by adding the <code class="language-plaintext highlighter-rouge">.lib-font-face</code>   <span term-uuid="1a305bdb-9be8-44aa-adad-98758821d6a7" class="glossary-term" data-toggle="popover">mixin</span>
+ to the <code class="language-plaintext highlighter-rouge">app/design/frontend/&lt;your_vendor_name&gt;/&lt;your_theme_name&gt;/web/css/source/_typography.less</code> file:</p>
 
     <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> <span class="nc">.lib-font-face</span><span class="o">(</span>
      <span class="k">@family-name</span><span class="p">:</span><span class="s2">'&lt;any_font_name&gt;'</span><span class="p">,</span>
@@ -2767,8 +2768,8 @@
     <p>Where:</p>
 
     <ul>
-      <li><code class="highlighter-rouge">{@baseDir}</code> stands for the <code class="highlighter-rouge">app/design/frontend/&lt;you_vendor_name&gt;/&lt;your_theme_name&gt;/web</code> directory.</li>
-      <li><code class="highlighter-rouge">&lt;path_to_font_file&gt;</code> includes the font file name, but without the extension. For example, <code class="highlighter-rouge">@font-path: '@{baseDir}fonts/Luma-Icons'</code> for the font stored in <code class="highlighter-rouge">web/fonts/Luma-Icons.woff</code>.</li>
+      <li><code class="language-plaintext highlighter-rouge">{@baseDir}</code> stands for the <code class="language-plaintext highlighter-rouge">app/design/frontend/&lt;you_vendor_name&gt;/&lt;your_theme_name&gt;/web</code> directory.</li>
+      <li><code class="language-plaintext highlighter-rouge">&lt;path_to_font_file&gt;</code> includes the font file name, but without the extension. For example, <code class="language-plaintext highlighter-rouge">@font-path: '@{baseDir}fonts/Luma-Icons'</code> for the font stored in <code class="language-plaintext highlighter-rouge">web/fonts/Luma-Icons.woff</code>.</li>
     </ul>
 
     <p>The mixin generates the CSS, which includes the font. The following example shows how to generate CSS for the Open Sans font in the Blank theme:</p>
@@ -2784,7 +2785,7 @@
   </li>
 </ol>
 
-<p class="bs-callout bs-callout-info">If your theme does not use the Magento UI library, include the font in your theme’s CSS files using the <code class="highlighter-rouge">@font-face</code> CSS rule.</p>
+<p class="bs-callout bs-callout-info">If your theme does not use the Magento UI library, include the font in your theme’s CSS files using the <code class="language-plaintext highlighter-rouge">@font-face</code> CSS rule.</p>
 
 			
 		</div>

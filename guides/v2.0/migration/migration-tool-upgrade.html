@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Upgrade Data Migration Tool | Magento 2 Developer Documentation (copy)</title>
+	<title>Upgrade Data Migration Tool | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/migration/migration-tool-upgrade.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/migration/migration-tool-upgrade.html">Magento 2.0</a></li>
 		
@@ -1843,7 +1844,7 @@
     <p>Upgrade your Magento software to get the latest version</p>
   </li>
   <li>
-    <p>Back up the <code class="highlighter-rouge">vendor/magento/data-migration-tool</code> directory</p>
+    <p>Back up the <code class="language-plaintext highlighter-rouge">vendor/magento/data-migration-tool</code> directory</p>
   </li>
   <li>
     <p>Make sure the Data Migration Tool version matches the Magento application version</p>
@@ -1854,16 +1855,16 @@
 
 <p>If you haven’t already done so, run the <a href="/devdocs/guides/v2.0/comp-mgr/upgrader/upgrade-start.html">System Upgrade utility</a> to upgrade the Magento software.</p>
 
-<h3 id="back-up-the-vendormagentodata-migration-tool-directory">Back up the <code class="highlighter-rouge">vendor/magento/data-migration-tool</code> directory</h3>
+<h3 id="back-up-the-vendormagentodata-migration-tool-directory">Back up the <code class="language-plaintext highlighter-rouge">vendor/magento/data-migration-tool</code> directory</h3>
 
-<p>Before you upgrade the Data Migration Tool, back up at least the <code class="highlighter-rouge">vendor/magento/data-migration-tool</code> directory. During upgrade, it could be deleted and replaced by the updated code.</p>
+<p>Before you upgrade the Data Migration Tool, back up at least the <code class="language-plaintext highlighter-rouge">vendor/magento/data-migration-tool</code> directory. During upgrade, it could be deleted and replaced by the updated code.</p>
 
 <p>You can also back up the entire Magento codebase and database using the following command:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php &lt;your Magento install dir&gt;/bin/magento setup:backup --code --db
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php &lt;your Magento install dir&gt;/bin/magento setup:backup --code --db
 </code></pre></div></div>
 
-<p class="bs-callout bs-callout-warning">The <code class="highlighter-rouge">vendor/magento/data-migration-tool</code> directory contains your custom code. Failure to back it up means you can lose your customizations during upgrade.</p>
+<p class="bs-callout bs-callout-warning">The <code class="language-plaintext highlighter-rouge">vendor/magento/data-migration-tool</code> directory contains your custom code. Failure to back it up means you can lose your customizations during upgrade.</p>
 
 <h3 id="make-sure-versions-match">Make sure versions match</h3>
 
@@ -1891,13 +1892,13 @@
   <li>
     <p>Enter the following command:</p>
 
-    <p><code class="highlighter-rouge">composer require magento/data-migration-tool:&lt;version&gt;</code></p>
+    <p><code class="language-plaintext highlighter-rouge">composer require magento/data-migration-tool:&lt;version&gt;</code></p>
 
-    <p>where <code class="highlighter-rouge">&lt;version&gt;</code> must match the version of the Magento 2 codebase.</p>
+    <p>where <code class="language-plaintext highlighter-rouge">&lt;version&gt;</code> must match the version of the Magento 2 codebase.</p>
 
     <p>For example, for version 2.1.2, enter:</p>
 
-    <p><code class="highlighter-rouge">composer require magento/data-migration-tool:2.1.2</code></p>
+    <p><code class="language-plaintext highlighter-rouge">composer require magento/data-migration-tool:2.1.2</code></p>
   </li>
   <li>Wait while the command completes.</li>
 </ol>

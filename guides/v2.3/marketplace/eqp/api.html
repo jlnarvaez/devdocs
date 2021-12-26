@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Introduction | Magento 2 Developer Documentation (copy)</title>
+	<title>Introduction | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/marketplace/eqp/api.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/marketplace/eqp/api.html">Magento 2.0</a></li>
 		
@@ -1713,7 +1714,7 @@
 
 <p>The APIs only accept encrypted communications using HTTPS at the following base URLs:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>https://developer-api.magento.com - Production
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>https://developer-api.magento.com - Production
 https://developer-api-sandbox.magento.com - Sandbox
 </code></pre></div></div>
 
@@ -1735,12 +1736,12 @@ https://developer-api-sandbox.magento.com - Sandbox
 <p>All HTTP 4xx errors contain a JSON payload with the following structure:</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-  </span><span class="err">“code”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1208</span><span class="w">
-  </span><span class="err">“message”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“Insufficient</span><span class="w"> </span><span class="err">information</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">Technical</span><span class="w"> </span><span class="err">Submission”</span><span class="w">
+  </span><span class="err">“code”</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="mi">1208</span><span class="w">
+  </span><span class="err">“message”</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="err">“Insufficient</span><span class="w"> </span><span class="err">information</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">Technical</span><span class="w"> </span><span class="err">Submission”</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<p>Batch responses return a HTTP 200 response code, but each item in the batch contains the <code class="highlighter-rouge">code</code> and <code class="highlighter-rouge">message</code> pair indicating an error. A <code class="highlighter-rouge">code</code> of 200 indicates success.</p>
+<p>Batch responses return a HTTP 200 response code, but each item in the batch contains the <code class="language-plaintext highlighter-rouge">code</code> and <code class="language-plaintext highlighter-rouge">message</code> pair indicating an error. A <code class="language-plaintext highlighter-rouge">code</code> of 200 indicates success.</p>
 
 			
 		</div>

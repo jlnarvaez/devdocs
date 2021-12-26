@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Serialize Library | Magento 2 Developer Documentation (copy)</title>
+	<title>Serialize Library | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/extension-dev-guide/framework/serializer.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/extension-dev-guide/framework/serializer.html">Magento 2.0</a></li>
 		
@@ -3257,99 +3258,99 @@
 <p>This   <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span>
  provides a secure way of serializing and unserializing strings, integers, floats, booleans, and arrays.</p>
 
-<p>Magento’s Serialize library provides the <code class="highlighter-rouge">Magento\Framework\Serialize\SerializerInterface</code> and the Json and Serialize implementations for serializing data.</p>
+<p>Magento’s Serialize library provides the <code class="language-plaintext highlighter-rouge">Magento\Framework\Serialize\SerializerInterface</code> and the Json and Serialize implementations for serializing data.</p>
 
 <h2 id="serialization">Serialization</h2>
 
-<p>The main purpose of data serialization is to convert data into a string using <code class="highlighter-rouge">serialize()</code> to store in a database, a cache, or pass onto another layer in the application.</p>
+<p>The main purpose of data serialization is to convert data into a string using <code class="language-plaintext highlighter-rouge">serialize()</code> to store in a database, a cache, or pass onto another layer in the application.</p>
 
-<p>The other half of this process uses the <code class="highlighter-rouge">unserialize()</code> function to reverse the process and convert a serialized string back into string, integer, float, boolean, or array data.</p>
+<p>The other half of this process uses the <code class="language-plaintext highlighter-rouge">unserialize()</code> function to reverse the process and convert a serialized string back into string, integer, float, boolean, or array data.</p>
 
-<p class="bs-callout bs-callout-warning">For security reasons, <code class="highlighter-rouge">SerializerInterface</code> implementations, such as the Json and Serialize classes, should not serialize and unserialize objects.</p>
+<p class="bs-callout bs-callout-warning">For security reasons, <code class="language-plaintext highlighter-rouge">SerializerInterface</code> implementations, such as the Json and Serialize classes, should not serialize and unserialize objects.</p>
 
 <h2 id="implementations">Implementations</h2>
 
 <h3 id="json-default">Json (default)</h3>
 
-<p>The <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/Serialize/Serializer/Json.php" target="_blank"><code class="highlighter-rouge">Magento\Framework\Serialize\Serializer\Json</code></a> class serializes and unserializes data using the <a href="http://www.json.org/" target="_blank">JSON</a> format.
+<p>The <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/Serialize/Serializer/Json.php" target="_blank"><code class="language-plaintext highlighter-rouge">Magento\Framework\Serialize\Serializer\Json</code></a> class serializes and unserializes data using the <a href="http://www.json.org/" target="_blank">JSON</a> format.
 This class does not unserialize objects.</p>
 
 <h3 id="serialize">Serialize</h3>
 
-<p>The <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/Serialize/Serializer/Serialize.php" target="_blank"><code class="highlighter-rouge">Magento\Framework\Serialize\Serializer\Serialize</code></a> class is less secure than the Json implementation but provides better performance on large arrays.
+<p>The <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/Serialize/Serializer/Serialize.php" target="_blank"><code class="language-plaintext highlighter-rouge">Magento\Framework\Serialize\Serializer\Serialize</code></a> class is less secure than the Json implementation but provides better performance on large arrays.
 This class does not unserialize objects in   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
  7.</p>
 
-<p class="bs-callout bs-callout-warning">Magento discourages using the Serialize implementation directly because it can lead to security vulnerabilities. Always use the <code class="highlighter-rouge">SerializerInterface</code> for serializing and unserializing.</p>
+<p class="bs-callout bs-callout-warning">Magento discourages using the Serialize implementation directly because it can lead to security vulnerabilities. Always use the <code class="language-plaintext highlighter-rouge">SerializerInterface</code> for serializing and unserializing.</p>
 
 <h2 id="usage">Usage</h2>
 
-<p>Declare <code class="highlighter-rouge">SerializerInterface</code> as a <a href="/devdocs/guides/v2.2/extension-dev-guide/depend-inj.html">constructor dependency</a> to get an instance of a serializer class.</p>
+<p>Declare <code class="language-plaintext highlighter-rouge">SerializerInterface</code> as a <a href="/devdocs/guides/v2.2/extension-dev-guide/depend-inj.html">constructor dependency</a> to get an instance of a serializer class.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">use</span> <span class="nx">Magento\Framework\Serialize\SerializerInterface</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="kn">use</span> <span class="nc">Magento\Framework\Serialize\SerializerInterface</span><span class="p">;</span>
 
-<span class="o">...</span>
+<span class="mf">...</span>
 
-<span class="sd">/**
+<span class="cd">/**
  * @var SerializerInterface
  */</span>
 <span class="k">private</span> <span class="nv">$serializer</span><span class="p">;</span>
 
-<span class="o">...</span>
+<span class="mf">...</span>
 
-<span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">SerializerInterface</span> <span class="nv">$serializer</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">serializer</span> <span class="o">=</span> <span class="nv">$serializer</span><span class="p">;</span>
+<span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="kt">SerializerInterface</span> <span class="nv">$serializer</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">serializer</span> <span class="o">=</span> <span class="nv">$serializer</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
 <p><br />
-The following example shows how to use a serializer’s <code class="highlighter-rouge">serialize()</code> and <code class="highlighter-rouge">unserialize()</code> functions to store and retrieve array data from a cache:</p>
+The following example shows how to use a serializer’s <code class="language-plaintext highlighter-rouge">serialize()</code> and <code class="language-plaintext highlighter-rouge">unserialize()</code> functions to store and retrieve array data from a cache:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">...</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="mf">...</span>
 
-<span class="sd">/**
+<span class="cd">/**
  * @var string
  */</span>
 <span class="k">private</span> <span class="nv">$cacheId</span> <span class="o">=</span> <span class="s1">'mySerializedData'</span><span class="p">;</span>
 
-<span class="o">...</span>
+<span class="mf">...</span>
 
-<span class="sd">/**
+<span class="cd">/**
  * Save data to cache
  * @param array $data
  *
  * @return bool
  */</span>
-<span class="k">public</span> <span class="k">function</span> <span class="nf">saveDataToCache</span><span class="p">(</span><span class="nv">$data</span><span class="p">)</span>
+<span class="k">public</span> <span class="k">function</span> <span class="n">saveDataToCache</span><span class="p">(</span><span class="nv">$data</span><span class="p">)</span>
 <span class="p">{</span>
-  <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCache</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">serializer</span><span class="o">-&gt;</span><span class="na">serialize</span><span class="p">(</span><span class="nv">$data</span><span class="p">),</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cacheId</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">getCache</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">save</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">serializer</span><span class="o">-&gt;</span><span class="nb">serialize</span><span class="p">(</span><span class="nv">$data</span><span class="p">),</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">cacheId</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="o">...</span>
+<span class="mf">...</span>
 
-<span class="sd">/**
+<span class="cd">/**
  * Load data from cache
  *
  * @return array
  */</span>
-<span class="k">public</span> <span class="k">function</span> <span class="nf">loadDataFromCache</span><span class="p">()</span>
+<span class="k">public</span> <span class="k">function</span> <span class="n">loadDataFromCache</span><span class="p">()</span>
 <span class="p">{</span>
-  <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCache</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">load</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cacheId</span><span class="p">);</span>
+  <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">getCache</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">load</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">cacheId</span><span class="p">);</span>
   <span class="k">if</span> <span class="p">(</span><span class="kc">false</span> <span class="o">!==</span> <span class="nv">$data</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">serializer</span><span class="o">-&gt;</span><span class="na">unserialize</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+    <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">serializer</span><span class="o">-&gt;</span><span class="nb">unserialize</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="o">...</span></code></pre></figure>
+<span class="mf">...</span></code></pre></figure>
 
 <h2 id="backward-compatibility-note">Backward Compatibility Note</h2>
 
-<p>The <code class="highlighter-rouge">SerializerInterface</code> interface and its implementations only exist since Magento version 2.2.<br />
+<p>The <code class="language-plaintext highlighter-rouge">SerializerInterface</code> interface and its implementations only exist since Magento version 2.2.<br />
 Because of this, it is not possible to use these classes in code that has to be compatible with Magento 2.1 or 2.0.</p>
 
-<p>In code that is compatible with earlier versions of Magento 2, constructor dependency injection can not be used to get an instance of <code class="highlighter-rouge">SerializerInterface</code>.<br />
-Instead, a runtime check if the <code class="highlighter-rouge">SerializerInterface</code> definition exists can made, and if it does, it can be instantiated by directly accessing the object manager using a static method. Alternatively a check against the Magento 2 version or the <code class="highlighter-rouge">magento/framework</code> composer package version would work, too.  
-If the interface does not exist or an earlier version of Magento 2 is being executed, the appropriate native PHP serialization function has to be called, e.g. <code class="highlighter-rouge">\serialize()</code> or <code class="highlighter-rouge">\json_encode()</code>, depending on the usercase.</p>
+<p>In code that is compatible with earlier versions of Magento 2, constructor dependency injection can not be used to get an instance of <code class="language-plaintext highlighter-rouge">SerializerInterface</code>.<br />
+Instead, a runtime check if the <code class="language-plaintext highlighter-rouge">SerializerInterface</code> definition exists can made, and if it does, it can be instantiated by directly accessing the object manager using a static method. Alternatively a check against the Magento 2 version or the <code class="language-plaintext highlighter-rouge">magento/framework</code> composer package version would work, too.  
+If the interface does not exist or an earlier version of Magento 2 is being executed, the appropriate native PHP serialization function has to be called, e.g. <code class="language-plaintext highlighter-rouge">\serialize()</code> or <code class="language-plaintext highlighter-rouge">\json_encode()</code>, depending on the usercase.</p>
 
 <p>Here is an example:</p>
 

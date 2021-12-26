@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Technologies and requirements | Magento 2 Developer Documentation (copy)</title>
+	<title>Technologies and requirements | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/requirements/cloud-requirements.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/requirements/cloud-requirements.html">Magento 2.0</a></li>
 		
@@ -4383,7 +4384,7 @@
 <p>To get started with Git, you should have <a href="https://git-scm.com/downloads">Git installed</a> on your local.</p>
 
 <p class="bs-callout bs-callout-info">In addition to Git requirements for valid branch names, Magento Commerce adds two additional requirements:
-The <code class="highlighter-rouge">/</code> character is not allowed. Branch names must be case-insensitively unique. In other words, if you have a branch named <code class="highlighter-rouge">CaSe</code>, you cannot create another branch named <code class="highlighter-rouge">case</code>.</p>
+The <code class="language-plaintext highlighter-rouge">/</code> character is not allowed. Branch names must be case-insensitively unique. In other words, if you have a branch named <code class="language-plaintext highlighter-rouge">CaSe</code>, you cannot create another branch named <code class="language-plaintext highlighter-rouge">case</code>.</p>
 
 <p>You must use Secure Shell (SSH) and not HTTPS to connect to the Git repository. We walk you through the process of setting this up with your local.</p>
 
@@ -4413,9 +4414,9 @@ The <code class="highlighter-rouge">/</code> character is not allowed. Branch na
 <p>For detailed information on supported versions and extensions, see the following information. These files allow you to configure software versions you want to use in your implementation.</p>
 
 <ul>
-  <li><a href="/devdocs/guides/v2.3/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a></li>
-  <li><a href="/devdocs/guides/v2.3/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">routes.yaml</code></a></li>
-  <li><a href="/devdocs/guides/v2.3/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a></li>
+  <li><a href="/devdocs/guides/v2.3/cloud/project/project-conf-files_magento-app.html"><code class="language-plaintext highlighter-rouge">.magento.app.yaml</code></a></li>
+  <li><a href="/devdocs/guides/v2.3/cloud/project/project-conf-files_routes.html"><code class="language-plaintext highlighter-rouge">routes.yaml</code></a></li>
+  <li><a href="/devdocs/guides/v2.3/cloud/project/project-conf-files_services.html"><code class="language-plaintext highlighter-rouge">services.yaml</code></a></li>
 </ul>
 
 <h2 id="requirements">Requirements to get started</h2>
@@ -4423,8 +4424,8 @@ The <code class="highlighter-rouge">/</code> character is not allowed. Branch na
 <p>To get started as a developer in a Magento Commerce Cloud project, you need to set up the following:</p>
 
 <ul>
-  <li>Set up a <a href="/devdocs/guides/v2.3/cloud/before/before-workspace.html">local development environment</a>. Your local workspace works best as a virtual system (VM or container) with all prerequisites installed and the project <code class="highlighter-rouge">master</code> Git branch cloned. You’ll develop in branches to add modules, extensions, 3rd party integrations, and configurations. We recommend reading over develop and deploy process for your <a href="/devdocs/guides/v2.3/cloud/basic-information/starter-develop-deploy-workflow.html">Starter</a> or <a href="/devdocs/guides/v2.3/cloud/architecture/pro-develop-deploy-workflow.html">Pro</a> plan.</li>
-  <li>Get <a href="/devdocs/guides/v2.3/install-gde/prereq/connect-auth.html"><code class="highlighter-rouge">repo.magento.com</code> credentials</a> in your account.</li>
+  <li>Set up a <a href="/devdocs/guides/v2.3/cloud/before/before-workspace.html">local development environment</a>. Your local workspace works best as a virtual system (VM or container) with all prerequisites installed and the project <code class="language-plaintext highlighter-rouge">master</code> Git branch cloned. You’ll develop in branches to add modules, extensions, 3rd party integrations, and configurations. We recommend reading over develop and deploy process for your <a href="/devdocs/guides/v2.3/cloud/basic-information/starter-develop-deploy-workflow.html">Starter</a> or <a href="/devdocs/guides/v2.3/cloud/architecture/pro-develop-deploy-workflow.html">Pro</a> plan.</li>
+  <li>Get <a href="/devdocs/guides/v2.3/install-gde/prereq/connect-auth.html"><code class="language-plaintext highlighter-rouge">repo.magento.com</code> credentials</a> in your account.</li>
   <li>Get a <a href="/devdocs/guides/v2.3/cloud/onboarding/onboarding-tasks.html#users">project invitation</a> from the Project Owner or a super user.</li>
 </ul>
 
@@ -4435,11 +4436,11 @@ The <code class="highlighter-rouge">/</code> character is not allowed. Branch na
 <p>Before you test any custom code in your local Magento Commerce environment, you must do all of the following:</p>
 
 <ul>
-  <li>For Pro, set the database <a href="/devdocs/guides/v2.3/cloud/before/before-workspace-magento-prereqs.html#database"><code class="highlighter-rouge">auto_increment_increment</code> to 3</a></li>
+  <li>For Pro, set the database <a href="/devdocs/guides/v2.3/cloud/before/before-workspace-magento-prereqs.html#database"><code class="language-plaintext highlighter-rouge">auto_increment_increment</code> to 3</a></li>
   <li>
     <p>Test with the correct file permissions in <a href="/devdocs/guides/v2.3/config-guide/bootstrap/magento-modes.html#production-mode">PRODUCTION mode</a></p>
 
-    <p>Correct permissions only allow write access to <code class="highlighter-rouge">var</code>, <code class="highlighter-rouge">pub/static, pub/media</code>, and <code class="highlighter-rouge">app/etc</code></p>
+    <p>Correct permissions only allow write access to <code class="language-plaintext highlighter-rouge">var</code>, <code class="language-plaintext highlighter-rouge">pub/static, pub/media</code>, and <code class="language-plaintext highlighter-rouge">app/etc</code></p>
   </li>
   <li>Test with minification for HTML, JavaScript, and   <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span>
  enabled</li>
@@ -4459,7 +4460,7 @@ The <code class="highlighter-rouge">/</code> character is not allowed. Branch na
     <p>You can enable and test individual features, new extensions, and 3rd party integration on different environments prior to merging into a single environment.</p>
   </li>
   <li>
-    <p>Verify <a href="/devdocs/guides/v2.3/install-gde/install/cli/install-cli-install.html"><code class="highlighter-rouge">magento setup:install</code></a> and <a href="/devdocs/guides/v2.3/comp-mgr/cli/cli-upgrade.html"><code class="highlighter-rouge">magento setup:upgrade</code></a> commands work during the build and deploy process and that any extensions and customizations compile correctly in <a href="/devdocs/guides/v2.3/config-guide/bootstrap/magento-modes.html#production-mode">Production mode</a></p>
+    <p>Verify <a href="/devdocs/guides/v2.3/install-gde/install/cli/install-cli-install.html"><code class="language-plaintext highlighter-rouge">magento setup:install</code></a> and <a href="/devdocs/guides/v2.3/comp-mgr/cli/cli-upgrade.html"><code class="language-plaintext highlighter-rouge">magento setup:upgrade</code></a> commands work during the build and deploy process and that any extensions and customizations compile correctly in <a href="/devdocs/guides/v2.3/config-guide/bootstrap/magento-modes.html#production-mode">Production mode</a></p>
 
     <p>You can set an environment variable or enter a CLI command for this specific mode.</p>
   </li>

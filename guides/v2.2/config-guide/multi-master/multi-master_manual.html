@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Manually configure master databases | Magento 2 Developer Documentation (copy)</title>
+	<title>Manually configure master databases | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/config-guide/multi-master/multi-master_manual.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/config-guide/multi-master/multi-master_manual.html">Magento 2.0</a></li>
 		
@@ -4017,14 +4018,14 @@
 <p>This topic uses the following naming conventions:</p>
 
 <ul>
-  <li>The main Magento database name is <code class="highlighter-rouge">magento</code> and its username and password are both <code class="highlighter-rouge">magento</code></li>
+  <li>The main Magento database name is <code class="language-plaintext highlighter-rouge">magento</code> and its username and password are both <code class="language-plaintext highlighter-rouge">magento</code></li>
   <li>
-    <p>The quote database name is <code class="highlighter-rouge">magento_quote</code> and its username and password are both <code class="highlighter-rouge">magento_quote</code></p>
+    <p>The quote database name is <code class="language-plaintext highlighter-rouge">magento_quote</code> and its username and password are both <code class="language-plaintext highlighter-rouge">magento_quote</code></p>
 
     <p>The quote database is also referred to as the <em>checkout</em> database.</p>
   </li>
   <li>
-    <p>The sales database name is <code class="highlighter-rouge">magento_sales</code> and its username and password are both <code class="highlighter-rouge">magento_sales</code></p>
+    <p>The sales database name is <code class="language-plaintext highlighter-rouge">magento_sales</code> and its username and password are both <code class="language-plaintext highlighter-rouge">magento_sales</code></p>
 
     <p>The sales database is also referred to as the order management system (<em>OMS</em>) database.</p>
   </li>
@@ -4046,7 +4047,7 @@
   <li>
     <p>Enter the following commands:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento setup:backup --code --media --db
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento setup:backup --code --media --db
 </code></pre></div>    </div>
   </li>
   <li>Continue with the next section.</li>
@@ -4068,14 +4069,14 @@
   <li>
     <p>Enter the following command to get to a MySQL command prompt:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql -u root -p
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql -u root -p
 </code></pre></div>    </div>
   </li>
-  <li>Enter the MySQL <code class="highlighter-rouge">root</code> user’s password when prompted.</li>
+  <li>Enter the MySQL <code class="language-plaintext highlighter-rouge">root</code> user’s password when prompted.</li>
   <li>
-    <p>Enter the following commands in the order shown to create database instances named <code class="highlighter-rouge">magento_quote</code> and <code class="highlighter-rouge">magento_sales</code> with the same usernames and passwords:</p>
+    <p>Enter the following commands in the order shown to create database instances named <code class="language-plaintext highlighter-rouge">magento_quote</code> and <code class="language-plaintext highlighter-rouge">magento_sales</code> with the same usernames and passwords:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>create database magento_quote;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>create database magento_quote;
 GRANT ALL ON magento_quote.* TO magento_quote@localhost IDENTIFIED BY 'magento_quote';
 
 create database magento_sales;
@@ -4083,20 +4084,20 @@ GRANT ALL ON magento_sales.* TO magento_sales@localhost IDENTIFIED BY 'magento_s
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Enter <code class="highlighter-rouge">exit</code> to quit the command prompt.</p>
+    <p>Enter <code class="language-plaintext highlighter-rouge">exit</code> to quit the command prompt.</p>
   </li>
   <li>
     <p>Verify the databases, one at a time:</p>
 
     <p>quote database:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql -u magento_quote -p
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql -u magento_quote -p
 exit
 </code></pre></div>    </div>
 
     <p>Order management database:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql -u magento_sales -p
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql -u magento_sales -p
 exit
 </code></pre></div>    </div>
 
@@ -4114,10 +4115,10 @@ exit
 <p>Sales database table names start with:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">salesrule_</code></li>
-  <li><code class="highlighter-rouge">sales_</code></li>
-  <li><code class="highlighter-rouge">magento_sales_</code></li>
-  <li>The <code class="highlighter-rouge">magento_customercustomattributes_sales_flat_order</code> table is also affected</li>
+  <li><code class="language-plaintext highlighter-rouge">salesrule_</code></li>
+  <li><code class="language-plaintext highlighter-rouge">sales_</code></li>
+  <li><code class="language-plaintext highlighter-rouge">magento_sales_</code></li>
+  <li>The <code class="language-plaintext highlighter-rouge">magento_customercustomattributes_sales_flat_order</code> table is also affected</li>
 </ul>
 
 <p class="bs-callout bs-callout-info">This section contains scripts with specific database table names. If you’ve performed customizations or if you want to see a complete list of tables before you perform actions on them, see <a href="#split-db-ref">Reference scripts</a>.</p>
@@ -4133,13 +4134,13 @@ exit
 
 <div class="collapsible">
     <b class="collapsible-title">Click to create and run sales database SQL scripts </b>
-    <div class="collapsible-content"><p>Create the following SQL scripts in a location that is accessible by the user as whom you log in to your Magento server. For example, if you log in or run commands as <code class="highlighter-rouge">root</code>, you can create the scripts in the <code class="highlighter-rouge">/root/sql-scripts</code> directory.</p>
+    <div class="collapsible-content"><p>Create the following SQL scripts in a location that is accessible by the user as whom you log in to your Magento server. For example, if you log in or run commands as <code class="language-plaintext highlighter-rouge">root</code>, you can create the scripts in the <code class="language-plaintext highlighter-rouge">/root/sql-scripts</code> directory.</p>
 
 <h4 id="remove-foreign-keys">Remove foreign keys</h4>
 
 <p>This script removes foreign keys that refer to non-sales tables from the sales database.</p>
 
-<p>Create the following script and give it a name like <code class="highlighter-rouge">1_foreign-sales.sql</code>. Replace <code class="highlighter-rouge">&lt;your main Magento DB name&gt;</code> with the name of your Magento database.</p>
+<p>Create the following script and give it a name like <code class="language-plaintext highlighter-rouge">1_foreign-sales.sql</code>. Replace <code class="language-plaintext highlighter-rouge">&lt;your main Magento DB name&gt;</code> with the name of your Magento database.</p>
 
 <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="n">use</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">main</span> <span class="n">Magento</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">salesrule_coupon_aggregated_order</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">SALESRULE_COUPON_AGGREGATED_ORDER_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
@@ -4195,24 +4196,24 @@ exit
 
 <ol>
   <li>
-    <p>Log in to your MySQL database as the <code class="highlighter-rouge">root</code> or administrative user:</p>
+    <p>Log in to your MySQL database as the <code class="language-plaintext highlighter-rouge">root</code> or administrative user:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql -u root -p
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql -u root -p
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>At the <code class="highlighter-rouge">mysql&gt;</code> prompt, run the script as follows:</p>
+    <p>At the <code class="language-plaintext highlighter-rouge">mysql&gt;</code> prompt, run the script as follows:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>source &lt;path&gt;/&lt;script&gt;.sql
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>source &lt;path&gt;/&lt;script&gt;.sql
 </code></pre></div>    </div>
 
     <p>For example,</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>source /root/sql-scripts/1_foreign-sales.sql
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>source /root/sql-scripts/1_foreign-sales.sql
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>After the script run, enter <code class="highlighter-rouge">exit</code>.</p>
+    <p>After the script run, enter <code class="language-plaintext highlighter-rouge">exit</code>.</p>
   </li>
 </ol>
 </div>
@@ -4224,15 +4225,15 @@ exit
 
 <div class="collapsible">
     <b class="collapsible-title">Click to back up and restore sales data </b>
-    <div class="collapsible-content"><p>If you’re currently at the <code class="highlighter-rouge">mysql&gt;</code> prompt, enter <code class="highlighter-rouge">exit</code> to return to the command shell.</p>
+    <div class="collapsible-content"><p>If you’re currently at the <code class="language-plaintext highlighter-rouge">mysql&gt;</code> prompt, enter <code class="language-plaintext highlighter-rouge">exit</code> to return to the command shell.</p>
 
-<p>Run the following <code class="highlighter-rouge">mysqldump</code> commands, one at a time, from the command shell. In each, substitute the following:</p>
+<p>Run the following <code class="language-plaintext highlighter-rouge">mysqldump</code> commands, one at a time, from the command shell. In each, substitute the following:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">&lt;your database root username&gt;</code> with the name of your database root user</li>
-  <li><code class="highlighter-rouge">&lt;your database root user password&gt;</code> with the user’s password</li>
-  <li><code class="highlighter-rouge">&lt;your main magento DB name&gt;</code> with the name of your Magento database</li>
-  <li><code class="highlighter-rouge">&lt;path&gt;</code> with a writable file system path</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;your database root username&gt;</code> with the name of your database root user</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;your database root user password&gt;</code> with the user’s password</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;your main magento DB name&gt;</code> with the name of your Magento database</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;path&gt;</code> with a writable file system path</li>
 </ul>
 
 <p><strong>Script 1</strong></p>
@@ -4263,7 +4264,7 @@ exit
   <li>
     <p>Convert tables from InnoDb to NDB type in dump files:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>sed -ei 's/InnoDb/NDB/' &lt;file name&gt;.sql
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>sed -ei 's/InnoDb/NDB/' &lt;file name&gt;.sql
 </code></pre></div>    </div>
   </li>
   <li>
@@ -4285,13 +4286,13 @@ mysql <span class="nt">-u</span> &lt;root username&gt; <span class="nt">-p</span
 
 <ul>
   <li>
-    <p><code class="highlighter-rouge">&lt;your sales DB name&gt;</code> with the name of your sales database.</p>
+    <p><code class="language-plaintext highlighter-rouge">&lt;your sales DB name&gt;</code> with the name of your sales database.</p>
 
-    <p>In this topic, the sample database name is <code class="highlighter-rouge">magento_sales</code>.</p>
+    <p>In this topic, the sample database name is <code class="language-plaintext highlighter-rouge">magento_sales</code>.</p>
   </li>
-  <li><code class="highlighter-rouge">&lt;root username&gt;</code> with your MySQL root username</li>
-  <li><code class="highlighter-rouge">&lt;root user password&gt;</code> with the user’s password</li>
-  <li>Verify the location of the backup files you created earlier (for example, <code class="highlighter-rouge">/var/sales.sql</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;root username&gt;</code> with your MySQL root username</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;root user password&gt;</code> with the user’s password</li>
+  <li>Verify the location of the backup files you created earlier (for example, <code class="language-plaintext highlighter-rouge">/var/sales.sql</code>)</li>
 </ul>
 </div>
   </div>
@@ -4302,7 +4303,7 @@ mysql <span class="nt">-u</span> &lt;root username&gt; <span class="nt">-p</span
 
 <p class="bs-callout bs-callout-info">This section contains scripts with specific database table names. If you’ve performed customizations or if you want to see a complete list of tables before you perform actions on them, see <a href="#split-db-ref">Reference scripts</a>.</p>
 
-<p>Quote database table names start with <code class="highlighter-rouge">quote</code>. The <code class="highlighter-rouge">magento_customercustomattributes_sales_flat_quote</code> and <code class="highlighter-rouge">magento_customercustomattributes_sales_flat_quote_address</code> tables are also affected</p>
+<p>Quote database table names start with <code class="language-plaintext highlighter-rouge">quote</code>. The <code class="language-plaintext highlighter-rouge">magento_customercustomattributes_sales_flat_quote</code> and <code class="language-plaintext highlighter-rouge">magento_customercustomattributes_sales_flat_quote_address</code> tables are also affected</p>
 
 <h3 id="drop-foreign-keys-from-quote-tables">Drop foreign keys from quote tables</h3>
 
@@ -4310,7 +4311,7 @@ mysql <span class="nt">-u</span> &lt;root username&gt; <span class="nt">-p</span
 
 <div class="collapsible">
     <b class="collapsible-title">Click to drop foreign keys from quote tables </b>
-    <div class="collapsible-content"><p>Create the following script and give it a name like <code class="highlighter-rouge">2_foreign-key-quote.sql</code>:</p>
+    <div class="collapsible-content"><p>Create the following script and give it a name like <code class="language-plaintext highlighter-rouge">2_foreign-key-quote.sql</code>:</p>
 
 <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="n">use</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">Magento</span> <span class="n">main</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">quote</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">QUOTE_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
@@ -4324,20 +4325,20 @@ mysql <span class="nt">-u</span> &lt;root username&gt; <span class="nt">-p</span
   <li>
     <p>Log in to your MySQL database as the root or administrative user:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql -u root -p
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql -u root -p
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>At the <code class="highlighter-rouge">mysql &gt;</code> prompt, run the script as follows:
+    <p>At the <code class="language-plaintext highlighter-rouge">mysql &gt;</code> prompt, run the script as follows:
 it.
     source <path>/<script>.sql
 For example,</script></path></p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>source /root/sql-scripts/2_foreign-key-quote.sql
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>source /root/sql-scripts/2_foreign-key-quote.sql
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>After the script runs, enter <code class="highlighter-rouge">exit</code>.</p>
+    <p>After the script runs, enter <code class="language-plaintext highlighter-rouge">exit</code>.</p>
   </li>
 </ol>
 </div>
@@ -4351,7 +4352,7 @@ For example,</script></path></p>
     <b class="collapsible-title">Click to back up and restore quote tables </b>
     <div class="collapsible-content"><p>Run the following command from a command prompt:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysqldump -u &lt;your database root username&gt; -p &lt;your main Magento DB name&gt; magento_customercustomattributes_sales_flat_quote magento_customercustomattributes_sales_flat_quote_address quote quote_address quote_address_item quote_item quote_item_option quote_payment quote_shipping_rate quote_id_mask &gt; /&lt;path&gt;/quote.sql;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysqldump -u &lt;your database root username&gt; -p &lt;your main Magento DB name&gt; magento_customercustomattributes_sales_flat_quote magento_customercustomattributes_sales_flat_quote_address quote quote_address quote_address_item quote_item quote_item_option quote_payment quote_shipping_rate quote_id_mask &gt; /&lt;path&gt;/quote.sql;
 </code></pre></div></div>
 
 <h3 id="ndb-requirement">NDB requirement</h3>
@@ -4362,7 +4363,7 @@ For example,</script></path></p>
   <li>
     <p>Convert tables from InnoDb to NDB type in dump files:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>sed -ei 's/InnoDb/NDB/' &lt;file name&gt;.sql
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>sed -ei 's/InnoDb/NDB/' &lt;file name&gt;.sql
 </code></pre></div>    </div>
   </li>
   <li>
@@ -4372,7 +4373,7 @@ For example,</script></path></p>
 
 <h3 id="restore-tables-to-the-quote-database">Restore tables to the quote database</h3>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql -u root -p magento_quote &lt; /&lt;path&gt;/quote.sql
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql -u root -p magento_quote &lt; /&lt;path&gt;/quote.sql
 </code></pre></div></div>
 </div>
   </div>
@@ -4383,7 +4384,7 @@ For example,</script></path></p>
 
 <div class="collapsible">
     <b class="collapsible-title">Click to drop sales and quote tables </b>
-    <div class="collapsible-content"><p>Create the following script and give it a name like <code class="highlighter-rouge">3_drop-tables.sql</code>:</p>
+    <div class="collapsible-content"><p>Create the following script and give it a name like <code class="language-plaintext highlighter-rouge">3_drop-tables.sql</code>:</p>
 
 <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="n">use</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">Magento</span> <span class="n">main</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="k">SET</span> <span class="n">foreign_key_checks</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
@@ -4460,22 +4461,22 @@ For example,</script></path></p>
   <li>
     <p>Log in to your MySQL database as the root or administrative user:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql -u root -p
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql -u root -p
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>At the <code class="highlighter-rouge">mysql&gt;</code> prompt, run the script as follows:</p>
+    <p>At the <code class="language-plaintext highlighter-rouge">mysql&gt;</code> prompt, run the script as follows:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>source &lt;path&gt;/&lt;script&gt;.sql
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>source &lt;path&gt;/&lt;script&gt;.sql
 </code></pre></div>    </div>
 
     <p>For example,</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>source /root/sql-scripts/3_drop-tables.sql
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>source /root/sql-scripts/3_drop-tables.sql
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>After the script runs, enter <code class="highlighter-rouge">exit</code>.</p>
+    <p>After the script runs, enter <code class="language-plaintext highlighter-rouge">exit</code>.</p>
   </li>
 </ol>
 </div>
@@ -4483,7 +4484,7 @@ For example,</script></path></p>
 
 <h2 id="config-ee-multidb-config">Update your deployment configuration</h2>
 
-<p>The final step in manually splitting databases is to add connection and resource information to Magento’s deployment configuration, <code class="highlighter-rouge">env.php</code>.</p>
+<p>The final step in manually splitting databases is to add connection and resource information to Magento’s deployment configuration, <code class="language-plaintext highlighter-rouge">env.php</code>.</p>
 
 <div class="collapsible">
     <b class="collapsible-title">Click to update the Magento deployment configuration </b>
@@ -4492,15 +4493,15 @@ For example,</script></path></p>
   <li>
     <p>Back up your deployment configuration:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cp &lt;your Magento install dir&gt;/app/etc/env.php &lt;your Magento install dir&gt;/app/etc/env.php.orig
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cp &lt;your Magento install dir&gt;/app/etc/env.php &lt;your Magento install dir&gt;/app/etc/env.php.orig
 </code></pre></div>    </div>
   </li>
-  <li>Open <code class="highlighter-rouge">&lt;your Magento install dir&gt;/app/etc/env.php</code> in a text editor and update it using the guidelines discussed in the following sections.</li>
+  <li>Open <code class="language-plaintext highlighter-rouge">&lt;your Magento install dir&gt;/app/etc/env.php</code> in a text editor and update it using the guidelines discussed in the following sections.</li>
 </ol>
 
 <h3 id="update-database-connections">Update database connections</h3>
 
-<p>Locate the block starting with <code class="highlighter-rouge">'default'</code> (under <code class="highlighter-rouge">'connection'</code>) and add <code class="highlighter-rouge">'checkout'</code> and <code class="highlighter-rouge">'sales'</code> sections. Replace sample values with values appropriate for your site.</p>
+<p>Locate the block starting with <code class="language-plaintext highlighter-rouge">'default'</code> (under <code class="language-plaintext highlighter-rouge">'connection'</code>) and add <code class="language-plaintext highlighter-rouge">'checkout'</code> and <code class="language-plaintext highlighter-rouge">'sales'</code> sections. Replace sample values with values appropriate for your site.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> <span class="s1">'default'</span> <span class="o">=&gt;</span>
       <span class="k">array</span> <span class="p">(</span>
@@ -4540,7 +4541,7 @@ For example,</script></path></p>
 
 <h3 id="update-resources">Update resources</h3>
 
-<p>Locate the block starting with <code class="highlighter-rouge">'resource'</code> and add <code class="highlighter-rouge">'checkout'</code> and <code class="highlighter-rouge">'sales'</code> sections to it as follows:</p>
+<p>Locate the block starting with <code class="language-plaintext highlighter-rouge">'resource'</code> and add <code class="language-plaintext highlighter-rouge">'checkout'</code> and <code class="language-plaintext highlighter-rouge">'sales'</code> sections to it as follows:</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>
 <span class="s1">'resource'</span> <span class="o">=&gt;</span>
@@ -4571,17 +4572,17 @@ For example,</script></path></p>
     <div class="collapsible-content"><p>To use these scripts:</p>
 
 <ol>
-  <li>Create a <code class="highlighter-rouge">.sql</code> script with the contents of each script in this section.</li>
+  <li>Create a <code class="language-plaintext highlighter-rouge">.sql</code> script with the contents of each script in this section.</li>
   <li>
-    <p>In each script, replace <code class="highlighter-rouge">&lt;your main magento DB name&gt;</code> with the name of your Magento database.</p>
+    <p>In each script, replace <code class="language-plaintext highlighter-rouge">&lt;your main magento DB name&gt;</code> with the name of your Magento database.</p>
 
-    <p>In this topic, the sample database name is <code class="highlighter-rouge">magento</code>.</p>
+    <p>In this topic, the sample database name is <code class="language-plaintext highlighter-rouge">magento</code>.</p>
   </li>
-  <li>Run each script from the <code class="highlighter-rouge">mysql&gt;</code> prompt as <code class="highlighter-rouge">source &lt;script name&gt;</code></li>
+  <li>Run each script from the <code class="language-plaintext highlighter-rouge">mysql&gt;</code> prompt as <code class="language-plaintext highlighter-rouge">source &lt;script name&gt;</code></li>
   <li>Examine the output.</li>
-  <li>Copy the result of each script to another <code class="highlighter-rouge">.sql</code> script, removing the pipe characters (<code class="highlighter-rouge">|</code>).</li>
+  <li>Copy the result of each script to another <code class="language-plaintext highlighter-rouge">.sql</code> script, removing the pipe characters (<code class="language-plaintext highlighter-rouge">|</code>).</li>
   <li>
-    <p>Run each script from the <code class="highlighter-rouge">mysql&gt;</code> prompt as <code class="highlighter-rouge">source &lt;script name&gt;</code>.</p>
+    <p>Run each script from the <code class="language-plaintext highlighter-rouge">mysql&gt;</code> prompt as <code class="language-plaintext highlighter-rouge">source &lt;script name&gt;</code>.</p>
 
     <p>Running this second script performs the actions in your main Magento database.</p>
   </li>
@@ -4690,7 +4691,7 @@ For example,</script></path></p>
 
 <h3 id="drop-quote-tables">Drop quote tables</h3>
 
-<p>Drop all tables that start with <code class="highlighter-rouge">quote_</code>.</p>
+<p>Drop all tables that start with <code class="language-plaintext highlighter-rouge">quote_</code>.</p>
 </div>
   </div>
 

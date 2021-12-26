@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento custom Knockout.js bindings | Magento 2 Developer Documentation (copy)</title>
+	<title>Magento custom Knockout.js bindings | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/ui_comp_guide/concepts/knockout-bindings.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/ui_comp_guide/concepts/knockout-bindings.html">Magento 2.0</a></li>
 		
@@ -3298,7 +3299,7 @@
 
 <h3 id="aliases">Aliases</h3>
 
-<p>The standard way to reference a knockout.js binding is using the <code class="highlighter-rouge">data-bind</code> attribute: <code class="highlighter-rouge">[data-bind="%binding_name%: %value%"]</code>. In Magento implementation, you can also use aliases to declare bindings. Some bindings may be defined as attributes (<code class="highlighter-rouge">[%binding_alias%="%value%"]</code>) or nodes (<code class="highlighter-rouge">%binding_alias% args="%value%"&gt;</code>).</p>
+<p>The standard way to reference a knockout.js binding is using the <code class="language-plaintext highlighter-rouge">data-bind</code> attribute: <code class="language-plaintext highlighter-rouge">[data-bind="%binding_name%: %value%"]</code>. In Magento implementation, you can also use aliases to declare bindings. Some bindings may be defined as attributes (<code class="language-plaintext highlighter-rouge">[%binding_alias%="%value%"]</code>) or nodes (<code class="language-plaintext highlighter-rouge">%binding_alias% args="%value%"&gt;</code>).</p>
 
 <h3 id="binding-values">Binding values</h3>
 
@@ -3306,16 +3307,16 @@
 
 <h2 id="custom-magento-bindings">Custom Magento bindings</h2>
 
-<h3 id="afterrender"><code class="highlighter-rouge">afterRender</code></h3>
+<h3 id="afterrender"><code class="language-plaintext highlighter-rouge">afterRender</code></h3>
 
-<p>The <code class="highlighter-rouge">afterRender</code> binding notifies its subscriber when an associated element is inserted into the DOM.</p>
+<p>The <code class="language-plaintext highlighter-rouge">afterRender</code> binding notifies its subscriber when an associated element is inserted into the DOM.</p>
 
-<p><strong>Source</strong>: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/after-render.js</code>. <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/after-render.js">See on GitHub</a>.</p>
+<p><strong>Source</strong>: <code class="language-plaintext highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/after-render.js</code>. <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/after-render.js">See on GitHub</a>.</p>
 
-<p><strong>Value type</strong>: <code class="highlighter-rouge">(element: Element, viewModel: Object) =&gt; void</code>.
+<p><strong>Value type</strong>: <code class="language-plaintext highlighter-rouge">(element: Element, viewModel: Object) =&gt; void</code>.
 Function that is invoked after the element is rendered.</p>
 
-<p><strong>Aliases</strong>: <code class="highlighter-rouge">[afterRender]</code></p>
+<p><strong>Aliases</strong>: <code class="language-plaintext highlighter-rouge">[afterRender]</code></p>
 
 <p><strong>Usage example</strong>:</p>
 
@@ -3326,15 +3327,15 @@ Function that is invoked after the element is rendered.</p>
 }"</span><span class="nt">&gt;&lt;/div&gt;</span>
 </code></pre></div></div>
 
-<h3 id="autoselect"><code class="highlighter-rouge">autoselect</code></h3>
-<p>The <code class="highlighter-rouge">autoselect</code> binding automatically highlights the text in an input element, when it gets focus.</p>
+<h3 id="autoselect"><code class="language-plaintext highlighter-rouge">autoselect</code></h3>
+<p>The <code class="language-plaintext highlighter-rouge">autoselect</code> binding automatically highlights the text in an input element, when it gets focus.</p>
 
-<p><strong>Source</strong>: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/autoselect.js</code>. <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/autoselect.js">See on GitHub</a>.
+<p><strong>Source</strong>: <code class="language-plaintext highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/autoselect.js</code>. <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/autoselect.js">See on GitHub</a>.
 <strong>Value type</strong>: Boolean</p>
 
-<p>Defines whether the binding is enabled (<code class="highlighter-rouge">true</code>) or disabled (<code class="highlighter-rouge">false</code>).</p>
+<p>Defines whether the binding is enabled (<code class="language-plaintext highlighter-rouge">true</code>) or disabled (<code class="language-plaintext highlighter-rouge">false</code>).</p>
 
-<p><strong>Aliases</strong>: <code class="highlighter-rouge">[autoselect]</code></p>
+<p><strong>Aliases</strong>: <code class="language-plaintext highlighter-rouge">[autoselect]</code></p>
 
 <p><strong>Usage example</strong>:</p>
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="c">&lt;!-- as an attribute --&gt;</span>
@@ -3344,16 +3345,16 @@ Function that is invoked after the element is rendered.</p>
 <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">data-bind=</span><span class="s">"autoselect: true"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<h3 id="bindhtml"><code class="highlighter-rouge">bindHtml</code></h3>
-<p>The <code class="highlighter-rouge">bindHtml</code> binding renders the provided string, as a collection of HTML elements, inside of the associated node.</p>
+<h3 id="bindhtml"><code class="language-plaintext highlighter-rouge">bindHtml</code></h3>
+<p>The <code class="language-plaintext highlighter-rouge">bindHtml</code> binding renders the provided string, as a collection of HTML elements, inside of the associated node.</p>
 
 <p>It also instantiates all bindings defined for the rendered elements in the scope of the current <a href="http://knockoutjs.com/documentation/observables.html">view model</a>.</p>
 
-<p><strong>Source</strong>: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/bind-html.js</code>. <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/bind-html.js">See on GitHub</a>.</p>
+<p><strong>Source</strong>: <code class="language-plaintext highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/bind-html.js</code>. <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/bind-html.js">See on GitHub</a>.</p>
 
 <p><strong>Value type</strong>: String</p>
 
-<p><strong>Aliases</strong>: <code class="highlighter-rouge">[bindHtml]</code></p>
+<p><strong>Aliases</strong>: <code class="language-plaintext highlighter-rouge">[bindHtml]</code></p>
 
 <p><strong>Usage example</strong>:</p>
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;div</span> <span class="na">bindHtml=</span><span class="s">"
@@ -3361,10 +3362,10 @@ Function that is invoked after the element is rendered.</p>
 "</span><span class="nt">&gt;&lt;/div&gt;</span>
 </code></pre></div></div>
 
-<h3 id="collapsible"><code class="highlighter-rouge">collapsible</code></h3>
-<p>The <code class="highlighter-rouge">collapsible</code> binding provides methods and properties required for implementing collapsible panels. It can automatically collapse panel when clicking outside of the associated node, toggle optional CSS class when node changes its visibility. It has additional helper bindings: <code class="highlighter-rouge">toggleCollapsible</code>, <code class="highlighter-rouge">openCollapsible</code> and <code class="highlighter-rouge">closeCollapsible</code>.</p>
+<h3 id="collapsible"><code class="language-plaintext highlighter-rouge">collapsible</code></h3>
+<p>The <code class="language-plaintext highlighter-rouge">collapsible</code> binding provides methods and properties required for implementing collapsible panels. It can automatically collapse panel when clicking outside of the associated node, toggle optional CSS class when node changes its visibility. It has additional helper bindings: <code class="language-plaintext highlighter-rouge">toggleCollapsible</code>, <code class="language-plaintext highlighter-rouge">openCollapsible</code> and <code class="language-plaintext highlighter-rouge">closeCollapsible</code>.</p>
 
-<p><strong>Source</strong>: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/collapsible.js</code>. <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/collapsible.js">See on GitHub</a>.</p>
+<p><strong>Source</strong>: <code class="language-plaintext highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/collapsible.js</code>. <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/collapsible.js">See on GitHub</a>.</p>
 
 <p><strong>Value type</strong>: Object</p>
 
@@ -3447,13 +3448,13 @@ Function that is invoked after the element is rendered.</p>
   </tr>
 </table>
 
-<p><strong>Aliases</strong>: <code class="highlighter-rouge">[collapsible]</code></p>
+<p><strong>Aliases</strong>: <code class="language-plaintext highlighter-rouge">[collapsible]</code></p>
 
-<h3 id="datepicker"><code class="highlighter-rouge">datepicker</code></h3>
+<h3 id="datepicker"><code class="language-plaintext highlighter-rouge">datepicker</code></h3>
 
-<p>The <code class="highlighter-rouge">datepicker</code> binding is an adapter for the <a href="/devdocs/guides/v2.3/javascript-dev-guide/widgets/widget_calendar.html">mage/calendar.js</a> widget.</p>
+<p>The <code class="language-plaintext highlighter-rouge">datepicker</code> binding is an adapter for the <a href="/devdocs/guides/v2.3/javascript-dev-guide/widgets/widget_calendar.html">mage/calendar.js</a> widget.</p>
 
-<p><strong>Source</strong>: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/datepicker.js</code>. <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/datepicker.js">See on GitHub</a></p>
+<p><strong>Source</strong>: <code class="language-plaintext highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/datepicker.js</code>. <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/datepicker.js">See on GitHub</a></p>
 
 <p><strong>Value type</strong>: String|Object</p>
 
@@ -3463,14 +3464,14 @@ Function that is invoked after the element is rendered.</p>
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">data-bind=</span><span class="s">"datepicker: value"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<h3 id="fadevisible"><code class="highlighter-rouge">fadeVisible</code></h3>
-<p>The <code class="highlighter-rouge">fadeVisible</code> binding performs the gradual change of the element’s visibility  (with an animation effect).</p>
+<h3 id="fadevisible"><code class="language-plaintext highlighter-rouge">fadeVisible</code></h3>
+<p>The <code class="language-plaintext highlighter-rouge">fadeVisible</code> binding performs the gradual change of the element’s visibility  (with an animation effect).</p>
 
-<p><strong>Source</strong>: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/fadeVisible.js</code>. <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/fadeVisible.js">See on GitHub</a>.</p>
+<p><strong>Source</strong>: <code class="language-plaintext highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/fadeVisible.js</code>. <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/fadeVisible.js">See on GitHub</a>.</p>
 
 <p><strong>Value type</strong>: Boolean</p>
 
-<p>Defines whether the element is visible (<code class="highlighter-rouge">true</code>) or hidden (<code class="highlighter-rouge">false</code>).</p>
+<p>Defines whether the element is visible (<code class="language-plaintext highlighter-rouge">true</code>) or hidden (<code class="language-plaintext highlighter-rouge">false</code>).</p>
 
 <p><strong>Aliases</strong>: -</p>
 
@@ -3479,15 +3480,15 @@ Function that is invoked after the element is rendered.</p>
 <span class="nt">&lt;button</span> <span class="na">click=</span><span class="s">"function () { isVisible(!isVisible()); }"</span><span class="nt">&gt;</span>Toggle<span class="nt">&lt;/button&gt;</span>
 </code></pre></div></div>
 
-<h3 id="i18n"><code class="highlighter-rouge">i18n</code></h3>
+<h3 id="i18n"><code class="language-plaintext highlighter-rouge">i18n</code></h3>
 
-<p>The <code class="highlighter-rouge">i18n</code> binding is used to translate a string according to the currently enabled locale. Additionally, it creates the necessary elements for the TranslateInline jQuery widget, if it’s enabled on the page.</p>
+<p>The <code class="language-plaintext highlighter-rouge">i18n</code> binding is used to translate a string according to the currently enabled locale. Additionally, it creates the necessary elements for the TranslateInline jQuery widget, if it’s enabled on the page.</p>
 
-<p><strong>Source</strong>: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/i18n.js</code>. <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/i18n.js">See on GitHub</a>.</p>
+<p><strong>Source</strong>: <code class="language-plaintext highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/i18n.js</code>. <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/i18n.js">See on GitHub</a>.</p>
 
-<p><strong>Value type</strong>: <code class="highlighter-rouge">string</code></p>
+<p><strong>Value type</strong>: <code class="language-plaintext highlighter-rouge">string</code></p>
 
-<p><strong>Aliases</strong>: <code class="highlighter-rouge">[translate]</code>, <code class="highlighter-rouge">&lt;translate&gt;</code></p>
+<p><strong>Aliases</strong>: <code class="language-plaintext highlighter-rouge">[translate]</code>, <code class="language-plaintext highlighter-rouge">&lt;translate&gt;</code></p>
 
 <p><strong>Usage example</strong>:</p>
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;div</span> <span class="na">data-bind=</span><span class="s">"i18n: 'Translate as a standard knockout binding'"</span><span class="nt">&gt;&lt;/div&gt;</span>
@@ -3499,15 +3500,15 @@ Function that is invoked after the element is rendered.</p>
 
 <h3 id="keyboard">keyboard</h3>
 
-<p>The keyboard binding allows setting up listeners for the <code class="highlighter-rouge">keypress</code> event of a specific key.</p>
+<p>The keyboard binding allows setting up listeners for the <code class="language-plaintext highlighter-rouge">keypress</code> event of a specific key.</p>
 
-<p><strong>Source</strong>: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/keyboard.js</code>. <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/keyboard.js">See on GitHub</a>.</p>
+<p><strong>Source</strong>: <code class="language-plaintext highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/keyboard.js</code>. <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/keyboard.js">See on GitHub</a>.</p>
 
-<p><strong>Value type</strong>:<code class="highlighter-rouge"> [name: number]: (e: KeyboardEvent) =&gt; void</code></p>
+<p><strong>Value type</strong>:<code class="language-plaintext highlighter-rouge"> [name: number]: (e: KeyboardEvent) =&gt; void</code></p>
 
 <p>A collection in which keys represent keyboard keys codes and values are callback functions invoked when the associated key is pressed.</p>
 
-<p><strong>Aliases</strong>: <code class="highlighter-rouge">[keyboard]</code></p>
+<p><strong>Aliases</strong>: <code class="language-plaintext highlighter-rouge">[keyboard]</code></p>
 
 <p><strong>Usage example</strong>:</p>
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">keyboard=</span><span class="s">"{
@@ -3519,11 +3520,11 @@ Function that is invoked after the element is rendered.</p>
 
 <h3 id="mageinit">mageInit</h3>
 
-<p>The <code class="highlighter-rouge">mageInit</code> binding is an adapter for the <code class="highlighter-rouge">[data-mage-init]</code> attribute that is used to initialize jQuery widgets on the associated element.</p>
+<p>The <code class="language-plaintext highlighter-rouge">mageInit</code> binding is an adapter for the <code class="language-plaintext highlighter-rouge">[data-mage-init]</code> attribute that is used to initialize jQuery widgets on the associated element.</p>
 
-<p><strong>Source</strong>: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/mage-init.js</code>. <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/mage-init.js">See on GitHub</a>.</p>
+<p><strong>Source</strong>: <code class="language-plaintext highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/mage-init.js</code>. <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/mage-init.js">See on GitHub</a>.</p>
 
-<p><strong>Value type</strong>: <code class="highlighter-rouge">[path: string]:</code> Object</p>
+<p><strong>Value type</strong>: <code class="language-plaintext highlighter-rouge">[path: string]:</code> Object</p>
 
 <p><strong>Aliases</strong>: -</p>
 
@@ -3540,11 +3541,11 @@ Function that is invoked after the element is rendered.</p>
 
 <h3 id="optgroup">optgroup</h3>
 
-<p>The <code class="highlighter-rouge">optgroup</code> binding is a decorator for the standard Knockout’s options binding which adds the support of nested options, and renders them as the <code class="highlighter-rouge">&lt;optgroup&gt;</code> element.</p>
+<p>The <code class="language-plaintext highlighter-rouge">optgroup</code> binding is a decorator for the standard Knockout’s options binding which adds the support of nested options, and renders them as the <code class="language-plaintext highlighter-rouge">&lt;optgroup&gt;</code> element.</p>
 
-<p><strong>Source</strong>: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/optgroup.js</code>. <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/optgroup.js">See on GitHub</a>.</p>
+<p><strong>Source</strong>: <code class="language-plaintext highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/optgroup.js</code>. <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/optgroup.js">See on GitHub</a>.</p>
 
-<p><strong>Value type</strong>: <code class="highlighter-rouge">Array&lt;string&gt;</code> | <code class="highlighter-rouge">Array&lt;Object&gt;</code></p>
+<p><strong>Value type</strong>: <code class="language-plaintext highlighter-rouge">Array&lt;string&gt;</code> | <code class="language-plaintext highlighter-rouge">Array&lt;Object&gt;</code></p>
 
 <p><strong>Aliases</strong>: -</p>
 
@@ -3572,34 +3573,34 @@ Function that is invoked after the element is rendered.</p>
 
 <h3 id="outerclick">outerClick</h3>
 
-<p>The <code class="highlighter-rouge">outerClick</code> binding allows to subscribe for the “click” event that happens outside of the boundaries of the associated element.</p>
+<p>The <code class="language-plaintext highlighter-rouge">outerClick</code> binding allows to subscribe for the “click” event that happens outside of the boundaries of the associated element.</p>
 
-<p><strong>Source</strong>: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/outer_click.js</code>. <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/outer_click.js">See on GitHub</a>.</p>
+<p><strong>Source</strong>: <code class="language-plaintext highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/outer_click.js</code>. <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/outer_click.js">See on GitHub</a>.</p>
 
 <p><strong>Value type</strong>: Function.</p>
 
 <p>Callback that is invoked when user clicks outside of the element.</p>
 
-<p><strong>Aliases</strong>: <code class="highlighter-rouge">[outerClick]</code></p>
+<p><strong>Aliases</strong>: <code class="language-plaintext highlighter-rouge">[outerClick]</code></p>
 
 <p><strong>Usage example</strong>:</p>
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"target"</span> <span class="na">outerClick=</span><span class="s">"function () {
-    console.log('Clicked outside of the "</span><span class="na">target</span><span class="err">"</span> <span class="na">node</span><span class="err">.');</span>
+    console.log('Clicked outside of the "</span><span class="na">target</span><span class="err">"</span> <span class="na">node.</span><span class="err">');</span>
 <span class="err">}"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 </code></pre></div></div>
 
 <h3 id="range">range</h3>
 
-<p>The <code class="highlighter-rouge">range</code> binding is an adapter for the <a href="https://jqueryui.com/slider/">jQuery UI Slider widget</a>. It also implements necessary handlers to work with mobile devices.</p>
+<p>The <code class="language-plaintext highlighter-rouge">range</code> binding is an adapter for the <a href="https://jqueryui.com/slider/">jQuery UI Slider widget</a>. It also implements necessary handlers to work with mobile devices.</p>
 
-<p><strong>Source</strong>: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/range.js</code>. <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/range.js">See on GitHub</a>.</p>
+<p><strong>Source</strong>: <code class="language-plaintext highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/range.js</code>. <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/range.js">See on GitHub</a>.</p>
 
 <p><strong>Value type</strong>: Object.</p>
 
 <p>Configuration that is passed to the Slider widget.</p>
 
-<p><strong>Aliases</strong>: <code class="highlighter-rouge">[range]</code></p>
+<p><strong>Aliases</strong>: <code class="language-plaintext highlighter-rouge">[range]</code></p>
 
 <p><strong>Usage example</strong>:</p>
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;div</span>
@@ -3614,31 +3615,31 @@ Function that is invoked after the element is rendered.</p>
 
 <h3 id="resizable">resizable</h3>
 
-<p>The <code class="highlighter-rouge">resizable</code> binding is an adapter for the <a href="http://api.jqueryui.com/resizable/">jQuery UI Resizable</a> widget.</p>
+<p>The <code class="language-plaintext highlighter-rouge">resizable</code> binding is an adapter for the <a href="http://api.jqueryui.com/resizable/">jQuery UI Resizable</a> widget.</p>
 
-<p><strong>Source:</strong> <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/resizable.js</code>. <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/resizable.js">See on GitHub</a>.</p>
+<p><strong>Source:</strong> <code class="language-plaintext highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/resizable.js</code>. <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/resizable.js">See on GitHub</a>.</p>
 
 <p><strong>Value type:</strong> Object.</p>
 
 <p>Configuration for the Resizable widget.</p>
 
-<p><strong>Aliases:</strong> <code class="highlighter-rouge">[resizable]</code></p>
+<p><strong>Aliases:</strong> <code class="language-plaintext highlighter-rouge">[resizable]</code></p>
 
 <p><strong>Usage example</strong>:</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;div</span> <span class="na">data-bind=</span><span class="s">"resizable: {maxHeight: 200}"</span><span class="nt">&gt;&lt;/div&gt;</span>
 </code></pre></div></div>
 
-<h3 id="scope"><code class="highlighter-rouge">scope</code></h3>
+<h3 id="scope"><code class="language-plaintext highlighter-rouge">scope</code></h3>
 <p>A binding that allows evaluating descendant nodes in the scope of an object found in the UiRegistry by provided string.</p>
 
-<p><strong>Source</strong>: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/scope.js</code>. <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/scope.js">See on Github</a>.</p>
+<p><strong>Source</strong>: <code class="language-plaintext highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/scope.js</code>. <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/scope.js">See on Github</a>.</p>
 
 <p><strong>Value type</strong>: String.</p>
 
 <p>Component’s name by which to perform a lookup in the registry.</p>
 
-<p><strong>Aliases</strong>: <code class="highlighter-rouge">[ko-scope]</code>, <code class="highlighter-rouge">&lt;scope&gt;</code></p>
+<p><strong>Aliases</strong>: <code class="language-plaintext highlighter-rouge">[ko-scope]</code>, <code class="language-plaintext highlighter-rouge">&lt;scope&gt;</code></p>
 
 <p><strong>Usage example</strong>:</p>
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="c">&lt;!-- as an attribute --&gt;</span>
@@ -3653,28 +3654,28 @@ Function that is invoked after the element is rendered.</p>
 
 <h3 id="staticchecked">staticChecked</h3>
 
-<p>The <code class="highlighter-rouge">staticChecked</code> binding implements the behavior similar to the standard <a href="http://knockoutjs.com/documentation/checked-binding.html"><code class="highlighter-rouge">checked</code></a> binding. The difference is that <code class="highlighter-rouge">staticChecked</code> doesn’t change the array of the already selected elements if the value of the associated DOM element changes.</p>
+<p>The <code class="language-plaintext highlighter-rouge">staticChecked</code> binding implements the behavior similar to the standard <a href="http://knockoutjs.com/documentation/checked-binding.html"><code class="language-plaintext highlighter-rouge">checked</code></a> binding. The difference is that <code class="language-plaintext highlighter-rouge">staticChecked</code> doesn’t change the array of the already selected elements if the value of the associated DOM element changes.</p>
 
-<p><strong>Source</strong>: <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/staticChecked.js</code>. <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/staticChecked.js">See on Github</a>.</p>
+<p><strong>Source</strong>: <code class="language-plaintext highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/staticChecked.js</code>. <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/staticChecked.js">See on Github</a>.</p>
 
 <p><strong>Value type:</strong> Boolean | String | Number | Array&lt;String|Number|Number&gt;</p>
 
-<p><strong>Aliases:</strong> <code class="highlighter-rouge">[staticChecked]</code></p>
+<p><strong>Aliases:</strong> <code class="language-plaintext highlighter-rouge">[staticChecked]</code></p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">data-bind=</span><span class="s">"staticChecked: observable"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
 <h3 id="template">template</h3>
 
-<p>Magento <code class="highlighter-rouge">template</code> binding is a customization of the existing Knockout <a href="http://knockoutjs.com/documentation/template-binding.html"><code class="highlighter-rouge">template</code> binding</a>. It is used to render a template inside of the associated element. The original Knockout’s  implementation was overridden to support asynchronous loading of templates by the provided path, instead of searching for them on the page.</p>
+<p>Magento <code class="language-plaintext highlighter-rouge">template</code> binding is a customization of the existing Knockout <a href="http://knockoutjs.com/documentation/template-binding.html"><code class="language-plaintext highlighter-rouge">template</code> binding</a>. It is used to render a template inside of the associated element. The original Knockout’s  implementation was overridden to support asynchronous loading of templates by the provided path, instead of searching for them on the page.</p>
 
-<p><strong>Source:</strong> <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/template/engine.js</code>. <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/knockout/template/engine.js">See on Github</a>.</p>
+<p><strong>Source:</strong> <code class="language-plaintext highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/template/engine.js</code>. <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/knockout/template/engine.js">See on Github</a>.</p>
 
 <p><strong>Value type:</strong> String | Object</p>
 
-<p>Configuration for the <code class="highlighter-rouge">template</code> binding. If the provided value is a string, it is processed as a path to <code class="highlighter-rouge">.html</code> file.</p>
+<p>Configuration for the <code class="language-plaintext highlighter-rouge">template</code> binding. If the provided value is a string, it is processed as a path to <code class="language-plaintext highlighter-rouge">.html</code> file.</p>
 
-<p><strong>Aliases:</strong> <code class="highlighter-rouge">[render]</code>, <code class="highlighter-rouge">&lt;render&gt;</code></p>
+<p><strong>Aliases:</strong> <code class="language-plaintext highlighter-rouge">[render]</code>, <code class="language-plaintext highlighter-rouge">&lt;render&gt;</code></p>
 
 <p><strong>Usage example</strong>:</p>
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;div</span> <span class="na">data-bind=</span><span class="s">"template: 'path/to/the/template'"</span><span class="nt">&gt;&lt;/div&gt;</span>
@@ -3684,7 +3685,7 @@ Function that is invoked after the element is rendered.</p>
 
 <p>Magento custom knockout binding for displaying a tooltip.</p>
 
-<p><strong>Source:</strong> <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/tooltip.js</code>. <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/tooltip.js">See on Github</a>.</p>
+<p><strong>Source:</strong> <code class="language-plaintext highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/knockout/bindings/tooltip.js</code>. <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/tooltip.js">See on Github</a>.</p>
 
 <p><strong>Value type:</strong> Object</p>
 
@@ -3747,7 +3748,7 @@ Function that is invoked after the element is rendered.</p>
   </tr>
 </table>
 
-<p><strong>Aliases:</strong> <code class="highlighter-rouge">[tooltip]</code></p>
+<p><strong>Aliases:</strong> <code class="language-plaintext highlighter-rouge">[tooltip]</code></p>
 
 <p><strong>Usage example</strong>:</p>
 

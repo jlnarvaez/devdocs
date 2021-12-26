@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Best practices | Magento 2 Developer Documentation (copy)</title>
+	<title>Best practices | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -2157,8 +2156,7 @@
 	<h1 class="page-heading">Best practices</h1>
 </section>
 
-			
-<p style="text-align: right"><em>This topic was updated due to the 2.3.0 MFTF release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.3.0 MFTF release.</em></p>
 
 <p>Check out our best practices below to ensure you’re getting the absolute most out of the Magento Functional Testing Framework.</p>
 
@@ -2170,15 +2168,15 @@
   <li>Provide default values for the arguments that apply to your most common case scenarios.</li>
 </ol>
 
-<h2 id="actiongroups-vs-extends"><code class="highlighter-rouge">actionGroups</code> vs <code class="highlighter-rouge">extends</code></h2>
+<h2 id="actiongroups-vs-extends"><code class="language-plaintext highlighter-rouge">actionGroups</code> vs <code class="language-plaintext highlighter-rouge">extends</code></h2>
 
 <p>Use an action group to wraps a set of actions to reuse them multiple times.</p>
 
 <p>Use an <a href="extending.html">extension</a> when a test or action group needs to be repeated with the exception of a few steps.</p>
 
-<h3 id="when-to-use-extends">When to use <code class="highlighter-rouge">extends</code></h3>
+<h3 id="when-to-use-extends">When to use <code class="language-plaintext highlighter-rouge">extends</code></h3>
 
-<p>Use <code class="highlighter-rouge">extends</code> in your new test or action group when at least one of the following conditions is applicable to your case:</p>
+<p>Use <code class="language-plaintext highlighter-rouge">extends</code> in your new test or action group when at least one of the following conditions is applicable to your case:</p>
 
 <ol>
   <li>You want to keep the original test without any modifications.</li>
@@ -2186,15 +2184,15 @@
   <li>You want a new action group that behaves similarly to the existing action group, but you do not want to change the functionality of the original action group.</li>
 </ol>
 
-<h3 id="when-to-avoid-extends">When to avoid <code class="highlighter-rouge">extends</code></h3>
+<h3 id="when-to-avoid-extends">When to avoid <code class="language-plaintext highlighter-rouge">extends</code></h3>
 
-<p>Do not use <code class="highlighter-rouge">extends</code> in the following conditions:</p>
+<p>Do not use <code class="language-plaintext highlighter-rouge">extends</code> in the following conditions:</p>
 <ol>
   <li>You want to change the functionality of the test or action group and do not need to run the original version.</li>
   <li>You plan to merge the base test or action group.</li>
 </ol>
 
-<p>The following pattern is used when merging with <code class="highlighter-rouge">extends</code>:</p>
+<p>The following pattern is used when merging with <code class="language-plaintext highlighter-rouge">extends</code>:</p>
 <ol>
   <li>The original test is merged.</li>
   <li>The extended test is created from the merged original test.</li>
@@ -2213,10 +2211,10 @@
 <ol>
   <li>Keep your testing instance clean.
  Remove data after the test if the test required creating any data.
- Use a corresponding <a href="test/actions.html#deletedata"><code class="highlighter-rouge">&lt;deleteData&gt;</code></a> test step in your <a href="test/actions.html#before-and-after"><code class="highlighter-rouge">&lt;after&gt;</code></a> block when using a <a href="test/actions.html#createdata"><code class="highlighter-rouge">&lt;createData&gt;</code></a> action in a <a href="test/actions.html#before-and-after"><code class="highlighter-rouge">&lt;before&gt;</code></a> block.</li>
+ Use a corresponding <a href="test/actions.html#deletedata"><code class="language-plaintext highlighter-rouge">&lt;deleteData&gt;</code></a> test step in your <a href="test/actions.html#before-and-after"><code class="language-plaintext highlighter-rouge">&lt;after&gt;</code></a> block when using a <a href="test/actions.html#createdata"><code class="language-plaintext highlighter-rouge">&lt;createData&gt;</code></a> action in a <a href="test/actions.html#before-and-after"><code class="language-plaintext highlighter-rouge">&lt;before&gt;</code></a> block.</li>
   <li>Make specific data entries under test to be unique.
  Enable data uniqueness where data values are required to be unique in a database by test design. 
- Use <code class="highlighter-rouge">unique=”suffix”</code> or <code class="highlighter-rouge">unique=”prefix”</code> to append or prepend a unique value to the <a href="data.html">entity</a> attribute.
+ Use <code class="language-plaintext highlighter-rouge">unique=”suffix”</code> or <code class="language-plaintext highlighter-rouge">unique=”prefix”</code> to append or prepend a unique value to the <a href="data.html">entity</a> attribute.
  This ensures that tests using the entity can be repeated.</li>
   <li>Do not modify existing data entity fields or merge additional data fields without complete understanding and verifying the usage of existing data in tests.
  Create a new data entity for your test if you are not sure.</li>
@@ -2255,19 +2253,19 @@
 <p>Use an upper case first letter for:</p>
 <ul>
   <li>File names. Example: <em>StorefrontCreateCustomerTest.xml</em></li>
-  <li>Test name attributes. Example: <code class="highlighter-rouge">&lt;test name="TestAllTheThingsTest"&gt;</code>.</li>
-  <li>Data entity names. Example: <code class="highlighter-rouge">&lt;entity name="OutOfStockProduct"&gt;</code>.</li>
-  <li>Page name. Example: <code class="highlighter-rouge">&lt;page name="AdminLoginPage"&gt;</code>.</li>
-  <li>Section name. Example: <code class="highlighter-rouge">&lt;section name="AdminCategorySidebarActionSection"&gt;</code>.</li>
-  <li>Action group name. Example: <code class="highlighter-rouge">&lt;actionGroup name="LoginToAdminActionGroup"&gt;</code>.</li>
+  <li>Test name attributes. Example: <code class="language-plaintext highlighter-rouge">&lt;test name="TestAllTheThingsTest"&gt;</code>.</li>
+  <li>Data entity names. Example: <code class="language-plaintext highlighter-rouge">&lt;entity name="OutOfStockProduct"&gt;</code>.</li>
+  <li>Page name. Example: <code class="language-plaintext highlighter-rouge">&lt;page name="AdminLoginPage"&gt;</code>.</li>
+  <li>Section name. Example: <code class="language-plaintext highlighter-rouge">&lt;section name="AdminCategorySidebarActionSection"&gt;</code>.</li>
+  <li>Action group name. Example: <code class="language-plaintext highlighter-rouge">&lt;actionGroup name="LoginToAdminActionGroup"&gt;</code>.</li>
 </ul>
 
 <h4 id="lower-case">Lower case</h4>
 
 <p>Use a lower case first letter for:</p>
 <ul>
-  <li>Data keys. Example: <code class="highlighter-rouge">&lt;data key="firstName"&gt;</code>.</li>
-  <li>Element names. Examples: <code class="highlighter-rouge">&lt;element name="confirmDeleteButton"/&gt;</code>.</li>
+  <li>Data keys. Example: <code class="language-plaintext highlighter-rouge">&lt;data key="firstName"&gt;</code>.</li>
+  <li>Element names. Examples: <code class="language-plaintext highlighter-rouge">&lt;element name="confirmDeleteButton"/&gt;</code>.</li>
 </ul>
 
 <h2 id="page-object">Page object</h2>
@@ -2290,13 +2288,13 @@ Do not use them for static elements.</p>
 <h2 id="test">Test</h2>
 
 <ol>
-  <li>Use actions such as <a href="test/actions.html#waitforelementvisible"><code class="highlighter-rouge">&lt;waitForElementVisible&gt;</code></a>, <a href="test/actions.html#waitforloadingmasktodisappear"><code class="highlighter-rouge">&lt;waitForLoadingMaskToDisappear&gt;</code></a>, and <a href="test/actions.html#waitforelement"><code class="highlighter-rouge">&lt;waitForElement&gt;</code></a> to wait the exact time required for the test step.
- Try to avoid using the <a href="test/actions.html#wait"><code class="highlighter-rouge">&lt;wait&gt;</code></a> action, because it forces the test to wait for the time you specify. You may not need to wait so long to proceed.</li>
+  <li>Use actions such as <a href="test/actions.html#waitforelementvisible"><code class="language-plaintext highlighter-rouge">&lt;waitForElementVisible&gt;</code></a>, <a href="test/actions.html#waitforloadingmasktodisappear"><code class="language-plaintext highlighter-rouge">&lt;waitForLoadingMaskToDisappear&gt;</code></a>, and <a href="test/actions.html#waitforelement"><code class="language-plaintext highlighter-rouge">&lt;waitForElement&gt;</code></a> to wait the exact time required for the test step.
+ Try to avoid using the <a href="test/actions.html#wait"><code class="language-plaintext highlighter-rouge">&lt;wait&gt;</code></a> action, because it forces the test to wait for the time you specify. You may not need to wait so long to proceed.</li>
   <li>Keep your tests short and granular for target testing, easier reviews, and easier merge conflict resolution.
  It also helps you to identify the cause of test failure.</li>
   <li>Use comments to keep tests readable and maintainable:
     <ul>
-      <li>Keep the inline <code class="highlighter-rouge">&lt;!-- XML comments --&gt;</code> and <a href="test/actions.html#comment"><code class="highlighter-rouge">&lt;comment&gt;</code></a> tags up to date.
+      <li>Keep the inline <code class="language-plaintext highlighter-rouge">&lt;!-- XML comments --&gt;</code> and <a href="test/actions.html#comment"><code class="language-plaintext highlighter-rouge">&lt;comment&gt;</code></a> tags up to date.
   It helps to inform the reader of what you are testing and to yield a more descriptive Allure report.</li>
       <li>Explain in comments unclear or tricky test steps.</li>
     </ul>

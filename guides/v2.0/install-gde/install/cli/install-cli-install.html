@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Install the Magento software | Magento 2 Developer Documentation (copy)</title>
+	<title>Install the Magento software | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/install-gde/install/cli/install-cli-install.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/install-gde/install/cli/install-cli-install.html">Magento 2.0</a></li>
 		
@@ -4436,7 +4437,7 @@
   <li>Review the information discussed in <a href="/devdocs/guides/v2.0/install-gde/install/cli/install-cli-subcommands.html">Get started with the command-line installation</a>.</li>
 </ol>
 
-<p class="bs-callout bs-callout-info">You must install Magento from its <code class="highlighter-rouge">bin</code> subdirectory.</p>
+<p class="bs-callout bs-callout-info">You must install Magento from its <code class="language-plaintext highlighter-rouge">bin</code> subdirectory.</p>
 
 <p>The installer is designed to be run multiple times if necessary so you can:</p>
 
@@ -4451,7 +4452,7 @@
 </ul>
 
 <ul class="bs-callout bs-callout-info">
-  <li>By default, the installer doesn’t overwrite the Magento database if you install the Magento software in the same database instance. You can use the optional <code class="highlighter-rouge">cleanup-database</code> parameter to change this behavior.</li>
+  <li>By default, the installer doesn’t overwrite the Magento database if you install the Magento software in the same database instance. You can use the optional <code class="language-plaintext highlighter-rouge">cleanup-database</code> parameter to change this behavior.</li>
 </ul>
 
 <p>See also <a href="/devdocs/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html">Update, reinstall, uninstall</a>.</p>
@@ -4461,9 +4462,9 @@
 <p>To use Secure Sockets Layer (SSL), also referred to as HTTPS, for both the Magento Admin and the storefront, you must set all of the following parameters:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">--use-secure</code>: Set to <code class="highlighter-rouge">1</code></li>
-  <li><code class="highlighter-rouge">--base-url-secure</code>: Set to a secure URL (that is, starting with <code class="highlighter-rouge">https://</code>)</li>
-  <li><code class="highlighter-rouge">--use-secure-admin</code> Set to <code class="highlighter-rouge">1</code>
+  <li><code class="language-plaintext highlighter-rouge">--use-secure</code>: Set to <code class="language-plaintext highlighter-rouge">1</code></li>
+  <li><code class="language-plaintext highlighter-rouge">--base-url-secure</code>: Set to a secure URL (that is, starting with <code class="language-plaintext highlighter-rouge">https://</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">--use-secure-admin</code> Set to <code class="language-plaintext highlighter-rouge">1</code>
 <!-- *	`--base-url`: Set to a secure URL (that is, starting with `https://`) --></li>
 </ul>
 
@@ -4500,7 +4501,7 @@
 
 <p>The format of the install command follows:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento setup:install --&lt;option&gt;=&lt;value&gt; ... --&lt;option&gt;=&lt;value&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento setup:install --&lt;option&gt;=&lt;value&gt; ... --&lt;option&gt;=&lt;value&gt;
 </code></pre></div></div>
 
 <p>The following table discusses the meanings of installation option names and values. Examples are provided in <a href="#install-cli-example">Sample localhost installations</a>.</p>
@@ -4743,14 +4744,14 @@
 
 <ul>
   <li>
-    <p>The Magento software is installed in the <code class="highlighter-rouge">magento2</code> directory relative to the web server docroot on <code class="highlighter-rouge">localhost</code> and the path to the Magento Admin is <code class="highlighter-rouge">admin</code>; therefore:</p>
+    <p>The Magento software is installed in the <code class="language-plaintext highlighter-rouge">magento2</code> directory relative to the web server docroot on <code class="language-plaintext highlighter-rouge">localhost</code> and the path to the Magento Admin is <code class="language-plaintext highlighter-rouge">admin</code>; therefore:</p>
 
-    <p>Your storefront URL is <code class="highlighter-rouge">http://127.0.0.1</code></p>
+    <p>Your storefront URL is <code class="language-plaintext highlighter-rouge">http://127.0.0.1</code></p>
   </li>
   <li>
     <p>The database server is on the same host as the web server.</p>
 
-    <p>The database name is <code class="highlighter-rouge">magento</code>, and the username and password are both <code class="highlighter-rouge">magento</code></p>
+    <p>The database name is <code class="language-plaintext highlighter-rouge">magento</code>, and the username and password are both <code class="language-plaintext highlighter-rouge">magento</code></p>
   </li>
   <li>
     <p>Uses server rewrites</p>
@@ -4759,17 +4760,17 @@
     <p>The Magento administrator has the following properties:</p>
 
     <ul>
-      <li>First and last name are <code class="highlighter-rouge">Magento User</code></li>
-      <li>Username is <code class="highlighter-rouge">admin</code> and the password is <code class="highlighter-rouge">admin123</code></li>
-      <li>E-mail address is <code class="highlighter-rouge">user@example.com</code></li>
+      <li>First and last name are <code class="language-plaintext highlighter-rouge">Magento User</code></li>
+      <li>Username is <code class="language-plaintext highlighter-rouge">admin</code> and the password is <code class="language-plaintext highlighter-rouge">admin123</code></li>
+      <li>E-mail address is <code class="language-plaintext highlighter-rouge">user@example.com</code></li>
     </ul>
   </li>
-  <li>Default language is <code class="highlighter-rouge">en_US</code> (U.S. English)</li>
+  <li>Default language is <code class="language-plaintext highlighter-rouge">en_US</code> (U.S. English)</li>
   <li>Default currency is U.S. dollars</li>
   <li>
     <p>Default time zone is U.S. Central (America/Chicago)</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento setup:install --base-url=http://127.0.0.1/magento2/ \
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento setup:install --base-url=http://127.0.0.1/magento2/ \
 --db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
 --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
 --admin-user=admin --admin-password=admin123 --language=en_US \
@@ -4780,7 +4781,7 @@
 
 <p>Messages similar to the following display to indicate a successful installation:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Post installation file permissions check...
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Post installation file permissions check...
 For security, remove write permissions from these directories: '/var/www/html/magento2/app/etc'
 [Progress: 274 / 274]
 [SUCCESS]: Magento installation complete.
@@ -4793,34 +4794,34 @@ For security, remove write permissions from these directories: '/var/www/html/ma
 
 <ul>
   <li>
-    <p>The Magento software is installed in the <code class="highlighter-rouge">magento2</code> directory relative to the web server docroot on <code class="highlighter-rouge">localhost</code> and the path to the Magento Admin is <code class="highlighter-rouge">admin</code>; therefore:</p>
+    <p>The Magento software is installed in the <code class="language-plaintext highlighter-rouge">magento2</code> directory relative to the web server docroot on <code class="language-plaintext highlighter-rouge">localhost</code> and the path to the Magento Admin is <code class="language-plaintext highlighter-rouge">admin</code>; therefore:</p>
 
-    <p>Your storefront URL is <code class="highlighter-rouge">http://127.0.0.1</code></p>
+    <p>Your storefront URL is <code class="language-plaintext highlighter-rouge">http://127.0.0.1</code></p>
   </li>
   <li>
     <p>The database server is on the same host as the web server.</p>
 
-    <p>The database name is <code class="highlighter-rouge">magento</code>, and the username and password are both <code class="highlighter-rouge">magento</code></p>
+    <p>The database name is <code class="language-plaintext highlighter-rouge">magento</code>, and the username and password are both <code class="language-plaintext highlighter-rouge">magento</code></p>
   </li>
   <li>
     <p>The Magento administrator has the following properties:</p>
 
     <ul>
-      <li>First and last name are is <code class="highlighter-rouge">Magento User</code></li>
-      <li>Username is <code class="highlighter-rouge">admin</code> and the password is <code class="highlighter-rouge">admin123</code></li>
-      <li>E-mail address is <code class="highlighter-rouge">user@example.com</code></li>
+      <li>First and last name are is <code class="language-plaintext highlighter-rouge">Magento User</code></li>
+      <li>Username is <code class="language-plaintext highlighter-rouge">admin</code> and the password is <code class="language-plaintext highlighter-rouge">admin123</code></li>
+      <li>E-mail address is <code class="language-plaintext highlighter-rouge">user@example.com</code></li>
     </ul>
   </li>
-  <li>Default language is <code class="highlighter-rouge">en_US</code> (U.S. English)</li>
+  <li>Default language is <code class="language-plaintext highlighter-rouge">en_US</code> (U.S. English)</li>
   <li>Default currency is U.S. dollars</li>
   <li>Default time zone is U.S. Central (America/Chicago)</li>
   <li>The installer first cleans up the database before installing the tables and schema</li>
-  <li>You use a sales order increment prefix <code class="highlighter-rouge">ORD$</code> and because it contains a special character (<code class="highlighter-rouge">$</code>), the value must be enclosed in double quotes</li>
+  <li>You use a sales order increment prefix <code class="language-plaintext highlighter-rouge">ORD$</code> and because it contains a special character (<code class="language-plaintext highlighter-rouge">$</code>), the value must be enclosed in double quotes</li>
   <li>Session data is saved in the database</li>
   <li>
     <p>Uses server rewrites</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento setup:install --base-url=http://127.0.0.1/magento2/ \
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento setup:install --base-url=http://127.0.0.1/magento2/ \
 --db-host=localhost --db-name=magento \
 --db-user=magento --db-password=magento \
 --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
@@ -4833,14 +4834,14 @@ For security, remove write permissions from these directories: '/var/www/html/ma
 
 <p>Messages similar to the following display to indicate a successful installation:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Post installation file permissions check...
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Post installation file permissions check...
 For security, remove write permissions from these directories: '/var/www/html/magento2/app/etc'
 [Progress: 274 / 274]
 [SUCCESS]: Magento installation complete.
 [SUCCESS]: Admin Panel URI: /admin_puu71q
 </code></pre></div></div>
 
-<p class="bs-callout bs-callout-info">The command must be entered either on a single line or, as in the preceding example, with a <code class="highlighter-rouge">\</code> character at the end of each line.</p>
+<p class="bs-callout bs-callout-info">The command must be entered either on a single line or, as in the preceding example, with a <code class="language-plaintext highlighter-rouge">\</code> character at the end of each line.</p>
 
 <h4 id="next-step">Next step</h4>
 

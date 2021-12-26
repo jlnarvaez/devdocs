@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Manage variables | Magento 2 Developer Documentation (copy)</title>
+	<title>Manage variables | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/env/variables-intro.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/env/variables-intro.html">Magento 2.0</a></li>
 		
@@ -3567,8 +3568,8 @@
 
 <ul>
   <li>All text must be ALL CAPS.</li>
-  <li>Prefix the configuration path with the scope (the default scope, <code class="highlighter-rouge">CONFIG__DEFAULT</code>, or a specific scope).</li>
-  <li>Replace <code class="highlighter-rouge">/</code> characters in the configuration path with two underscore characters.</li>
+  <li>Prefix the configuration path with the scope (the default scope, <code class="language-plaintext highlighter-rouge">CONFIG__DEFAULT</code>, or a specific scope).</li>
+  <li>Replace <code class="language-plaintext highlighter-rouge">/</code> characters in the configuration path with two underscore characters.</li>
 </ul>
 
 <h2 id="cloud-env-set-vars">Environment variables</h2>
@@ -3583,15 +3584,15 @@ connect to your database, for example).</li>
   <li>Custom environment variables you define.</li>
 </ul>
 
-<p>Environment variable names must use the characters <code class="highlighter-rouge">a-z</code>, <code class="highlighter-rouge">A-Z</code>, <code class="highlighter-rouge">0-9</code>, and <code class="highlighter-rouge">.</code>, <code class="highlighter-rouge">_</code>, <code class="highlighter-rouge">:</code>, <code class="highlighter-rouge">-</code> only and can be up to 256 characters in length.</p>
+<p>Environment variable names must use the characters <code class="language-plaintext highlighter-rouge">a-z</code>, <code class="language-plaintext highlighter-rouge">A-Z</code>, <code class="language-plaintext highlighter-rouge">0-9</code>, and <code class="language-plaintext highlighter-rouge">.</code>, <code class="language-plaintext highlighter-rouge">_</code>, <code class="language-plaintext highlighter-rouge">:</code>, <code class="language-plaintext highlighter-rouge">-</code> only and can be up to 256 characters in length.</p>
 
 <p>Platform variables that are expressed as base64-encoded JSON object can be up to 4KB in size.</p>
 
-<p>Environment variables have an <code class="highlighter-rouge">env</code>   <span term-uuid="621ef86b-7314-4fbc-a80d-ab7fa45a27cb" class="glossary-term" data-toggle="popover">namespace</span>
+<p>Environment variables have an <code class="language-plaintext highlighter-rouge">env</code>   <span term-uuid="621ef86b-7314-4fbc-a80d-ab7fa45a27cb" class="glossary-term" data-toggle="popover">namespace</span>
 .</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Variables are <em>hierarchical</em>, which means that if a variable is not overridden, it is inherited from the parent environment and is indicated as <code class="highlighter-rouge">inherited</code>.</p>
+  <p>Variables are <em>hierarchical</em>, which means that if a variable is not overridden, it is inherited from the parent environment and is indicated as <code class="language-plaintext highlighter-rouge">inherited</code>.</p>
 
   <p>This enables you to define your development variables only once, and use them on all the child environments.</p>
 </div>
@@ -3601,39 +3602,39 @@ connect to your database, for example).</li>
 <p>To list current environment variables using SSH:</p>
 
 <ol>
-  <li>Log in to your project using the CLI. Enter the command <code class="highlighter-rouge">magento-cloud login</code> and provide your credentials.</li>
+  <li>Log in to your project using the CLI. Enter the command <code class="language-plaintext highlighter-rouge">magento-cloud login</code> and provide your credentials.</li>
   <li>
     <p>List the projects:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud project:list
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud project:list
 </code></pre></div>    </div>
   </li>
   <li>
     <p>List environments in the selected project:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:list -p &lt;project id&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:list -p &lt;project id&gt;
 </code></pre></div>    </div>
   </li>
   <li>
     <p>SSH to the environment:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:ssh -p &lt;project id&gt; -e &lt;environment name&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:ssh -p &lt;project id&gt; -e &lt;environment name&gt;
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>After you’re connected, enter <code class="highlighter-rouge">export</code>.</p>
+    <p>After you’re connected, enter <code class="language-plaintext highlighter-rouge">export</code>.</p>
 
     <p>Variables are base64-encoded JSON objects.</p>
   </li>
   <li>
     <p>To decode the value of a variable, enter</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>echo $&lt;variable name&gt; | base64 --decode
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>echo $&lt;variable name&gt; | base64 --decode
 </code></pre></div>    </div>
 
     <p>For example,</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 --decode
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 --decode
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -3643,9 +3644,9 @@ connect to your database, for example).</li>
 <p>To list environment variables using Magento Cloud CLI:</p>
 
 <ol>
-  <li>Login to the Magento Cloud CLI. Enter the command <code class="highlighter-rouge">magento-cloud login</code> and provide your credentials.</li>
-  <li>List all project variables with the command <code class="highlighter-rouge">magento-cloud project:variable:get</code> or <code class="highlighter-rouge">magento-cloud pvget</code>.</li>
-  <li>List all project variables with the command <code class="highlighter-rouge">magento-cloud variable:get</code> or <code class="highlighter-rouge">magento-cloud vget</code>.</li>
+  <li>Login to the Magento Cloud CLI. Enter the command <code class="language-plaintext highlighter-rouge">magento-cloud login</code> and provide your credentials.</li>
+  <li>List all project variables with the command <code class="language-plaintext highlighter-rouge">magento-cloud project:variable:get</code> or <code class="language-plaintext highlighter-rouge">magento-cloud pvget</code>.</li>
+  <li>List all project variables with the command <code class="language-plaintext highlighter-rouge">magento-cloud variable:get</code> or <code class="language-plaintext highlighter-rouge">magento-cloud vget</code>.</li>
 </ol>
 
 <h2 id="addvariables">CLI: Add environment variables</h2>
@@ -3655,11 +3656,11 @@ connect to your database, for example).</li>
 <p>To create a variable using the command line:</p>
 
 <ol>
-  <li>Login to the Magento Cloud CLI. Enter the command <code class="highlighter-rouge">magento-cloud login</code> and provide your credentials.</li>
-  <li>To set a variable for the project, use the command <code class="highlighter-rouge">magento-cloud project:variable:set &lt;name&gt; &lt;value&gt;</code>. The alias for this command is also <code class="highlighter-rouge">pvset</code>. For example, <code class="highlighter-rouge">magento-cloud pvset example 123</code> creates a variable example with a string value of 123 for the project.</li>
-  <li>After creating these variables, you can list all project variables with the command <code class="highlighter-rouge">magento-cloud project:variable:get</code> or <code class="highlighter-rouge">magento-cloud pvget</code>.</li>
-  <li>To set a variable for the branch, use the command <code class="highlighter-rouge">magento-cloud variable:set &lt;name&gt; &lt;value&gt;</code>. The alias for this command is also <code class="highlighter-rouge">vset</code>. For example, <code class="highlighter-rouge">magento-cloud vset example2 abc</code> creates a variable example2 with a string value of abc for the branch.</li>
-  <li>After creating these variables, you can list all project variables with the command <code class="highlighter-rouge">magento-cloud variable:get</code> or <code class="highlighter-rouge">magento-cloud vget</code>.</li>
+  <li>Login to the Magento Cloud CLI. Enter the command <code class="language-plaintext highlighter-rouge">magento-cloud login</code> and provide your credentials.</li>
+  <li>To set a variable for the project, use the command <code class="language-plaintext highlighter-rouge">magento-cloud project:variable:set &lt;name&gt; &lt;value&gt;</code>. The alias for this command is also <code class="language-plaintext highlighter-rouge">pvset</code>. For example, <code class="language-plaintext highlighter-rouge">magento-cloud pvset example 123</code> creates a variable example with a string value of 123 for the project.</li>
+  <li>After creating these variables, you can list all project variables with the command <code class="language-plaintext highlighter-rouge">magento-cloud project:variable:get</code> or <code class="language-plaintext highlighter-rouge">magento-cloud pvget</code>.</li>
+  <li>To set a variable for the branch, use the command <code class="language-plaintext highlighter-rouge">magento-cloud variable:set &lt;name&gt; &lt;value&gt;</code>. The alias for this command is also <code class="language-plaintext highlighter-rouge">vset</code>. For example, <code class="language-plaintext highlighter-rouge">magento-cloud vset example2 abc</code> creates a variable example2 with a string value of abc for the branch.</li>
+  <li>After creating these variables, you can list all project variables with the command <code class="language-plaintext highlighter-rouge">magento-cloud variable:get</code> or <code class="language-plaintext highlighter-rouge">magento-cloud vget</code>.</li>
 </ol>
 
 <h2 id="projectweb">Project Web Interface: Add environment variables</h2>

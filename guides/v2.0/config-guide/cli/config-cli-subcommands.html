@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Get started with command-line configuration | Magento 2 Developer Documentation (copy)</title>
+	<title>Get started with command-line configuration | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/config-guide/cli/config-cli-subcommands.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/config-guide/cli/config-cli-subcommands.html">Magento 2.0</a></li>
 		
@@ -3307,14 +3308,14 @@
   <li>
     <p>Change to the following directory:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd &lt;your Magento install dir&gt;/bin
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd &lt;your Magento install dir&gt;/bin
 </code></pre></div>    </div>
 
     <p>Examples:</p>
 
     <ul>
-      <li>Ubuntu: <code class="highlighter-rouge">cd /var/www/magento2/bin</code></li>
-      <li>CentOS: <code class="highlighter-rouge">cd /var/www/html/magento2/bin</code></li>
+      <li>Ubuntu: <code class="language-plaintext highlighter-rouge">cd /var/www/magento2/bin</code></li>
+      <li>CentOS: <code class="language-plaintext highlighter-rouge">cd /var/www/html/magento2/bin</code></li>
     </ul>
   </li>
 </ol>
@@ -3323,9 +3324,9 @@
   <p>You can run the commands in any of the following ways:</p>
 
   <ul>
-    <li><code class="highlighter-rouge">php magento &lt;command&gt;</code></li>
-    <li><code class="highlighter-rouge">./magento &lt;command&gt;</code></li>
-    <li><code class="highlighter-rouge">magento &lt;command&gt;</code> (after <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">adding</a> <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>)</li>
+    <li><code class="language-plaintext highlighter-rouge">php magento &lt;command&gt;</code></li>
+    <li><code class="language-plaintext highlighter-rouge">./magento &lt;command&gt;</code></li>
+    <li><code class="language-plaintext highlighter-rouge">magento &lt;command&gt;</code> (after <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">adding</a> <code class="language-plaintext highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="language-plaintext highlighter-rouge">PATH</code>)</li>
   </ul>
 </div>
 
@@ -3436,37 +3437,37 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">--help</code></td>
-      <td><code class="highlighter-rouge">-h</code></td>
-      <td>Get help for any command. For example, <code class="highlighter-rouge">./magento help setup:install</code> or <code class="highlighter-rouge">./magento help setup:config:set</code>.</td>
+      <td><code class="language-plaintext highlighter-rouge">--help</code></td>
+      <td><code class="language-plaintext highlighter-rouge">-h</code></td>
+      <td>Get help for any command. For example, <code class="language-plaintext highlighter-rouge">./magento help setup:install</code> or <code class="language-plaintext highlighter-rouge">./magento help setup:config:set</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">--quiet</code></td>
-      <td><code class="highlighter-rouge">-q</code></td>
+      <td><code class="language-plaintext highlighter-rouge">--quiet</code></td>
+      <td><code class="language-plaintext highlighter-rouge">-q</code></td>
       <td>Quiet mode; no output.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">--no-interaction</code></td>
-      <td><code class="highlighter-rouge">-n</code></td>
+      <td><code class="language-plaintext highlighter-rouge">--no-interaction</code></td>
+      <td><code class="language-plaintext highlighter-rouge">-n</code></td>
       <td>No interactive questions.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">--verbose=1,2,3</code></td>
-      <td><code class="highlighter-rouge">-v, -vv, -vvv</code></td>
-      <td>Verbosity level. For example, <code class="highlighter-rouge">--verbose=3</code> or <code class="highlighter-rouge">-vvv</code> displays debug verbosity, which is the most verbose output. Default is <code class="highlighter-rouge">--verbose=1</code> or <code class="highlighter-rouge">-v</code>.</td>
+      <td><code class="language-plaintext highlighter-rouge">--verbose=1,2,3</code></td>
+      <td><code class="language-plaintext highlighter-rouge">-v, -vv, -vvv</code></td>
+      <td>Verbosity level. For example, <code class="language-plaintext highlighter-rouge">--verbose=3</code> or <code class="language-plaintext highlighter-rouge">-vvv</code> displays debug verbosity, which is the most verbose output. Default is <code class="language-plaintext highlighter-rouge">--verbose=1</code> or <code class="language-plaintext highlighter-rouge">-v</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">--version</code></td>
-      <td><code class="highlighter-rouge">-V</code></td>
+      <td><code class="language-plaintext highlighter-rouge">--version</code></td>
+      <td><code class="language-plaintext highlighter-rouge">-V</code></td>
       <td>Display this application version</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">--ansi</code></td>
+      <td><code class="language-plaintext highlighter-rouge">--ansi</code></td>
       <td>n/a</td>
       <td>Force ANSI output</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">--no-ansi</code></td>
+      <td><code class="language-plaintext highlighter-rouge">--no-ansi</code></td>
       <td>n/a</td>
       <td>Disable ANSI output</td>
     </tr>

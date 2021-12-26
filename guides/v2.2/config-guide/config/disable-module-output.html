@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Disable module output | Magento 2 Developer Documentation (copy)</title>
+	<title>Disable module output | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/config-guide/config/disable-module-output.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/config-guide/config/disable-module-output.html">Magento 2.0</a></li>
 		
@@ -3992,7 +3993,7 @@
 
 			<p>By default, all modules are configured so that a module’s output can be written to a view. Turning off output offers a way to essentially disable a module that can’t be disabled due to hard dependencies.</p>
 
-<p>For example, the <code class="highlighter-rouge">Customer</code> module depends on the <code class="highlighter-rouge">Review</code> module, so the <code class="highlighter-rouge">Review</code> module can’t be disabled. However, if you don’t want customers to be able to provide reviews, you could turn off output from the <code class="highlighter-rouge">Review</code> module.</p>
+<p>For example, the <code class="language-plaintext highlighter-rouge">Customer</code> module depends on the <code class="language-plaintext highlighter-rouge">Review</code> module, so the <code class="language-plaintext highlighter-rouge">Review</code> module can’t be disabled. However, if you don’t want customers to be able to provide reviews, you could turn off output from the <code class="language-plaintext highlighter-rouge">Review</code> module.</p>
 
 <p class="bs-callout bs-callout-info">If a merchant used the Admin to disable a module’s output in a previous release, you must manually configure the system to migrate these settings.</p>
 
@@ -4001,13 +4002,13 @@
 <p>To disable module output in pipeline or any other deployment with multiple instances of Magento:.</p>
 
 <ol>
-  <li>Edit the <code class="highlighter-rouge">Backend</code> module’s <code class="highlighter-rouge">config.xml</code> file.</li>
+  <li>Edit the <code class="language-plaintext highlighter-rouge">Backend</code> module’s <code class="language-plaintext highlighter-rouge">config.xml</code> file.</li>
   <li>Export the configuration changes.</li>
 </ol>
 
-<h3 id="edit-the-backend-modules-configxml-file">Edit the <code class="highlighter-rouge">Backend</code> module’s <code class="highlighter-rouge">config.xml</code> file</h3>
+<h3 id="edit-the-backend-modules-configxml-file">Edit the <code class="language-plaintext highlighter-rouge">Backend</code> module’s <code class="language-plaintext highlighter-rouge">config.xml</code> file</h3>
 
-<p>Archive the original <code class="highlighter-rouge">config.xml</code> file. Then add lines similar to the following to the <code class="highlighter-rouge">&lt;Magento_install_dir&gt;/vendor/magento/module-backend/etc/config.xml</code> file, directly under the <code class="highlighter-rouge">&lt;default&gt;</code> element:</p>
+<p>Archive the original <code class="language-plaintext highlighter-rouge">config.xml</code> file. Then add lines similar to the following to the <code class="language-plaintext highlighter-rouge">&lt;Magento_install_dir&gt;/vendor/magento/module-backend/etc/config.xml</code> file, directly under the <code class="language-plaintext highlighter-rouge">&lt;default&gt;</code> element:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;advanced&gt;</span>
     <span class="nt">&lt;modules_disable_output&gt;</span>
@@ -4018,9 +4019,9 @@
 <p>Here:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">&lt;modules_disable_output&gt;</code> contains a list of modules.</li>
-  <li><code class="highlighter-rouge">&lt;Magento_Newsletter&gt;&lt;/Magento_Newsletter&gt;</code> specifies which module to disable output for.</li>
-  <li><code class="highlighter-rouge">1</code> is the flag that disables output for the <code class="highlighter-rouge">Magento_Newsletter</code> module.</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;modules_disable_output&gt;</code> contains a list of modules.</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;Magento_Newsletter&gt;&lt;/Magento_Newsletter&gt;</code> specifies which module to disable output for.</li>
+  <li><code class="language-plaintext highlighter-rouge">1</code> is the flag that disables output for the <code class="language-plaintext highlighter-rouge">Magento_Newsletter</code> module.</li>
 </ul>
 
 <p>As a sample result of this configuration, customers can no longer sign up to receive newsletters.</p>
@@ -4029,9 +4030,9 @@
 
 <p>Run the following command to export the configuration changes:</p>
 
-<p><code class="highlighter-rouge">magento app:config:dump</code></p>
+<p><code class="language-plaintext highlighter-rouge">magento app:config:dump</code></p>
 
-<p>The results are written to the <code class="highlighter-rouge">&lt;Magento_install_dir&gt;/app/etc/config.php</code> file.</p>
+<p>The results are written to the <code class="language-plaintext highlighter-rouge">&lt;Magento_install_dir&gt;/app/etc/config.php</code> file.</p>
 
 <p>For more information about this command, see <a href="/devdocs/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-export.html">Export the configuration</a>.</p>
 
@@ -4039,9 +4040,9 @@
 
 <p>The procedure for disabling module output on a single instance of Magento is easier because the changes don’t have to be distributed.</p>
 
-<p>Archive the original <code class="highlighter-rouge">&lt;Magento_install_dir&gt;/app/etc/config.php</code> file. Then add the <code class="highlighter-rouge">advanced</code> and <code class="highlighter-rouge">modules_disable_output</code> sections to the <code class="highlighter-rouge">config.php</code> file (if they don’t already exist):</p>
+<p>Archive the original <code class="language-plaintext highlighter-rouge">&lt;Magento_install_dir&gt;/app/etc/config.php</code> file. Then add the <code class="language-plaintext highlighter-rouge">advanced</code> and <code class="language-plaintext highlighter-rouge">modules_disable_output</code> sections to the <code class="language-plaintext highlighter-rouge">config.php</code> file (if they don’t already exist):</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>'system' =&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>'system' =&gt;
   array (
     'websites' =&gt;
     array (
@@ -4059,7 +4060,7 @@
   ),
 </code></pre></div></div>
 
-<p>Here, the <code class="highlighter-rouge">array</code> beneath <code class="highlighter-rouge">modules_disable_output</code> contains a list of modules. A value of <code class="highlighter-rouge">1</code> disables output for that module.</p>
+<p>Here, the <code class="language-plaintext highlighter-rouge">array</code> beneath <code class="language-plaintext highlighter-rouge">modules_disable_output</code> contains a list of modules. A value of <code class="language-plaintext highlighter-rouge">1</code> disables output for that module.</p>
 
 <p>As a sample result of this configuration, customers can no longer sign up to receive newsletters.</p>
 

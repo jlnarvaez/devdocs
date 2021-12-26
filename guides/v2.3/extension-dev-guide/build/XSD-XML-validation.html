@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>URN schema validation | Magento 2 Developer Documentation (copy)</title>
+	<title>URN schema validation | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/extension-dev-guide/build/XSD-XML-validation.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/extension-dev-guide/build/XSD-XML-validation.html">Magento 2.0</a></li>
 		
@@ -3478,7 +3479,7 @@
 
 <p>Magento uses <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Name">Uniform Resource Names</a> (URNs) to reference XML schema declarations.</p>
 
-<p>Magento supported URNs begin with <code class="highlighter-rouge">urn:magento</code>. Magento supports two XSD reference types:</p>
+<p>Magento supported URNs begin with <code class="language-plaintext highlighter-rouge">urn:magento</code>. Magento supports two XSD reference types:</p>
 
 <ul>
   <li>Module XSD</li>
@@ -3491,29 +3492,29 @@
 
 <p>The syntax for the module XSD is a colon separated declaration. An example follows:</p>
 
-<p><code class="highlighter-rouge">urn:magento:module:Magento_Flow:flows/content.xsd</code></p>
+<p><code class="language-plaintext highlighter-rouge">urn:magento:module:Magento_Flow:flows/content.xsd</code></p>
 
 <p>where</p>
 
 <ul>
-  <li><code class="highlighter-rouge">urn:magento</code> is the URN identifier</li>
-  <li><code class="highlighter-rouge">module</code> is the reference type identifier</li>
-  <li><code class="highlighter-rouge">Magento_Flow</code> is the name of the module. This must be exactly the same as the module specified by ComponentRegistrar in the <a href="/devdocs/guides/v2.3/extension-dev-guide/build/component-registration.html">registration.php</a> file.</li>
-  <li><code class="highlighter-rouge">flows/content.xsd</code> is the relative path to the module’s directory.</li>
+  <li><code class="language-plaintext highlighter-rouge">urn:magento</code> is the URN identifier</li>
+  <li><code class="language-plaintext highlighter-rouge">module</code> is the reference type identifier</li>
+  <li><code class="language-plaintext highlighter-rouge">Magento_Flow</code> is the name of the module. This must be exactly the same as the module specified by ComponentRegistrar in the <a href="/devdocs/guides/v2.3/extension-dev-guide/build/component-registration.html">registration.php</a> file.</li>
+  <li><code class="language-plaintext highlighter-rouge">flows/content.xsd</code> is the relative path to the module’s directory.</li>
 </ul>
 
 <h3 id="framework-xsd">Framework XSD</h3>
 
 <p>The syntax for the framework XSD is a colon separated declaration. An example follows:</p>
 
-<p><code class="highlighter-rouge">urn:magento:framework:Api/etc/extension_attributes.xsd</code></p>
+<p><code class="language-plaintext highlighter-rouge">urn:magento:framework:Api/etc/extension_attributes.xsd</code></p>
 
 <p>where</p>
 
 <ul>
-  <li><code class="highlighter-rouge">urn:magento</code> is the URN identifier</li>
-  <li><code class="highlighter-rouge">framework</code> is the reference type identifier. You can also add additional framework libraries as separate components with <code class="highlighter-rouge">framework-&lt;sub-name&gt;</code></li>
-  <li><code class="highlighter-rouge">Api/etc/extension_attributes.xsd</code> is the relative path to the framework’s directory.</li>
+  <li><code class="language-plaintext highlighter-rouge">urn:magento</code> is the URN identifier</li>
+  <li><code class="language-plaintext highlighter-rouge">framework</code> is the reference type identifier. You can also add additional framework libraries as separate components with <code class="language-plaintext highlighter-rouge">framework-&lt;sub-name&gt;</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Api/etc/extension_attributes.xsd</code> is the relative path to the framework’s directory.</li>
 </ul>
 
 <h3 id="referencing-a-xsd-from-another-xsd">Referencing a XSD from another XSD</h3>
@@ -3522,7 +3523,7 @@
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;xs:redefine</span> <span class="na">schemaLocation=</span><span class="s">"urn:magento:framework:Config/etc/view.xsd"</span><span class="nt">&gt;</span></code></pre></figure>
 
-<p>The URN resolution is invoked automatically by the libxml engine. Register the URN resolver by using <code class="highlighter-rouge">libxml_set_external_entity_loader</code>:</p>
+<p>The URN resolution is invoked automatically by the libxml engine. Register the URN resolver by using <code class="language-plaintext highlighter-rouge">libxml_set_external_entity_loader</code>:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml">libxml_set_external_entity_loader(['Magento\Framework\Config\Dom\UrnResolver', 'registerEntityLoader']);</code></pre></figure>
 

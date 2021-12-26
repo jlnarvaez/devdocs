@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento Commerce 2.2.4 Release Notes | Magento 2 Developer Documentation (copy)</title>
+	<title>Magento Commerce 2.2.4 Release Notes | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/release-notes/ReleaseNotes2.2.4EE.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/release-notes/ReleaseNotes2.2.4EE.html">Magento 2.0</a></li>
 		
@@ -2242,7 +2243,7 @@
 
 <!--- MAGETWO-86744, MAGETWO-86743, MAGETWO-86746, MAGETWO-86742 -->
 <ul>
-  <li>We’ve replaced <code class="highlighter-rouge">is_null</code> with strict comparison only for models and block in the following modules: <code class="highlighter-rouge">Catalog</code>, <code class="highlighter-rouge">Tax</code>, <code class="highlighter-rouge">Sales</code>, and <code class="highlighter-rouge">EAV</code>. <em>Fixes submitted by <a href="https://github.com/Coderimus">Alexander Shkurko</a> in pull requests 13171, 13170, 1163</em>.</li>
+  <li>We’ve replaced <code class="language-plaintext highlighter-rouge">is_null</code> with strict comparison only for models and block in the following modules: <code class="language-plaintext highlighter-rouge">Catalog</code>, <code class="language-plaintext highlighter-rouge">Tax</code>, <code class="language-plaintext highlighter-rouge">Sales</code>, and <code class="language-plaintext highlighter-rouge">EAV</code>. <em>Fixes submitted by <a href="https://github.com/Coderimus">Alexander Shkurko</a> in pull requests 13171, 13170, 1163</em>.</li>
 </ul>
 
 <h4 id="dotmailer-enhancements">dotmailer enhancements</h4>
@@ -2283,22 +2284,22 @@
 
 <!--- MAGETWO-86496 -->
 <ul>
-  <li>The <code class="highlighter-rouge">backup</code> command now works as expected.  <em>Fix submitted by <a href="https://github.com/jagritijoshi">Jagriti Joshi</a> in pull request 13066</em>. <a href="https://github.com/magento/magento2/issues/12877">GitHub-12877</a></li>
+  <li>The <code class="language-plaintext highlighter-rouge">backup</code> command now works as expected.  <em>Fix submitted by <a href="https://github.com/jagritijoshi">Jagriti Joshi</a> in pull request 13066</em>. <a href="https://github.com/magento/magento2/issues/12877">GitHub-12877</a></li>
 </ul>
 
 <!--- MAGETWO-86045 -->
 <ul>
-  <li>Links to Magento installation documentation in <code class="highlighter-rouge">setup/view/magento/readiness-check/progress.html</code> are now correct. <em>Fix submitted by <a href="https://github.com/jonashrem">Jonas Hünig</a> in pull request 12857</em>.</li>
+  <li>Links to Magento installation documentation in <code class="language-plaintext highlighter-rouge">setup/view/magento/readiness-check/progress.html</code> are now correct. <em>Fix submitted by <a href="https://github.com/jonashrem">Jonas Hünig</a> in pull request 12857</em>.</li>
 </ul>
 
 <!--- MAGETWO-84506 -->
 <ul>
-  <li>You can now use the <code class="highlighter-rouge">app:config:status</code> command to check whether configuration propagation is up-to-date.  <em>Fix submitted by <a href="https://github.com/jalogut">Juan Alonso</a> in pull request 12441</em>.</li>
+  <li>You can now use the <code class="language-plaintext highlighter-rouge">app:config:status</code> command to check whether configuration propagation is up-to-date.  <em>Fix submitted by <a href="https://github.com/jalogut">Juan Alonso</a> in pull request 12441</em>.</li>
 </ul>
 
 <!--- MAGETWO-84125 -->
 <ul>
-  <li>The <code class="highlighter-rouge">bin/magento setup:rollback -d filename.sql</code> command now works as expected. Previously, this database rollback operation failed on certain versions of Magento (for example, 2.1.9).  <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in pull request 12108</em>. <a href="https://github.com/magento/magento2/issues/12064">GitHub-12064</a></li>
+  <li>The <code class="language-plaintext highlighter-rouge">bin/magento setup:rollback -d filename.sql</code> command now works as expected. Previously, this database rollback operation failed on certain versions of Magento (for example, 2.1.9).  <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in pull request 12108</em>. <a href="https://github.com/magento/magento2/issues/12064">GitHub-12064</a></li>
 </ul>
 
 <!--- MAGETWO-84081 -->
@@ -2320,11 +2321,11 @@
 <ul>
   <li>Magento now continues operating in maintenance mode if it was previously enabled. Previously, Magento disabled maintenance mode  when you used one of these commands:
     <ul>
-      <li><code class="highlighter-rouge">bin\magento module:uninstall</code></li>
-      <li><code class="highlighter-rouge">bin\magento setup:backup</code></li>
-      <li><code class="highlighter-rouge">bin\magento setup:rollback</code></li>
-      <li><code class="highlighter-rouge">bin\magento theme:uninstall</code></li>
-      <li><code class="highlighter-rouge">bin\magento deploy:mode:set production</code>
+      <li><code class="language-plaintext highlighter-rouge">bin\magento module:uninstall</code></li>
+      <li><code class="language-plaintext highlighter-rouge">bin\magento setup:backup</code></li>
+      <li><code class="language-plaintext highlighter-rouge">bin\magento setup:rollback</code></li>
+      <li><code class="language-plaintext highlighter-rouge">bin\magento theme:uninstall</code></li>
+      <li><code class="language-plaintext highlighter-rouge">bin\magento deploy:mode:set production</code>
 <em>Fix submitted by <a href="https://github.com/jokeputs">Joke Puts</a> in pull request 11052</em>. <a href="https://github.com/magento/magento2/issues/9918">GitHub-9918</a></li>
     </ul>
   </li>
@@ -2337,32 +2338,32 @@
 
 <!--- MAGETWO-85274 -->
 <ul>
-  <li>The <code class="highlighter-rouge">CrontabManager.php</code> file has been updated as follows: If <code class="highlighter-rouge">crontab</code> has already been populated, the <code class="highlighter-rouge">bin/magento cron:install</code> command adds <code class="highlighter-rouge">#~ MAGENTO START</code> and the rest of code directly to the last row of crontab without any spaces. <em>Fix submitted by <a href="https://github.com/WaPoNe">Michele Fantetti</a> in pull request</em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">CrontabManager.php</code> file has been updated as follows: If <code class="language-plaintext highlighter-rouge">crontab</code> has already been populated, the <code class="language-plaintext highlighter-rouge">bin/magento cron:install</code> command adds <code class="language-plaintext highlighter-rouge">#~ MAGENTO START</code> and the rest of code directly to the last row of crontab without any spaces. <em>Fix submitted by <a href="https://github.com/WaPoNe">Michele Fantetti</a> in pull request</em>.</li>
 </ul>
 
 <!--- MAGETWO-85744 -->
 <ul>
-  <li>The <code class="highlighter-rouge">ext-bcmath</code> PHP extension is now required in Open Source. Previously, it was required for Commerce only. <em>Fix submitted by <a href="https://github.com/Mobecls">Mobecls</a> in pull request 12768</em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">ext-bcmath</code> PHP extension is now required in Open Source. Previously, it was required for Commerce only. <em>Fix submitted by <a href="https://github.com/Mobecls">Mobecls</a> in pull request 12768</em>.</li>
 </ul>
 
 <!--- MAGETWO-88149 -->
 <ul>
-  <li>The <code class="highlighter-rouge">cache_lifetime</code> default setting for the <code class="highlighter-rouge">Magento\Theme\Block\Html\Footer</code> block is no longer set to <strong>false</strong>, and the new default setting is <strong>3600</strong>. <em>Fix submitted by <a href="https://github.com/zolat">zolat</a> in pull request 13762</em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">cache_lifetime</code> default setting for the <code class="language-plaintext highlighter-rouge">Magento\Theme\Block\Html\Footer</code> block is no longer set to <strong>false</strong>, and the new default setting is <strong>3600</strong>. <em>Fix submitted by <a href="https://github.com/zolat">zolat</a> in pull request 13762</em>.</li>
 </ul>
 
 <!--- MAGETWO-87975 -->
 <ul>
-  <li>The <code class="highlighter-rouge">bin/magento maintenance:allow-ips</code> command now has the <code class="highlighter-rouge">--add</code> flag, which appends a new IP address to the list of allowed IP addresses. Previously, when you added a new IP address, you had to copy the existing addresses. <em>Fix submitted by <a href="https://github.com/barryvdh">Barry vd. Heuvel</a> in pull request 13586</em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">bin/magento maintenance:allow-ips</code> command now has the <code class="language-plaintext highlighter-rouge">--add</code> flag, which appends a new IP address to the list of allowed IP addresses. Previously, when you added a new IP address, you had to copy the existing addresses. <em>Fix submitted by <a href="https://github.com/barryvdh">Barry vd. Heuvel</a> in pull request 13586</em>.</li>
 </ul>
 
 <!--- MAGETWO-87900 -->
 <ul>
-  <li>The <code class="highlighter-rouge">config:set</code> command now has a <code class="highlighter-rouge">lock-config</code> option, and configuration values are always stored in <code class="highlighter-rouge">app/etc/config.php</code> instead of <code class="highlighter-rouge">app/etc/env.php</code>. <em>Fix submitted by <a href="https://github.com/avstudnitz">Andreas von Studnitz</a> in pull request 13280</em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">config:set</code> command now has a <code class="language-plaintext highlighter-rouge">lock-config</code> option, and configuration values are always stored in <code class="language-plaintext highlighter-rouge">app/etc/config.php</code> instead of <code class="language-plaintext highlighter-rouge">app/etc/env.php</code>. <em>Fix submitted by <a href="https://github.com/avstudnitz">Andreas von Studnitz</a> in pull request 13280</em>.</li>
 </ul>
 
 <!--- MAGETWO-87859 -->
 <ul>
-  <li>In the <code class="highlighter-rouge">Backend/etc/adminhtml/system.xml</code> file, the <code class="highlighter-rouge">url</code> group and <code class="highlighter-rouge">redirect_to_base</code> field are now configured so that the <code class="highlighter-rouge">showInWebsite</code> and <code class="highlighter-rouge">showInStore</code> attributes are set to <code class="highlighter-rouge">1</code>. <em>Fix submitted by <a href="https://github.com/JeroenVanLeusden">Jeroen</a> in pull request 13614</em>.</li>
+  <li>In the <code class="language-plaintext highlighter-rouge">Backend/etc/adminhtml/system.xml</code> file, the <code class="language-plaintext highlighter-rouge">url</code> group and <code class="language-plaintext highlighter-rouge">redirect_to_base</code> field are now configured so that the <code class="language-plaintext highlighter-rouge">showInWebsite</code> and <code class="language-plaintext highlighter-rouge">showInStore</code> attributes are set to <code class="language-plaintext highlighter-rouge">1</code>. <em>Fix submitted by <a href="https://github.com/JeroenVanLeusden">Jeroen</a> in pull request 13614</em>.</li>
 </ul>
 
 <!--- MAGETWO-87856 -->
@@ -2372,17 +2373,17 @@
 
 <!--- MAGETWO-87838 -->
 <ul>
-  <li>The output of the <code class="highlighter-rouge">Magento maintenance:status</code> command no longer inserts a comma in between IP addresses, making it easier to copy and paste the values. <em>Fix submitted by <a href="https://github.com/barryvdh">Barry vd. Heuvel</a> in pull request 13587</em>.</li>
+  <li>The output of the <code class="language-plaintext highlighter-rouge">Magento maintenance:status</code> command no longer inserts a comma in between IP addresses, making it easier to copy and paste the values. <em>Fix submitted by <a href="https://github.com/barryvdh">Barry vd. Heuvel</a> in pull request 13587</em>.</li>
 </ul>
 
 <!--- MAGETWO-87744 -->
 <ul>
-  <li>The <code class="highlighter-rouge">DeploymentConfig</code> reader now always returns an array. <em>Fix submitted by <a href="https://github.com/barryvdh">Barry vd. Heuvel</a> in pull request 13584</em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">DeploymentConfig</code> reader now always returns an array. <em>Fix submitted by <a href="https://github.com/barryvdh">Barry vd. Heuvel</a> in pull request 13584</em>.</li>
 </ul>
 
 <!--- MAGETWO-83782 -->
 <ul>
-  <li>Magento has improved how it manages the size of the <code class="highlighter-rouge">cron_schedule</code> table. <a href="https://github.com/magento/magento2/issues/11002">GitHub-11002</a></li>
+  <li>Magento has improved how it manages the size of the <code class="language-plaintext highlighter-rouge">cron_schedule</code> table. <a href="https://github.com/magento/magento2/issues/11002">GitHub-11002</a></li>
 </ul>
 
 <!--- MAGETWO-82288 -->
@@ -2392,12 +2393,12 @@
 
 <!--- MAGETWO-83120 -->
 <ul>
-  <li>Magento no longer throws an error when you try to generate a URN catalog for an empty <code class="highlighter-rouge">misc.xml</code> file. <em>Fix submitted by <a href="https://github.com/tdgroot">Timon de Groot</a> in pull request 11686</em>. <a href="https://github.com/magento/magento2/issues/5188">GitHub-5188</a></li>
+  <li>Magento no longer throws an error when you try to generate a URN catalog for an empty <code class="language-plaintext highlighter-rouge">misc.xml</code> file. <em>Fix submitted by <a href="https://github.com/tdgroot">Timon de Groot</a> in pull request 11686</em>. <a href="https://github.com/magento/magento2/issues/5188">GitHub-5188</a></li>
 </ul>
 
 <!--- MAGETWO-84180 -->
 <ul>
-  <li>The <code class="highlighter-rouge">sampledata:deploy</code> and <code class="highlighter-rouge">remove</code> commands now have <code class="highlighter-rouge">no-update</code> options. <em>Fix submitted by <a href="https://github.com/schmengler">Fabian Schmengler</a> in pull request 12359</em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">sampledata:deploy</code> and <code class="language-plaintext highlighter-rouge">remove</code> commands now have <code class="language-plaintext highlighter-rouge">no-update</code> options. <em>Fix submitted by <a href="https://github.com/schmengler">Fabian Schmengler</a> in pull request 12359</em>.</li>
 </ul>
 
 <!--- MAGETWO-88155 -->
@@ -2421,7 +2422,7 @@
 
 <!--- MAGETWO-87447 -->
 <ul>
-  <li>Magento now successfully updates a product’s <code class="highlighter-rouge">stock_item</code> <code class="highlighter-rouge">extension_attribute</code> parameter for a product previously created using REST. <em>Fix submitted by <a href="https://github.com/nuzil">nuzil</a> in pull request 13494</em>.</li>
+  <li>Magento now successfully updates a product’s <code class="language-plaintext highlighter-rouge">stock_item</code> <code class="language-plaintext highlighter-rouge">extension_attribute</code> parameter for a product previously created using REST. <em>Fix submitted by <a href="https://github.com/nuzil">nuzil</a> in pull request 13494</em>.</li>
 </ul>
 
 <!--- MAGETWO-73262 -->
@@ -2431,7 +2432,7 @@
 
 <!--- MAGETWO-87477 -->
 <ul>
-  <li>The <code class="highlighter-rouge">getUrl</code> method in <code class="highlighter-rouge">Magento\Catalog\Model\Product\Attribu…</code> no longer returns image URLs with unexpected double slashes. <em>Fix submitted by <a href="https://github.com/igortregub">Igor Tregub</a> in pull request 13498</em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">getUrl</code> method in <code class="language-plaintext highlighter-rouge">Magento\Catalog\Model\Product\Attribu…</code> no longer returns image URLs with unexpected double slashes. <em>Fix submitted by <a href="https://github.com/igortregub">Igor Tregub</a> in pull request 13498</em>.</li>
 </ul>
 
 <!--- MAGETWO-73696 -->
@@ -2446,7 +2447,7 @@
 
 <!--- MAGETWO-81916 -->
 <ul>
-  <li>When you set the <code class="highlighter-rouge">category_ids</code> attribute to be visible in the storefront catalog, Magento now displays catalog listings as expected. Previously, Magento threw an exception. <em>Fix submitted by <a href="https://github.com/manuelson">Manu Gonzalez Rodriguez</a> in pull request 11389</em>. <a href="https://github.com/magento/magento2/issues/11341">GitHub-11341</a></li>
+  <li>When you set the <code class="language-plaintext highlighter-rouge">category_ids</code> attribute to be visible in the storefront catalog, Magento now displays catalog listings as expected. Previously, Magento threw an exception. <em>Fix submitted by <a href="https://github.com/manuelson">Manu Gonzalez Rodriguez</a> in pull request 11389</em>. <a href="https://github.com/magento/magento2/issues/11341">GitHub-11341</a></li>
 </ul>
 
 <!--- MAGETWO-81942 -->
@@ -2456,7 +2457,7 @@
 
 <!--- MAGETWO-82313 -->
 <ul>
-  <li>Updating a product with the REST API (<code class="highlighter-rouge">PUT /rest/all/V1/products/example_sku</code>) no longer assigns the product to all websites automatically. (Automatic assignment to all websites now occurs only when you create the product in All Store Views scope.) <em>Fix submitted by <a href="https://github.com/adrian-martinez-interactiv4">adrian-martinez-interactiv4</a> in pull request 11444</em>. <a href="https://github.com/magento/magento2/issues/11324">GitHub-11324</a></li>
+  <li>Updating a product with the REST API (<code class="language-plaintext highlighter-rouge">PUT /rest/all/V1/products/example_sku</code>) no longer assigns the product to all websites automatically. (Automatic assignment to all websites now occurs only when you create the product in All Store Views scope.) <em>Fix submitted by <a href="https://github.com/adrian-martinez-interactiv4">adrian-martinez-interactiv4</a> in pull request 11444</em>. <a href="https://github.com/magento/magento2/issues/11324">GitHub-11324</a></li>
 </ul>
 
 <!--- MAGETWO-82464 -->
@@ -2466,17 +2467,17 @@
 
 <!--- MAGETWO-83399 -->
 <ul>
-  <li>You can now successfully remove a toolbar from a product listing page. Previously, you could explicitly remove the toolbar from layout configuration, but Magento would return <code class="highlighter-rouge">product_list_toolbar</code> to the layout. <em>Fix submitted by <a href="https://github.com/mariuscris">Marius</a> in pull request 11473</em>. <a href="https://github.com/magento/magento2/issues/9413">GitHub-9413</a></li>
+  <li>You can now successfully remove a toolbar from a product listing page. Previously, you could explicitly remove the toolbar from layout configuration, but Magento would return <code class="language-plaintext highlighter-rouge">product_list_toolbar</code> to the layout. <em>Fix submitted by <a href="https://github.com/mariuscris">Marius</a> in pull request 11473</em>. <a href="https://github.com/magento/magento2/issues/9413">GitHub-9413</a></li>
 </ul>
 
 <!--- MAGETWO-84018 -->
 <ul>
-  <li>The <code class="highlighter-rouge">getAttributeText($attributeCode)</code> method now returns string values as expected. Previously, this method returned an array of attribute values. <em>Fix submitted by <a href="https://github.com/p-bystritsky">p-bystritsky</a> in pull request 12003</em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">getAttributeText($attributeCode)</code> method now returns string values as expected. Previously, this method returned an array of attribute values. <em>Fix submitted by <a href="https://github.com/p-bystritsky">p-bystritsky</a> in pull request 12003</em>.</li>
 </ul>
 
 <!--- MAGETWO-84087 -->
 <ul>
-  <li>You can now add customizable options to a product. Previously, when you tried to add a custom option to the product, Magento threw this error: <code class="highlighter-rouge">A 'Uncaught TypeError: Cannot read property 'apply' of undefined' error</code>. <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in pull request 11965</em>. <a href="https://github.com/magento/magento2/issues/11792">GitHub-11792</a></li>
+  <li>You can now add customizable options to a product. Previously, when you tried to add a custom option to the product, Magento threw this error: <code class="language-plaintext highlighter-rouge">A 'Uncaught TypeError: Cannot read property 'apply' of undefined' error</code>. <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in pull request 11965</em>. <a href="https://github.com/magento/magento2/issues/11792">GitHub-11792</a></li>
 </ul>
 
 <!--- MAGETWO-84311 -->
@@ -2496,12 +2497,12 @@
 
 <!--- MAGETWO-84498 -->
 <ul>
-  <li>The <code class="highlighter-rouge">delay</code> parameter now works as expected, which permits you to set the delay on the JQuery widget opening or closing. Previously, this parameter was documented, but did not work as expected. <em>Fix submitted by <a href="https://github.com/scazz010">Sam Carr</a> in pull request 12161</em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">delay</code> parameter now works as expected, which permits you to set the delay on the JQuery widget opening or closing. Previously, this parameter was documented, but did not work as expected. <em>Fix submitted by <a href="https://github.com/scazz010">Sam Carr</a> in pull request 12161</em>.</li>
 </ul>
 
 <!--- MAGETWO-84515 -->
 <ul>
-  <li>Third-party category images now have <code class="highlighter-rouge">size</code> and <code class="highlighter-rouge">type</code> properties. <em>Fix submitted by <a href="https://github.com/vovayatsyuk">Vova Yatsyuk</a> in pull request 12161</em>.</li>
+  <li>Third-party category images now have <code class="language-plaintext highlighter-rouge">size</code> and <code class="language-plaintext highlighter-rouge">type</code> properties. <em>Fix submitted by <a href="https://github.com/vovayatsyuk">Vova Yatsyuk</a> in pull request 12161</em>.</li>
 </ul>
 
 <!--- MAGETWO-84652 -->
@@ -2511,17 +2512,17 @@
 
 <!--- MAGETWO-84665 -->
 <ul>
-  <li>You can now delete rows in the <code class="highlighter-rouge">dynamicRows</code> component. <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in pull request 921</em>. <a href="https://github.com/magento/magento2/issues/8830">GitHub-8830</a></li>
+  <li>You can now delete rows in the <code class="language-plaintext highlighter-rouge">dynamicRows</code> component. <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in pull request 921</em>. <a href="https://github.com/magento/magento2/issues/8830">GitHub-8830</a></li>
 </ul>
 
 <!--- MAGETWO-84808 -->
 <ul>
-  <li>You can now add a new product with custom attributes that have the same name and attributes as a previously deleted product. Previously, Magento did not let you add this new product because a <code class="highlighter-rouge">request_path</code> with the same value already existed in <code class="highlighter-rouge">table url_rewrite</code> from the previous product. <em>Fix submitted by <a href="https://github.com/nmalevanec">Nickolas Malyovanets</a> in pull request 12167</em>. <a href="https://github.com/magento/magento2/issues/12110">GitHub-12110</a></li>
+  <li>You can now add a new product with custom attributes that have the same name and attributes as a previously deleted product. Previously, Magento did not let you add this new product because a <code class="language-plaintext highlighter-rouge">request_path</code> with the same value already existed in <code class="language-plaintext highlighter-rouge">table url_rewrite</code> from the previous product. <em>Fix submitted by <a href="https://github.com/nmalevanec">Nickolas Malyovanets</a> in pull request 12167</em>. <a href="https://github.com/magento/magento2/issues/12110">GitHub-12110</a></li>
 </ul>
 
 <!--- MAGETWO-84949 -->
 <ul>
-  <li>The <code class="highlighter-rouge">og:type</code> meta tag content value has been corrected from <code class="highlighter-rouge">&lt;meta property="og:type" content="og:product" /&gt;</code> to <code class="highlighter-rouge">&lt;meta property="og:type" content="product" /&gt;</code>. <em>Fix submitted by <a href="https://github.com/atishgoswami">Atish Goswami</a> in pull request 12530</em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">og:type</code> meta tag content value has been corrected from <code class="language-plaintext highlighter-rouge">&lt;meta property="og:type" content="og:product" /&gt;</code> to <code class="language-plaintext highlighter-rouge">&lt;meta property="og:type" content="product" /&gt;</code>. <em>Fix submitted by <a href="https://github.com/atishgoswami">Atish Goswami</a> in pull request 12530</em>.</li>
 </ul>
 
 <!--- MAGETWO-85293 -->
@@ -2546,12 +2547,12 @@
 
 <!--- MAGETWO-85545 -->
 <ul>
-  <li>If an error occurs when you run <code class="highlighter-rouge">catalog:images:resize</code>, Magento now includes an entry into the log file. Previously, Magento displayed an error message, but did not add an entry into any log files. <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in pull request 1000</em>. <a href="https://github.com/magento/magento2/issues/8204">GitHub-8204</a></li>
+  <li>If an error occurs when you run <code class="language-plaintext highlighter-rouge">catalog:images:resize</code>, Magento now includes an entry into the log file. Previously, Magento displayed an error message, but did not add an entry into any log files. <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in pull request 1000</em>. <a href="https://github.com/magento/magento2/issues/8204">GitHub-8204</a></li>
 </ul>
 
 <!--- MAGETWO-85546 -->
 <ul>
-  <li>You can now duplicate and save a product successfully. Previously, you could not successfully duplicate a product, and Magento displayed this message: <code class="highlighter-rouge">Notice: Undefined offset: 0 in /home/software/public_html/vendor/magento/module-catalog/Model/Category/Link/SaveHandler.php on line 124</code>. <em>Fix submitted by <a href="https://github.com/p-bystritsky">p-bystritsky</a> in pull request 983</em>.  <a href="https://github.com/magento/magento2/issues/12259">GitHub-12259</a></li>
+  <li>You can now duplicate and save a product successfully. Previously, you could not successfully duplicate a product, and Magento displayed this message: <code class="language-plaintext highlighter-rouge">Notice: Undefined offset: 0 in /home/software/public_html/vendor/magento/module-catalog/Model/Category/Link/SaveHandler.php on line 124</code>. <em>Fix submitted by <a href="https://github.com/p-bystritsky">p-bystritsky</a> in pull request 983</em>.  <a href="https://github.com/magento/magento2/issues/12259">GitHub-12259</a></li>
 </ul>
 
 <!--- MAGETWO-85636 -->
@@ -2561,17 +2562,17 @@
 
 <!--- MAGETWO-86016 -->
 <ul>
-  <li>Duplicate <code class="highlighter-rouge">email</code> IDs no longer occur on the Magento default contact page when running Google Chrome  { Version 63.0.3239.84 (Official Build) (64-bit) }. <em>Fix submitted by <a href="https://github.com/serhii-balko">Serhii</a> in pull request 1036</em>. <a href="https://github.com/magento/magento2/issues/12712">GitHub-12712</a></li>
+  <li>Duplicate <code class="language-plaintext highlighter-rouge">email</code> IDs no longer occur on the Magento default contact page when running Google Chrome  { Version 63.0.3239.84 (Official Build) (64-bit) }. <em>Fix submitted by <a href="https://github.com/serhii-balko">Serhii</a> in pull request 1036</em>. <a href="https://github.com/magento/magento2/issues/12712">GitHub-12712</a></li>
 </ul>
 
 <!--- MAGETWO-86019 -->
 <ul>
-  <li>The <code class="highlighter-rouge">hasDataChanges</code> attribute for loaded EAV collection items now returns <code class="highlighter-rouge">true</code> or <code class="highlighter-rouge">false</code> as expected. Previously, this attribute always returned <code class="highlighter-rouge">true</code>. <em>Fix submitted by <a href="https://github.com/virtual97">virtual97</a> in pull request 12736</em>. <a href="https://github.com/magento/magento2/issues/12374">GitHub-12374</a></li>
+  <li>The <code class="language-plaintext highlighter-rouge">hasDataChanges</code> attribute for loaded EAV collection items now returns <code class="language-plaintext highlighter-rouge">true</code> or <code class="language-plaintext highlighter-rouge">false</code> as expected. Previously, this attribute always returned <code class="language-plaintext highlighter-rouge">true</code>. <em>Fix submitted by <a href="https://github.com/virtual97">virtual97</a> in pull request 12736</em>. <a href="https://github.com/magento/magento2/issues/12374">GitHub-12374</a></li>
 </ul>
 
 <!--- MAGETWO-86021 -->
 <ul>
-  <li><code class="highlighter-rouge">ajax:addToCart</code> now contains the <code class="highlighter-rouge">eventData</code> parameter, with variables for SKU and quantity. <em>Fix submitted by <a href="https://github.com/srenon">Renon Stewart</a> in pull request 12875</em>.</li>
+  <li><code class="language-plaintext highlighter-rouge">ajax:addToCart</code> now contains the <code class="language-plaintext highlighter-rouge">eventData</code> parameter, with variables for SKU and quantity. <em>Fix submitted by <a href="https://github.com/srenon">Renon Stewart</a> in pull request 12875</em>.</li>
 </ul>
 
 <!--- MAGETWO-86023 -->
@@ -2581,12 +2582,12 @@
 
 <!--- MAGETWO-86662 -->
 <ul>
-  <li>You can now sort product collections by the <code class="highlighter-rouge">is_saleable</code> attribute. <em>Fix submitted by <a href="https://github.com/nmalevanec">Nickolas Malyovanets</a> in pull request 1045</em>. <a href="https://github.com/magento/magento2/issues/7768">GitHub-7768</a></li>
+  <li>You can now sort product collections by the <code class="language-plaintext highlighter-rouge">is_saleable</code> attribute. <em>Fix submitted by <a href="https://github.com/nmalevanec">Nickolas Malyovanets</a> in pull request 1045</em>. <a href="https://github.com/magento/magento2/issues/7768">GitHub-7768</a></li>
 </ul>
 
 <!--- MAGETWO-86547 -->
 <ul>
-  <li>We’ve added a failsafe to the <code class="highlighter-rouge">items.phtml</code> file.  <em>Fix submitted by <a href="https://github.com/samgranger">Sam Granger</a> in pull request 13086</em>.</li>
+  <li>We’ve added a failsafe to the <code class="language-plaintext highlighter-rouge">items.phtml</code> file.  <em>Fix submitted by <a href="https://github.com/samgranger">Sam Granger</a> in pull request 13086</em>.</li>
 </ul>
 
 <!--- MAGETWO-84267 -->
@@ -2606,18 +2607,18 @@
 
 <!--- MAGETWO-86663 -->
 <ul>
-  <li>The catalog product list widget now works with multiple SKUs. Previously, Magento displayed this error, <code class="highlighter-rouge">We're sorry, an error has occurred while generating this email</code>. <em>Fix submitted by <a href="https://github.com/nmalevanec">Nickolas Malyovanets</a> in pull request 1050</em>.
+  <li>The catalog product list widget now works with multiple SKUs. Previously, Magento displayed this error, <code class="language-plaintext highlighter-rouge">We're sorry, an error has occurred while generating this email</code>. <em>Fix submitted by <a href="https://github.com/nmalevanec">Nickolas Malyovanets</a> in pull request 1050</em>.
  <a href="https://github.com/magento/magento2/issues/11897">GitHub-11897</a></li>
 </ul>
 
 <!--- MAGETWO-85876 -->
 <ul>
-  <li>Magento now loads type-dependent layout handles before more specific ID/SKU layout handles. Previously, when Magento updated a product page layout for a specific ID with <code class="highlighter-rouge">catalog_product_view_id_&lt;product_ID&gt;.xml</code>, some changes were overwritten by a less specific <code class="highlighter-rouge">catalog_product_view_type_&lt;product_type&gt;.xml</code>. <em>Fix submitted by <a href="https://github.com/aschrammel">Andreas Schrammel</a> in pull request 12807</em>.</li>
+  <li>Magento now loads type-dependent layout handles before more specific ID/SKU layout handles. Previously, when Magento updated a product page layout for a specific ID with <code class="language-plaintext highlighter-rouge">catalog_product_view_id_&lt;product_ID&gt;.xml</code>, some changes were overwritten by a less specific <code class="language-plaintext highlighter-rouge">catalog_product_view_type_&lt;product_type&gt;.xml</code>. <em>Fix submitted by <a href="https://github.com/aschrammel">Andreas Schrammel</a> in pull request 12807</em>.</li>
 </ul>
 
 <!--- MAGETWO-87897 -->
 <ul>
-  <li>Unused temporary variables have been removed from <code class="highlighter-rouge">Adminhtml/Category/Save.html</code>. <em>Fix submitted by <a href="https://github.com/real34">Pierre Martin</a> in pull request 13663</em>.</li>
+  <li>Unused temporary variables have been removed from <code class="language-plaintext highlighter-rouge">Adminhtml/Category/Save.html</code>. <em>Fix submitted by <a href="https://github.com/real34">Pierre Martin</a> in pull request 13663</em>.</li>
 </ul>
 
 <!--- MAGETWO-87847 -->
@@ -2632,12 +2633,12 @@
 
 <!--- MAGETWO-87514 -->
 <ul>
-  <li>In cases where  <code class="highlighter-rouge">imagebuilder</code> makes multiple calls, it no longer re-uses attributes from the first call if attributes from a second call are empty. Previously, <code class="highlighter-rouge">imagebuilder</code> re-used the attributes from the first call, which lead to unexpected results in storefront image display. <em>Fix submitted by <a href="https://github.com/ihor-sviziev">Ihor Sviziev</a> in pull request 13438</em>.</li>
+  <li>In cases where  <code class="language-plaintext highlighter-rouge">imagebuilder</code> makes multiple calls, it no longer re-uses attributes from the first call if attributes from a second call are empty. Previously, <code class="language-plaintext highlighter-rouge">imagebuilder</code> re-used the attributes from the first call, which lead to unexpected results in storefront image display. <em>Fix submitted by <a href="https://github.com/ihor-sviziev">Ihor Sviziev</a> in pull request 13438</em>.</li>
 </ul>
 
 <!--- MAGETWO-87496 -->
 <ul>
-  <li><code class="highlighter-rouge">updateCart.phtml</code> now uses dynamic rather than hardcoded validators. <em>Fix submitted by <a href="https://github.com/gil--">Gil Greenberg</a> in pull request 13462</em>.</li>
+  <li><code class="language-plaintext highlighter-rouge">updateCart.phtml</code> now uses dynamic rather than hardcoded validators. <em>Fix submitted by <a href="https://github.com/gil--">Gil Greenberg</a> in pull request 13462</em>.</li>
 </ul>
 
 <!--- MAGETWO-87294 -->
@@ -2647,7 +2648,7 @@
 
 <!--- MAGETWO-82666 -->
 <ul>
-  <li>A database backup created by <code class="highlighter-rouge">setup:backup --db</code> and restored with <code class="highlighter-rouge">setup:rollback -d</code> now includes triggers as expected.  Previously, the restored database did not include triggers, which meant that indexes could not work correctly. <em>Fix submitted by <a href="https://github.com/denisristic">Denis Ristic</a> in pull request 11369</em>. <a href="https://github.com/magento/magento2/issues/9036">GitHub-9036</a></li>
+  <li>A database backup created by <code class="language-plaintext highlighter-rouge">setup:backup --db</code> and restored with <code class="language-plaintext highlighter-rouge">setup:rollback -d</code> now includes triggers as expected.  Previously, the restored database did not include triggers, which meant that indexes could not work correctly. <em>Fix submitted by <a href="https://github.com/denisristic">Denis Ristic</a> in pull request 11369</em>. <a href="https://github.com/magento/magento2/issues/9036">GitHub-9036</a></li>
 </ul>
 
 <!--- MAGETWO-88116 -->
@@ -2662,7 +2663,7 @@
 
 <!--- MAGETWO-85575 -->
 <ul>
-  <li>Magento now correctly sets a <code class="highlighter-rouge">product_links</code> position attribute even when the attribute value is not set in a GET request. Previously, only the first two of each link type was shown in the backend or in a GET request response, even though Magento correctly added the product links to the database. <em>Fix submitted by <a href="https://github.com/mohammedsalem">Mohammad Haj-Salem</a> in pull request 12650</em>.</li>
+  <li>Magento now correctly sets a <code class="language-plaintext highlighter-rouge">product_links</code> position attribute even when the attribute value is not set in a GET request. Previously, only the first two of each link type was shown in the backend or in a GET request response, even though Magento correctly added the product links to the database. <em>Fix submitted by <a href="https://github.com/mohammedsalem">Mohammad Haj-Salem</a> in pull request 12650</em>.</li>
 </ul>
 
 <!--- MAGETWO-83560 -->
@@ -2674,7 +2675,7 @@
 
 <!--- MAGETWO-83780 -->
 <ul>
-  <li>Magento no longer adds addresses with <code class="highlighter-rouge">saveInAddressBook</code> set to <strong>0</strong>  to the address book for new customers. Previously, if you placed an order as a guest and set the <code class="highlighter-rouge">save_in_address_book</code> setting for an address to <strong>0</strong>, Magento still copied that address  to the customer address book when registering as a new customer on the checkout success page. <a href="https://github.com/magento/magento2/issues/7691">GitHub-7691</a></li>
+  <li>Magento no longer adds addresses with <code class="language-plaintext highlighter-rouge">saveInAddressBook</code> set to <strong>0</strong>  to the address book for new customers. Previously, if you placed an order as a guest and set the <code class="language-plaintext highlighter-rouge">save_in_address_book</code> setting for an address to <strong>0</strong>, Magento still copied that address  to the customer address book when registering as a new customer on the checkout success page. <a href="https://github.com/magento/magento2/issues/7691">GitHub-7691</a></li>
 </ul>
 
 <!--- MAGETWO-85297 -->
@@ -2709,12 +2710,12 @@
 
 <!--- MAGETWO-87340 -->
 <ul>
-  <li>The <code class="highlighter-rouge">XML_PATH_CUSTOMER_MUST_BE_LOGGED</code> constant has been deprecated. <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in pull request 1148</em>. <a href="https://github.com/magento/magento2/issues/7848">GitHub-7848</a></li>
+  <li>The <code class="language-plaintext highlighter-rouge">XML_PATH_CUSTOMER_MUST_BE_LOGGED</code> constant has been deprecated. <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in pull request 1148</em>. <a href="https://github.com/magento/magento2/issues/7848">GitHub-7848</a></li>
 </ul>
 
 <!--- MAGETWO-88332 -->
 <ul>
-  <li><code class="highlighter-rouge">dropdownDialog</code> is now required when the mini cart is available. <em>Fix submitted by <a href="https://github.com/amenk">Alexander Menk</a> in pull request 13830</em>.</li>
+  <li><code class="language-plaintext highlighter-rouge">dropdownDialog</code> is now required when the mini cart is available. <em>Fix submitted by <a href="https://github.com/amenk">Alexander Menk</a> in pull request 13830</em>.</li>
 </ul>
 
 <!--- MAGETWO-87196 -->
@@ -2751,17 +2752,17 @@
 
 <!--- MAGETWO-85286 -->
 <ul>
-  <li>Magento now displays the ID and <code class="highlighter-rouge">Visibility</code> parameter of child products when you use the <code class="highlighter-rouge">LinkManagementInterface</code> service contract to retrieve the ID and visibility of these products. Previously, Magento displayed NULL. <em>Fix submitted by <a href="https://github.com/nmalevanec">Nickolas Malyovanets</a> in pull request 986</em>.</li>
+  <li>Magento now displays the ID and <code class="language-plaintext highlighter-rouge">Visibility</code> parameter of child products when you use the <code class="language-plaintext highlighter-rouge">LinkManagementInterface</code> service contract to retrieve the ID and visibility of these products. Previously, Magento displayed NULL. <em>Fix submitted by <a href="https://github.com/nmalevanec">Nickolas Malyovanets</a> in pull request 986</em>.</li>
 </ul>
 
 <!--- MAGETWO-82888 -->
 <ul>
-  <li>The product price indexer (<code class="highlighter-rouge">catalog_product_price reindex</code>) no longer stalls during reindexing.</li>
+  <li>The product price indexer (<code class="language-plaintext highlighter-rouge">catalog_product_price reindex</code>) no longer stalls during reindexing.</li>
 </ul>
 
 <!--- MAGETWO-86918 -->
 <ul>
-  <li>Product records inside the <code class="highlighter-rouge">catalog_product_super_link</code> table are no longer updated needlessly when you save a configurable product. Previously, saving configurable product erased and then reinserted records in the <code class="highlighter-rouge">catalog_product_super_link</code> table even when child products were not changed. This practice quickly resulted in an unnecessarily large <code class="highlighter-rouge">catalog_product_super_link</code> table, especially in multi-website installations.</li>
+  <li>Product records inside the <code class="language-plaintext highlighter-rouge">catalog_product_super_link</code> table are no longer updated needlessly when you save a configurable product. Previously, saving configurable product erased and then reinserted records in the <code class="language-plaintext highlighter-rouge">catalog_product_super_link</code> table even when child products were not changed. This practice quickly resulted in an unnecessarily large <code class="language-plaintext highlighter-rouge">catalog_product_super_link</code> table, especially in multi-website installations.</li>
 </ul>
 
 <h3 id="customer-accounts">Customer accounts</h3>
@@ -2773,7 +2774,7 @@
 
 <!--- MAGETWO-85580 -->
 <ul>
-  <li>We fixed the invalid parameter configuration that was provided for the <code class="highlighter-rouge">$block</code> argument of <code class="highlighter-rouge">Magento\\Ui\\Component\\HtmlContent</code>. <em>Fix submitted by <a href="https://github.com/Tomasz-Silpion">Tomasz Gregorczyk</a> in pull request 12964</em>.</li>
+  <li>We fixed the invalid parameter configuration that was provided for the <code class="language-plaintext highlighter-rouge">$block</code> argument of <code class="language-plaintext highlighter-rouge">Magento\\Ui\\Component\\HtmlContent</code>. <em>Fix submitted by <a href="https://github.com/Tomasz-Silpion">Tomasz Gregorczyk</a> in pull request 12964</em>.</li>
 </ul>
 
 <!--- MAGETWO-85300 -->
@@ -2788,7 +2789,7 @@
 
 <!--- MAGETWO-84862 -->
 <ul>
-  <li>Magento no longer displays the <code class="highlighter-rouge">Too many passwords reset requests</code> error when the <strong>max wait time between password resets</strong> setting has been disabled. Previously, when you attempted to reset a customer’s password through the Admin, Magento threw an error even when you disabled the <code class="highlighter-rouge">max wait time between password resets</code> setting in the store configuration settings. <em>Fix submitted by <a href="https://github.com/coleHafner">Cole Hafner</a> in a pull request</em>. <a href="https://github.com/magento/magento2/issues/11409">GitHub-11409</a></li>
+  <li>Magento no longer displays the <code class="language-plaintext highlighter-rouge">Too many passwords reset requests</code> error when the <strong>max wait time between password resets</strong> setting has been disabled. Previously, when you attempted to reset a customer’s password through the Admin, Magento threw an error even when you disabled the <code class="language-plaintext highlighter-rouge">max wait time between password resets</code> setting in the store configuration settings. <em>Fix submitted by <a href="https://github.com/coleHafner">Cole Hafner</a> in a pull request</em>. <a href="https://github.com/magento/magento2/issues/11409">GitHub-11409</a></li>
 </ul>
 
 <!--- MAGETWO-84439 -->
@@ -2798,7 +2799,7 @@
 
 <!--- MAGETWO-83026 -->
 <ul>
-  <li>The <code class="highlighter-rouge">isConfirmationRequired</code> method in the <code class="highlighter-rouge">AccountManagement</code> class is now public, which makes it available for plugins. (For example, you can now develop custom business logic to decide if confirmation is required (yes/no) for certain customers.) <em>Fix submitted by <a href="https://github.com/dheesbeen">Derrick Heesbeen</a> in pull request 11878</em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">isConfirmationRequired</code> method in the <code class="language-plaintext highlighter-rouge">AccountManagement</code> class is now public, which makes it available for plugins. (For example, you can now develop custom business logic to decide if confirmation is required (yes/no) for certain customers.) <em>Fix submitted by <a href="https://github.com/dheesbeen">Derrick Heesbeen</a> in pull request 11878</em>.</li>
 </ul>
 
 <!--- MAGETWO-82635 -->
@@ -2813,7 +2814,7 @@
 
 <!--- MAGETWO-85672 -->
 <ul>
-  <li>The <code class="highlighter-rouge">window.checkout.customerLoginUrl</code> now contains a URL that includes the referer in base64 encoding (for example, https://myShop.com/customer/account/login/referer/aHR0cHM6Ly9teXNob3AuY29tL2NoZWNrb3V0). Previously, the login URL did not include a referer (for example, https://myShop.com/customer/account/login). <em>Fix submitted by <a href="https://github.com/quisse">Tommy Quissens</a> in pull request 12630</em>. <a href="https://github.com/magento/magento2/issues/12627">GitHub-12627</a></li>
+  <li>The <code class="language-plaintext highlighter-rouge">window.checkout.customerLoginUrl</code> now contains a URL that includes the referer in base64 encoding (for example, https://myShop.com/customer/account/login/referer/aHR0cHM6Ly9teXNob3AuY29tL2NoZWNrb3V0). Previously, the login URL did not include a referer (for example, https://myShop.com/customer/account/login). <em>Fix submitted by <a href="https://github.com/quisse">Tommy Quissens</a> in pull request 12630</em>. <a href="https://github.com/magento/magento2/issues/12627">GitHub-12627</a></li>
 </ul>
 
 <!--- MAGETWO-86989 -->
@@ -2828,24 +2829,24 @@
 
 <!--- MAGETWO-87950 -->
 <ul>
-  <li>The event <code class="highlighter-rouge">customer_address_after_save_viv_observer</code> is now spelled correctly in the Customer <code class="highlighter-rouge">events.xml</code> file. <em>Fix submitted by <a href="https://github.com/srenon">Renon Stewart</a> in pull request 13661</em>.</li>
+  <li>The event <code class="language-plaintext highlighter-rouge">customer_address_after_save_viv_observer</code> is now spelled correctly in the Customer <code class="language-plaintext highlighter-rouge">events.xml</code> file. <em>Fix submitted by <a href="https://github.com/srenon">Renon Stewart</a> in pull request 13661</em>.</li>
 </ul>
 
 <!--- MAGETWO-71829 -->
 <ul>
-  <li>The <code class="highlighter-rouge">is_subscribed</code> extended parameter is now returned when a web API is used to modify or return information about a customer.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">is_subscribed</code> extended parameter is now returned when a web API is used to modify or return information about a customer.</li>
 </ul>
 
 <h3 id="dashboard">Dashboard</h3>
 
 <!--- MAGETWO-86443 -->
 <ul>
-  <li>The <code class="highlighter-rouge">top destinations</code> configuration field is now configurable on a store level. Previously, it was configurable on the global level only. <em>Fix submitted by <a href="https://github.com/avstudnitz">Andreas von Studnitz</a> in pull request 13052</em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">top destinations</code> configuration field is now configurable on a store level. Previously, it was configurable on the global level only. <em>Fix submitted by <a href="https://github.com/avstudnitz">Andreas von Studnitz</a> in pull request 13052</em>.</li>
 </ul>
 
 <!--- MAGETWO-86205 -->
 <ul>
-  <li>When multiple validation errors occur while saving a customer address, Magento now shows unique messages in the <code class="highlighter-rouge">adminhtml</code> customer edit page. <em>Fix submitted by <a href="https://github.com/adrian-martinez-interactiv4">adrian-martinez-interactiv4</a> in pull request 12922</em>.</li>
+  <li>When multiple validation errors occur while saving a customer address, Magento now shows unique messages in the <code class="language-plaintext highlighter-rouge">adminhtml</code> customer edit page. <em>Fix submitted by <a href="https://github.com/adrian-martinez-interactiv4">adrian-martinez-interactiv4</a> in pull request 12922</em>.</li>
 </ul>
 
 <!--- MAGETWO-86203 -->
@@ -2857,7 +2858,7 @@
 
 <!--- MAGETWO-85659 -->
 <ul>
-  <li>The <code class="highlighter-rouge">\Magento\Directory\Model\PriceCurrency::format()</code> method no longer fails if you do not configure a conversion rate from the base to the specified currency. Previously, if you did not specify this conversion rate, Magento rendered the price (amount) in the base currency, not the specified currency. <em>Fix submitted by <a href="https://github.com/nmalevanec">Nickolas Malyovanets</a> in pull request 1022</em>. <a href="https://github.com/magento/magento2/issues/6965">GitHub-6965</a></li>
+  <li>The <code class="language-plaintext highlighter-rouge">\Magento\Directory\Model\PriceCurrency::format()</code> method no longer fails if you do not configure a conversion rate from the base to the specified currency. Previously, if you did not specify this conversion rate, Magento rendered the price (amount) in the base currency, not the specified currency. <em>Fix submitted by <a href="https://github.com/nmalevanec">Nickolas Malyovanets</a> in pull request 1022</em>. <a href="https://github.com/magento/magento2/issues/6965">GitHub-6965</a></li>
 </ul>
 
 <!--- MAGETWO-85583 -->
@@ -2894,12 +2895,12 @@
 
 <!--- MAGETWO-85302 -->
 <ul>
-  <li>Magento now uses the correct  <code class="highlighter-rouge">entity_model</code> in <code class="highlighter-rouge">table eav_entity_type</code> for invoices (<code class="highlighter-rouge">Magento\Sales\Model\ResourceModel\Order\Invoice</code>). Previously, in <code class="highlighter-rouge">table eav_entity_type</code> for <code class="highlighter-rouge">entity_type_code = "invoice"</code> the <code class="highlighter-rouge">entity_model</code> was <code class="highlighter-rouge">Magento\Sales\Model\ResourceModel\Order</code>. <em>Fix submitted by <a href="https://github.com/nmalevanec">Nickolas Malyovanets</a> in pull request 980</em>. <a href="https://github.com/magento/magento2/issues/10123">GitHub-10123</a></li>
+  <li>Magento now uses the correct  <code class="language-plaintext highlighter-rouge">entity_model</code> in <code class="language-plaintext highlighter-rouge">table eav_entity_type</code> for invoices (<code class="language-plaintext highlighter-rouge">Magento\Sales\Model\ResourceModel\Order\Invoice</code>). Previously, in <code class="language-plaintext highlighter-rouge">table eav_entity_type</code> for <code class="language-plaintext highlighter-rouge">entity_type_code = "invoice"</code> the <code class="language-plaintext highlighter-rouge">entity_model</code> was <code class="language-plaintext highlighter-rouge">Magento\Sales\Model\ResourceModel\Order</code>. <em>Fix submitted by <a href="https://github.com/nmalevanec">Nickolas Malyovanets</a> in pull request 980</em>. <a href="https://github.com/magento/magento2/issues/10123">GitHub-10123</a></li>
 </ul>
 
 <!--- MAGETWO-84272 -->
 <ul>
-  <li>When a validation message is returned, Magento no longer displays the attribute code (<code class="highlighter-rouge">$attrCode</code>), but instead returns the label (<code class="highlighter-rouge">$label</code>). This change makes it easier to translate messages. <em>Fix submitted by <a href="https://github.com/hewersonfreitas">Hewerson Freitas</a> in pull request 12120</em>.</li>
+  <li>When a validation message is returned, Magento no longer displays the attribute code (<code class="language-plaintext highlighter-rouge">$attrCode</code>), but instead returns the label (<code class="language-plaintext highlighter-rouge">$label</code>). This change makes it easier to translate messages. <em>Fix submitted by <a href="https://github.com/hewersonfreitas">Hewerson Freitas</a> in pull request 12120</em>.</li>
 </ul>
 
 <!--- MAGETWO-72597 -->
@@ -2909,17 +2910,17 @@
 
 <!--- MAGETWO-85833 -->
 <ul>
-  <li><code class="highlighter-rouge">Magento\Eav\Model\Config::getAttribute</code> now stops the Profiler before it returns Profiler runtime. Previously, <code class="highlighter-rouge">Magento\Eav\Model\Config::getAttribute</code> did not stop the Profiler from returning early and consequently reported incorrect runtime. <em>Fix submitted by <a href="https://github.com/nicka101">Nick Anstee</a> in pull request 12810</em>.</li>
+  <li><code class="language-plaintext highlighter-rouge">Magento\Eav\Model\Config::getAttribute</code> now stops the Profiler before it returns Profiler runtime. Previously, <code class="language-plaintext highlighter-rouge">Magento\Eav\Model\Config::getAttribute</code> did not stop the Profiler from returning early and consequently reported incorrect runtime. <em>Fix submitted by <a href="https://github.com/nicka101">Nick Anstee</a> in pull request 12810</em>.</li>
 </ul>
 
 <!--- MAGETWO-87588 -->
 <ul>
-  <li>The <code class="highlighter-rouge">beforeSave</code> method encodes an attribute value only when it has not yet been encoded. Previously, the JSON-encoded attribute value was loaded  correctly, but when you saved a product multiple times,  the attribute value was also encoded multiple times. Consequently, Magento did save the product and  displayed this error, <strong>Unable to unserialize value</strong>. <em>Fix submitted by <a href="https://github.com/tkotosz">Tibor Kotosz</a> in pull request 13551</em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">beforeSave</code> method encodes an attribute value only when it has not yet been encoded. Previously, the JSON-encoded attribute value was loaded  correctly, but when you saved a product multiple times,  the attribute value was also encoded multiple times. Consequently, Magento did save the product and  displayed this error, <strong>Unable to unserialize value</strong>. <em>Fix submitted by <a href="https://github.com/tkotosz">Tibor Kotosz</a> in pull request 13551</em>.</li>
 </ul>
 
 <!--- MAGETWO-87354 -->
 <ul>
-  <li>The deprecated <code class="highlighter-rouge">each()</code> function has been removed from the code. <em>Fix submitted by <a href="https://github.com/ihor-sviziev">Ihor Sviziev</a> in a pull request</em>.</li>
+  <li>The deprecated <code class="language-plaintext highlighter-rouge">each()</code> function has been removed from the code. <em>Fix submitted by <a href="https://github.com/ihor-sviziev">Ihor Sviziev</a> in a pull request</em>.</li>
 </ul>
 
 <h3 id="email">Email</h3>
@@ -2938,17 +2939,17 @@
 
 <!--- MAGETWO-86337 -->
 <ul>
-  <li>You can now switch to default mode from production mode. Previously, if you tried to switch back to default mode, Magento displayed this error, <code class="highlighter-rouge">Cannot switch into given mode 'default'</code>. <em>Fix submitted by <a href="https://github.com/Etty">Etty</a> in pull request 12752</em>. <a href="https://github.com/magento/magento2/issues/4292">GitHub-4292</a></li>
+  <li>You can now switch to default mode from production mode. Previously, if you tried to switch back to default mode, Magento displayed this error, <code class="language-plaintext highlighter-rouge">Cannot switch into given mode 'default'</code>. <em>Fix submitted by <a href="https://github.com/Etty">Etty</a> in pull request 12752</em>. <a href="https://github.com/magento/magento2/issues/4292">GitHub-4292</a></li>
 </ul>
 
 <!--- MAGETWO- 86654-->
 <ul>
-  <li><code class="highlighter-rouge">vendor/magento/framework/composer.json</code> now declares a dependency on <code class="highlighter-rouge">magento/zendframework1</code>. Previously, packages depending on <code class="highlighter-rouge">magento/framework</code> packages failed to execute. <em>Fix submitted by <a href="https://github.com/ihor-sviziev">Ihor Sviziev</a> in pull request 12990</em>. <a href="https://github.com/magento/magento2/issues/12967">GitHub-12967</a></li>
+  <li><code class="language-plaintext highlighter-rouge">vendor/magento/framework/composer.json</code> now declares a dependency on <code class="language-plaintext highlighter-rouge">magento/zendframework1</code>. Previously, packages depending on <code class="language-plaintext highlighter-rouge">magento/framework</code> packages failed to execute. <em>Fix submitted by <a href="https://github.com/ihor-sviziev">Ihor Sviziev</a> in pull request 12990</em>. <a href="https://github.com/magento/magento2/issues/12967">GitHub-12967</a></li>
 </ul>
 
 <!--- MAGETWO-85290 -->
 <ul>
-  <li>The <code class="highlighter-rouge">filePutContents('file.txt')</code> now contains content as expected. Previously, Magento threw this error, <code class="highlighter-rouge">The specified "file.text" file could not be written*</code>.  <em>Fix submitted by <a href="https://github.com/nmalevanec">Nickolas Malyovanets</a> in pull request 962</em>. <a href="https://github.com/magento/magento2/issues/7467">GitHub-7467</a></li>
+  <li>The <code class="language-plaintext highlighter-rouge">filePutContents('file.txt')</code> now contains content as expected. Previously, Magento threw this error, <code class="language-plaintext highlighter-rouge">The specified "file.text" file could not be written*</code>.  <em>Fix submitted by <a href="https://github.com/nmalevanec">Nickolas Malyovanets</a> in pull request 962</em>. <a href="https://github.com/magento/magento2/issues/7467">GitHub-7467</a></li>
 </ul>
 
 <!--- MAGETWO-85770 -->
@@ -2958,42 +2959,42 @@
 
 <!--- MAGETWO-85872 -->
 <ul>
-  <li>PhpDoc now shows correct parameter types. Previously, PhpDoc showed only a type of <code class="highlighter-rouge">string</code>, although <code class="highlighter-rouge">array</code> was also a valid parameter type. <em>Fix submitted by <a href="https://github.com/FreekVandeursen">Freek Vandeursen</a> in pull request 12826</em>.</li>
+  <li>PhpDoc now shows correct parameter types. Previously, PhpDoc showed only a type of <code class="language-plaintext highlighter-rouge">string</code>, although <code class="language-plaintext highlighter-rouge">array</code> was also a valid parameter type. <em>Fix submitted by <a href="https://github.com/FreekVandeursen">Freek Vandeursen</a> in pull request 12826</em>.</li>
 </ul>
 
 <!--- MAGETWO-86484 -->
 <ul>
-  <li>Content no longer jumps when pages are reloaded on the Admin because <code class="highlighter-rouge">notices-wrapper</code> now has a <code class="highlighter-rouge">min-height</code> setting. <em>Fix submitted by <a href="https://github.com/avoelkl">Anna Völkl</a> in pull request 12985</em>.</li>
+  <li>Content no longer jumps when pages are reloaded on the Admin because <code class="language-plaintext highlighter-rouge">notices-wrapper</code> now has a <code class="language-plaintext highlighter-rouge">min-height</code> setting. <em>Fix submitted by <a href="https://github.com/avoelkl">Anna Völkl</a> in pull request 12985</em>.</li>
 </ul>
 
 <!--- MAGETWO-86277 -->
 <ul>
-  <li>We’ve corrected a typo in the <code class="highlighter-rouge">Magento\Ui\Controller\Adminhtml\Index\Render</code> action. <em>Fix submitted by <a href="https://github.com/punkstar">Nick</a> in pull request 12951</em>.</li>
+  <li>We’ve corrected a typo in the <code class="language-plaintext highlighter-rouge">Magento\Ui\Controller\Adminhtml\Index\Render</code> action. <em>Fix submitted by <a href="https://github.com/punkstar">Nick</a> in pull request 12951</em>.</li>
 </ul>
 
 <!--- MAGETWO-86154 -->
 <ul>
-  <li><code class="highlighter-rouge">X-Magento-Vary</code> and <code class="highlighter-rouge">PHPSESSID</code> now have the same expiration time. Previously, the  <code class="highlighter-rouge">X-Magento-Vary</code> cookie had an expiration of <code class="highlighter-rouge">session</code>, which meant it was not considered expired until the browser was closed. In contrast, the <code class="highlighter-rouge">PHPSESSID</code> cookie had a finite expiration time (not <code class="highlighter-rouge">session</code>). At times, this resulted in  Magento caching the wrong page for the logged-in user.</li>
+  <li><code class="language-plaintext highlighter-rouge">X-Magento-Vary</code> and <code class="language-plaintext highlighter-rouge">PHPSESSID</code> now have the same expiration time. Previously, the  <code class="language-plaintext highlighter-rouge">X-Magento-Vary</code> cookie had an expiration of <code class="language-plaintext highlighter-rouge">session</code>, which meant it was not considered expired until the browser was closed. In contrast, the <code class="language-plaintext highlighter-rouge">PHPSESSID</code> cookie had a finite expiration time (not <code class="language-plaintext highlighter-rouge">session</code>). At times, this resulted in  Magento caching the wrong page for the logged-in user.</li>
 </ul>
 
 <!--- MAGETWO-85992 -->
 <ul>
-  <li><code class="highlighter-rouge">\Magento\Config\Model\Config\Structure\Reader::processingDocument</code>  now throws a more helpful validation exception. <em>Fix submitted by <a href="https://github.com/pmclain">Patrick McLain</a> in pull request 12859</em>.</li>
+  <li><code class="language-plaintext highlighter-rouge">\Magento\Config\Model\Config\Structure\Reader::processingDocument</code>  now throws a more helpful validation exception. <em>Fix submitted by <a href="https://github.com/pmclain">Patrick McLain</a> in pull request 12859</em>.</li>
 </ul>
 
 <!--- MAGETWO-88146 -->
 <ul>
-  <li>Creating an observer that uses <code class="highlighter-rouge">ObserverInterface</code> no longer triggers a patch-level dependency on <code class="highlighter-rouge">magento/framework</code>. <em>Fix submitted by <a href="https://github.com/fooman">Kristof</a> in pull request 13759</em>.</li>
+  <li>Creating an observer that uses <code class="language-plaintext highlighter-rouge">ObserverInterface</code> no longer triggers a patch-level dependency on <code class="language-plaintext highlighter-rouge">magento/framework</code>. <em>Fix submitted by <a href="https://github.com/fooman">Kristof</a> in pull request 13759</em>.</li>
 </ul>
 
 <!--- MAGETWO-88115 -->
 <ul>
-  <li>RewriteBase directive has been added to the <code class="highlighter-rouge">.htaccess</code> file in <code class="highlighter-rouge">pub/static</code> to support the potential installation of Magento code under a directory inside the web root. <em>Fix submitted by <a href="https://github.com/ccasciotti">Cristiano Casciotti</a> in pull request 13678</em>.</li>
+  <li>RewriteBase directive has been added to the <code class="language-plaintext highlighter-rouge">.htaccess</code> file in <code class="language-plaintext highlighter-rouge">pub/static</code> to support the potential installation of Magento code under a directory inside the web root. <em>Fix submitted by <a href="https://github.com/ccasciotti">Cristiano Casciotti</a> in pull request 13678</em>.</li>
 </ul>
 
 <!--- MAGETWO-87261 -->
 <ul>
-  <li>The doc block of the <code class="highlighter-rouge">walk</code> method in a collection now correctly describes that the method accepts a string or array. <em>Fix submitted by <a href="https://github.com/ByteCreation">ByteCreation</a> in pull request 13373</em>.</li>
+  <li>The doc block of the <code class="language-plaintext highlighter-rouge">walk</code> method in a collection now correctly describes that the method accepts a string or array. <em>Fix submitted by <a href="https://github.com/ByteCreation">ByteCreation</a> in pull request 13373</em>.</li>
 </ul>
 
 <!--- MAGETWO-82069 -->
@@ -3010,12 +3011,12 @@
 
 <!--- MAGETWO-80223 -->
 <ul>
-  <li><code class="highlighter-rouge">expectException()</code> calls now accept two parameters (instead of one). <em>Fix submitted by <a href="https://github.com/schmengler">Fabian Schmengler</a> in pull request 11099</em>. <a href="https://github.com/magento/magento2/issues/11059">GitHub-11059</a></li>
+  <li><code class="language-plaintext highlighter-rouge">expectException()</code> calls now accept two parameters (instead of one). <em>Fix submitted by <a href="https://github.com/schmengler">Fabian Schmengler</a> in pull request 11099</em>. <a href="https://github.com/magento/magento2/issues/11059">GitHub-11059</a></li>
 </ul>
 
 <!--- MAGETWO-84003 -->
 <ul>
-  <li>The <code class="highlighter-rouge">findAccessorMethodName()</code> method (<code class="highlighter-rouge">Magento\Framework\Reflection\NameFinder</code>) now provides a more helpful exception message. <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in pull request 12303</em>. <a href="https://github.com/magento/magento2/issues/9764">GitHub-9764</a></li>
+  <li>The <code class="language-plaintext highlighter-rouge">findAccessorMethodName()</code> method (<code class="language-plaintext highlighter-rouge">Magento\Framework\Reflection\NameFinder</code>) now provides a more helpful exception message. <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in pull request 12303</em>. <a href="https://github.com/magento/magento2/issues/9764">GitHub-9764</a></li>
 </ul>
 
 <!--- MAGETWO-84016 -->
@@ -3025,7 +3026,7 @@
 
 <!--- MAGETWO-84371 -->
 <ul>
-  <li>You can now alter the transport variable in the <code class="highlighter-rouge">email_invoice_set_template_vars_before</code> event. <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in pull request 12132</em>. <a href="https://github.com/magento/magento2/issues/10210">GitHub-10210</a></li>
+  <li>You can now alter the transport variable in the <code class="language-plaintext highlighter-rouge">email_invoice_set_template_vars_before</code> event. <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in pull request 12132</em>. <a href="https://github.com/magento/magento2/issues/10210">GitHub-10210</a></li>
 </ul>
 
 <!--- MAGETWO-84372 -->
@@ -3044,19 +3045,19 @@
 
 <!--- MAGETWO-83401 -->
 <ul>
-  <li>The <code class="highlighter-rouge">depends</code> field now works for fields of type <code class="highlighter-rouge">radio</code> in <code class="highlighter-rouge">system.xml</code>. <em>Fix submitted by <a href="https://github.com/jahvi">Javier Villanueva</a> in pull request 11539</em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">depends</code> field now works for fields of type <code class="language-plaintext highlighter-rouge">radio</code> in <code class="language-plaintext highlighter-rouge">system.xml</code>. <em>Fix submitted by <a href="https://github.com/jahvi">Javier Villanueva</a> in pull request 11539</em>.</li>
 </ul>
 
 <!--- MAGETWO-83993 -->
 <ul>
-  <li>Magento now sorts fields and amounts as expected  when you extend a dynamic-row element in a <code class="highlighter-rouge">ui_component</code> and add a sort order attribute with an amount that falls between the other elements’ amount. <em>Fix submitted by <a href="https://github.com/deiserh">Harald Deiser</a> in pull request 11846</em>.</li>
+  <li>Magento now sorts fields and amounts as expected  when you extend a dynamic-row element in a <code class="language-plaintext highlighter-rouge">ui_component</code> and add a sort order attribute with an amount that falls between the other elements’ amount. <em>Fix submitted by <a href="https://github.com/deiserh">Harald Deiser</a> in pull request 11846</em>.</li>
 </ul>
 
 <h4 id="session-framework">Session framework</h4>
 
 <!--- MAGETWO-83373 -->
 <ul>
-  <li>The Setup Wizard page now loads successfully when the session storage method is Memcache.  Previously, Magento returned an HTTP 500 error when you navigated to <strong>System &gt; Tools &gt; Web Setup Wizard Setup Wizard</strong>  in installations where you’ve configured the session storage method to Memcache in <code class="highlighter-rouge">env.php</code>. <em>Fix submitted by <a href="https://github.com/sylink">Marty S</a> in pull request 11608</em>. <a href="https://github.com/magento/magento2/issues/9633">GitHub-9633</a></li>
+  <li>The Setup Wizard page now loads successfully when the session storage method is Memcache.  Previously, Magento returned an HTTP 500 error when you navigated to <strong>System &gt; Tools &gt; Web Setup Wizard Setup Wizard</strong>  in installations where you’ve configured the session storage method to Memcache in <code class="language-plaintext highlighter-rouge">env.php</code>. <em>Fix submitted by <a href="https://github.com/sylink">Marty S</a> in pull request 11608</em>. <a href="https://github.com/magento/magento2/issues/9633">GitHub-9633</a></li>
 </ul>
 
 <!--- MAGETWO-83287 -->
@@ -3083,29 +3084,29 @@
 
 <!--- MAGETWO-84994 -->
 <ul>
-  <li>You can now set attribute values to empty strings using REST. Previously, Magento would not let you use REST to pass the following attributes with empty values: <code class="highlighter-rouge">special_from_date</code>, <code class="highlighter-rouge">special_to_date</code>, and <code class="highlighter-rouge">special_price</code>. <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in pull request 916</em>. <a href="https://github.com/magento/magento2/issues/8862">GitHub-8862</a></li>
+  <li>You can now set attribute values to empty strings using REST. Previously, Magento would not let you use REST to pass the following attributes with empty values: <code class="language-plaintext highlighter-rouge">special_from_date</code>, <code class="language-plaintext highlighter-rouge">special_to_date</code>, and <code class="language-plaintext highlighter-rouge">special_price</code>. <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in pull request 916</em>. <a href="https://github.com/magento/magento2/issues/8862">GitHub-8862</a></li>
 </ul>
 
 <!--- MAGETWO-85534 -->
 <ul>
-  <li>We’ve updated the <code class="highlighter-rouge">webapi</code> module to improve the order of how arguments are merged in multiple <code class="highlighter-rouge">di.xml</code> files. <em>Fix submitted by <a href="https://github.com/serhii-balko">Serhii</a> in pull request 995</em>. <a href="https://github.com/magento/magento2/issues/8647">GitHub-8647</a></li>
+  <li>We’ve updated the <code class="language-plaintext highlighter-rouge">webapi</code> module to improve the order of how arguments are merged in multiple <code class="language-plaintext highlighter-rouge">di.xml</code> files. <em>Fix submitted by <a href="https://github.com/serhii-balko">Serhii</a> in pull request 995</em>. <a href="https://github.com/magento/magento2/issues/8647">GitHub-8647</a></li>
 </ul>
 
 <!--- MAGETWO-85538 -->
 <ul>
-  <li><code class="highlighter-rouge">SearchCriteriaBuilder</code> now has a check to determine if sort order should be applied. Previously, <code class="highlighter-rouge">SearchCriteriaBuilder</code> built wrong criteria (<code class="highlighter-rouge">ORDER BY part</code>). <em>Fix submitted by <a href="https://github.com/nmalevanec">Nickolas Malyovanets</a> in pull request 1003</em>. <a href="https://github.com/magento/magento2/issues/5738">GitHub-5738</a></li>
+  <li><code class="language-plaintext highlighter-rouge">SearchCriteriaBuilder</code> now has a check to determine if sort order should be applied. Previously, <code class="language-plaintext highlighter-rouge">SearchCriteriaBuilder</code> built wrong criteria (<code class="language-plaintext highlighter-rouge">ORDER BY part</code>). <em>Fix submitted by <a href="https://github.com/nmalevanec">Nickolas Malyovanets</a> in pull request 1003</em>. <a href="https://github.com/magento/magento2/issues/5738">GitHub-5738</a></li>
 </ul>
 
 <!--- MAGETWO-84666 -->
 <ul>
-  <li>Anonymous Web API access to the Admin now unlocks REST catalog calls without requiring <code class="highlighter-rouge">auth</code> tokens. <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in pull request 904</em>. <a href="https://github.com/magento/magento2/issues/9468">GitHub-9468</a></li>
+  <li>Anonymous Web API access to the Admin now unlocks REST catalog calls without requiring <code class="language-plaintext highlighter-rouge">auth</code> tokens. <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in pull request 904</em>. <a href="https://github.com/magento/magento2/issues/9468">GitHub-9468</a></li>
 </ul>
 
 <h4 id="zend-framework">Zend framework</h4>
 
 <!--- MAGETWO-86654 -->
 <ul>
-  <li><code class="highlighter-rouge">vendor/magento/framework/composer.json</code> now declares a dependency on <code class="highlighter-rouge">magento/zendframework1</code>. Previously, packages depending on <code class="highlighter-rouge">magento/framework</code> packages failed to execute. <em>Fix submitted by <a href="https://github.com/ihor-sviziev">Ihor Sviziev</a> in pull request 12990</em>.</li>
+  <li><code class="language-plaintext highlighter-rouge">vendor/magento/framework/composer.json</code> now declares a dependency on <code class="language-plaintext highlighter-rouge">magento/zendframework1</code>. Previously, packages depending on <code class="language-plaintext highlighter-rouge">magento/framework</code> packages failed to execute. <em>Fix submitted by <a href="https://github.com/ihor-sviziev">Ihor Sviziev</a> in pull request 12990</em>.</li>
 </ul>
 
 <h3 id="general">General</h3>
@@ -3127,7 +3128,7 @@
 
 <!--- MAGETWO-86748 -->
 <ul>
-  <li>We’ve removed the <code class="highlighter-rouge">Magento\ProductAlert\Controller\Add\TestObserver</code> class. <em>Fix submitted by <a href="https://github.com/Coderimus">Alexander Shkurko</a> in pull request 13174</em>.</li>
+  <li>We’ve removed the <code class="language-plaintext highlighter-rouge">Magento\ProductAlert\Controller\Add\TestObserver</code> class. <em>Fix submitted by <a href="https://github.com/Coderimus">Alexander Shkurko</a> in pull request 13174</em>.</li>
 </ul>
 
 <!--- MAGETWO-86722 -->
@@ -3137,22 +3138,22 @@
 
 <!--- MAGETWO-87033 -->
 <ul>
-  <li>Elements within an array in <code class="highlighter-rouge">store_website</code> table are now correctly formatted. <em>Fix submitted by <a href="https://github.com/Nolwennig">Nolwennig Guilbert</a> in pull request 13324</em>.</li>
+  <li>Elements within an array in <code class="language-plaintext highlighter-rouge">store_website</code> table are now correctly formatted. <em>Fix submitted by <a href="https://github.com/Nolwennig">Nolwennig Guilbert</a> in pull request 13324</em>.</li>
 </ul>
 
 <!--- MAGETWO-86886 -->
 <ul>
-  <li>A type error in <code class="highlighter-rouge">CartTotalRepository</code> has been resolved. Previously, <code class="highlighter-rouge">CartTotalRepository</code> could not handle extension attributes in quote addresses, and Magento threw a <code class="highlighter-rouge">PHP Fatal error:  Uncaught TypeError</code>. <em>Fix submitted by <a href="https://github.com/p-bystritsky">p-bystritsky</a> in pull request 12993</em>. <a href="https://github.com/magento/magento2/issues/12993">GitHub-12993</a>, <a href="https://github.com/magento/magento2/issues/12819">GitHub-12819</a></li>
+  <li>A type error in <code class="language-plaintext highlighter-rouge">CartTotalRepository</code> has been resolved. Previously, <code class="language-plaintext highlighter-rouge">CartTotalRepository</code> could not handle extension attributes in quote addresses, and Magento threw a <code class="language-plaintext highlighter-rouge">PHP Fatal error:  Uncaught TypeError</code>. <em>Fix submitted by <a href="https://github.com/p-bystritsky">p-bystritsky</a> in pull request 12993</em>. <a href="https://github.com/magento/magento2/issues/12993">GitHub-12993</a>, <a href="https://github.com/magento/magento2/issues/12819">GitHub-12819</a></li>
 </ul>
 
 <!--- MAGETWO-86883 -->
 <ul>
-  <li>The WYSIWYG editor image insertion process now takes into account the static URLs configuration value (configuration setting <code class="highlighter-rouge">cms/wysiwyg/use_static_urls_in_catalog</code>). <em>Fix submitted by <a href="https://github.com/nmalevanec">Nickolas Malyovanets</a> in pull request 1215.</em> <a href="https://github.com/magento/magento2/issues/12147">GitHub-12147</a></li>
+  <li>The WYSIWYG editor image insertion process now takes into account the static URLs configuration value (configuration setting <code class="language-plaintext highlighter-rouge">cms/wysiwyg/use_static_urls_in_catalog</code>). <em>Fix submitted by <a href="https://github.com/nmalevanec">Nickolas Malyovanets</a> in pull request 1215.</em> <a href="https://github.com/magento/magento2/issues/12147">GitHub-12147</a></li>
 </ul>
 
 <!--- MAGETWO-86840 -->
 <ul>
-  <li>The <code class="highlighter-rouge">&lt;![CDATA[]]&gt;</code> statement in the <code class="highlighter-rouge">system.xml</code> file  now works as expected. Previously, when you entered an XML layout update with CDATA for the first time,  it worked as expected. After you saved the file, however, the <code class="highlighter-rouge">CDATA</code> tag disappeared. <em>Fix submitted by <a href="https://github.com/serhii-balko">Serhii</a> in pull request 1163</em>. <a href="https://github.com/magento/magento2/issues/12322">GitHub-12322</a></li>
+  <li>The <code class="language-plaintext highlighter-rouge">&lt;![CDATA[]]&gt;</code> statement in the <code class="language-plaintext highlighter-rouge">system.xml</code> file  now works as expected. Previously, when you entered an XML layout update with CDATA for the first time,  it worked as expected. After you saved the file, however, the <code class="language-plaintext highlighter-rouge">CDATA</code> tag disappeared. <em>Fix submitted by <a href="https://github.com/serhii-balko">Serhii</a> in pull request 1163</em>. <a href="https://github.com/magento/magento2/issues/12322">GitHub-12322</a></li>
 </ul>
 
 <!--- MAGETWO-87899 -->
@@ -3167,7 +3168,7 @@
 
 <!--- MAGETWO-86630 -->
 <ul>
-  <li>Google Analytics <code class="highlighter-rouge">pageview</code> is no longer triggered twice. <em>Fix submitted by <a href="https://github.com/bhargavmehta">Bhargav Mehta</a> in pull request 13034</em>. <a href="https://github.com/magento/magento2/issues/12221">GitHub-12221</a></li>
+  <li>Google Analytics <code class="language-plaintext highlighter-rouge">pageview</code> is no longer triggered twice. <em>Fix submitted by <a href="https://github.com/bhargavmehta">Bhargav Mehta</a> in pull request 13034</em>. <a href="https://github.com/magento/magento2/issues/12221">GitHub-12221</a></li>
 </ul>
 
 <!--- MAGETWO-86564 -->
@@ -3192,17 +3193,17 @@
 
 <!--- MAGETWO-86248 -->
 <ul>
-  <li>The <code class="highlighter-rouge">Learn More Link</code> widget option in the Recently Viewed Products widget now respects its setting. <em>Fix submitted by <a href="https://github.com/JeroenVanLeusden">Jeroen</a> in pull request 12946</em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">Learn More Link</code> widget option in the Recently Viewed Products widget now respects its setting. <em>Fix submitted by <a href="https://github.com/JeroenVanLeusden">Jeroen</a> in pull request 12946</em>.</li>
 </ul>
 
 <!--- MAGETWO-86035 -->
 <ul>
-  <li>An unused <code class="highlighter-rouge">if</code> statement in the order invoice <code class="highlighter-rouge">Save.php</code> has been removed. <em>Fix submitted by <a href="https://github.com/JeroenVanLeusden">Jeroen</a> in pull request 12887</em>.</li>
+  <li>An unused <code class="language-plaintext highlighter-rouge">if</code> statement in the order invoice <code class="language-plaintext highlighter-rouge">Save.php</code> has been removed. <em>Fix submitted by <a href="https://github.com/JeroenVanLeusden">Jeroen</a> in pull request 12887</em>.</li>
 </ul>
 
 <!--- MAGETWO-85780 -->
 <ul>
-  <li>The <code class="highlighter-rouge">sid</code> variable no longer appears in the storefront URL even if it has been  disabled in the Admin. Previously, even when the Magento setting <strong>General &gt; Web &gt; Session Validation Settings &gt; Use SID on Storefront</strong> was set to <strong>No</strong>, the <code class="highlighter-rouge">sid</code> variable no longer appears in the URL. <em>Fix submitted by <a href="https://github.com/strell">Roman Strelenko</a> in pull request 12743</em>. <a href="https://github.com/magento/magento2/issues/9453">GitHub-9453</a></li>
+  <li>The <code class="language-plaintext highlighter-rouge">sid</code> variable no longer appears in the storefront URL even if it has been  disabled in the Admin. Previously, even when the Magento setting <strong>General &gt; Web &gt; Session Validation Settings &gt; Use SID on Storefront</strong> was set to <strong>No</strong>, the <code class="language-plaintext highlighter-rouge">sid</code> variable no longer appears in the URL. <em>Fix submitted by <a href="https://github.com/strell">Roman Strelenko</a> in pull request 12743</em>. <a href="https://github.com/magento/magento2/issues/9453">GitHub-9453</a></li>
 </ul>
 
 <!--- MAGETWO-85779 -->
@@ -3217,7 +3218,7 @@
 
 <!--- MAGETWO-85773 -->
 <ul>
-  <li>A typo in the <code class="highlighter-rouge">SINGLE_PRODUCT_LAYOUT_HANLDE</code> constant has been fixed. <em>Fix submitted by <a href="https://github.com/aschrammel">Andreas Schrammel</a> in pull request 12786</em>.</li>
+  <li>A typo in the <code class="language-plaintext highlighter-rouge">SINGLE_PRODUCT_LAYOUT_HANLDE</code> constant has been fixed. <em>Fix submitted by <a href="https://github.com/aschrammel">Andreas Schrammel</a> in pull request 12786</em>.</li>
 </ul>
 
 <!--- MAGETWO-85713 -->
@@ -3232,7 +3233,7 @@
 
 <!--- MAGETWO-85610 -->
 <ul>
-  <li>White space that is prepended to a coupon code no longer causes an error. Previously, Magento did not apply the coupon and displayed this message: <code class="highlighter-rouge">Coupon code is not valid</code>. <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in pull request 1021</em>. <a href="https://github.com/magento/magento2/issues/12656">GitHub-12656</a></li>
+  <li>White space that is prepended to a coupon code no longer causes an error. Previously, Magento did not apply the coupon and displayed this message: <code class="language-plaintext highlighter-rouge">Coupon code is not valid</code>. <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in pull request 1021</em>. <a href="https://github.com/magento/magento2/issues/12656">GitHub-12656</a></li>
 </ul>
 
 <!--- MAGETWO-85502 -->
@@ -3257,7 +3258,7 @@
 
 <!--- MAGETWO-82866 -->
 <ul>
-  <li>Magento now displays information messages about both successful and failed actions when a company administrator adds or deletes entries in the  Company Users section. Previously, Magento displayed this error message, <code class="highlighter-rouge">Something went wrong</code>  in the response body, and did not display a message.</li>
+  <li>Magento now displays information messages about both successful and failed actions when a company administrator adds or deletes entries in the  Company Users section. Previously, Magento displayed this error message, <code class="language-plaintext highlighter-rouge">Something went wrong</code>  in the response body, and did not display a message.</li>
 </ul>
 
 <!--- MAGETWO-81128 -->
@@ -3267,7 +3268,7 @@
 
 <!--- MAGETWO-72865 -->
 <ul>
-  <li>Full Page Cache is no longer invalidated after you save a predictor category. Previously, all product-related cache data was invalidated, when only a narrow subset of cache tags associated with the <code class="highlighter-rouge">product_id</code> should have been.</li>
+  <li>Full Page Cache is no longer invalidated after you save a predictor category. Previously, all product-related cache data was invalidated, when only a narrow subset of cache tags associated with the <code class="language-plaintext highlighter-rouge">product_id</code> should have been.</li>
 </ul>
 
 <!--- MAGETWO-88040 -->
@@ -3277,32 +3278,32 @@
 
 <!--- MAGETWO-87908 -->
 <ul>
-  <li>Magento now displays a more meaningful error message when a module name is misspelled in <code class="highlighter-rouge">registration.php</code>. <em>Fix submitted by <a href="https://github.com/JanisE">Jānis Elmeris</a> in pull request 12843</em>.</li>
+  <li>Magento now displays a more meaningful error message when a module name is misspelled in <code class="language-plaintext highlighter-rouge">registration.php</code>. <em>Fix submitted by <a href="https://github.com/JanisE">Jānis Elmeris</a> in pull request 12843</em>.</li>
 </ul>
 
 <!--- MAGETWO-87940 -->
 <ul>
-  <li>In the line <code class="highlighter-rouge">Perform login specific action</code> in  <code class="highlighter-rouge">StorageInterface.php</code>,  <code class="highlighter-rouge">login</code> has been replaced with  <code class="highlighter-rouge">logout</code>. <em>Fix submitted by <a href="https://github.com/davidangel">David Angel</a> in pull request 13679</em>.</li>
+  <li>In the line <code class="language-plaintext highlighter-rouge">Perform login specific action</code> in  <code class="language-plaintext highlighter-rouge">StorageInterface.php</code>,  <code class="language-plaintext highlighter-rouge">login</code> has been replaced with  <code class="language-plaintext highlighter-rouge">logout</code>. <em>Fix submitted by <a href="https://github.com/davidangel">David Angel</a> in pull request 13679</em>.</li>
 </ul>
 
 <!--- MAGETWO-87921 -->
 <ul>
-  <li>The incorrect field value in the joined <code class="highlighter-rouge">variable_value</code> table has been replaced with two values: <code class="highlighter-rouge">plain_value</code> and <code class="highlighter-rouge">html_value</code>. <em>Fix submitted by <a href="https://github.com/mszydlo">Maksymilian Szydło</a> in pull request 13596</em>.</li>
+  <li>The incorrect field value in the joined <code class="language-plaintext highlighter-rouge">variable_value</code> table has been replaced with two values: <code class="language-plaintext highlighter-rouge">plain_value</code> and <code class="language-plaintext highlighter-rouge">html_value</code>. <em>Fix submitted by <a href="https://github.com/mszydlo">Maksymilian Szydło</a> in pull request 13596</em>.</li>
 </ul>
 
 <!--- MAGETWO-85503 -->
 <ul>
-  <li><code class="highlighter-rouge">Magento/Rma/Block/Adminhtml/Rma/Edit/Item/Form/Element/Boolean</code> is a new block element that allows rendering ability for the Boolean RMA attributes on the Admin.</li>
+  <li><code class="language-plaintext highlighter-rouge">Magento/Rma/Block/Adminhtml/Rma/Edit/Item/Form/Element/Boolean</code> is a new block element that allows rendering ability for the Boolean RMA attributes on the Admin.</li>
 </ul>
 
 <!--- MAGETWO-84880 -->
 <ul>
-  <li>Duplicate array keys in <code class="highlighter-rouge">app/code/Magento/Bundle/Block/Adminhtml/Catalog/Product/Edit/Tab/Attributes/Extend.php</code> and  <code class="highlighter-rouge">app/code/Magento/Downloadable/Helper/File.php</code>  have been removed. <em>Fix submitted by <a href="https://github.com/lfluvisotto">Leandro F. L.</a> in pull request 12513</em>.</li>
+  <li>Duplicate array keys in <code class="language-plaintext highlighter-rouge">app/code/Magento/Bundle/Block/Adminhtml/Catalog/Product/Edit/Tab/Attributes/Extend.php</code> and  <code class="language-plaintext highlighter-rouge">app/code/Magento/Downloadable/Helper/File.php</code>  have been removed. <em>Fix submitted by <a href="https://github.com/lfluvisotto">Leandro F. L.</a> in pull request 12513</em>.</li>
 </ul>
 
 <!--- MAGETWO-84856 -->
 <ul>
-  <li>The typo in the  <code class="highlighter-rouge">getDispretionPath</code>  function name has been corrected to <code class="highlighter-rouge">getDispersionPath</code>. <em>Fix submitted by <a href="https://github.com/PascalBrouwers">PascalBrouwers</a> in pull request 12507</em>. <a href="https://github.com/magento/magento2/issues/12506">GitHub-12506</a></li>
+  <li>The typo in the  <code class="language-plaintext highlighter-rouge">getDispretionPath</code>  function name has been corrected to <code class="language-plaintext highlighter-rouge">getDispersionPath</code>. <em>Fix submitted by <a href="https://github.com/PascalBrouwers">PascalBrouwers</a> in pull request 12507</em>. <a href="https://github.com/magento/magento2/issues/12506">GitHub-12506</a></li>
 </ul>
 
 <!--- MAGETWO-84474 -->
@@ -3317,42 +3318,42 @@
 
 <!--- MAGETWO-84006 -->
 <ul>
-  <li>The <code class="highlighter-rouge">robots.txt</code> response header content type is now plain text. <em>Fix submitted by <a href="https://github.com/tufahu">Milan Osztromok</a> in pull request 12310</em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">robots.txt</code> response header content type is now plain text. <em>Fix submitted by <a href="https://github.com/tufahu">Milan Osztromok</a> in pull request 12310</em>.</li>
 </ul>
 
 <!--- MAGETWO-84098 -->
 <ul>
-  <li>Customers can now successfully use RSS to share their wish lists. Previously, when a logged-in user added products to the wish list and then tried to share them using RSS, Magento threw this exception: <code class="highlighter-rouge">report.INFO: Broken reference: the 'wishlist.email.rss' element cannot be added as a child to 'root', because the latter doesn't exist</code> <em>Fix submitted by <a href="https://github.com/mediactbv">MediaCT</a> in a pull request</em>.</li>
+  <li>Customers can now successfully use RSS to share their wish lists. Previously, when a logged-in user added products to the wish list and then tried to share them using RSS, Magento threw this exception: <code class="language-plaintext highlighter-rouge">report.INFO: Broken reference: the 'wishlist.email.rss' element cannot be added as a child to 'root', because the latter doesn't exist</code> <em>Fix submitted by <a href="https://github.com/mediactbv">MediaCT</a> in a pull request</em>.</li>
 </ul>
 
 <!--- MAGETWO-87242 -->
 <ul>
-  <li>When you select a new main menu option, the previously selected  menu item now loses the <code class="highlighter-rouge">ui-state-active</code> class as expected. <em>Fix submitted by <a href="https://github.com/arnoudhgz">Arnoud Beekman</a> in pull request 13341</em>. <a href="https://github.com/magento/magento2/issues/13327">GitHub-13327</a></li>
+  <li>When you select a new main menu option, the previously selected  menu item now loses the <code class="language-plaintext highlighter-rouge">ui-state-active</code> class as expected. <em>Fix submitted by <a href="https://github.com/arnoudhgz">Arnoud Beekman</a> in pull request 13341</em>. <a href="https://github.com/magento/magento2/issues/13327">GitHub-13327</a></li>
 </ul>
 
 <!--- MAGETWO-85311 -->
 <ul>
-  <li>Issues with displaying full-screen images and video on the configurable product page have been resolved. Previously, Magento displayed video associated with product options on this page as images, rather than video, and full-screen mode for images ignored the configurations settings in <code class="highlighter-rouge">view.xml</code>. <em>Fix submitted by <a href="https://github.com/ishakhsuvarov">Ievgen Shakhsuvarov</a> in pull request 991</em>. <a href="https://github.com/magento/magento2/issues/12268">GitHub-12268</a></li>
+  <li>Issues with displaying full-screen images and video on the configurable product page have been resolved. Previously, Magento displayed video associated with product options on this page as images, rather than video, and full-screen mode for images ignored the configurations settings in <code class="language-plaintext highlighter-rouge">view.xml</code>. <em>Fix submitted by <a href="https://github.com/ishakhsuvarov">Ievgen Shakhsuvarov</a> in pull request 991</em>. <a href="https://github.com/magento/magento2/issues/12268">GitHub-12268</a></li>
 </ul>
 
 <!--- MAGETWO-84764 -->
 <ul>
-  <li>We’ve fixed issues with the “report module enable/disable changes as deployment markers” functionality in the <code class="highlighter-rouge">Magento_NewRelicReporting</code> module. Previously, if New Relic’s cron was enabled,  Magento  sent a New Relic deployment marker for every enabled module once per cron period. This resulted in an excessive number of events. <em>Fix submitted by <a href="https://github.com/fooman">Kristof</a> in pull request 12477</em>.</li>
+  <li>We’ve fixed issues with the “report module enable/disable changes as deployment markers” functionality in the <code class="language-plaintext highlighter-rouge">Magento_NewRelicReporting</code> module. Previously, if New Relic’s cron was enabled,  Magento  sent a New Relic deployment marker for every enabled module once per cron period. This resulted in an excessive number of events. <em>Fix submitted by <a href="https://github.com/fooman">Kristof</a> in pull request 12477</em>.</li>
 </ul>
 
 <!--- MAGETWO-86240 -->
 <ul>
-  <li>The New Product Configuration process now works as expected from the Admin.  Previously, on the last step of this process, Magento displayed <code class="highlighter-rouge">the element.disabled is not a function</code> message and did not create the product variations as expected. <a href="https://github.com/magento/magento2/issues/12555">GitHub-12555</a></li>
+  <li>The New Product Configuration process now works as expected from the Admin.  Previously, on the last step of this process, Magento displayed <code class="language-plaintext highlighter-rouge">the element.disabled is not a function</code> message and did not create the product variations as expected. <a href="https://github.com/magento/magento2/issues/12555">GitHub-12555</a></li>
 </ul>
 
 <!--- MAGETWO-88278 -->
 <ul>
-  <li>Save operations on CMS pages now load from <code class="highlighter-rouge">pageRepository</code>. <em>Fix submitted by <a href="https://github.com/JeroenVanLeusden">Jeroen</a> in pull request 13814</em>.</li>
+  <li>Save operations on CMS pages now load from <code class="language-plaintext highlighter-rouge">pageRepository</code>. <em>Fix submitted by <a href="https://github.com/JeroenVanLeusden">Jeroen</a> in pull request 13814</em>.</li>
 </ul>
 
 <!--- MAGETWO-88435 -->
 <ul>
-  <li>Magento now correctly displays product titles when displaying Sales information in Google Analytics.  Previously, Magento replaced spaces in product names with their HTML values (for example, <code class="highlighter-rouge">\u0020</code>). <em>Fix submitted by <a href="https://github.com/julienanquetil">Julien Anquetil</a> in pull request 13844</em>. <a href="https://github.com/magento/magento2/issues/13827">GitHub-13827</a>, <a href="https://github.com/magento/magento2/issues/13350">GitHub-13350</a></li>
+  <li>Magento now correctly displays product titles when displaying Sales information in Google Analytics.  Previously, Magento replaced spaces in product names with their HTML values (for example, <code class="language-plaintext highlighter-rouge">\u0020</code>). <em>Fix submitted by <a href="https://github.com/julienanquetil">Julien Anquetil</a> in pull request 13844</em>. <a href="https://github.com/magento/magento2/issues/13827">GitHub-13827</a>, <a href="https://github.com/magento/magento2/issues/13350">GitHub-13350</a></li>
 </ul>
 
 <h3 id="gift-card">Gift card</h3>
@@ -3371,7 +3372,7 @@
 
 <!--- MAGETWO-83726 -->
 <ul>
-  <li>The CSV file created by using <strong>System &gt; Export</strong> now incorporates the value of <code class="highlighter-rouge">hide_for_product_page</code>.
+  <li>The CSV file created by using <strong>System &gt; Export</strong> now incorporates the value of <code class="language-plaintext highlighter-rouge">hide_for_product_page</code>.
 <em>Fix submitted by <a href="https://github.com/nmalevanec">Nickolas Malyovanets</a> in pull request 11926</em>.</li>
 </ul>
 
@@ -3392,7 +3393,7 @@
 
 <!--- MAGETWO-86657 -->
 <ul>
-  <li>When you import information about existing customers, Magento now changes only the specific rows for this customer. If rows for other customer attributes (for example, <code class="highlighter-rouge">group_id</code>, <code class="highlighter-rouge">store_id</code>, <code class="highlighter-rouge">created_at</code>) are absent in the import file, these values are included unchanged.</li>
+  <li>When you import information about existing customers, Magento now changes only the specific rows for this customer. If rows for other customer attributes (for example, <code class="language-plaintext highlighter-rouge">group_id</code>, <code class="language-plaintext highlighter-rouge">store_id</code>, <code class="language-plaintext highlighter-rouge">created_at</code>) are absent in the import file, these values are included unchanged.</li>
 </ul>
 
 <!--- MAGETWO-88044 -->
@@ -3402,12 +3403,12 @@
 
 <!--- MAGETWO-74042 -->
 <ul>
-  <li>You can now successfully import  configurable products with specified configurable links when the <code class="highlighter-rouge">store_view_code</code> setting isn’t set. Previously, you could successfully import a configurable product with both configurable and additional attributes, but when you viewed the category to which the product belonged, the product was not displayed. <a href="https://github.com/magento/magento2/issues/5876">GitHub-5876</a></li>
+  <li>You can now successfully import  configurable products with specified configurable links when the <code class="language-plaintext highlighter-rouge">store_view_code</code> setting isn’t set. Previously, you could successfully import a configurable product with both configurable and additional attributes, but when you viewed the category to which the product belonged, the product was not displayed. <a href="https://github.com/magento/magento2/issues/5876">GitHub-5876</a></li>
 </ul>
 
 <!--- MAGETWO-88251 -->
 <ul>
-  <li>Save operations on CMS blocks now load from <code class="highlighter-rouge">pageRepository</code>. <em>Fix submitted by <a href="https://github.com/JeroenVanLeusden">Jeroen</a> in pull request 13796</em>.</li>
+  <li>Save operations on CMS blocks now load from <code class="language-plaintext highlighter-rouge">pageRepository</code>. <em>Fix submitted by <a href="https://github.com/JeroenVanLeusden">Jeroen</a> in pull request 13796</em>.</li>
 </ul>
 
 <!--- MAGETWO-86448 -->
@@ -3429,12 +3430,12 @@
 
 <!--- MAGETWO-86446 -->
 <ul>
-  <li>The URL that points to Magento <code class="highlighter-rouge">crontab</code> documentation has been updated to reflect current cron documentation in <code class="highlighter-rouge">app/code/Magento/Indexer/Model/Message/Invalid.php</code>. <em>Fix submitted by <a href="https://github.com/robbie-thompson">Robbie Thompson</a> in pull request 13050</em>.</li>
+  <li>The URL that points to Magento <code class="language-plaintext highlighter-rouge">crontab</code> documentation has been updated to reflect current cron documentation in <code class="language-plaintext highlighter-rouge">app/code/Magento/Indexer/Model/Message/Invalid.php</code>. <em>Fix submitted by <a href="https://github.com/robbie-thompson">Robbie Thompson</a> in pull request 13050</em>.</li>
 </ul>
 
 <!--- MAGETWO-83503 -->
 <ul>
-  <li>You can now view the state of the mview queue in real time, which can be useful when debugging indexing issues. Specifically, you can now view how many items are in the queue pending processing, as well as view information from the <code class="highlighter-rouge">mview_state</code> table. <em>Fix submitted by <a href="https://github.com/convenient">Luke Rodgers</a> in pull request 12122</em>.</li>
+  <li>You can now view the state of the mview queue in real time, which can be useful when debugging indexing issues. Specifically, you can now view how many items are in the queue pending processing, as well as view information from the <code class="language-plaintext highlighter-rouge">mview_state</code> table. <em>Fix submitted by <a href="https://github.com/convenient">Luke Rodgers</a> in pull request 12122</em>.</li>
 </ul>
 
 <h3 id="infrastructure">Infrastructure</h3>
@@ -3446,32 +3447,32 @@
 
 <!--- MAGETWO-86505 -->
 <ul>
-  <li>RequireJS loading issues that occur when ad blockers are active have been resolved. Previously, <code class="highlighter-rouge">uBlock</code> (or any ad blocker) forbade the <code class="highlighter-rouge">trackingCode.js</code> file from loading, which prompted RequireJS to throw  an  exception. This exception broke the JavaScript execution flow and caused unexpected issues throughout the storefront. <em>Fix submitted by <a href="https://github.com/Yonn">Yonn Trimoreau</a> in pull request 13061</em>.</li>
+  <li>RequireJS loading issues that occur when ad blockers are active have been resolved. Previously, <code class="language-plaintext highlighter-rouge">uBlock</code> (or any ad blocker) forbade the <code class="language-plaintext highlighter-rouge">trackingCode.js</code> file from loading, which prompted RequireJS to throw  an  exception. This exception broke the JavaScript execution flow and caused unexpected issues throughout the storefront. <em>Fix submitted by <a href="https://github.com/Yonn">Yonn Trimoreau</a> in pull request 13061</em>.</li>
 </ul>
 
 <!--- MAGETWO-86501 -->
 <ul>
-  <li><code class="highlighter-rouge">continue()</code> has been removed from templates. <em>Fix submitted by <a href="https://github.com/ihor-sviziev">Ihor Sviziev</a> in pull request 13076</em>.</li>
+  <li><code class="language-plaintext highlighter-rouge">continue()</code> has been removed from templates. <em>Fix submitted by <a href="https://github.com/ihor-sviziev">Ihor Sviziev</a> in pull request 13076</em>.</li>
 </ul>
 
 <!--- MAGETWO-85698 -->
 <ul>
-  <li>The comment that marks the <code class="highlighter-rouge">\Magento\Checkout\Model\Cart</code> class as deprecated now includes a pointer to an alternative class. This fix is part of an ongoing effort to add pointers to valid replacements when marking methods and classes as deprecated. <em>Fix submitted by <a href="https://github.com/schmengler">Fabian Schmengler</a> in pull request 13061</em>. <a href="https://github.com/magento/magento2/issues/11070">GitHub-10133</a></li>
+  <li>The comment that marks the <code class="language-plaintext highlighter-rouge">\Magento\Checkout\Model\Cart</code> class as deprecated now includes a pointer to an alternative class. This fix is part of an ongoing effort to add pointers to valid replacements when marking methods and classes as deprecated. <em>Fix submitted by <a href="https://github.com/schmengler">Fabian Schmengler</a> in pull request 13061</em>. <a href="https://github.com/magento/magento2/issues/11070">GitHub-10133</a></li>
 </ul>
 
 <!--- MAGETWO-85694 -->
 <ul>
-  <li>A new file (<code class="highlighter-rouge">CODE_OF_CONDUCT.md</code>) that defines  standards for how to engage in the community has been added. <em>Fix submitted by <a href="https://github.com/ishakhsuvarov">Ievgen Shakhsuvarov</a> in pull request 12723</em>.</li>
+  <li>A new file (<code class="language-plaintext highlighter-rouge">CODE_OF_CONDUCT.md</code>) that defines  standards for how to engage in the community has been added. <em>Fix submitted by <a href="https://github.com/ishakhsuvarov">Ievgen Shakhsuvarov</a> in pull request 12723</em>.</li>
 </ul>
 
 <!--- MAGETWO-85292 -->
 <ul>
-  <li><code class="highlighter-rouge">\Magento\Framework\Data\Tree::getNodeById()</code> no longer contains an invalid type in its PHPDoc block.  <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in pull request 964</em>. <a href="https://github.com/magento/magento2/issues/8507">GitHub-8507</a></li>
+  <li><code class="language-plaintext highlighter-rouge">\Magento\Framework\Data\Tree::getNodeById()</code> no longer contains an invalid type in its PHPDoc block.  <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in pull request 964</em>. <a href="https://github.com/magento/magento2/issues/8507">GitHub-8507</a></li>
 </ul>
 
 <!--- MAGETWO-85179 -->
 <ul>
-  <li>We’ve resolved naming collisions that previously occurred  in the Javascript UI registry. Previously, these naming collisions resulted in the following behaviors: Magento displayed the <code class="highlighter-rouge">element.disabled is not a function</code> message, and did not create product variations as expected. <a href="https://github.com/magento/magento2/issues/12555">GitHub-12555</a></li>
+  <li>We’ve resolved naming collisions that previously occurred  in the Javascript UI registry. Previously, these naming collisions resulted in the following behaviors: Magento displayed the <code class="language-plaintext highlighter-rouge">element.disabled is not a function</code> message, and did not create product variations as expected. <a href="https://github.com/magento/magento2/issues/12555">GitHub-12555</a></li>
 </ul>
 
 <h3 id="newsletters">Newsletters</h3>
@@ -3510,12 +3511,12 @@
 
 <!--- MAGETWO-82577 -->
 <ul>
-  <li>The <code class="highlighter-rouge">getDefaultStoreLocale()</code> method has been added to allow for the fetching of scoped values. Use this method in <code class="highlighter-rouge">getCreatedAtFormatted()</code> to ensure that Magento translates the  <code class="highlighter-rouge">created_at</code> order date in emails for the locale being used in that store view. <em>Fix submitted by <a href="https://github.com/JeroenVanLeusden">Jeroen</a> in pull request 11067</em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">getDefaultStoreLocale()</code> method has been added to allow for the fetching of scoped values. Use this method in <code class="language-plaintext highlighter-rouge">getCreatedAtFormatted()</code> to ensure that Magento translates the  <code class="language-plaintext highlighter-rouge">created_at</code> order date in emails for the locale being used in that store view. <em>Fix submitted by <a href="https://github.com/JeroenVanLeusden">Jeroen</a> in pull request 11067</em>.</li>
 </ul>
 
 <!--- MAGETWO-83410 -->
 <ul>
-  <li>You can now successfully open the Order edit page for orders that contain an address with extension attributes. Previously, when you tried to open this page, the page load failed with this error, <code class="highlighter-rouge">Recoverable Error: Object of class Magento\Sales\Api\Data\OrderAddressExtension could not be converted to string in .../module-sales/Model/AdminOrder/Create.php on line 503</code>.</li>
+  <li>You can now successfully open the Order edit page for orders that contain an address with extension attributes. Previously, when you tried to open this page, the page load failed with this error, <code class="language-plaintext highlighter-rouge">Recoverable Error: Object of class Magento\Sales\Api\Data\OrderAddressExtension could not be converted to string in .../module-sales/Model/AdminOrder/Create.php on line 503</code>.</li>
 </ul>
 
 <!--- MAGETWO-83552 -->
@@ -3526,22 +3527,22 @@ the invoice ID was not included.  <em>Fix submitted by <a href="https://github.c
 
 <!--- MAGETWO-83740 -->
 <ul>
-  <li>Credit memos can have the state open (<code class="highlighter-rouge">\Magento\Sales\Model\Order\Creditmemo::STATE_OPEN</code>). As a result, you can create a credit memo with an ID that still has to be refunded, and existing credit memos should be refundable if their state is open. <em>Fix submitted by <a href="https://github.com/ajpevers">Anton Evers</a> in pull request 11550</em>.</li>
+  <li>Credit memos can have the state open (<code class="language-plaintext highlighter-rouge">\Magento\Sales\Model\Order\Creditmemo::STATE_OPEN</code>). As a result, you can create a credit memo with an ID that still has to be refunded, and existing credit memos should be refundable if their state is open. <em>Fix submitted by <a href="https://github.com/ajpevers">Anton Evers</a> in pull request 11550</em>.</li>
 </ul>
 
 <!--- MAGETWO-83783 -->
 <ul>
-  <li>The <code class="highlighter-rouge">Magento\Sales\Service\V1\OrderCreateTest</code> test now has the correct shipping method fixture. Previously, this test contained an incorrect shipping method fixture, which produced an error whenever an order’s shipping method was treated as an object. <em>Fix submitted by <a href="https://github.com/andrew-garside-temando">andrew-garside-temando</a> in pull request 12227</em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">Magento\Sales\Service\V1\OrderCreateTest</code> test now has the correct shipping method fixture. Previously, this test contained an incorrect shipping method fixture, which produced an error whenever an order’s shipping method was treated as an object. <em>Fix submitted by <a href="https://github.com/andrew-garside-temando">andrew-garside-temando</a> in pull request 12227</em>.</li>
 </ul>
 
 <!--- MAGETWO-84219 -->
 <ul>
-  <li>When you create a credit memo comment with <code class="highlighter-rouge">POST /V1/creditmemo/:id/comments</code>, Magento now sends  credit memo update emails as expected. Previously,  Magento did not send this email, and no other transaction emails were sent to the customer.</li>
+  <li>When you create a credit memo comment with <code class="language-plaintext highlighter-rouge">POST /V1/creditmemo/:id/comments</code>, Magento now sends  credit memo update emails as expected. Previously,  Magento did not send this email, and no other transaction emails were sent to the customer.</li>
 </ul>
 
 <!--- MAGETWO-84256 -->
 <ul>
-  <li>The <code class="highlighter-rouge">getReservedOrderId()</code> method now uses the current store as expected instead of the default store. <em>Fix submitted by <a href="https://github.com/tdgroot">Timon de Groot</a> in pull request 11702</em>. <a href="https://github.com/magento/magento2/issues/9055">GitHub-9055</a></li>
+  <li>The <code class="language-plaintext highlighter-rouge">getReservedOrderId()</code> method now uses the current store as expected instead of the default store. <em>Fix submitted by <a href="https://github.com/tdgroot">Timon de Groot</a> in pull request 11702</em>. <a href="https://github.com/magento/magento2/issues/9055">GitHub-9055</a></li>
 </ul>
 
 <!--- MAGETWO-85305 -->
@@ -3551,7 +3552,7 @@ the invoice ID was not included.  <em>Fix submitted by <a href="https://github.c
 
 <!--- MAGETWO-85660 -->
 <ul>
-  <li>The <code class="highlighter-rouge">\Magento\Sales\Model\Order\Pdf\AbstractPdf::drawLineBlocks</code> method now works as expected. Previously, when a text block spanned more than one page, Magento threw a <code class="highlighter-rouge">Zend_Pdf_Exception</code> error, and displayed this error: <code class="highlighter-rouge">Font has not been set</code>. <em>Fix submitted by <a href="https://github.com/serhii-balko">Serhii</a> in pull request 1016</em>. <a href="https://github.com/magento/magento2/issues/11743">GitHub-11743</a></li>
+  <li>The <code class="language-plaintext highlighter-rouge">\Magento\Sales\Model\Order\Pdf\AbstractPdf::drawLineBlocks</code> method now works as expected. Previously, when a text block spanned more than one page, Magento threw a <code class="language-plaintext highlighter-rouge">Zend_Pdf_Exception</code> error, and displayed this error: <code class="language-plaintext highlighter-rouge">Font has not been set</code>. <em>Fix submitted by <a href="https://github.com/serhii-balko">Serhii</a> in pull request 1016</em>. <a href="https://github.com/magento/magento2/issues/11743">GitHub-11743</a></li>
 </ul>
 
 <!--- MAGETWO-86845 -->
@@ -3561,7 +3562,7 @@ the invoice ID was not included.  <em>Fix submitted by <a href="https://github.c
 
 <!--- MAGETWO-80233 -->
 <ul>
-  <li>You can now place orders using PayPal when <strong>Payment Action = Order</strong>. Previously, when <strong>Payment Action = Order</strong>, Magento displayed this error when you reached the order review page: <code class="highlighter-rouge">We can't place the order.</code></li>
+  <li>You can now place orders using PayPal when <strong>Payment Action = Order</strong>. Previously, when <strong>Payment Action = Order</strong>, Magento displayed this error when you reached the order review page: <code class="language-plaintext highlighter-rouge">We can't place the order.</code></li>
 </ul>
 
 <!--- MAGETWO-86258 -->
@@ -3620,7 +3621,7 @@ the invoice ID was not included.  <em>Fix submitted by <a href="https://github.c
 
 <!--- MAGETWO-86297 -->
 <ul>
-  <li>The  <code class="highlighter-rouge">is_active</code> and <code class="highlighter-rouge">is_visible</code> columns now default to true even when column default values are not set in the <code class="highlighter-rouge">vault_payment_token</code> installation script. <em>Fix submitted by <a href="https://github.com/helloitsluke">helloitsluke</a> in pull request 12965</em>.</li>
+  <li>The  <code class="language-plaintext highlighter-rouge">is_active</code> and <code class="language-plaintext highlighter-rouge">is_visible</code> columns now default to true even when column default values are not set in the <code class="language-plaintext highlighter-rouge">vault_payment_token</code> installation script. <em>Fix submitted by <a href="https://github.com/helloitsluke">helloitsluke</a> in pull request 12965</em>.</li>
 </ul>
 
 <!--- MAGETWO-86308 -->
@@ -3635,7 +3636,7 @@ the invoice ID was not included.  <em>Fix submitted by <a href="https://github.c
 
 <!--- MAGETWO-84639 -->
 <ul>
-  <li>Magento now correctly adds checkout agreements data to  requests and validates payment information when you place an order using PayPal Express. Previously, you could check this box, but Magento did not parse  the agreements data  or pass it  to the set-payment-information API. This failure in turn triggered the <code class="highlighter-rouge">CheckoutAgreements</code> validation plugin,  which failed to validate. <em>Fix submitted by <a href="https://github.com/therool">Ričards Zālītis</a> in pull request 12401</em>.</li>
+  <li>Magento now correctly adds checkout agreements data to  requests and validates payment information when you place an order using PayPal Express. Previously, you could check this box, but Magento did not parse  the agreements data  or pass it  to the set-payment-information API. This failure in turn triggered the <code class="language-plaintext highlighter-rouge">CheckoutAgreements</code> validation plugin,  which failed to validate. <em>Fix submitted by <a href="https://github.com/therool">Ričards Zālītis</a> in pull request 12401</em>.</li>
 </ul>
 
 <!--- MAGETWO-86426 -->
@@ -3645,7 +3646,7 @@ the invoice ID was not included.  <em>Fix submitted by <a href="https://github.c
 
 <!--- MAGETWO-84647 -->
 <ul>
-  <li>Magento now correctly displays transparent <code class="highlighter-rouge">PNG</code> watermarks on JPEG images. Previously, Magento did not correctly display a transparent watermark as expected on an image, but instead displayed a white outline of the box where the watermark should be. <em>Fix submitted by <a href="https://github.com/elzekool">Elze Kool</a> in pull request 11060</em>. <a href="https://github.com/magento/magento2/issues/10661">GitHub-10661</a></li>
+  <li>Magento now correctly displays transparent <code class="language-plaintext highlighter-rouge">PNG</code> watermarks on JPEG images. Previously, Magento did not correctly display a transparent watermark as expected on an image, but instead displayed a white outline of the box where the watermark should be. <em>Fix submitted by <a href="https://github.com/elzekool">Elze Kool</a> in pull request 11060</em>. <a href="https://github.com/magento/magento2/issues/10661">GitHub-10661</a></li>
 </ul>
 
 <!--- MAGETWO-88235 -->
@@ -3663,7 +3664,7 @@ the invoice ID was not included.  <em>Fix submitted by <a href="https://github.c
 
 <!--- MAGETWO-84480 -->
 <ul>
-  <li>The addition of a cache for the <code class="highlighter-rouge">getimagesize()</code> function has improved product image loading.</li>
+  <li>The addition of a cache for the <code class="language-plaintext highlighter-rouge">getimagesize()</code> function has improved product image loading.</li>
 </ul>
 
 <!--- MAGETWO-45775 -->
@@ -3730,7 +3731,7 @@ the invoice ID was not included.  <em>Fix submitted by <a href="https://github.c
 
 <!--- MAGETWO-86780 -->
 <ul>
-  <li>Cart prices now displays the Cart Price Rule shipping discount correctly. Previously, when you placed an order, Magento displayed this error: <code class="highlighter-rouge">Payment method is not available</code>.</li>
+  <li>Cart prices now displays the Cart Price Rule shipping discount correctly. Previously, when you placed an order, Magento displayed this error: <code class="language-plaintext highlighter-rouge">Payment method is not available</code>.</li>
 </ul>
 
 <!--- MAGETWO-86786-->
@@ -3781,7 +3782,7 @@ the invoice ID was not included.  <em>Fix submitted by <a href="https://github.c
 
 <!--- MAGETWO-86400 -->
 <ul>
-  <li>Unused <code class="highlighter-rouge">count($_items)</code> in templates have been removed. <em>Fix submitted by <a href="https://github.com/Coderimus">Alexander Shkurko</a> in pull request 12901</em>.</li>
+  <li>Unused <code class="language-plaintext highlighter-rouge">count($_items)</code> in templates have been removed. <em>Fix submitted by <a href="https://github.com/Coderimus">Alexander Shkurko</a> in pull request 12901</em>.</li>
 </ul>
 
 <!--- MAGETWO-85291 -->
@@ -3798,17 +3799,17 @@ the invoice ID was not included.  <em>Fix submitted by <a href="https://github.c
 
 <!--- MAGETWO-86349 -->
 <ul>
-  <li><code class="highlighter-rouge">sitemap.xml</code> now displays URLs without <code class="highlighter-rouge">/home</code> appended. <em>Fix submitted by <a href="https://github.com/osrecio">Oscar Recio</a> in pull request 12649</em>. <a href="https://github.com/magento/magento2/issues/12446">GitHub-12446</a></li>
+  <li><code class="language-plaintext highlighter-rouge">sitemap.xml</code> now displays URLs without <code class="language-plaintext highlighter-rouge">/home</code> appended. <em>Fix submitted by <a href="https://github.com/osrecio">Oscar Recio</a> in pull request 12649</em>. <a href="https://github.com/magento/magento2/issues/12446">GitHub-12446</a></li>
 </ul>
 
 <!--- MAGETWO-85285 -->
 <ul>
-  <li>Sitemaps generated in a multi-store environment now include the correct URLs for each store (that is, <code class="highlighter-rouge">http://storename.com/</code> instead of <code class="highlighter-rouge">http://defaultstore.com/</code>). <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in pull request 935</em>. <a href="https://github.com/magento/magento2/issues/12482">GitHub-12482</a></li>
+  <li>Sitemaps generated in a multi-store environment now include the correct URLs for each store (that is, <code class="language-plaintext highlighter-rouge">http://storename.com/</code> instead of <code class="language-plaintext highlighter-rouge">http://defaultstore.com/</code>). <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in pull request 935</em>. <a href="https://github.com/magento/magento2/issues/12482">GitHub-12482</a></li>
 </ul>
 
 <!--- MAGETWO-81525 -->
 <ul>
-  <li>Magento now handles errors that occur during sitemap generation in a less intrusive way. If Magento throws an exception when generating a sitemap, it now sends the errors through email as configured in the sitemap configuration XML. The former <code class="highlighter-rouge">_translateModel</code> property is not used anymore, and the inline translation is correctly suspended using the <code class="highlighter-rouge">inlineTranslation</code> property instead. <em>Fix submitted by <a href="https://github.com/marinagociu">Marina Gociu</a> in a pull request</em>. <a href="https://github.com/magento/magento2/issues/10502">GitHub-10502</a></li>
+  <li>Magento now handles errors that occur during sitemap generation in a less intrusive way. If Magento throws an exception when generating a sitemap, it now sends the errors through email as configured in the sitemap configuration XML. The former <code class="language-plaintext highlighter-rouge">_translateModel</code> property is not used anymore, and the inline translation is correctly suspended using the <code class="language-plaintext highlighter-rouge">inlineTranslation</code> property instead. <em>Fix submitted by <a href="https://github.com/marinagociu">Marina Gociu</a> in a pull request</em>. <a href="https://github.com/magento/magento2/issues/10502">GitHub-10502</a></li>
 </ul>
 
 <h3 id="swagger">Swagger</h3>
@@ -3851,7 +3852,7 @@ the invoice ID was not included.  <em>Fix submitted by <a href="https://github.c
 
 <!--- MAGETWO-87352 -->
 <ul>
-  <li>We’ve removed the redundant default discount tax calculation (<code class="highlighter-rouge">tax/calculation/discount_tax</code>) from <code class="highlighter-rouge">Magento/Tax/etc/config.xml</code>. <em>Fix submitted by <a href="https://github.com/VincentMarmiesse">Vincent Marmiesse</a> in pull request 13449</em>.</li>
+  <li>We’ve removed the redundant default discount tax calculation (<code class="language-plaintext highlighter-rouge">tax/calculation/discount_tax</code>) from <code class="language-plaintext highlighter-rouge">Magento/Tax/etc/config.xml</code>. <em>Fix submitted by <a href="https://github.com/VincentMarmiesse">Vincent Marmiesse</a> in pull request 13449</em>.</li>
 </ul>
 
 <!--- MAGETWO-87339 -->
@@ -3868,37 +3869,37 @@ the invoice ID was not included.  <em>Fix submitted by <a href="https://github.c
 
 <!--- MAGETWO-87290 -->
 <ul>
-  <li><code class="highlighter-rouge">ConfigurationTest</code> no longer fails when you install Magento using Composer. <em>Fix submitted by <a href="https://github.com/nmalevanec">Nickolas Malyovanets</a> in pull request 1161</em>. <a href="https://github.com/magento/magento2/issues/12574">GitHub-12574</a></li>
+  <li><code class="language-plaintext highlighter-rouge">ConfigurationTest</code> no longer fails when you install Magento using Composer. <em>Fix submitted by <a href="https://github.com/nmalevanec">Nickolas Malyovanets</a> in pull request 1161</em>. <a href="https://github.com/magento/magento2/issues/12574">GitHub-12574</a></li>
 </ul>
 
 <!--- MAGETWO-87984 -->
 <ul>
-  <li>We’ve added <code class="highlighter-rouge">MagentoStyle</code> to console input and output in Travis tests.</li>
+  <li>We’ve added <code class="language-plaintext highlighter-rouge">MagentoStyle</code> to console input and output in Travis tests.</li>
 </ul>
 
 <!--- MAGETWO-86859 -->
 <ul>
-  <li>We’ve re-implemented tests using Jasmine as part of the process of removing the legacy JavaScript test framework and completely removing <code class="highlighter-rouge">JSTestDriver</code> support.  <em>Fix submitted by <a href="https://github.com/KarlDeux">Carlos Lizaga</a> in a pull request</em>. <a href="https://github.com/magento/magento2/issues/12342">GitHub-12342</a></li>
+  <li>We’ve re-implemented tests using Jasmine as part of the process of removing the legacy JavaScript test framework and completely removing <code class="language-plaintext highlighter-rouge">JSTestDriver</code> support.  <em>Fix submitted by <a href="https://github.com/KarlDeux">Carlos Lizaga</a> in a pull request</em>. <a href="https://github.com/magento/magento2/issues/12342">GitHub-12342</a></li>
 </ul>
 
 <!--- MAGETWO-86005 -->
 <ul>
-  <li><code class="highlighter-rouge">functional.suite.dist.yml</code> now  handles custom backend names. Previously, the value for the <code class="highlighter-rouge">backend_name</code> configuration was hardcoded. <em>Fix submitted by <a href="https://github.com/scribam">scribam</a> in pull request 12884</em>.</li>
+  <li><code class="language-plaintext highlighter-rouge">functional.suite.dist.yml</code> now  handles custom backend names. Previously, the value for the <code class="language-plaintext highlighter-rouge">backend_name</code> configuration was hardcoded. <em>Fix submitted by <a href="https://github.com/scribam">scribam</a> in pull request 12884</em>.</li>
 </ul>
 
 <!--- MAGETWO-85940 -->
 <ul>
-  <li>We’ve added a missing preference for <code class="highlighter-rouge">ObjectManager\ConfigInterface</code> in integration tests. <em>Fix submitted by <a href="https://github.com/schmengler">Fabian Schmengler</a> in pull request 12845</em>. <a href="https://github.com/magento/magento2/issues/12844">GitHub-12844</a></li>
+  <li>We’ve added a missing preference for <code class="language-plaintext highlighter-rouge">ObjectManager\ConfigInterface</code> in integration tests. <em>Fix submitted by <a href="https://github.com/schmengler">Fabian Schmengler</a> in pull request 12845</em>. <a href="https://github.com/magento/magento2/issues/12844">GitHub-12844</a></li>
 </ul>
 
 <!--- MAGETWO-85537 -->
 <ul>
-  <li>Integration Test Annotation <code class="highlighter-rouge">magentoAppArea</code> no longer breaks with valid values. <em>Fix submitted by <a href="https://github.com/nmalevanec">Nickolas Malyovanets</a> in pull request 996</em>. <a href="https://github.com/magento/magento2/issues/2907">GitHub-2907</a></li>
+  <li>Integration Test Annotation <code class="language-plaintext highlighter-rouge">magentoAppArea</code> no longer breaks with valid values. <em>Fix submitted by <a href="https://github.com/nmalevanec">Nickolas Malyovanets</a> in pull request 996</em>. <a href="https://github.com/magento/magento2/issues/2907">GitHub-2907</a></li>
 </ul>
 
 <!--- MAGETWO-85520 -->
 <ul>
-  <li>The inline documentation of the static test for XSS vulnerabilities now reflects that <code class="highlighter-rouge">@escapeNotVerified</code> is disallowed in Magento versions equal or greater than 2.2. <em>Fix submitted by <a href="https://github.com/mzeis">Matthias Zeis</a> in pull request 12639</em>.</li>
+  <li>The inline documentation of the static test for XSS vulnerabilities now reflects that <code class="language-plaintext highlighter-rouge">@escapeNotVerified</code> is disallowed in Magento versions equal or greater than 2.2. <em>Fix submitted by <a href="https://github.com/mzeis">Matthias Zeis</a> in pull request 12639</em>.</li>
 </ul>
 
 <!--- MAGETWO-88174 -->
@@ -3925,7 +3926,7 @@ the invoice ID was not included.  <em>Fix submitted by <a href="https://github.c
 
 <!--- MAGETWO-86310 -->
 <ul>
-  <li>Protected method <code class="highlighter-rouge">getHtml</code> now checks each child for an existing class and then appends the <code class="highlighter-rouge">$outermostClass</code> if true. Previously, when creating a dependency injection for the <code class="highlighter-rouge">Magento\Theme\Block\Html\Topmenu</code> class, you could not change class names on children in a <code class="highlighter-rouge">beforeGetHtml</code> method because  <code class="highlighter-rouge">getHtml</code> declares <code class="highlighter-rouge">setClass()</code> on all child items. <em>Fix submitted by <a href="https://github.com/jonshipman">jonshipman</a> in pull request 12862</em>.</li>
+  <li>Protected method <code class="language-plaintext highlighter-rouge">getHtml</code> now checks each child for an existing class and then appends the <code class="language-plaintext highlighter-rouge">$outermostClass</code> if true. Previously, when creating a dependency injection for the <code class="language-plaintext highlighter-rouge">Magento\Theme\Block\Html\Topmenu</code> class, you could not change class names on children in a <code class="language-plaintext highlighter-rouge">beforeGetHtml</code> method because  <code class="language-plaintext highlighter-rouge">getHtml</code> declares <code class="language-plaintext highlighter-rouge">setClass()</code> on all child items. <em>Fix submitted by <a href="https://github.com/jonshipman">jonshipman</a> in pull request 12862</em>.</li>
 </ul>
 
 <!--- MAGETWO-85708 -->
@@ -3957,7 +3958,7 @@ the invoice ID was not included.  <em>Fix submitted by <a href="https://github.c
 
 <!--- MAGETWO-87575 -->
 <ul>
-  <li>The module responsible for generating the <code class="highlighter-rouge">js-translations.json</code> file now contains a routine that translates strings in tags such as <code class="highlighter-rouge">&lt;translate args="This won't be translated"</code>.  <em>Fix submitted by <a href="https://github.com/mattijv">Matti Vapa</a> in pull request 13528</em>. <a href="https://github.com/magento/magento2/issues/12081">GitHub-12081</a></li>
+  <li>The module responsible for generating the <code class="language-plaintext highlighter-rouge">js-translations.json</code> file now contains a routine that translates strings in tags such as <code class="language-plaintext highlighter-rouge">&lt;translate args="This won't be translated"</code>.  <em>Fix submitted by <a href="https://github.com/mattijv">Matti Vapa</a> in pull request 13528</em>. <a href="https://github.com/magento/magento2/issues/12081">GitHub-12081</a></li>
 </ul>
 
 <h3 id="user-interface">User interface</h3>
@@ -3985,12 +3986,12 @@ the invoice ID was not included.  <em>Fix submitted by <a href="https://github.c
 
 <!--- MAGETWO-83815 -->
 <ul>
-  <li>The PHP notice that Magento displays when an invalid <code class="highlighter-rouge">ui_component</code> configuration is used has been improved. <em>Fix submitted by <a href="https://github.com/vovayatsyuk">Vova Yatsyuk</a> in pull request 12239</em>.</li>
+  <li>The PHP notice that Magento displays when an invalid <code class="language-plaintext highlighter-rouge">ui_component</code> configuration is used has been improved. <em>Fix submitted by <a href="https://github.com/vovayatsyuk">Vova Yatsyuk</a> in pull request 12239</em>.</li>
 </ul>
 
 <!--- MAGETWO-83293 -->
 <ul>
-  <li>Magento has added verification for previously set filters in <code class="highlighter-rouge">Magento/Ui/Component/Filters</code>, which has eliminated duplication of filters in the collection <code class="highlighter-rouge">where</code> conditions.</li>
+  <li>Magento has added verification for previously set filters in <code class="language-plaintext highlighter-rouge">Magento/Ui/Component/Filters</code>, which has eliminated duplication of filters in the collection <code class="language-plaintext highlighter-rouge">where</code> conditions.</li>
 </ul>
 
 <!--- MAGETWO-87994 -->
@@ -4002,7 +4003,7 @@ the invoice ID was not included.  <em>Fix submitted by <a href="https://github.c
 
 <!--- MAGETWO-84955 -->
 <ul>
-  <li>When using a store code in a URL, Magento now retrieves the value of <code class="highlighter-rouge">Store_Code</code> from the store if the store code value is empty. Previously, under these circumstances, Magento threw an error. <em>Fix submitted by <a href="https://github.com/osrecio">Oscar Recio</a> in pull request 12529</em>. <a href="https://github.com/magento/magento2/issues/12450">GitHub-8615</a></li>
+  <li>When using a store code in a URL, Magento now retrieves the value of <code class="language-plaintext highlighter-rouge">Store_Code</code> from the store if the store code value is empty. Previously, under these circumstances, Magento threw an error. <em>Fix submitted by <a href="https://github.com/osrecio">Oscar Recio</a> in pull request 12529</em>. <a href="https://github.com/magento/magento2/issues/12450">GitHub-8615</a></li>
 </ul>
 
 <h3 id="web-api-framework-1">Web API framework</h3>
@@ -4032,7 +4033,7 @@ the invoice ID was not included.  <em>Fix submitted by <a href="https://github.c
 
 <h2 id="known-issue-1">Known issue</h2>
 
-<p>Merchants are unable to change a store view’s applied theme in Magento 2.2.4. When a merchant tries to change the <strong>Applied theme</strong> setting for a store view (<strong>Content</strong> &gt; <strong>Design</strong> &gt; <strong>Configuration</strong>), Magento does not change the theme, but instead displays this error: <code class="highlighter-rouge">Something went wrong while saving this configuration: Area is already set</code>. See <a href="https://github.com/magento/magento2/issues/14968">GitHub-14968</a> for more information. <strong>Workaround</strong>:  Merchants who are running Magento 2.2.4 should <strong>upgrade to 2.2.5, then apply <a href="https://magento.com/tech-resources/download#download2224">patch MAGETWO-93036</a></strong>.</p>
+<p>Merchants are unable to change a store view’s applied theme in Magento 2.2.4. When a merchant tries to change the <strong>Applied theme</strong> setting for a store view (<strong>Content</strong> &gt; <strong>Design</strong> &gt; <strong>Configuration</strong>), Magento does not change the theme, but instead displays this error: <code class="language-plaintext highlighter-rouge">Something went wrong while saving this configuration: Area is already set</code>. See <a href="https://github.com/magento/magento2/issues/14968">GitHub-14968</a> for more information. <strong>Workaround</strong>:  Merchants who are running Magento 2.2.4 should <strong>upgrade to 2.2.5, then apply <a href="https://magento.com/tech-resources/download#download2224">patch MAGETWO-93036</a></strong>.</p>
 
 <h2 id="community-contributions">Community contributions</h2>
 

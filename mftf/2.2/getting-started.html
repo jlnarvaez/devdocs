@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Getting started | Magento 2 Developer Documentation (copy)</title>
+	<title>Getting started | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -2091,8 +2090,7 @@
 	<h1 class="page-heading">Getting started</h1>
 </section>
 
-			
-<p style="text-align: right"><em>This topic was updated after 2.0.2 MFTF release.</em></p>
+			<p style="text-align: right"><em>This topic was updated after 2.0.2 MFTF release.</em></p>
 
 <p class="bs-callout bs-callout-info"><a href="./introduction.html#find-version">Find out your version</a> of the MFTF.
 If your version is 2.3.x, see the <a href="/devdocs/mftf/2.3/introduction.html">MFTF 2.3 documentation</a>.</p>
@@ -2151,7 +2149,7 @@ They recently added support for <a href="https://blog.jetbrains.com/phpstorm/201
 
 <p>Follow these steps in a command line interface to set up the MFTF on your system.</p>
 
-<h3 id="step-1-clone-the-magento2-source-code-repository">Step 1. Clone the <code class="highlighter-rouge">magento2</code> source code repository</h3>
+<h3 id="step-1-clone-the-magento2-source-code-repository">Step 1. Clone the <code class="language-plaintext highlighter-rouge">magento2</code> source code repository</h3>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git clone https://github.com/magento/magento2.git
 </code></pre></div></div>
@@ -2165,7 +2163,7 @@ They recently added support for <a href="https://blog.jetbrains.com/phpstorm/201
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">cd </span>magento2/dev/tests/acceptance
 </code></pre></div></div>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer install
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer <span class="nb">install</span>
 </code></pre></div></div>
 
 <h3 id="step-3-build-the-project">Step 3. Build the project</h3>
@@ -2175,29 +2173,29 @@ They recently added support for <a href="https://blog.jetbrains.com/phpstorm/201
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vendor/bin/robo build:project
 </code></pre></div></div>
 
-<p class="bs-callout bs-callout-tip">To avoid typing <code class="highlighter-rouge">vendor/bin</code> every time, add your <code class="highlighter-rouge">&lt;absolute path to acceptance dir&gt;/vendor/bin</code> value to <code class="highlighter-rouge">PATH</code>.
-When added, you should be able to run the <code class="highlighter-rouge">robo</code>, <code class="highlighter-rouge">codecept</code>, and <code class="highlighter-rouge">phpunit</code> commands.</p>
+<p class="bs-callout bs-callout-tip">To avoid typing <code class="language-plaintext highlighter-rouge">vendor/bin</code> every time, add your <code class="language-plaintext highlighter-rouge">&lt;absolute path to acceptance dir&gt;/vendor/bin</code> value to <code class="language-plaintext highlighter-rouge">PATH</code>.
+When added, you should be able to run the <code class="language-plaintext highlighter-rouge">robo</code>, <code class="language-plaintext highlighter-rouge">codecept</code>, and <code class="language-plaintext highlighter-rouge">phpunit</code> commands.</p>
 
 <h3 id="step-4-edit-environment-settings">Step 4. Edit environment settings</h3>
 
-<p>In the <em>magento2/dev/tests/acceptance</em> directory, edit the <code class="highlighter-rouge">.env</code> file to match your system. Use the following parameters, which are required to launch tests.</p>
+<p>In the <em>magento2/dev/tests/acceptance</em> directory, edit the <code class="language-plaintext highlighter-rouge">.env</code> file to match your system. Use the following parameters, which are required to launch tests.</p>
 
 <ul>
   <li>
-    <p><code class="highlighter-rouge">MAGENTO_BASE_URL</code> must contain a domain name of the Magento instance that will be tested.
-Example: <code class="highlighter-rouge">MAGENTO_BASE_URL=http://magento.test</code></p>
+    <p><code class="language-plaintext highlighter-rouge">MAGENTO_BASE_URL</code> must contain a domain name of the Magento instance that will be tested.
+Example: <code class="language-plaintext highlighter-rouge">MAGENTO_BASE_URL=http://magento.test</code></p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">MAGENTO_BACKEND_NAME</code> must contain the relative path to the Admin area.
-Example: <code class="highlighter-rouge">MAGENTO_BACKEND_NAME=admin</code></p>
+    <p><code class="language-plaintext highlighter-rouge">MAGENTO_BACKEND_NAME</code> must contain the relative path to the Admin area.
+Example: <code class="language-plaintext highlighter-rouge">MAGENTO_BACKEND_NAME=admin</code></p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">MAGENTO_ADMIN_USERNAME</code> must contain the username required for authorization in the Admin area.
-Example: <code class="highlighter-rouge">MAGENTO_ADMIN_USERNAME=admin</code></p>
+    <p><code class="language-plaintext highlighter-rouge">MAGENTO_ADMIN_USERNAME</code> must contain the username required for authorization in the Admin area.
+Example: <code class="language-plaintext highlighter-rouge">MAGENTO_ADMIN_USERNAME=admin</code></p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">MAGENTO_ADMIN_PASSWORD</code> must contain the user password required for authorization in the Admin area.
-Example: <code class="highlighter-rouge">MAGENTO_ADMIN_PASSWORD=123123q</code></p>
+    <p><code class="language-plaintext highlighter-rouge">MAGENTO_ADMIN_PASSWORD</code> must contain the user password required for authorization in the Admin area.
+Example: <code class="language-plaintext highlighter-rouge">MAGENTO_ADMIN_PASSWORD=123123q</code></p>
   </li>
 </ul>
 
@@ -2209,32 +2207,32 @@ Example: <code class="highlighter-rouge">MAGENTO_ADMIN_PASSWORD=123123q</code></
 <span class="n">SELENIUM_PATH</span>=/<span class="n">wd</span>/<span class="n">hub</span>
 </code></pre></div></div>
 
-<p class="bs-callout bs-callout-warning">Only change or specify <code class="highlighter-rouge">SELENIUM_*</code> values if you are not running Selenium locally, or if you have changed your Selenium Server configuration.</p>
+<p class="bs-callout bs-callout-warning">Only change or specify <code class="language-plaintext highlighter-rouge">SELENIUM_*</code> values if you are not running Selenium locally, or if you have changed your Selenium Server configuration.</p>
 
 <p>Your environment settings form the path to your running Selenium Server.
 Example:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>http://127.0.0.1:4444/wd/hub
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>http://127.0.0.1:4444/wd/hub
 </code></pre></div></div>
 
-<h3 id="step-5-make-commandphp-visible-in-the-magento-testing-environment">Step 5. Make <code class="highlighter-rouge">command.php</code> visible in the Magento testing environment</h3>
+<h3 id="step-5-make-commandphp-visible-in-the-magento-testing-environment">Step 5. Make <code class="language-plaintext highlighter-rouge">command.php</code> visible in the Magento testing environment</h3>
 
 <p>In your Magento installation, navigate to the <em>magento2/dev/tests/acceptance</em> directory and run the following command to allow MFTF to send Magento CLI commands to your Magento instance.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cp .htaccess.sample .htaccess
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">cp</span> .htaccess.sample .htaccess
 </code></pre></div></div>
 
 <p class="bs-callout bs-callout-warning">If you do not have access to your Magento installation and cannot complete the above steps you will not be able to run tests using Magento CLI commands.</p>
 
 <h3 id="step-6-generate-existing-tests">Step 6. Generate existing tests</h3>
 
-<p>In the <code class="highlighter-rouge">magento2/dev/tests/acceptance</code> directory, run the following command to generate tests as PHP classes from XML files:</p>
+<p>In the <code class="language-plaintext highlighter-rouge">magento2/dev/tests/acceptance</code> directory, run the following command to generate tests as PHP classes from XML files:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vendor/bin/robo generate:tests
 </code></pre></div></div>
 
 <h3 id="step-7-run-tests">Step 7. Run tests</h3>
 
-<p>To run tests, you need a running Selenium server and a <a href="commands/codeception.html"><code class="highlighter-rouge">codecept</code></a> or a <a href="commands/robo.html"><code class="highlighter-rouge">robo</code></a> command with required parameters.</p>
+<p>To run tests, you need a running Selenium server and a <a href="commands/codeception.html"><code class="language-plaintext highlighter-rouge">codecept</code></a> or a <a href="commands/robo.html"><code class="language-plaintext highlighter-rouge">robo</code></a> command with required parameters.</p>
 
 <h4 id="selenium-server">Run the Selenium server</h4>
 
@@ -2246,7 +2244,7 @@ Example:</p>
     <p><a href="http://docs.seleniumhq.org/about/platforms.jsp">Download a Selenium web driver for your web browser</a> into the same directory that contains the Selenium server.</p>
   </li>
   <li>
-    <p>Add the directory with the web driver to <code class="highlighter-rouge">PATH</code>.</p>
+    <p>Add the directory with the web driver to <code class="language-plaintext highlighter-rouge">PATH</code>.</p>
   </li>
   <li>
     <p>Run the Selenium server in terminal (or other command line interface):</p>
@@ -2261,7 +2259,7 @@ Example:</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vendor/bin/codecept run
 </code></pre></div></div>
 
-<p>See more commands in <a href="commands/robo.html"><code class="highlighter-rouge">robo</code></a> and <a href="commands/codeception.html"><code class="highlighter-rouge">codecept</code></a>.</p>
+<p>See more commands in <a href="commands/robo.html"><code class="language-plaintext highlighter-rouge">robo</code></a> and <a href="commands/codeception.html"><code class="language-plaintext highlighter-rouge">codecept</code></a>.</p>
 
 <h3 id="allure">Step 8. Generate reports</h3>
 
@@ -2273,7 +2271,7 @@ Testing reports are generated in a CLI during testing.</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vendor/bin/robo allure2:report
 </code></pre></div></div>
 
-<p>See also <a href="commands/robo.html#allure-robo-commands">Allure <code class="highlighter-rouge">robo</code> commands</a> and <a href="https://docs.qameta.io/allure/latest/#_report_structure">Report structure</a>.</p>
+<p>See also <a href="commands/robo.html#allure-robo-commands">Allure <code class="language-plaintext highlighter-rouge">robo</code> commands</a> and <a href="https://docs.qameta.io/allure/latest/#_report_structure">Report structure</a>.</p>
 
 <!-- Link definitions -->
 

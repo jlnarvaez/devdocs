@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Step 10. Issue a partial refund | Magento 2 Developer Documentation (copy)</title>
+	<title>Step 10. Issue a partial refund | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/rest/tutorials/orders/order-issue-refund.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/rest/tutorials/orders/order-issue-refund.html">Magento 2.0</a></li>
 		
@@ -1627,11 +1628,11 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">POST /V1/order/&lt;order_ID&gt;/refund</code></td>
+      <td><code class="language-plaintext highlighter-rouge">POST /V1/order/&lt;order_ID&gt;/refund</code></td>
       <td>Issues an offline refund</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">POST /V1/invoice/&lt;invoice_ID&gt;/refund</code></td>
+      <td><code class="language-plaintext highlighter-rouge">POST /V1/invoice/&lt;invoice_ID&gt;/refund</code></td>
       <td>Issue a refund with an online payment system</td>
     </tr>
   </tbody>
@@ -1639,40 +1640,40 @@
 
 <p>In this example, the customer did not like the fit of the Radiant T-M-Orange shirt and wants a refund.</p>
 
-<p>Since the customer paid for the order with a bank transfer, we’ll call <code class="highlighter-rouge">POST /V1/order/&lt;order ID&gt;/refund</code>. The <code class="highlighter-rouge">order_item_id</code> for the Radiant Tee-M-Orange is <code class="highlighter-rouge">3</code>.</p>
+<p>Since the customer paid for the order with a bank transfer, we’ll call <code class="language-plaintext highlighter-rouge">POST /V1/order/&lt;order ID&gt;/refund</code>. The <code class="language-plaintext highlighter-rouge">order_item_id</code> for the Radiant Tee-M-Orange is <code class="language-plaintext highlighter-rouge">3</code>.</p>
 
-<p>The <code class="highlighter-rouge">arguments</code> object allows you to adjust the amount of the credit to be refunded. Since the customer used the <code class="highlighter-rouge">tablerate</code> shipping method, which applied to the whole order, we’ll assume that a refund can’t be applied to the shipping costs. Therefore, the shipping_amount is set to <code class="highlighter-rouge">0</code>.</p>
+<p>The <code class="language-plaintext highlighter-rouge">arguments</code> object allows you to adjust the amount of the credit to be refunded. Since the customer used the <code class="language-plaintext highlighter-rouge">tablerate</code> shipping method, which applied to the whole order, we’ll assume that a refund can’t be applied to the shipping costs. Therefore, the shipping_amount is set to <code class="language-plaintext highlighter-rouge">0</code>.</p>
 
-<p>If the customer had selected the <code class="highlighter-rouge">flatrate</code> shipping method ($5 per item), we would set the value of <code class="highlighter-rouge">shipping_amount</code> to <code class="highlighter-rouge">5</code>.</p>
+<p>If the customer had selected the <code class="language-plaintext highlighter-rouge">flatrate</code> shipping method ($5 per item), we would set the value of <code class="language-plaintext highlighter-rouge">shipping_amount</code> to <code class="language-plaintext highlighter-rouge">5</code>.</p>
 
-<p>The <code class="highlighter-rouge">return_to_stock_items</code> array specifies which <code class="highlighter-rouge">order_item_id</code>s can be returned to stock and be resold.</p>
+<p>The <code class="language-plaintext highlighter-rouge">return_to_stock_items</code> array specifies which <code class="language-plaintext highlighter-rouge">order_item_id</code>s can be returned to stock and be resold.</p>
 
 <p><strong>Endpoint</strong></p>
 
-<p><code class="highlighter-rouge">POST http://&lt;host&gt;/rest/default/V1/order/5/refund</code></p>
+<p><code class="language-plaintext highlighter-rouge">POST http://&lt;host&gt;/rest/default/V1/order/5/refund</code></p>
 
 <p><strong>Headers</strong></p>
 
-<p><code class="highlighter-rouge">Content-Type</code> <code class="highlighter-rouge">application/json</code></p>
+<p><code class="language-plaintext highlighter-rouge">Content-Type</code> <code class="language-plaintext highlighter-rouge">application/json</code></p>
 
-<p><code class="highlighter-rouge">Authorization</code> <code class="highlighter-rouge">Bearer &lt;administrator token&gt;</code></p>
+<p><code class="language-plaintext highlighter-rouge">Authorization</code> <code class="language-plaintext highlighter-rouge">Bearer &lt;administrator token&gt;</code></p>
 
 <p><strong>Payload</strong></p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="nl">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"notify"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"arguments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"shipping_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"adjustment_positive"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"adjustment_negative"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"return_to_stock_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"notify"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"arguments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"shipping_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"adjustment_positive"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"adjustment_negative"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"return_to_stock_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="mi">3</span><span class="w">
       </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -1682,7 +1683,7 @@
 <p><strong>Response</strong></p>
 
 <p>A   <span term-uuid="6a9783a3-cdec-4fed-843d-8eda12819804" class="glossary-term" data-toggle="popover">credit memo</span>
- id, such as <code class="highlighter-rouge">3</code>.</p>
+ id, such as <code class="language-plaintext highlighter-rouge">3</code>.</p>
 
 <h3 id="verify-step">Verify this step</h3>
 

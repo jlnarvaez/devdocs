@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Add custom fields that influence other Checkout fields | Magento 2 Developer Documentation (copy)</title>
+	<title>Add custom fields that influence other Checkout fields | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/howdoi/checkout/checkout_custom_checkbox.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/howdoi/checkout/checkout_custom_checkbox.html">Magento 2.0</a></li>
 		
@@ -1435,36 +1436,36 @@
 <p>To implement such a checkbox, take the following steps:</p>
 
 <ol>
-  <li><a href="#create-plugin">Create a plugin for the process method</a> of the <code class="highlighter-rouge">&lt;Magento_Checkout_module_dir&gt;/Block/Checkout/LayoutProcessor.php</code> class.</li>
-  <li><a href="#declare-plugin">Declare the plugin in your module’s <code class="highlighter-rouge">di.xml</code></a>.</li>
+  <li><a href="#create-plugin">Create a plugin for the process method</a> of the <code class="language-plaintext highlighter-rouge">&lt;Magento_Checkout_module_dir&gt;/Block/Checkout/LayoutProcessor.php</code> class.</li>
+  <li><a href="#declare-plugin">Declare the plugin in your module’s <code class="language-plaintext highlighter-rouge">di.xml</code></a>.</li>
   <li><a href="#create-jscomponent">Create a JS component for the checkbox with custom logic</a>.</li>
 </ol>
 
-<h2 id="create-plugin">Step 1: Create a plugin for the <code class="highlighter-rouge">LayoutProcessor</code>’s process method</h2>
+<h2 id="create-plugin">Step 1: Create a plugin for the <code class="language-plaintext highlighter-rouge">LayoutProcessor</code>’s process method</h2>
 
-<p>In your custom module directory, create the following new file: <code class="highlighter-rouge">&lt;your_module_dir&gt;/Block/Checkout/SomeProcessor.php</code>. In this file, add the following code sample. This is a plugin that adds a checkbox, makes the street labels trackable, and assigns dependencies to the checkbox.</p>
+<p>In your custom module directory, create the following new file: <code class="language-plaintext highlighter-rouge">&lt;your_module_dir&gt;/Block/Checkout/SomeProcessor.php</code>. In this file, add the following code sample. This is a plugin that adds a checkbox, makes the street labels trackable, and assigns dependencies to the checkbox.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="k">namespace</span> <span class="nx">Magento\Checkout\Block\Checkout</span><span class="p">;</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="kn">namespace</span> <span class="nn">Magento\Checkout\Block\Checkout</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">SomeProcessor</span>
+<span class="kd">class</span> <span class="nc">SomeProcessor</span>
 <span class="p">{</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * Checkout LayoutProcessor after process plugin.
      *
      * @param \Magento\Checkout\Block\Checkout\LayoutProcessor $processor
      * @param array $jsLayout
      * @return array
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">afterProcess</span><span class="p">(</span><span class="nx">\Magento\Checkout\Block\Checkout\LayoutProcessor</span> <span class="nv">$processor</span><span class="p">,</span> <span class="nv">$jsLayout</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">afterProcess</span><span class="p">(</span><span class="err">\</span><span class="nc">Magento\Checkout\Block\Checkout\LayoutProcessor</span> <span class="nv">$processor</span><span class="p">,</span> <span class="nv">$jsLayout</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="nv">$shippingConfiguration</span> <span class="o">=</span> <span class="o">&amp;</span><span class="nv">$jsLayout</span><span class="p">[</span><span class="s1">'components'</span><span class="p">][</span><span class="s1">'checkout'</span><span class="p">][</span><span class="s1">'children'</span><span class="p">][</span><span class="s1">'steps'</span><span class="p">][</span><span class="s1">'children'</span><span class="p">][</span><span class="s1">'shipping-step'</span><span class="p">]</span>
             <span class="p">[</span><span class="s1">'children'</span><span class="p">][</span><span class="s1">'shippingAddress'</span><span class="p">][</span><span class="s1">'children'</span><span class="p">][</span><span class="s1">'shipping-address-fieldset'</span><span class="p">][</span><span class="s1">'children'</span><span class="p">];</span>
         <span class="nv">$billingConfiguration</span> <span class="o">=</span> <span class="o">&amp;</span><span class="nv">$jsLayout</span><span class="p">[</span><span class="s1">'components'</span><span class="p">][</span><span class="s1">'checkout'</span><span class="p">][</span><span class="s1">'children'</span><span class="p">][</span><span class="s1">'steps'</span><span class="p">][</span><span class="s1">'children'</span><span class="p">][</span><span class="s1">'billing-step'</span><span class="p">]</span>
         <span class="p">[</span><span class="s1">'children'</span><span class="p">][</span><span class="s1">'payment'</span><span class="p">][</span><span class="s1">'children'</span><span class="p">][</span><span class="s1">'payments-list'</span><span class="p">][</span><span class="s1">'children'</span><span class="p">];</span>
 
-        <span class="c1">//Checks if shipping step available.
-</span>        <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$shippingConfiguration</span><span class="p">))</span> <span class="p">{</span>
-            <span class="nv">$shippingConfiguration</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">processAddress</span><span class="p">(</span>
+        <span class="c1">//Checks if shipping step available.</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">isset</span><span class="p">(</span><span class="nv">$shippingConfiguration</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nv">$shippingConfiguration</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">processAddress</span><span class="p">(</span>
                 <span class="nv">$shippingConfiguration</span><span class="p">,</span>
                 <span class="s1">'shippingAddress'</span><span class="p">,</span>
                 <span class="p">[</span>
@@ -1476,23 +1477,23 @@
             <span class="p">);</span>
         <span class="p">}</span>
 
-        <span class="c1">//Checks if billing step available.
-</span>        <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$billingConfiguration</span><span class="p">))</span> <span class="p">{</span>
-            <span class="c1">//Iterate over billing forms.
-</span>            <span class="k">foreach</span><span class="p">(</span><span class="nv">$billingConfiguration</span> <span class="k">as</span> <span class="nv">$key</span> <span class="o">=&gt;</span> <span class="o">&amp;</span><span class="nv">$billingForm</span><span class="p">)</span> <span class="p">{</span>
-                <span class="c1">//Exclude not billing forms
-</span>                <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">strpos</span><span class="p">(</span><span class="nv">$key</span><span class="p">,</span> <span class="s1">'-form'</span><span class="p">))</span> <span class="p">{</span>
+        <span class="c1">//Checks if billing step available.</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">isset</span><span class="p">(</span><span class="nv">$billingConfiguration</span><span class="p">))</span> <span class="p">{</span>
+            <span class="c1">//Iterate over billing forms.</span>
+            <span class="k">foreach</span><span class="p">(</span><span class="nv">$billingConfiguration</span> <span class="k">as</span> <span class="nv">$key</span> <span class="o">=&gt;</span> <span class="o">&amp;</span><span class="nv">$billingForm</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">//Exclude not billing forms</span>
+                <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">strpos</span><span class="p">(</span><span class="nv">$key</span><span class="p">,</span> <span class="s1">'-form'</span><span class="p">))</span> <span class="p">{</span>
                     <span class="k">continue</span><span class="p">;</span>
                 <span class="p">}</span>
 
-                <span class="nv">$billingForm</span><span class="p">[</span><span class="s1">'children'</span><span class="p">][</span><span class="s1">'form-fields'</span><span class="p">][</span><span class="s1">'children'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">processAddress</span><span class="p">(</span>
+                <span class="nv">$billingForm</span><span class="p">[</span><span class="s1">'children'</span><span class="p">][</span><span class="s1">'form-fields'</span><span class="p">][</span><span class="s1">'children'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">processAddress</span><span class="p">(</span>
                     <span class="nv">$billingForm</span><span class="p">[</span><span class="s1">'children'</span><span class="p">][</span><span class="s1">'form-fields'</span><span class="p">][</span><span class="s1">'children'</span><span class="p">],</span>
                     <span class="nv">$billingForm</span><span class="p">[</span><span class="s1">'dataScopePrefix'</span><span class="p">],</span>
                     <span class="p">[</span>
                         <span class="s1">'checkoutProvider'</span><span class="p">,</span>
-                        <span class="s1">'checkout.steps.billing-step.payment.payments-list.'</span> <span class="o">.</span> <span class="nv">$key</span> <span class="o">.</span> <span class="s1">'.form-fields.street'</span><span class="p">,</span>
-                        <span class="s1">'checkout.steps.billing-step.payment.payments-list.'</span> <span class="o">.</span> <span class="nv">$key</span> <span class="o">.</span> <span class="s1">'.form-fields.city'</span><span class="p">,</span>
-                        <span class="s1">'checkout.steps.billing-step.payment.payments-list.'</span> <span class="o">.</span> <span class="nv">$key</span> <span class="o">.</span> <span class="s1">'.form-fields.country_id'</span>
+                        <span class="s1">'checkout.steps.billing-step.payment.payments-list.'</span> <span class="mf">.</span> <span class="nv">$key</span> <span class="mf">.</span> <span class="s1">'.form-fields.street'</span><span class="p">,</span>
+                        <span class="s1">'checkout.steps.billing-step.payment.payments-list.'</span> <span class="mf">.</span> <span class="nv">$key</span> <span class="mf">.</span> <span class="s1">'.form-fields.city'</span><span class="p">,</span>
+                        <span class="s1">'checkout.steps.billing-step.payment.payments-list.'</span> <span class="mf">.</span> <span class="nv">$key</span> <span class="mf">.</span> <span class="s1">'.form-fields.country_id'</span>
                     <span class="p">]</span>
                 <span class="p">);</span>
             <span class="p">}</span>
@@ -1501,7 +1502,7 @@
         <span class="k">return</span> <span class="nv">$jsLayout</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="sd">/**
+    <span class="cd">/**
      * Process provided address to contains checkbox and have trackable address fields.
      *
      * @param $addressFieldset - Address fieldset config.
@@ -1509,19 +1510,19 @@
      * @param $deps - list of dependencies
      * @return array
      */</span>
-    <span class="k">private</span> <span class="k">function</span> <span class="nf">processAddress</span><span class="p">(</span><span class="nv">$addressFieldset</span><span class="p">,</span> <span class="nv">$dataScope</span><span class="p">,</span> <span class="nv">$deps</span><span class="p">)</span>
+    <span class="k">private</span> <span class="k">function</span> <span class="n">processAddress</span><span class="p">(</span><span class="nv">$addressFieldset</span><span class="p">,</span> <span class="nv">$dataScope</span><span class="p">,</span> <span class="nv">$deps</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="c1">//Creates checkbox.
-</span>        <span class="nv">$addressFieldset</span><span class="p">[</span><span class="s1">'custom_checkbox'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="c1">//Creates checkbox.</span>
+        <span class="nv">$addressFieldset</span><span class="p">[</span><span class="s1">'custom_checkbox'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
             <span class="s1">'component'</span> <span class="o">=&gt;</span> <span class="s1">'Magento_Checkout/js/single-checkbox'</span><span class="p">,</span>
             <span class="s1">'config'</span> <span class="o">=&gt;</span> <span class="p">[</span>
                 <span class="s1">'customScope'</span> <span class="o">=&gt;</span> <span class="nv">$dataScope</span><span class="p">,</span>
                 <span class="s1">'template'</span> <span class="o">=&gt;</span> <span class="s1">'ui/form/field'</span><span class="p">,</span>
                 <span class="s1">'prefer'</span> <span class="o">=&gt;</span> <span class="s1">'checkbox'</span>
             <span class="p">],</span>
-            <span class="s1">'dataScope'</span> <span class="o">=&gt;</span> <span class="nv">$dataScope</span> <span class="o">.</span> <span class="s1">'.custom_checkbox'</span><span class="p">,</span>
+            <span class="s1">'dataScope'</span> <span class="o">=&gt;</span> <span class="nv">$dataScope</span> <span class="mf">.</span> <span class="s1">'.custom_checkbox'</span><span class="p">,</span>
             <span class="s1">'deps'</span> <span class="o">=&gt;</span> <span class="nv">$deps</span><span class="p">,</span>
-            <span class="s1">'label'</span> <span class="o">=&gt;</span> <span class="nx">__</span><span class="p">(</span><span class="s1">'Army Address'</span><span class="p">),</span>
+            <span class="s1">'label'</span> <span class="o">=&gt;</span> <span class="nf">__</span><span class="p">(</span><span class="s1">'Army Address'</span><span class="p">),</span>
             <span class="s1">'provider'</span> <span class="o">=&gt;</span> <span class="s1">'checkoutProvider'</span><span class="p">,</span>
             <span class="s1">'visible'</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
             <span class="s1">'initialValue'</span> <span class="o">=&gt;</span> <span class="kc">false</span><span class="p">,</span>
@@ -1532,12 +1533,12 @@
             <span class="p">]</span>
         <span class="p">];</span>
 
-        <span class="c1">//Makes each address field label trackable.
-</span>        <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$addressFieldset</span><span class="p">[</span><span class="s1">'street'</span><span class="p">][</span><span class="s1">'children'</span><span class="p">]))</span> <span class="p">{</span>
+        <span class="c1">//Makes each address field label trackable.</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">isset</span><span class="p">(</span><span class="nv">$addressFieldset</span><span class="p">[</span><span class="s1">'street'</span><span class="p">][</span><span class="s1">'children'</span><span class="p">]))</span> <span class="p">{</span>
             <span class="k">foreach</span><span class="p">(</span><span class="nv">$addressFieldset</span><span class="p">[</span><span class="s1">'street'</span><span class="p">][</span><span class="s1">'children'</span><span class="p">]</span> <span class="k">as</span> <span class="nv">$key</span> <span class="o">=&gt;</span> <span class="nv">$street</span><span class="p">)</span> <span class="p">{</span>
                 <span class="nv">$street</span><span class="p">[</span><span class="s1">'tracks'</span><span class="p">][</span><span class="s1">'label'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-                <span class="c1">//Remove .additional class. Can be removed, but style fix provided instead.
-</span>                <span class="nv">$street</span><span class="p">[</span><span class="s1">'additionalClasses'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+                <span class="c1">//Remove .additional class. Can be removed, but style fix provided instead.</span>
+                <span class="nv">$street</span><span class="p">[</span><span class="s1">'additionalClasses'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
                 <span class="nv">$addressFieldset</span><span class="p">[</span><span class="s1">'street'</span><span class="p">][</span><span class="s1">'children'</span><span class="p">][</span><span class="nv">$key</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$street</span><span class="p">;</span>
             <span class="p">}</span>
         <span class="p">}</span>
@@ -1551,9 +1552,9 @@
 
 <h2 id="declare-plugin">Step 2: Declare plugin in di.xml</h2>
 
-<p>In <code class="highlighter-rouge">&lt;your_module_dir&gt;/etc/frontend/di.xml</code>, declare the plugin you created on the previous step. The plugin name is arbitrary.</p>
+<p>In <code class="language-plaintext highlighter-rouge">&lt;your_module_dir&gt;/etc/frontend/di.xml</code>, declare the plugin you created on the previous step. The plugin name is arbitrary.</p>
 
-<p>In the following example, it is <code class="highlighter-rouge">ProcessAddressConfiguration</code>:</p>
+<p>In the following example, it is <code class="language-plaintext highlighter-rouge">ProcessAddressConfiguration</code>:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
         <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:ObjectManager/etc/config.xsd"</span><span class="nt">&gt;</span>
@@ -1565,52 +1566,52 @@
 
 <h2 id="create-jscomponent">Step 3: Create a JS component for the checkbox</h2>
 
-<p>In your custom module directory, create the following new file: <code class="highlighter-rouge">&lt;your_module_dir&gt;/view/frontend/web/js/single-checkbox.js</code>. In this file, add the following code. This is  a JS component that extends <code class="highlighter-rouge">Magento_Ui/js/form/element/single-checkbox.js</code>. The <code class="highlighter-rouge">onCheckedChanged</code> method calls the methods that update street labels, change the city and country values, and disable these fields:</p>
+<p>In your custom module directory, create the following new file: <code class="language-plaintext highlighter-rouge">&lt;your_module_dir&gt;/view/frontend/web/js/single-checkbox.js</code>. In this file, add the following code. This is  a JS component that extends <code class="language-plaintext highlighter-rouge">Magento_Ui/js/form/element/single-checkbox.js</code>. The <code class="language-plaintext highlighter-rouge">onCheckedChanged</code> method calls the methods that update street labels, change the city and country values, and disable these fields:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nx">define</span><span class="p">([</span>
-    <span class="s1">'Magento_Ui/js/form/element/single-checkbox'</span><span class="p">,</span>
-    <span class="s1">'mage/translate'</span>
+    <span class="dl">'</span><span class="s1">Magento_Ui/js/form/element/single-checkbox</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">mage/translate</span><span class="dl">'</span>
 <span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">AbstractField</span><span class="p">,</span> <span class="nx">$t</span><span class="p">)</span> <span class="p">{</span>
-    <span class="s1">'use strict'</span><span class="p">;</span>
+    <span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
 
     <span class="k">return</span> <span class="nx">AbstractField</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
         <span class="na">defaults</span><span class="p">:</span> <span class="p">{</span>
-            <span class="na">streetLabels</span><span class="p">:</span> <span class="p">[</span><span class="nx">$t</span><span class="p">(</span><span class="s1">'Company / Section / Unit'</span><span class="p">),</span> <span class="nx">$t</span><span class="p">(</span><span class="s1">'Post Sector Type'</span><span class="p">),</span> <span class="nx">$t</span><span class="p">(</span><span class="s1">'Post Sector'</span><span class="p">)],</span>
+            <span class="na">streetLabels</span><span class="p">:</span> <span class="p">[</span><span class="nx">$t</span><span class="p">(</span><span class="dl">'</span><span class="s1">Company / Section / Unit</span><span class="dl">'</span><span class="p">),</span> <span class="nx">$t</span><span class="p">(</span><span class="dl">'</span><span class="s1">Post Sector Type</span><span class="dl">'</span><span class="p">),</span> <span class="nx">$t</span><span class="p">(</span><span class="dl">'</span><span class="s1">Post Sector</span><span class="dl">'</span><span class="p">)],</span>
             <span class="na">modules</span><span class="p">:</span> <span class="p">{</span>
-                <span class="na">street</span><span class="p">:</span> <span class="s1">'${ $.parentName }.street'</span><span class="p">,</span>
-                <span class="na">city</span><span class="p">:</span> <span class="s1">'${ $.parentName }.city'</span><span class="p">,</span>
-                <span class="na">country</span><span class="p">:</span> <span class="s1">'${ $.parentName }.country_id'</span>
+                <span class="na">street</span><span class="p">:</span> <span class="dl">'</span><span class="s1">${ $.parentName }.street</span><span class="dl">'</span><span class="p">,</span>
+                <span class="na">city</span><span class="p">:</span> <span class="dl">'</span><span class="s1">${ $.parentName }.city</span><span class="dl">'</span><span class="p">,</span>
+                <span class="na">country</span><span class="p">:</span> <span class="dl">'</span><span class="s1">${ $.parentName }.country_id</span><span class="dl">'</span>
             <span class="p">}</span>
         <span class="p">},</span>
 
         <span class="na">updateStreetLabels</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">())</span> <span class="p">{</span>
                 <span class="k">this</span><span class="p">.</span><span class="nx">street</span><span class="p">().</span><span class="nx">elems</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">street</span><span class="p">,</span> <span class="nx">key</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="k">this</span><span class="p">.</span><span class="nx">street</span><span class="p">().</span><span class="nx">elems</span><span class="p">()[</span><span class="nx">key</span><span class="p">].</span><span class="kd">set</span><span class="p">(</span><span class="s1">'label'</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">streetLabels</span><span class="p">[</span><span class="nx">key</span><span class="p">]);</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">street</span><span class="p">().</span><span class="nx">elems</span><span class="p">()[</span><span class="nx">key</span><span class="p">].</span><span class="kd">set</span><span class="p">(</span><span class="dl">'</span><span class="s1">label</span><span class="dl">'</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">streetLabels</span><span class="p">[</span><span class="nx">key</span><span class="p">]);</span>
                 <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
             <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
                 <span class="k">this</span><span class="p">.</span><span class="nx">street</span><span class="p">().</span><span class="nx">elems</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">street</span><span class="p">,</span> <span class="nx">key</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="k">this</span><span class="p">.</span><span class="nx">street</span><span class="p">().</span><span class="nx">elems</span><span class="p">()[</span><span class="nx">key</span><span class="p">].</span><span class="kd">set</span><span class="p">(</span><span class="s1">'label'</span><span class="p">,</span> <span class="s1">''</span><span class="p">);</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">street</span><span class="p">().</span><span class="nx">elems</span><span class="p">()[</span><span class="nx">key</span><span class="p">].</span><span class="kd">set</span><span class="p">(</span><span class="dl">'</span><span class="s1">label</span><span class="dl">'</span><span class="p">,</span> <span class="dl">''</span><span class="p">);</span>
                 <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
             <span class="p">}</span>
         <span class="p">},</span>
 
         <span class="na">updateCity</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">())</span> <span class="p">{</span>
-                <span class="k">this</span><span class="p">.</span><span class="nx">city</span><span class="p">().</span><span class="nx">value</span><span class="p">(</span><span class="s1">'Kyiv'</span><span class="p">);</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">city</span><span class="p">().</span><span class="nx">value</span><span class="p">(</span><span class="dl">'</span><span class="s1">Kyiv</span><span class="dl">'</span><span class="p">);</span>
                 <span class="k">this</span><span class="p">.</span><span class="nx">city</span><span class="p">().</span><span class="nx">disabled</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
             <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                <span class="k">this</span><span class="p">.</span><span class="nx">city</span><span class="p">().</span><span class="nx">value</span><span class="p">(</span><span class="s1">''</span><span class="p">);</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">city</span><span class="p">().</span><span class="nx">value</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
                 <span class="k">this</span><span class="p">.</span><span class="nx">city</span><span class="p">().</span><span class="nx">disabled</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
             <span class="p">}</span>
         <span class="p">},</span>
 
         <span class="na">updateCountry</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">())</span> <span class="p">{</span>
-                <span class="k">this</span><span class="p">.</span><span class="nx">country</span><span class="p">().</span><span class="nx">value</span><span class="p">(</span><span class="s1">'UA'</span><span class="p">);</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">country</span><span class="p">().</span><span class="nx">value</span><span class="p">(</span><span class="dl">'</span><span class="s1">UA</span><span class="dl">'</span><span class="p">);</span>
                 <span class="k">this</span><span class="p">.</span><span class="nx">country</span><span class="p">().</span><span class="nx">disabled</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
             <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                <span class="k">this</span><span class="p">.</span><span class="nx">country</span><span class="p">().</span><span class="nx">value</span><span class="p">(</span><span class="s1">''</span><span class="p">);</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">country</span><span class="p">().</span><span class="nx">value</span><span class="p">(</span><span class="dl">''</span><span class="p">);</span>
                 <span class="k">this</span><span class="p">.</span><span class="nx">country</span><span class="p">().</span><span class="nx">disabled</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
             <span class="p">}</span>
         <span class="p">},</span>

@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Source selection algorithms | Magento 2 Developer Documentation (copy)</title>
+	<title>Source selection algorithms | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/inventory/source-selection-algorithms.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/inventory/source-selection-algorithms.html">Magento 2.0</a></li>
 		
@@ -1695,25 +1696,25 @@ help merchants decide which shipping option best meets their needs.</p>
 
 <h2 id="the-priority-algorithm">The priority algorithm</h2>
 
-<p>Inventory Management defines the priority algorithm, which recommends delivering products from sources having the highest priority. The <code class="highlighter-rouge">SourceSelectionServiceInterface</code> accepts an <code class="highlighter-rouge">InventoryRequestInterface</code> object, which in turn contains the stock ID and a list of items to be shipped. Each item contains only the SKU and quantity. Other potentially relevant data, such as shipping address, is not included, because the priority algorithm does not need it.</p>
+<p>Inventory Management defines the priority algorithm, which recommends delivering products from sources having the highest priority. The <code class="language-plaintext highlighter-rouge">SourceSelectionServiceInterface</code> accepts an <code class="language-plaintext highlighter-rouge">InventoryRequestInterface</code> object, which in turn contains the stock ID and a list of items to be shipped. Each item contains only the SKU and quantity. Other potentially relevant data, such as shipping address, is not included, because the priority algorithm does not need it.</p>
 
-<p>Additional input data might be needed for more sophisticated algorithms. For example, an algorithm that calculates distance would need the shipping address and all data entered for the source (GPS or full address). That’s why <code class="highlighter-rouge">InventoryRequestInterface</code> implements <code class="highlighter-rouge">ExtensibleDataInterface</code> interfaces, which can be extended with custom input parameters.</p>
+<p>Additional input data might be needed for more sophisticated algorithms. For example, an algorithm that calculates distance would need the shipping address and all data entered for the source (GPS or full address). That’s why <code class="language-plaintext highlighter-rouge">InventoryRequestInterface</code> implements <code class="language-plaintext highlighter-rouge">ExtensibleDataInterface</code> interfaces, which can be extended with custom input parameters.</p>
 
 <h2 id="ssa-interfaces">SSA interfaces</h2>
 
-<p>Currently, Inventory Management deducts stock from the appropriate source after the merchant creates a shipment for an order. However, that’s not flexible enough–a developer might want to introduce customizations and launch the SSA when the customer proceeds to checkout. Running the SSA at this point could provide the customer more accurate shipping costs. Note in this case, the <code class="highlighter-rouge">Order</code> object has not created yet, and the system must instead rely on the <code class="highlighter-rouge">Quote</code> object.</p>
+<p>Currently, Inventory Management deducts stock from the appropriate source after the merchant creates a shipment for an order. However, that’s not flexible enough–a developer might want to introduce customizations and launch the SSA when the customer proceeds to checkout. Running the SSA at this point could provide the customer more accurate shipping costs. Note in this case, the <code class="language-plaintext highlighter-rouge">Order</code> object has not created yet, and the system must instead rely on the <code class="language-plaintext highlighter-rouge">Quote</code> object.</p>
 
-<p>Taking into account that there are at least two valid business cases when to launch the SSA, and the data source can be an <code class="highlighter-rouge">Order</code> or <code class="highlighter-rouge">Quote</code> object, Inventory Management introduces a new layer of abstraction. The algorithm must use an abstract data container instead of a specific Magento entity.</p>
+<p>Taking into account that there are at least two valid business cases when to launch the SSA, and the data source can be an <code class="language-plaintext highlighter-rouge">Order</code> or <code class="language-plaintext highlighter-rouge">Quote</code> object, Inventory Management introduces a new layer of abstraction. The algorithm must use an abstract data container instead of a specific Magento entity.</p>
 
 <p>Use these interfaces to create your own SSA:</p>
 
 <ul>
   <li><a href="https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventorySourceSelectionApi/Api/Data/InventoryRequestInterface.php">InventoryRequestInterface</a> requests products for a given quantity and stock ID</li>
   <li><a href="https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventorySourceSelectionApi/Api/Data/ItemRequestInterface.php">ItemRequestInterface</a> represents the requested quantity for a specific SKU</li>
-  <li><a href="https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventorySourceSelectionApi/Api/SourceSelectionServiceInterface.php">SourceSelectionServiceInterface</a> returns the source selection algorithm result for the specified <code class="highlighter-rouge">inventoryRequest</code></li>
+  <li><a href="https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventorySourceSelectionApi/Api/SourceSelectionServiceInterface.php">SourceSelectionServiceInterface</a> returns the source selection algorithm result for the specified <code class="language-plaintext highlighter-rouge">inventoryRequest</code></li>
   <li><a href="https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventorySourceSelectionApi/Api/GetSourceSelectionAlgorithmListInterface.php">GetSourceSelectionAlgorithmListInterface</a> returns the list of data interfaces that represent registered SSAs</li>
   <li><a href="https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventorySourceSelectionApi/Api/Data/SourceSelectionAlgorithmInterface.php">SourceSelectionAlgorithmInterface</a> represents a single SSA</li>
-  <li><a href="https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventorySourceSelectionApi/Model/SourceSelectionInterface.php">SourceSelectionInterface</a> returns the SSA result for the specified <code class="highlighter-rouge">inventoryRequest</code></li>
+  <li><a href="https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventorySourceSelectionApi/Model/SourceSelectionInterface.php">SourceSelectionInterface</a> returns the SSA result for the specified <code class="language-plaintext highlighter-rouge">inventoryRequest</code></li>
 </ul>
 
 <h2 id="develop-a-custom-algorithm">Develop a custom algorithm</h2>
@@ -1721,88 +1722,88 @@ help merchants decide which shipping option best meets their needs.</p>
 <p>As you develop your custom Source Selection Algorithm, keep these design considerations in mind:</p>
 
 <ul>
-  <li>Implement <code class="highlighter-rouge">SourceSelectionInterface</code></li>
-  <li>If your module provides an SSA on quotes, introduce your own <code class="highlighter-rouge">InventoryRequestFactory</code></li>
-  <li>Register your SSA within a <code class="highlighter-rouge">di.xml</code> file</li>
+  <li>Implement <code class="language-plaintext highlighter-rouge">SourceSelectionInterface</code></li>
+  <li>If your module provides an SSA on quotes, introduce your own <code class="language-plaintext highlighter-rouge">InventoryRequestFactory</code></li>
+  <li>Register your SSA within a <code class="language-plaintext highlighter-rouge">di.xml</code> file</li>
 </ul>
 
-<h3 id="implement--sourceselectioninterface">Implement  <code class="highlighter-rouge">SourceSelectionInterface</code></h3>
+<h3 id="implement--sourceselectioninterface">Implement  <code class="language-plaintext highlighter-rouge">SourceSelectionInterface</code></h3>
 
-<p>Your SSA must implement <code class="highlighter-rouge">SourceSelectionInterface</code>, which is shown below:</p>
+<p>Your SSA must implement <code class="language-plaintext highlighter-rouge">SourceSelectionInterface</code>, which is shown below:</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="sd">/**
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="cd">/**
  * Returns source selection algorithm result for given Inventory Request 
  * Current interface should be implemented in order to add own Source Selection Method
  * 
  * @api
  */</span>
-<span class="k">interface</span> <span class="nx">SourceSelectionInterface</span>
+<span class="kd">interface</span> <span class="nc">SourceSelectionInterface</span>
 <span class="p">{</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * @param InventoryRequestInterface $inventoryRequest
      * @return SourceSelectionResultInterface
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">(</span>
-       <span class="nx">InventoryRequestInterface</span> <span class="nv">$inventoryRequest</span>
-    <span class="p">)</span><span class="o">:</span> <span class="nx">SourceSelectionResultInterface</span><span class="p">;</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">execute</span><span class="p">(</span>
+       <span class="kt">InventoryRequestInterface</span> <span class="nv">$inventoryRequest</span>
+    <span class="p">):</span> <span class="kt">SourceSelectionResultInterface</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>For example, the following example defines the <code class="highlighter-rouge">MinimalDeliveryCostAlgorithm</code> class:</p>
+<p>For example, the following example defines the <code class="language-plaintext highlighter-rouge">MinimalDeliveryCostAlgorithm</code> class:</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="k">namespace</span> <span class="nx">Some\Vendor\Namespace\SourceSelection</span><span class="p">;</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="kn">namespace</span> <span class="nn">Some\Vendor\Namespace\SourceSelection</span><span class="p">;</span>
 
-<span class="sd">/**
+<span class="cd">/**
  * Minimal Delivery Cost for Merchant algorithm
  *
  * @api
  */</span>
-<span class="k">class</span> <span class="nc">MinimalDeliveryCostAlgorithm</span> <span class="k">implements</span> <span class="nx">SourceSelectionInterface</span>
+<span class="kd">class</span> <span class="nc">MinimalDeliveryCostAlgorithm</span> <span class="kd">implements</span> <span class="nc">SourceSelectionInterface</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">(</span>
-       <span class="nx">InventoryRequestInterface</span> <span class="nv">$inventoryRequest</span>
-    <span class="p">)</span><span class="o">:</span> <span class="nx">SourceSelectionResultInterface</span><span class="p">;</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">execute</span><span class="p">(</span>
+       <span class="kt">InventoryRequestInterface</span> <span class="nv">$inventoryRequest</span>
+    <span class="p">):</span> <span class="kt">SourceSelectionResultInterface</span><span class="p">;</span>
     <span class="p">{</span>
-        <span class="c1">// TODO: Implement execute() method.
-</span>    <span class="p">}</span>
+        <span class="c1">// TODO: Implement execute() method.</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<h3 id="create-a-inventoryrequest-factory-for-quotes--optional">Create a <code class="highlighter-rouge">InventoryRequest</code> factory for quotes  (optional)</h3>
+<h3 id="create-a-inventoryrequest-factory-for-quotes--optional">Create a <code class="language-plaintext highlighter-rouge">InventoryRequest</code> factory for quotes  (optional)</h3>
 
-<p>Magento provides the <a href="https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventoryShipping/Model/InventoryRequestFromOrderFactory.php"><code class="highlighter-rouge">InventoryRequestFromOrderFactory</code></a>, which determines the sources to use to fulfill the order at the time a shipment is created.</p>
+<p>Magento provides the <a href="https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventoryShipping/Model/InventoryRequestFromOrderFactory.php"><code class="language-plaintext highlighter-rouge">InventoryRequestFromOrderFactory</code></a>, which determines the sources to use to fulfill the order at the time a shipment is created.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="k">class</span> <span class="nc">InventoryRequestFromOrderFactory</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="kd">class</span> <span class="nc">InventoryRequestFromOrderFactory</span>
 <span class="p">{</span>
-      <span class="sd">/**
+      <span class="cd">/**
      * @param OrderInterface $order
      * @return InventoryRequestInterface
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">create</span><span class="p">(</span><span class="nx">OrderInterface</span> <span class="nv">$order</span><span class="p">)</span> <span class="o">:</span> <span class="nx">InventoryRequestInterface</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">create</span><span class="p">(</span><span class="kt">OrderInterface</span> <span class="nv">$order</span><span class="p">)</span> <span class="p">:</span> <span class="kt">InventoryRequestInterface</span>
     <span class="p">{</span>
         <span class="nv">$requestItems</span> <span class="o">=</span> <span class="p">[];</span>
-        <span class="nv">$websiteId</span> <span class="o">=</span> <span class="nv">$order</span><span class="o">-&gt;</span><span class="na">getStore</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getWebsiteId</span><span class="p">();</span>
-        <span class="nv">$stockId</span> <span class="o">=</span> <span class="p">(</span><span class="nx">int</span><span class="p">)</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">stockByWebsiteIdResolver</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">((</span><span class="nx">int</span><span class="p">)</span><span class="nv">$websiteId</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">getStockId</span><span class="p">();</span>
-        <span class="sd">/** @var OrderItemInterface|OrderItem $orderItem */</span>
-        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$order</span><span class="o">-&gt;</span><span class="na">getItems</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$orderItem</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nv">$itemSku</span> <span class="o">=</span> <span class="nv">$orderItem</span><span class="o">-&gt;</span><span class="na">getSku</span><span class="p">()</span> <span class="o">?:</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getSkusByProductIds</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">(</span>
-                <span class="p">[</span><span class="nv">$orderItem</span><span class="o">-&gt;</span><span class="na">getProductId</span><span class="p">()]</span>
-            <span class="p">)[</span><span class="nv">$orderItem</span><span class="o">-&gt;</span><span class="na">getProductId</span><span class="p">()];</span>
-            <span class="nv">$qtyToDeliver</span> <span class="o">=</span> <span class="nv">$orderItem</span><span class="o">-&gt;</span><span class="na">getQtyToShip</span><span class="p">();</span>
-            <span class="c1">//check if order item is not delivered yet
-</span>            <span class="k">if</span> <span class="p">(</span><span class="nv">$orderItem</span><span class="o">-&gt;</span><span class="na">isDeleted</span><span class="p">()</span>
-                <span class="o">||</span> <span class="nv">$orderItem</span><span class="o">-&gt;</span><span class="na">getParentItemId</span><span class="p">()</span>
-                <span class="o">||</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">isZero</span><span class="p">((</span><span class="nx">float</span><span class="p">)</span><span class="nv">$qtyToDeliver</span><span class="p">)</span>
-                <span class="o">||</span> <span class="nv">$orderItem</span><span class="o">-&gt;</span><span class="na">getIsVirtual</span><span class="p">()</span>
+        <span class="nv">$websiteId</span> <span class="o">=</span> <span class="nv">$order</span><span class="o">-&gt;</span><span class="nf">getStore</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">getWebsiteId</span><span class="p">();</span>
+        <span class="nv">$stockId</span> <span class="o">=</span> <span class="p">(</span><span class="n">int</span><span class="p">)</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">stockByWebsiteIdResolver</span><span class="o">-&gt;</span><span class="nf">execute</span><span class="p">((</span><span class="n">int</span><span class="p">)</span><span class="nv">$websiteId</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">getStockId</span><span class="p">();</span>
+        <span class="cd">/** @var OrderItemInterface|OrderItem $orderItem */</span>
+        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$order</span><span class="o">-&gt;</span><span class="nf">getItems</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$orderItem</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$itemSku</span> <span class="o">=</span> <span class="nv">$orderItem</span><span class="o">-&gt;</span><span class="nf">getSku</span><span class="p">()</span> <span class="o">?:</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">getSkusByProductIds</span><span class="o">-&gt;</span><span class="nf">execute</span><span class="p">(</span>
+                <span class="p">[</span><span class="nv">$orderItem</span><span class="o">-&gt;</span><span class="nf">getProductId</span><span class="p">()]</span>
+            <span class="p">)[</span><span class="nv">$orderItem</span><span class="o">-&gt;</span><span class="nf">getProductId</span><span class="p">()];</span>
+            <span class="nv">$qtyToDeliver</span> <span class="o">=</span> <span class="nv">$orderItem</span><span class="o">-&gt;</span><span class="nf">getQtyToShip</span><span class="p">();</span>
+            <span class="c1">//check if order item is not delivered yet</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nv">$orderItem</span><span class="o">-&gt;</span><span class="nf">isDeleted</span><span class="p">()</span>
+                <span class="o">||</span> <span class="nv">$orderItem</span><span class="o">-&gt;</span><span class="nf">getParentItemId</span><span class="p">()</span>
+                <span class="o">||</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">isZero</span><span class="p">((</span><span class="n">float</span><span class="p">)</span><span class="nv">$qtyToDeliver</span><span class="p">)</span>
+                <span class="o">||</span> <span class="nv">$orderItem</span><span class="o">-&gt;</span><span class="nf">getIsVirtual</span><span class="p">()</span>
             <span class="p">)</span> <span class="p">{</span>
                 <span class="k">continue</span><span class="p">;</span>
             <span class="p">}</span>
-            <span class="nv">$requestItems</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">itemRequestFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">([</span>
+            <span class="nv">$requestItems</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">itemRequestFactory</span><span class="o">-&gt;</span><span class="nf">create</span><span class="p">([</span>
                     <span class="s1">'sku'</span> <span class="o">=&gt;</span> <span class="nv">$itemSku</span><span class="p">,</span>
                     <span class="s1">'qty'</span> <span class="o">=&gt;</span> <span class="nv">$qtyToDeliver</span>
             <span class="p">]);</span>
         <span class="p">}</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">inventoryRequestFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">([</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">inventoryRequestFactory</span><span class="o">-&gt;</span><span class="nf">create</span><span class="p">([</span>
             <span class="s1">'stockId'</span> <span class="o">=&gt;</span> <span class="nv">$stockId</span><span class="p">,</span>
             <span class="s1">'items'</span> <span class="o">=&gt;</span> <span class="nv">$requestItems</span>
         <span class="p">]);</span>
@@ -1810,24 +1811,24 @@ help merchants decide which shipping option best meets their needs.</p>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>To add an SSA at the time of checkout, introduce your own factory that produces an  <code class="highlighter-rouge">InventoryRequestInterface</code> based on a <code class="highlighter-rouge">Quote</code> object, outlined as follows:</p>
+<p>To add an SSA at the time of checkout, introduce your own factory that produces an  <code class="language-plaintext highlighter-rouge">InventoryRequestInterface</code> based on a <code class="language-plaintext highlighter-rouge">Quote</code> object, outlined as follows:</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="k">class</span> <span class="nc">InventoryRequestFactory</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="kd">class</span> <span class="nc">InventoryRequestFactory</span>
 <span class="p">{</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * @param \Magento\Quote\Api\Data\CartInterface $quote
      * @return InventoryRequestInterface
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">create</span><span class="p">(</span><span class="nx">\Magento\Quote\Api\Data\CartInterface</span> <span class="nv">$quote</span><span class="p">)</span> <span class="o">:</span> <span class="nx">InventoryRequestInterface</span> 
+    <span class="k">public</span> <span class="k">function</span> <span class="n">create</span><span class="p">(</span><span class="err">\</span><span class="nc">Magento\Quote\Api\Data\CartInterface</span> <span class="nv">$quote</span><span class="p">)</span> <span class="o">:</span> <span class="nc">InventoryRequestInterface</span> 
     <span class="p">{</span>
-        <span class="c1">// TODO
-</span>    <span class="p">}</span>
+        <span class="c1">// TODO</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<h3 id="configure-dixml">Configure <code class="highlighter-rouge">di.xml</code></h3>
+<h3 id="configure-dixml">Configure <code class="language-plaintext highlighter-rouge">di.xml</code></h3>
 
-<p>Configure your module’s <code class="highlighter-rouge">etc/di.xml</code> file to register your SSA with <code class="highlighter-rouge">SourceSelectionServiceInterface</code> and <code class="highlighter-rouge">GetSourceSelectionAlgorithmList</code>.</p>
+<p>Configure your module’s <code class="language-plaintext highlighter-rouge">etc/di.xml</code> file to register your SSA with <code class="language-plaintext highlighter-rouge">SourceSelectionServiceInterface</code> and <code class="language-plaintext highlighter-rouge">GetSourceSelectionAlgorithmList</code>.</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\InventorySourceSelection\Model\SourceSelectionService"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>

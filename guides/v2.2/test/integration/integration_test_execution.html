@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Running Integration Tests | Magento 2 Developer Documentation (copy)</title>
+	<title>Running Integration Tests | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/test/integration/integration_test_execution.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/test/integration/integration_test_execution.html">Magento 2.0</a></li>
 		
@@ -1857,11 +1858,11 @@ Here are examples of SQL commands that create a test database and a dedicated te
 <h3 id="configure-the-framework-to-use-the-test-database">Configure the framework to use the test database</h3>
 
 <p>The Magento 2 integration test framework comes with a configuration file template, 
-<code class="highlighter-rouge">mage2ce/dev/tests/integration/etc/install-config-mysql.php.dist</code>.</p>
+<code class="language-plaintext highlighter-rouge">mage2ce/dev/tests/integration/etc/install-config-mysql.php.dist</code>.</p>
 
 <p>Copy this file to
-<code class="highlighter-rouge">mage2ce/dev/tests/integration/etc/install-config-mysql.php</code>
-(without the <code class="highlighter-rouge">.dist</code> suffix) and add your test database access credentials.</p>
+<code class="language-plaintext highlighter-rouge">mage2ce/dev/tests/integration/etc/install-config-mysql.php</code>
+(without the <code class="language-plaintext highlighter-rouge">.dist</code> suffix) and add your test database access credentials.</p>
 
 <p>The contents will look something like the following. Use the DB access credentials for your test database instead of the example values below.</p>
 
@@ -1874,23 +1875,23 @@ Here are examples of SQL commands that create a test database and a dedicated te
     <span class="s1">'db-name'</span> <span class="o">=&gt;</span> <span class="s1">'magento_integration_tests'</span><span class="p">,</span>
     <span class="s1">'db-prefix'</span> <span class="o">=&gt;</span> <span class="s1">''</span><span class="p">,</span>
     <span class="s1">'backend-frontname'</span> <span class="o">=&gt;</span> <span class="s1">'backend'</span><span class="p">,</span>
-    <span class="s1">'admin-user'</span> <span class="o">=&gt;</span> <span class="nx">\Magento\TestFramework\Bootstrap</span><span class="o">::</span><span class="na">ADMIN_NAME</span><span class="p">,</span>
-    <span class="s1">'admin-password'</span> <span class="o">=&gt;</span> <span class="nx">\Magento\TestFramework\Bootstrap</span><span class="o">::</span><span class="na">ADMIN_PASSWORD</span><span class="p">,</span>
-    <span class="s1">'admin-email'</span> <span class="o">=&gt;</span> <span class="nx">\Magento\TestFramework\Bootstrap</span><span class="o">::</span><span class="na">ADMIN_EMAIL</span><span class="p">,</span>
-    <span class="s1">'admin-firstname'</span> <span class="o">=&gt;</span> <span class="nx">\Magento\TestFramework\Bootstrap</span><span class="o">::</span><span class="na">ADMIN_FIRSTNAME</span><span class="p">,</span>
-    <span class="s1">'admin-lastname'</span> <span class="o">=&gt;</span> <span class="nx">\Magento\TestFramework\Bootstrap</span><span class="o">::</span><span class="na">ADMIN_LASTNAME</span><span class="p">,</span>
+    <span class="s1">'admin-user'</span> <span class="o">=&gt;</span> <span class="err">\</span><span class="nc">Magento\TestFramework\Bootstrap</span><span class="o">::</span><span class="no">ADMIN_NAME</span><span class="p">,</span>
+    <span class="s1">'admin-password'</span> <span class="o">=&gt;</span> <span class="err">\</span><span class="nc">Magento\TestFramework\Bootstrap</span><span class="o">::</span><span class="no">ADMIN_PASSWORD</span><span class="p">,</span>
+    <span class="s1">'admin-email'</span> <span class="o">=&gt;</span> <span class="err">\</span><span class="nc">Magento\TestFramework\Bootstrap</span><span class="o">::</span><span class="no">ADMIN_EMAIL</span><span class="p">,</span>
+    <span class="s1">'admin-firstname'</span> <span class="o">=&gt;</span> <span class="err">\</span><span class="nc">Magento\TestFramework\Bootstrap</span><span class="o">::</span><span class="no">ADMIN_FIRSTNAME</span><span class="p">,</span>
+    <span class="s1">'admin-lastname'</span> <span class="o">=&gt;</span> <span class="err">\</span><span class="nc">Magento\TestFramework\Bootstrap</span><span class="o">::</span><span class="no">ADMIN_LASTNAME</span><span class="p">,</span>
 <span class="p">];</span>
 </code></pre></div></div>
 
-<p class="bs-callout bs-callout-info">Leave all the settings that do not start with <code class="highlighter-rouge">db-</code> at their default values.</p>
+<p class="bs-callout bs-callout-info">Leave all the settings that do not start with <code class="language-plaintext highlighter-rouge">db-</code> at their default values.</p>
 
 <h3 id="adjust-the-phpunit-configuration-file">Adjust the PHPUnit configuration file</h3>
 
-<p>The default integration test configuration can be found at <code class="highlighter-rouge">dev/tests/integration/phpunit.xml.dist</code>.</p>
+<p>The default integration test configuration can be found at <code class="language-plaintext highlighter-rouge">dev/tests/integration/phpunit.xml.dist</code>.</p>
 
 <p>Without adjustments it will run all core integration tests, which is useful for example on a continuous integration server.</p>
 
-<p>When making adjustments to the configuration, copy the default file to <code class="highlighter-rouge">dev/tests/integration/phpunit.xml</code> (again, without the <code class="highlighter-rouge">.dist</code> suffix) and make your changes there. That way, your changes will not be overwritten during Magento upgrades.</p>
+<p>When making adjustments to the configuration, copy the default file to <code class="language-plaintext highlighter-rouge">dev/tests/integration/phpunit.xml</code> (again, without the <code class="language-plaintext highlighter-rouge">.dist</code> suffix) and make your changes there. That way, your changes will not be overwritten during Magento upgrades.</p>
 
 <p>There are many settings in the file.
 This guide will only describe three common adjustments.
@@ -1903,51 +1904,51 @@ Refer to the <a href="https://phpunit.de/manual/4.1/en/appendixes.configuration.
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;const</span> <span class="na">name=</span><span class="s">"TESTS_CLEANUP"</span> <span class="na">value=</span><span class="s">"enabled"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<p>If this constant is set to <code class="highlighter-rouge">enabled</code>, the integration test framework will clean the test database and reinstall Magento on every test run.
+<p>If this constant is set to <code class="language-plaintext highlighter-rouge">enabled</code>, the integration test framework will clean the test database and reinstall Magento on every test run.
 This way, any new modules will be automatically picked up, and any cruft that might have been left over from previous test runs will be removed.
 It also causes the test framework to flush the test Magento configuration, the   <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>
  and the code generation before executing any tests.</p>
 
-<p>The downside of setting <code class="highlighter-rouge">TEST_CLEANUP</code> to <code class="highlighter-rouge">enabled</code> is that the reinstallation of Magento takes time (the exact time depends on the host you are using to run the integration tests and the Magento version.)</p>
+<p>The downside of setting <code class="language-plaintext highlighter-rouge">TEST_CLEANUP</code> to <code class="language-plaintext highlighter-rouge">enabled</code> is that the reinstallation of Magento takes time (the exact time depends on the host you are using to run the integration tests and the Magento version.)</p>
 
 <p>During the development of new integration tests, where only a subset of the tests is executed repeatedly, that overhead of setting up a fresh execution environment for each run quickly becomes a burden.</p>
 
-<p>In that case the <code class="highlighter-rouge">TEST_CLEANUP</code> constant can be set to <code class="highlighter-rouge">disabled</code>.
+<p>In that case the <code class="language-plaintext highlighter-rouge">TEST_CLEANUP</code> constant can be set to <code class="language-plaintext highlighter-rouge">disabled</code>.
 The test execution will start much quicker, but as a consequence the developer must manually flush the cache and the database when needed.</p>
 
 <p>The integration test framework creates the temporary test files beneath the directory
-<code class="highlighter-rouge">dev/tests/integration/tmp/sandbox-*</code> (followed by a long hash ID).</p>
+<code class="language-plaintext highlighter-rouge">dev/tests/integration/tmp/sandbox-*</code> (followed by a long hash ID).</p>
 
 <p>To force the test framework to regenerate the cache and the other files, remove the directory:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>rm <span class="nt">-r</span> dev/tests/integration/tmp/sandbox-<span class="k">*</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">rm</span> <span class="nt">-r</span> dev/tests/integration/tmp/sandbox-<span class="k">*</span>
 </code></pre></div></div>
 
 <h4 id="php-memory_limit">PHP memory_limit</h4>
 
-<p>The default <code class="highlighter-rouge">phpunit.xml.dist</code> file does not contain any PHP <code class="highlighter-rouge">memory_limit</code> settings.
+<p>The default <code class="language-plaintext highlighter-rouge">phpunit.xml.dist</code> file does not contain any PHP <code class="language-plaintext highlighter-rouge">memory_limit</code> settings.
 However, sometimes the   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
  configuration restricts the amount of memory PHP may consume.
 This can make it impossible to run the integration tests.</p>
 
-<p>The PHP memory limit can be turned off by adding the following configuration to the <code class="highlighter-rouge">&lt;php&gt;</code> section of the integration test <code class="highlighter-rouge">phpunit.xml</code> file:</p>
+<p>The PHP memory limit can be turned off by adding the following configuration to the <code class="language-plaintext highlighter-rouge">&lt;php&gt;</code> section of the integration test <code class="language-plaintext highlighter-rouge">phpunit.xml</code> file:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;ini</span> <span class="na">name=</span><span class="s">"memory_limit"</span> <span class="na">value=</span><span class="s">"-1"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
 <h4 id="execute-third-party-integration-tests">Execute third party integration tests</h4>
 
-<p>The Magento code integration tests reside in the directory <code class="highlighter-rouge">dev/tests/integration/testsuite</code>.
+<p>The Magento code integration tests reside in the directory <code class="language-plaintext highlighter-rouge">dev/tests/integration/testsuite</code>.
 For core tests it makes sense that the integration tests do not reside within individual modules, because most integration test execute code from many different modules.</p>
 
-<p>Specific integration tests for shop implementation could also be placed within a different subdirectory of <code class="highlighter-rouge">dev/tests/integration/testsuite</code>, and then would be executed together with the core tests.</p>
+<p>Specific integration tests for shop implementation could also be placed within a different subdirectory of <code class="language-plaintext highlighter-rouge">dev/tests/integration/testsuite</code>, and then would be executed together with the core tests.</p>
 
 <p>However, third party Magento extensions are contained within a single directory, and might supply custom integration tests too.
-These tests usually are placed in the <code class="highlighter-rouge">Test/Integration/</code> subdirectory within the   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
+These tests usually are placed in the <code class="language-plaintext highlighter-rouge">Test/Integration/</code> subdirectory within the   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
  folder.</p>
 
 <p>These third party integration tests are not picked up by the default integration test configuration.
-A test suite configuration like the following can be added to the <code class="highlighter-rouge">&lt;testsuites&gt;</code> section of the <code class="highlighter-rouge">phpunit.xml</code> file so they are included during test execution.</p>
+A test suite configuration like the following can be added to the <code class="language-plaintext highlighter-rouge">&lt;testsuites&gt;</code> section of the <code class="language-plaintext highlighter-rouge">phpunit.xml</code> file so they are included during test execution.</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;testsuite</span> <span class="na">name=</span><span class="s">"Third Party Integration Tests"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;directory&gt;</span>../../../app/code/*/*/Test/Integration<span class="nt">&lt;/directory&gt;</span>
@@ -1957,7 +1958,7 @@ A test suite configuration like the following can be added to the <code class="h
 <span class="nt">&lt;/testsuite&gt;</span>
 </code></pre></div></div>
 
-<p>Such a test suite configuration can then be executed using the <code class="highlighter-rouge">--testsuite &lt;name&gt;</code> command option. For example, if you are in the <code class="highlighter-rouge">dev/tests/integration</code> directory:</p>
+<p>Such a test suite configuration can then be executed using the <code class="language-plaintext highlighter-rouge">--testsuite &lt;name&gt;</code> command option. For example, if you are in the <code class="language-plaintext highlighter-rouge">dev/tests/integration</code> directory:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php ../../../vendor/bin/phpunit <span class="nt">--testsuite</span> <span class="s2">"Third Party Integration Tests"</span>
 </code></pre></div></div>
@@ -1968,12 +1969,12 @@ A test suite configuration like the following can be added to the <code class="h
 
 <p>Ensure you have <a href="#setup">prepared the integration test environment</a> before starting.</p>
 
-<p>The integration tests have to be executed with the current working directory being <code class="highlighter-rouge">dev/tests/integration</code>.
-The test configuration resides in that directory and will be picked up by <code class="highlighter-rouge">phpunit</code> automatically, without the need to specify it as a command line option.</p>
+<p>The integration tests have to be executed with the current working directory being <code class="language-plaintext highlighter-rouge">dev/tests/integration</code>.
+The test configuration resides in that directory and will be picked up by <code class="language-plaintext highlighter-rouge">phpunit</code> automatically, without the need to specify it as a command line option.</p>
 
 <h3 id="run-all-integration-tests">Run all integration tests</h3>
 
-<p>By default, if no additional arguments are specified, the test configuration executes all integration tests in the directory <code class="highlighter-rouge">dev/tests/integration/testsuite</code>.</p>
+<p>By default, if no additional arguments are specified, the test configuration executes all integration tests in the directory <code class="language-plaintext highlighter-rouge">dev/tests/integration/testsuite</code>.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">cd </span>dev/tests/integration
 </code></pre></div></div>
@@ -1991,13 +1992,13 @@ Configuration read from /var/www/magento2/dev/tests/integration/phpunit.xml
 </span><span class="c">..........................
 </span></code></pre></div></div>
 
-<p>The path to the <code class="highlighter-rouge">phpunit</code> executable installed by   <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span>
+<p>The path to the <code class="language-plaintext highlighter-rouge">phpunit</code> executable installed by   <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span>
  into the vendor directory is used.</p>
 
 <h3 id="run-only-a-custom-testsuite">Run only a custom testsuite</h3>
 
 <p>PHPUnit offers several ways to only execute a subset of tests.
-For example, it is common to only execute a single test suite from the <code class="highlighter-rouge">phpunit.xml</code> configuration.</p>
+For example, it is common to only execute a single test suite from the <code class="language-plaintext highlighter-rouge">phpunit.xml</code> configuration.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">cd </span>dev/tests/integration
 </code></pre></div></div>
@@ -2006,7 +2007,7 @@ For example, it is common to only execute a single test suite from the <code cla
 
 <h3 id="run-tests-from-a-specific-directory-tree">Run tests from a specific directory tree</h3>
 
-<p>To execute only the tests within a specific directory (for example an extension), pass the path to that directory as an argument to <code class="highlighter-rouge">phpunit</code>:</p>
+<p>To execute only the tests within a specific directory (for example an extension), pass the path to that directory as an argument to <code class="language-plaintext highlighter-rouge">phpunit</code>:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">cd </span>dev/tests/integration
 </code></pre></div></div>
@@ -2016,7 +2017,7 @@ For example, it is common to only execute a single test suite from the <code cla
 <h3 id="run-a-single-test-class">Run a single test class</h3>
 
 <p>When developing a new integration test class, it is common to run only that single test many times.
-Pass the path to the file containing the test class as an argument to <code class="highlighter-rouge">phpunit</code>:</p>
+Pass the path to the file containing the test class as an argument to <code class="language-plaintext highlighter-rouge">phpunit</code>:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">cd </span>dev/tests/integration
 </code></pre></div></div>
@@ -2025,7 +2026,7 @@ Pass the path to the file containing the test class as an argument to <code clas
 
 <h3 id="run-a-single-test-within-a-test-class">Run a single test within a test class</h3>
 
-<p>Running only a single test within a test class can be done by specifying the test class together with the <code class="highlighter-rouge">--filter</code> argument and the name to select the test currently being developed:</p>
+<p>Running only a single test within a test class can be done by specifying the test class together with the <code class="language-plaintext highlighter-rouge">--filter</code> argument and the name to select the test currently being developed:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">cd </span>dev/tests/integration
 </code></pre></div></div>
@@ -2040,8 +2041,8 @@ Pass the path to the file containing the test class as an argument to <code clas
 
 <h4 id="could-not-read-devtestsintegrationphpunitxml">Could not read “dev/tests/integration/phpunit.xml”</h4>
 
-<p>This error happens if the integration tests are executed from a different directory than <code class="highlighter-rouge">dev/tests/integration</code>.
-To fix the issue, change into the <code class="highlighter-rouge">dev/tests/integration</code> directory and run the tests from there with any relative paths adjusted accordingly.</p>
+<p>This error happens if the integration tests are executed from a different directory than <code class="language-plaintext highlighter-rouge">dev/tests/integration</code>.
+To fix the issue, change into the <code class="language-plaintext highlighter-rouge">dev/tests/integration</code> directory and run the tests from there with any relative paths adjusted accordingly.</p>
 
 <h4 id="unable-to-connect-to-mysql">Unable to connect to MySQL</h4>
 
@@ -2058,7 +2059,7 @@ If the tests then are executed using a PHP interpreter on the host system, the d
   <p>Expected log</p>
 </blockquote>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /var/www/magento2/vendor/magento/zendframework1/library/Zend/Db/Adapter/Pdo/Abstract.php:129
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /var/www/magento2/vendor/magento/zendframework1/library/Zend/Db/Adapter/Pdo/Abstract.php:129
 </code></pre></div></div>
 
 <p>There are many ways this problem can be resolved, but the easiest is to run the tests in the virtual machine as well.</p>
@@ -2078,7 +2079,7 @@ Then configure the integration test configuration file to be used.</p>
 
 <h4 id="use-the-integration-test-configuration-file">Use the integration test configuration file</h4>
 
-<p>The only difference in the run configuration is that the integration test <code class="highlighter-rouge">phpunit.xml.dist</code> or <code class="highlighter-rouge">phpunit.xml</code> configuration file from the directory <code class="highlighter-rouge">dev/tests/integration</code> has to be selected.</p>
+<p>The only difference in the run configuration is that the integration test <code class="language-plaintext highlighter-rouge">phpunit.xml.dist</code> or <code class="language-plaintext highlighter-rouge">phpunit.xml</code> configuration file from the directory <code class="language-plaintext highlighter-rouge">dev/tests/integration</code> has to be selected.</p>
 
 <p><img src="/devdocs/common/images/phpstorm_run_config_class_integration_tests.png" alt="Integration Test Class run configuration" width="600px" /></p>
 

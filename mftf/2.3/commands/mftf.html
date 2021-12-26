@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>CLI commands: vendor/bin/mftf | Magento 2 Developer Documentation (copy)</title>
+	<title>CLI commands: vendor/bin/mftf | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -2157,15 +2156,14 @@
 	<h1 class="page-heading">CLI commands: vendor/bin/mftf</h1>
 </section>
 
-			
-<p style="text-align: right"><em>This topic was updated due to the 2.3.11 <abbr title="Magento Functional Testing Framework">MFTF</abbr> release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.3.11 <abbr title="Magento Functional Testing Framework">MFTF</abbr> release.</em></p>
 
-<p>The Magento Functional Testing Framework (<abbr title="Magento Functional Testing Framework">MFTF</abbr>) introduces the command line interface (CLI) tool <code class="highlighter-rouge">vendor/bin/mftf</code> to facilitate your interaction with the framework.</p>
+<p>The Magento Functional Testing Framework (<abbr title="Magento Functional Testing Framework">MFTF</abbr>) introduces the command line interface (CLI) tool <code class="language-plaintext highlighter-rouge">vendor/bin/mftf</code> to facilitate your interaction with the framework.</p>
 
 <!-- Available note types: "info", "warning", "tip" -->
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p><code class="highlighter-rouge">mftf</code> commands replace the <code class="highlighter-rouge">robo</code> commands that were used in previous releases.</p>
+  <p><code class="language-plaintext highlighter-rouge">mftf</code> commands replace the <code class="language-plaintext highlighter-rouge">robo</code> commands that were used in previous releases.</p>
 </div>
 
 <h2 id="command-format">Command format</h2>
@@ -2206,26 +2204,26 @@
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vendor/bin/mftf run:group product <span class="nt">-r</span>
 </code></pre></div></div>
 
-<p>This command cleans up the previously generated tests; generates and runs tests for the product group (where <code class="highlighter-rouge">group="product"</code>).</p>
+<p>This command cleans up the previously generated tests; generates and runs tests for the product group (where <code class="language-plaintext highlighter-rouge">group="product"</code>).</p>
 
 <h3 id="generate-and-run-particular-tests">Generate and run particular tests</h3>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vendor/bin/mftf run:test LoginAsAdminTest LoginAsCustomerTest <span class="nt">-r</span>
 </code></pre></div></div>
 
-<p>This command cleans up the previously generated tests; generates and runs the <code class="highlighter-rouge">LoginAsAdminTest</code> and <code class="highlighter-rouge">LoginAsCustomerTest</code> tests.</p>
+<p>This command cleans up the previously generated tests; generates and runs the <code class="language-plaintext highlighter-rouge">LoginAsAdminTest</code> and <code class="language-plaintext highlighter-rouge">LoginAsCustomerTest</code> tests.</p>
 
 <h3 id="generate-and-run-previously-failed-tests">Generate and run previously failed tests</h3>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vendor/bin/mftf run:failed
 </code></pre></div></div>
 
-<p>This command cleans up the previously generated tests; generates and runs the tests listed in <code class="highlighter-rouge">dev/tests/acceptance/tests/_output/failed</code>.
-For more details about <code class="highlighter-rouge">failed</code>, refer to <a href="../reporting.html">Reporting</a>.</p>
+<p>This command cleans up the previously generated tests; generates and runs the tests listed in <code class="language-plaintext highlighter-rouge">dev/tests/acceptance/tests/_output/failed</code>.
+For more details about <code class="language-plaintext highlighter-rouge">failed</code>, refer to <a href="../reporting.html">Reporting</a>.</p>
 
 <h2 id="reference">Reference</h2>
 
-<h3 id="buildproject"><code class="highlighter-rouge">build:project</code></h3>
+<h3 id="buildproject"><code class="language-plaintext highlighter-rouge">build:project</code></h3>
 
 <h4 id="description">Description</h4>
 
@@ -2247,8 +2245,8 @@ For more details about <code class="highlighter-rouge">failed</code>, refer to <
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">-u</code>, <code class="highlighter-rouge">--upgrade</code></td>
-      <td>Upgrades existing <abbr title="Magento Functional Testing Framework">MFTF</abbr> tests according to requirements of the last major release. Specifying this flag upgrades only those tests in the default location. Example: <code class="highlighter-rouge">build:project --upgrade</code>.</td>
+      <td><code class="language-plaintext highlighter-rouge">-u</code>, <code class="language-plaintext highlighter-rouge">--upgrade</code></td>
+      <td>Upgrades existing <abbr title="Magento Functional Testing Framework">MFTF</abbr> tests according to requirements of the last major release. Specifying this flag upgrades only those tests in the default location. Example: <code class="language-plaintext highlighter-rouge">build:project --upgrade</code>.</td>
     </tr>
   </tbody>
 </table>
@@ -2258,12 +2256,12 @@ For more details about <code class="highlighter-rouge">failed</code>, refer to <
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vendor/bin/mftf build:project <span class="nt">--MAGENTO_BASE_URL</span><span class="o">=</span>http://magento.local/ <span class="nt">--MAGENTO_BACKEND_NAME</span><span class="o">=</span>admin214365
 </code></pre></div></div>
 
-<h3 id="generatetests"><code class="highlighter-rouge">generate:tests</code></h3>
+<h3 id="generatetests"><code class="language-plaintext highlighter-rouge">generate:tests</code></h3>
 
 <h4 id="description-1">Description</h4>
 
 <p>Generate PHP code from the tests defined in XML files.
-The path is set in the <code class="highlighter-rouge">TESTS_MODULE_PATH</code> <a href="../configuration.html">configuration</a> parameter.</p>
+The path is set in the <code class="language-plaintext highlighter-rouge">TESTS_MODULE_PATH</code> <a href="../configuration.html">configuration</a> parameter.</p>
 
 <h4 id="usage-1">Usage</h4>
 
@@ -2281,28 +2279,28 @@ The path is set in the <code class="highlighter-rouge">TESTS_MODULE_PATH</code> 
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">--config=[&lt;default&gt;|&lt;singleRun&gt;|&lt;parallel&gt;]</code></td>
-      <td>Creates a single manifest file with a list of all tests. The default location is <code class="highlighter-rouge">tests/functional/Magento/FunctionalTest/_generated/testManifest.txt</code>.<br /> You can split the list into multiple groups using <code class="highlighter-rouge">--config=parallel</code>; the groups will be generated in <code class="highlighter-rouge">_generated/groups/</code> like <code class="highlighter-rouge">_generated/groups/group1.txt, group2.txt, ...</code>.&lt;/br&gt; Available values: <code class="highlighter-rouge">default</code> (default), <code class="highlighter-rouge">singleRun</code>(same as <code class="highlighter-rouge">default</code>), and <code class="highlighter-rouge">parallel</code>.&lt;/br&gt; Example: <code class="highlighter-rouge">generate:tests --config=parallel</code>.</td>
+      <td><code class="language-plaintext highlighter-rouge">--config=[&lt;default&gt;|&lt;singleRun&gt;|&lt;parallel&gt;]</code></td>
+      <td>Creates a single manifest file with a list of all tests. The default location is <code class="language-plaintext highlighter-rouge">tests/functional/Magento/FunctionalTest/_generated/testManifest.txt</code>.<br /> You can split the list into multiple groups using <code class="language-plaintext highlighter-rouge">--config=parallel</code>; the groups will be generated in <code class="language-plaintext highlighter-rouge">_generated/groups/</code> like <code class="language-plaintext highlighter-rouge">_generated/groups/group1.txt, group2.txt, ...</code>.&lt;/br&gt; Available values: <code class="language-plaintext highlighter-rouge">default</code> (default), <code class="language-plaintext highlighter-rouge">singleRun</code>(same as <code class="language-plaintext highlighter-rouge">default</code>), and <code class="language-plaintext highlighter-rouge">parallel</code>.&lt;/br&gt; Example: <code class="language-plaintext highlighter-rouge">generate:tests --config=parallel</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">--force</code></td>
-      <td>Forces test generation, regardless of the module merge order defined in the Magento instance. Example: <code class="highlighter-rouge">generate:tests --force</code>.</td>
+      <td><code class="language-plaintext highlighter-rouge">--force</code></td>
+      <td>Forces test generation, regardless of the module merge order defined in the Magento instance. Example: <code class="language-plaintext highlighter-rouge">generate:tests --force</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">-i,--time</code></td>
-      <td>Set time in minutes to determine the group size when <code class="highlighter-rouge">--config=parallel</code> is used. The <strong>default value</strong> is <code class="highlighter-rouge">10</code>. Example: <code class="highlighter-rouge">generate:tests --config=parallel --time=15</code></td>
+      <td><code class="language-plaintext highlighter-rouge">-i,--time</code></td>
+      <td>Set time in minutes to determine the group size when <code class="language-plaintext highlighter-rouge">--config=parallel</code> is used. The <strong>default value</strong> is <code class="language-plaintext highlighter-rouge">10</code>. Example: <code class="language-plaintext highlighter-rouge">generate:tests --config=parallel --time=15</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">--tests</code></td>
+      <td><code class="language-plaintext highlighter-rouge">--tests</code></td>
       <td>Defines the test configuration as a JSON string.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">--debug</code></td>
+      <td><code class="language-plaintext highlighter-rouge">--debug</code></td>
       <td>Returns additional debug information (such as the filename where an error occurred) when test generation fails because of an invalid XML schema. This parameter takes extra processing time. Use it after test generation has failed once.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">-r,--remove</code></td>
-      <td>Removes the existing generated suites and tests cleaning up the <code class="highlighter-rouge">_generated</code> directory before the actual run. For example, <code class="highlighter-rouge">generate:tests SampleTest --remove</code> cleans up the entire <code class="highlighter-rouge">_generated</code> directory and generates <code class="highlighter-rouge">SampleTest</code> only.</td>
+      <td><code class="language-plaintext highlighter-rouge">-r,--remove</code></td>
+      <td>Removes the existing generated suites and tests cleaning up the <code class="language-plaintext highlighter-rouge">_generated</code> directory before the actual run. For example, <code class="language-plaintext highlighter-rouge">generate:tests SampleTest --remove</code> cleans up the entire <code class="language-plaintext highlighter-rouge">_generated</code> directory and generates <code class="language-plaintext highlighter-rouge">SampleTest</code> only.</td>
     </tr>
   </tbody>
 </table>
@@ -2312,19 +2310,19 @@ The path is set in the <code class="highlighter-rouge">TESTS_MODULE_PATH</code> 
 <p>The configuration to generate a single test with no suites:</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">  
-   </span><span class="s2">"tests"</span><span class="p">:[</span><span class="w">
+   </span><span class="nl">"tests"</span><span class="p">:[</span><span class="w">
       </span><span class="s2">"general_test1"</span><span class="w">     </span><span class="err">//Generate</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="s2">"general_test1"</span><span class="w"> </span><span class="err">test.</span><span class="w">
       </span><span class="p">],</span><span class="w">
-   </span><span class="s2">"suites"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+   </span><span class="nl">"suites"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
 <p>The configuration to generate a single test in the suite:</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">  
-   </span><span class="s2">"tests"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">         </span><span class="err">//</span><span class="w"> </span><span class="err">No</span><span class="w"> </span><span class="err">tests</span><span class="w"> </span><span class="err">outside</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">suite</span><span class="w"> </span><span class="err">configuration</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">generated.</span><span class="w">
-   </span><span class="s2">"suites"</span><span class="p">:{</span><span class="w">  
-      </span><span class="s2">"sample"</span><span class="p">:[</span><span class="w">          </span><span class="err">//</span><span class="w"> </span><span class="err">The</span><span class="w"> </span><span class="err">suite</span><span class="w"> </span><span class="err">that</span><span class="w"> </span><span class="err">contains</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">test.</span><span class="w">
+   </span><span class="nl">"tests"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">         </span><span class="err">//</span><span class="w"> </span><span class="err">No</span><span class="w"> </span><span class="err">tests</span><span class="w"> </span><span class="err">outside</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">suite</span><span class="w"> </span><span class="err">configuration</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">generated.</span><span class="w">
+   </span><span class="nl">"suites"</span><span class="p">:{</span><span class="w">  
+      </span><span class="nl">"sample"</span><span class="p">:[</span><span class="w">          </span><span class="err">//</span><span class="w"> </span><span class="err">The</span><span class="w"> </span><span class="err">suite</span><span class="w"> </span><span class="err">that</span><span class="w"> </span><span class="err">contains</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">test.</span><span class="w">
          </span><span class="s2">"suite_test1"</span><span class="w">    </span><span class="err">//</span><span class="w"> </span><span class="err">The</span><span class="w"> </span><span class="err">test</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">generated.</span><span class="w">
       </span><span class="p">]</span><span class="w">
    </span><span class="p">}</span><span class="w">
@@ -2334,16 +2332,16 @@ The path is set in the <code class="highlighter-rouge">TESTS_MODULE_PATH</code> 
 <p>Complex configuration to generate a few non-suite tests, a single test in a suite, and an entire suite:</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">  
-   </span><span class="s2">"tests"</span><span class="p">:[</span><span class="w">  
+   </span><span class="nl">"tests"</span><span class="p">:[</span><span class="w">  
       </span><span class="s2">"general_test1"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"general_test2"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"general_test3"</span><span class="w">
    </span><span class="p">],</span><span class="w">
-   </span><span class="s2">"suites"</span><span class="p">:{</span><span class="w">             </span><span class="err">//Go</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">suites.</span><span class="w">
-      </span><span class="s2">"sample"</span><span class="p">:[</span><span class="w">          </span><span class="err">//Go</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="s2">"sample"</span><span class="w"> </span><span class="err">suite.</span><span class="w">
+   </span><span class="nl">"suites"</span><span class="p">:{</span><span class="w">             </span><span class="err">//Go</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">suites.</span><span class="w">
+      </span><span class="nl">"sample"</span><span class="p">:[</span><span class="w">          </span><span class="err">//Go</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="s2">"sample"</span><span class="w"> </span><span class="err">suite.</span><span class="w">
          </span><span class="s2">"suite_test1"</span><span class="w">    </span><span class="err">//Generate</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="s2">"suite_test1"</span><span class="w"> </span><span class="err">test.</span><span class="w">
       </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"sample2"</span><span class="p">:[]</span><span class="w">        </span><span class="err">//Generate</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">tests</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="s2">"sample2"</span><span class="w"> </span><span class="err">suite.</span><span class="w">
+      </span><span class="nl">"sample2"</span><span class="p">:[]</span><span class="w">        </span><span class="err">//Generate</span><span class="w"> </span><span class="err">all</span><span class="w"> </span><span class="err">tests</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="s2">"sample2"</span><span class="w"> </span><span class="err">suite.</span><span class="w">
    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
@@ -2359,7 +2357,7 @@ The path is set in the <code class="highlighter-rouge">TESTS_MODULE_PATH</code> 
   <p>The strings must be escaped and surrounded in quotes.</p>
 </div>
 
-<h3 id="generatesuite"><code class="highlighter-rouge">generate:suite</code></h3>
+<h3 id="generatesuite"><code class="language-plaintext highlighter-rouge">generate:suite</code></h3>
 
 <h4 id="description-2">Description</h4>
 
@@ -2381,8 +2379,8 @@ The path is set in the <code class="highlighter-rouge">TESTS_MODULE_PATH</code> 
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">-r,--remove</code></td>
-      <td>Removes the existing generated suites and tests cleaning up the <code class="highlighter-rouge">_generated</code> directory before the actual run. For example, <code class="highlighter-rouge">vendor/bin/mftf generate:suite WYSIWYG --remove</code> cleans up the entire <code class="highlighter-rouge">_generated</code> directory and generates <code class="highlighter-rouge">WYSIWYG</code> only.</td>
+      <td><code class="language-plaintext highlighter-rouge">-r,--remove</code></td>
+      <td>Removes the existing generated suites and tests cleaning up the <code class="language-plaintext highlighter-rouge">_generated</code> directory before the actual run. For example, <code class="language-plaintext highlighter-rouge">vendor/bin/mftf generate:suite WYSIWYG --remove</code> cleans up the entire <code class="language-plaintext highlighter-rouge">_generated</code> directory and generates <code class="language-plaintext highlighter-rouge">WYSIWYG</code> only.</td>
     </tr>
   </tbody>
 </table>
@@ -2392,7 +2390,7 @@ The path is set in the <code class="highlighter-rouge">TESTS_MODULE_PATH</code> 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vendor/bin/mftf generate:suite suite1 suite2
 </code></pre></div></div>
 
-<h3 id="generateurn-catalog"><code class="highlighter-rouge">generate:urn-catalog</code></h3>
+<h3 id="generateurn-catalog"><code class="language-plaintext highlighter-rouge">generate:urn-catalog</code></h3>
 
 <h4 id="description-3">Description</h4>
 
@@ -2404,7 +2402,7 @@ It also enables auto-completion in PhpStorm.</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vendor/bin/mftf generate:urn-catalog <span class="o">[</span><span class="nt">--force</span><span class="o">]</span> <span class="o">[</span>&lt;path to the directory with misc.xml&gt;]
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">misc.xml</code> is typically located in <code class="highlighter-rouge">&lt;project root&gt;/.idea/</code>.</p>
+<p><code class="language-plaintext highlighter-rouge">misc.xml</code> is typically located in <code class="language-plaintext highlighter-rouge">&lt;project root&gt;/.idea/</code>.</p>
 
 <h4 id="options-3">Options</h4>
 
@@ -2417,8 +2415,8 @@ It also enables auto-completion in PhpStorm.</p>
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">-f, --force</code></td>
-      <td>Creates the <code class="highlighter-rouge">misc.xml</code> file if it does not exist in the given <code class="highlighter-rouge">path</code>.</td>
+      <td><code class="language-plaintext highlighter-rouge">-f, --force</code></td>
+      <td>Creates the <code class="language-plaintext highlighter-rouge">misc.xml</code> file if it does not exist in the given <code class="language-plaintext highlighter-rouge">path</code>.</td>
     </tr>
   </tbody>
 </table>
@@ -2428,12 +2426,12 @@ It also enables auto-completion in PhpStorm.</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vendor/bin/mftf generate:urn-catalog .idea/
 </code></pre></div></div>
 
-<h3 id="reset"><code class="highlighter-rouge">reset</code></h3>
+<h3 id="reset"><code class="language-plaintext highlighter-rouge">reset</code></h3>
 
 <h4 id="description-4">Description</h4>
 
 <p>Cleans any configuration files and generated artifacts from the environment.
-The <code class="highlighter-rouge">.env</code> file is not affected.</p>
+The <code class="language-plaintext highlighter-rouge">.env</code> file is not affected.</p>
 
 <h4 id="usage-4">Usage</h4>
 
@@ -2451,7 +2449,7 @@ The <code class="highlighter-rouge">.env</code> file is not affected.</p>
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">--hard</code></td>
+      <td><code class="language-plaintext highlighter-rouge">--hard</code></td>
       <td>Forces a reset of the configuration files.</td>
     </tr>
   </tbody>
@@ -2462,7 +2460,7 @@ The <code class="highlighter-rouge">.env</code> file is not affected.</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vendor/bin/mftf reset <span class="nt">--hard</span>
 </code></pre></div></div>
 
-<h3 id="rungroup"><code class="highlighter-rouge">run:group</code></h3>
+<h3 id="rungroup"><code class="language-plaintext highlighter-rouge">run:group</code></h3>
 
 <p>Generates and executes the listed groups of tests using Codeception.</p>
 
@@ -2482,11 +2480,11 @@ The <code class="highlighter-rouge">.env</code> file is not affected.</p>
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">-k, --skip-generate</code></td>
+      <td><code class="language-plaintext highlighter-rouge">-k, --skip-generate</code></td>
       <td>Skips generating from the source XML. Instead, the command executes previously-generated groups of tests.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">-r, --remove</code></td>
+      <td><code class="language-plaintext highlighter-rouge">-r, --remove</code></td>
       <td>Removes previously generated suites and tests before the actual generation and run.</td>
     </tr>
   </tbody>
@@ -2494,17 +2492,17 @@ The <code class="highlighter-rouge">.env</code> file is not affected.</p>
 
 <h4 id="examples">Examples</h4>
 
-<p>Clean up after the last test run; generate from XML and execute the tests with the annotations <code class="highlighter-rouge">group="group1"</code> and <code class="highlighter-rouge">group="group2"</code>:</p>
+<p>Clean up after the last test run; generate from XML and execute the tests with the annotations <code class="language-plaintext highlighter-rouge">group="group1"</code> and <code class="language-plaintext highlighter-rouge">group="group2"</code>:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vendor/bin/mftf <span class="nt">-r</span> <span class="nt">--</span> run:group group1 group2
 </code></pre></div></div>
 
-<p>Execute previously generated tests with the annotations <code class="highlighter-rouge">group="group1"</code> and <code class="highlighter-rouge">group="group2"</code>, skipping the regeneration of the test:</p>
+<p>Execute previously generated tests with the annotations <code class="language-plaintext highlighter-rouge">group="group1"</code> and <code class="language-plaintext highlighter-rouge">group="group2"</code>, skipping the regeneration of the test:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vendor/bin/mftf run:group <span class="nt">-k</span> <span class="nt">--</span> group1 group2
 </code></pre></div></div>
 
-<h3 id="runtest"><code class="highlighter-rouge">run:test</code></h3>
+<h3 id="runtest"><code class="language-plaintext highlighter-rouge">run:test</code></h3>
 
 <p>Generates and executes tests by name using Codeception.</p>
 
@@ -2524,11 +2522,11 @@ The <code class="highlighter-rouge">.env</code> file is not affected.</p>
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">-k, --skip-generate</code></td>
+      <td><code class="language-plaintext highlighter-rouge">-k, --skip-generate</code></td>
       <td>Skips generating from the source XML. Instead, the command executes previously-generated groups of tests.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">-r, --remove</code></td>
+      <td><code class="language-plaintext highlighter-rouge">-r, --remove</code></td>
       <td>Remove previously generated suites and tests.</td>
     </tr>
   </tbody>
@@ -2536,17 +2534,17 @@ The <code class="highlighter-rouge">.env</code> file is not affected.</p>
 
 <h4 id="examples-1">Examples</h4>
 
-<p>Generate the <code class="highlighter-rouge">LoginCustomerTest</code> and <code class="highlighter-rouge">StorefrontCreateCustomerTest</code> tests from XML and execute all the generated tests:</p>
+<p>Generate the <code class="language-plaintext highlighter-rouge">LoginCustomerTest</code> and <code class="language-plaintext highlighter-rouge">StorefrontCreateCustomerTest</code> tests from XML and execute all the generated tests:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vendor/bin/mftf run:test LoginCustomerTest StorefrontCreateCustomerTest
 </code></pre></div></div>
 
-<h3 id="runfailed"><code class="highlighter-rouge">run:failed</code></h3>
+<h3 id="runfailed"><code class="language-plaintext highlighter-rouge">run:failed</code></h3>
 
 <p>Generates and executes failed tests.</p>
 
-<p>This command cleans up previously generated tests. It generates and runs the tests listed in <code class="highlighter-rouge">dev/tests/acceptance/tests/_output/failed</code>.
-For more details about <code class="highlighter-rouge">failed</code>, refer to <a href="../reporting.html">Reporting</a>.</p>
+<p>This command cleans up previously generated tests. It generates and runs the tests listed in <code class="language-plaintext highlighter-rouge">dev/tests/acceptance/tests/_output/failed</code>.
+For more details about <code class="language-plaintext highlighter-rouge">failed</code>, refer to <a href="../reporting.html">Reporting</a>.</p>
 
 <h4 id="usage-7">Usage</h4>
 
@@ -2560,56 +2558,56 @@ For more details about <code class="highlighter-rouge">failed</code>, refer to <
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vendor/bin/mftf run:failed
 </code></pre></div></div>
 
-<h3 id="setupenv"><code class="highlighter-rouge">setup:env</code></h3>
+<h3 id="setupenv"><code class="language-plaintext highlighter-rouge">setup:env</code></h3>
 
-<p>Updates the <a href="../configuration.html">configuration</a> parameter values in the [<code class="highlighter-rouge">.env</code>] file.
-Creates the <code class="highlighter-rouge">.env</code> file if it does not exist.</p>
+<p>Updates the <a href="../configuration.html">configuration</a> parameter values in the [<code class="language-plaintext highlighter-rouge">.env</code>] file.
+Creates the <code class="language-plaintext highlighter-rouge">.env</code> file if it does not exist.</p>
 
 <h4 id="usage-8">Usage</h4>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vendor/bin/mftf setup:env <span class="o">[</span><span class="nv">config_param_option1</span><span class="o">=</span>&lt;value&gt;] <span class="o">[</span><span class="nv">config_param_option2</span><span class="o">=</span>&lt;value&gt;]
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">config_param</code> is a configuration parameter from the <code class="highlighter-rouge">.env</code> file.
-The command consumes the parameters in a format of options assigned with values, for example <code class="highlighter-rouge">--MAGENTO_BASE_URL=http://magento.local/</code>.
-If you specify a parameter that the <code class="highlighter-rouge">.env</code> file does not contain, the command returns an error.</p>
+<p><code class="language-plaintext highlighter-rouge">config_param</code> is a configuration parameter from the <code class="language-plaintext highlighter-rouge">.env</code> file.
+The command consumes the parameters in a format of options assigned with values, for example <code class="language-plaintext highlighter-rouge">--MAGENTO_BASE_URL=http://magento.local/</code>.
+If you specify a parameter that the <code class="language-plaintext highlighter-rouge">.env</code> file does not contain, the command returns an error.</p>
 
-<p>You can also update configuration parameter values when you use the <a href="#buildproject"><code class="highlighter-rouge">build:project</code></a> command.</p>
+<p>You can also update configuration parameter values when you use the <a href="#buildproject"><code class="language-plaintext highlighter-rouge">build:project</code></a> command.</p>
 
 <h4 id="examples-3">Examples</h4>
 
-<p>To change values for the <code class="highlighter-rouge">MAGENTO_BASE_URL</code> and <code class="highlighter-rouge">BROWSER</code>:</p>
+<p>To change values for the <code class="language-plaintext highlighter-rouge">MAGENTO_BASE_URL</code> and <code class="language-plaintext highlighter-rouge">BROWSER</code>:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vendor/bin/mftf setup:env <span class="nt">--MAGENTO_BASE_URL</span><span class="o">=</span>http://magento.local/ <span class="nt">--BROWSER</span><span class="o">=</span>firefox
 </code></pre></div></div>
 
-<p>To create a <code class="highlighter-rouge">.env</code> file with example parameters:</p>
+<p>To create a <code class="language-plaintext highlighter-rouge">.env</code> file with example parameters:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vendor/bin/mftf setup:env
 </code></pre></div></div>
 
-<p>The example parameters are taken from the <code class="highlighter-rouge">etc/config/.env.example</code> file.</p>
+<p>The example parameters are taken from the <code class="language-plaintext highlighter-rouge">etc/config/.env.example</code> file.</p>
 
-<h3 id="upgradetests"><code class="highlighter-rouge">upgrade:tests</code></h3>
+<h3 id="upgradetests"><code class="language-plaintext highlighter-rouge">upgrade:tests</code></h3>
 
-<p>Applies all the <abbr title="Magento Functional Testing Framework">MFTF</abbr> major version upgrade scripts to test components in the given path (<code class="highlighter-rouge">test.xml</code>, <code class="highlighter-rouge">data.xml</code>, etc).</p>
+<p>Applies all the <abbr title="Magento Functional Testing Framework">MFTF</abbr> major version upgrade scripts to test components in the given path (<code class="language-plaintext highlighter-rouge">test.xml</code>, <code class="language-plaintext highlighter-rouge">data.xml</code>, etc).</p>
 
 <h4 id="usage-9">Usage</h4>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vendor/bin/mftf upgrade:tests &lt;path&gt;
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">&lt;path&gt;</code> is the path that contains <abbr title="Magento Functional Testing Framework">MFTF</abbr> test components that need to be upgraded.
-The command searches recursively for any <code class="highlighter-rouge">*.xml</code> files to upgrade.</p>
+<p><code class="language-plaintext highlighter-rouge">&lt;path&gt;</code> is the path that contains <abbr title="Magento Functional Testing Framework">MFTF</abbr> test components that need to be upgraded.
+The command searches recursively for any <code class="language-plaintext highlighter-rouge">*.xml</code> files to upgrade.</p>
 
 <h4 id="examples-4">Examples</h4>
 
-<p>To upgrade all test components inside modules in the <code class="highlighter-rouge">dev/tests/acceptance/tests/</code> directory:</p>
+<p>To upgrade all test components inside modules in the <code class="language-plaintext highlighter-rouge">dev/tests/acceptance/tests/</code> directory:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vendor/bin/mftf upgrade:tests /Users/user/magento2/dev/tests/acceptance/tests/
 </code></pre></div></div>
 
-<p>To upgrade all test components inside the <code class="highlighter-rouge">Catalog</code> module:</p>
+<p>To upgrade all test components inside the <code class="language-plaintext highlighter-rouge">Catalog</code> module:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vendor/bin/mftf upgrade:tests /Users/user/magento2/app/code/Magento/Catalog/Test/Mftf/
 </code></pre></div></div>

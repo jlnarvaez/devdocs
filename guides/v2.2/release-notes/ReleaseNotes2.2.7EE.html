@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento Commerce 2.2.7 Release Notes | Magento 2 Developer Documentation (copy)</title>
+	<title>Magento Commerce 2.2.7 Release Notes | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/release-notes/ReleaseNotes2.2.7EE.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/release-notes/ReleaseNotes2.2.7EE.html">Magento 2.0</a></li>
 		
@@ -2233,7 +2234,7 @@
 
 <!-- MAGETWO-89654 -->
 <ul>
-  <li>Merchants can now create a Company with an optional regional setting. Previously, Magento displayed this message, <code class="highlighter-rouge">Error message: Invalid value of "" provided for the region_id field.</code></li>
+  <li>Merchants can now create a Company with an optional regional setting. Previously, Magento displayed this message, <code class="language-plaintext highlighter-rouge">Error message: Invalid value of "" provided for the region_id field.</code></li>
 </ul>
 
 <!-- MAGETWO-92400 -->
@@ -2293,7 +2294,7 @@
 
 <!-- MAGETWO-94764 -->
 <ul>
-  <li>Fixed an issue with the shared configuration settings in <code class="highlighter-rouge">app/etc/config.php</code> that caused <code class="highlighter-rouge">recursion detected</code> errors during deployment.</li>
+  <li>Fixed an issue with the shared configuration settings in <code class="language-plaintext highlighter-rouge">app/etc/config.php</code> that caused <code class="language-plaintext highlighter-rouge">recursion detected</code> errors during deployment.</li>
 </ul>
 
 <!-- ENGCOM-2673 -->
@@ -2308,32 +2309,32 @@
 
 <!-- MAGETWO-94475 -->
 <ul>
-  <li>The <code class="highlighter-rouge">bin/magento</code> command now works as expected when Magento is not installed. Previously, Magento displayed this error, <code class="highlighter-rouge">Command line user does not have read and write permissions on generated directory. Please address this issue before using Magento command line.</code></li>
+  <li>The <code class="language-plaintext highlighter-rouge">bin/magento</code> command now works as expected when Magento is not installed. Previously, Magento displayed this error, <code class="language-plaintext highlighter-rouge">Command line user does not have read and write permissions on generated directory. Please address this issue before using Magento command line.</code></li>
 </ul>
 
 <!-- ENGCOM-2740 -->
 <ul>
-  <li>Magento no longer throws an error when loading configuration data while running the <code class="highlighter-rouge">setup:di:compile</code> command. Previously, Magento threw an error when loading configuration data before Magento was installed because no  store-specific or website-specific configuration data was available. (Store and website data is available only after Magento is installed.) <em>Fix submitted by <a href="https://github.com/mimarcel">Marcel</a> in pull request <a href="https://github.com/magento/magento2/pull/13649">13649</a></em>.</li>
+  <li>Magento no longer throws an error when loading configuration data while running the <code class="language-plaintext highlighter-rouge">setup:di:compile</code> command. Previously, Magento threw an error when loading configuration data before Magento was installed because no  store-specific or website-specific configuration data was available. (Store and website data is available only after Magento is installed.) <em>Fix submitted by <a href="https://github.com/mimarcel">Marcel</a> in pull request <a href="https://github.com/magento/magento2/pull/13649">13649</a></em>.</li>
 </ul>
 
 <!-- ENGCOM-2674 -->
 <ul>
-  <li>You can now set a custom <code class="highlighter-rouge">frontend_model</code> value in <code class="highlighter-rouge">system.xml</code> if the name of the module you’re using contains an underscore. <em>Fix submitted by <a href="https://github.com/bentideswell">Ben Tideswell</a> in pull request <a href="https://github.com/magento/magento2/pull/14397">14397</a></em>.</li>
+  <li>You can now set a custom <code class="language-plaintext highlighter-rouge">frontend_model</code> value in <code class="language-plaintext highlighter-rouge">system.xml</code> if the name of the module you’re using contains an underscore. <em>Fix submitted by <a href="https://github.com/bentideswell">Ben Tideswell</a> in pull request <a href="https://github.com/magento/magento2/pull/14397">14397</a></em>.</li>
 </ul>
 
 <!-- ENGCOM-2596 -->
 <ul>
-  <li>Performance of the <code class="highlighter-rouge">setup:upgrade</code> step  of the update process has been improved for installations containing many orders (greater than 100,000). <em>Fix submitted by <a href="https://github.com/AurelienLavorel">Aurélien Lavorel</a> in pull request <a href="https://github.com/magento/magento2/pull/16570">16570</a></em>.</li>
+  <li>Performance of the <code class="language-plaintext highlighter-rouge">setup:upgrade</code> step  of the update process has been improved for installations containing many orders (greater than 100,000). <em>Fix submitted by <a href="https://github.com/AurelienLavorel">Aurélien Lavorel</a> in pull request <a href="https://github.com/magento/magento2/pull/16570">16570</a></em>.</li>
 </ul>
 
 <!-- ENGCOM-2646 -->
 <ul>
-  <li>You can now complete <code class="highlighter-rouge">setup:install</code> for installations running  an authenticated Redis instance for cache configuration. Previously, Magento did not read the Redis cache options in <code class="highlighter-rouge">env.php</code> as expected, although  the Redis session password configuration worked as expected.  <em>Fix submitted by <a href="https://github.com/guillaumegiordana">Guillaume Giordana</a> in pull request <a href="https://github.com/magento/magento2/pull/17078">17078</a></em>.</li>
+  <li>You can now complete <code class="language-plaintext highlighter-rouge">setup:install</code> for installations running  an authenticated Redis instance for cache configuration. Previously, Magento did not read the Redis cache options in <code class="language-plaintext highlighter-rouge">env.php</code> as expected, although  the Redis session password configuration worked as expected.  <em>Fix submitted by <a href="https://github.com/guillaumegiordana">Guillaume Giordana</a> in pull request <a href="https://github.com/magento/magento2/pull/17078">17078</a></em>.</li>
 </ul>
 
 <!-- ENGCOM-2721 -->
 <ul>
-  <li>You can now replace the transaction trace driver for the Profiler (<code class="highlighter-rouge">app/bootstrap.php</code>). For example, with this change you could replace  the default profiler with the OpenTracing API, which can then use its own exporters to express the code to the CNCF Jaeger project. This in turn supports a more granular view of application transactions. <em>Fix submitted by <a href="https://github.com/andrewhowdencom">Andrew Howden</a> in pull request <a href="https://github.com/magento/magento2/pull/15171">15171</a></em>.</li>
+  <li>You can now replace the transaction trace driver for the Profiler (<code class="language-plaintext highlighter-rouge">app/bootstrap.php</code>). For example, with this change you could replace  the default profiler with the OpenTracing API, which can then use its own exporters to express the code to the CNCF Jaeger project. This in turn supports a more granular view of application transactions. <em>Fix submitted by <a href="https://github.com/andrewhowdencom">Andrew Howden</a> in pull request <a href="https://github.com/magento/magento2/pull/15171">15171</a></em>.</li>
 </ul>
 
 <h3 id="admingws">AdminGWS</h3>
@@ -2345,7 +2346,7 @@
 
 <!-- MAGETWO-90765 -->
 <ul>
-  <li>Administrators with restricted privileges can now edit and create CMS blocks as expected. Previously, Magento threw an  error like this when an administrator tried to edit or create a block: <code class="highlighter-rouge">Warning: array_intersect(): Argument #1 is not an array in /var/www/html/magento2ee/app/code/Magento/AdminGws/Model/Models.php on line 1075 </code>.￼</li>
+  <li>Administrators with restricted privileges can now edit and create CMS blocks as expected. Previously, Magento threw an  error like this when an administrator tried to edit or create a block: <code class="language-plaintext highlighter-rouge">Warning: array_intersect(): Argument #1 is not an array in /var/www/html/magento2ee/app/code/Magento/AdminGws/Model/Models.php on line 1075 </code>.￼</li>
 </ul>
 
 <h3 id="b2b-1">B2B</h3>
@@ -2362,7 +2363,7 @@
 
 <!-- MAGETWO-89654 -->
 <ul>
-  <li>Merchants can now create a company with an optional regional setting. Previously, Magento displayed this message, <code class="highlighter-rouge">Error message: Invalid value of "" provided for the region_id field</code>.</li>
+  <li>Merchants can now create a company with an optional regional setting. Previously, Magento displayed this message, <code class="language-plaintext highlighter-rouge">Error message: Invalid value of "" provided for the region_id field</code>.</li>
 </ul>
 
 <!-- MAGETWO-93081 -->
@@ -2418,7 +2419,7 @@
 
 <!-- ENGCOM-2650 -->
 <ul>
-  <li>Parent theme image height settings (specified in <code class="highlighter-rouge">view.xml</code>) no longer override the height settings assigned to individual images. <em>Fix submitted by <a href="https://github.com/quisse">Tommy Quissens</a> in pull request <a href="https://github.com/magento/magento2/pull/14537">14537</a></em>. <a href="https://github.com/magento/magento2/issues/12250">GitHub-12250</a></li>
+  <li>Parent theme image height settings (specified in <code class="language-plaintext highlighter-rouge">view.xml</code>) no longer override the height settings assigned to individual images. <em>Fix submitted by <a href="https://github.com/quisse">Tommy Quissens</a> in pull request <a href="https://github.com/magento/magento2/pull/14537">14537</a></em>. <a href="https://github.com/magento/magento2/issues/12250">GitHub-12250</a></li>
 </ul>
 
 <!-- ENGCOM-2672 -->
@@ -2479,24 +2480,24 @@ product, and hung indefinitely while trying to add the product.</li>
 
 <!-- MAGETWO-73245 -->
 <ul>
-  <li>A merchant can now successfully create and save configurable products from the Admin in a multisite deployment. Previously, when a merchant created a configurable product with customizable options, Magento set its <code class="highlighter-rouge">has_options</code> and <code class="highlighter-rouge">required_options</code>  (in the <code class="highlighter-rouge">catalog_product_entity</code> table) to 0, and the merchant needed to click <strong>Save</strong> again to correctly add the product.</li>
+  <li>A merchant can now successfully create and save configurable products from the Admin in a multisite deployment. Previously, when a merchant created a configurable product with customizable options, Magento set its <code class="language-plaintext highlighter-rouge">has_options</code> and <code class="language-plaintext highlighter-rouge">required_options</code>  (in the <code class="language-plaintext highlighter-rouge">catalog_product_entity</code> table) to 0, and the merchant needed to click <strong>Save</strong> again to correctly add the product.</li>
 </ul>
 
 <!-- MAGETWO-93047 -->
 <ul>
-  <li>The <code class="highlighter-rouge">PUT rest/all/V1/categories/:categoryId</code> endpoint now requires the <code class="highlighter-rouge">name</code> field.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">PUT rest/all/V1/categories/:categoryId</code> endpoint now requires the <code class="language-plaintext highlighter-rouge">name</code> field.</li>
 </ul>
 
 <!-- ENGCOM-2622 -->
 <ul>
-  <li>Special price expressions now work as expected. Previously, <code class="highlighter-rouge">catalog_product_price</code> did not generate correct price data. <em>Fix submitted by <a href="https://github.com/DmitryChukhnov">Dmitry Chukhnov</a> in pull request <a href="https://github.com/magento/magento2/pull/16510">16510</a></em>.</li>
+  <li>Special price expressions now work as expected. Previously, <code class="language-plaintext highlighter-rouge">catalog_product_price</code> did not generate correct price data. <em>Fix submitted by <a href="https://github.com/DmitryChukhnov">Dmitry Chukhnov</a> in pull request <a href="https://github.com/magento/magento2/pull/16510">16510</a></em>.</li>
 </ul>
 
 <h3 id="catalog-rule">Catalog rule</h3>
 
 <!-- ENGCOM-2718 -->
 <ul>
-  <li><code class="highlighter-rouge">date</code> can now be used as a condition for Catalog Price rules. <em>Fix submitted by <a href="https://github.com/GlennCheng">Glenn Cheng</a> in pull request <a href="https://github.com/magento/magento2/pull/16855">16855</a></em>.</li>
+  <li><code class="language-plaintext highlighter-rouge">date</code> can now be used as a condition for Catalog Price rules. <em>Fix submitted by <a href="https://github.com/GlennCheng">Glenn Cheng</a> in pull request <a href="https://github.com/magento/magento2/pull/16855">16855</a></em>.</li>
 </ul>
 
 <h3 id="cart-and-checkout">Cart and checkout</h3>
@@ -2533,7 +2534,7 @@ product, and hung indefinitely while trying to add the product.</li>
 
 <!-- ENGCOM-2534 -->
 <ul>
-  <li>Third-party modules can now perform actions after <code class="highlighter-rouge">totals</code> calculation. (Modules can perform additional actions by adding <code class="highlighter-rouge">.done</code>, <code class="highlighter-rouge">.fail</code>, or <code class="highlighter-rouge">.always</code> tasks to the request promise by creating a JavaScript mixin for the totals processor.) <em>Fix submitted by <a href="https://github.com/navarr">Navarr Barnier</a> in pull request <a href="https://github.com/magento/magento2/pull/17127">17127</a></em>.</li>
+  <li>Third-party modules can now perform actions after <code class="language-plaintext highlighter-rouge">totals</code> calculation. (Modules can perform additional actions by adding <code class="language-plaintext highlighter-rouge">.done</code>, <code class="language-plaintext highlighter-rouge">.fail</code>, or <code class="language-plaintext highlighter-rouge">.always</code> tasks to the request promise by creating a JavaScript mixin for the totals processor.) <em>Fix submitted by <a href="https://github.com/navarr">Navarr Barnier</a> in pull request <a href="https://github.com/magento/magento2/pull/17127">17127</a></em>.</li>
 </ul>
 
 <!-- ENGCOM-2645 -->
@@ -2543,34 +2544,34 @@ product, and hung indefinitely while trying to add the product.</li>
 
 <!-- ENGCOM-2636 -->
 <ul>
-  <li>The sidebars for the wishlist on the catalog, my account, and checkout pages now render special characters correctly. Previously, the browser displayed <code class="highlighter-rouge">&amp;trade;</code> instead of rendered special characters on these pages. <em>Fix submitted by <a href="https://github.com/deepjoshi94">deepjoshi94</a> in pull request <a href="https://github.com/magento/magento2/pull/17070">17070</a></em>.</li>
+  <li>The sidebars for the wishlist on the catalog, my account, and checkout pages now render special characters correctly. Previously, the browser displayed <code class="language-plaintext highlighter-rouge">&amp;trade;</code> instead of rendered special characters on these pages. <em>Fix submitted by <a href="https://github.com/deepjoshi94">deepjoshi94</a> in pull request <a href="https://github.com/magento/magento2/pull/17070">17070</a></em>.</li>
 </ul>
 
 <!-- ENGCOM-2665 -->
 <ul>
-  <li>The <code class="highlighter-rouge">disabled attribute</code> has been removed from the region list. <em>Fix submitted by <a href="https://github.com/DanielRuf">Daniel Ruf</a> in pull request <a href="https://github.com/magento/magento2/pull/16955">16955</a></em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">disabled attribute</code> has been removed from the region list. <em>Fix submitted by <a href="https://github.com/DanielRuf">Daniel Ruf</a> in pull request <a href="https://github.com/magento/magento2/pull/16955">16955</a></em>.</li>
 </ul>
 
 <!-- ENGCOM-2210 -->
 <ul>
-  <li>The Admin checkout agreement controllers have been refactored to remove the use of <code class="highlighter-rouge">ObjectManager</code>. <em>Fix submitted by <a href="https://github.com/AnshuMishra17">AnshuMishra17</a> in pull request <a href="https://github.com/magento/magento2/pull/16505">16505</a></em>.</li>
+  <li>The Admin checkout agreement controllers have been refactored to remove the use of <code class="language-plaintext highlighter-rouge">ObjectManager</code>. <em>Fix submitted by <a href="https://github.com/AnshuMishra17">AnshuMishra17</a> in pull request <a href="https://github.com/magento/magento2/pull/16505">16505</a></em>.</li>
 </ul>
 
 <h3 id="clean-up-and-minor-refactoring">Clean up and minor refactoring</h3>
 
 <!-- ENGCOM-2580 -->
 <ul>
-  <li>Problems with the responsive layout  <code class="highlighter-rouge">app/design/frontend/Magento/luma/Magento_Theme/web/css/source/_module.less</code> have been resolved. <em>Fix submitted by <a href="https://github.com/mage2pratik">Pratik Oza</a> in pull request <a href="https://github.com/magento/magento2/pull/17217">17217</a></em>.</li>
+  <li>Problems with the responsive layout  <code class="language-plaintext highlighter-rouge">app/design/frontend/Magento/luma/Magento_Theme/web/css/source/_module.less</code> have been resolved. <em>Fix submitted by <a href="https://github.com/mage2pratik">Pratik Oza</a> in pull request <a href="https://github.com/magento/magento2/pull/17217">17217</a></em>.</li>
 </ul>
 
 <!-- ENGCOM-2549 -->
 <ul>
-  <li>The <code class="highlighter-rouge">text-align</code> for the <code class="highlighter-rouge">&lt;th&gt;</code> element of the Subtotal column in the creditmemo email has been corrected. <em>Fix submitted by <a href="https://github.com/TomashKhamlai">Tomash Khamlai</a> in pull request <a href="https://github.com/magento/magento2/pull/17153">17153</a></em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">text-align</code> for the <code class="language-plaintext highlighter-rouge">&lt;th&gt;</code> element of the Subtotal column in the creditmemo email has been corrected. <em>Fix submitted by <a href="https://github.com/TomashKhamlai">Tomash Khamlai</a> in pull request <a href="https://github.com/magento/magento2/pull/17153">17153</a></em>.</li>
 </ul>
 
 <!-- ENGCOM-2568 -->
 <ul>
-  <li>The  invalid <code class="highlighter-rouge">knockoutjs</code> data binding in Braintree PayPal has been fixed. <em>Fix submitted by <a href="https://github.com/tiagosampaio">Tiago Sampaio</a> in pull request <a href="https://github.com/magento/magento2/pull/17236">17236</a></em>.</li>
+  <li>The  invalid <code class="language-plaintext highlighter-rouge">knockoutjs</code> data binding in Braintree PayPal has been fixed. <em>Fix submitted by <a href="https://github.com/tiagosampaio">Tiago Sampaio</a> in pull request <a href="https://github.com/magento/magento2/pull/17236">17236</a></em>.</li>
 </ul>
 
 <!-- ENGCOM-2613 -->
@@ -2580,59 +2581,59 @@ product, and hung indefinitely while trying to add the product.</li>
 
 <!-- ENGCOM-2594 -->
 <ul>
-  <li>Files in <code class="highlighter-rouge">/lib</code> have been cleaned up. <em>Fix submitted by <a href="https://github.com/mage2pratik">Pratik Oza</a> in pull request <a href="https://github.com/magento/magento2/pull/17103">17103</a></em>.</li>
+  <li>Files in <code class="language-plaintext highlighter-rouge">/lib</code> have been cleaned up. <em>Fix submitted by <a href="https://github.com/mage2pratik">Pratik Oza</a> in pull request <a href="https://github.com/magento/magento2/pull/17103">17103</a></em>.</li>
 </ul>
 
 <!-- ENGCOM-2619 -->
 <ul>
-  <li>Unused IDs in <code class="highlighter-rouge">app/code/Magento/Checkout/view/frontend/web/template/billing-address/form.html</code> and <code class="highlighter-rouge">app/code/Magento/Checkout/Test/Mftf/Section/CheckoutPaymentSection.xml</code> have been removed. <em>Fix submitted by <a href="https://github.com/DanielRuf">Daniel Ruf</a> in pull request <a href="https://github.com/magento/magento2/pull/163541">163541</a></em>.</li>
+  <li>Unused IDs in <code class="language-plaintext highlighter-rouge">app/code/Magento/Checkout/view/frontend/web/template/billing-address/form.html</code> and <code class="language-plaintext highlighter-rouge">app/code/Magento/Checkout/Test/Mftf/Section/CheckoutPaymentSection.xml</code> have been removed. <em>Fix submitted by <a href="https://github.com/DanielRuf">Daniel Ruf</a> in pull request <a href="https://github.com/magento/magento2/pull/163541">163541</a></em>.</li>
 </ul>
 
 <!-- ENGCOM-2118 -->
 <ul>
-  <li>Removed unnecessary translation of HTML tags in <code class="highlighter-rouge">app/code/Magento/Catalog/Block/Adminhtml/Form/Renderer/Config/YearRange.php</code> and <code class="highlighter-rouge">app/code/Magento/Catalog/i18n/en_US.csv</code>. <em>Fix submitted by <a href="https://github.com/Yogeshks">Yogesh Suhagiya</a> in pull request <a href="https://github.com/magento/magento2/pull/17291">17291</a></em>.</li>
+  <li>Removed unnecessary translation of HTML tags in <code class="language-plaintext highlighter-rouge">app/code/Magento/Catalog/Block/Adminhtml/Form/Renderer/Config/YearRange.php</code> and <code class="language-plaintext highlighter-rouge">app/code/Magento/Catalog/i18n/en_US.csv</code>. <em>Fix submitted by <a href="https://github.com/Yogeshks">Yogesh Suhagiya</a> in pull request <a href="https://github.com/magento/magento2/pull/17291">17291</a></em>.</li>
 </ul>
 
 <!-- ENGCOM-2651 -->
 <ul>
-  <li>Minor CSS issues in <code class="highlighter-rouge">lib/internal/Magento/Framework/View/Test/Unit/Url/_files/sourceImport.css</code> have been fixed. <em>Fix submitted by <a href="https://github.com/arnoudhgz">Arnoud Beekman</a> in pull request <a href="https://github.com/magento/magento2/pull/17365">17365</a></em>.</li>
+  <li>Minor CSS issues in <code class="language-plaintext highlighter-rouge">lib/internal/Magento/Framework/View/Test/Unit/Url/_files/sourceImport.css</code> have been fixed. <em>Fix submitted by <a href="https://github.com/arnoudhgz">Arnoud Beekman</a> in pull request <a href="https://github.com/magento/magento2/pull/17365">17365</a></em>.</li>
 </ul>
 
 <!-- ENGCOM-2762 -->
 <ul>
-  <li>Duplicate code in <code class="highlighter-rouge">app/code/Magento/Ui/view/base/web/js/dynamic-rows/dynamic-rows.js</code> has been removed. <em>Fix submitted by <a href="https://github.com/arnoudhgz">Arnoud Beekman</a> in pull request <a href="https://github.com/magento/magento2/pull/17505">17505</a></em>.</li>
+  <li>Duplicate code in <code class="language-plaintext highlighter-rouge">app/code/Magento/Ui/view/base/web/js/dynamic-rows/dynamic-rows.js</code> has been removed. <em>Fix submitted by <a href="https://github.com/arnoudhgz">Arnoud Beekman</a> in pull request <a href="https://github.com/magento/magento2/pull/17505">17505</a></em>.</li>
 </ul>
 
 <!-- ENGCOM-2776 -->
 <ul>
-  <li>The code generator for Proxy is no longer missing <code class="highlighter-rouge">returnType</code> in the method information definition. <em>Fix submitted by <a href="https://github.com/adrian-martinez-interactiv4">adrian-martinez-interactiv4</a> in pull request <a href="https://github.com/magento/magento2/pull/17552">17552</a></em>.</li>
+  <li>The code generator for Proxy is no longer missing <code class="language-plaintext highlighter-rouge">returnType</code> in the method information definition. <em>Fix submitted by <a href="https://github.com/adrian-martinez-interactiv4">adrian-martinez-interactiv4</a> in pull request <a href="https://github.com/magento/magento2/pull/17552">17552</a></em>.</li>
 </ul>
 
 <!-- ENGCOM-2748 -->
 <ul>
-  <li>The <code class="highlighter-rouge">&lt;script/&gt;</code> tag has been replaced with <code class="highlighter-rouge">&lt;script type="text/x-magento-init" /&gt;</code> in  <code class="highlighter-rouge">app/code/Magento/Catalog/view/adminhtml/templates/catalog/product/attribute/form.phtml</code> and <code class="highlighter-rouge">app/code/Magento/Catalog/view/adminhtml/templates/catalog/product/edit/action/attribute.phtml</code>. Also,  a new JavaScript component with the callback function has been created.  <em>Fix submitted by <a href="https://github.com/swnsma">Yogesh Suhagiya</a> in pull request <a href="https://github.com/magento/magento2/pull/17527">17527</a></em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">&lt;script/&gt;</code> tag has been replaced with <code class="language-plaintext highlighter-rouge">&lt;script type="text/x-magento-init" /&gt;</code> in  <code class="language-plaintext highlighter-rouge">app/code/Magento/Catalog/view/adminhtml/templates/catalog/product/attribute/form.phtml</code> and <code class="language-plaintext highlighter-rouge">app/code/Magento/Catalog/view/adminhtml/templates/catalog/product/edit/action/attribute.phtml</code>. Also,  a new JavaScript component with the callback function has been created.  <em>Fix submitted by <a href="https://github.com/swnsma">Yogesh Suhagiya</a> in pull request <a href="https://github.com/magento/magento2/pull/17527">17527</a></em>.</li>
 </ul>
 
 <!-- ENGCOM-2632 -->
 <ul>
-  <li>The <code class="highlighter-rouge">$outputHelper</code> property declaration has been added to <code class="highlighter-rouge">app/code/Magento/Catalog/CustomerData/CompareProducts.php</code>. <em>Fix submitted by <a href="https://github.com/Yogeshks">Oleksandr Kravchuk</a> in pull request <a href="https://github.com/magento/magento2/pull/17250">17250</a></em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">$outputHelper</code> property declaration has been added to <code class="language-plaintext highlighter-rouge">app/code/Magento/Catalog/CustomerData/CompareProducts.php</code>. <em>Fix submitted by <a href="https://github.com/Yogeshks">Oleksandr Kravchuk</a> in pull request <a href="https://github.com/magento/magento2/pull/17250">17250</a></em>.</li>
 </ul>
 
 <!-- ENGCOM-2632 -->
 <ul>
-  <li>The <code class="highlighter-rouge">Magento_Backend</code> module  has been refactored. <em>Fix submitted by <a href="https://github.com/tiagosampaio">Tiago Sampaio</a> in pull request <a href="https://github.com/magento/magento2/pull/17101">17101</a></em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">Magento_Backend</code> module  has been refactored. <em>Fix submitted by <a href="https://github.com/tiagosampaio">Tiago Sampaio</a> in pull request <a href="https://github.com/magento/magento2/pull/17101">17101</a></em>.</li>
 </ul>
 
 <!-- ENGCOM-1666 -->
 <ul>
-  <li>The usage of the <code class="highlighter-rouge">count()</code> function in for loops has been refactored to improve the performance of the loops that were running <code class="highlighter-rouge">count()</code> in every iteration throughout the code base. <em>Fix submitted by <a href="https://github.com/DanielRuf">Daniel Ruf</a> in pull request <a href="https://github.com/magento/magento2/pull/15507">15507</a></em>.</li>
+  <li>The usage of the <code class="language-plaintext highlighter-rouge">count()</code> function in for loops has been refactored to improve the performance of the loops that were running <code class="language-plaintext highlighter-rouge">count()</code> in every iteration throughout the code base. <em>Fix submitted by <a href="https://github.com/DanielRuf">Daniel Ruf</a> in pull request <a href="https://github.com/magento/magento2/pull/15507">15507</a></em>.</li>
 </ul>
 
 <h3 id="cms-content">CMS content</h3>
 
 <!-- ENGCOM-2734 -->
 <ul>
-  <li>A new <code class="highlighter-rouge">OptionSource</code> of blocks has been added. <em>Fix submitted by <a href="https://github.com/thomas-blackbird">Thomas Klein</a> in pull request <a href="https://github.com/magento/magento2/pull/16021">16021</a></em>.</li>
+  <li>A new <code class="language-plaintext highlighter-rouge">OptionSource</code> of blocks has been added. <em>Fix submitted by <a href="https://github.com/thomas-blackbird">Thomas Klein</a> in pull request <a href="https://github.com/magento/magento2/pull/16021">16021</a></em>.</li>
 </ul>
 
 <!-- MAGETWO-73359 -->
@@ -2692,7 +2693,7 @@ product, and hung indefinitely while trying to add the product.</li>
 
 <!-- ENGCOM-2642 -->
 <ul>
-  <li>The Product Attribute Repository’s incorrect return values have been replaced with values that now adhere to <code class="highlighter-rouge">Magento\Catalog\Api\ProductAttributeRepositoryInterface (extends Magento\Framework\Api\MetadataServiceInterface)</code> as expected. <em>Fix submitted by <a href="https://github.com/julianvdrielen">julianvdrielen</a> in pull request <a href="https://github.com/magento/magento2/pull/15691">15691</a></em>. <a href="https://github.com/magento/magento2/issues/4803">GitHub-4803</a></li>
+  <li>The Product Attribute Repository’s incorrect return values have been replaced with values that now adhere to <code class="language-plaintext highlighter-rouge">Magento\Catalog\Api\ProductAttributeRepositoryInterface (extends Magento\Framework\Api\MetadataServiceInterface)</code> as expected. <em>Fix submitted by <a href="https://github.com/julianvdrielen">julianvdrielen</a> in pull request <a href="https://github.com/magento/magento2/pull/15691">15691</a></em>. <a href="https://github.com/magento/magento2/issues/4803">GitHub-4803</a></li>
 </ul>
 
 <h3 id="email">Email</h3>
@@ -2711,12 +2712,12 @@ product, and hung indefinitely while trying to add the product.</li>
 
 <!-- ENGCOM-2070 -->
 <ul>
-  <li>You can now set values for <code class="highlighter-rouge">MAX_IMAGE_WIDTH</code> and <code class="highlighter-rouge">MAX_IMAGE_HEIGHT</code> in <strong>Stores</strong> &gt; <strong>Configuration</strong> &gt; <strong>Advanced</strong> &gt; <strong>System</strong> &gt; <strong>Images Configuration</strong>, which supports the upload of larger images. <em>Fix submitted by <a href="https://github.com/eduard13">Eduard Chitoraga</a> in pull request <a href="https://github.com/magento/magento2/pull/15942">15942</a></em>. <a href="https://github.com/magento/magento2/issues/13747">GitHub-13747</a></li>
+  <li>You can now set values for <code class="language-plaintext highlighter-rouge">MAX_IMAGE_WIDTH</code> and <code class="language-plaintext highlighter-rouge">MAX_IMAGE_HEIGHT</code> in <strong>Stores</strong> &gt; <strong>Configuration</strong> &gt; <strong>Advanced</strong> &gt; <strong>System</strong> &gt; <strong>Images Configuration</strong>, which supports the upload of larger images. <em>Fix submitted by <a href="https://github.com/eduard13">Eduard Chitoraga</a> in pull request <a href="https://github.com/magento/magento2/pull/15942">15942</a></em>. <a href="https://github.com/magento/magento2/issues/13747">GitHub-13747</a></li>
 </ul>
 
 <!-- ENGCOM-2915 -->
 <ul>
-  <li><code class="highlighter-rouge">functions.php</code> (which provides the custom Magento function <code>__()</code> to trigger translations) now resides in the Framework module. <em>Fix submitted by <a href="https://github.com/fooman">Kristof, Fooman</a> in pull request <a href="https://github.com/magento/magento2/pull/16800">16800</a></em>.</li>
+  <li><code class="language-plaintext highlighter-rouge">functions.php</code> (which provides the custom Magento function <code>__()</code> to trigger translations) now resides in the Framework module. <em>Fix submitted by <a href="https://github.com/fooman">Kristof, Fooman</a> in pull request <a href="https://github.com/magento/magento2/pull/16800">16800</a></em>.</li>
 </ul>
 
 <!-- ENGCOM-2570 -->
@@ -2735,7 +2736,7 @@ product, and hung indefinitely while trying to add the product.</li>
 
 <!-- MAGETWO-83918 -->
 <ul>
-  <li>The <code class="highlighter-rouge">getSize</code> function now reflects item and page count totals for filtered product collections on the category page.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">getSize</code> function now reflects item and page count totals for filtered product collections on the category page.</li>
 </ul>
 
 <h4 id="javascript-framework">JavaScript framework</h4>
@@ -2781,7 +2782,7 @@ product, and hung indefinitely while trying to add the product.</li>
 
 <!-- ENGCOM-2855 -->
 <ul>
-  <li><code class="highlighter-rouge">.png</code> images from the GD2 image library that have transparent backgrounds now retain their  transparent backgrounds after upload. Previously, these transparent backgrounds were rendered black when you displayed these images after upload. <em>Fix submitted by <a href="https://github.com/eduard13">Eduard Chitoraga</a> in pull request <a href="https://github.com/magento/magento2/pull/16733">16733</a></em>. <a href="https://github.com/magento/magento2/issues/14248">GitHub-14248</a></li>
+  <li><code class="language-plaintext highlighter-rouge">.png</code> images from the GD2 image library that have transparent backgrounds now retain their  transparent backgrounds after upload. Previously, these transparent backgrounds were rendered black when you displayed these images after upload. <em>Fix submitted by <a href="https://github.com/eduard13">Eduard Chitoraga</a> in pull request <a href="https://github.com/magento/magento2/pull/16733">16733</a></em>. <a href="https://github.com/magento/magento2/issues/14248">GitHub-14248</a></li>
 </ul>
 
 <!-- ENGCOM-2860 -->
@@ -2806,7 +2807,7 @@ product, and hung indefinitely while trying to add the product.</li>
 
 <!-- ENGCOM-2875 -->
 <ul>
-  <li>The <code class="highlighter-rouge">setterName</code> method is now correctly set. <em>Fix submitted by <a href="https://github.com/insanityinside">insanityinside</a> in pull request <a href="https://github.com/magento/magento2/pull/17773">17773</a></em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">setterName</code> method is now correctly set. <em>Fix submitted by <a href="https://github.com/insanityinside">insanityinside</a> in pull request <a href="https://github.com/magento/magento2/pull/17773">17773</a></em>.</li>
 </ul>
 
 <!-- ENGCOM-2896 -->
@@ -2837,7 +2838,7 @@ product, and hung indefinitely while trying to add the product.</li>
 
 <!-- ENGCOM-2872 -->
 <ul>
-  <li>The <code class="highlighter-rouge">$keepRation</code> parameter in the <code class="highlighter-rouge">Magento\Cms\Model\Wysiwyg\Images\Storage</code> class has been renamed to <code class="highlighter-rouge">$keepRatio</code>. <em>Fix submitted by <a href="https://github.com/MartinAarts">Martin Aarts</a> in pull request <a href="https://github.com/magento/magento2/pull/17776">17776</a></em>. <a href="https://github.com/magento/magento2/issues/17587">GitHub-17587</a></li>
+  <li>The <code class="language-plaintext highlighter-rouge">$keepRation</code> parameter in the <code class="language-plaintext highlighter-rouge">Magento\Cms\Model\Wysiwyg\Images\Storage</code> class has been renamed to <code class="language-plaintext highlighter-rouge">$keepRatio</code>. <em>Fix submitted by <a href="https://github.com/MartinAarts">Martin Aarts</a> in pull request <a href="https://github.com/magento/magento2/pull/17776">17776</a></em>. <a href="https://github.com/magento/magento2/issues/17587">GitHub-17587</a></li>
 </ul>
 
 <!-- MAGETWO-73342 -->
@@ -2852,22 +2853,22 @@ product, and hung indefinitely while trying to add the product.</li>
 
 <!-- ENGCOM-2643 -->
 <ul>
-  <li>The <code class="highlighter-rouge">floatval()</code> function has been replaced by the use of direct type casting to <code class="highlighter-rouge">(float)</code> throughout the code base. <em>Fix submitted by <a href="https://github.com/mhauri">Marcel Hauri</a> in pull request <a href="https://github.com/magento/magento2/pull/16848">16848</a></em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">floatval()</code> function has been replaced by the use of direct type casting to <code class="language-plaintext highlighter-rouge">(float)</code> throughout the code base. <em>Fix submitted by <a href="https://github.com/mhauri">Marcel Hauri</a> in pull request <a href="https://github.com/magento/magento2/pull/16848">16848</a></em>.</li>
 </ul>
 
 <!-- ENGCOM-2644 -->
 <ul>
-  <li>The <code class="highlighter-rouge">strval()</code> function has been replaced by the use of direct type casting to <code class="highlighter-rouge">(string)</code> throughout the code base. <em>Fix submitted by <a href="https://github.com/mhauri">Marcel Hauri</a> in pull request <a href="https://github.com/magento/magento2/pull/16849">16849</a></em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">strval()</code> function has been replaced by the use of direct type casting to <code class="language-plaintext highlighter-rouge">(string)</code> throughout the code base. <em>Fix submitted by <a href="https://github.com/mhauri">Marcel Hauri</a> in pull request <a href="https://github.com/magento/magento2/pull/16849">16849</a></em>.</li>
 </ul>
 
 <!-- ENGCOM-2668 -->
 <ul>
-  <li>The EU-VAT-Numbers <code class="highlighter-rouge">Countrycode</code>  prefixes have been removed for validation purposes. <em>Fix submitted by <a href="https://github.com/Drischie">Drischie</a> in pull request <a href="https://github.com/magento/magento2/pull/17385">17385</a></em>.</li>
+  <li>The EU-VAT-Numbers <code class="language-plaintext highlighter-rouge">Countrycode</code>  prefixes have been removed for validation purposes. <em>Fix submitted by <a href="https://github.com/Drischie">Drischie</a> in pull request <a href="https://github.com/magento/magento2/pull/17385">17385</a></em>.</li>
 </ul>
 
 <!-- ENGCOM-2634 -->
 <ul>
-  <li>Missing <code class="highlighter-rouge">data-th</code> selectors have been added to tables. <em>Fix submitted by <a href="https://github.com/DanielRuf">Daniel Ruf</a> in pull request <a href="https://github.com/magento/magento2/pull/17327">17327</a></em>.</li>
+  <li>Missing <code class="language-plaintext highlighter-rouge">data-th</code> selectors have been added to tables. <em>Fix submitted by <a href="https://github.com/DanielRuf">Daniel Ruf</a> in pull request <a href="https://github.com/magento/magento2/pull/17327">17327</a></em>.</li>
 </ul>
 
 <h3 id="locale">Locale</h3>
@@ -2905,12 +2906,12 @@ product, and hung indefinitely while trying to add the product.</li>
 
 <!-- MAGETWO-93345 -->
 <ul>
-  <li>The <code class="highlighter-rouge">.csv</code> export of Coupon reports now shows the correct total for  selected coupons. Previously, the total line in the <code class="highlighter-rouge">.csv</code> file showed the totals for all coupons in the selected time period, rather than just the selected coupons.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">.csv</code> export of Coupon reports now shows the correct total for  selected coupons. Previously, the total line in the <code class="language-plaintext highlighter-rouge">.csv</code> file showed the totals for all coupons in the selected time period, rather than just the selected coupons.</li>
 </ul>
 
 <!-- MAGETWO-86650 -->
 <ul>
-  <li>The <code class="highlighter-rouge">.csv</code> export of the Abandoned Cart report now contains information about all abandoned carts as expected. Previously, this <code class="highlighter-rouge">.csv</code> file contained  only the first 20 rows of the report.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">.csv</code> export of the Abandoned Cart report now contains information about all abandoned carts as expected. Previously, this <code class="language-plaintext highlighter-rouge">.csv</code> file contained  only the first 20 rows of the report.</li>
 </ul>
 
 <!-- ENGCOM-2724 -->
@@ -2927,7 +2928,7 @@ product, and hung indefinitely while trying to add the product.</li>
 
 <!-- ENGCOM-2720-->
 <ul>
-  <li>Magento now displays a <code class="highlighter-rouge">404 page not found</code> error when a customer tries to navigate to a product review that is not accessible. Previously. Magento displayed a PHP error code. <em>Fix submitted by <a href="https://github.com/Ananth747">Ananth</a> in pull request <a href="https://github.com/magento/magento2/pull/15369">15369</a></em>. <a href="https://github.com/magento/magento2/issues/13102">GitHub-13102</a></li>
+  <li>Magento now displays a <code class="language-plaintext highlighter-rouge">404 page not found</code> error when a customer tries to navigate to a product review that is not accessible. Previously. Magento displayed a PHP error code. <em>Fix submitted by <a href="https://github.com/Ananth747">Ananth</a> in pull request <a href="https://github.com/magento/magento2/pull/15369">15369</a></em>. <a href="https://github.com/magento/magento2/issues/13102">GitHub-13102</a></li>
 </ul>
 
 <h3 id="reward">Reward</h3>
@@ -2941,7 +2942,7 @@ product, and hung indefinitely while trying to add the product.</li>
 
 <!-- ENGCOM-2623 -->
 <ul>
-  <li>The <code class="highlighter-rouge">Magento\Sales\Block\Adminhtml\Order\Totalbar</code> class and totalbar template files  have been deprecated.  These components were formerly included but never implemented in the invoice create and credit memo create layout files. <em>Fix submitted by <a href="https://github.com/dverkade">Danny Verkade</a> in pull request <a href="https://github.com/magento/magento2/pull/16656">16656</a></em>. <a href="https://github.com/magento/magento2/issues/16653">GitHub-16653</a></li>
+  <li>The <code class="language-plaintext highlighter-rouge">Magento\Sales\Block\Adminhtml\Order\Totalbar</code> class and totalbar template files  have been deprecated.  These components were formerly included but never implemented in the invoice create and credit memo create layout files. <em>Fix submitted by <a href="https://github.com/dverkade">Danny Verkade</a> in pull request <a href="https://github.com/magento/magento2/pull/16656">16656</a></em>. <a href="https://github.com/magento/magento2/issues/16653">GitHub-16653</a></li>
 </ul>
 
 <!-- MAGETWO-94291 -->
@@ -2970,7 +2971,7 @@ product, and hung indefinitely while trying to add the product.</li>
 
 <!-- ENGCOM-2415 -->
 <ul>
-  <li>JavaScript files are now located inside the <code class="highlighter-rouge">web/js</code> directory. <em>Fix submitted by <a href="https://github.com/hitesh-wagento">Hitesh</a> in pull request <a href="https://github.com/magento/magento2/pull/16582">16582</a></em>. <a href="https://github.com/magento/magento2/issues/16302">GitHub-16302</a></li>
+  <li>JavaScript files are now located inside the <code class="language-plaintext highlighter-rouge">web/js</code> directory. <em>Fix submitted by <a href="https://github.com/hitesh-wagento">Hitesh</a> in pull request <a href="https://github.com/magento/magento2/pull/16582">16582</a></em>. <a href="https://github.com/magento/magento2/issues/16302">GitHub-16302</a></li>
 </ul>
 
 <!-- MAGETWO-91063 -->
@@ -2997,7 +2998,7 @@ product, and hung indefinitely while trying to add the product.</li>
 
 <!-- ENGCOM-2704 -->
 <ul>
-  <li>Multishipping checkout now works as expected. Previously, Magento displayed the <code class="highlighter-rouge">Shipping address is not set</code> error message  when checking out an order with multiple addresses. <em>Fix submitted by <a href="https://github.com/dmytro-ch">Dmytro Cheshun</a> in pull request <a href="https://github.com/magento/magento2/pull/16753">16753</a></em>. <a href="https://github.com/magento/magento2/issues/16555">GitHub-16555</a></li>
+  <li>Multishipping checkout now works as expected. Previously, Magento displayed the <code class="language-plaintext highlighter-rouge">Shipping address is not set</code> error message  when checking out an order with multiple addresses. <em>Fix submitted by <a href="https://github.com/dmytro-ch">Dmytro Cheshun</a> in pull request <a href="https://github.com/magento/magento2/pull/16753">16753</a></em>. <a href="https://github.com/magento/magento2/issues/16555">GitHub-16555</a></li>
 </ul>
 
 <!-- MAGETWO-94434 -->
@@ -3026,21 +3027,21 @@ product, and hung indefinitely while trying to add the product.</li>
 
 <!--  ENGCOM-2530 -->
 <ul>
-  <li>The <code class="highlighter-rouge">getUrlInStore()</code> method no longer returns URLs that contain the store code, which has shortened the extremely long URLs it previously returned. <em>Fix submitted by <a href="https://github.com/vasilii-b">Burlacu Vasilii</a> in pull request <a href="https://github.com/magento/magento2/pull/16468">16468</a></em>. <a href="https://github.com/magento/magento2/issues/16273">GitHub-16273</a></li>
+  <li>The <code class="language-plaintext highlighter-rouge">getUrlInStore()</code> method no longer returns URLs that contain the store code, which has shortened the extremely long URLs it previously returned. <em>Fix submitted by <a href="https://github.com/vasilii-b">Burlacu Vasilii</a> in pull request <a href="https://github.com/magento/magento2/pull/16468">16468</a></em>. <a href="https://github.com/magento/magento2/issues/16273">GitHub-16273</a></li>
 </ul>
 
 <h3 id="swagger">Swagger</h3>
 
 <!-- ENGCOM-2837, MAGETWO-93748 -->
 <ul>
-  <li>Swagger now works as expected when JavaScript minification is enabled. Previously, when JavaScript minification was enabled, the <code class="highlighter-rouge">swagger-ui-bundle.js</code> became corrupted, although Swagger worked fine when minification was subsequently disabled, and the files were redeployed. <em>Fix submitted by <a href="https://github.com/hostep">Pieter Hoste</a> in pull request <a href="https://github.com/magento/magento2/pull/17626">17626</a></em>. <a href="https://github.com/magento/magento2/issues/16927">GitHub-16927</a></li>
+  <li>Swagger now works as expected when JavaScript minification is enabled. Previously, when JavaScript minification was enabled, the <code class="language-plaintext highlighter-rouge">swagger-ui-bundle.js</code> became corrupted, although Swagger worked fine when minification was subsequently disabled, and the files were redeployed. <em>Fix submitted by <a href="https://github.com/hostep">Pieter Hoste</a> in pull request <a href="https://github.com/magento/magento2/pull/17626">17626</a></em>. <a href="https://github.com/magento/magento2/issues/16927">GitHub-16927</a></li>
 </ul>
 
 <h3 id="testing">Testing</h3>
 
 <!-- ENGCOM-2616 -->
 <ul>
-  <li>The <code class="highlighter-rouge">ProcessCronQueueObserverTest.php</code> integration test now works correctly. <em>Fix submitted by <a href="https://github.com/gelanivishal">Vishal Gelani</a> in pull request <a href="https://github.com/magento/magento2/pull/17191">17191</a></em>. <a href="https://github.com/magento/magento2/issues/16243">GitHub-16243</a></li>
+  <li>The <code class="language-plaintext highlighter-rouge">ProcessCronQueueObserverTest.php</code> integration test now works correctly. <em>Fix submitted by <a href="https://github.com/gelanivishal">Vishal Gelani</a> in pull request <a href="https://github.com/magento/magento2/pull/17191">17191</a></em>. <a href="https://github.com/magento/magento2/issues/16243">GitHub-16243</a></li>
 </ul>
 
 <!-- ENGCOM-2900 -->
@@ -3050,22 +3051,22 @@ product, and hung indefinitely while trying to add the product.</li>
 
 <!-- ENGCOM-2899 -->
 <ul>
-  <li>An API functional test  for the <code class="highlighter-rouge">/V1/search</code> (searchV1) resource has been added. <em>Fix submitted by <a href="https://github.com/rogyar">Yaroslav Rogoza</a> in pull request <a href="https://github.com/magento/magento2/pull/17840">17840</a></em>.</li>
+  <li>An API functional test  for the <code class="language-plaintext highlighter-rouge">/V1/search</code> (searchV1) resource has been added. <em>Fix submitted by <a href="https://github.com/rogyar">Yaroslav Rogoza</a> in pull request <a href="https://github.com/magento/magento2/pull/17840">17840</a></em>.</li>
 </ul>
 
 <!-- ENGCOM-2907 -->
 <ul>
-  <li>The <code class="highlighter-rouge">\Magento\Sales\Model\Validator</code> class is now covered by unit tests. <em>Fix submitted by <a href="https://github.com/dmytro-ch">Dmytro Cheshun</a> in pull request <a href="https://github.com/magento/magento2/pull/17876">17876</a></em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">\Magento\Sales\Model\Validator</code> class is now covered by unit tests. <em>Fix submitted by <a href="https://github.com/dmytro-ch">Dmytro Cheshun</a> in pull request <a href="https://github.com/magento/magento2/pull/17876">17876</a></em>.</li>
 </ul>
 
 <!-- ENGCOM-2908 -->
 <ul>
-  <li>The <code class="highlighter-rouge">\Magento\Search\Model\PopularSearchTerms</code> is now covered by unit tests. <em>Fix submitted by <a href="https://github.com/dmytro-ch">Dmytro Cheshun</a> in pull request <a href="https://github.com/magento/magento2/pull/17739">17739</a></em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">\Magento\Search\Model\PopularSearchTerms</code> is now covered by unit tests. <em>Fix submitted by <a href="https://github.com/dmytro-ch">Dmytro Cheshun</a> in pull request <a href="https://github.com/magento/magento2/pull/17739">17739</a></em>.</li>
 </ul>
 
 <!-- ENGCOM-2876 -->
 <ul>
-  <li>The <code class="highlighter-rouge">\Magento\Search\Model\SynonymAnalyzer</code> class  is now covered by a unit test. <em>Fix submitted by <a href="https://github.com/furseyev">Zebra</a> in pull request <a href="https://github.com/magento/magento2/pull/17801">17801</a></em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">\Magento\Search\Model\SynonymAnalyzer</code> class  is now covered by a unit test. <em>Fix submitted by <a href="https://github.com/furseyev">Zebra</a> in pull request <a href="https://github.com/magento/magento2/pull/17801">17801</a></em>.</li>
 </ul>
 
 <!-- ENGCOM-2843 -->
@@ -3075,7 +3076,7 @@ product, and hung indefinitely while trying to add the product.</li>
 
 <!-- ENGCOM-2830 -->
 <ul>
-  <li>The <code class="highlighter-rouge">\Magento\Review\Observer\ProcessProductAfterDeleteEventObserver</code> is now covered by unit tests. <em>Fix submitted by <a href="https://github.com/eduard13">Eduard Chitoraga</a> in pull request <a href="https://github.com/magento/magento2/pull/17693">17693</a></em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">\Magento\Review\Observer\ProcessProductAfterDeleteEventObserver</code> is now covered by unit tests. <em>Fix submitted by <a href="https://github.com/eduard13">Eduard Chitoraga</a> in pull request <a href="https://github.com/magento/magento2/pull/17693">17693</a></em>.</li>
 </ul>
 
 <!-- ENGCOM-2823 -->
@@ -3085,22 +3086,22 @@ product, and hung indefinitely while trying to add the product.</li>
 
 <!-- ENGCOM-2807 -->
 <ul>
-  <li>The <code class="highlighter-rouge">\Magento\Newsletter\Model\Problem</code> class is now covered by unit tests. <em>Fix submitted by <a href="https://github.com/rogyar">Yaroslav Rogoza</a> in pull request <a href="https://github.com/magento/magento2/pull/17633">17633</a></em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">\Magento\Newsletter\Model\Problem</code> class is now covered by unit tests. <em>Fix submitted by <a href="https://github.com/rogyar">Yaroslav Rogoza</a> in pull request <a href="https://github.com/magento/magento2/pull/17633">17633</a></em>.</li>
 </ul>
 
 <!-- ENGCOM-2780 -->
 <ul>
-  <li>The <code class="highlighter-rouge">\Magento\Braintree\Model\InstantPurchase\CreditCard\TokenFormatter</code> class is now covered by unit tests. <em>Fix submitted by <a href="https://github.com/eduard13">Eduard Chitoraga</a> in pull request <a href="https://github.com/magento/magento2/pull/17590">17590</a></em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">\Magento\Braintree\Model\InstantPurchase\CreditCard\TokenFormatter</code> class is now covered by unit tests. <em>Fix submitted by <a href="https://github.com/eduard13">Eduard Chitoraga</a> in pull request <a href="https://github.com/magento/magento2/pull/17590">17590</a></em>.</li>
 </ul>
 
 <!-- ENGCOM-2772 -->
 <ul>
-  <li>The <code class="highlighter-rouge">\Magento\Catalog\Test\Unit\Cron\AvailabilityCheckerTest </code> and <code class="highlighter-rouge">\Magento\Catalog\Test\Unit\Cron\DeleteOutdatedPriceValuesTest</code> classes are now covered by unit tests. <em>Fix submitted by <a href="https://github.com/dmytro-ch">Dmytro Cheshun</a> in pull request <a href="https://github.com/magento/magento2/pull/17561">17561</a></em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">\Magento\Catalog\Test\Unit\Cron\AvailabilityCheckerTest </code> and <code class="language-plaintext highlighter-rouge">\Magento\Catalog\Test\Unit\Cron\DeleteOutdatedPriceValuesTest</code> classes are now covered by unit tests. <em>Fix submitted by <a href="https://github.com/dmytro-ch">Dmytro Cheshun</a> in pull request <a href="https://github.com/magento/magento2/pull/17561">17561</a></em>.</li>
 </ul>
 
 <!-- ENGCOM-2715 -->
 <ul>
-  <li>The <code class="highlighter-rouge">Magento\Braintree\Model\InstantPurchase\CreditCard\AvailabilityChecker</code> class is now covered by a unit test. <a href="https://github.com/dmytro-ch">Dmytro Cheshun</a> in pull request <a href="https://github.com/magento/magento2/pull/17454">17454</a>*</li>
+  <li>The <code class="language-plaintext highlighter-rouge">Magento\Braintree\Model\InstantPurchase\CreditCard\AvailabilityChecker</code> class is now covered by a unit test. <a href="https://github.com/dmytro-ch">Dmytro Cheshun</a> in pull request <a href="https://github.com/magento/magento2/pull/17454">17454</a>*</li>
 </ul>
 
 <!-- ENGCOM-2680 -->
@@ -3110,29 +3111,29 @@ product, and hung indefinitely while trying to add the product.</li>
 
 <!-- ENGCOM-2657 -->
 <ul>
-  <li>The <code class="highlighter-rouge">\Magento\Braintree\Gateway\Http\Client\TransactionVoid</code> and <code class="highlighter-rouge">\Magento\Braintree\Gateway\Http\Client\TransactionRefund</code> classes are now covered by unit tests. <em>Fix submitted by <a href="https://github.com/rogyar">Yaroslav Rogoza</a> in pull request <a href="https://github.com/magento/magento2/pull/17368">17368</a></em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">\Magento\Braintree\Gateway\Http\Client\TransactionVoid</code> and <code class="language-plaintext highlighter-rouge">\Magento\Braintree\Gateway\Http\Client\TransactionRefund</code> classes are now covered by unit tests. <em>Fix submitted by <a href="https://github.com/rogyar">Yaroslav Rogoza</a> in pull request <a href="https://github.com/magento/magento2/pull/17368">17368</a></em>.</li>
 </ul>
 
 <!-- ENGCOM-2632 -->
 <ul>
-  <li>The <code class="highlighter-rouge">\Magento\Catalog\CustomerData\CompareProducts</code> class is now covered by unit tests. <em>Fix submitted by <a href="https://github.com/Yogeshks">Oleksandr Kravchuk</a> in pull request <a href="https://github.com/magento/magento2/pull/17250">17250</a></em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">\Magento\Catalog\CustomerData\CompareProducts</code> class is now covered by unit tests. <em>Fix submitted by <a href="https://github.com/Yogeshks">Oleksandr Kravchuk</a> in pull request <a href="https://github.com/magento/magento2/pull/17250">17250</a></em>.</li>
 </ul>
 
 <!-- ENGCOM-2828 -->
 <ul>
-  <li><code class="highlighter-rouge">\Magento\Review\Observer\ProcessProductAfterDeleteEventObserver</code> is now covered by an integration test. <em>Fix submitted by <a href="https://github.com/rogyar">Yaroslav Rogoza</a> in pull request <a href="https://github.com/magento/magento2/pull/17690">17690</a></em>.</li>
+  <li><code class="language-plaintext highlighter-rouge">\Magento\Review\Observer\ProcessProductAfterDeleteEventObserver</code> is now covered by an integration test. <em>Fix submitted by <a href="https://github.com/rogyar">Yaroslav Rogoza</a> in pull request <a href="https://github.com/magento/magento2/pull/17690">17690</a></em>.</li>
 </ul>
 
 <h3 id="translation">Translation</h3>
 
 <!-- ENGCOM-2863 -->
 <ul>
-  <li>Errors in  <code class="highlighter-rouge">app/code/Magento/Sales/i18n/en_US.csv</code> have been corrected. <em>Fix submitted by <a href="https://github.com/jignesh-baldha">Jignesh Baldha</a> in pull request <a href="https://github.com/magento/magento2/pull/17735">17735</a></em>.</li>
+  <li>Errors in  <code class="language-plaintext highlighter-rouge">app/code/Magento/Sales/i18n/en_US.csv</code> have been corrected. <em>Fix submitted by <a href="https://github.com/jignesh-baldha">Jignesh Baldha</a> in pull request <a href="https://github.com/magento/magento2/pull/17735">17735</a></em>.</li>
 </ul>
 
 <!-- ENGCOM-2817 -->
 <ul>
-  <li><code class="highlighter-rouge">translate="title"</code>  has been added to Admin menus. <em>Fix submitted by <a href="https://github.com/Yogeshks">Yogesh Suhagiya</a> in pull request <a href="https://github.com/magento/magento2/pull/17521">17521</a></em>.</li>
+  <li><code class="language-plaintext highlighter-rouge">translate="title"</code>  has been added to Admin menus. <em>Fix submitted by <a href="https://github.com/Yogeshks">Yogesh Suhagiya</a> in pull request <a href="https://github.com/magento/magento2/pull/17521">17521</a></em>.</li>
 </ul>
 
 <!-- ENGCOM-2799 -->
@@ -3159,7 +3160,7 @@ product, and hung indefinitely while trying to add the product.</li>
 
 <!-- ENGCOM-2834 -->
 <ul>
-  <li>The message list component message type now has a message type of <code class="highlighter-rouge">success</code>. Previously, this type was always <code class="highlighter-rouge">error</code> when the <code class="highlighter-rouge">parameters</code> property was specified. <em>Fix submitted by <a href="https://github.com/dmytro-ch">Dmytro Cheshun</a> in pull request <a href="https://github.com/magento/magento2/pull/17701">17701</a></em>. <a href="https://github.com/magento/magento2/issues/17700">GitHub-17700</a></li>
+  <li>The message list component message type now has a message type of <code class="language-plaintext highlighter-rouge">success</code>. Previously, this type was always <code class="language-plaintext highlighter-rouge">error</code> when the <code class="language-plaintext highlighter-rouge">parameters</code> property was specified. <em>Fix submitted by <a href="https://github.com/dmytro-ch">Dmytro Cheshun</a> in pull request <a href="https://github.com/magento/magento2/pull/17701">17701</a></em>. <a href="https://github.com/magento/magento2/issues/17700">GitHub-17700</a></li>
 </ul>
 
 <!-- ENGCOM-2607 -->

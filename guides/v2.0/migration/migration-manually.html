@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Data that needs to be migrated manually | Magento 2 Developer Documentation (copy)</title>
+	<title>Data that needs to be migrated manually | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/migration/migration-manually.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/migration/migration-manually.html">Magento 2.0</a></li>
 		
@@ -1883,9 +1884,9 @@
 <h3 id="media-files-in-the-file-system">Media files in the file system</h3>
 
 <p>All media files (images for products, categories, the   <span term-uuid="98cf4fd5-59b6-4610-9c1f-b84c8c0abd97" class="glossary-term" data-toggle="popover">WYSIWYG</span>
- editor, and so on) should be copied manually from <code class="highlighter-rouge">&lt;your Magento 1 install dir&gt;/media</code> to <code class="highlighter-rouge">&lt;your Magento 2 install dir&gt;/pub/media</code>.</p>
+ editor, and so on) should be copied manually from <code class="language-plaintext highlighter-rouge">&lt;your Magento 1 install dir&gt;/media</code> to <code class="language-plaintext highlighter-rouge">&lt;your Magento 2 install dir&gt;/pub/media</code>.</p>
 
-<p>However, do <em>not</em> copy the <code class="highlighter-rouge">.htaccess</code> files located in the Magento 1 <code class="highlighter-rouge">media</code> folder. Magento 2 has its own <code class="highlighter-rouge">.htaccess</code> that should be preserved.</p>
+<p>However, do <em>not</em> copy the <code class="language-plaintext highlighter-rouge">.htaccess</code> files located in the Magento 1 <code class="language-plaintext highlighter-rouge">media</code> folder. Magento 2 has its own <code class="language-plaintext highlighter-rouge">.htaccess</code> that should be preserved.</p>
 
 <h2 id="storefront-design">Storefront design</h2>
 
@@ -1915,7 +1916,7 @@
   </li>
 </ul>
 
-<p class="bs-callout bs-callout-info">You may adjust the time zone for a database entity using the <code class="highlighter-rouge">\Migration\Handler\Timezone</code> handler. See the <a href="/devdocs/guides/v2.0/migration/migration-migrate-follow-up.html">Follow-up</a> section for more details.</p>
+<p class="bs-callout bs-callout-info">You may adjust the time zone for a database entity using the <code class="language-plaintext highlighter-rouge">\Migration\Handler\Timezone</code> handler. See the <a href="/devdocs/guides/v2.0/migration/migration-migrate-follow-up.html">Follow-up</a> section for more details.</p>
 
 <h2 id="related-topics">Related topics</h2>
 

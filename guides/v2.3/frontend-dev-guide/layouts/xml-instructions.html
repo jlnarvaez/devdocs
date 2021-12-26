@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Layout instructions | Magento 2 Developer Documentation (copy)</title>
+	<title>Layout instructions | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/frontend-dev-guide/layouts/xml-instructions.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/frontend-dev-guide/layouts/xml-instructions.html">Magento 2.0</a></li>
 		
@@ -2907,15 +2908,15 @@
 <p>Use the following layout instructions to customize your layout:</p>
 
 <ul>
-  <li><a href="#fedg_layout_xml-instruc_ex_block"><code class="highlighter-rouge">&lt;block&gt;</code></a></li>
-  <li><a href="#fedg_layout_xml-instruc_ex_cont"><code class="highlighter-rouge">&lt;container&gt;</code></a></li>
-  <li><a href="#fedg_xml-instrux_before-after"><code class="highlighter-rouge">before</code> and <code class="highlighter-rouge">after</code> attributes</a></li>
-  <li><a href="#fedg_layout_xml-instruc_ex_act"><code class="highlighter-rouge">&lt;action&gt;</code></a></li>
-  <li><a href="#fedg_layout_xml-instruc_ex_ref"><code class="highlighter-rouge">&lt;referenceBlock&gt;</code> and <code class="highlighter-rouge">&lt;referenceContainer&gt;</code></a></li>
-  <li><a href="#fedg_layout_xml-instruc_ex_mv"><code class="highlighter-rouge">&lt;move&gt;</code></a></li>
-  <li><a href="#fedg_layout_xml-instruc_ex_rmv"><code class="highlighter-rouge">&lt;remove&gt;</code></a></li>
-  <li><a href="#fedg_layout_xml-instruc_ex_upd"><code class="highlighter-rouge">&lt;update&gt;</code></a></li>
-  <li><a href="#argument"><code class="highlighter-rouge">&lt;argument&gt;</code></a></li>
+  <li><a href="#fedg_layout_xml-instruc_ex_block"><code class="language-plaintext highlighter-rouge">&lt;block&gt;</code></a></li>
+  <li><a href="#fedg_layout_xml-instruc_ex_cont"><code class="language-plaintext highlighter-rouge">&lt;container&gt;</code></a></li>
+  <li><a href="#fedg_xml-instrux_before-after"><code class="language-plaintext highlighter-rouge">before</code> and <code class="language-plaintext highlighter-rouge">after</code> attributes</a></li>
+  <li><a href="#fedg_layout_xml-instruc_ex_act"><code class="language-plaintext highlighter-rouge">&lt;action&gt;</code></a></li>
+  <li><a href="#fedg_layout_xml-instruc_ex_ref"><code class="language-plaintext highlighter-rouge">&lt;referenceBlock&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;referenceContainer&gt;</code></a></li>
+  <li><a href="#fedg_layout_xml-instruc_ex_mv"><code class="language-plaintext highlighter-rouge">&lt;move&gt;</code></a></li>
+  <li><a href="#fedg_layout_xml-instruc_ex_rmv"><code class="language-plaintext highlighter-rouge">&lt;remove&gt;</code></a></li>
+  <li><a href="#fedg_layout_xml-instruc_ex_upd"><code class="language-plaintext highlighter-rouge">&lt;update&gt;</code></a></li>
+  <li><a href="#argument"><code class="language-plaintext highlighter-rouge">&lt;argument&gt;</code></a></li>
 </ul>
 
 <h3 id="fedg_layout_xml-instruc_ex_block">block</h3>
@@ -2927,9 +2928,9 @@
 <p>Blocks employ templates to generate HTML. Examples of blocks include a   <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span>
  list, a mini cart, product tags, and product listing.</p>
 
-<p class="bs-callout bs-callout-info">The <code class="highlighter-rouge">class</code> attribute is no longer required in versions <code class="highlighter-rouge">2.2.1</code> and above as it will default to <code class="highlighter-rouge">Magento\Framework\View\Element\Template</code>. <strong>In versions lower than <code class="highlighter-rouge">2.2.1</code>, the <code class="highlighter-rouge">class</code> attribute is still required.</strong></p>
+<p class="bs-callout bs-callout-info">The <code class="language-plaintext highlighter-rouge">class</code> attribute is no longer required in versions <code class="language-plaintext highlighter-rouge">2.2.1</code> and above as it will default to <code class="language-plaintext highlighter-rouge">Magento\Framework\View\Element\Template</code>. <strong>In versions lower than <code class="language-plaintext highlighter-rouge">2.2.1</code>, the <code class="language-plaintext highlighter-rouge">class</code> attribute is still required.</strong></p>
 
-<p class="bs-callout bs-callout-info">We recommend always adding a <code class="highlighter-rouge">name</code> to blocks. Otherwise, it is given a random name.</p>
+<p class="bs-callout bs-callout-info">We recommend always adding a <code class="language-plaintext highlighter-rouge">name</code> to blocks. Otherwise, it is given a random name.</p>
 
 <table style="table-layout:auto;">
   <thead>
@@ -2942,59 +2943,59 @@
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">class</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">class</code></td>
       <td style="text-align: left">Name of a class that implements rendering of a particular block. An object of this class is responsible for actual rendering of block output.</td>
       <td style="text-align: left">class name</td>
       <td style="text-align: left">no</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">name</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">name</code></td>
       <td style="text-align: left">Name that can be used to address the block to which this attribute is assigned. The name must be unique per generated page. If not specified, an automatic name will be assigned in the format <code>ANONYMOUS_<em>n</em></code></td>
       <td style="text-align: left">0-9, A-Z, a-z, underscore (_), period (.), dash (-). Should start with a letter. Case-sensitive.</td>
       <td style="text-align: left">no</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">before</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">before</code></td>
       <td style="text-align: left">Used to position the block&lt;/p&gt; before an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
       <td style="text-align: left">Possible values: element name or dash (-)</td>
       <td style="text-align: left">no</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">after</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">after</code></td>
       <td style="text-align: left">Used to position the block after an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
       <td style="text-align: left">Possible values: element name or dash (-)</td>
       <td style="text-align: left">no</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">template</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">template</code></td>
       <td style="text-align: left">A template that represents the functionality of the block to which this attribute is assigned.</td>
       <td style="text-align: left">template file name</td>
       <td style="text-align: left">no</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">as</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">as</code></td>
       <td style="text-align: left">An alias name that serves as identifier in the scope of the parent element.</td>
       <td style="text-align: left">0-9, A-Z, a-z, underscore (_), period (.), dash (-). Case-sensitive.</td>
       <td style="text-align: left">no</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">cacheable</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">cacheable</code></td>
       <td style="text-align: left">Defines whether a block element is cacheable. This can be used for development purposes and to make needed elements of the page dynamic.</td>
-      <td style="text-align: left"><code class="highlighter-rouge">true</code> or <code class="highlighter-rouge">false</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">true</code> or <code class="language-plaintext highlighter-rouge">false</code></td>
       <td style="text-align: left">no</td>
     </tr>
   </tbody>
 </table>
 
-<p>To pass parameters use the <a href="#argument"><code class="highlighter-rouge">&lt;argument&gt;&lt;/argument&gt;</code></a> instruction.</p>
+<p>To pass parameters use the <a href="#argument"><code class="language-plaintext highlighter-rouge">&lt;argument&gt;&lt;/argument&gt;</code></a> instruction.</p>
 
 <h3 id="fedg_layout_xml-instruc_ex_cont">container</h3>
 <p>A structure without content that holds other layout elements such as blocks and containers.</p>
 
 <p><strong>Details:</strong> 
-A container renders child elements during view output generation. It can be empty or it can contain an arbitrary set of <code class="highlighter-rouge">&lt;container&gt;</code> and <code class="highlighter-rouge">&lt;block&gt;</code> elements.</p>
+A container renders child elements during view output generation. It can be empty or it can contain an arbitrary set of <code class="language-plaintext highlighter-rouge">&lt;container&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;block&gt;</code> elements.</p>
 
-<p class="bs-callout bs-callout-info">We recommend always adding a <code class="highlighter-rouge">name</code> to containers. Otherwise, it is given a random name.</p>
+<p class="bs-callout bs-callout-info">We recommend always adding a <code class="language-plaintext highlighter-rouge">name</code> to containers. Otherwise, it is given a random name.</p>
 
 <table style="table-layout:auto;">
   <thead>
@@ -3007,43 +3008,43 @@ A container renders child elements during view output generation. It can be empt
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">name</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">name</code></td>
       <td style="text-align: left">A name that can be used to address the container in which this attribute is assigned. The name must be unique per generated page.</td>
       <td style="text-align: left">A-Z, a-z, 0-9, underscore (_), period (.), dash (-). Should start with a letter. Case-sensitive.</td>
       <td style="text-align: left">no</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">label</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">label</code></td>
       <td style="text-align: left">An arbitrary name to display in the web browser.</td>
       <td style="text-align: left">any</td>
       <td style="text-align: left">no</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">before</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">before</code></td>
       <td style="text-align: left">Used to position the container before an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
       <td style="text-align: left">Possible values: element name or dash (-).</td>
       <td style="text-align: left">no</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">after</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">after</code></td>
       <td style="text-align: left">Used to position the container after an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
       <td style="text-align: left">Possible values: element name or dash (-).</td>
       <td style="text-align: left">no</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">as</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">as</code></td>
       <td style="text-align: left">An alias name that serves as identifier in the scope of the parent element.</td>
       <td style="text-align: left">0-9, A-Z, a-z, underscore (_), period (.), dash (-). Case-sensitive.</td>
       <td style="text-align: left">no</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">output</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">output</code></td>
       <td style="text-align: left">Defines whether to output the root element. If specified, the element will be added to output list. (If not specified, the parent element is responsible for rendering its children.)</td>
-      <td style="text-align: left">Any value except the obsolete <code class="highlighter-rouge">toHtml</code>. Recommended value is <code class="highlighter-rouge">1</code>.</td>
+      <td style="text-align: left">Any value except the obsolete <code class="language-plaintext highlighter-rouge">toHtml</code>. Recommended value is <code class="language-plaintext highlighter-rouge">1</code>.</td>
       <td style="text-align: left">no</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">htmlTag</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">htmlTag</code></td>
       <td style="text-align: left">Output parameter. If specified, the output is wrapped into specified HTML tag.</td>
       <td style="text-align: left">Any valid HTML 5 tag.</td>
       <td style="text-align: left">no</td>
@@ -3051,13 +3052,13 @@ A container renders child elements during view output generation. It can be empt
     <tr>
       <td style="text-align: left">htmlId</td>
       <td style="text-align: left">Output parameter. If specified, the value is added to the wrapper element. If there is no wrapper element, this attribute has no effect.</td>
-      <td style="text-align: left">Any valid HTML 5 <code class="highlighter-rouge">id</code> value.</td>
+      <td style="text-align: left">Any valid HTML 5 <code class="language-plaintext highlighter-rouge">id</code> value.</td>
       <td style="text-align: left">no</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">htmlClass</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">htmlClass</code></td>
       <td style="text-align: left">Output parameter. If specified, the value is added to the wrapper element. If there is no wrapper element, this attribute has no effect.</td>
-      <td style="text-align: left">Any valid HTML 5 <code class="highlighter-rouge">class</code> value.</td>
+      <td style="text-align: left">Any valid HTML 5 <code class="language-plaintext highlighter-rouge">class</code> value.</td>
       <td style="text-align: left">no</td>
     </tr>
   </tbody>
@@ -3073,10 +3074,10 @@ A container renders child elements during view output generation. It can be empt
 
 <h3 id="fedg_xml-instrux_before-after">before and after attributes</h3>
 
-<p>To help you to position elements in a specific order suitable for design, SEO, usability, or other requirements, Magento software provides the <code class="highlighter-rouge">before</code> and <code class="highlighter-rouge">after</code> layout attributes.
+<p>To help you to position elements in a specific order suitable for design, SEO, usability, or other requirements, Magento software provides the <code class="language-plaintext highlighter-rouge">before</code> and <code class="language-plaintext highlighter-rouge">after</code> layout attributes.
 These optional attributes can be used in layout XML files to control the order of elements in their common parent.</p>
 
-<p>The following tables give a detailed description of the results you can get using the <code class="highlighter-rouge">before</code> and <code class="highlighter-rouge">after</code> attributes. The first table uses a block a as positioned element.</p>
+<p>The following tables give a detailed description of the results you can get using the <code class="language-plaintext highlighter-rouge">before</code> and <code class="language-plaintext highlighter-rouge">after</code> attributes. The first table uses a block a as positioned element.</p>
 
 <table style="table-layout:auto;">
   <thead>
@@ -3088,34 +3089,34 @@ These optional attributes can be used in layout XML files to control the order o
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">before</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">before</code></td>
       <td style="text-align: left">Dash (-)</td>
       <td style="text-align: left">The block displays before all other elements in its parent node.</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">before</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">before</code></td>
       <td style="text-align: left">[element name]</td>
       <td style="text-align: left">The block displays before the named element.</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">before</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">before</code></td>
       <td style="text-align: left">empty value or [element name] is absent</td>
-      <td style="text-align: left">Use the value of <code class="highlighter-rouge">after</code>. If that value is empty or absent as well, the element is considered as non-positioned.</td>
+      <td style="text-align: left">Use the value of <code class="language-plaintext highlighter-rouge">after</code>. If that value is empty or absent as well, the element is considered as non-positioned.</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">after</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">after</code></td>
       <td style="text-align: left">Dash (-)</td>
       <td style="text-align: left">The block displays after all other elements in its parent node.</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">after</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">after</code></td>
       <td style="text-align: left">[element name]</td>
       <td style="text-align: left">The block displays after the named element.</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">after</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">after</code></td>
       <td style="text-align: left">empty value or [element name] is absent</td>
-      <td style="text-align: left">Use the value of <code class="highlighter-rouge">before</code>. If that value is empty or absent as well, the block is considered as non-positioned.</td>
+      <td style="text-align: left">Use the value of <code class="language-plaintext highlighter-rouge">before</code>. If that value is empty or absent as well, the block is considered as non-positioned.</td>
     </tr>
   </tbody>
 </table>
@@ -3131,19 +3132,19 @@ These optional attributes can be used in layout XML files to control the order o
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left">Both <code class="highlighter-rouge">before</code> and <code class="highlighter-rouge">after</code> attributes are present</td>
-      <td style="text-align: left"><code class="highlighter-rouge">after</code> takes precedence.</td>
+      <td style="text-align: left">Both <code class="language-plaintext highlighter-rouge">before</code> and <code class="language-plaintext highlighter-rouge">after</code> attributes are present</td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">after</code> takes precedence.</td>
     </tr>
     <tr>
-      <td style="text-align: left">Both <code class="highlighter-rouge">before</code> and <code class="highlighter-rouge">after</code> attributes are absent or empty</td>
+      <td style="text-align: left">Both <code class="language-plaintext highlighter-rouge">before</code> and <code class="language-plaintext highlighter-rouge">after</code> attributes are absent or empty</td>
       <td style="text-align: left">The element is considered as non-positioned. All other elements are positioned at their specified locations. The missing element displays at a random position that doesn’t violate requirements for the positioned elements.</td>
     </tr>
     <tr>
-      <td style="text-align: left">Several elements have <code class="highlighter-rouge">before</code> or <code class="highlighter-rouge">after</code> set to dash (-)</td>
+      <td style="text-align: left">Several elements have <code class="language-plaintext highlighter-rouge">before</code> or <code class="language-plaintext highlighter-rouge">after</code> set to dash (-)</td>
       <td style="text-align: left">All elements display at the top (or bottom, in case of the after attribute), but the ordering of group of these elements is undefined.</td>
     </tr>
     <tr>
-      <td style="text-align: left">The <code class="highlighter-rouge">before</code> or <code class="highlighter-rouge">after</code> attribute’s value refers to an element that is not located in the parent node of the element being defined.</td>
+      <td style="text-align: left">The <code class="language-plaintext highlighter-rouge">before</code> or <code class="language-plaintext highlighter-rouge">after</code> attribute’s value refers to an element that is not located in the parent node of the element being defined.</td>
       <td style="text-align: left">The element displays at a random location that doesn’t violate requirements for the correctly positioned elements.</td>
     </tr>
   </tbody>
@@ -3151,11 +3152,11 @@ These optional attributes can be used in layout XML files to control the order o
 
 <h3 id="fedg_layout_xml-instruc_ex_act">action</h3>
 
-<p class="bs-callout bs-callout-warning">The <code class="highlighter-rouge">&lt;action&gt;</code> instruction is deprecated. If the method implementation allows, use the <a href="#argument"><code class="highlighter-rouge">&lt;argument&gt;</code></a> for <a href="#fedg_layout_xml-instruc_ex_block"><code class="highlighter-rouge">&lt;block&gt;</code></a> or <a href="#fedg_layout_xml-instruc_ex_ref"><code class="highlighter-rouge">&lt;referenceBlock&gt;</code></a> to access the block public API.</p>
+<p class="bs-callout bs-callout-warning">The <code class="language-plaintext highlighter-rouge">&lt;action&gt;</code> instruction is deprecated. If the method implementation allows, use the <a href="#argument"><code class="language-plaintext highlighter-rouge">&lt;argument&gt;</code></a> for <a href="#fedg_layout_xml-instruc_ex_block"><code class="language-plaintext highlighter-rouge">&lt;block&gt;</code></a> or <a href="#fedg_layout_xml-instruc_ex_ref"><code class="language-plaintext highlighter-rouge">&lt;referenceBlock&gt;</code></a> to access the block public API.</p>
 
 <p>Calls public methods on the block API.</p>
 
-<p><strong>Details:</strong> Used to set up the execution of a certain method of the block during block generation; the <code class="highlighter-rouge">&lt;action&gt;</code> node must be located in the scope of the <code class="highlighter-rouge">&lt;block&gt;</code> node.&lt;/p&gt;</p>
+<p><strong>Details:</strong> Used to set up the execution of a certain method of the block during block generation; the <code class="language-plaintext highlighter-rouge">&lt;action&gt;</code> node must be located in the scope of the <code class="language-plaintext highlighter-rouge">&lt;block&gt;</code> node.&lt;/p&gt;</p>
 
 <p>Example:</p>
 
@@ -3169,7 +3170,7 @@ These optional attributes can be used in layout XML files to control the order o
 <span class="nt">&lt;/block&gt;</span>
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">&lt;action&gt;</code> child nodes are translated into block method arguments. Child nodes names are arbitrary. If there are two or more nodes with the same name under <code class="highlighter-rouge">&lt;action&gt;</code>, they are passed as one array.</p>
+<p><code class="language-plaintext highlighter-rouge">&lt;action&gt;</code> child nodes are translated into block method arguments. Child nodes names are arbitrary. If there are two or more nodes with the same name under <code class="language-plaintext highlighter-rouge">&lt;action&gt;</code>, they are passed as one array.</p>
 
 <table style="table-layout:auto;">
   <thead>
@@ -3182,7 +3183,7 @@ These optional attributes can be used in layout XML files to control the order o
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">method</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">method</code></td>
       <td style="text-align: left">Name of the public method of the block class this tag is located in that is called during block generation.</td>
       <td style="text-align: left">block method name</td>
       <td style="text-align: left">yes</td>
@@ -3190,14 +3191,14 @@ These optional attributes can be used in layout XML files to control the order o
   </tbody>
 </table>
 
-<p>To pass parameters, use the <a href="#argument"><code class="highlighter-rouge">&lt;argument&gt;&lt;/argument&gt;</code></a> instruction.</p>
+<p>To pass parameters, use the <a href="#argument"><code class="language-plaintext highlighter-rouge">&lt;argument&gt;&lt;/argument&gt;</code></a> instruction.</p>
 
 <h3 id="fedg_layout_xml-instruc_ex_ref">referenceBlock and referenceContainer</h3>
-<p>Updates in <code class="highlighter-rouge">&lt;referenceBlock&gt;</code> and <code class="highlighter-rouge">&lt;referenceContainer&gt;</code> are applied to the corresponding <code class="highlighter-rouge">&lt;block&gt;</code> or <code class="highlighter-rouge">&lt;container&gt;</code>.</p>
+<p>Updates in <code class="language-plaintext highlighter-rouge">&lt;referenceBlock&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;referenceContainer&gt;</code> are applied to the corresponding <code class="language-plaintext highlighter-rouge">&lt;block&gt;</code> or <code class="language-plaintext highlighter-rouge">&lt;container&gt;</code>.</p>
 
-<p>For example, if you make a reference by <code class="highlighter-rouge">&lt;referenceBlock name="right"&gt;</code>, you’re targeting the block <code class="highlighter-rouge">&lt;block name="right"&gt;</code>.</p>
+<p>For example, if you make a reference by <code class="language-plaintext highlighter-rouge">&lt;referenceBlock name="right"&gt;</code>, you’re targeting the block <code class="language-plaintext highlighter-rouge">&lt;block name="right"&gt;</code>.</p>
 
-<p>To pass parameters to a block use the <a href="#argument"><code class="highlighter-rouge">&lt;argument&gt;&lt;/argument&gt;</code></a> instruction.</p>
+<p>To pass parameters to a block use the <a href="#argument"><code class="language-plaintext highlighter-rouge">&lt;argument&gt;&lt;/argument&gt;</code></a> instruction.</p>
 
 <table style="table-layout:auto;">
   <thead>
@@ -3210,13 +3211,13 @@ These optional attributes can be used in layout XML files to control the order o
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">remove</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">remove</code></td>
       <td style="text-align: left">Allows to remove or cancel the removal of the element. When a container is removed, its child elements are removed as well.</td>
       <td style="text-align: left">true/false</td>
       <td style="text-align: left">no</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">display</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">display</code></td>
       <td style="text-align: left">Allows you to disable rendering of specific block or container with all its children (both set directly and by reference). The block’s/container’s and its children’ respective PHP objects are still generated and available for manipulation.</td>
       <td style="text-align: left">true/false</td>
       <td style="text-align: left">no</td>
@@ -3226,16 +3227,16 @@ These optional attributes can be used in layout XML files to control the order o
 
 <ul>
   <li>
-    <p>The <code class="highlighter-rouge">remove</code> attribute is optional and its default value is <code class="highlighter-rouge">false</code>.</p>
+    <p>The <code class="language-plaintext highlighter-rouge">remove</code> attribute is optional and its default value is <code class="language-plaintext highlighter-rouge">false</code>.</p>
 
-    <p>This implementation allows you to remove a block or container in your layout by setting the remove attribute value to <code class="highlighter-rouge">true</code>, or to cancel the removal of a block or container by setting the value to <code class="highlighter-rouge">false</code>.</p>
+    <p>This implementation allows you to remove a block or container in your layout by setting the remove attribute value to <code class="language-plaintext highlighter-rouge">true</code>, or to cancel the removal of a block or container by setting the value to <code class="language-plaintext highlighter-rouge">false</code>.</p>
 
     <p>Example:</p>
     <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>  <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">"block.name"</span> <span class="na">remove=</span><span class="s">"true"</span> <span class="nt">/&gt;</span>
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>The <code class="highlighter-rouge">display</code> attribute is optional and its default value is true.-</p>
+    <p>The <code class="language-plaintext highlighter-rouge">display</code> attribute is optional and its default value is true.-</p>
 
     <p>You are always able to overwrite this value in your layout.
   In situation when remove value is true, the display attribute is ignored.</p>
@@ -3254,9 +3255,9 @@ These optional attributes can be used in layout XML files to control the order o
 </code></pre></div></div>
 
 <ul>
-  <li><code class="highlighter-rouge">&lt;move&gt;</code> is skipped if the element to be moved is not defined.</li>
-  <li>If the <code class="highlighter-rouge">as</code> attribute is not defined, the current value of the element alias is used. If that is not possible, the value of the <code class="highlighter-rouge">name</code> attribute is used instead.</li>
-  <li>During layout generation, the <code class="highlighter-rouge">&lt;move&gt;</code> instruction is processed before the removal (set using the <code class="highlighter-rouge">remove</code> attribute). This means if any elements are moved to the element scheduled for removal, they will be removed as well.</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;move&gt;</code> is skipped if the element to be moved is not defined.</li>
+  <li>If the <code class="language-plaintext highlighter-rouge">as</code> attribute is not defined, the current value of the element alias is used. If that is not possible, the value of the <code class="language-plaintext highlighter-rouge">name</code> attribute is used instead.</li>
+  <li>During layout generation, the <code class="language-plaintext highlighter-rouge">&lt;move&gt;</code> instruction is processed before the removal (set using the <code class="language-plaintext highlighter-rouge">remove</code> attribute). This means if any elements are moved to the element scheduled for removal, they will be removed as well.</li>
 </ul>
 
 <table style="table-layout:auto;">
@@ -3270,25 +3271,25 @@ These optional attributes can be used in layout XML files to control the order o
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">element</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">element</code></td>
       <td style="text-align: left">Name of the element to move.</td>
       <td style="text-align: left">element name</td>
       <td style="text-align: left">yes</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">destination</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">destination</code></td>
       <td style="text-align: left">Name of the target parent element.</td>
       <td style="text-align: left">element name</td>
       <td style="text-align: left">yes</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">as</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">as</code></td>
       <td style="text-align: left">Alias name for the element in the new location.</td>
       <td style="text-align: left">0-9, A-Z, a-z, underscore (_), period (.), dash (-). Case-sensitive.</td>
       <td style="text-align: left">no</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">after</code> or <code class="highlighter-rouge">before</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">after</code> or <code class="language-plaintext highlighter-rouge">before</code></td>
       <td style="text-align: left">Specifies the element’s position relative to siblings. Use dash (-) to position the block before or after all other siblings of its level of nesting. If the attribute is omitted, the element is placed after all siblings.</td>
       <td style="text-align: left">element name</td>
       <td style="text-align: left">no</td>
@@ -3298,8 +3299,8 @@ These optional attributes can be used in layout XML files to control the order o
 
 <h3 id="fedg_layout_xml-instruc_ex_rmv">remove</h3>
 
-<p><code class="highlighter-rouge">&lt;remove&gt;</code> is used only to remove the static resources linked in a page <code class="highlighter-rouge">&lt;head&gt;</code> section.
-For removing blocks or containers, use the <code class="highlighter-rouge">&lt;remove&gt;</code> attribute for <a href="#fedg_layout_xml-instruc_ex_ref"><code class="highlighter-rouge">&lt;referenceBlock&gt;</code> and <code class="highlighter-rouge">&lt;referenceContainer&gt;</code></a>.</p>
+<p><code class="language-plaintext highlighter-rouge">&lt;remove&gt;</code> is used only to remove the static resources linked in a page <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code> section.
+For removing blocks or containers, use the <code class="language-plaintext highlighter-rouge">&lt;remove&gt;</code> attribute for <a href="#fedg_layout_xml-instruc_ex_ref"><code class="language-plaintext highlighter-rouge">&lt;referenceBlock&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;referenceContainer&gt;</code></a>.</p>
 
 <p>Example of usage:</p>
 
@@ -3330,7 +3331,7 @@ For removing blocks or containers, use the <code class="highlighter-rouge">&lt;r
 <p>The specified <a href="/devdocs/guides/v2.3/frontend-dev-guide/layouts/layout-overview.html#layout-over-terms">handle</a> is “included” and executed recursively.</p>
 
 <h3 id="argument">argument</h3>
-<p>Used to pass an argument. Must be always enclosed in <a href="#arguments"><code class="highlighter-rouge">&lt;arguments&gt;</code></a>.</p>
+<p>Used to pass an argument. Must be always enclosed in <a href="#arguments"><code class="language-plaintext highlighter-rouge">&lt;arguments&gt;</code></a>.</p>
 
 <table style="table-layout:auto;">
   <thead>
@@ -3343,21 +3344,21 @@ For removing blocks or containers, use the <code class="highlighter-rouge">&lt;r
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">name</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">name</code></td>
       <td style="text-align: left">Argument name.</td>
       <td style="text-align: left">unique</td>
       <td style="text-align: left">yes</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">xsi:type</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">xsi:type</code></td>
       <td style="text-align: left">Argument type.</td>
-      <td style="text-align: left"><code class="highlighter-rouge">string|boolean|object|number|null|array</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">string|boolean|object|number|null|array</code></td>
       <td style="text-align: left">yes</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="highlighter-rouge">translate</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">translate</code></td>
       <td style="text-align: left"> </td>
-      <td style="text-align: left"><code class="highlighter-rouge">true|false</code></td>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">true|false</code></td>
       <td style="text-align: left">no</td>
     </tr>
   </tbody>
@@ -3380,25 +3381,25 @@ For removing blocks or containers, use the <code class="highlighter-rouge">&lt;r
 <span class="nt">&lt;/argument&gt;</span>
 </code></pre></div></div>
 
-<p>Arguments values set in a layout file can be accessed in <a href="/devdocs/guides/v2.3/frontend-dev-guide/templates/template-overview.html">templates</a> using the <code class="highlighter-rouge">get{ArgumentName}()</code> and <code class="highlighter-rouge">has{ArgumentName}()</code> methods. The latter returns a boolean defining whether there’s any value set. 
-<code class="highlighter-rouge">{ArgumentName}</code> is obtained from the <code class="highlighter-rouge">name</code> attribute the following way: for getting the value of <code class="highlighter-rouge">&lt;argument name="some_string"&gt;</code> the method name is <code class="highlighter-rouge">getSomeString()</code>.</p>
+<p>Arguments values set in a layout file can be accessed in <a href="/devdocs/guides/v2.3/frontend-dev-guide/templates/template-overview.html">templates</a> using the <code class="language-plaintext highlighter-rouge">get{ArgumentName}()</code> and <code class="language-plaintext highlighter-rouge">has{ArgumentName}()</code> methods. The latter returns a boolean defining whether there’s any value set. 
+<code class="language-plaintext highlighter-rouge">{ArgumentName}</code> is obtained from the <code class="language-plaintext highlighter-rouge">name</code> attribute the following way: for getting the value of <code class="language-plaintext highlighter-rouge">&lt;argument name="some_string"&gt;</code> the method name is <code class="language-plaintext highlighter-rouge">getSomeString()</code>.</p>
 
 <p>Example:
-Setting a value of <code class="highlighter-rouge">css_class</code> in the <code class="highlighter-rouge">[app/code/Magento/Theme/view/frontend/layout/default.xml]</code> layout file:</p>
+Setting a value of <code class="language-plaintext highlighter-rouge">css_class</code> in the <code class="language-plaintext highlighter-rouge">[app/code/Magento/Theme/view/frontend/layout/default.xml]</code> layout file:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;arguments&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"css_class"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>header links<span class="nt">&lt;/argument&gt;</span>
 <span class="nt">&lt;/arguments&gt;</span>
 </code></pre></div></div>
 
-<p>Using the value of <code class="highlighter-rouge">css_class</code> in <code class="highlighter-rouge">[app/code/Magento/Theme/view/frontend/templates/html/title.phtml]</code>:</p>
+<p>Using the value of <code class="language-plaintext highlighter-rouge">css_class</code> in <code class="language-plaintext highlighter-rouge">[app/code/Magento/Theme/view/frontend/templates/html/title.phtml]</code>:</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nv">$cssClass</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">hasCssClass</span><span class="p">()</span> <span class="o">?</span> <span class="s1">' '</span> <span class="o">.</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCssClass</span><span class="p">()</span> <span class="o">:</span> <span class="s1">''</span><span class="p">;</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nv">$cssClass</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">hasCssClass</span><span class="p">()</span> <span class="o">?</span> <span class="s1">' '</span> <span class="mf">.</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">getCssClass</span><span class="p">()</span> <span class="o">:</span> <span class="s1">''</span><span class="p">;</span>
 </code></pre></div></div>
 
 <h3 id="arguments">arguments</h3>
 
-<p><code class="highlighter-rouge">&lt;arguments&gt;</code> is a required container for <code class="highlighter-rouge">&lt;argument&gt;</code>. It does not have its own attributes.</p>
+<p><code class="language-plaintext highlighter-rouge">&lt;arguments&gt;</code> is a required container for <code class="language-plaintext highlighter-rouge">&lt;argument&gt;</code>. It does not have its own attributes.</p>
 
 <p>Example:</p>
 

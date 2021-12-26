@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Incorrect credentials | Magento 2 Developer Documentation (copy)</title>
+	<title>Incorrect credentials | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/trouble/trouble_ce-creds.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/trouble/trouble_ce-creds.html">Magento 2.0</a></li>
 		
@@ -4316,13 +4317,13 @@
 
 			<h2 id="incorrect-credentials">Incorrect credentials</h2>
 
-<p>This topic discusses how to resolve issues with incorrect credentials in your <code class="highlighter-rouge">auth.json</code>. You might have entered Magento Open Source credentials or shared keys for Magento Commerce.</p>
+<p>This topic discusses how to resolve issues with incorrect credentials in your <code class="language-plaintext highlighter-rouge">auth.json</code>. You might have entered Magento Open Source credentials or shared keys for Magento Commerce.</p>
 
 <h3 id="symptom">Symptom</h3>
 
 <p>The most common symptom of incorrect credentials is a deployment failure with an authentication error similar to the following:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>The 'https://repo.magento.com/archives/magento/magento-cloud-configuration/magento-magento-cloud-configuration-1.0.3.0.zip' URL could not be accessed: HTTP/1.1 403 Forbidden
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>The 'https://repo.magento.com/archives/magento/magento-cloud-configuration/magento-magento-cloud-configuration-1.0.3.0.zip' URL could not be accessed: HTTP/1.1 403 Forbidden
 </code></pre></div></div>
 
 <p>To see the error log:</p>
@@ -4338,7 +4339,7 @@
 
 <h3 id="solution">Solution</h3>
 
-<p>To resolve this issue, you must clone the project locally and update <code class="highlighter-rouge">auth.json</code> with the correct Magento Commerce <a href="/devdocs/guides/v2.2/install-gde/prereq/connect-auth.html">authorization keys</a> and run <code class="highlighter-rouge">composer update</code> to update project dependencies. After that, you can deploy your project successfully and get started with your development.</p>
+<p>To resolve this issue, you must clone the project locally and update <code class="language-plaintext highlighter-rouge">auth.json</code> with the correct Magento Commerce <a href="/devdocs/guides/v2.2/install-gde/prereq/connect-auth.html">authorization keys</a> and run <code class="language-plaintext highlighter-rouge">composer update</code> to update project dependencies. After that, you can deploy your project successfully and get started with your development.</p>
 
 <p>Make sure you’re using your own keys, and <em>not</em> <a href="http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html">shared account keys</a>.</p>
 
@@ -4351,48 +4352,48 @@
   <li>
     <p>Log in to your project:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud login
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud login
 </code></pre></div>    </div>
   </li>
   <li>
     <p>List your projects:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud project:list
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud project:list
 </code></pre></div>    </div>
   </li>
   <li>
     <p>If necessary, clone a project.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud project:get &lt;project ID&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud project:get &lt;project ID&gt;
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Change to a project directory.</p>
 
-    <p>For example if your project is named Magento 2, <code class="highlighter-rouge">cd magento-2</code></p>
+    <p>For example if your project is named Magento 2, <code class="language-plaintext highlighter-rouge">cd magento-2</code></p>
   </li>
 </ol>
 
-<h4 id="update-authjson-and-redeploy-the-environment">Update <code class="highlighter-rouge">auth.json</code> and redeploy the environment</h4>
+<h4 id="update-authjson-and-redeploy-the-environment">Update <code class="language-plaintext highlighter-rouge">auth.json</code> and redeploy the environment</h4>
 
 <p>To resolve the issue with credentials:</p>
 
 <ol>
   <li>If you haven’t done so already, change to the project root directory.</li>
-  <li>Open <code class="highlighter-rouge">auth.json</code> in a text editor.</li>
-  <li>Change the value of <code class="highlighter-rouge">username</code> to your Magento Commerce public key.</li>
-  <li>Change the value of <code class="highlighter-rouge">password</code> to your Magento Commerce private key.</li>
-  <li>Save your changes to <code class="highlighter-rouge">auth.json</code> and exit the text editor.</li>
+  <li>Open <code class="language-plaintext highlighter-rouge">auth.json</code> in a text editor.</li>
+  <li>Change the value of <code class="language-plaintext highlighter-rouge">username</code> to your Magento Commerce public key.</li>
+  <li>Change the value of <code class="language-plaintext highlighter-rouge">password</code> to your Magento Commerce private key.</li>
+  <li>Save your changes to <code class="language-plaintext highlighter-rouge">auth.json</code> and exit the text editor.</li>
   <li>
     <p>Update project dependencies:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer update
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer update
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Add, commit, and push your changes:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git add -A
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git add -A
 git commit -m "&lt;message&gt;"
 git push origin master
 </code></pre></div>    </div>
@@ -4476,7 +4477,7 @@ To aqf7hrijhl52o@git.us.magento.cloud:aqf7hrijhl52o.git
 
 <h4 id="verify-the-deployment">Verify the deployment</h4>
 
-<p>To verify the deployment was successful, enter one of the URLs displayed under <code class="highlighter-rouge">Environment routes:</code> in a web browser.</p>
+<p>To verify the deployment was successful, enter one of the URLs displayed under <code class="language-plaintext highlighter-rouge">Environment routes:</code> in a web browser.</p>
 
 <p class="bs-callout bs-callout-warning">For security reasons, we strongly recommend you change your Magento Admin URI, administrator username, and administrator password. For step-by-step details, see <a href="/devdocs/guides/v2.2/cloud/project/project-webint-basic.html#project-conf-env-var">Set environment and project variables</a>.</p>
 

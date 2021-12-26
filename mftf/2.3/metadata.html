@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Metadata | Magento 2 Developer Documentation (copy)</title>
+	<title>Metadata | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -2157,8 +2156,7 @@
 	<h1 class="page-heading">Metadata</h1>
 </section>
 
-			
-<p style="text-align: right"><em>This topic was updated due to the 2.2.0 <abbr title="Magento Functional Testing Framework">MFTF</abbr> release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.2.0 <abbr title="Magento Functional Testing Framework">MFTF</abbr> release.</em></p>
 
 <p>In this topic we talk about handling entities that you need in your tests (such as categories, products, wish lists, and similar) using the <abbr title="Magento Functional Testing Framework">MFTF</abbr>.
 Using data handling actions like <a href="test/actions.html#createdata">createData</a>, <a href="test/actions.html#deletedata">deleteData</a>, <a href="test/actions.html#updatedata">updateData</a>, and <a href="test/actions.html#getdata">getData</a>, you are able to create, delete, update, and read entities for your tests. 
@@ -2169,7 +2167,7 @@ The framework enables you to send HTTP requests with these statically defined da
   <li><a href="#using-html-forms">Sending an HTML form encoded in URL</a></li>
 </ul>
 
-<p>You have probably noticed that some modules in acceptance functional tests contain a directory, which is called <code class="highlighter-rouge">Metadata</code> .</p>
+<p>You have probably noticed that some modules in acceptance functional tests contain a directory, which is called <code class="language-plaintext highlighter-rouge">Metadata</code> .</p>
 
 <blockquote>
   <p>Example of a module with <em>Metadata</em></p>
@@ -2183,25 +2181,25 @@ The framework enables you to send HTTP requests with these statically defined da
 └── Test
 </code></pre>
 
-<p>This directory contains XML files with metadata required to create a valid request to handle an entity defined in <code class="highlighter-rouge">dataType</code>.
-A metadata file contains a list of operations with different types (defined in <code class="highlighter-rouge">type</code>).
+<p>This directory contains XML files with metadata required to create a valid request to handle an entity defined in <code class="language-plaintext highlighter-rouge">dataType</code>.
+A metadata file contains a list of operations with different types (defined in <code class="language-plaintext highlighter-rouge">type</code>).
 Each <a href="#operation-tag">operation</a> includes:</p>
 <ul>
-  <li>The set of adjustments for processing a request in <a href="#operation-tag">attributes</a>, and in some cases, a response  (see <code class="highlighter-rouge">successRegex</code> and <code class="highlighter-rouge">returnRegex</code> in <a href="#operation-tag">reference details</a>).</li>
+  <li>The set of adjustments for processing a request in <a href="#operation-tag">attributes</a>, and in some cases, a response  (see <code class="language-plaintext highlighter-rouge">successRegex</code> and <code class="language-plaintext highlighter-rouge">returnRegex</code> in <a href="#operation-tag">reference details</a>).</li>
   <li>The type of body content encoding in <a href="#contentType-tag">contentType</a>.</li>
   <li>The body of the request represented as a tree of objects, arrays, and fields.</li>
 </ul>
 
 <p>When a test step requires handling the specified data entity, the <abbr title="Magento Functional Testing Framework">MFTF</abbr> performs the following steps:</p>
 <ul>
-  <li>Reads input data (<code class="highlighter-rouge">&lt;data/&gt;</code>) and the type (the <code class="highlighter-rouge">type</code> attribute) of the specified <a href="data.html#entity-tag">entity</a>.</li>
-  <li>Searches the metadata operation for the <code class="highlighter-rouge">dataType</code> that matches the entity’s <code class="highlighter-rouge">type</code>. For example, <code class="highlighter-rouge">&lt;entity type="product"&gt;</code> matches <code class="highlighter-rouge">&lt;operation dataType="product"</code>.</li>
+  <li>Reads input data (<code class="language-plaintext highlighter-rouge">&lt;data/&gt;</code>) and the type (the <code class="language-plaintext highlighter-rouge">type</code> attribute) of the specified <a href="data.html#entity-tag">entity</a>.</li>
+  <li>Searches the metadata operation for the <code class="language-plaintext highlighter-rouge">dataType</code> that matches the entity’s <code class="language-plaintext highlighter-rouge">type</code>. For example, <code class="language-plaintext highlighter-rouge">&lt;entity type="product"&gt;</code> matches <code class="language-plaintext highlighter-rouge">&lt;operation dataType="product"</code>.</li>
   <li>Forms a request of the operation and the input data of the entity according to matching metadata.</li>
   <li>Stores a response and provides access to its data using <abbr title="Magento Functional Testing Framework">MFTF</abbr> variables syntax in XML.</li>
 </ul>
 
 <p>The following diagram demonstrates the XML structure of a metadata file:
-<?xml version="1.0" encoding="UTF-8" standalone="no"?></p>
+&lt;?xml version=”1.0” encoding=”UTF-8” standalone=”no”?&gt;</p>
 <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="561" height="478" version="1.1" id="svg318" sodipodi:docname="metadata-dia.svg" inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
   <metadata id="metadata324">
     <rdf:RDF>
@@ -2445,10 +2443,10 @@ Each <a href="#operation-tag">operation</a> includes:</p>
 <h2 id="principles">Principles</h2>
 
 <ul>
-  <li>The <code class="highlighter-rouge">dataType</code> value must match the <code class="highlighter-rouge">type</code> value of the corresponding entity.</li>
-  <li>The file name contains data type split with <code class="highlighter-rouge">_</code> and ends with <code class="highlighter-rouge">-meta</code>.
-Example: <code class="highlighter-rouge">product_attribute-meta.xml</code>.</li>
-  <li>A metadata file may contain different types of operations (<code class="highlighter-rouge">type</code>) with the same data entity (<code class="highlighter-rouge">dataType</code>).
+  <li>The <code class="language-plaintext highlighter-rouge">dataType</code> value must match the <code class="language-plaintext highlighter-rouge">type</code> value of the corresponding entity.</li>
+  <li>The file name contains data type split with <code class="language-plaintext highlighter-rouge">_</code> and ends with <code class="language-plaintext highlighter-rouge">-meta</code>.
+Example: <code class="language-plaintext highlighter-rouge">product_attribute-meta.xml</code>.</li>
+  <li>A metadata file may contain different types of operations (<code class="language-plaintext highlighter-rouge">type</code>) with the same data entity (<code class="language-plaintext highlighter-rouge">dataType</code>).
 Example:
     <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;operations&gt;</span>
     <span class="nt">&lt;operation</span> <span class="na">type=</span><span class="s">"create"</span> <span class="na">dataType=</span><span class="s">"category"</span><span class="nt">&gt;</span>
@@ -2484,19 +2482,19 @@ PUT is used for updating objects.<br />
 DELETE is used for deleting objects.<br /></p>
 </div>
 
-<p>This is an example of how to handle a category using REST API operations provided by the <code class="highlighter-rouge">catalogCategoryRepositoryV1</code> service.</p>
+<p>This is an example of how to handle a category using REST API operations provided by the <code class="language-plaintext highlighter-rouge">catalogCategoryRepositoryV1</code> service.</p>
 
 <p><img src="img/catalogCategoryRepository-operations.png" alt="REST API operations provided by catalogCategoryRepositoryV1" /></p>
 
 <p>The above screenshot from the <a href="/guides/v2.3/rest/bk-rest.html">Magento REST API Reference</a> demonstrates a list of available operations to:</p>
 <ul>
-  <li>Delete a category by its identifier (<code class="highlighter-rouge">method="DELETE"</code>)</li>
-  <li>Get information about a category by its ID (<code class="highlighter-rouge">method="GET"</code>)</li>
-  <li><a href="#create-object-as-adminOauth">Create a new category</a> (<code class="highlighter-rouge">method="POST"</code>)</li>
-  <li>Update category data by its ID (<code class="highlighter-rouge">method="PUT"</code>)</li>
+  <li>Delete a category by its identifier (<code class="language-plaintext highlighter-rouge">method="DELETE"</code>)</li>
+  <li>Get information about a category by its ID (<code class="language-plaintext highlighter-rouge">method="GET"</code>)</li>
+  <li><a href="#create-object-as-adminOauth">Create a new category</a> (<code class="language-plaintext highlighter-rouge">method="POST"</code>)</li>
+  <li>Update category data by its ID (<code class="language-plaintext highlighter-rouge">method="PUT"</code>)</li>
 </ul>
 
-<p>We assume that our <code class="highlighter-rouge">.env</code> file sets <code class="highlighter-rouge">MAGENTO_BASE_URL=https://example.com/</code> and <code class="highlighter-rouge">MAGENTO_BACKEND_NAME=admin</code>.</p>
+<p>We assume that our <code class="language-plaintext highlighter-rouge">.env</code> file sets <code class="language-plaintext highlighter-rouge">MAGENTO_BASE_URL=https://example.com/</code> and <code class="language-plaintext highlighter-rouge">MAGENTO_BACKEND_NAME=admin</code>.</p>
 
 <h4 id="create-object-as-adminOauth">Create a simple category</h4>
 
@@ -2505,7 +2503,7 @@ DELETE is used for deleting objects.<br /></p>
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;createData</span> <span class="na">entity=</span><span class="s">"_defaultCategory"</span> <span class="na">stepKey=</span><span class="s">"createPreReqCategory"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<p>The <abbr title="Magento Functional Testing Framework">MFTF</abbr> searches in the <em>Data</em> directory an entity with <code class="highlighter-rouge">&lt;entity name="_defaultCategory"&gt;</code> and reads <code class="highlighter-rouge">type</code> of the entity.
+<p>The <abbr title="Magento Functional Testing Framework">MFTF</abbr> searches in the <em>Data</em> directory an entity with <code class="language-plaintext highlighter-rouge">&lt;entity name="_defaultCategory"&gt;</code> and reads <code class="language-plaintext highlighter-rouge">type</code> of the entity.
 If there are more than one entity with the same name, all of the entities are merged.</p>
 
 <blockquote>
@@ -2519,8 +2517,8 @@ If there are more than one entity with the same name, all of the entities are me
 <span class="nt">&lt;/entity&gt;</span>
 </code></pre></div></div>
 
-<p>Here, <code class="highlighter-rouge">type</code> is equal to <code class="highlighter-rouge">"category"</code>, which instructs the <abbr title="Magento Functional Testing Framework">MFTF</abbr> to search an operation with <code class="highlighter-rouge">dataType="category"</code>. 
-Since the action is <strong>to create</strong> a category, the <abbr title="Magento Functional Testing Framework">MFTF</abbr> will also search for operation with <code class="highlighter-rouge">type="create"</code> in <em>Metadata</em> for <code class="highlighter-rouge">dataType="category"</code>.</p>
+<p>Here, <code class="language-plaintext highlighter-rouge">type</code> is equal to <code class="language-plaintext highlighter-rouge">"category"</code>, which instructs the <abbr title="Magento Functional Testing Framework">MFTF</abbr> to search an operation with <code class="language-plaintext highlighter-rouge">dataType="category"</code>. 
+Since the action is <strong>to create</strong> a category, the <abbr title="Magento Functional Testing Framework">MFTF</abbr> will also search for operation with <code class="language-plaintext highlighter-rouge">type="create"</code> in <em>Metadata</em> for <code class="language-plaintext highlighter-rouge">dataType="category"</code>.</p>
 
 <blockquote>
   <p><em>Catalog/Metadata/category-meta.xml</em></p>
@@ -2551,17 +2549,17 @@ Since the action is <strong>to create</strong> a category, the <abbr title="Mage
 </code></pre></div></div>
 <p>(The corresponding operation is provided by <em>catalogCategoryRepositoryV1</em> in <a href="/guides/v2.3/rest/bk-rest.html">REST API</a>.)</p>
 
-<p>The following is encoded in <code class="highlighter-rouge">&lt;operation&gt;</code>:</p>
+<p>The following is encoded in <code class="language-plaintext highlighter-rouge">&lt;operation&gt;</code>:</p>
 <ul>
-  <li><code class="highlighter-rouge">name="CreateCategory"</code> defines a descriptive name of the operation, which is used for merging if needed.</li>
-  <li><code class="highlighter-rouge">dataType="category"</code> defines a relation with data entities with input data for a Category (<code class="highlighter-rouge">&lt;entity type="category"&gt;</code>).</li>
-  <li><code class="highlighter-rouge">auth="adminOauth"</code> defines OAuth authorization, which is required for the Admin area.</li>
-  <li><code class="highlighter-rouge">url="/V1/categories"</code> defines a routing URL to the corresponding service class.
-  (The request will be sent to <a href="">https://example.com/rest/V1/categories</a> if <code class="highlighter-rouge">MAGENTO_BASE_URL=https://example.com/</code> and <code class="highlighter-rouge">MAGENTO_BACKEND_NAME=admin</code> are set in the <em>acceptance/.env</em> configuration file.)</li>
-  <li><code class="highlighter-rouge">method="POST"</code> defines a POST method of the HTTP request.</li>
+  <li><code class="language-plaintext highlighter-rouge">name="CreateCategory"</code> defines a descriptive name of the operation, which is used for merging if needed.</li>
+  <li><code class="language-plaintext highlighter-rouge">dataType="category"</code> defines a relation with data entities with input data for a Category (<code class="language-plaintext highlighter-rouge">&lt;entity type="category"&gt;</code>).</li>
+  <li><code class="language-plaintext highlighter-rouge">auth="adminOauth"</code> defines OAuth authorization, which is required for the Admin area.</li>
+  <li><code class="language-plaintext highlighter-rouge">url="/V1/categories"</code> defines a routing URL to the corresponding service class.
+  (The request will be sent to <a href="">https://example.com/rest/V1/categories</a> if <code class="language-plaintext highlighter-rouge">MAGENTO_BASE_URL=https://example.com/</code> and <code class="language-plaintext highlighter-rouge">MAGENTO_BACKEND_NAME=admin</code> are set in the <em>acceptance/.env</em> configuration file.)</li>
+  <li><code class="language-plaintext highlighter-rouge">method="POST"</code> defines a POST method of the HTTP request.</li>
 </ul>
 
-<p><code class="highlighter-rouge">&lt;contentType&gt;application/json&lt;/contentType&gt;</code> defines a content type of the REST API request, which is set as <code class="highlighter-rouge">application/json</code> here.</p>
+<p><code class="language-plaintext highlighter-rouge">&lt;contentType&gt;application/json&lt;/contentType&gt;</code> defines a content type of the REST API request, which is set as <code class="language-plaintext highlighter-rouge">application/json</code> here.</p>
 
 <p>The parameter that declares a body of the request is <em>catalogCategoryRepositoryV1SavePostBody</em>.
 Using the <a href="#reference">Reference</a>, we can trace how the JSON request was converted into XML representation.</p>
@@ -2577,26 +2575,26 @@ JSON does not support comments.</p>
   <p>Model schema for <em>catalogCategoryRepositoryV1SavePostBody</em> with XML representation of <em>Catalog/Metadata/category-meta.xml</em> in comments</p>
 </blockquote>
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">                                           </span><span class="err">//</span><span class="w"> </span><span class="err">XML</span><span class="w"> </span><span class="err">representation</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">MFTF</span><span class="w"> </span><span class="err">metadata</span><span class="w"> </span><span class="err">format</span><span class="w"> </span><span class="err">(see</span><span class="w"> </span><span class="err">'Catalog/Metadata/category-meta.xml')</span><span class="w">
-  </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">                             </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;object</span><span class="w"> </span><span class="err">key=</span><span class="s2">"category"</span><span class="w"> </span><span class="err">dataType=</span><span class="s2">"category"</span><span class="err">&gt;</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">                                </span><span class="err">//</span><span class="w"> </span><span class="err">Skipped</span><span class="p">,</span><span class="w"> </span><span class="err">because</span><span class="w"> </span><span class="err">Category</span><span class="w"> </span><span class="err">ID</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">not</span><span class="w"> </span><span class="err">available</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">UI</span><span class="w"> </span><span class="err">when</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">create</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">new</span><span class="w"> </span><span class="err">category.</span><span class="w">
-    </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">                         </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;field</span><span class="w"> </span><span class="err">key=</span><span class="s2">"parent_id"</span><span class="err">&gt;integer&lt;/field&gt;</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">                       </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;field</span><span class="w"> </span><span class="err">key=</span><span class="s2">"name"</span><span class="err">&gt;string&lt;/field&gt;</span><span class="w">
-    </span><span class="s2">"is_active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">                      </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;field</span><span class="w"> </span><span class="err">key=</span><span class="s2">"is_active"</span><span class="err">&gt;boolean&lt;/field&gt;</span><span class="w">
-    </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">                          </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;field</span><span class="w"> </span><span class="err">key=</span><span class="s2">"position"</span><span class="err">&gt;integer&lt;/field&gt;</span><span class="w">
-    </span><span class="s2">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">                             </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;field</span><span class="w"> </span><span class="err">key=</span><span class="s2">"level"</span><span class="err">&gt;integer&lt;/field&gt;</span><span class="w">
-    </span><span class="s2">"children"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">                   </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;field</span><span class="w"> </span><span class="err">key=</span><span class="s2">"children"</span><span class="err">&gt;string&lt;/field&gt;</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">                 </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;field</span><span class="w"> </span><span class="err">key=</span><span class="s2">"created_at"</span><span class="err">&gt;string&lt;/field&gt;</span><span class="w">
-    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">                 </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;field</span><span class="w"> </span><span class="err">key=</span><span class="s2">"updated_at"</span><span class="err">&gt;string&lt;/field&gt;</span><span class="w">
-    </span><span class="s2">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">                       </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;field</span><span class="w"> </span><span class="err">key=</span><span class="s2">"path"</span><span class="err">&gt;string&lt;/field&gt;</span><span class="w">
-    </span><span class="s2">"available_sort_by"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">                  </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;array</span><span class="w"> </span><span class="err">key=</span><span class="s2">"available_sort_by"</span><span class="err">&gt;</span><span class="w">
+  </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">                             </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;object</span><span class="w"> </span><span class="err">key=</span><span class="s2">"category"</span><span class="w"> </span><span class="err">dataType=</span><span class="s2">"category"</span><span class="err">&gt;</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">                                </span><span class="err">//</span><span class="w"> </span><span class="err">Skipped</span><span class="p">,</span><span class="w"> </span><span class="err">because</span><span class="w"> </span><span class="err">Category</span><span class="w"> </span><span class="err">ID</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">not</span><span class="w"> </span><span class="err">available</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">UI</span><span class="w"> </span><span class="err">when</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">create</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">new</span><span class="w"> </span><span class="err">category.</span><span class="w">
+    </span><span class="nl">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">                         </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;field</span><span class="w"> </span><span class="err">key=</span><span class="s2">"parent_id"</span><span class="err">&gt;integer&lt;/field&gt;</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">                       </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;field</span><span class="w"> </span><span class="err">key=</span><span class="s2">"name"</span><span class="err">&gt;string&lt;/field&gt;</span><span class="w">
+    </span><span class="nl">"is_active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">                      </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;field</span><span class="w"> </span><span class="err">key=</span><span class="s2">"is_active"</span><span class="err">&gt;boolean&lt;/field&gt;</span><span class="w">
+    </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">                          </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;field</span><span class="w"> </span><span class="err">key=</span><span class="s2">"position"</span><span class="err">&gt;integer&lt;/field&gt;</span><span class="w">
+    </span><span class="nl">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">                             </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;field</span><span class="w"> </span><span class="err">key=</span><span class="s2">"level"</span><span class="err">&gt;integer&lt;/field&gt;</span><span class="w">
+    </span><span class="nl">"children"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">                   </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;field</span><span class="w"> </span><span class="err">key=</span><span class="s2">"children"</span><span class="err">&gt;string&lt;/field&gt;</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">                 </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;field</span><span class="w"> </span><span class="err">key=</span><span class="s2">"created_at"</span><span class="err">&gt;string&lt;/field&gt;</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">                 </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;field</span><span class="w"> </span><span class="err">key=</span><span class="s2">"updated_at"</span><span class="err">&gt;string&lt;/field&gt;</span><span class="w">
+    </span><span class="nl">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">                       </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;field</span><span class="w"> </span><span class="err">key=</span><span class="s2">"path"</span><span class="err">&gt;string&lt;/field&gt;</span><span class="w">
+    </span><span class="nl">"available_sort_by"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">                  </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;array</span><span class="w"> </span><span class="err">key=</span><span class="s2">"available_sort_by"</span><span class="err">&gt;</span><span class="w">
       </span><span class="s2">"string"</span><span class="w">                              </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;value&gt;string&lt;/value&gt;</span><span class="w">
     </span><span class="p">],</span><span class="w">                                      </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;/array&gt;</span><span class="w">
-    </span><span class="s2">"include_in_menu"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">                </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;field</span><span class="w"> </span><span class="err">key=</span><span class="s2">"include_in_menu"</span><span class="err">&gt;boolean&lt;/field&gt;</span><span class="w">
-    </span><span class="s2">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">             </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;field</span><span class="w"> </span><span class="err">key=</span><span class="s2">"extension_attributes"</span><span class="err">&gt;empty_extension_attribute&lt;/field&gt;</span><span class="p">,</span><span class="w"> </span><span class="err">where</span><span class="w"> </span><span class="err">'empty_extension_attribute'</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">reference</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">operation</span><span class="w"> </span><span class="err">with</span><span class="w"> </span><span class="err">'dataType=</span><span class="s2">"empty_extension_attribute"</span><span class="err">'</span><span class="w"> </span><span class="err">(see</span><span class="w"> </span><span class="err">'Catalog/Metadata/empty_extension_attribute-meta.xml')</span><span class="w">
-    </span><span class="s2">"custom_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">                  </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;array</span><span class="w"> </span><span class="err">key=</span><span class="s2">"custom_attributes"</span><span class="err">&gt;</span><span class="w">
+    </span><span class="nl">"include_in_menu"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">                </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;field</span><span class="w"> </span><span class="err">key=</span><span class="s2">"include_in_menu"</span><span class="err">&gt;boolean&lt;/field&gt;</span><span class="w">
+    </span><span class="nl">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">             </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;field</span><span class="w"> </span><span class="err">key=</span><span class="s2">"extension_attributes"</span><span class="err">&gt;empty_extension_attribute&lt;/field&gt;</span><span class="p">,</span><span class="w"> </span><span class="err">where</span><span class="w"> </span><span class="err">'empty_extension_attribute'</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">reference</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">operation</span><span class="w"> </span><span class="err">with</span><span class="w"> </span><span class="err">'dataType=</span><span class="s2">"empty_extension_attribute"</span><span class="err">'</span><span class="w"> </span><span class="err">(see</span><span class="w"> </span><span class="err">'Catalog/Metadata/empty_extension_attribute-meta.xml')</span><span class="w">
+    </span><span class="nl">"custom_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">                  </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;array</span><span class="w"> </span><span class="err">key=</span><span class="s2">"custom_attributes"</span><span class="err">&gt;</span><span class="w">
       </span><span class="p">{</span><span class="w">                                     </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;value&gt;custom_attribute&lt;/value&gt;</span><span class="p">,</span><span class="w"> </span><span class="err">where</span><span class="w"> </span><span class="err">'custom_attribute'</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">reference</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">operation</span><span class="w"> </span><span class="err">with</span><span class="w"> </span><span class="err">'dataType=</span><span class="s2">"custom_attribute"</span><span class="err">'</span><span class="w"> </span><span class="err">(see</span><span class="w"> </span><span class="err">'Catalog/Metadata/custom_attribute-meta.xml')</span><span class="w">
-        </span><span class="s2">"attribute_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">         
-        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">                   
+        </span><span class="nl">"attribute_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">         
+        </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">                   
       </span><span class="p">}</span><span class="w">                                     
     </span><span class="p">]</span><span class="w">                                       </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;/array&gt;</span><span class="w">
   </span><span class="p">}</span><span class="w">                                         </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;/object&gt;</span><span class="w">                                                                                  
@@ -2606,9 +2604,9 @@ JSON does not support comments.</p>
 <p>So, the body of a REST API request that creates a simple category is the following:</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">                                             </span><span class="err">//</span><span class="w"> </span><span class="err">XML</span><span class="w"> </span><span class="err">representation</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">input</span><span class="w"> </span><span class="err">data</span><span class="w"> </span><span class="err">used</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">create</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">simple</span><span class="w"> </span><span class="err">category</span><span class="w"> </span><span class="err">(</span><span class="s2">"Catalog/Data/CategoryData.xml"</span><span class="err">)</span><span class="w">
-  </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">                               </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;entity</span><span class="w"> </span><span class="err">name=</span><span class="s2">"_defaultCategory"</span><span class="w"> </span><span class="err">type=</span><span class="s2">"category"</span><span class="err">&gt;</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"simpleCategory_0986576456"</span><span class="p">,</span><span class="w">      </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;data</span><span class="w"> </span><span class="err">key=</span><span class="s2">"name"</span><span class="w"> </span><span class="err">unique=</span><span class="s2">"suffix"</span><span class="err">&gt;simpleCategory&lt;/data&gt;</span><span class="w">
-    </span><span class="s2">"is_active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">                         </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;data</span><span class="w"> </span><span class="err">key=</span><span class="s2">"is_active"</span><span class="err">&gt;</span><span class="kc">true</span><span class="err">&lt;/data&gt;</span><span class="w">
+  </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">                               </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;entity</span><span class="w"> </span><span class="err">name=</span><span class="s2">"_defaultCategory"</span><span class="w"> </span><span class="err">type=</span><span class="s2">"category"</span><span class="err">&gt;</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"simpleCategory_0986576456"</span><span class="p">,</span><span class="w">      </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;data</span><span class="w"> </span><span class="err">key=</span><span class="s2">"name"</span><span class="w"> </span><span class="err">unique=</span><span class="s2">"suffix"</span><span class="err">&gt;simpleCategory&lt;/data&gt;</span><span class="w">
+    </span><span class="nl">"is_active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">                         </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;data</span><span class="w"> </span><span class="err">key=</span><span class="s2">"is_active"</span><span class="err">&gt;</span><span class="kc">true</span><span class="err">&lt;/data&gt;</span><span class="w">
   </span><span class="p">}</span><span class="w">                                           </span><span class="err">//</span><span class="w"> </span><span class="err">&lt;/entity&gt;</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
@@ -2620,7 +2618,7 @@ JSON does not support comments.</p>
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;createData</span> <span class="na">entity=</span><span class="s">"guestCart"</span> <span class="na">stepKey=</span><span class="s">"createGuestCart"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<p>The <abbr title="Magento Functional Testing Framework">MFTF</abbr> searches in the <em>Data</em> directory an entity with <code class="highlighter-rouge">&lt;entity name="guestCart"&gt;</code> and reads <code class="highlighter-rouge">type</code>:</p>
+<p>The <abbr title="Magento Functional Testing Framework">MFTF</abbr> searches in the <em>Data</em> directory an entity with <code class="language-plaintext highlighter-rouge">&lt;entity name="guestCart"&gt;</code> and reads <code class="language-plaintext highlighter-rouge">type</code>:</p>
 
 <blockquote>
   <p>Source file: <em>Quote/Data/GuestCartData.xml</em></p>
@@ -2630,7 +2628,7 @@ JSON does not support comments.</p>
 <span class="nt">&lt;/entity&gt;</span>
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">type="guestCart"</code> points to the operation with <code class="highlighter-rouge">dataType=guestCart"</code> and <code class="highlighter-rouge">type="create"</code> in the <em>Metadata</em> directory:</p>
+<p><code class="language-plaintext highlighter-rouge">type="guestCart"</code> points to the operation with <code class="language-plaintext highlighter-rouge">dataType=guestCart"</code> and <code class="language-plaintext highlighter-rouge">type="create"</code> in the <em>Metadata</em> directory:</p>
 
 <blockquote>
   <p>Source file: <em>Catalog/Data/CategoryData.xml</em></p>
@@ -2671,38 +2669,38 @@ JSON does not support comments.</p>
 <p>The following example of response in JSON demonstrates how to reference data on the root level and as data in custom attributes:</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">                                          </span><span class="err">//$createPreReqCategory.id$</span><span class="w">
-    </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">                                   </span><span class="err">//$createPreReqCategory.parent_id$</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"simpleCategory_0986576456"</span><span class="p">,</span><span class="w">              </span><span class="err">//$createPreReqCategory.is_active$</span><span class="w">
-    </span><span class="s2">"is_active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"children"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-08 14:27:18"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-08 14:27:18"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1/2/7"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"available_sort_by"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-    </span><span class="s2">"include_in_menu"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"custom_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> 
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">                                          </span><span class="err">//$createPreReqCategory.id$</span><span class="w">
+    </span><span class="nl">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">                                   </span><span class="err">//$createPreReqCategory.parent_id$</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"simpleCategory_0986576456"</span><span class="p">,</span><span class="w">              </span><span class="err">//$createPreReqCategory.is_active$</span><span class="w">
+    </span><span class="nl">"is_active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"children"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-08 14:27:18"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-08 14:27:18"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1/2/7"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"available_sort_by"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"include_in_menu"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"custom_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> 
         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"attribute_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"is_anchor"</span><span class="p">,</span><span class="w"> 
-            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">                              </span><span class="err">//$createPreReqCategory.custom_attributes</span><span class="p">[</span><span class="err">is_anchor</span><span class="p">]</span><span class="err">$</span><span class="w">
+            </span><span class="nl">"attribute_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"is_anchor"</span><span class="p">,</span><span class="w"> 
+            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">                              </span><span class="err">//$createPreReqCategory.custom_attributes</span><span class="p">[</span><span class="err">is_anchor</span><span class="p">]</span><span class="err">$</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"attribute_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"path"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1/2/7"</span><span class="w">                          </span><span class="err">//$createPreReqCategory.custom_attributes</span><span class="p">[</span><span class="err">path</span><span class="p">]</span><span class="err">$</span><span class="w">
+            </span><span class="nl">"attribute_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"path"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1/2/7"</span><span class="w">                          </span><span class="err">//$createPreReqCategory.custom_attributes</span><span class="p">[</span><span class="err">path</span><span class="p">]</span><span class="err">$</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"attribute_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"children_count"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+            </span><span class="nl">"attribute_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"children_count"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"attribute_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"url_key"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"simplecategory5af1b41cd58fb4"</span><span class="w">   </span><span class="err">//$createPreReqCategory.custom_attributes</span><span class="p">[</span><span class="err">url_key</span><span class="p">]</span><span class="err">$</span><span class="w">
+            </span><span class="nl">"attribute_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"url_key"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"simplecategory5af1b41cd58fb4"</span><span class="w">   </span><span class="err">//$createPreReqCategory.custom_attributes</span><span class="p">[</span><span class="err">url_key</span><span class="p">]</span><span class="err">$</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"attribute_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"url_path"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"simplecategory5af1b41cd58fb4"</span><span class="w">
+            </span><span class="nl">"attribute_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"url_path"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"simplecategory5af1b41cd58fb4"</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -2711,18 +2709,18 @@ JSON does not support comments.</p>
 
 <h2 id="using-html-forms">Handling entities using HTML forms</h2>
 
-<p>For cases when REST API is not applicable, you may use <a target="_blank" href="https://www.w3.org/TR/html401/interact/forms.html">HTML forms</a> (when all object parameters are encoded in a URL as <code class="highlighter-rouge">key=name</code> attributes).
+<p>For cases when REST API is not applicable, you may use <a target="_blank" href="https://www.w3.org/TR/html401/interact/forms.html">HTML forms</a> (when all object parameters are encoded in a URL as <code class="language-plaintext highlighter-rouge">key=name</code> attributes).
 There are two different attributes to split access to different areas:</p>
 <ul>
-  <li><code class="highlighter-rouge">auth="adminFormKey"</code> is used for objects in an Admin area.</li>
-  <li><code class="highlighter-rouge">auth="customerFormKey"</code> is used for objects in a storefront.</li>
+  <li><code class="language-plaintext highlighter-rouge">auth="adminFormKey"</code> is used for objects in an Admin area.</li>
+  <li><code class="language-plaintext highlighter-rouge">auth="customerFormKey"</code> is used for objects in a storefront.</li>
 </ul>
 
-<p>You are able to create assurances with <code class="highlighter-rouge">successRegex</code>, and even return values with <code class="highlighter-rouge">returnRegex</code>.</p>
+<p>You are able to create assurances with <code class="language-plaintext highlighter-rouge">successRegex</code>, and even return values with <code class="language-plaintext highlighter-rouge">returnRegex</code>.</p>
 
 <h3 id="create-object-as-adminFormKey">Create an object in Admin</h3>
 
-<p>The <code class="highlighter-rouge">CreateStoreGroup</code> operation is used to persist a store group:</p>
+<p>The <code class="language-plaintext highlighter-rouge">CreateStoreGroup</code> operation is used to persist a store group:</p>
 
 <blockquote>
   <p>Source file: <em>Store/Metadata/store_group-meta.xml</em></p>
@@ -2742,25 +2740,25 @@ There are two different attributes to split access to different areas:</p>
 <span class="nt">&lt;/operation&gt;</span>
 </code></pre></div></div>
 
-<p>The operation is called when <code class="highlighter-rouge">&lt;createData&gt;</code> (<code class="highlighter-rouge">type="create"</code>) points to a data entity of type <code class="highlighter-rouge">"group"</code> (<code class="highlighter-rouge">dataType="group"</code>).
-It sends a POST request (<code class="highlighter-rouge">method="POST"</code>) to <a href="">http://example.com/admin/system_store/save</a> (<code class="highlighter-rouge">url="/admin/system_store/save"</code>) that is authorized for the Admin area (<code class="highlighter-rouge">auth="adminFormKey"</code>).
-The request contains HTML form data encoded in the <a target="_blank" href="https://www.w3.org/TR/html401/interact/forms.html#h-17.13.4.1">application/x-www-form-urlencoded</a> content type (<code class="highlighter-rouge">&lt;contentType&gt;application/x-www-form-urlencoded&lt;/contentType&gt;</code>).
-If the returned HTML code contains the <code class="highlighter-rouge">messages-message-success</code> string, it is resolved as successful.</p>
+<p>The operation is called when <code class="language-plaintext highlighter-rouge">&lt;createData&gt;</code> (<code class="language-plaintext highlighter-rouge">type="create"</code>) points to a data entity of type <code class="language-plaintext highlighter-rouge">"group"</code> (<code class="language-plaintext highlighter-rouge">dataType="group"</code>).
+It sends a POST request (<code class="language-plaintext highlighter-rouge">method="POST"</code>) to <a href="">http://example.com/admin/system_store/save</a> (<code class="language-plaintext highlighter-rouge">url="/admin/system_store/save"</code>) that is authorized for the Admin area (<code class="language-plaintext highlighter-rouge">auth="adminFormKey"</code>).
+The request contains HTML form data encoded in the <a target="_blank" href="https://www.w3.org/TR/html401/interact/forms.html#h-17.13.4.1">application/x-www-form-urlencoded</a> content type (<code class="language-plaintext highlighter-rouge">&lt;contentType&gt;application/x-www-form-urlencoded&lt;/contentType&gt;</code>).
+If the returned HTML code contains the <code class="language-plaintext highlighter-rouge">messages-message-success</code> string, it is resolved as successful.</p>
 
 <p>The operation enables you to assign the following form fields:</p>
 <ul>
-  <li><code class="highlighter-rouge">group/group_id</code></li>
-  <li><code class="highlighter-rouge">group/name</code></li>
-  <li><code class="highlighter-rouge">group/code</code></li>
-  <li><code class="highlighter-rouge">group/root_category_id</code></li>
-  <li><code class="highlighter-rouge">group/website_id</code></li>
-  <li><code class="highlighter-rouge">store_action</code></li>
-  <li><code class="highlighter-rouge">store_type</code></li>
+  <li><code class="language-plaintext highlighter-rouge">group/group_id</code></li>
+  <li><code class="language-plaintext highlighter-rouge">group/name</code></li>
+  <li><code class="language-plaintext highlighter-rouge">group/code</code></li>
+  <li><code class="language-plaintext highlighter-rouge">group/root_category_id</code></li>
+  <li><code class="language-plaintext highlighter-rouge">group/website_id</code></li>
+  <li><code class="language-plaintext highlighter-rouge">store_action</code></li>
+  <li><code class="language-plaintext highlighter-rouge">store_type</code></li>
 </ul>
 
 <h3 id="create-object-as-customerFormKey">Create an object in storefront</h3>
 
-<p>The <abbr title="Magento Functional Testing Framework">MFTF</abbr> uses the <code class="highlighter-rouge">CreateWishlist</code> operation to create a wish list on storefront:</p>
+<p>The <abbr title="Magento Functional Testing Framework">MFTF</abbr> uses the <code class="language-plaintext highlighter-rouge">CreateWishlist</code> operation to create a wish list on storefront:</p>
 
 <blockquote>
   <p>Source file: <em>Wishlist/Metadata/wishlist-meta.xml</em></p>
@@ -2774,16 +2772,16 @@ If the returned HTML code contains the <code class="highlighter-rouge">messages-
 <span class="nt">&lt;/operation&gt;</span>
 </code></pre></div></div>
 
-<p>The operation is used when <code class="highlighter-rouge">&lt;createData&gt;</code> (<code class="highlighter-rouge">type="create"</code>) points to a data entity of type <code class="highlighter-rouge">"wishlist"</code> (<code class="highlighter-rouge">dataType="wishlist"</code>).
-It sends a POST request (<code class="highlighter-rouge">method="POST"</code>) to <a href="">http://example.com/wishlist/index/add/</a> (<code class="highlighter-rouge">url="wishlist/index/add/"</code>) as a customer (<code class="highlighter-rouge">auth="customerFormKey"</code>).
-The request contains HTML form data encoded in the <a target="_blank" href="https://www.w3.org/TR/html401/interact/forms.html#h-17.13.4.1">application/x-www-form-urlencoded</a> content type (<code class="highlighter-rouge">&lt;contentType&gt;application/x-www-form-urlencoded&lt;/contentType&gt;</code>).
-If the returned HTML code contains a string that matches the regular expression <code class="highlighter-rouge">~\/wishlist_id\/(\d*?)\/~</code>, it returns the matching value.</p>
+<p>The operation is used when <code class="language-plaintext highlighter-rouge">&lt;createData&gt;</code> (<code class="language-plaintext highlighter-rouge">type="create"</code>) points to a data entity of type <code class="language-plaintext highlighter-rouge">"wishlist"</code> (<code class="language-plaintext highlighter-rouge">dataType="wishlist"</code>).
+It sends a POST request (<code class="language-plaintext highlighter-rouge">method="POST"</code>) to <a href="">http://example.com/wishlist/index/add/</a> (<code class="language-plaintext highlighter-rouge">url="wishlist/index/add/"</code>) as a customer (<code class="language-plaintext highlighter-rouge">auth="customerFormKey"</code>).
+The request contains HTML form data encoded in the <a target="_blank" href="https://www.w3.org/TR/html401/interact/forms.html#h-17.13.4.1">application/x-www-form-urlencoded</a> content type (<code class="language-plaintext highlighter-rouge">&lt;contentType&gt;application/x-www-form-urlencoded&lt;/contentType&gt;</code>).
+If the returned HTML code contains a string that matches the regular expression <code class="language-plaintext highlighter-rouge">~\/wishlist_id\/(\d*?)\/~</code>, it returns the matching value.</p>
 
 <p>The operation assigns three form fields:</p>
 <ul>
-  <li><code class="highlighter-rouge">product</code></li>
-  <li><code class="highlighter-rouge">customer_email</code></li>
-  <li><code class="highlighter-rouge">customer_password</code></li>
+  <li><code class="language-plaintext highlighter-rouge">product</code></li>
+  <li><code class="language-plaintext highlighter-rouge">customer_email</code></li>
+  <li><code class="language-plaintext highlighter-rouge">customer_password</code></li>
 </ul>
 
 <h2 id="reference">Reference</h2>
@@ -2805,58 +2803,58 @@ If the returned HTML code contains a string that matches the regular expression 
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">name</code></td>
+      <td><code class="language-plaintext highlighter-rouge">name</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Name of the operation.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">dataType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">dataType</code></td>
       <td>string</td>
       <td>required</td>
-      <td>Data type of the operation. It refers to a <code class="highlighter-rouge">type</code> attribute of data entity that will be used as a source of input data.</td>
+      <td>Data type of the operation. It refers to a <code class="language-plaintext highlighter-rouge">type</code> attribute of data entity that will be used as a source of input data.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">type</code></td>
-      <td>Possible values: <code class="highlighter-rouge">create</code>, <code class="highlighter-rouge">delete</code>, <code class="highlighter-rouge">update</code>, <code class="highlighter-rouge">get</code>.</td>
+      <td><code class="language-plaintext highlighter-rouge">type</code></td>
+      <td>Possible values: <code class="language-plaintext highlighter-rouge">create</code>, <code class="language-plaintext highlighter-rouge">delete</code>, <code class="language-plaintext highlighter-rouge">update</code>, <code class="language-plaintext highlighter-rouge">get</code>.</td>
       <td>required</td>
       <td>Type of operation.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">url</code></td>
+      <td><code class="language-plaintext highlighter-rouge">url</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A routing URL of the operation. Example: <code class="highlighter-rouge">/V1/categories</code>. The full URL at the end will contain: <code class="highlighter-rouge">ENV.baseUrl</code> + /rest/ + <code class="highlighter-rouge">url</code>.</td>
+      <td>A routing URL of the operation. Example: <code class="language-plaintext highlighter-rouge">/V1/categories</code>. The full URL at the end will contain: <code class="language-plaintext highlighter-rouge">ENV.baseUrl</code> + /rest/ + <code class="language-plaintext highlighter-rouge">url</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">auth</code></td>
-      <td>Possible values: <code class="highlighter-rouge">adminOath</code>, <code class="highlighter-rouge">adminFormKey</code>, <code class="highlighter-rouge">customerFormKey</code>, <code class="highlighter-rouge">anonymous</code></td>
+      <td><code class="language-plaintext highlighter-rouge">auth</code></td>
+      <td>Possible values: <code class="language-plaintext highlighter-rouge">adminOath</code>, <code class="language-plaintext highlighter-rouge">adminFormKey</code>, <code class="language-plaintext highlighter-rouge">customerFormKey</code>, <code class="language-plaintext highlighter-rouge">anonymous</code></td>
       <td>optional</td>
       <td>Type of authorization of the operation.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">method</code></td>
+      <td><code class="language-plaintext highlighter-rouge">method</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>HTTP method of the operation. Possible values: <code class="highlighter-rouge">POST</code>, <code class="highlighter-rouge">DELETE</code>, <code class="highlighter-rouge">PUT</code>, <code class="highlighter-rouge">GET</code>.</td>
+      <td>HTTP method of the operation. Possible values: <code class="language-plaintext highlighter-rouge">POST</code>, <code class="language-plaintext highlighter-rouge">DELETE</code>, <code class="language-plaintext highlighter-rouge">PUT</code>, <code class="language-plaintext highlighter-rouge">GET</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">successRegex</code></td>
+      <td><code class="language-plaintext highlighter-rouge">successRegex</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>Determines if the operation was successful. Parses the HTML body in response and asserts if the value assigned to the <code class="highlighter-rouge">successRegex</code> exists.</td>
+      <td>Determines if the operation was successful. Parses the HTML body in response and asserts if the value assigned to the <code class="language-plaintext highlighter-rouge">successRegex</code> exists.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">returnRegex</code></td>
+      <td><code class="language-plaintext highlighter-rouge">returnRegex</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Determines if the response contains the matching value to return.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">removeBackend</code></td>
+      <td><code class="language-plaintext highlighter-rouge">removeBackend</code></td>
       <td>boolean</td>
       <td>optional</td>
-      <td>Removes backend name from requested URL. Applicable when <code class="highlighter-rouge">auth="adminFormKey"</code>.</td>
+      <td>Removes backend name from requested URL. Applicable when <code class="language-plaintext highlighter-rouge">auth="adminFormKey"</code>.</td>
     </tr>
   </tbody>
 </table>
@@ -2870,26 +2868,26 @@ PUT is used for updating objects.<br />
 DELETE is used for deleting objects.<br /></p>
 </div>
 
-<p>The following is a list with descriptions the <code class="highlighter-rouge">auth</code> possible values:</p>
+<p>The following is a list with descriptions the <code class="language-plaintext highlighter-rouge">auth</code> possible values:</p>
 <ul>
-  <li><code class="highlighter-rouge">adminOath</code> is used for REST API persistence in the Admin area with <a target="_blank" href="/guides/v2.3/get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a>.</li>
-  <li><code class="highlighter-rouge">adminFormKey</code> is used for HTML form persistence in the Admin area.</li>
-  <li><code class="highlighter-rouge">customerFormKey</code> is used for HTML form persistence in the Customer area.</li>
-  <li><code class="highlighter-rouge">anonymous</code> is used for REST API persistence without authorization.</li>
+  <li><code class="language-plaintext highlighter-rouge">adminOath</code> is used for REST API persistence in the Admin area with <a target="_blank" href="/guides/v2.3/get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a>.</li>
+  <li><code class="language-plaintext highlighter-rouge">adminFormKey</code> is used for HTML form persistence in the Admin area.</li>
+  <li><code class="language-plaintext highlighter-rouge">customerFormKey</code> is used for HTML form persistence in the Customer area.</li>
+  <li><code class="language-plaintext highlighter-rouge">anonymous</code> is used for REST API persistence without authorization.</li>
 </ul>
 
 <h3 id="contentType-tag">contentType</h3>
 
 <p>Sets one of the following operation types:</p>
 <ul>
-  <li><code class="highlighter-rouge">application/json</code> is used for REST API operations.</li>
-  <li><code class="highlighter-rouge">application/x-www-form-urlencoded</code> is used for HTML form operations.</li>
+  <li><code class="language-plaintext highlighter-rouge">application/json</code> is used for REST API operations.</li>
+  <li><code class="language-plaintext highlighter-rouge">application/x-www-form-urlencoded</code> is used for HTML form operations.</li>
 </ul>
 
 <h3 id="object-tag">object</h3>
 
 <p>Representation of a complex entity that may contain fields, arrays, and objects.
-An object must match the <a href="data.html#entity-tag">entity</a> of the same <code class="highlighter-rouge">type</code>.</p>
+An object must match the <a href="data.html#entity-tag">entity</a> of the same <code class="language-plaintext highlighter-rouge">type</code>.</p>
 
 <table>
   <thead>
@@ -2902,19 +2900,19 @@ An object must match the <a href="data.html#entity-tag">entity</a> of the same <
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">key</code></td>
+      <td><code class="language-plaintext highlighter-rouge">key</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Name of the object.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">dataType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">dataType</code></td>
       <td>string</td>
       <td>required</td>
       <td>Type of the related <a href="data.html#entity-tag">entity</a>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">required</code></td>
+      <td><code class="language-plaintext highlighter-rouge">required</code></td>
       <td>boolean</td>
       <td>optional</td>
       <td>Determines if the object is required or not. It must match the Magento REST API specification.</td>
@@ -2937,19 +2935,19 @@ An object must match the <a href="data.html#entity-tag">entity</a> of the same <
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">key</code></td>
+      <td><code class="language-plaintext highlighter-rouge">key</code></td>
       <td>string</td>
       <td>required</td>
       <td>Name of the field. It must match the field name of the related <a href="data.html#entity-tag">entity</a>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">type</code></td>
+      <td><code class="language-plaintext highlighter-rouge">type</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Type of the value. It may contain a primitive type or the type of another operation.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">required</code></td>
+      <td><code class="language-plaintext highlighter-rouge">required</code></td>
       <td>boolean</td>
       <td>optional</td>
       <td>Determines if the field is required or not. It must match the Magento REST API specification.</td>
@@ -2972,7 +2970,7 @@ An object must match the <a href="data.html#entity-tag">entity</a> of the same <
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">key</code></td>
+      <td><code class="language-plaintext highlighter-rouge">key</code></td>
       <td>string</td>
       <td>required</td>
       <td>Name of the array.</td>
@@ -2980,11 +2978,11 @@ An object must match the <a href="data.html#entity-tag">entity</a> of the same <
   </tbody>
 </table>
 
-<p>It contains one or more <code class="highlighter-rouge">value</code> elements.</p>
+<p>It contains one or more <code class="language-plaintext highlighter-rouge">value</code> elements.</p>
 
 <h3 id="value-tag">value</h3>
 
-<p>An item in <code class="highlighter-rouge">array</code>.</p>
+<p>An item in <code class="language-plaintext highlighter-rouge">array</code>.</p>
 
 <h3 id="header-tag">header</h3>
 
@@ -3001,7 +2999,7 @@ An object must match the <a href="data.html#entity-tag">entity</a> of the same <
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">param</code></td>
+      <td><code class="language-plaintext highlighter-rouge">param</code></td>
       <td>string</td>
       <td>required</td>
       <td>A REST API header parameter.</td>
@@ -3027,7 +3025,7 @@ An object must match the <a href="data.html#entity-tag">entity</a> of the same <
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">key</code></td>
+      <td><code class="language-plaintext highlighter-rouge">key</code></td>
       <td>string</td>
       <td>required</td>
       <td>Name of the URL parameter.</td>

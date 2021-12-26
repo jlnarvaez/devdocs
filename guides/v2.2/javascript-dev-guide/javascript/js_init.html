@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Calling and initializing JavaScript | Magento 2 Developer Documentation (copy)</title>
+	<title>Calling and initializing JavaScript | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/javascript-dev-guide/javascript/js_init.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/javascript-dev-guide/javascript/js_init.html">Magento 2.0</a></li>
 		
@@ -2144,8 +2145,8 @@
 <p>This topic describes different ways to call and initialize JavaScript in Magento 2:</p>
 
 <ul>
-  <li>Insert a <a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html#js_terms">JavaScript component</a> in <code class="highlighter-rouge">.phtml</code> page templates.</li>
-  <li>Call Javascript components that require initialization in Javascript (<code class="highlighter-rouge">.js</code>) files.</li>
+  <li>Insert a <a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html#js_terms">JavaScript component</a> in <code class="language-plaintext highlighter-rouge">.phtml</code> page templates.</li>
+  <li>Call Javascript components that require initialization in Javascript (<code class="language-plaintext highlighter-rouge">.js</code>) files.</li>
 </ul>
 
 <p>We strongly recommend that you use the described approaches and do not add inline   <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span>
@@ -2162,27 +2163,27 @@
 
 <p>In Magento 2, you have two options for specifying declarative notation:</p>
 <ul>
-  <li>using the <code class="highlighter-rouge">data-mage-init</code> attribute</li>
-  <li>using the <code class="highlighter-rouge">&lt;script type="text/x-magento-init" /&gt;</code> tag</li>
+  <li>using the <code class="language-plaintext highlighter-rouge">data-mage-init</code> attribute</li>
+  <li>using the <code class="language-plaintext highlighter-rouge">&lt;script type="text/x-magento-init" /&gt;</code> tag</li>
 </ul>
 
-<h4 id="data_mage_init">Declarative notation using the <code class="highlighter-rouge">data-mage-init</code> attribute</h4>
+<h4 id="data_mage_init">Declarative notation using the <code class="language-plaintext highlighter-rouge">data-mage-init</code> attribute</h4>
 
-<p>Use the <code class="highlighter-rouge">data-mage-init</code> attribute to insert a JS component in a specified HTML element. The following example inserts a JS component in the <code class="highlighter-rouge">&lt;nav/&gt;</code> element:</p>
+<p>Use the <code class="language-plaintext highlighter-rouge">data-mage-init</code> attribute to insert a JS component in a specified HTML element. The following example inserts a JS component in the <code class="language-plaintext highlighter-rouge">&lt;nav/&gt;</code> element:</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;nav</span> <span class="na">data-mage-init=</span><span class="s">'{ "&lt;component_name&gt;": {...} }'</span><span class="nt">&gt;&lt;/nav&gt;</span>
 </code></pre></div></div>
 
 <p>When the Javascript is inserted into the specified element, the script is called only for this particular element. It is not automatically called for other elements of this type on the page.</p>
 
-<h5 id="init_process">How <code class="highlighter-rouge">data-mage-init</code> is processed</h5>
+<h5 id="init_process">How <code class="language-plaintext highlighter-rouge">data-mage-init</code> is processed</h5>
 
-<p>On DOM ready, the <code class="highlighter-rouge">data-mage-init</code> attribute is parsed to extract component names and configuration to be applied to the element. Depending on the type of the inserted JS component, processing is performed as follows:</p>
+<p>On DOM ready, the <code class="language-plaintext highlighter-rouge">data-mage-init</code> attribute is parsed to extract component names and configuration to be applied to the element. Depending on the type of the inserted JS component, processing is performed as follows:</p>
 
 <ul>
-  <li>If an object is returned, the initializer tries to find the <code class="highlighter-rouge">&lt;component_name&gt;</code> key. If the corresponding value is a function, the initializer passes the <code class="highlighter-rouge">config</code> and <code class="highlighter-rouge">element</code> values to this function. For example:
+  <li>If an object is returned, the initializer tries to find the <code class="language-plaintext highlighter-rouge">&lt;component_name&gt;</code> key. If the corresponding value is a function, the initializer passes the <code class="language-plaintext highlighter-rouge">config</code> and <code class="language-plaintext highlighter-rouge">element</code> values to this function. For example:
     <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>  <span class="k">return</span> <span class="p">{</span>
-      <span class="s1">'&lt;component_name&gt;'</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">config</span><span class="p">,</span> <span class="nx">element</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+      <span class="dl">'</span><span class="s1">&lt;component_name&gt;</span><span class="dl">'</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">config</span><span class="p">,</span> <span class="nx">element</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
   <span class="p">};</span>
 </code></pre></div>    </div>
   </li>
@@ -2190,28 +2191,28 @@
     <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">config</span><span class="p">,</span> <span class="nx">element</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">};</span>
 </code></pre></div>    </div>
   </li>
-  <li>If neither a function nor an object with the <code class="highlighter-rouge">"&lt;component_name&gt;"</code> key are returned, then the initializer tries to search for <code class="highlighter-rouge">"&lt;component_name&gt;"</code> in the jQuery prototype. If found, the initializer applies it as <code class="highlighter-rouge">$(element).&lt;component_name&gt;;(config)</code>. For example:
+  <li>If neither a function nor an object with the <code class="language-plaintext highlighter-rouge">"&lt;component_name&gt;"</code> key are returned, then the initializer tries to search for <code class="language-plaintext highlighter-rouge">"&lt;component_name&gt;"</code> in the jQuery prototype. If found, the initializer applies it as <code class="language-plaintext highlighter-rouge">$(element).&lt;component_name&gt;;(config)</code>. For example:
     <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>  <span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">component_name</span><span class="o">&gt;</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="p">...</span> <span class="p">};</span>
   <span class="k">return</span><span class="p">;</span>
 </code></pre></div>    </div>
   </li>
-  <li>If none of the previous cases is true, the component is executed with no further processing. Such a component does not require either <code class="highlighter-rouge">config</code> or <code class="highlighter-rouge">element</code>. The recommended way to declare such components is <a href="#init_script">using the <code class="highlighter-rouge">&lt;script&gt;</code> tag</a>.</li>
+  <li>If none of the previous cases is true, the component is executed with no further processing. Such a component does not require either <code class="language-plaintext highlighter-rouge">config</code> or <code class="language-plaintext highlighter-rouge">element</code>. The recommended way to declare such components is <a href="#init_script">using the <code class="language-plaintext highlighter-rouge">&lt;script&gt;</code> tag</a>.</li>
 </ul>
 
-<h4 id="decl_tag">Declarative notation using the <code class="highlighter-rouge">&lt;script type="text/x-magento-init" /&gt;</code> tag</h4>
+<h4 id="decl_tag">Declarative notation using the <code class="language-plaintext highlighter-rouge">&lt;script type="text/x-magento-init" /&gt;</code> tag</h4>
 
-<p>To call a JS component on an HTML element without direct access to the element or with no relation to a certain element, use the <code class="highlighter-rouge">&lt;script type="text/x-magento-init"&gt;</code> tag and attribute syntax shown in the following example.</p>
+<p>To call a JS component on an HTML element without direct access to the element or with no relation to a certain element, use the <code class="language-plaintext highlighter-rouge">&lt;script type="text/x-magento-init"&gt;</code> tag and attribute syntax shown in the following example.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/x-magento-init"</span><span class="nt">&gt;</span>
 <span class="p">{</span>
     <span class="c1">// components initialized on the element defined by selector</span>
-	<span class="s2">"&lt;element_selector&gt;"</span><span class="p">:</span> <span class="p">{</span>
-		<span class="s2">"&lt;js_component1&gt;"</span><span class="p">:</span> <span class="p">...,</span>
-		<span class="s2">"&lt;js_component2&gt;"</span><span class="p">:</span> <span class="p">...</span>
+	<span class="dl">"</span><span class="s2">&lt;element_selector&gt;</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+		<span class="dl">"</span><span class="s2">&lt;js_component1&gt;</span><span class="dl">"</span><span class="p">:</span> <span class="p">...,</span>
+		<span class="dl">"</span><span class="s2">&lt;js_component2&gt;</span><span class="dl">"</span><span class="p">:</span> <span class="p">...</span>
     <span class="p">},</span>
     <span class="c1">// components initialized without binding to an element</span>
-    <span class="s2">"*"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">"&lt;js_component3&gt;"</span><span class="p">:</span> <span class="p">...</span>
+    <span class="dl">"</span><span class="s2">*</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">&lt;js_component3&gt;</span><span class="dl">"</span><span class="p">:</span> <span class="p">...</span>
     <span class="p">}</span>
 <span class="p">}</span>
 <span class="nt">&lt;/script&gt;</span>
@@ -2220,21 +2221,21 @@
 <p>Where:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">&lt;element_selector&gt;</code> is a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector">selector</a> (in terms of querySelectorAll) for the element on which the following JS components are called.</li>
-  <li><code class="highlighter-rouge">&lt;js_component1&gt;</code> and <code class="highlighter-rouge">&lt;js_component2&gt;</code> are the JS components being initialized on the element with the selector specified as <code class="highlighter-rouge">&lt;element_selector&gt;</code>.</li>
-  <li><code class="highlighter-rouge">&lt;js_component3&gt;</code> is the JS component called with no binding to an element.</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;element_selector&gt;</code> is a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector">selector</a> (in terms of querySelectorAll) for the element on which the following JS components are called.</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;js_component1&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;js_component2&gt;</code> are the JS components being initialized on the element with the selector specified as <code class="language-plaintext highlighter-rouge">&lt;element_selector&gt;</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;js_component3&gt;</code> is the JS component called with no binding to an element.</li>
 </ul>
 
-<p>The following example provides a working code sample of a widget call using <code class="highlighter-rouge">&lt;script&gt;</code>. Here the <code class="highlighter-rouge">accordion</code> and <code class="highlighter-rouge">navigation</code> widgets are added to the element with the <code class="highlighter-rouge">#main-container</code> selector, and the <code class="highlighter-rouge">pageCache</code> script is inserted with no binding to any element.</p>
+<p>The following example provides a working code sample of a widget call using <code class="language-plaintext highlighter-rouge">&lt;script&gt;</code>. Here the <code class="language-plaintext highlighter-rouge">accordion</code> and <code class="language-plaintext highlighter-rouge">navigation</code> widgets are added to the element with the <code class="language-plaintext highlighter-rouge">#main-container</code> selector, and the <code class="language-plaintext highlighter-rouge">pageCache</code> script is inserted with no binding to any element.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/x-magento-init"</span><span class="nt">&gt;</span>
 <span class="p">{</span>
-    <span class="s2">"#main-container"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">"navigation"</span><span class="p">:</span> <span class="o">&lt;</span><span class="p">?</span><span class="nx">php</span> <span class="nx">echo</span> <span class="nx">$block</span><span class="o">-&gt;</span><span class="nx">getNavigationConfig</span><span class="p">();</span> <span class="p">?</span><span class="o">&gt;</span><span class="p">,</span>
-        <span class="s2">"accordion"</span><span class="p">:</span> <span class="o">&lt;</span><span class="p">?</span><span class="nx">php</span> <span class="nx">echo</span> <span class="nx">$block</span><span class="o">-&gt;</span><span class="nx">getNavigationAccordionConfig</span><span class="p">();</span> <span class="p">?</span><span class="o">&gt;</span>
+    <span class="dl">"</span><span class="s2">#main-container</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">navigation</span><span class="dl">"</span><span class="p">:</span> <span class="o">&lt;</span><span class="p">?</span><span class="nx">php</span> <span class="nx">echo</span> <span class="nx">$block</span><span class="o">-&gt;</span><span class="nx">getNavigationConfig</span><span class="p">();</span> <span class="p">?</span><span class="o">&gt;</span><span class="p">,</span>
+        <span class="dl">"</span><span class="s2">accordion</span><span class="dl">"</span><span class="p">:</span> <span class="o">&lt;</span><span class="p">?</span><span class="nx">php</span> <span class="nx">echo</span> <span class="nx">$block</span><span class="o">-&gt;</span><span class="nx">getNavigationAccordionConfig</span><span class="p">();</span> <span class="p">?</span><span class="o">&gt;</span>
     <span class="p">},</span>
-    <span class="s2">"*"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">"pageCache"</span><span class="p">:</span> <span class="o">&lt;</span><span class="p">?</span><span class="nx">php</span> <span class="nx">echo</span> <span class="nx">$block</span><span class="o">-&gt;</span><span class="nx">getPageCacheConfig</span><span class="p">();</span> <span class="p">?</span><span class="o">&gt;</span>
+    <span class="dl">"</span><span class="s2">*</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">pageCache</span><span class="dl">"</span><span class="p">:</span> <span class="o">&lt;</span><span class="p">?</span><span class="nx">php</span> <span class="nx">echo</span> <span class="nx">$block</span><span class="o">-&gt;</span><span class="nx">getPageCacheConfig</span><span class="p">();</span> <span class="p">?</span><span class="o">&gt;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 <span class="nt">&lt;/script&gt;</span>
@@ -2242,20 +2243,20 @@
 
 <h3 id="init_script">Imperative notation</h3>
 
-<p>Use imperative notation in the PHTML template to include raw JavaScript code on the pages to execute specified business logic. This method uses the <code class="highlighter-rouge">&lt;script&gt;</code> tag without the <code class="highlighter-rouge">type="text/x-magento-init"</code> attribute as shown in the following example:</p>
+<p>Use imperative notation in the PHTML template to include raw JavaScript code on the pages to execute specified business logic. This method uses the <code class="language-plaintext highlighter-rouge">&lt;script&gt;</code> tag without the <code class="language-plaintext highlighter-rouge">type="text/x-magento-init"</code> attribute as shown in the following example:</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;script&gt;</span>
 <span class="nx">require</span><span class="p">([</span>
-    <span class="s1">'jquery'</span><span class="p">,</span>
-    <span class="s1">'accordion'</span>  <span class="c1">// the alias for "mage/accordion"</span>
+    <span class="dl">'</span><span class="s1">jquery</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">accordion</span><span class="dl">'</span>  <span class="c1">// the alias for "mage/accordion"</span>
 <span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="c1">// to ensure that code evaluates on page load</span>
-        <span class="nx">$</span><span class="p">(</span><span class="s1">'[data-role=example]'</span><span class="p">)</span>  <span class="c1">// we expect that page contains the </span><span class="o">&lt;</span><span class="nx">tag</span> <span class="nx">data</span><span class="o">-</span><span class="nx">role</span><span class="o">=</span><span class="s2">"example"</span><span class="o">&gt;</span><span class="p">..</span><span class="o">&lt;</span><span class="sr">/tag&gt; marku</span><span class="err">p
+        <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">[data-role=example]</span><span class="dl">'</span><span class="p">)</span>  <span class="c1">// we expect that page contains the </span><span class="o">&lt;</span><span class="nx">tag</span> <span class="nx">data</span><span class="o">-</span><span class="nx">role</span><span class="o">=</span><span class="dl">"</span><span class="s2">example</span><span class="dl">"</span><span class="o">&gt;</span><span class="p">..</span><span class="o">&lt;</span><span class="sr">/tag&gt; marku</span><span class="err">p
 </span>            <span class="p">.</span><span class="nx">accordion</span><span class="p">({</span> <span class="c1">// now we can use "accordion" as jQuery plugin</span>
-                <span class="na">header</span><span class="p">:</span>  <span class="s1">'[data-role=header]'</span><span class="p">,</span>
-                <span class="na">content</span><span class="p">:</span> <span class="s1">'[data-role=content]'</span><span class="p">,</span>
-                <span class="na">trigger</span><span class="p">:</span> <span class="s1">'[data-role=trigger]'</span><span class="p">,</span>
-                <span class="na">ajaxUrlElement</span><span class="p">:</span> <span class="s2">"a"</span>
+                <span class="na">header</span><span class="p">:</span>  <span class="dl">'</span><span class="s1">[data-role=header]</span><span class="dl">'</span><span class="p">,</span>
+                <span class="na">content</span><span class="p">:</span> <span class="dl">'</span><span class="s1">[data-role=content]</span><span class="dl">'</span><span class="p">,</span>
+                <span class="na">trigger</span><span class="p">:</span> <span class="dl">'</span><span class="s1">[data-role=trigger]</span><span class="dl">'</span><span class="p">,</span>
+                <span class="na">ajaxUrlElement</span><span class="p">:</span> <span class="dl">"</span><span class="s2">a</span><span class="dl">"</span>
             <span class="p">});</span>
     <span class="p">});</span>
 <span class="p">});</span>
@@ -2264,41 +2265,41 @@
 
 <h2 id="js_widget_init">Calling JS components requiring initialization in JS files</h2>
 
-<p>To call a widget in JS code, use a notation similar to the following (<a href="/guides/v2.0/frontend-dev-guide/javascript/widget_accordion.html">accordion</a> widget is intiialized on the <code class="highlighter-rouge">[data-role=example]</code> element as illustration):</p>
+<p>To call a widget in JS code, use a notation similar to the following (<a href="/guides/v2.0/frontend-dev-guide/javascript/widget_accordion.html">accordion</a> widget is intiialized on the <code class="language-plaintext highlighter-rouge">[data-role=example]</code> element as illustration):</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nx">$</span><span class="p">(</span><span class="s1">'[data-role=example]'</span><span class="p">).</span><span class="nx">accordion</span><span class="p">();</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">[data-role=example]</span><span class="dl">'</span><span class="p">).</span><span class="nx">accordion</span><span class="p">();</span>
 </code></pre></div></div>
 
 <p>To initialize a   <span term-uuid="f0dcf847-ce21-4b88-8b45-83e1cbf08100" class="glossary-term" data-toggle="popover">widget</span>
  with options, use notation similar to the following:</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="c1">// to ensure that code evaluates on page load</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s1">'[data-role=example]'</span><span class="p">)</span>  <span class="c1">// we expect that page contains markup &lt;tag data-role="example"&gt;..&lt;/tag&gt;</span>
+    <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">[data-role=example]</span><span class="dl">'</span><span class="p">)</span>  <span class="c1">// we expect that page contains markup &lt;tag data-role="example"&gt;..&lt;/tag&gt;</span>
         <span class="p">.</span><span class="nx">accordion</span><span class="p">({</span> <span class="c1">// now we can use "accordion" as jQuery plugin</span>
-            <span class="na">header</span><span class="p">:</span>  <span class="s1">'[data-role=header]'</span><span class="p">,</span>
-	    <span class="na">content</span><span class="p">:</span> <span class="s1">'[data-role=content]'</span><span class="p">,</span>
-	    <span class="na">trigger</span><span class="p">:</span> <span class="s1">'[data-role=trigger]'</span><span class="p">,</span>
-            <span class="na">ajaxUrlElement</span><span class="p">:</span> <span class="s1">'a'</span>
+            <span class="na">header</span><span class="p">:</span>  <span class="dl">'</span><span class="s1">[data-role=header]</span><span class="dl">'</span><span class="p">,</span>
+	    <span class="na">content</span><span class="p">:</span> <span class="dl">'</span><span class="s1">[data-role=content]</span><span class="dl">'</span><span class="p">,</span>
+	    <span class="na">trigger</span><span class="p">:</span> <span class="dl">'</span><span class="s1">[data-role=trigger]</span><span class="dl">'</span><span class="p">,</span>
+            <span class="na">ajaxUrlElement</span><span class="p">:</span> <span class="dl">'</span><span class="s1">a</span><span class="dl">'</span>
         <span class="p">});</span>
 <span class="p">});</span>
 </code></pre></div></div>
 
-<p>In a similar way, you can initialize any JS component that a returns callback function accepting a <code class="highlighter-rouge">config</code> object and <code class="highlighter-rouge">element</code> (a DOM node).</p>
+<p>In a similar way, you can initialize any JS component that a returns callback function accepting a <code class="language-plaintext highlighter-rouge">config</code> object and <code class="language-plaintext highlighter-rouge">element</code> (a DOM node).</p>
 
 <p>For example:</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nx">define</span> <span class="p">([</span>
-    <span class="s1">'jquery'</span><span class="p">,</span>
-    <span class="s1">'mage/gallery/gallery'</span>
+    <span class="dl">'</span><span class="s1">jquery</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">mage/gallery/gallery</span><span class="dl">'</span>
 <span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$</span><span class="p">,</span> <span class="nx">Gallery</span><span class="p">)</span> <span class="p">{</span>
 
     <span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="c1">// to ensure that code evaluates on page load</span>
-        <span class="nx">$</span><span class="p">(</span><span class="s1">'[data-role=example]'</span><span class="p">)</span>  <span class="c1">// we expect that page contains markup &lt;tag data-role="example"&gt;..&lt;/tag&gt;</span>
+        <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">[data-role=example]</span><span class="dl">'</span><span class="p">)</span>  <span class="c1">// we expect that page contains markup &lt;tag data-role="example"&gt;..&lt;/tag&gt;</span>
             <span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
                 <span class="nx">Gallery</span><span class="p">({</span>
                     <span class="na">options</span><span class="p">:</span>  <span class="p">{},</span>
                     <span class="na">data</span><span class="p">:</span> <span class="p">[{</span>
-                        <span class="na">img</span><span class="p">:</span> <span class="s1">'https://c2.staticflickr.com/8/7077/27935031965_facd03b4cb_b_d.jpg'</span>
+                        <span class="na">img</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://c2.staticflickr.com/8/7077/27935031965_facd03b4cb_b_d.jpg</span><span class="dl">'</span>
                     <span class="p">}],</span>
                     <span class="na">fullscreen</span><span class="p">:</span> <span class="p">{}</span>
                 <span class="p">},</span> <span class="nx">element</span><span class="p">);</span>  <span class="c1">// 'element' is single DOM node.</span>

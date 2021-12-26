@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Configure Xdebug | Magento 2 Developer Documentation (copy)</title>
+	<title>Configure Xdebug | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/howtos/debug.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/howtos/debug.html">Magento 2.0</a></li>
 		
@@ -3545,7 +3546,7 @@
 
 			<p>We recommend using Xdebug for your PHP debugging. The following sections detail how to configure Xdebug and PhpStorm to work locally with settings in your environments. You can use any IDE of your choice. Please see the vendor documentation for those applications for further configuration information.</p>
 
-<p>To set up Xdebug, you need to <a href="#configure">configure</a> a file in your Git repo, configure your IDE PhpStorm, and set up port forwarding. You will configure settings in the <code class="highlighter-rouge">magento.app.yaml</code> file. After editing, you can push the Git changes across all Starter environments and Pro Integration environments to enable Xdebug. To push these settings to Pro plan Staging and Production environments, you must enter a ticket.</p>
+<p>To set up Xdebug, you need to <a href="#configure">configure</a> a file in your Git repo, configure your IDE PhpStorm, and set up port forwarding. You will configure settings in the <code class="language-plaintext highlighter-rouge">magento.app.yaml</code> file. After editing, you can push the Git changes across all Starter environments and Pro Integration environments to enable Xdebug. To push these settings to Pro plan Staging and Production environments, you must enter a ticket.</p>
 
 <p>Once configured, you can debug <a href="#debugcli">CLI commands</a>, <a href="#webrequests">web requests</a>, <a href="#code">code</a>. Remember, all Magento Commerce Cloud environments are read-only. You will need to pull code to your local development environment to perform debugging. For Pro plan Staging and Production, we include <a href="#pro-debug">additional instructions</a> for Xdebug on those environments.</p>
 
@@ -3576,54 +3577,54 @@
   <li>
     <p>Enter the following command in a terminal to log in to your project:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud login
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud login
 </code></pre></div>    </div>
   </li>
   <li>
     <p>List your projects. With the project ID, you can complete additional commands.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud project:list
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud project:list
 </code></pre></div>    </div>
   </li>
   <li>
     <p>If necessary, clone the project to your local. You should have cloned when setting up your local development workspace.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud project:get &lt;project ID&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud project:get &lt;project ID&gt;
 </code></pre></div>    </div>
   </li>
-  <li>Change to a project directory. For example, <code class="highlighter-rouge">cd /var/www/html/magento2</code></li>
+  <li>Change to a project directory. For example, <code class="language-plaintext highlighter-rouge">cd /var/www/html/magento2</code></li>
   <li>
     <p>List environments in the project. Every environment includes an active Git branch of your code, database, environment variables, configurations, and services.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:list
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:list
 </code></pre></div>    </div>
 
-  	<code class="highlighter-rouge">magento-cloud environment:list</code>—displays environment hierarchies whereas the <code class="highlighter-rouge">git branch</code> command does not.
+  	<code class="language-plaintext highlighter-rouge">magento-cloud environment:list</code>—displays environment hierarchies whereas the <code class="language-plaintext highlighter-rouge">git branch</code> command does not.
   </li>
   <li>
     <p>Fetch origin branches to get the latest code:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git fetch origin
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git fetch origin
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Check out, or switch to, a specific branch and environment. Git commands only checkout the Git branch. The Magento Cloud command also switches to the active environment.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:checkout &lt;environment ID&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:checkout &lt;environment ID&gt;
 </code></pre></div>    </div>
 
-    <p>To create a new environment, use <code class="highlighter-rouge">magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
+    <p>To create a new environment, use <code class="language-plaintext highlighter-rouge">magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
   </li>
   <li>
     <p>Pull any updated code to your local for the environment ID (which is the Git branch):</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git pull origin &lt;environment ID&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git pull origin &lt;environment ID&gt;
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Create a <a href="/devdocs/guides/v2.0/cloud/project/project-webint-snap.html">snapshot</a> of the environment as a backup:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -3637,11 +3638,11 @@
 <!-- You may need to run PHP with a separate config file to enable xdebug on the CLI, such as "php -c /etc/platform/<project_id>/php.ini ... " -->
 
 <ol>
-  <li>In your local terminal, open <code class="highlighter-rouge">.magento.app.yaml</code> in a text editor.</li>
+  <li>In your local terminal, open <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> in a text editor.</li>
   <li>
-    <p>In the <code class="highlighter-rouge">runtime</code> section, under <code class="highlighter-rouge">extensions</code>, add <code class="highlighter-rouge">xdebug</code>. For example:</p>
+    <p>In the <code class="language-plaintext highlighter-rouge">runtime</code> section, under <code class="language-plaintext highlighter-rouge">extensions</code>, add <code class="language-plaintext highlighter-rouge">xdebug</code>. For example:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> runtime:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> runtime:
     extensions:
    - mcrypt
    - redis
@@ -3651,20 +3652,20 @@
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Optionally, modify the timeout. A default timeout of 300 seconds (5 minutes) is set in <code class="highlighter-rouge">php-fpm</code> and will end your session. To avoid the timeout, add the following lines to the <code class="highlighter-rouge">web:</code> section of <code class="highlighter-rouge">.magento.app.yaml</code>:</p>
+    <p>Optionally, modify the timeout. A default timeout of 300 seconds (5 minutes) is set in <code class="language-plaintext highlighter-rouge">php-fpm</code> and will end your session. To avoid the timeout, add the following lines to the <code class="language-plaintext highlighter-rouge">web:</code> section of <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code>:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> web:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> web:
      commands:
          start: |
              cat /etc/php/7.0/fpm/php-fpm.conf | sed -e 's/request_terminate_timeout.*//g' &gt; /tmp/php-fpm.conf
              /usr/sbin/php-fpm7.0 -y /tmp/php-fpm.conf
 </code></pre></div>    </div>
   </li>
-  <li>Save your changes to <code class="highlighter-rouge">.magento.app.yaml</code> and exit the text editor.</li>
+  <li>Save your changes to <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> and exit the text editor.</li>
   <li>
     <p>Add, commit, and push the changes to redeploy the environment:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> git add -A
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> git add -A
  git commit -m "Add xdebug"
  git push origin &lt;environment ID&gt;
 </code></pre></div>    </div>
@@ -3693,8 +3694,8 @@
     <p>Configure settings for the new server:</p>
 
     <ul>
-      <li><strong>Name</strong>: enter the same as the hostname. This value is used in and must match the value for <code class="highlighter-rouge">PHP_IDE_CONFIG</code> variable in <a href="#debugcli">Debug CLI commands</a>.</li>
-      <li><strong>Host</strong>: enter <code class="highlighter-rouge">localhost</code></li>
+      <li><strong>Name</strong>: enter the same as the hostname. This value is used in and must match the value for <code class="language-plaintext highlighter-rouge">PHP_IDE_CONFIG</code> variable in <a href="#debugcli">Debug CLI commands</a>.</li>
+      <li><strong>Host</strong>: enter <code class="language-plaintext highlighter-rouge">localhost</code></li>
       <li><strong>Port</strong>: enter 80</li>
       <li><strong>Debugger</strong>: set to Xdebug in the drop-down</li>
     </ul>
@@ -3704,13 +3705,13 @@
     <p>In the <strong>Absolute path on the server</strong> column, click <img src="/devdocs/common/images/install_docker_php-storm-edit.png" alt="Edit" width="15px" /> (<strong>Edit</strong>) and add a setting based on the environment:</p>
 
     <ul>
-      <li>For all Starter environments and Pro Integration environments, the remote path is <code class="highlighter-rouge">/app</code>.</li>
+      <li>For all Starter environments and Pro Integration environments, the remote path is <code class="language-plaintext highlighter-rouge">/app</code>.</li>
       <li>
         <p>For Pro Staging and Production environments:</p>
 
         <ul>
-          <li>Production: <code class="highlighter-rouge">/app/&lt;project_code&gt;/</code></li>
-          <li>Staging:  <code class="highlighter-rouge">/app/&lt;project_code&gt;_stg/</code></li>
+          <li>Production: <code class="language-plaintext highlighter-rouge">/app/&lt;project_code&gt;/</code></li>
+          <li>Staging:  <code class="language-plaintext highlighter-rouge">/app/&lt;project_code&gt;_stg/</code></li>
         </ul>
       </li>
     </ul>
@@ -3737,10 +3738,10 @@
   <li>
     <p>Enter the following command:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> ssh -R 9000:localhost:9000 &lt;ssh url&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> ssh -R 9000:localhost:9000 &lt;ssh url&gt;
 </code></pre></div>    </div>
 
-    <p>Add the <code class="highlighter-rouge">-v</code> option to the SSH command to show in the terminal whenever a socket is connected to the port that is being forwarded.</p>
+    <p>Add the <code class="language-plaintext highlighter-rouge">-v</code> option to the SSH command to show in the terminal whenever a socket is connected to the port that is being forwarded.</p>
   </li>
 </ol>
 
@@ -3750,32 +3751,32 @@
 
 <ol>
   <li><a href="/devdocs/guides/v2.0/cloud/env/environments-ssh.html">SSH</a> to the integration, staging, or production server.</li>
-  <li>Enter <code class="highlighter-rouge">who</code> to view a list of SSH sessions.</li>
+  <li>Enter <code class="language-plaintext highlighter-rouge">who</code> to view a list of SSH sessions.</li>
   <li>
     <p>View existing SSH sessions by user. Be careful to not affect a user other than yourself!</p>
 
     <ul>
-      <li>Integration: usernames are similar to <code class="highlighter-rouge">dd2q5ct7mhgus</code></li>
-      <li>Staging: usernames are similar to <code class="highlighter-rouge">dd2q5ct7mhgus_stg</code></li>
-      <li>Production: usernames are similar to <code class="highlighter-rouge">dd2q5ct7mhgus</code></li>
+      <li>Integration: usernames are similar to <code class="language-plaintext highlighter-rouge">dd2q5ct7mhgus</code></li>
+      <li>Staging: usernames are similar to <code class="language-plaintext highlighter-rouge">dd2q5ct7mhgus_stg</code></li>
+      <li>Production: usernames are similar to <code class="language-plaintext highlighter-rouge">dd2q5ct7mhgus</code></li>
     </ul>
   </li>
-  <li>For a user session that is older than yours, find the pseudo-terminal (PTS) value. For example, <code class="highlighter-rouge">pts/0</code>.</li>
+  <li>For a user session that is older than yours, find the pseudo-terminal (PTS) value. For example, <code class="language-plaintext highlighter-rouge">pts/0</code>.</li>
   <li>
     <p>Kill the process ID (PID) corresponding to the PTS value using the following commands:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ps aux | grep ssh
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ps aux | grep ssh
 kill &lt;PID&gt;
 </code></pre></div>    </div>
 
-    <p>For example, suppose <code class="highlighter-rouge">ps aux | grep ssh</code> returned the following:</p>
+    <p>For example, suppose <code class="language-plaintext highlighter-rouge">ps aux | grep ssh</code> returned the following:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>dd2q5ct7mhgus        5504  0.0  0.0  82612  3664 ?      S    18:45   0:00 sshd: dd2q5ct7mhgus@pts/0
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>dd2q5ct7mhgus        5504  0.0  0.0  82612  3664 ?      S    18:45   0:00 sshd: dd2q5ct7mhgus@pts/0
 </code></pre></div>    </div>
 
     <p>To terminate the connection, you enter a kill command with the process ID (PID). For example:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>kill 3664
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>kill 3664
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -3795,7 +3796,7 @@ kill &lt;PID&gt;
 
     <ul>
       <li><strong>Hostname (or IP address)</strong> field: Enter your Cloud server’s <a href="/devdocs/guides/v2.0/cloud/env/environments-ssh.html">SSH URL</a></li>
-      <li><strong>Port</strong> field: Enter <code class="highlighter-rouge">22</code></li>
+      <li><strong>Port</strong> field: Enter <code class="language-plaintext highlighter-rouge">22</code></li>
     </ul>
 
     <p><img src="/devdocs/common/images/cloud-xdebug_putty-session.png" alt="Set up Putty" width="350px" /></p>
@@ -3805,8 +3806,8 @@ kill &lt;PID&gt;
     <p>Enter the following information:</p>
 
     <ul>
-      <li><strong>Source port</strong> field: Enter <code class="highlighter-rouge">9000</code></li>
-      <li><strong>Destination</strong> field: Enter <code class="highlighter-rouge">127.0.0.1:9000</code></li>
+      <li><strong>Source port</strong> field: Enter <code class="language-plaintext highlighter-rouge">9000</code></li>
+      <li><strong>Destination</strong> field: Enter <code class="language-plaintext highlighter-rouge">127.0.0.1:9000</code></li>
       <li>Click <strong>Remote</strong></li>
     </ul>
   </li>
@@ -3844,17 +3845,17 @@ kill &lt;PID&gt;
 
 <p>For Starter environments and Pro Integration environments, you can use the following Magento Cloud CLI command to SSH into those environments:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:ssh --pipe -e &lt;environment ID&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:ssh --pipe -e &lt;environment ID&gt;
 </code></pre></div></div>
 
 <p>To use Xdebug, SSH to the environment as follows:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ssh -R &lt;xdebug listen port&gt;:&lt;host&gt;:&lt;xdebug listen port&gt; &lt;SSH URL&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ssh -R &lt;xdebug listen port&gt;:&lt;host&gt;:&lt;xdebug listen port&gt; &lt;SSH URL&gt;
 </code></pre></div></div>
 
 <p>For example,</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ssh -R 9000:localhost:9000 pwga8A0bhuk7o-mybranch@ssh.us.magentosite.cloud
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ssh -R 9000:localhost:9000 pwga8A0bhuk7o-mybranch@ssh.us.magentosite.cloud
 </code></pre></div></div>
 
 <h2 id="pro-debug">Debug for Pro Staging and Production</h2>
@@ -3865,7 +3866,7 @@ kill &lt;PID&gt;
 
 <ul>
   <li>SSH commands for accessing the environments. You can get this information, through the <a href="/devdocs/guides/v2.0/cloud/project/projects.html">Project Web Interface</a> and your project spreadsheet.</li>
-  <li>The <code class="highlighter-rouge">xdebug_key</code> value we set when configuring the Staging and Pro environments</li>
+  <li>The <code class="language-plaintext highlighter-rouge">xdebug_key</code> value we set when configuring the Staging and Pro environments</li>
 </ul>
 
 <p>Set up an SSH tunnel to Staging or Production environment:</p>
@@ -3875,13 +3876,13 @@ kill &lt;PID&gt;
   <li>
     <p>Enter the following command to clean up all SSH sessions.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> ssh USERNAME@CLUSTER.ent.magento.cloud 'rm /run/platform/USERNAME/xdebug.sock'
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> ssh USERNAME@CLUSTER.ent.magento.cloud 'rm /run/platform/USERNAME/xdebug.sock'
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Enter the following command to set up the SSH tunnel for Xdebug:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> ssh -R /run/platform/USERNAME/xdebug.sock:localhost:9000 -N USERNAME@CLUSTER.ent.magento.cloud
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> ssh -R /run/platform/USERNAME/xdebug.sock:localhost:9000 -N USERNAME@CLUSTER.ent.magento.cloud
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -3890,23 +3891,23 @@ kill &lt;PID&gt;
 
 <ol>
   <li>
-    <p>To enable remote debugging, visit the site in the browser with the following added to the URL where <code class="highlighter-rouge">KEY</code> is value for <code class="highlighter-rouge">xdebug_key</code>:</p>
+    <p>To enable remote debugging, visit the site in the browser with the following added to the URL where <code class="language-plaintext highlighter-rouge">KEY</code> is value for <code class="language-plaintext highlighter-rouge">xdebug_key</code>:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> ?XDEBUG_SESSION_START=KEY
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> ?XDEBUG_SESSION_START=KEY
 </code></pre></div>    </div>
 
     <p>This sets the cookie that sends browser requests to trigger Xdebug.</p>
   </li>
   <li>Complete your debugging with Xdebug.</li>
   <li>
-    <p>When you are ready to end the session, you can use the following command to remove the cookie and end debugging through the browser where <code class="highlighter-rouge">KEY</code> is value for <code class="highlighter-rouge">xdebug_key</code>:</p>
+    <p>When you are ready to end the session, you can use the following command to remove the cookie and end debugging through the browser where <code class="language-plaintext highlighter-rouge">KEY</code> is value for <code class="language-plaintext highlighter-rouge">xdebug_key</code>:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> ?XDEBUG_SESSION_STOP=KEY
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> ?XDEBUG_SESSION_STOP=KEY
 </code></pre></div>    </div>
   </li>
 </ol>
 
-<p>Please note, <code class="highlighter-rouge">XDEBUG_SESSION_START</code>passed by <code class="highlighter-rouge">POST</code> requests are not supported at this time.</p>
+<p>Please note, <code class="language-plaintext highlighter-rouge">XDEBUG_SESSION_START</code>passed by <code class="language-plaintext highlighter-rouge">POST</code> requests are not supported at this time.</p>
 
 <h2 id="debugcli">Debug CLI commands</h2>
 
@@ -3917,7 +3918,7 @@ kill &lt;PID&gt;
   <li>
     <p>Create the following environment variables:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> export XDEBUG_CONFIG='PHPSTORM'
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> export XDEBUG_CONFIG='PHPSTORM'
  export PHP_IDE_CONFIG="serverName=&lt;name of the server that is configured in PHPSTORM&gt;"
 </code></pre></div>    </div>
   </li>
@@ -3925,10 +3926,10 @@ kill &lt;PID&gt;
 
 <p>These variables will be removed when SSH session is over. When adding the variables, you can add runtime options:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php -d xdebug.profiler_enable=On -d xdebug.max_nesting_level=9999 ...
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php -d xdebug.profiler_enable=On -d xdebug.max_nesting_level=9999 ...
 </code></pre></div></div>
 
-<p>If you expect to SSH and debug multiple times, you can put the export commands into a bash script in the <code class="highlighter-rouge">/tmp</code> directory to run them each time.</p>
+<p>If you expect to SSH and debug multiple times, you can put the export commands into a bash script in the <code class="language-plaintext highlighter-rouge">/tmp</code> directory to run them each time.</p>
 
 <h2 id="webrequests">For debugging web requests</h2>
 
@@ -3979,19 +3980,19 @@ kill &lt;PID&gt;
 
 <ul>
   <li>
-    <p>Check out code from Git and run <code class="highlighter-rouge">composer install</code></p>
+    <p>Check out code from Git and run <code class="language-plaintext highlighter-rouge">composer install</code></p>
 
-    <p>This method works unless <code class="highlighter-rouge">composer.json</code> references packages in private repositories to which you don’t have access. This method results in getting the entire Magento codebase.</p>
+    <p>This method works unless <code class="language-plaintext highlighter-rouge">composer.json</code> references packages in private repositories to which you don’t have access. This method results in getting the entire Magento codebase.</p>
   </li>
   <li>
-    <p>Copy the <code class="highlighter-rouge">vendor</code>, <code class="highlighter-rouge">app</code>, <code class="highlighter-rouge">pub</code>, <code class="highlighter-rouge">lib</code>, and <code class="highlighter-rouge">setup</code> directories</p>
+    <p>Copy the <code class="language-plaintext highlighter-rouge">vendor</code>, <code class="language-plaintext highlighter-rouge">app</code>, <code class="language-plaintext highlighter-rouge">pub</code>, <code class="language-plaintext highlighter-rouge">lib</code>, and <code class="language-plaintext highlighter-rouge">setup</code> directories</p>
 
     <p>This method results in your having all code you can possibly test. Depending on how many static assets you have, it could result in a long transfer with a large volume of files.</p>
   </li>
   <li>
-    <p>Copy the <code class="highlighter-rouge">vendor</code> directory only</p>
+    <p>Copy the <code class="language-plaintext highlighter-rouge">vendor</code> directory only</p>
 
-    <p>Because most Magento and third-party code is in the <code class="highlighter-rouge">vendor</code> directory, this method is likely to result in good testing although you won’t be testing the entire codebase.</p>
+    <p>Because most Magento and third-party code is in the <code class="language-plaintext highlighter-rouge">vendor</code> directory, this method is likely to result in good testing although you won’t be testing the entire codebase.</p>
   </li>
 </ul>
 
@@ -4002,18 +4003,18 @@ kill &lt;PID&gt;
   <li>
     <p>Enter the following command:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>tar -czf /tmp/&lt;file name&gt;.tgz &lt;directory list&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>tar -czf /tmp/&lt;file name&gt;.tgz &lt;directory list&gt;
 </code></pre></div>    </div>
 
-    <p>For example, to compress the <code class="highlighter-rouge">vendor</code> directory only, enter</p>
+    <p>For example, to compress the <code class="language-plaintext highlighter-rouge">vendor</code> directory only, enter</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>tar -czf /tmp/vendor.tgz vendor
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>tar -czf /tmp/vendor.tgz vendor
 </code></pre></div>    </div>
   </li>
   <li>
     <p>On your local environment with PhpStorm, enter the following commands:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd &lt;phpstorm project root dir&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd &lt;phpstorm project root dir&gt;
 rsync &lt;SSH URL&gt;:/tmp/&lt;file name&gt;.tgz .
 tar xzf &lt;file name&gt;.tgz
 </code></pre></div>    </div>
@@ -4028,32 +4029,32 @@ tar xzf &lt;file name&gt;.tgz
 
 <ol>
   <li><a href="/devdocs/guides/v2.0/cloud/env/environments-ssh.html">SSH</a> to the integration, staging, or production server.</li>
-  <li>Enter <code class="highlighter-rouge">who</code> to view a list of SSH sessions.</li>
+  <li>Enter <code class="language-plaintext highlighter-rouge">who</code> to view a list of SSH sessions.</li>
   <li>
     <p>View existing SSH sessions by user. Be careful to not affect a user other than yourself!</p>
 
     <ul>
-      <li>Integration: usernames are similar to <code class="highlighter-rouge">dd2q5ct7mhgus</code></li>
-      <li>Staging: usernames are similar to <code class="highlighter-rouge">dd2q5ct7mhgus_stg</code></li>
-      <li>Production: usernames are similar to <code class="highlighter-rouge">dd2q5ct7mhgus</code></li>
+      <li>Integration: usernames are similar to <code class="language-plaintext highlighter-rouge">dd2q5ct7mhgus</code></li>
+      <li>Staging: usernames are similar to <code class="language-plaintext highlighter-rouge">dd2q5ct7mhgus_stg</code></li>
+      <li>Production: usernames are similar to <code class="language-plaintext highlighter-rouge">dd2q5ct7mhgus</code></li>
     </ul>
   </li>
-  <li>For a user session that is older than yours, find the pseudo-terminal (PTS) value. For example, <code class="highlighter-rouge">pts/0</code>.</li>
+  <li>For a user session that is older than yours, find the pseudo-terminal (PTS) value. For example, <code class="language-plaintext highlighter-rouge">pts/0</code>.</li>
   <li>
     <p>Kill the process ID (PID) corresponding to the PTS value using the following commands:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ps aux | grep ssh
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ps aux | grep ssh
 kill &lt;PID&gt;
 </code></pre></div>    </div>
 
-    <p>For example, suppose <code class="highlighter-rouge">ps aux | grep ssh</code> returned the following:</p>
+    <p>For example, suppose <code class="language-plaintext highlighter-rouge">ps aux | grep ssh</code> returned the following:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>dd2q5ct7mhgus        5504  0.0  0.0  82612  3664 ?      S    18:45   0:00 sshd: dd2q5ct7mhgus@pts/0
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>dd2q5ct7mhgus        5504  0.0  0.0  82612  3664 ?      S    18:45   0:00 sshd: dd2q5ct7mhgus@pts/0
 </code></pre></div>    </div>
 
     <p>To terminate the connection, you enter a kill command with the process ID (PID). For example:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>kill 3664
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>kill 3664
 </code></pre></div>    </div>
   </li>
 </ol>

@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Create a custom GraphQL urlResolver service | Magento 2 Developer Documentation (copy)</title>
+	<title>Create a custom GraphQL urlResolver service | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/graphql/develop/create-custom-url-resolver.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/graphql/develop/create-custom-url-resolver.html">Magento 2.0</a></li>
 		
@@ -2183,28 +2184,28 @@
 	<h1 class="page-heading">Create a custom GraphQL urlResolver service</h1>
 </section>
 
-			<p>The <code class="highlighter-rouge">Magento\UrlRewrite</code> module converts URL rewrite requests to canonical URLs. As a result, your custom <code class="highlighter-rouge">urlResolver</code> module does not require its own class for performing these actions, but it must be able to save and delete entries in the <code class="highlighter-rouge">url_rewrite</code> table.</p>
+			<p>The <code class="language-plaintext highlighter-rouge">Magento\UrlRewrite</code> module converts URL rewrite requests to canonical URLs. As a result, your custom <code class="language-plaintext highlighter-rouge">urlResolver</code> module does not require its own class for performing these actions, but it must be able to save and delete entries in the <code class="language-plaintext highlighter-rouge">url_rewrite</code> table.</p>
 
 <h2 id="create-observers">Create observers</h2>
 
-<p>You can use the <code class="highlighter-rouge">Magento\CmsUrlRewrite\Observer\ProcessUrlRewriteSavingObserver</code> class as the basis for saving URL rewrites. For deleting entries, create a <code class="highlighter-rouge">ProcessUrlRewriteDeleteObserver</code> class similar to the following:</p>
+<p>You can use the <code class="language-plaintext highlighter-rouge">Magento\CmsUrlRewrite\Observer\ProcessUrlRewriteSavingObserver</code> class as the basis for saving URL rewrites. For deleting entries, create a <code class="language-plaintext highlighter-rouge">ProcessUrlRewriteDeleteObserver</code> class similar to the following:</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="sd">/**
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="cd">/**
     * Generate urls for UrlRewrite and save it in storage
     *
     * @param \Magento\Framework\Event\Observer $observer
     * @return void
     */</span>
-   <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">(</span><span class="nx">EventObserver</span> <span class="nv">$observer</span><span class="p">)</span>
+   <span class="k">public</span> <span class="k">function</span> <span class="n">execute</span><span class="p">(</span><span class="kt">EventObserver</span> <span class="nv">$observer</span><span class="p">)</span>
    <span class="p">{</span>
-       <span class="sd">/** @var \Magento\MyModule\Model\Page $myEntityPage  */</span>
-       <span class="nv">$page</span> <span class="o">=</span> <span class="nv">$observer</span><span class="o">-&gt;</span><span class="na">getEvent</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getObject</span><span class="p">();</span>
+       <span class="cd">/** @var \Magento\MyModule\Model\Page $myEntityPage  */</span>
+       <span class="nv">$page</span> <span class="o">=</span> <span class="nv">$observer</span><span class="o">-&gt;</span><span class="nf">getEvent</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">getObject</span><span class="p">();</span>
 
-       <span class="k">if</span> <span class="p">(</span><span class="nv">$page</span><span class="o">-&gt;</span><span class="na">isDeleted</span><span class="p">())</span> <span class="p">{</span>
-           <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">urlPersist</span><span class="o">-&gt;</span><span class="na">deleteByData</span><span class="p">(</span>
+       <span class="k">if</span> <span class="p">(</span><span class="nv">$page</span><span class="o">-&gt;</span><span class="nf">isDeleted</span><span class="p">())</span> <span class="p">{</span>
+           <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">urlPersist</span><span class="o">-&gt;</span><span class="nf">deleteByData</span><span class="p">(</span>
                <span class="p">[</span>
-                   <span class="nx">UrlRewrite</span><span class="o">::</span><span class="na">ENTITY_ID</span> <span class="o">=&gt;</span> <span class="nv">$page</span><span class="o">-&gt;</span><span class="na">getId</span><span class="p">(),</span>
-                   <span class="nx">UrlRewrite</span><span class="o">::</span><span class="na">ENTITY_TYPE</span> <span class="o">=&gt;</span> <span class="nx">MyEntityPageUrlRewriteGenerator</span><span class="o">::</span><span class="na">ENTITY_TYPE</span><span class="p">,</span>
+                   <span class="nc">UrlRewrite</span><span class="o">::</span><span class="no">ENTITY_ID</span> <span class="o">=&gt;</span> <span class="nv">$page</span><span class="o">-&gt;</span><span class="nf">getId</span><span class="p">(),</span>
+                   <span class="nc">UrlRewrite</span><span class="o">::</span><span class="no">ENTITY_TYPE</span> <span class="o">=&gt;</span> <span class="nc">MyEntityPageUrlRewriteGenerator</span><span class="o">::</span><span class="no">ENTITY_TYPE</span><span class="p">,</span>
                <span class="p">]</span>
            <span class="p">);</span>
        <span class="p">}</span>
@@ -2214,10 +2215,10 @@
 
 <h2 id="configure-the-custom-module">Configure the custom module</h2>
 
-<p>Update the <code class="highlighter-rouge">graphql.xml</code> and <code class="highlighter-rouge">events.xml</code> file in your module’s <code class="highlighter-rouge">etc</code> directory to configure your custom GraphQL <code class="highlighter-rouge">urlResolver</code> service:</p>
+<p>Update the <code class="language-plaintext highlighter-rouge">graphql.xml</code> and <code class="language-plaintext highlighter-rouge">events.xml</code> file in your module’s <code class="language-plaintext highlighter-rouge">etc</code> directory to configure your custom GraphQL <code class="language-plaintext highlighter-rouge">urlResolver</code> service:</p>
 
 <ul>
-  <li>Add lines similar to the following in your module’s <code class="highlighter-rouge">graphql.xml</code> file to define the enumeration. The <code class="highlighter-rouge">UrlRewriteGraphQl</code> module defines <code class="highlighter-rouge">UrlRewriteEntityTypeEnum</code>.</li>
+  <li>Add lines similar to the following in your module’s <code class="language-plaintext highlighter-rouge">graphql.xml</code> file to define the enumeration. The <code class="language-plaintext highlighter-rouge">UrlRewriteGraphQl</code> module defines <code class="language-plaintext highlighter-rouge">UrlRewriteEntityTypeEnum</code>.</li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml">  <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_GraphQl:etc/graphql.xsd"</span><span class="nt">&gt;</span>
@@ -2228,7 +2229,7 @@
   </code></pre></figure>
 
 <ul>
-  <li>Define two events similar to the following in your module’s <code class="highlighter-rouge">events.xml</code> file.</li>
+  <li>Define two events similar to the following in your module’s <code class="language-plaintext highlighter-rouge">events.xml</code> file.</li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml">  <span class="nt">&lt;event</span> <span class="na">name=</span><span class="s">"mymodule_page_save_after"</span><span class="nt">&gt;</span>

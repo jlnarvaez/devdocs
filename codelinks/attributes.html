@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Retrieving detailed attributes | Magento 2 Developer Documentation (copy)</title>
+	<title>Retrieving detailed attributes | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -1552,7 +1551,7 @@
 </section>
 
 			<p>Swagger and other types of code-generated documentation erroneously indicate several APIs that
-search across multiple objects return detailed information about individual objects. Detailed information, such as <code class="highlighter-rouge">extensionAttributes</code>,  <code class="highlighter-rouge">customAttributes</code>, and possibly other fields, are generally available only when requesting information on a single object.</p>
+search across multiple objects return detailed information about individual objects. Detailed information, such as <code class="language-plaintext highlighter-rouge">extensionAttributes</code>,  <code class="language-plaintext highlighter-rouge">customAttributes</code>, and possibly other fields, are generally available only when requesting information on a single object.</p>
 
 <p>This document lists the PHP, REST, and SOAP calls that indicate they return detailed information, but might not. It also provides the call that returns the detailed data.</p>
 
@@ -1616,18 +1615,18 @@ search across multiple objects return detailed information about individual obje
   <tbody>
     <tr>
       <td>PHP</td>
-      <td><code class="highlighter-rouge">CustomerRepositoryInterface::getList($searchCriteria)</code></td>
-      <td><code class="highlighter-rouge">CustomerRepositoryInterface::getById($customerId)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">CustomerRepositoryInterface::getList($searchCriteria)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">CustomerRepositoryInterface::getById($customerId)</code></td>
     </tr>
     <tr>
       <td>REST</td>
-      <td><code class="highlighter-rouge">/V1/customers/search</code></td>
-      <td><code class="highlighter-rouge">/V1/customers/{id}</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/V1/customers/search</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/V1/customers/{id}</code></td>
     </tr>
     <tr>
       <td>SOAP</td>
-      <td><code class="highlighter-rouge">customerCustomerRepositoryV1GetList</code></td>
-      <td><code class="highlighter-rouge">customerCustomerRepositoryV1GetById</code></td>
+      <td><code class="language-plaintext highlighter-rouge">customerCustomerRepositoryV1GetList</code></td>
+      <td><code class="language-plaintext highlighter-rouge">customerCustomerRepositoryV1GetById</code></td>
     </tr>
   </tbody>
 </table>
@@ -1645,18 +1644,18 @@ search across multiple objects return detailed information about individual obje
   <tbody>
     <tr>
       <td>PHP</td>
-      <td><code class="highlighter-rouge">GroupRepositoryInterface::getList($searchCriteria)</code></td>
-      <td><code class="highlighter-rouge">GroupRepositoryInterface::getById($id)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">GroupRepositoryInterface::getList($searchCriteria)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">GroupRepositoryInterface::getById($id)</code></td>
     </tr>
     <tr>
       <td>REST</td>
-      <td><code class="highlighter-rouge">/V1/customerGroups/search</code></td>
-      <td><code class="highlighter-rouge">/V1/customerGroups/{id}</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/V1/customerGroups/search</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/V1/customerGroups/{id}</code></td>
     </tr>
     <tr>
       <td>SOAP</td>
-      <td><code class="highlighter-rouge">customerGroupRepositoryV1GetList</code></td>
-      <td><code class="highlighter-rouge">customerGroupRepositoryV1GetById</code></td>
+      <td><code class="language-plaintext highlighter-rouge">customerGroupRepositoryV1GetList</code></td>
+      <td><code class="language-plaintext highlighter-rouge">customerGroupRepositoryV1GetById</code></td>
     </tr>
   </tbody>
 </table>
@@ -1676,18 +1675,18 @@ search across multiple objects return detailed information about individual obje
   <tbody>
     <tr>
       <td>PHP</td>
-      <td><code class="highlighter-rouge">AttributeSetRepositoryInterface::getList($entityTypeCode, $searchCriteria)</code></td>
-      <td><code class="highlighter-rouge">AttributeSetRepositoryInterface::get($attributeSetId)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">AttributeSetRepositoryInterface::getList($entityTypeCode, $searchCriteria)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">AttributeSetRepositoryInterface::get($attributeSetId)</code></td>
     </tr>
     <tr>
       <td>REST</td>
-      <td><code class="highlighter-rouge">/V1/eav/attribute-sets/list</code></td>
-      <td><code class="highlighter-rouge">/V1/eav/attribute-sets/{attributeSetId}</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/V1/eav/attribute-sets/list</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/V1/eav/attribute-sets/{attributeSetId}</code></td>
     </tr>
     <tr>
       <td>SOAP</td>
-      <td><code class="highlighter-rouge">eavAttributeSetRepositoryV1GetList</code></td>
-      <td><code class="highlighter-rouge">eavAttributeSetRepositoryV1Get</code></td>
+      <td><code class="language-plaintext highlighter-rouge">eavAttributeSetRepositoryV1GetList</code></td>
+      <td><code class="language-plaintext highlighter-rouge">eavAttributeSetRepositoryV1Get</code></td>
     </tr>
   </tbody>
 </table>
@@ -1707,18 +1706,18 @@ search across multiple objects return detailed information about individual obje
   <tbody>
     <tr>
       <td>PHP</td>
-      <td><code class="highlighter-rouge">WrappingRepositoryInterface::getList($searchCriteria)</code></td>
-      <td><code class="highlighter-rouge">WrappingRepositoryInterface::get($ruleId)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">WrappingRepositoryInterface::getList($searchCriteria)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">WrappingRepositoryInterface::get($ruleId)</code></td>
     </tr>
     <tr>
       <td>REST</td>
-      <td><code class="highlighter-rouge">/V1/gift-wrappings</code></td>
-      <td><code class="highlighter-rouge">/V1/gift-wrappings/:id</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/V1/gift-wrappings</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/V1/gift-wrappings/:id</code></td>
     </tr>
     <tr>
       <td>SOAP</td>
-      <td><code class="highlighter-rouge">giftWrappingWrappingRepositoryV1GetList</code></td>
-      <td><code class="highlighter-rouge">giftWrappingWrappingRepositoryV1Get</code></td>
+      <td><code class="language-plaintext highlighter-rouge">giftWrappingWrappingRepositoryV1GetList</code></td>
+      <td><code class="language-plaintext highlighter-rouge">giftWrappingWrappingRepositoryV1Get</code></td>
     </tr>
   </tbody>
 </table>
@@ -1738,18 +1737,18 @@ search across multiple objects return detailed information about individual obje
   <tbody>
     <tr>
       <td>PHP</td>
-      <td><code class="highlighter-rouge">CartRepositoryInterface::getList($searchCriteria)</code></td>
-      <td><code class="highlighter-rouge">CartRepositoryInterface::get($cartId)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">CartRepositoryInterface::getList($searchCriteria)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">CartRepositoryInterface::get($cartId)</code></td>
     </tr>
     <tr>
       <td>REST</td>
-      <td><code class="highlighter-rouge">/V1/carts/search</code></td>
-      <td><code class="highlighter-rouge">/V1/carts/{cartId}</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/V1/carts/search</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/V1/carts/{cartId}</code></td>
     </tr>
     <tr>
       <td>SOAP</td>
-      <td><code class="highlighter-rouge">quoteCartRepositoryV1GetList</code></td>
-      <td><code class="highlighter-rouge">quoteCartRepositoryV1Get</code></td>
+      <td><code class="language-plaintext highlighter-rouge">quoteCartRepositoryV1GetList</code></td>
+      <td><code class="language-plaintext highlighter-rouge">quoteCartRepositoryV1Get</code></td>
     </tr>
   </tbody>
 </table>
@@ -1767,18 +1766,18 @@ search across multiple objects return detailed information about individual obje
   <tbody>
     <tr>
       <td>PHP</td>
-      <td><code class="highlighter-rouge">GuestPaymentMethodManagementInterface::getList($cartId)</code></td>
-      <td><code class="highlighter-rouge">GuestPaymentMethodManagementInterface::get($cartId)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">GuestPaymentMethodManagementInterface::getList($cartId)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">GuestPaymentMethodManagementInterface::get($cartId)</code></td>
     </tr>
     <tr>
       <td>REST</td>
-      <td><code class="highlighter-rouge">/V1/guest-carts/:cartId/payment-methods</code></td>
-      <td><code class="highlighter-rouge">/V1/guest-carts/:cartId/selected-payment-method</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/V1/guest-carts/:cartId/payment-methods</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/V1/guest-carts/:cartId/selected-payment-method</code></td>
     </tr>
     <tr>
       <td>SOAP</td>
-      <td><code class="highlighter-rouge">quoteGuestPaymentMethodManagementV1GetList</code></td>
-      <td><code class="highlighter-rouge">quoteGuestPaymentMethodManagementV1Get</code></td>
+      <td><code class="language-plaintext highlighter-rouge">quoteGuestPaymentMethodManagementV1GetList</code></td>
+      <td><code class="language-plaintext highlighter-rouge">quoteGuestPaymentMethodManagementV1Get</code></td>
     </tr>
   </tbody>
 </table>
@@ -1796,18 +1795,18 @@ search across multiple objects return detailed information about individual obje
   <tbody>
     <tr>
       <td>PHP</td>
-      <td><code class="highlighter-rouge">PaymentMethodManagementInterface::getList($cartId)</code></td>
-      <td><code class="highlighter-rouge">PaymentMethodManagementInterface::get($cartId)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">PaymentMethodManagementInterface::getList($cartId)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">PaymentMethodManagementInterface::get($cartId)</code></td>
     </tr>
     <tr>
       <td>REST</td>
-      <td><code class="highlighter-rouge"> /V1/carts/:cartId/payment-methods</code></td>
-      <td><code class="highlighter-rouge">/V1/carts/:cartId/selected-payment-method</code></td>
+      <td>` /V1/carts/:cartId/payment-methods`</td>
+      <td><code class="language-plaintext highlighter-rouge">/V1/carts/:cartId/selected-payment-method</code></td>
     </tr>
     <tr>
       <td>SOAP</td>
-      <td><code class="highlighter-rouge">quotePaymentMethodManagementV1GetList</code></td>
-      <td><code class="highlighter-rouge">quotePaymentMethodManagementV1Get</code></td>
+      <td><code class="language-plaintext highlighter-rouge">quotePaymentMethodManagementV1GetList</code></td>
+      <td><code class="language-plaintext highlighter-rouge">quotePaymentMethodManagementV1Get</code></td>
     </tr>
   </tbody>
 </table>
@@ -1823,18 +1822,18 @@ search across multiple objects return detailed information about individual obje
   <tbody>
     <tr>
       <td>PHP</td>
-      <td><code class="highlighter-rouge">PaymentMethodManagementInterface::getList($cartId)</code></td>
-      <td><code class="highlighter-rouge">PaymentMethodManagementInterface::get($cartId)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">PaymentMethodManagementInterface::getList($cartId)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">PaymentMethodManagementInterface::get($cartId)</code></td>
     </tr>
     <tr>
       <td>REST</td>
-      <td><code class="highlighter-rouge">/V1/carts/mine/payment-methods</code></td>
-      <td><code class="highlighter-rouge">/V1/carts/mine/selected-payment-method</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/V1/carts/mine/payment-methods</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/V1/carts/mine/selected-payment-method</code></td>
     </tr>
     <tr>
       <td>SOAP</td>
-      <td><code class="highlighter-rouge">quotePaymentMethodManagementV1GetList</code></td>
-      <td><code class="highlighter-rouge">quotePaymentMethodManagementV1Get</code></td>
+      <td><code class="language-plaintext highlighter-rouge">quotePaymentMethodManagementV1GetList</code></td>
+      <td><code class="language-plaintext highlighter-rouge">quotePaymentMethodManagementV1Get</code></td>
     </tr>
   </tbody>
 </table>
@@ -1854,18 +1853,18 @@ search across multiple objects return detailed information about individual obje
   <tbody>
     <tr>
       <td>PHP</td>
-      <td><code class="highlighter-rouge">CreditmemoRepositoryInterface::getList($searchCriteria)</code></td>
-      <td><code class="highlighter-rouge">CreditmemoRepositoryInterface::get($id)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">CreditmemoRepositoryInterface::getList($searchCriteria)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">CreditmemoRepositoryInterface::get($id)</code></td>
     </tr>
     <tr>
       <td>REST</td>
-      <td><code class="highlighter-rouge">/V1/creditmemos</code></td>
-      <td><code class="highlighter-rouge">/V1/creditmemo/{id}</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/V1/creditmemos</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/V1/creditmemo/{id}</code></td>
     </tr>
     <tr>
       <td>SOAP</td>
-      <td><code class="highlighter-rouge">salesCreditmemoRepositoryV1GetList</code></td>
-      <td><code class="highlighter-rouge">salesCreditmemoRepositoryV1Get</code></td>
+      <td><code class="language-plaintext highlighter-rouge">salesCreditmemoRepositoryV1GetList</code></td>
+      <td><code class="language-plaintext highlighter-rouge">salesCreditmemoRepositoryV1Get</code></td>
     </tr>
   </tbody>
 </table>
@@ -1883,18 +1882,18 @@ search across multiple objects return detailed information about individual obje
   <tbody>
     <tr>
       <td>PHP</td>
-      <td><code class="highlighter-rouge">InvoiceRepositoryInterface::getList($searchCriteria)</code></td>
-      <td><code class="highlighter-rouge">InvoiceRepositoryInterface::get($id)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">InvoiceRepositoryInterface::getList($searchCriteria)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">InvoiceRepositoryInterface::get($id)</code></td>
     </tr>
     <tr>
       <td>REST</td>
-      <td><code class="highlighter-rouge">/V1/invoices</code></td>
-      <td><code class="highlighter-rouge">/V1/invoices/{id}</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/V1/invoices</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/V1/invoices/{id}</code></td>
     </tr>
     <tr>
       <td>SOAP</td>
-      <td><code class="highlighter-rouge">salesInvoiceRepositoryV1GetList</code></td>
-      <td><code class="highlighter-rouge">salesInvoiceRepositoryV1Get</code></td>
+      <td><code class="language-plaintext highlighter-rouge">salesInvoiceRepositoryV1GetList</code></td>
+      <td><code class="language-plaintext highlighter-rouge">salesInvoiceRepositoryV1Get</code></td>
     </tr>
   </tbody>
 </table>
@@ -1912,18 +1911,18 @@ search across multiple objects return detailed information about individual obje
   <tbody>
     <tr>
       <td>PHP</td>
-      <td><code class="highlighter-rouge">OrderItemRepositoryInterface::getList($searchCriteria)</code></td>
-      <td><code class="highlighter-rouge">OrderItemRepositoryInterface::get($id)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">OrderItemRepositoryInterface::getList($searchCriteria)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">OrderItemRepositoryInterface::get($id)</code></td>
     </tr>
     <tr>
       <td>REST</td>
-      <td><code class="highlighter-rouge">/V1/orders/items</code></td>
-      <td><code class="highlighter-rouge">/V1/orders/items/{id}</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/V1/orders/items</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/V1/orders/items/{id}</code></td>
     </tr>
     <tr>
       <td>SOAP</td>
-      <td><code class="highlighter-rouge">salesOrderItemRepositoryV1GetList</code></td>
-      <td><code class="highlighter-rouge">salesOrderItemRepositoryV1Get</code></td>
+      <td><code class="language-plaintext highlighter-rouge">salesOrderItemRepositoryV1GetList</code></td>
+      <td><code class="language-plaintext highlighter-rouge">salesOrderItemRepositoryV1Get</code></td>
     </tr>
   </tbody>
 </table>
@@ -1941,18 +1940,18 @@ search across multiple objects return detailed information about individual obje
   <tbody>
     <tr>
       <td>PHP</td>
-      <td><code class="highlighter-rouge">OrderRepositoryInterface::getList($searchCriteria)</code></td>
-      <td><code class="highlighter-rouge">OrderRepositoryInterface::get($id)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">OrderRepositoryInterface::getList($searchCriteria)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">OrderRepositoryInterface::get($id)</code></td>
     </tr>
     <tr>
       <td>REST</td>
-      <td><code class="highlighter-rouge">/V1/orders</code></td>
-      <td><code class="highlighter-rouge">/V1/orders/{id}</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/V1/orders</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/V1/orders/{id}</code></td>
     </tr>
     <tr>
       <td>SOAP</td>
-      <td><code class="highlighter-rouge">salesOrderRepositoryV1GetList</code></td>
-      <td><code class="highlighter-rouge">salesOrderRepositoryV1GetList</code></td>
+      <td><code class="language-plaintext highlighter-rouge">salesOrderRepositoryV1GetList</code></td>
+      <td><code class="language-plaintext highlighter-rouge">salesOrderRepositoryV1GetList</code></td>
     </tr>
   </tbody>
 </table>
@@ -1970,18 +1969,18 @@ search across multiple objects return detailed information about individual obje
   <tbody>
     <tr>
       <td>PHP</td>
-      <td><code class="highlighter-rouge">ShipmentRepositoryInterface::getList($searchCriteria)</code></td>
-      <td><code class="highlighter-rouge">ShipmentRepositoryInterface::get($id)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ShipmentRepositoryInterface::getList($searchCriteria)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ShipmentRepositoryInterface::get($id)</code></td>
     </tr>
     <tr>
       <td>REST</td>
-      <td><code class="highlighter-rouge">/V1/shipments</code></td>
-      <td><code class="highlighter-rouge">/V1/shipment/{id}</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/V1/shipments</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/V1/shipment/{id}</code></td>
     </tr>
     <tr>
       <td>SOAP</td>
-      <td><code class="highlighter-rouge">salesShipmentRepositoryV1GetList</code></td>
-      <td><code class="highlighter-rouge">salesShipmentRepositoryV1Get</code></td>
+      <td><code class="language-plaintext highlighter-rouge">salesShipmentRepositoryV1GetList</code></td>
+      <td><code class="language-plaintext highlighter-rouge">salesShipmentRepositoryV1Get</code></td>
     </tr>
   </tbody>
 </table>
@@ -1999,18 +1998,18 @@ search across multiple objects return detailed information about individual obje
   <tbody>
     <tr>
       <td>PHP</td>
-      <td><code class="highlighter-rouge">TransactionRepositoryInterface::getList($searchCriteria)</code></td>
-      <td><code class="highlighter-rouge">TransactionRepositoryInterface:get($id)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">TransactionRepositoryInterface::getList($searchCriteria)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">TransactionRepositoryInterface:get($id)</code></td>
     </tr>
     <tr>
       <td>REST</td>
-      <td><code class="highlighter-rouge">/V1/transactions</code></td>
-      <td><code class="highlighter-rouge">/V1/transactions/{id}</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/V1/transactions</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/V1/transactions/{id}</code></td>
     </tr>
     <tr>
       <td>SOAP</td>
-      <td><code class="highlighter-rouge">salesTransactionRepositoryV1GetList</code></td>
-      <td><code class="highlighter-rouge">salesTransactionRepositoryV1Get</code></td>
+      <td><code class="language-plaintext highlighter-rouge">salesTransactionRepositoryV1GetList</code></td>
+      <td><code class="language-plaintext highlighter-rouge">salesTransactionRepositoryV1Get</code></td>
     </tr>
   </tbody>
 </table>
@@ -2030,18 +2029,18 @@ search across multiple objects return detailed information about individual obje
   <tbody>
     <tr>
       <td>PHP</td>
-      <td><code class="highlighter-rouge">CouponRepositoryInterface::getList($searchCriteria)</code></td>
-      <td><code class="highlighter-rouge">CouponRepositoryInterface::getById($couponId)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">CouponRepositoryInterface::getList($searchCriteria)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">CouponRepositoryInterface::getById($couponId)</code></td>
     </tr>
     <tr>
       <td>REST</td>
-      <td><code class="highlighter-rouge">/V1/coupons/search</code></td>
-      <td><code class="highlighter-rouge">/V1/coupons/{couponId}</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/V1/coupons/search</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/V1/coupons/{couponId}</code></td>
     </tr>
     <tr>
       <td>SOAP</td>
-      <td><code class="highlighter-rouge">salesRuleCouponRepositoryV1GetList</code></td>
-      <td><code class="highlighter-rouge">salesRuleCouponRepositoryV1GetById</code></td>
+      <td><code class="language-plaintext highlighter-rouge">salesRuleCouponRepositoryV1GetList</code></td>
+      <td><code class="language-plaintext highlighter-rouge">salesRuleCouponRepositoryV1GetById</code></td>
     </tr>
   </tbody>
 </table>
@@ -2059,18 +2058,18 @@ search across multiple objects return detailed information about individual obje
   <tbody>
     <tr>
       <td>PHP</td>
-      <td><code class="highlighter-rouge">RuleRepositoryInterface::getList($searchCriteria)</code></td>
-      <td><code class="highlighter-rouge">RuleRepositoryInterface::getById($ruleId)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">RuleRepositoryInterface::getList($searchCriteria)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">RuleRepositoryInterface::getById($ruleId)</code></td>
     </tr>
     <tr>
       <td>REST</td>
-      <td><code class="highlighter-rouge">/V1/salesRules/search</code></td>
-      <td><code class="highlighter-rouge">/V1/salesRules/{ruleId}</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/V1/salesRules/search</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/V1/salesRules/{ruleId}</code></td>
     </tr>
     <tr>
       <td>SOAP</td>
-      <td><code class="highlighter-rouge">salesRuleRuleRepositoryV1GetListRequest</code></td>
-      <td><code class="highlighter-rouge">salesRuleRuleRepositoryV1GetById</code></td>
+      <td><code class="language-plaintext highlighter-rouge">salesRuleRuleRepositoryV1GetListRequest</code></td>
+      <td><code class="language-plaintext highlighter-rouge">salesRuleRuleRepositoryV1GetById</code></td>
     </tr>
   </tbody>
 </table>
@@ -2090,18 +2089,18 @@ search across multiple objects return detailed information about individual obje
   <tbody>
     <tr>
       <td>PHP</td>
-      <td><code class="highlighter-rouge">TaxClassRepositoryInterface::getList($searchCriteria)</code></td>
-      <td><code class="highlighter-rouge">TaxClassRepositoryInterface::get($taxClassId)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">TaxClassRepositoryInterface::getList($searchCriteria)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">TaxClassRepositoryInterface::get($taxClassId)</code></td>
     </tr>
     <tr>
       <td>REST</td>
-      <td><code class="highlighter-rouge">/V1/taxClasses/search</code></td>
-      <td><code class="highlighter-rouge">/V1/taxClass/{rateId}</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/V1/taxClasses/search</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/V1/taxClass/{rateId}</code></td>
     </tr>
     <tr>
       <td>SOAP</td>
-      <td><code class="highlighter-rouge">taxTaxClassRepositoryV1GetList</code></td>
-      <td><code class="highlighter-rouge">taxTaxClassRepositoryV1Get</code></td>
+      <td><code class="language-plaintext highlighter-rouge">taxTaxClassRepositoryV1GetList</code></td>
+      <td><code class="language-plaintext highlighter-rouge">taxTaxClassRepositoryV1Get</code></td>
     </tr>
   </tbody>
 </table>
@@ -2119,18 +2118,18 @@ search across multiple objects return detailed information about individual obje
   <tbody>
     <tr>
       <td>PHP</td>
-      <td><code class="highlighter-rouge">TaxRateRepositoryInterface::getList($searchCriteria)</code></td>
-      <td><code class="highlighter-rouge">TaxRateRepositoryInterface::get($rateId)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">TaxRateRepositoryInterface::getList($searchCriteria)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">TaxRateRepositoryInterface::get($rateId)</code></td>
     </tr>
     <tr>
       <td>REST</td>
-      <td><code class="highlighter-rouge">/V1/taxRates/search</code></td>
-      <td><code class="highlighter-rouge">/V1/taxRates/{rateId}</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/V1/taxRates/search</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/V1/taxRates/{rateId}</code></td>
     </tr>
     <tr>
       <td>SOAP</td>
-      <td><code class="highlighter-rouge">taxTaxRateRepositoryV1GetList</code></td>
-      <td><code class="highlighter-rouge">taxTaxRateRepositoryV1Get</code></td>
+      <td><code class="language-plaintext highlighter-rouge">taxTaxRateRepositoryV1GetList</code></td>
+      <td><code class="language-plaintext highlighter-rouge">taxTaxRateRepositoryV1Get</code></td>
     </tr>
   </tbody>
 </table>
@@ -2148,18 +2147,18 @@ search across multiple objects return detailed information about individual obje
   <tbody>
     <tr>
       <td>PHP</td>
-      <td><code class="highlighter-rouge">TaxRuleRepositoryInterface::getList($searchCriteria)</code></td>
-      <td><code class="highlighter-rouge">TaxRuleRepositoryInterface::get($ruleId)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">TaxRuleRepositoryInterface::getList($searchCriteria)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">TaxRuleRepositoryInterface::get($ruleId)</code></td>
     </tr>
     <tr>
       <td>REST</td>
-      <td><code class="highlighter-rouge">/V1/taxRules/search</code></td>
-      <td><code class="highlighter-rouge">/V1/taxRules/{ruleId}</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/V1/taxRules/search</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/V1/taxRules/{ruleId}</code></td>
     </tr>
     <tr>
       <td>SOAP</td>
-      <td><code class="highlighter-rouge">taxTaxRuleRepositoryV1GetList</code></td>
-      <td><code class="highlighter-rouge">taxTaxRuleRepositoryV1Get</code></td>
+      <td><code class="language-plaintext highlighter-rouge">taxTaxRuleRepositoryV1GetList</code></td>
+      <td><code class="language-plaintext highlighter-rouge">taxTaxRuleRepositoryV1Get</code></td>
     </tr>
   </tbody>
 </table>

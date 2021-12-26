@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Basic template | Magento 2 Developer Documentation (copy)</title>
+	<title>Basic template | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/contributor-guide/templates/basic_template.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/contributor-guide/templates/basic_template.html">Magento 2.0</a></li>
 		
@@ -1803,24 +1804,24 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">group:</code></td>
-      <td>The table of contents this file belongs to, which points to files located in <code class="highlighter-rouge">_data/toc/</code>. Only add the name of the file without the extension. For example, the group of this file is <code class="highlighter-rouge">group: contributor-guide</code>, which points to the table of contents defined in <code class="highlighter-rouge">_data/toc/contributor-guide.yml</code>.</td>
+      <td><code class="language-plaintext highlighter-rouge">group:</code></td>
+      <td>The table of contents this file belongs to, which points to files located in <code class="language-plaintext highlighter-rouge">_data/toc/</code>. Only add the name of the file without the extension. For example, the group of this file is <code class="language-plaintext highlighter-rouge">group: contributor-guide</code>, which points to the table of contents defined in <code class="language-plaintext highlighter-rouge">_data/toc/contributor-guide.yml</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">title:</code></td>
+      <td><code class="language-plaintext highlighter-rouge">title:</code></td>
       <td>The title of the page.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">functional_areas:</code></td>
-      <td>Optional. Adds facets for search results. Available facets include: Sales, Products, Carts, Customers, Marketing, Account, Content, Reports, Stores, System, Catalog, Orders, Frontend, Theme, Staging, Search, Configurations, Integration, Services, Tools, Setup, Testing, test, Standards, Install, Upgrade, B2B, Cloud, and Bundled extensions. These facets are case sensitive and support multiple facets separated by commas. For example: <code class="highlighter-rouge">functional_areas: Install</code>.</td>
+      <td><code class="language-plaintext highlighter-rouge">functional_areas:</code></td>
+      <td>Optional. Adds facets for search results. Available facets include: Sales, Products, Carts, Customers, Marketing, Account, Content, Reports, Stores, System, Catalog, Orders, Frontend, Theme, Staging, Search, Configurations, Integration, Services, Tools, Setup, Testing, test, Standards, Install, Upgrade, B2B, Cloud, and Bundled extensions. These facets are case sensitive and support multiple facets separated by commas. For example: <code class="language-plaintext highlighter-rouge">functional_areas: Install</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">redirect_from</code></td>
-      <td>Optional. Add a list of other pages in DevDocs that should redirect to this page. The link should start with the <code class="highlighter-rouge">/guides</code> directory. For an example, see the source code for this template page.</td>
+      <td><code class="language-plaintext highlighter-rouge">redirect_from</code></td>
+      <td>Optional. Add a list of other pages in DevDocs that should redirect to this page. The link should start with the <code class="language-plaintext highlighter-rouge">/guides</code> directory. For an example, see the source code for this template page.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">ee_only:</code></td>
-      <td>Optional. If set to <code class="highlighter-rouge">true</code>, graphics/cues display on the page indicating it applies to Magento Commerce.</td>
+      <td><code class="language-plaintext highlighter-rouge">ee_only:</code></td>
+      <td>Optional. If set to <code class="language-plaintext highlighter-rouge">true</code>, graphics/cues display on the page indicating it applies to Magento Commerce.</td>
     </tr>
   </tbody>
 </table>
@@ -1846,23 +1847,23 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">*emphasis*</code></td>
+      <td><code class="language-plaintext highlighter-rouge">*emphasis*</code></td>
       <td><em>emphasis</em></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">**bold**</code></td>
+      <td><code class="language-plaintext highlighter-rouge">**bold**</code></td>
       <td><strong>bold</strong></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">`inline code`</code></td>
-      <td><code class="highlighter-rouge">inline code</code></td>
+      <td><code class="language-plaintext highlighter-rouge">`inline code`</code></td>
+      <td><code class="language-plaintext highlighter-rouge">inline code</code></td>
     </tr>
   </tbody>
 </table>
 
 <p>By indenting your content by at least 4 spaces, you can create a code block. For extensive examples of adding code samples, see <a href="#code-blocks">Code blocks</a>.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>//This is a code block!
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>//This is a code block!
 print "Hello World!";
 </code></pre></div></div>
 
@@ -1904,11 +1905,11 @@ print "Hello World!";
 
 <h3 id="images">Images</h3>
 
-<p>Please add any images you may need to the <a href="https://GitHub.com/magento/devdocs/tree/develop/common/images" target="_blank"><code class="highlighter-rouge">common/images</code></a> directory.</p>
+<p>Please add any images you may need to the <a href="https://GitHub.com/magento/devdocs/tree/develop/common/images" target="_blank"><code class="language-plaintext highlighter-rouge">common/images</code></a> directory.</p>
 
 <p>Once the image is added, you can use it in your documentation:</p>
 
-<p><em>Example:</em> <code class="highlighter-rouge">![Image](/devdocs/common/images/install_cygwin.png)</code></p>
+<p><em>Example:</em> <code class="language-plaintext highlighter-rouge">![Image](/devdocs/common/images/install_cygwin.png)</code></p>
 
 <p><em>Output:</em></p>
 
@@ -1916,7 +1917,7 @@ print "Hello World!";
 
 <p>You can even scale the image if it is too large:</p>
 
-<p><em>Example:</em> <code class="highlighter-rouge">![Scaled Image](/devdocs/common/images/install_cygwin.png){:width="446" height="246"}</code></p>
+<p><em>Example:</em> <code class="language-plaintext highlighter-rouge">![Scaled Image](/devdocs/common/images/install_cygwin.png){:width="446" height="246"}</code></p>
 
 <p><em>Output:</em></p>
 
@@ -1973,13 +1974,13 @@ print "Hello World!";
 
 <p>Code blocks can also be defined using <a href="http://rouge.jneen.net/" target="_blank">Rouge formatting</a>. View the .md file of this template for examples.</p>
 
-<p>For inline code, surround the content with single backticks: <code class="highlighter-rouge">`example`</code>.</p>
+<p>For inline code, surround the content with single backticks: <code class="language-plaintext highlighter-rouge">`example`</code>.</p>
 
 <p>For blocks of code, surround content with 3 backticks and an optional <a href="https://GitHub.com/jneen/rouge/wiki/List-of-supported-languages-and-lexers" target="_blank">supported language</a>.</p>
 
 <p><em>Example:</em></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>```html
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>```html
 &lt;div class="container"&gt;
   &lt;h4 class="title"&gt;Title&lt;/h4&gt;
   &lt;div class="content"&gt;
@@ -2007,7 +2008,7 @@ print "Hello World!";
 
 <div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>
 <span class="p">{%</span><span class="w">
-</span><span class="nt">include</span><span class="w"> </span><span class="na">note</span><span class="p">.</span><span class="na">html</span><span class="err">
+</span><span class="nt">include</span><span class="w"> </span>note.html<span class="err">
 </span><span class="na">type</span><span class="o">=</span><span class="s1">'info'</span><span class="err">
 </span><span class="na">content</span><span class="o">=</span><span class="s1">'This is a note callout. You can use these to provide important information on a topic.'</span><span class="err">
 </span><span class="p">%}</span>
@@ -2026,7 +2027,7 @@ print "Hello World!";
 
 <div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>
 <span class="p">{%</span><span class="w">
-</span><span class="nt">include</span><span class="w"> </span><span class="na">note</span><span class="p">.</span><span class="na">html</span><span class="err">
+</span><span class="nt">include</span><span class="w"> </span>note.html<span class="err">
 </span><span class="na">type</span><span class="o">=</span><span class="s1">'warning'</span><span class="err">
 </span><span class="na">content</span><span class="o">=</span><span class="s1">'This is a warning callout. This can be used to convey important information to the reader.'</span><span class="err">
 </span><span class="p">%}</span>
@@ -2045,7 +2046,7 @@ print "Hello World!";
 
 <div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>
 <span class="p">{%</span><span class="w">
-</span><span class="nt">include</span><span class="w"> </span><span class="na">note</span><span class="p">.</span><span class="na">html</span><span class="err">
+</span><span class="nt">include</span><span class="w"> </span>note.html<span class="err">
 </span><span class="na">type</span><span class="o">=</span><span class="s1">'tip'</span><span class="err">
 </span><span class="na">content</span><span class="o">=</span><span class="s1">'This is a tip callout. These can be used to provide useful tips or interesting facts on a topic.'</span><span class="err">
 </span><span class="p">%}</span>
@@ -2064,7 +2065,7 @@ print "Hello World!";
 
 <p>You can use the collapsible content tag for large code samples in your content. Any content in a collapse is blocked from searching on page.</p>
 
-<p class="bs-callout bs-callout-info">The <code class="highlighter-rouge">{% collapsible %}</code> tag must be preceded by a blank line.</p>
+<p class="bs-callout bs-callout-info">The <code class="language-plaintext highlighter-rouge">{% collapsible %}</code> tag must be preceded by a blank line.</p>
 
 <p><em>Example:</em></p>
 

@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Installation of the Functional Testing Framework Entities | Magento 2 Developer Documentation (copy)</title>
+	<title>Installation of the Functional Testing Framework Entities | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/mtf/mtf_installation.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/mtf/mtf_installation.html">Magento 2.0</a></li>
 		
@@ -2306,18 +2307,18 @@
 
 <p>For more details about PHP verification, installation and configuration (<a href="/devdocs/guides/v2.2/install-gde/prereq/php-ubuntu.html">Ubuntu</a>, <a href="/devdocs/guides/v2.2/install-gde/prereq/php-centos.html">CentOS</a>).</p>
 
-<p class="bs-callout bs-callout-warning">In <code class="highlighter-rouge">php.ini</code> file, make sure <code class="highlighter-rouge">extension=php_openssl.dll</code> is not commented out.</p>
+<p class="bs-callout bs-callout-warning">In <code class="language-plaintext highlighter-rouge">php.ini</code> file, make sure <code class="language-plaintext highlighter-rouge">extension=php_openssl.dll</code> is not commented out.</p>
 
 <h4 id="mtf_install_pre_mtf-check">Check if the Functional Testing Framework has been already installed</h4>
 
 <ol>
-  <li>Find directory <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/</code>.</li>
-  <li>Find the <code class="highlighter-rouge">vendor</code> directory. If the directory exists, you already have the Functional Testing Framework installed in <code class="highlighter-rouge">vendor/magento/mtf</code>.</li>
+  <li>Find directory <code class="language-plaintext highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/</code>.</li>
+  <li>Find the <code class="language-plaintext highlighter-rouge">vendor</code> directory. If the directory exists, you already have the Functional Testing Framework installed in <code class="language-plaintext highlighter-rouge">vendor/magento/mtf</code>.</li>
 </ol>
 
 <h2 id="mtf_install_perform">Perform the installation</h2>
 
-<p>The Functional Testing Framework requires Composer, which downloads libraries defined in <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/composer.json</code>.</p>
+<p>The Functional Testing Framework requires Composer, which downloads libraries defined in <code class="language-plaintext highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/composer.json</code>.</p>
 
 <p class="bs-callout bs-callout-info">If you’re not sure that Composer is installed, see <a href="/devdocs/guides/v2.2/install-gde/prereq/dev_install.html#instgde-prereq-compose-install">Install Composer</a>.</p>
 
@@ -2328,7 +2329,7 @@
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">cd</span> &lt;magento2_root_dir&gt;/dev/tests/functional/
 </code></pre></div></div>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer install
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer <span class="nb">install</span>
 </code></pre></div></div>
 
 <p class="bs-callout bs-callout-info">If the command execution failed, check if <a href="https://getcomposer.org">Composer</a> is installed <a href="https://getcomposer.org/doc/00-intro.md#globally">globally</a>.</p>
@@ -2337,14 +2338,14 @@
 
 <h3 id="mtf_install_check_dir">Find the Functional Testing Framework directory</h3>
 
-<p>Check whether the <code class="highlighter-rouge">vendor</code> directory exists in <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/</code>.</p>
+<p>Check whether the <code class="language-plaintext highlighter-rouge">vendor</code> directory exists in <code class="language-plaintext highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/</code>.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">cd</span> &lt;magento2_root_dir&gt;/dev/tests/functional/
 </code></pre></div></div>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">ls</span>
 </code></pre></div></div>
 
-<p>Find the <code class="highlighter-rouge">mtf</code> directory.</p>
+<p>Find the <code class="language-plaintext highlighter-rouge">mtf</code> directory.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">cd </span>vendor/magento
 </code></pre></div></div>
@@ -2353,8 +2354,8 @@
 
 <h3 id="mtf_install_check_verify">Verify the Functional Testing Framework version</h3>
 
-<p>Open <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/vendor/magento/mtf/CHANGELOG.md</code>.
-The latest version in <code class="highlighter-rouge">CHANGELOG.md</code> is version of the FTF you installed.</p>
+<p>Open <code class="language-plaintext highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/vendor/magento/mtf/CHANGELOG.md</code>.
+The latest version in <code class="language-plaintext highlighter-rouge">CHANGELOG.md</code> is version of the FTF you installed.</p>
 
 <h2 id="mtf_install_next">Next Steps</h2>
 

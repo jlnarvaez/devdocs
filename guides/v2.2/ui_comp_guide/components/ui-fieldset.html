@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Fieldset component | Magento 2 Developer Documentation (copy)</title>
+	<title>Fieldset component | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/ui_comp_guide/components/ui-fieldset.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/ui_comp_guide/components/ui-fieldset.html">Magento 2.0</a></li>
 		
@@ -3144,31 +3145,31 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">disabled</code></td>
+      <td><code class="language-plaintext highlighter-rouge">disabled</code></td>
       <td>Boolean</td>
-      <td><code class="highlighter-rouge">false</code></td>
-      <td>Initial component’s state. When <code class="highlighter-rouge">true</code>, users cannot take action on the element.</td>
+      <td><code class="language-plaintext highlighter-rouge">false</code></td>
+      <td>Initial component’s state. When <code class="language-plaintext highlighter-rouge">true</code>, users cannot take action on the element.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">label</code></td>
+      <td><code class="language-plaintext highlighter-rouge">label</code></td>
       <td>String</td>
       <td> </td>
       <td>Caption for an item in the UI component context.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">visible</code></td>
+      <td><code class="language-plaintext highlighter-rouge">visible</code></td>
       <td>Boolean</td>
-      <td><code class="highlighter-rouge">true</code></td>
-      <td>Initial component’s visibility. When set to <code class="highlighter-rouge">false</code>, the <code class="highlighter-rouge">display: none</code> CSS style is added to the component’s DOM block.</td>
+      <td><code class="language-plaintext highlighter-rouge">true</code></td>
+      <td>Initial component’s visibility. When set to <code class="language-plaintext highlighter-rouge">false</code>, the <code class="language-plaintext highlighter-rouge">display: none</code> CSS style is added to the component’s DOM block.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">additionalClasses</code></td>
+      <td><code class="language-plaintext highlighter-rouge">additionalClasses</code></td>
       <td>Object</td>
       <td>{}</td>
       <td>Custom classes added to the component’s DOM block.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">level</code></td>
+      <td><code class="language-plaintext highlighter-rouge">level</code></td>
       <td>Integer</td>
       <td> </td>
       <td>Explicitly indicates the level of nesting([date-level] attribute).</td>
@@ -3189,15 +3190,15 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">collapsible</code></td>
+      <td><code class="language-plaintext highlighter-rouge">collapsible</code></td>
       <td>Boolean</td>
-      <td><code class="highlighter-rouge">false</code></td>
+      <td><code class="language-plaintext highlighter-rouge">false</code></td>
       <td>Enables/disables the collapsible functionality.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">opened</code></td>
+      <td><code class="language-plaintext highlighter-rouge">opened</code></td>
       <td>Boolean</td>
-      <td><code class="highlighter-rouge">false</code></td>
+      <td><code class="language-plaintext highlighter-rouge">false</code></td>
       <td>Initial collapsible state. Applied when the collapsible functionality is enabled.</td>
     </tr>
   </tbody>
@@ -3205,13 +3206,13 @@
 
 <h2 id="source-files">Source files</h2>
 
-<p>Extends <a href="/devdocs/guides/v2.2/ui_comp_guide/concepts/ui_comp_uicollection_concept.html"><code class="highlighter-rouge">uiCollection</code></a> and <code class="highlighter-rouge">collapsible</code>:</p>
+<p>Extends <a href="/devdocs/guides/v2.2/ui_comp_guide/concepts/ui_comp_uicollection_concept.html"><code class="language-plaintext highlighter-rouge">uiCollection</code></a> and <code class="language-plaintext highlighter-rouge">collapsible</code>:</p>
 
 <ul>
-  <li><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/Component/Form/Fieldset.php"><code class="highlighter-rouge">Magento/Ui/Component/Form/Fieldset.php</code></a></li>
-  <li><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/form/components/fieldset.js"><code class="highlighter-rouge">Magento/Ui/view/base/web/js/form/components/fieldset.js</code></a></li>
-  <li><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/templates/form/fieldset.html"><code class="highlighter-rouge">Magento/Ui/view/base/web/templates/form/fieldset.html</code></a></li>
-  <li><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/ui_component/etc/definition/fieldset.xsd"><code class="highlighter-rouge">Magento/Ui/view/base/ui_component/etc/definition/fieldset.xsd</code></a></li>
+  <li><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/Component/Form/Fieldset.php"><code class="language-plaintext highlighter-rouge">Magento/Ui/Component/Form/Fieldset.php</code></a></li>
+  <li><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/form/components/fieldset.js"><code class="language-plaintext highlighter-rouge">Magento/Ui/view/base/web/js/form/components/fieldset.js</code></a></li>
+  <li><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/templates/form/fieldset.html"><code class="language-plaintext highlighter-rouge">Magento/Ui/view/base/web/templates/form/fieldset.html</code></a></li>
+  <li><a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/ui_component/etc/definition/fieldset.xsd"><code class="language-plaintext highlighter-rouge">Magento/Ui/view/base/ui_component/etc/definition/fieldset.xsd</code></a></li>
 </ul>
 
 			

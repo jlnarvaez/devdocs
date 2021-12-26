@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>ObjectManager | Magento 2 Developer Documentation (copy)</title>
+	<title>ObjectManager | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/extension-dev-guide/object-manager.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/extension-dev-guide/object-manager.html">Magento 2.0</a></li>
 		
@@ -3256,9 +3257,9 @@
 
 <p>Large applications, such as the Magento application, use an object manager to avoid boilerplate code when composing objects during instantiation.</p>
 
-<p>In the Magento framework, the implementation of the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/ObjectManagerInterface.php" target="_blank"><code class="highlighter-rouge">ObjectManagerInterface</code></a> performs the duties of an object manager.</p>
+<p>In the Magento framework, the implementation of the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/ObjectManagerInterface.php" target="_blank"><code class="language-plaintext highlighter-rouge">ObjectManagerInterface</code></a> performs the duties of an object manager.</p>
 
-<p class="bs-callout bs-callout-warning">Magento prohibits the direct use of the <code class="highlighter-rouge">ObjectManager</code> in your code because it hides the real dependencies of a class.
+<p class="bs-callout bs-callout-warning">Magento prohibits the direct use of the <code class="language-plaintext highlighter-rouge">ObjectManager</code> in your code because it hides the real dependencies of a class.
 See <a href="#usage-rules">usage rules</a>.</p>
 
 <h2 id="responsibilities">Responsibilities</h2>
@@ -3274,7 +3275,7 @@ See <a href="#usage-rules">usage rules</a>.</p>
 
 <h2 id="configuration">Configuration</h2>
 
-<p>The <a href="/devdocs/guides/v2.2/extension-dev-guide/build/di-xml-file.html"><code class="highlighter-rouge">di.xml</code></a> file configures the object manager and tells it how to handle <a href="/devdocs/guides/v2.2/extension-dev-guide/depend-inj.html">dependency injection</a>.</p>
+<p>The <a href="/devdocs/guides/v2.2/extension-dev-guide/build/di-xml-file.html"><code class="language-plaintext highlighter-rouge">di.xml</code></a> file configures the object manager and tells it how to handle <a href="/devdocs/guides/v2.2/extension-dev-guide/depend-inj.html">dependency injection</a>.</p>
 
 <p>This file specifies the preferred implementation class the object manager generates for the interface declared in a class constructor.</p>
 
@@ -3282,30 +3283,30 @@ See <a href="#usage-rules">usage rules</a>.</p>
 
 <h2 id="usage-rules">Usage rules</h2>
 
-<p>The Magento framework uses the <code class="highlighter-rouge">ObjectManager</code> to generate and inject the classes declared in your constructor.
-Classes should not ask for the <code class="highlighter-rouge">ObjectManager</code> itself as a constructor dependency.</p>
+<p>The Magento framework uses the <code class="language-plaintext highlighter-rouge">ObjectManager</code> to generate and inject the classes declared in your constructor.
+Classes should not ask for the <code class="language-plaintext highlighter-rouge">ObjectManager</code> itself as a constructor dependency.</p>
 
 <p>You do not call the object manager directly because the framework handles this automatically.
-Direct use of the <code class="highlighter-rouge">create</code> function prevents type validation and type hinting that a <a href="/devdocs/guides/v2.2/extension-dev-guide/factories.html">factory</a> class provides.</p>
+Direct use of the <code class="language-plaintext highlighter-rouge">create</code> function prevents type validation and type hinting that a <a href="/devdocs/guides/v2.2/extension-dev-guide/factories.html">factory</a> class provides.</p>
 
 <p>Object creation is also a separate responsibility that should be moved to a dedicated class such as a <a href="/devdocs/guides/v2.2/extension-dev-guide/factories.html">factory</a> or <a href="/devdocs/guides/v2.2/extension-dev-guide/proxies.html">proxy</a>.
 In most cases, the framework generates these classes automatically during code compilation.</p>
 
-<p class="bs-callout bs-callout-warning">You may notice in the Magento 2 codebase that some core classes still call the <code class="highlighter-rouge">ObjectManager</code> directly.
+<p class="bs-callout bs-callout-warning">You may notice in the Magento 2 codebase that some core classes still call the <code class="language-plaintext highlighter-rouge">ObjectManager</code> directly.
 This code needs porting or exist for backward compatibility purposes.
-They are not tacit endorsements of using the <code class="highlighter-rouge">ObjectManager</code> directly.</p>
+They are not tacit endorsements of using the <code class="language-plaintext highlighter-rouge">ObjectManager</code> directly.</p>
 
 <h3 id="exceptions">Exceptions</h3>
 
-<p>You can depend on and use the <code class="highlighter-rouge">ObjectManager</code> class in the following scenarios:</p>
+<p>You can depend on and use the <code class="language-plaintext highlighter-rouge">ObjectManager</code> class in the following scenarios:</p>
 
 <ul>
-  <li>You can use the object manager in static magic methods like <code class="highlighter-rouge">__wakeup()</code>, <code class="highlighter-rouge">__sleep()</code>, etc.
+  <li>You can use the object manager in static magic methods like <code class="language-plaintext highlighter-rouge">__wakeup()</code>, <code class="language-plaintext highlighter-rouge">__sleep()</code>, etc.
     <ul>
-      <li>An example can be found in the <code class="highlighter-rouge">__wakeup()</code> method in the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Eav/Model/Entity/Attribute/AbstractAttribute.php" target="_blank"><code class="highlighter-rouge">Magento/Eav/Model/Entity/Attribute/AbstractAttribute</code></a> class.</li>
+      <li>An example can be found in the <code class="language-plaintext highlighter-rouge">__wakeup()</code> method in the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Eav/Model/Entity/Attribute/AbstractAttribute.php" target="_blank"><code class="language-plaintext highlighter-rouge">Magento/Eav/Model/Entity/Attribute/AbstractAttribute</code></a> class.</li>
     </ul>
   </li>
-  <li>You can use the <code class="highlighter-rouge">ObjectManager</code> to maintain backward compatibility for a constructor.</li>
+  <li>You can use the <code class="language-plaintext highlighter-rouge">ObjectManager</code> to maintain backward compatibility for a constructor.</li>
   <li>In a global scope, like in fixtures of integration tests, you can use the object manager.</li>
   <li>The object manager can be a dependency in classes used for the creation of objects, e.g. factories or proxies.</li>
 </ul>
@@ -3313,7 +3314,7 @@ They are not tacit endorsements of using the <code class="highlighter-rouge">Obj
 <p><strong>Related topics</strong></p>
 
 <ul>
-  <li><a href="/devdocs/guides/v2.2/extension-dev-guide/build/di-xml-file.html">The <code class="highlighter-rouge">di.xml</code> file</a></li>
+  <li><a href="/devdocs/guides/v2.2/extension-dev-guide/build/di-xml-file.html">The <code class="language-plaintext highlighter-rouge">di.xml</code> file</a></li>
   <li><a href="/devdocs/guides/v2.2/extension-dev-guide/depend-inj.html">Dependency injection</a></li>
 </ul>
 

@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Install a theme | Magento 2 Developer Documentation (copy)</title>
+	<title>Install a theme | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/howtos/custom-theme.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/howtos/custom-theme.html">Magento 2.0</a></li>
 		
@@ -3555,54 +3556,54 @@
   <li>
     <p>Enter the following command in a terminal to log in to your project:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud login
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud login
 </code></pre></div>    </div>
   </li>
   <li>
     <p>List your projects. With the project ID, you can complete additional commands.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud project:list
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud project:list
 </code></pre></div>    </div>
   </li>
   <li>
     <p>If necessary, clone the project to your local. You should have cloned when setting up your local development workspace.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud project:get &lt;project ID&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud project:get &lt;project ID&gt;
 </code></pre></div>    </div>
   </li>
-  <li>Change to a project directory. For example, <code class="highlighter-rouge">cd /var/www/html/magento2</code></li>
+  <li>Change to a project directory. For example, <code class="language-plaintext highlighter-rouge">cd /var/www/html/magento2</code></li>
   <li>
     <p>List environments in the project. Every environment includes an active Git branch of your code, database, environment variables, configurations, and services.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:list
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:list
 </code></pre></div>    </div>
 
-  	<code class="highlighter-rouge">magento-cloud environment:list</code>—displays environment hierarchies whereas the <code class="highlighter-rouge">git branch</code> command does not.
+  	<code class="language-plaintext highlighter-rouge">magento-cloud environment:list</code>—displays environment hierarchies whereas the <code class="language-plaintext highlighter-rouge">git branch</code> command does not.
   </li>
   <li>
     <p>Fetch origin branches to get the latest code:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git fetch origin
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git fetch origin
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Check out, or switch to, a specific branch and environment. Git commands only checkout the Git branch. The Magento Cloud command also switches to the active environment.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:checkout &lt;environment ID&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:checkout &lt;environment ID&gt;
 </code></pre></div>    </div>
 
-    <p>To create a new environment, use <code class="highlighter-rouge">magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
+    <p>To create a new environment, use <code class="language-plaintext highlighter-rouge">magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
   </li>
   <li>
     <p>Pull any updated code to your local for the environment ID (which is the Git branch):</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git pull origin &lt;environment ID&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git pull origin &lt;environment ID&gt;
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Create a <a href="/devdocs/guides/v2.0/cloud/project/project-webint-snap.html">snapshot</a> of the environment as a backup:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -3629,36 +3630,36 @@
 
 <ol>
   <li>
-    <p>Copy the theme’s code under <code class="highlighter-rouge">&lt;Magento root dir&gt;/app/design/frontend</code> for a storefront theme or <code class="highlighter-rouge">&lt;Magento root dir&gt;/app/design/adminhtml</code> for an Admin theme. Make sure the top-level directory is <code class="highlighter-rouge">&lt;VendorName&gt;</code>; otherwise, the theme won’t install properly.</p>
+    <p>Copy the theme’s code under <code class="language-plaintext highlighter-rouge">&lt;Magento root dir&gt;/app/design/frontend</code> for a storefront theme or <code class="language-plaintext highlighter-rouge">&lt;Magento root dir&gt;/app/design/adminhtml</code> for an Admin theme. Make sure the top-level directory is <code class="language-plaintext highlighter-rouge">&lt;VendorName&gt;</code>; otherwise, the theme won’t install properly.</p>
 
     <p>For example:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cp -r ExampleTheme &lt;Magento root dir&gt;/app/design/frontend
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cp -r ExampleTheme &lt;Magento root dir&gt;/app/design/frontend
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Confirm the theme copied to the correct place.</p>
 
     <ul>
-      <li>Storefront theme: <code class="highlighter-rouge">ls &lt;Magento root dir&gt;/app/design/frontend</code></li>
-      <li>Admin theme: <code class="highlighter-rouge">ls &lt;Magento root dir&gt;/app/design/adminhtml</code></li>
+      <li>Storefront theme: <code class="language-plaintext highlighter-rouge">ls &lt;Magento root dir&gt;/app/design/frontend</code></li>
+      <li>Admin theme: <code class="language-plaintext highlighter-rouge">ls &lt;Magento root dir&gt;/app/design/adminhtml</code></li>
     </ul>
 
     <p>A sample follows:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ExampleTheme Magento
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ExampleTheme Magento
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Add and commit files:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git add -A &amp;&amp; git commit -m "Add theme"
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git add -A &amp;&amp; git commit -m "Add theme"
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Push the files to your branch:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git push origin &lt;branch name&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git push origin &lt;branch name&gt;
 </code></pre></div>    </div>
   </li>
   <li>Wait for deployment to complete.</li>
@@ -3682,19 +3683,19 @@
   <li>
     <p>Change to your Magento root directory and enter the command:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer require &lt;vendor&gt;/&lt;name&gt;:&lt;version&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer require &lt;vendor&gt;/&lt;name&gt;:&lt;version&gt;
 </code></pre></div>    </div>
 
     <p>For example,</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer require zero1/theme-fashionista-theme:1.0.0
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer require zero1/theme-fashionista-theme:1.0.0
 </code></pre></div>    </div>
   </li>
   <li>Wait for dependencies to update.</li>
   <li>
     <p>Enter the following commands:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git add -A &amp;&amp; git commit -m "Add theme"
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git add -A &amp;&amp; git commit -m "Add theme"
 git push origin &lt;branch name&gt;
 </code></pre></div>    </div>
   </li>

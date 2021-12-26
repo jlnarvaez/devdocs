@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Tutorial&mdash;Set up multiple websites with Apache | Magento 2 Developer Documentation (copy)</title>
+	<title>Tutorial&mdash;Set up multiple websites with Apache | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/config-guide/multi-site/ms_apache.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/config-guide/multi-site/ms_apache.html">Magento 2.0</a></li>
 		
@@ -4020,7 +4021,7 @@
 
 			<h2 id="ms-entry-script">Set values in an entry point script</h2>
 
-<p>If necessary, copy the existing <code class="highlighter-rouge">index.php</code> entry point script for your   <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span>
+<p>If necessary, copy the existing <code class="language-plaintext highlighter-rouge">index.php</code> entry point script for your   <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span>
  or   <span term-uuid="ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f" class="glossary-term" data-toggle="popover">store view</span>
  and add to it the following:</p>
 
@@ -4033,17 +4034,17 @@
     <p>Additional tasks are required to set up Magento Commerce Cloud. After you complete the tasks discussed in this topic, see <a href="/devdocs/guides/v2.3/cloud/project/project-multi-sites.html">Set up multiple Magento Commerce Cloud websites or stores</a>.</p>
   </li>
   <li>
-    <p>You use one virtual host per website; the virtual host configuration file is <code class="highlighter-rouge">/etc/httpd/httpd.conf</code></p>
+    <p>You use one virtual host per website; the virtual host configuration file is <code class="language-plaintext highlighter-rouge">/etc/httpd/httpd.conf</code></p>
 
     <p>Different versions of Apache on different operating systems set up virtual hosts differently. Consult the <a href="https://httpd.apache.org/docs/2.4/vhosts">Apache documentation</a> or a network administrator if you’re not sure how to set up a virtual host.</p>
   </li>
-  <li>The Magento software is installed in <code class="highlighter-rouge">/var/www/html/magento2</code></li>
+  <li>The Magento software is installed in <code class="language-plaintext highlighter-rouge">/var/www/html/magento2</code></li>
   <li>
     <p>You have two websites other than the default:</p>
 
     <ul>
-      <li><code class="highlighter-rouge">french.mysite.mg</code> with website code <code class="highlighter-rouge">french</code> and store view code <code class="highlighter-rouge">fr</code></li>
-      <li><code class="highlighter-rouge">german.mysite.mg</code> with website code <code class="highlighter-rouge">german</code> and store view code <code class="highlighter-rouge">de</code></li>
+      <li><code class="language-plaintext highlighter-rouge">french.mysite.mg</code> with website code <code class="language-plaintext highlighter-rouge">french</code> and store view code <code class="language-plaintext highlighter-rouge">fr</code></li>
+      <li><code class="language-plaintext highlighter-rouge">german.mysite.mg</code> with website code <code class="language-plaintext highlighter-rouge">german</code> and store view code <code class="language-plaintext highlighter-rouge">de</code></li>
     </ul>
   </li>
 </ul>
@@ -4064,9 +4065,9 @@
 
 <h2 id="ms-apache-vhosts">Step 2: Create Apache virtual hosts</h2>
 
-<p>This section discusses how to set values for <code class="highlighter-rouge">MAGE_RUN_TYPE</code> and <code class="highlighter-rouge">MAGE_RUN_CODE</code> using the Apache server variable <code class="highlighter-rouge">SetEnvIf</code> in a virtual host.</p>
+<p>This section discusses how to set values for <code class="language-plaintext highlighter-rouge">MAGE_RUN_TYPE</code> and <code class="language-plaintext highlighter-rouge">MAGE_RUN_CODE</code> using the Apache server variable <code class="language-plaintext highlighter-rouge">SetEnvIf</code> in a virtual host.</p>
 
-<p>For more information about <code class="highlighter-rouge">SetEnvIf</code>, see:</p>
+<p>For more information about <code class="language-plaintext highlighter-rouge">SetEnvIf</code>, see:</p>
 
 <ul>
   <li><a href="http://httpd.apache.org/docs/2.2/mod/mod_setenvif.html">Apache 2.2</a></li>
@@ -4077,41 +4078,41 @@
     <b class="collapsible-title">To create Apache virtual hosts: </b>
     <div class="collapsible-content"><ol>
   <li>
-    <p>As a user with <code class="highlighter-rouge">root</code> privileges, open the virtual host configuration file in a text editor.</p>
+    <p>As a user with <code class="language-plaintext highlighter-rouge">root</code> privileges, open the virtual host configuration file in a text editor.</p>
 
-    <p>For example, open <code class="highlighter-rouge">/etc/httpd/conf/httpd.conf</code></p>
+    <p>For example, open <code class="language-plaintext highlighter-rouge">/etc/httpd/conf/httpd.conf</code></p>
   </li>
-  <li>Locate the section starting with <code class="highlighter-rouge">&lt;VirtualHost *:80&gt;</code>.</li>
+  <li>Locate the section starting with <code class="language-plaintext highlighter-rouge">&lt;VirtualHost *:80&gt;</code>.</li>
   <li>
     <p>Create the following virtual hosts after any existing virtual hosts:</p>
 
-    <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="gp"> &lt;VirtualHost *:80&gt;</span>
-<span class="go">    ServerName          mysite.mg
+    <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="gp"> &lt;VirtualHost *:80&gt;</span><span class="w">
+</span><span class="go">    ServerName          mysite.mg
     DocumentRoot        /var/www/html/magento2/pub/
-</span><span class="gp"> &lt;/VirtualHost&gt;</span>
-<span class="go">
-</span><span class="gp"> &lt;VirtualHost *:80&gt;</span>
-<span class="go">    ServerName          french.mysite.mg
+</span><span class="gp"> &lt;/VirtualHost&gt;</span><span class="w">
+</span><span class="go">
+</span><span class="gp"> &lt;VirtualHost *:80&gt;</span><span class="w">
+</span><span class="go">    ServerName          french.mysite.mg
     DocumentRoot        /var/www/html/magento2/pub/
     SetEnv MAGE_RUN_CODE "french"
     SetEnv MAGE_RUN_TYPE "website"
-</span><span class="gp"> &lt;/VirtualHost&gt;</span>
-<span class="go">
-</span><span class="gp"> &lt;VirtualHost *:80&gt;</span>
-<span class="go">    ServerName          german.mysite.mg
+</span><span class="gp"> &lt;/VirtualHost&gt;</span><span class="w">
+</span><span class="go">
+</span><span class="gp"> &lt;VirtualHost *:80&gt;</span><span class="w">
+</span><span class="go">    ServerName          german.mysite.mg
     DocumentRoot        /var/www/html/magento2/pub/
     SetEnv MAGE_RUN_CODE "german"
     SetEnv MAGE_RUN_TYPE "website"
-</span><span class="gp"> &lt;/VirtualHost&gt;</span>
-</code></pre></div>    </div>
+</span><span class="gp"> &lt;/VirtualHost&gt;</span><span class="w">
+</span></code></pre></div>    </div>
   </li>
-  <li>Save your changes to <code class="highlighter-rouge">httpd.conf</code> and exit the text editor.</li>
+  <li>Save your changes to <code class="language-plaintext highlighter-rouge">httpd.conf</code> and exit the text editor.</li>
   <li>
     <p>Restart Apache:</p>
 
     <ul>
-      <li>CentOS: <code class="highlighter-rouge">service httpd restart</code></li>
-      <li>Ubuntu: <code class="highlighter-rouge">service apache2 restart</code></li>
+      <li>CentOS: <code class="language-plaintext highlighter-rouge">service httpd restart</code></li>
+      <li>Ubuntu: <code class="language-plaintext highlighter-rouge">service apache2 restart</code></li>
     </ul>
   </li>
 </ol>
@@ -4119,21 +4120,21 @@
   </div>
 
 <h2 id="ms-apache-verify">Verify your site</h2>
-<p>Unless you have DNS set up for your stores’ URLs, you must add a static route to the host in your <code class="highlighter-rouge">hosts</code> file:</p>
+<p>Unless you have DNS set up for your stores’ URLs, you must add a static route to the host in your <code class="language-plaintext highlighter-rouge">hosts</code> file:</p>
 
 <ol>
-  <li>Locate your operating system’s <a href="https://en.wikipedia.org/wiki/Hosts_(file)#Location_in_the_file_system"><code class="highlighter-rouge">hosts</code> file</a>.</li>
+  <li>Locate your operating system’s <a href="https://en.wikipedia.org/wiki/Hosts_(file)#Location_in_the_file_system"><code class="language-plaintext highlighter-rouge">hosts</code> file</a>.</li>
   <li>
     <p>Add the static route in the format:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;ip address&gt; french.mysite.mg
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;ip address&gt; french.mysite.mg
 &lt;ip address&gt; german.mysite.mg
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Go to one of the following URLs in your browser:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>http://mysite.mg/admin
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>http://mysite.mg/admin
 http://french.mysite.mg/frenchstoreview
 http://german.mysite.mg/germanstoreview
 </code></pre></div>    </div>

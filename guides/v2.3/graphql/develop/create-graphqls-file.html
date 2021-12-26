@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Define the GraphQL schema for a module | Magento 2 Developer Documentation (copy)</title>
+	<title>Define the GraphQL schema for a module | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/graphql/develop/create-graphqls-file.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/graphql/develop/create-graphqls-file.html">Magento 2.0</a></li>
 		
@@ -2183,11 +2184,11 @@
 	<h1 class="page-heading">Define the GraphQL schema for a module</h1>
 </section>
 
-			<p>Each module that adds to or extends from a GraphQL schema can do so by placing a <code class="highlighter-rouge">schema.graphqls</code> file in its <code class="highlighter-rouge">etc</code> directory. Magento Core adds <a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/GraphQl"><code class="highlighter-rouge">GraphQl</code></a> modules based on the purpose of the schema being extended/added and the core modules they depend on. For example, the CustomerGraphQl module adds a query to the graphql endpoint to view customer data and relies on the Customer core module.</p>
+			<p>Each module that adds to or extends from a GraphQL schema can do so by placing a <code class="language-plaintext highlighter-rouge">schema.graphqls</code> file in its <code class="language-plaintext highlighter-rouge">etc</code> directory. Magento Core adds <a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/GraphQl"><code class="language-plaintext highlighter-rouge">GraphQl</code></a> modules based on the purpose of the schema being extended/added and the core modules they depend on. For example, the CustomerGraphQl module adds a query to the graphql endpoint to view customer data and relies on the Customer core module.</p>
 
-<p>A GraphQL module’s <code class="highlighter-rouge">schema.graphqls</code> file defines how the attributes defined in the module can be used in a GraphQL query. If your module’s attributes are completely self-contained, then the <code class="highlighter-rouge">schema.graphqls</code> file defines the query, the interfaces used, the data types of all the attributes, and any enumerations that restrict the possible attribute contents. If your module simply extends another module (such as Catalog), then you must define those attributes and ensure that the other module can load your attributes.</p>
+<p>A GraphQL module’s <code class="language-plaintext highlighter-rouge">schema.graphqls</code> file defines how the attributes defined in the module can be used in a GraphQL query. If your module’s attributes are completely self-contained, then the <code class="language-plaintext highlighter-rouge">schema.graphqls</code> file defines the query, the interfaces used, the data types of all the attributes, and any enumerations that restrict the possible attribute contents. If your module simply extends another module (such as Catalog), then you must define those attributes and ensure that the other module can load your attributes.</p>
 
-<p>The <code class="highlighter-rouge">&lt;module_name&gt;/etc/schema.graphqls</code> file:</p>
+<p>The <code class="language-plaintext highlighter-rouge">&lt;module_name&gt;/etc/schema.graphqls</code> file:</p>
 
 <ul>
   <li>Defines the structure of queries.</li>
@@ -2196,48 +2197,48 @@
   <li>Serves as the source for displaying the schema in a GraphQL browser</li>
 </ul>
 
-<p>The base <code class="highlighter-rouge">schema.graphqls</code> file, located in the <code class="highlighter-rouge">app/code/Magento/GraphQl/etc/</code> directory, provides the necessary structure for all GraphQL queries, including definitions for comparison operators and paging information for search results. The <code class="highlighter-rouge">webonyx/graphql-php</code> library enforces the syntax of all <code class="highlighter-rouge">schema.graphqls</code> files.</p>
+<p>The base <code class="language-plaintext highlighter-rouge">schema.graphqls</code> file, located in the <code class="language-plaintext highlighter-rouge">app/code/Magento/GraphQl/etc/</code> directory, provides the necessary structure for all GraphQL queries, including definitions for comparison operators and paging information for search results. The <code class="language-plaintext highlighter-rouge">webonyx/graphql-php</code> library enforces the syntax of all <code class="language-plaintext highlighter-rouge">schema.graphqls</code> files.</p>
 
-<p>To illustrate how to configure the <code class="highlighter-rouge">schema.graphqls</code> file, let’s suppose you have a module named Volumizer that calculates the volume of a product, given its height, width, and depth. We’ll assume this module extends the Catalog module.</p>
+<p>To illustrate how to configure the <code class="language-plaintext highlighter-rouge">schema.graphqls</code> file, let’s suppose you have a module named Volumizer that calculates the volume of a product, given its height, width, and depth. We’ll assume this module extends the Catalog module.</p>
 
 <h2 id="define-the-query">Define the query</h2>
 
-<p>A query definition can be one line, or it can be complex. If your module’s query implements <code class="highlighter-rouge">searchCriteria</code>, then you must define arguments that define filters and pagination information, all of which adds complexity. However, if you expect a single result from your query, then its definition can be simple.</p>
+<p>A query definition can be one line, or it can be complex. If your module’s query implements <code class="language-plaintext highlighter-rouge">searchCriteria</code>, then you must define arguments that define filters and pagination information, all of which adds complexity. However, if you expect a single result from your query, then its definition can be simple.</p>
 
-<p>The following example shows the <code class="highlighter-rouge">products</code> query. The <code class="highlighter-rouge">type</code> is defined as a <code class="highlighter-rouge">Query</code>.  The <code class="highlighter-rouge">products</code> definitions define the keywords that are used to construct a query, as shown in <a href="/devdocs/guides/v2.3/graphql/search-pagination.html">Searches and pagination in GraphQL</a>. The parameter definitions will be discussed in <a href="#specify-output-attributes">Specify output attributes</a>.</p>
+<p>The following example shows the <code class="language-plaintext highlighter-rouge">products</code> query. The <code class="language-plaintext highlighter-rouge">type</code> is defined as a <code class="language-plaintext highlighter-rouge">Query</code>.  The <code class="language-plaintext highlighter-rouge">products</code> definitions define the keywords that are used to construct a query, as shown in <a href="/devdocs/guides/v2.3/graphql/search-pagination.html">Searches and pagination in GraphQL</a>. The parameter definitions will be discussed in <a href="#specify-output-attributes">Specify output attributes</a>.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nx">type</span> <span class="nx">Query</span> <span class="p">{</span>
-    <span class="nx">products</span> <span class="p">(</span>
-        <span class="nx">search</span><span class="o">:</span> <span class="nx">String</span><span class="p">,</span>
-        <span class="nx">filter</span><span class="o">:</span> <span class="nx">ProductFilterInput</span><span class="p">,</span>
-        <span class="nx">pageSize</span><span class="o">:</span> <span class="nx">Int</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
-        <span class="nx">currentPage</span><span class="o">:</span> <span class="nx">Int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="nb">sort</span><span class="o">:</span> <span class="nx">ProductSortInput</span><span class="p">)</span>
-     <span class="p">)</span><span class="o">:</span> <span class="nx">Products</span> <span class="o">@</span><span class="nx">resolver</span><span class="p">(</span><span class="k">class</span><span class="err">:</span> <span class="err">"</span><span class="nc">Magento</span><span class="err">\</span><span class="nx">\CatalogGraphQl</span><span class="err">\</span><span class="nx">\Model</span><span class="err">\</span><span class="nx">\Resolver</span><span class="err">\</span><span class="nx">\Products</span><span class="s2">")
-}
-</span></code></pre></div></div>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="n">type</span> <span class="nc">Query</span> <span class="p">{</span>
+    <span class="nf">products</span> <span class="p">(</span>
+        <span class="n">search</span><span class="o">:</span> <span class="nc">String</span><span class="p">,</span>
+        <span class="n">filter</span><span class="o">:</span> <span class="nc">ProductFilterInput</span><span class="p">,</span>
+        <span class="n">pageSize</span><span class="o">:</span> <span class="nc">Int</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="n">currentPage</span><span class="o">:</span> <span class="nc">Int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="n">sort</span><span class="o">:</span> <span class="nc">ProductSortInput</span><span class="p">)</span>
+     <span class="p">)</span><span class="o">:</span> <span class="nc">Products</span> <span class="o">@</span><span class="nf">resolver</span><span class="p">(</span><span class="n">class</span><span class="o">:</span> <span class="s2">"Magento</span><span class="se">\\</span><span class="s2">CatalogGraphQl</span><span class="se">\\</span><span class="s2">Model</span><span class="se">\\</span><span class="s2">Resolver</span><span class="se">\\</span><span class="s2">Products"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
-<p>In contrast, the <code class="highlighter-rouge">customer</code> query returns the <code class="highlighter-rouge">Customer</code> object associated with the current user. There is no need to define pagination information.</p>
+<p>In contrast, the <code class="language-plaintext highlighter-rouge">customer</code> query returns the <code class="language-plaintext highlighter-rouge">Customer</code> object associated with the current user. There is no need to define pagination information.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nx">type</span> <span class="nx">Query</span> <span class="p">{</span>
-    <span class="nx">customer</span><span class="o">:</span> <span class="nx">Customer</span> <span class="o">@</span><span class="nx">resolver</span><span class="p">(</span><span class="k">class</span><span class="err">:</span> <span class="err">"</span><span class="nc">Magento</span><span class="err">\</span><span class="nx">\CustomerGraphQl</span><span class="err">\</span><span class="nx">\Model</span><span class="err">\</span><span class="nx">\Resolver</span><span class="err">\</span><span class="nx">\Customer</span><span class="s2">")
-}
-</span></code></pre></div></div>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="n">type</span> <span class="nc">Query</span> <span class="p">{</span>
+    <span class="n">customer</span><span class="o">:</span> <span class="nc">Customer</span> <span class="o">@</span><span class="nf">resolver</span><span class="p">(</span><span class="n">class</span><span class="o">:</span> <span class="s2">"Magento</span><span class="se">\\</span><span class="s2">CustomerGraphQl</span><span class="se">\\</span><span class="s2">Model</span><span class="se">\\</span><span class="s2">Resolver</span><span class="se">\\</span><span class="s2">Customer"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <p>If all your module’s attributes are extension attributes for existing modules, then no query definition is required. In this case, the attributes point to the other module’s query definition.</p>
 
 <h2 id="declare-input-attributes">Declare input attributes</h2>
 
-<p>You must explicitly define each attribute that can be used as input in a GraphQL query. In the simplest cases, you can create a single <code class="highlighter-rouge">type</code> definition that includes all the input, output, and sorting attributes for an object. This might not be possible if your module performs calculations, or otherwise has attributes that aren’t available at the time of the query.</p>
+<p>You must explicitly define each attribute that can be used as input in a GraphQL query. In the simplest cases, you can create a single <code class="language-plaintext highlighter-rouge">type</code> definition that includes all the input, output, and sorting attributes for an object. This might not be possible if your module performs calculations, or otherwise has attributes that aren’t available at the time of the query.</p>
 
-<p>The theoretical Volumizer module extends <code class="highlighter-rouge">Catalog</code>. In this case, you would reference <code class="highlighter-rouge">ProductFilterInput</code> as the source and make each attribute be of type <code class="highlighter-rouge">FilterTypeInput</code>. (Both of these entities are defined in <code class="highlighter-rouge">CatalogGraphQl</code>’s <code class="highlighter-rouge">schema.graphqls</code> file. In other use cases, you would be required to create your own input type.</p>
+<p>The theoretical Volumizer module extends <code class="language-plaintext highlighter-rouge">Catalog</code>. In this case, you would reference <code class="language-plaintext highlighter-rouge">ProductFilterInput</code> as the source and make each attribute be of type <code class="language-plaintext highlighter-rouge">FilterTypeInput</code>. (Both of these entities are defined in <code class="language-plaintext highlighter-rouge">CatalogGraphQl</code>’s <code class="language-plaintext highlighter-rouge">schema.graphqls</code> file. In other use cases, you would be required to create your own input type.</p>
 
-<p>The following example defines three Volumizer attributes (<code class="highlighter-rouge">v_height</code>, <code class="highlighter-rouge">v_width</code>, <code class="highlighter-rouge">v_depth</code>) that must be specified as input to a query.</p>
+<p>The following example defines three Volumizer attributes (<code class="language-plaintext highlighter-rouge">v_height</code>, <code class="language-plaintext highlighter-rouge">v_width</code>, <code class="language-plaintext highlighter-rouge">v_depth</code>) that must be specified as input to a query.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nx">input</span> <span class="nx">ProductFilterInput</span> <span class="p">{</span>
-  <span class="nx">v_height</span><span class="o">:</span> <span class="nx">FilterTypeInput</span>
-  <span class="nx">v_width</span><span class="o">:</span> <span class="nx">FilterTypeInput</span>
-  <span class="nx">v_depth</span><span class="o">:</span> <span class="nx">FilterTypeInput</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="n">input</span> <span class="nc">ProductFilterInput</span> <span class="p">{</span>
+  <span class="n">v_height</span><span class="o">:</span> <span class="nc">FilterTypeInput</span>
+  <span class="n">v_width</span><span class="o">:</span> <span class="nc">FilterTypeInput</span>
+  <span class="n">v_depth</span><span class="o">:</span> <span class="nc">FilterTypeInput</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -2245,66 +2246,66 @@
 
 <p>You can also define which attributes can be used for sorting the search results. This list does not have to be identical to the list of input or output attributes.</p>
 
-<p>This example allows sorting on the <code class="highlighter-rouge">v_volume</code> attribute only.</p>
+<p>This example allows sorting on the <code class="language-plaintext highlighter-rouge">v_volume</code> attribute only.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nx">input</span> <span class="nx">ProductSortInput</span> <span class="p">{</span>
-    <span class="nx">v_volume</span><span class="o">:</span> <span class="nx">SortEnum</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="n">input</span> <span class="nc">ProductSortInput</span> <span class="p">{</span>
+    <span class="n">v_volume</span><span class="o">:</span> <span class="nc">SortEnum</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">ProductSortInput</code> indicates that the attributes are available to catalog (Product) queries. If you specify a module-specific value such as <code class="highlighter-rouge">VolumizerSortInput</code>, then the attribute will be available only to queries processed by that module.</p>
+<p><code class="language-plaintext highlighter-rouge">ProductSortInput</code> indicates that the attributes are available to catalog (Product) queries. If you specify a module-specific value such as <code class="language-plaintext highlighter-rouge">VolumizerSortInput</code>, then the attribute will be available only to queries processed by that module.</p>
 
-<p><code class="highlighter-rouge">SortEnum</code> is defined in the base <code class="highlighter-rouge">schema.graphqls</code> file.</p>
+<p><code class="language-plaintext highlighter-rouge">SortEnum</code> is defined in the base <code class="language-plaintext highlighter-rouge">schema.graphqls</code> file.</p>
 
 <h2 id="specify-output-attributes">Specify output attributes</h2>
 
 <p>You must know the data type of each attribute, whether it is scalar or an object, and whether it can be part of an array. In addition, each attribute within an object must be defined in the same manner.</p>
 
-<p>In a <code class="highlighter-rouge">schema.graphqls</code> file, the output <code class="highlighter-rouge">Interface</code> defines top-level attributes. Each object returned is defined in a <code class="highlighter-rouge">type</code> definition.</p>
+<p>In a <code class="language-plaintext highlighter-rouge">schema.graphqls</code> file, the output <code class="language-plaintext highlighter-rouge">Interface</code> defines top-level attributes. Each object returned is defined in a <code class="language-plaintext highlighter-rouge">type</code> definition.</p>
 
 <h3 id="define-the-output-interface">Define the output interface</h3>
 
-<p>In many cases, the response contains data that was either not available as input, or was transformed in some manner from the input. For example, when you specify a price in an input filter, Magento evaluates it as a Float value. However, <code class="highlighter-rouge">Price</code> output objects contain a Float value, a currency value, and possibly minimum/maximum values and tax adjustments. You can define a <code class="highlighter-rouge">typeResolver</code> to point to the Resolver object, which interprets the GraphQL query. If your module contains only attributes that extend another module, then this parameter is optional. Otherwise, it is required. See <a href="/devdocs/guides/v2.3/graphql/develop/resolvers.html">Resolvers</a> for more information.</p>
+<p>In many cases, the response contains data that was either not available as input, or was transformed in some manner from the input. For example, when you specify a price in an input filter, Magento evaluates it as a Float value. However, <code class="language-plaintext highlighter-rouge">Price</code> output objects contain a Float value, a currency value, and possibly minimum/maximum values and tax adjustments. You can define a <code class="language-plaintext highlighter-rouge">typeResolver</code> to point to the Resolver object, which interprets the GraphQL query. If your module contains only attributes that extend another module, then this parameter is optional. Otherwise, it is required. See <a href="/devdocs/guides/v2.3/graphql/develop/resolvers.html">Resolvers</a> for more information.</p>
 
 <p>The following example defines module-specific output attributes for the Volumizer module.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="k">interface</span> <span class="nx">ProductInterface</span> <span class="o">@</span><span class="nx">typeResolver</span><span class="p">(</span><span class="k">class</span><span class="err">:</span> <span class="err">"\\</span><span class="nc">Path</span><span class="err">\</span><span class="nx">\To</span><span class="err">\</span><span class="nx">\typeResolver</span><span class="err">\</span><span class="nx">\Class</span><span class="s2">"){
-    v_height: Float
-    v_width: Float
-    v_depth: Float
-    v_volume: VolumeWithUnit
-}
-</span></code></pre></div></div>
-
-<p>The <code class="highlighter-rouge">typeResolver</code> parameter specifies the path to the Resolver object, which interprets the GraphQL query. If your module contains only attributes that extend another module, then this parameter is optional. Otherwise, it is required. See <a href="/devdocs/guides/v2.3/graphql/develop/resolvers.html">Resolvers</a> for more information.</p>
-
-<p>The <code class="highlighter-rouge">v_volume</code> attribute is defined as a <code class="highlighter-rouge">VolumeWithUnit</code> object. This object might be defined as follows:</p>
-
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nx">type</span> <span class="nx">VolumeWithUnit</span> <span class="p">{</span>
-    <span class="nx">caclulated_volume</span><span class="o">:</span> <span class="nx">Float</span>
-    <span class="nx">unit</span><span class="o">:</span> <span class="nx">VolumeUnitEnum</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="kd">interface</span> <span class="nc">ProductInterface</span> <span class="o">@</span><span class="nf">typeResolver</span><span class="p">(</span><span class="n">class</span><span class="o">:</span> <span class="s2">"</span><span class="se">\\</span><span class="s2">Path</span><span class="se">\\</span><span class="s2">To</span><span class="se">\\</span><span class="s2">typeResolver</span><span class="se">\\</span><span class="s2">Class"</span><span class="p">){</span>
+    <span class="n">v_height</span><span class="o">:</span> <span class="nc">Float</span>
+    <span class="n">v_width</span><span class="o">:</span> <span class="nc">Float</span>
+    <span class="n">v_depth</span><span class="o">:</span> <span class="nc">Float</span>
+    <span class="n">v_volume</span><span class="o">:</span> <span class="nc">VolumeWithUnit</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>The Volumizer module could return the <code class="highlighter-rouge">calculated_volume</code>, while the <code class="highlighter-rouge">unit</code> is an enumeration, described below.</p>
+<p>The <code class="language-plaintext highlighter-rouge">typeResolver</code> parameter specifies the path to the Resolver object, which interprets the GraphQL query. If your module contains only attributes that extend another module, then this parameter is optional. Otherwise, it is required. See <a href="/devdocs/guides/v2.3/graphql/develop/resolvers.html">Resolvers</a> for more information.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">v_volume</code> attribute is defined as a <code class="language-plaintext highlighter-rouge">VolumeWithUnit</code> object. This object might be defined as follows:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="n">type</span> <span class="nc">VolumeWithUnit</span> <span class="p">{</span>
+    <span class="n">caclulated_volume</span><span class="o">:</span> <span class="nc">Float</span>
+    <span class="n">unit</span><span class="o">:</span> <span class="nc">VolumeUnitEnum</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The Volumizer module could return the <code class="language-plaintext highlighter-rouge">calculated_volume</code>, while the <code class="language-plaintext highlighter-rouge">unit</code> is an enumeration, described below.</p>
 
 <h3 id="define-enumerations">Define enumerations</h3>
 
 <p>You can optionally define enumerations to help prevent input errors. Magento capitalizes all enumerated responses. If a value contains a dash (-), the system converts it to an underscore (_). This is done to maintain compliance with the GraphQL specification.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nx">enum</span> <span class="nx">VolumeUnitEnum</span> <span class="p">{</span>
-  <span class="nx">IN3</span>
-  <span class="nx">FT3</span>
-  <span class="nx">CM3</span>
-  <span class="nx">M3</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="n">enum</span> <span class="nc">VolumeUnitEnum</span> <span class="p">{</span>
+  <span class="no">IN3</span>
+  <span class="no">FT3</span>
+  <span class="no">CM3</span>
+  <span class="no">M3</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <h2 id="annotations">Annotations</h2>
 
-<p>You can describe any attribute, type definition, or other entity within a <code class="highlighter-rouge">schema.graphqls</code> file by appending the following to the line:</p>
+<p>You can describe any attribute, type definition, or other entity within a <code class="language-plaintext highlighter-rouge">schema.graphqls</code> file by appending the following to the line:</p>
 
-<p><code class="highlighter-rouge">@doc(description: "&lt;Text&gt;")</code></p>
+<p><code class="language-plaintext highlighter-rouge">@doc(description: "&lt;Text&gt;")</code></p>
 
 <p>For example:</p>
 

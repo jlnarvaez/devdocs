@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>The composer.json file | Magento 2 Developer Documentation (copy)</title>
+	<title>The composer.json file | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/extension-dev-guide/build/composer-integration.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/extension-dev-guide/build/composer-integration.html">Magento 2.0</a></li>
 		
@@ -3030,83 +3031,83 @@
 <p>Magento 2 uses <a href="https://getcomposer.org/" target="_blank">Composer</a>, a   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
  dependency manager, to package components and product editions.</p>
 
-<p>Composer reads a <code class="highlighter-rouge">composer.json</code> file in Magento’s root directory to download third-party dependencies listed in the file.</p>
+<p>Composer reads a <code class="language-plaintext highlighter-rouge">composer.json</code> file in Magento’s root directory to download third-party dependencies listed in the file.</p>
 
-<p>The <a href="/devdocs/guides/v2.1/comp-mgr/module-man/compman-start.html">Component Manager</a> uses the <code class="highlighter-rouge">composer.json</code> file in an extension’s root directory to perform the following actions:</p>
+<p>The <a href="/devdocs/guides/v2.1/comp-mgr/module-man/compman-start.html">Component Manager</a> uses the <code class="language-plaintext highlighter-rouge">composer.json</code> file in an extension’s root directory to perform the following actions:</p>
 
 <ul>
   <li>The Component Manager can update, uninstall, enable, or disable an   <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span>
- if installed using Composer (including from <a href="https://packagist.org/" target="_blank">Packagist</a>, <a href="https://marketplace.magento.com/" target="_blank">Magento Marketplace</a>, or other source) <em>and</em> it has a <code class="highlighter-rouge">composer.json</code> file.</li>
-  <li>The Component Manager can still enable or disable an extension <em>not</em> installed using Composer (e.g. custom code) if it has a <code class="highlighter-rouge">composer.json</code> file.</li>
+ if installed using Composer (including from <a href="https://packagist.org/" target="_blank">Packagist</a>, <a href="https://marketplace.magento.com/" target="_blank">Magento Marketplace</a>, or other source) <em>and</em> it has a <code class="language-plaintext highlighter-rouge">composer.json</code> file.</li>
+  <li>The Component Manager can still enable or disable an extension <em>not</em> installed using Composer (e.g. custom code) if it has a <code class="language-plaintext highlighter-rouge">composer.json</code> file.</li>
 </ul>
 
-<p>We recommend you include <code class="highlighter-rouge">composer.json</code> in your component’s root directory even if you do not intend to distribute it to other merchants using Magento.</p>
+<p>We recommend you include <code class="language-plaintext highlighter-rouge">composer.json</code> in your component’s root directory even if you do not intend to distribute it to other merchants using Magento.</p>
 
-<p class="bs-callout bs-callout-info">Magento does not support the <a href="https://getcomposer.org/doc/05-repositories.md#path"><code class="highlighter-rouge">path</code></a> repository.</p>
+<p class="bs-callout bs-callout-info">Magento does not support the <a href="https://getcomposer.org/doc/05-repositories.md#path"><code class="language-plaintext highlighter-rouge">path</code></a> repository.</p>
 
 <h2 id="composer-binary">Composer binary location</h2>
 
-<p>Magento uses the composer binary in the <code class="highlighter-rouge">&lt;Magento root&gt;/vendor/composer</code> directory instead of a globally installed   <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">composer</span>
+<p>Magento uses the composer binary in the <code class="language-plaintext highlighter-rouge">&lt;Magento root&gt;/vendor/composer</code> directory instead of a globally installed   <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">composer</span>
 .</p>
 
 <p>Keep this in mind while customizing, updating, or troubleshooting composer while working with Magento 2.</p>
 
 <h2 id="project-vs-product">Project vs product</h2>
 
-<p>In Composer, a “project” package is a template used by the <a href="https://getcomposer.org/doc/03-cli.md#create-project" target="_blank"><code class="highlighter-rouge">composer create-project</code></a> to set up the project structure.
+<p>In Composer, a “project” package is a template used by the <a href="https://getcomposer.org/doc/03-cli.md#create-project" target="_blank"><code class="language-plaintext highlighter-rouge">composer create-project</code></a> to set up the project structure.
 The <a href="/devdocs/guides/v2.1/install-gde/composer.html">installation instructions for system integrators</a> use the Magento Open Source and Magento Commerce project packages to set up the Magento directory structure.</p>
 
-<p>A “product” package is the actual application pointed to by the <code class="highlighter-rouge">composer.json</code> file after you download and install the project package using <code class="highlighter-rouge">composer create-project</code>.</p>
+<p>A “product” package is the actual application pointed to by the <code class="language-plaintext highlighter-rouge">composer.json</code> file after you download and install the project package using <code class="language-plaintext highlighter-rouge">composer create-project</code>.</p>
 
 <h2 id="composerjson-overview">Descriptions of different composer.json files</h2>
 
-<p>The following Magento components and product editions use a <code class="highlighter-rouge">composer.json</code> file.</p>
+<p>The following Magento components and product editions use a <code class="language-plaintext highlighter-rouge">composer.json</code> file.</p>
 
 <h3 id="magento-root">Magento Root</h3>
 
-<p><strong>Location:</strong> <code class="highlighter-rouge">composer.json</code></p>
+<p><strong>Location:</strong> <code class="language-plaintext highlighter-rouge">composer.json</code></p>
 
-<p><strong>Name:</strong> <code class="highlighter-rouge">magento/magento2ce</code></p>
+<p><strong>Name:</strong> <code class="language-plaintext highlighter-rouge">magento/magento2ce</code></p>
 
-<p><strong>Type:</strong> <code class="highlighter-rouge">project</code></p>
+<p><strong>Type:</strong> <code class="language-plaintext highlighter-rouge">project</code></p>
 
-<p>This is Magento’s main <code class="highlighter-rouge">composer.json</code> file which declares dependencies and third-party components.</p>
+<p>This is Magento’s main <code class="language-plaintext highlighter-rouge">composer.json</code> file which declares dependencies and third-party components.</p>
 
-<p>Other root <code class="highlighter-rouge">composer.json</code> files use this file as a template.</p>
+<p>Other root <code class="language-plaintext highlighter-rouge">composer.json</code> files use this file as a template.</p>
 
 <hr />
 
 <h3 id="magento-open-source-project">Magento Open Source project</h3>
-<p><strong>Location:</strong> <code class="highlighter-rouge">composer.json</code></p>
+<p><strong>Location:</strong> <code class="language-plaintext highlighter-rouge">composer.json</code></p>
 
-<p><strong>Name:</strong> <code class="highlighter-rouge">magento/project-community-edition</code></p>
+<p><strong>Name:</strong> <code class="language-plaintext highlighter-rouge">magento/project-community-edition</code></p>
 
-<p><strong>Type:</strong> <code class="highlighter-rouge">project</code></p>
+<p><strong>Type:</strong> <code class="language-plaintext highlighter-rouge">project</code></p>
 
-<p>Magento system integrators use this <code class="highlighter-rouge">composer.json</code> file to deploy the Magento Open Source product and its dependencies.</p>
+<p>Magento system integrators use this <code class="language-plaintext highlighter-rouge">composer.json</code> file to deploy the Magento Open Source product and its dependencies.</p>
 
 <hr />
 
 <h3 id="magento-commerce-project">Magento Commerce project</h3>
-<p><strong>Location:</strong> <code class="highlighter-rouge">composer.json</code></p>
+<p><strong>Location:</strong> <code class="language-plaintext highlighter-rouge">composer.json</code></p>
 
-<p><strong>Name:</strong> <code class="highlighter-rouge">magento/product-enterprise-edition</code></p>
+<p><strong>Name:</strong> <code class="language-plaintext highlighter-rouge">magento/product-enterprise-edition</code></p>
 
-<p><strong>Type:</strong> <code class="highlighter-rouge">metapackage</code></p>
+<p><strong>Type:</strong> <code class="language-plaintext highlighter-rouge">metapackage</code></p>
 
-<p>Magento system integrators use this <code class="highlighter-rouge">composer.json</code> file to deploy the Magento Commerce product and its dependencies.</p>
+<p>Magento system integrators use this <code class="language-plaintext highlighter-rouge">composer.json</code> file to deploy the Magento Commerce product and its dependencies.</p>
 
 <hr />
 
 <h3 id="magento-framework">Magento Framework</h3>
 
-<p><strong>Location:</strong> <code class="highlighter-rouge">lib/internal/Magento/Framework/composer.json</code></p>
+<p><strong>Location:</strong> <code class="language-plaintext highlighter-rouge">lib/internal/Magento/Framework/composer.json</code></p>
 
-<p><strong>Name:</strong> <code class="highlighter-rouge">magento/framework</code></p>
+<p><strong>Name:</strong> <code class="language-plaintext highlighter-rouge">magento/framework</code></p>
 
-<p><strong>Type:</strong> <code class="highlighter-rouge">magento2-library</code></p>
+<p><strong>Type:</strong> <code class="language-plaintext highlighter-rouge">magento2-library</code></p>
 
-<p>The Magento application uses this <code class="highlighter-rouge">composer.json</code> file for its framework packages.</p>
+<p>The Magento application uses this <code class="language-plaintext highlighter-rouge">composer.json</code> file for its framework packages.</p>
 
 <hr />
 
@@ -3115,15 +3116,15 @@ The <a href="/devdocs/guides/v2.1/install-gde/composer.html">installation instru
 <p><strong>Locations:</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">app/code/&lt;vendor-name&gt;/&lt;module-name&gt;/composer.json</code></li>
-  <li><code class="highlighter-rouge">vendor/&lt;vendor-name&gt;/&lt;module-name&gt;/composer.json</code></li>
+  <li><code class="language-plaintext highlighter-rouge">app/code/&lt;vendor-name&gt;/&lt;module-name&gt;/composer.json</code></li>
+  <li><code class="language-plaintext highlighter-rouge">vendor/&lt;vendor-name&gt;/&lt;module-name&gt;/composer.json</code></li>
 </ul>
 
-<p><strong>Name:</strong> <code class="highlighter-rouge">&lt;vendor-name&gt;/&lt;package-name&gt;</code></p>
+<p><strong>Name:</strong> <code class="language-plaintext highlighter-rouge">&lt;vendor-name&gt;/&lt;package-name&gt;</code></p>
 
-<p><strong>Type:</strong> <code class="highlighter-rouge">magento2-module</code></p>
+<p><strong>Type:</strong> <code class="language-plaintext highlighter-rouge">magento2-module</code></p>
 
-<p>The <code class="highlighter-rouge">composer.json</code> file for a   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
+<p>The <code class="language-plaintext highlighter-rouge">composer.json</code> file for a   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
  extension declares external dependencies that it needs to function.</p>
 
 <hr />
@@ -3133,15 +3134,15 @@ The <a href="/devdocs/guides/v2.1/install-gde/composer.html">installation instru
 <p><strong>Locations:</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">app/design/frontend/&lt;vendor-name&gt;/&lt;theme-name&gt;/composer.json</code></li>
-  <li><code class="highlighter-rouge">app/design/adminhtml/&lt;vendor-name&gt;/&lt;theme-name&gt;/composer.json</code></li>
+  <li><code class="language-plaintext highlighter-rouge">app/design/frontend/&lt;vendor-name&gt;/&lt;theme-name&gt;/composer.json</code></li>
+  <li><code class="language-plaintext highlighter-rouge">app/design/adminhtml/&lt;vendor-name&gt;/&lt;theme-name&gt;/composer.json</code></li>
 </ul>
 
-<p><strong>Name:</strong> <code class="highlighter-rouge">&lt;vendor-name&gt;/&lt;package-name&gt;</code></p>
+<p><strong>Name:</strong> <code class="language-plaintext highlighter-rouge">&lt;vendor-name&gt;/&lt;package-name&gt;</code></p>
 
-<p><strong>Type:</strong> <code class="highlighter-rouge">magento2-theme</code></p>
+<p><strong>Type:</strong> <code class="language-plaintext highlighter-rouge">magento2-theme</code></p>
 
-<p>The <code class="highlighter-rouge">composer.json</code> file for a   <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>
+<p>The <code class="language-plaintext highlighter-rouge">composer.json</code> file for a   <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>
  component contains parent theme dependencies the extension needs to inherit.</p>
 
 <hr />
@@ -3149,13 +3150,13 @@ The <a href="/devdocs/guides/v2.1/install-gde/composer.html">installation instru
 <h3 id="language-package">Language Package</h3>
 
 <p><strong>Location:</strong>
-<code class="highlighter-rouge">app/i18n/&lt;vendor-name&gt;/&lt;language-code&gt;/composer.json</code></p>
+<code class="language-plaintext highlighter-rouge">app/i18n/&lt;vendor-name&gt;/&lt;language-code&gt;/composer.json</code></p>
 
-<p><strong>Name:</strong> <code class="highlighter-rouge">&lt;vendor-name&gt;/&lt;package-name&gt;</code></p>
+<p><strong>Name:</strong> <code class="language-plaintext highlighter-rouge">&lt;vendor-name&gt;/&lt;package-name&gt;</code></p>
 
-<p><strong>Type:</strong> <code class="highlighter-rouge">magento2-language</code></p>
+<p><strong>Type:</strong> <code class="language-plaintext highlighter-rouge">magento2-language</code></p>
 
-<p>For language packages, you must use the correct <a href="https://www.iso.org/iso-639-language-codes.html" target="_blank">ISO code</a> for the language code in the <code class="highlighter-rouge">composer.json</code> file.</p>
+<p>For language packages, you must use the correct <a href="https://www.iso.org/iso-639-language-codes.html" target="_blank">ISO code</a> for the language code in the <code class="language-plaintext highlighter-rouge">composer.json</code> file.</p>
 
 <hr />
 
@@ -3164,10 +3165,10 @@ The <a href="/devdocs/guides/v2.1/install-gde/composer.html">installation instru
 <p>Magento extensions can be any of the following types:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">magento2-module</code> for modules</li>
-  <li><code class="highlighter-rouge">magento2-theme</code> for themes</li>
-  <li><code class="highlighter-rouge">magento2-language</code> for language packages</li>
-  <li><code class="highlighter-rouge">magento2-component</code> for general extensions that do not fit any of the other types</li>
+  <li><code class="language-plaintext highlighter-rouge">magento2-module</code> for modules</li>
+  <li><code class="language-plaintext highlighter-rouge">magento2-theme</code> for themes</li>
+  <li><code class="language-plaintext highlighter-rouge">magento2-language</code> for language packages</li>
+  <li><code class="language-plaintext highlighter-rouge">magento2-component</code> for general extensions that do not fit any of the other types</li>
 </ul>
 
 <p>The extension type tells the system where to install the directories and files of each extension in the Magento directory structure.</p>
@@ -3176,48 +3177,48 @@ The <a href="/devdocs/guides/v2.1/install-gde/composer.html">installation instru
 
 <p>Since the namespace of a Composer package is global within a package repository, e.g. <a href="https://packagist.org/">packagist.org</a>, use the following format when naming your package:</p>
 
-<p><code class="highlighter-rouge">&lt;vendor-name&gt;/&lt;package-name&gt;</code></p>
+<p><code class="language-plaintext highlighter-rouge">&lt;vendor-name&gt;/&lt;package-name&gt;</code></p>
 
 <p>Using the Composer naming convention helps distinguish packages from different vendors with a low risk of overlapping.</p>
 
 <h3 id="vendor-name">vendor-name</h3>
 
 <p>All letters in the vendor name must be in lowercase.
-For example, the vendor name format for extensions released by Magento Inc is <code class="highlighter-rouge">magento</code>.</p>
+For example, the vendor name format for extensions released by Magento Inc is <code class="language-plaintext highlighter-rouge">magento</code>.</p>
 
 <h4 id="magento-marketplace-extensions">Magento Marketplace Extensions</h4>
 
-<p>Magento Marketplace uses <code class="highlighter-rouge">vendor-name</code> to match an extension to a vendor during the extension submission process.
+<p>Magento Marketplace uses <code class="language-plaintext highlighter-rouge">vendor-name</code> to match an extension to a vendor during the extension submission process.
 If you plan to submit your extension to the <a href="https://marketplace.magento.com" target="_blank">Magento Marketplace</a>, you <em>must</em> use the unique Vendor Name created or assigned to you when you created your marketplace account.</p>
 
-<p>In the <code class="highlighter-rouge">composer.json</code> file, use the value of ‘Vendor Name’ in your profile for the <code class="highlighter-rouge">vendor-name</code> part of the extension name.</p>
+<p>In the <code class="language-plaintext highlighter-rouge">composer.json</code> file, use the value of ‘Vendor Name’ in your profile for the <code class="language-plaintext highlighter-rouge">vendor-name</code> part of the extension name.</p>
 
 <p>Please see the <a href="http://docs.magento.com/marketplace/user_guide/getting-started-seller.html" target="_blank">Marketplace Documentation</a> for more information about your unique vendor name.</p>
 
 <h3 id="package-name">package-name</h3>
 
-<p>All letters in the <code class="highlighter-rouge">package-name</code> must be in lowercase.</p>
+<p>All letters in the <code class="language-plaintext highlighter-rouge">package-name</code> must be in lowercase.</p>
 
 <p>If the name contains more than one word, the Composer specification recommends separating them with dashes.</p>
 
 <p>The convention for Magento package names is the following</p>
 
-<p><code class="highlighter-rouge">magento/&lt;type-prefix&gt;-&lt;suffix&gt;[-&lt;suffix&gt;]...</code></p>
+<p><code class="language-plaintext highlighter-rouge">magento/&lt;type-prefix&gt;-&lt;suffix&gt;[-&lt;suffix&gt;]...</code></p>
 
 <dl>
   <dt>Where:</dt>
   <dd>
-    <p><code class="highlighter-rouge">type-prefix</code> is any of the Magento extension types:</p>
+    <p><code class="language-plaintext highlighter-rouge">type-prefix</code> is any of the Magento extension types:</p>
 
     <ul>
-      <li><code class="highlighter-rouge">module-</code> for module extensions</li>
-      <li><code class="highlighter-rouge">theme-</code> for theme extensions</li>
-      <li><code class="highlighter-rouge">language-</code> for language extensions</li>
-      <li><code class="highlighter-rouge">product-</code> for <a href="/devdocs/guides/v2.1/extension-dev-guide/package/package_module.html#package-metapackage">metapackages</a> such as Magento Open Source or Magento Commerce</li>
+      <li><code class="language-plaintext highlighter-rouge">module-</code> for module extensions</li>
+      <li><code class="language-plaintext highlighter-rouge">theme-</code> for theme extensions</li>
+      <li><code class="language-plaintext highlighter-rouge">language-</code> for language extensions</li>
+      <li><code class="language-plaintext highlighter-rouge">product-</code> for <a href="/devdocs/guides/v2.1/extension-dev-guide/package/package_module.html#package-metapackage">metapackages</a> such as Magento Open Source or Magento Commerce</li>
     </ul>
   </dd>
   <dd>
-    <p><code class="highlighter-rouge">suffix</code> is a unique identifier for extensions of that type.</p>
+    <p><code class="language-plaintext highlighter-rouge">suffix</code> is a unique identifier for extensions of that type.</p>
   </dd>
 </dl>
 

@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>.gitignore reference | Magento 2 Developer Documentation (copy)</title>
+	<title>.gitignore reference | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/config-guide/prod/config-reference-gitignore.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/config-guide/prod/config-reference-gitignore.html">Magento 2.0</a></li>
 		
@@ -3990,14 +3991,14 @@
 	<h1 class="page-heading">.gitignore reference</h1>
 </section>
 
-			<p>This reference shows suggested <code class="highlighter-rouge">.gitignore</code> files to use in a development system and in a build or production system.</p>
+			<p>This reference shows suggested <code class="language-plaintext highlighter-rouge">.gitignore</code> files to use in a development system and in a build or production system.</p>
 
 <h2 id="gitignore-for-development">.gitignore for development</h2>
-<p>We recommend you use the <code class="highlighter-rouge">.gitignore</code> provided with Magento in a development system with the following changes—comment out the following so they are included in source control:</p>
+<p>We recommend you use the <code class="language-plaintext highlighter-rouge">.gitignore</code> provided with Magento in a development system with the following changes—comment out the following so they are included in source control:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">pub/media/*</code></li>
-  <li><code class="highlighter-rouge">pub/media/wysiwyg/*.*</code></li>
+  <li><code class="language-plaintext highlighter-rouge">pub/media/*</code></li>
+  <li><code class="language-plaintext highlighter-rouge">pub/media/wysiwyg/*.*</code></li>
 </ul>
 
 <div class="collapsible">
@@ -4067,18 +4068,18 @@ atlassian*
 </div>
   </div>
 
-<p>For reference, here is a <a href="https://raw.githubusercontent.com/magento/magento2/2.2/.gitignore">link to the latest Magento <code class="highlighter-rouge">.gitignore</code></a></p>
+<p>For reference, here is a <a href="https://raw.githubusercontent.com/magento/magento2/2.2/.gitignore">link to the latest Magento <code class="language-plaintext highlighter-rouge">.gitignore</code></a></p>
 
 <h2 id="gitignore-for-build-and-production">.gitignore for build and production</h2>
-<p>You should use the same <code class="highlighter-rouge">.gitignore</code> in both your build and production systems so they have the same files in source control.</p>
+<p>You should use the same <code class="language-plaintext highlighter-rouge">.gitignore</code> in both your build and production systems so they have the same files in source control.</p>
 
-<p>Changes compared to the default <code class="highlighter-rouge">.gitignore</code>:</p>
+<p>Changes compared to the default <code class="language-plaintext highlighter-rouge">.gitignore</code>:</p>
 
 <ul>
-  <li>The <code class="highlighter-rouge">/pub/media/*.*</code> directory is included in source control</li>
-  <li>The <code class="highlighter-rouge">/pub/media/wysiwyg</code> directory is included in source control</li>
-  <li>The <code class="highlighter-rouge">/pub/static/*.*</code> directory is included in source control</li>
-  <li>The <code class="highlighter-rouge">/generated</code> directory and subdirectories are included in source control</li>
+  <li>The <code class="language-plaintext highlighter-rouge">/pub/media/*.*</code> directory is included in source control</li>
+  <li>The <code class="language-plaintext highlighter-rouge">/pub/media/wysiwyg</code> directory is included in source control</li>
+  <li>The <code class="language-plaintext highlighter-rouge">/pub/static/*.*</code> directory is included in source control</li>
+  <li>The <code class="language-plaintext highlighter-rouge">/generated</code> directory and subdirectories are included in source control</li>
 </ul>
 
 <div class="collapsible">

@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Declare a custom UI component | Magento 2 Developer Documentation (copy)</title>
+	<title>Declare a custom UI component | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/ui_comp_guide/howto/new_component_declaration.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/ui_comp_guide/howto/new_component_declaration.html">Magento 2.0</a></li>
 		
@@ -3137,40 +3138,40 @@
 
 <h2 id="xml-elements-used-for-declaring-the-custom-component">XML elements used for declaring the custom component</h2>
 
-<p>A custom UI component can be declared using one of the following elements: <code class="highlighter-rouge">&lt;component&gt;</code> or <code class="highlighter-rouge">&lt;container&gt;</code>.</p>
+<p>A custom UI component can be declared using one of the following elements: <code class="language-plaintext highlighter-rouge">&lt;component&gt;</code> or <code class="language-plaintext highlighter-rouge">&lt;container&gt;</code>.</p>
 
-<p>The <code class="highlighter-rouge">&lt;component&gt;</code> element is typically used for declaring simple custom components that do not have other nested components. <code class="highlighter-rouge">&lt;component&gt;</code> uses the <a href="/devdocs/guides/v2.2/ui_comp_guide/concepts/ui_comp_uielement_concept.html">uiElement</a> constructor by default.</p>
+<p>The <code class="language-plaintext highlighter-rouge">&lt;component&gt;</code> element is typically used for declaring simple custom components that do not have other nested components. <code class="language-plaintext highlighter-rouge">&lt;component&gt;</code> uses the <a href="/devdocs/guides/v2.2/ui_comp_guide/concepts/ui_comp_uielement_concept.html">uiElement</a> constructor by default.</p>
 
-<p>The <code class="highlighter-rouge">&lt;container&gt;</code> element is typically used for declaring custom components that are collections, or in other words, can have nested components. <code class="highlighter-rouge">&lt;container&gt;</code> uses the <a href="/devdocs/guides/v2.2/ui_comp_guide/concepts/ui_comp_uicollection_concept.html">uiCollection</a> constructor by default.</p>
+<p>The <code class="language-plaintext highlighter-rouge">&lt;container&gt;</code> element is typically used for declaring custom components that are collections, or in other words, can have nested components. <code class="language-plaintext highlighter-rouge">&lt;container&gt;</code> uses the <a href="/devdocs/guides/v2.2/ui_comp_guide/concepts/ui_comp_uicollection_concept.html">uiCollection</a> constructor by default.</p>
 
 <h3 id="attributes-you-can-use">Attributes you can use</h3>
 
-<p>The <code class="highlighter-rouge">&lt;container&gt;</code> and <code class="highlighter-rouge">&lt;component&gt;</code> elements have no mandatory attributes. The following optional attributes are available for both these elements:</p>
+<p>The <code class="language-plaintext highlighter-rouge">&lt;container&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;component&gt;</code> elements have no mandatory attributes. The following optional attributes are available for both these elements:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">component</code>: link to the component’s   <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span>
+  <li><code class="language-plaintext highlighter-rouge">component</code>: link to the component’s   <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span>
  constructor.</li>
-  <li><code class="highlighter-rouge">class</code>: link to the component’s   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
+  <li><code class="language-plaintext highlighter-rouge">class</code>: link to the component’s   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
  class.</li>
-  <li><code class="highlighter-rouge">template</code>: link to component’s <code class="highlighter-rouge">.html</code> template.</li>
-  <li><code class="highlighter-rouge">provider</code>: link to component’s data provider.</li>
-  <li><code class="highlighter-rouge">sortOrder</code>: component’s sort order</li>
-  <li><code class="highlighter-rouge">displayArea</code>: the placeholder which defines the area for rendering the component in the   <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span>
+  <li><code class="language-plaintext highlighter-rouge">template</code>: link to component’s <code class="language-plaintext highlighter-rouge">.html</code> template.</li>
+  <li><code class="language-plaintext highlighter-rouge">provider</code>: link to component’s data provider.</li>
+  <li><code class="language-plaintext highlighter-rouge">sortOrder</code>: component’s sort order</li>
+  <li><code class="language-plaintext highlighter-rouge">displayArea</code>: the placeholder which defines the area for rendering the component in the   <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span>
  file.</li>
 </ul>
 
 <!-- Available note types: "info", "warning", "tip" -->
 
 <div class="bs-callout bs-callout-warning" id="warning">
-  <p>If the following elements are used inside <code class="highlighter-rouge">&lt;container&gt;</code> or <code class="highlighter-rouge">&lt;component&gt;</code>, they should be specified strictly in the following order:</p>
+  <p>If the following elements are used inside <code class="language-plaintext highlighter-rouge">&lt;container&gt;</code> or <code class="language-plaintext highlighter-rouge">&lt;component&gt;</code>, they should be specified strictly in the following order:</p>
 
   <ol>
-    <li><code class="highlighter-rouge">&lt;argument&gt;</code></li>
-    <li><code class="highlighter-rouge">&lt;settings&gt;</code></li>
-    <li><code class="highlighter-rouge">&lt;childComponent&gt;</code></li>
+    <li><code class="language-plaintext highlighter-rouge">&lt;argument&gt;</code></li>
+    <li><code class="language-plaintext highlighter-rouge">&lt;settings&gt;</code></li>
+    <li><code class="language-plaintext highlighter-rouge">&lt;childComponent&gt;</code></li>
   </ol>
 
-  <p>For the component configuration inside <code class="highlighter-rouge">&lt;container&gt;</code> and <code class="highlighter-rouge">&lt;component&gt;</code>, <a href="/devdocs/guides/v2.2/ui_comp_guide/best-practices/semantic_config.html#info_structure_except">use the “arbitrary” structure</a>.</p>
+  <p>For the component configuration inside <code class="language-plaintext highlighter-rouge">&lt;container&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;component&gt;</code>, <a href="/devdocs/guides/v2.2/ui_comp_guide/best-practices/semantic_config.html#info_structure_except">use the “arbitrary” structure</a>.</p>
 </div>
 
 <h2 id="declare-a-custom-basic-component">Declare a custom basic component</h2>
@@ -3179,18 +3180,18 @@
 
 <ol>
   <li>Specify the XML file with its configuration it in the page layout file in your module, as described in the <a href="/devdocs/guides/v2.2/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html#about-the-layout-configuration-file-and-ui-component-declaration">About XML configuration of UI components</a> topic.</li>
-  <li>Declare the component in a separate <code class="highlighter-rouge">.xml</code> file using the <code class="highlighter-rouge">&lt;container&gt;</code> or <code class="highlighter-rouge">&lt;component&gt;</code> as parent node.</li>
+  <li>Declare the component in a separate <code class="language-plaintext highlighter-rouge">.xml</code> file using the <code class="language-plaintext highlighter-rouge">&lt;container&gt;</code> or <code class="language-plaintext highlighter-rouge">&lt;component&gt;</code> as parent node.</li>
 </ol>
 
 <h2 id="declare-a-custom-secondary-component">Declare a custom secondary component</h2>
 
-<p>If the custom component you create is secondary (not a basic one), it is declared using  <code class="highlighter-rouge">&lt;container&gt;</code> or <code class="highlighter-rouge">&lt;component&gt;</code> in the XML configuration file of the basic component.</p>
+<p>If the custom component you create is secondary (not a basic one), it is declared using  <code class="language-plaintext highlighter-rouge">&lt;container&gt;</code> or <code class="language-plaintext highlighter-rouge">&lt;component&gt;</code> in the XML configuration file of the basic component.</p>
 
 <h2 id="example-creating-a-custom-secondary-not-basic-component">Example: Creating a custom secondary (not basic) component</h2>
 
 <p>Task: In the Customer form, replace the select field with a custom UI component. The custom component extends the Select component by adding a custom option that enables custom functionality.</p>
 
-<p>The Customer form configuration is defined in <code class="highlighter-rouge">&lt;Magento_Customer_module_dir&gt;/view/base/ui_component/customer_form.xml</code>. The default configuration of the select field we will extend is following:</p>
+<p>The Customer form configuration is defined in <code class="language-plaintext highlighter-rouge">&lt;Magento_Customer_module_dir&gt;/view/base/ui_component/customer_form.xml</code>. The default configuration of the select field we will extend is following:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Ui:etc/ui_configuration.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
@@ -3223,9 +3224,9 @@
 <span class="nt">&lt;/form&gt;</span>
 </code></pre></div></div>
 
-<p>The custom component we create extends Select, and is also a simple component (does not have child components), so we use the <code class="highlighter-rouge">&lt;component&gt;</code> element for its declaration. To add the declaration, we need to create the <code class="highlighter-rouge">customer_form.xml</code> file in the custom module, and put it in the same location relative to the module directory as the original <code class="highlighter-rouge">customer_form.xml</code> resides. So the custom form configuration file will be: <code class="highlighter-rouge">&lt;YourVendor_YourModule_dir&gt;/view/base/ui_component/customer_form.xml</code>.</p>
+<p>The custom component we create extends Select, and is also a simple component (does not have child components), so we use the <code class="language-plaintext highlighter-rouge">&lt;component&gt;</code> element for its declaration. To add the declaration, we need to create the <code class="language-plaintext highlighter-rouge">customer_form.xml</code> file in the custom module, and put it in the same location relative to the module directory as the original <code class="language-plaintext highlighter-rouge">customer_form.xml</code> resides. So the custom form configuration file will be: <code class="language-plaintext highlighter-rouge">&lt;YourVendor_YourModule_dir&gt;/view/base/ui_component/customer_form.xml</code>.</p>
 
-<p>We copy the <code class="highlighter-rouge">&lt;field&gt;</code> configuration, remove the <code class="highlighter-rouge">&lt;select&gt;</code> node and its configuration, and replace it with <code class="highlighter-rouge">&lt;component&gt;</code> and its configuration:</p>
+<p>We copy the <code class="language-plaintext highlighter-rouge">&lt;field&gt;</code> configuration, remove the <code class="language-plaintext highlighter-rouge">&lt;select&gt;</code> node and its configuration, and replace it with <code class="language-plaintext highlighter-rouge">&lt;component&gt;</code> and its configuration:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Ui:etc/ui_configuration.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>

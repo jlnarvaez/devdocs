@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Shared configuration | Magento 2 Developer Documentation (copy)</title>
+	<title>Shared configuration | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/config-guide/deployment/pipeline/example/shared-configuration.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/config-guide/deployment/pipeline/example/shared-configuration.html">Magento 2.0</a></li>
 		
@@ -4018,7 +4019,7 @@
 	<h1 class="page-heading">Shared configuration</h1>
 </section>
 
-			<p>This example shows how to change the following settings in your development system, update the shared configuration file, <code class="highlighter-rouge">config.php</code>, in your build system, and implement the same settings in your production system:</p>
+			<p>This example shows how to change the following settings in your development system, update the shared configuration file, <code class="language-plaintext highlighter-rouge">config.php</code>, in your build system, and implement the same settings in your production system:</p>
 
 <ul>
   <li>Timezone</li>
@@ -4047,8 +4048,8 @@
 
 <ul>
   <li>You use Git source control</li>
-  <li>The development system is available in a Git remote repository named <code class="highlighter-rouge">mconfig</code></li>
-  <li>Your Git working branch is named <code class="highlighter-rouge">m2.2_deploy</code></li>
+  <li>The development system is available in a Git remote repository named <code class="language-plaintext highlighter-rouge">mconfig</code></li>
+  <li>Your Git working branch is named <code class="language-plaintext highlighter-rouge">m2.2_deploy</code></li>
 </ul>
 
 <h2 id="step-1-set-the-configuration-in-the-development-system">Step 1: Set the configuration in the development system</h2>
@@ -4074,7 +4075,7 @@
 
 <h2 id="step-2-update-the-shared-configuration">Step 2: Update the shared configuration</h2>
 
-<p>Generate the shared configuration file, <code class="highlighter-rouge">app/etc/config.php</code>, in your development system and transfer it using source control to your build system as discussed in this section.</p>
+<p>Generate the shared configuration file, <code class="language-plaintext highlighter-rouge">app/etc/config.php</code>, in your development system and transfer it using source control to your build system as discussed in this section.</p>
 
 <ol>
   <li>
@@ -4084,18 +4085,18 @@
   <li>
     <p>Enter the following commands in the order shown:</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">cd</span> &lt;Magento root dir&gt;
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">cd</span> &lt;Magento root <span class="nb">dir</span><span class="o">&gt;</span>
 php bin/magento app:config:dump
 </code></pre></div>    </div>
 
-    <p>For example, if Magento is installed in <code class="highlighter-rouge">/var/www/html/magento2</code>, enter:</p>
+    <p>For example, if Magento is installed in <code class="language-plaintext highlighter-rouge">/var/www/html/magento2</code>, enter:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">cd</span> /var/www/html/magento2
 php bin/magento app:config:dump
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>If you use Git, enter the following command to confirm that <code class="highlighter-rouge">app/etc/config.php</code> was updated:</p>
+    <p>If you use Git, enter the following command to confirm that <code class="language-plaintext highlighter-rouge">app/etc/config.php</code> was updated:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git status
 </code></pre></div>    </div>
@@ -4109,10 +4110,10 @@ Changed but not updated:
 <span class="go">       modified:   app/etc/config.php
 </span></code></pre></div>    </div>
 
-    <p class="bs-callout bs-callout-warning">Do <em>not</em> submit changes to the <code class="highlighter-rouge">generated</code>, <code class="highlighter-rouge">pub/media</code>, or <code class="highlighter-rouge">pub/static</code> directories to source control. You’ll generate those files on your build system. The production system likely has code, themes, and so on that aren’t ready to use on production.</p>
+    <p class="bs-callout bs-callout-warning">Do <em>not</em> submit changes to the <code class="language-plaintext highlighter-rouge">generated</code>, <code class="language-plaintext highlighter-rouge">pub/media</code>, or <code class="language-plaintext highlighter-rouge">pub/static</code> directories to source control. You’ll generate those files on your build system. The production system likely has code, themes, and so on that aren’t ready to use on production.</p>
   </li>
   <li>
-    <p>Check in your changes to <code class="highlighter-rouge">app/etc/config.php</code> only to source control.</p>
+    <p>Check in your changes to <code class="language-plaintext highlighter-rouge">app/etc/config.php</code> only to source control.</p>
 
     <p>The Git command follows:</p>
 
@@ -4132,23 +4133,23 @@ Changed but not updated:
 .</li>
   <li>Change to the build system’s Magento root directory.</li>
   <li>
-    <p>Pull the changes to <code class="highlighter-rouge">app/etc/config.php</code> from source control.</p>
+    <p>Pull the changes to <code class="language-plaintext highlighter-rouge">app/etc/config.php</code> from source control.</p>
 
     <p>The Git command follows:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git pull mconfig m2.2_deploy
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git pull mconfig m2.2_deploy
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Compile code:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php bin/magento setup:di:compile
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php bin/magento setup:di:compile
 </code></pre></div>    </div>
   </li>
   <li>
     <p>After code has been compiled, generate static view files:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php bin/magento setup:static-content:deploy -f
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php bin/magento setup:static-content:deploy -f
 </code></pre></div>    </div>
   </li>
   <li>
@@ -4156,7 +4157,7 @@ Changed but not updated:
 
     <p>The Git command follows:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git add -A &amp;&amp; git commit -m "Updated files on build system" &amp;&amp; git push mconfig m2.2_deploy
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git add -A &amp;&amp; git commit -m "Updated files on build system" &amp;&amp; git push mconfig m2.2_deploy
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -4173,11 +4174,11 @@ Changed but not updated:
   <li>
     <p>Start maintenance mode:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd &lt;Magento root dir&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd &lt;Magento root dir&gt;
 php bin/magento maintenance:enable
 </code></pre></div>    </div>
 
-    <p>For additional options, such as the ability to set an IP address whitelist, see <a href="/devdocs/guides/v2.3/install-gde/install/cli/install-cli-subcommands-maint.html"><code class="highlighter-rouge">magento maintenance:enable</code></a>.</p>
+    <p>For additional options, such as the ability to set an IP address whitelist, see <a href="/devdocs/guides/v2.3/install-gde/install/cli/install-cli-subcommands-maint.html"><code class="language-plaintext highlighter-rouge">magento maintenance:enable</code></a>.</p>
   </li>
   <li>If you use Magento Commerce, stop queue workers. TBD</li>
   <li>
@@ -4185,25 +4186,25 @@ php bin/magento maintenance:enable
 
     <p>The Git command follows:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git pull mconfig m2.2_deploy
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git pull mconfig m2.2_deploy
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Update the configuration:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php bin/magento app:config:import
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php bin/magento app:config:import
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Clean the cache:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php bin/magento cache:clean
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php bin/magento cache:clean
 </code></pre></div>    </div>
   </li>
   <li>
     <p>End maintenance mode:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php bin/magento maintenance:disable
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php bin/magento maintenance:disable
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -4224,7 +4225,7 @@ php bin/magento maintenance:enable
   </li>
 </ol>
 
-<p class="bs-callout bs-callout-info">To change a setting that is locked in the Admin, use the <a href="/devdocs/guides/v2.3/config-guide/cli/config-cli-subcommands-config-mgmt-set.html"><code class="highlighter-rouge">magento config:set --lock</code> command</a>.</p>
+<p class="bs-callout bs-callout-info">To change a setting that is locked in the Admin, use the <a href="/devdocs/guides/v2.3/config-guide/cli/config-cli-subcommands-config-mgmt-set.html"><code class="language-plaintext highlighter-rouge">magento config:set --lock</code> command</a>.</p>
 
 			
 		</div>

@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Add a category attribute | Magento 2 Developer Documentation (copy)</title>
+	<title>Add a category attribute | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/ui_comp_guide/howto/add_category_attribute.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/ui_comp_guide/howto/add_category_attribute.html">Magento 2.0</a></li>
 		
@@ -3294,36 +3295,36 @@
 
 			<p>Category attributes were automatically displayed in the   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">admin</span>
  panel of Magento 1. In Magento 2, it is necessary to explicitly render it with a   <span term-uuid="9bcc648c-bd08-4feb-906d-1e24c4f2f422" class="glossary-term" data-toggle="popover">UI Component</span>
-. This is quite easy to do and provides a great degree of control over the form input. In the code examples below, replace <code class="highlighter-rouge">attribute_id</code> and <code class="highlighter-rouge">Your Category Attribute Name</code> with your own values.</p>
+. This is quite easy to do and provides a great degree of control over the form input. In the code examples below, replace <code class="language-plaintext highlighter-rouge">attribute_id</code> and <code class="language-plaintext highlighter-rouge">Your Category Attribute Name</code> with your own values.</p>
 
 <h2 id="step-1-create-the-attribute">Step #1: Create the Attribute</h2>
 
 <p>The following is a full example of an install script that creates a   <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span>
  attribute. If you already have a category attribute, it is not necessary.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="c1">// File: Namespace/Module/Setup/InstallData.php
-</span>
-<span class="k">use</span> <span class="nx">Magento\Framework\Setup</span><span class="err">\</span><span class="p">{</span>
-    <span class="nx">ModuleContextInterface</span><span class="p">,</span>
-    <span class="nx">ModuleDataSetupInterface</span><span class="p">,</span>
-    <span class="nx">InstallDataInterface</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="c1">// File: Namespace/Module/Setup/InstallData.php</span>
+
+<span class="kn">use</span> <span class="nn">Magento\Framework\Setup\</span><span class="p">{</span>
+    <span class="nc">ModuleContextInterface</span><span class="p">,</span>
+    <span class="nc">ModuleDataSetupInterface</span><span class="p">,</span>
+    <span class="nc">InstallDataInterface</span>
 <span class="p">};</span>
 
-<span class="k">use</span> <span class="nx">Magento\Eav\Setup\EavSetup</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Eav\Setup\EavSetupFactory</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Eav\Setup\EavSetup</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Eav\Setup\EavSetupFactory</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">InstallData</span> <span class="k">implements</span> <span class="nx">InstallDataInterface</span>
+<span class="kd">class</span> <span class="nc">InstallData</span> <span class="kd">implements</span> <span class="nc">InstallDataInterface</span>
 <span class="p">{</span>
     <span class="k">private</span> <span class="nv">$eavSetupFactory</span><span class="p">;</span>
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">EavSetupFactory</span> <span class="nv">$eavSetupFactory</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eavSetupFactory</span> <span class="o">=</span> <span class="nv">$eavSetupFactory</span><span class="p">;</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="kt">EavSetupFactory</span> <span class="nv">$eavSetupFactory</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">eavSetupFactory</span> <span class="o">=</span> <span class="nv">$eavSetupFactory</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">install</span><span class="p">(</span><span class="nx">ModuleDataSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="nx">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">install</span><span class="p">(</span><span class="kt">ModuleDataSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="kt">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="nv">$eavSetup</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eavSetupFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">([</span><span class="s1">'setup'</span> <span class="o">=&gt;</span> <span class="nv">$setup</span><span class="p">]);</span>
-        <span class="nv">$eavSetup</span><span class="o">-&gt;</span><span class="na">addAttribute</span><span class="p">(</span><span class="nx">\Magento\Catalog\Model\Category</span><span class="o">::</span><span class="na">ENTITY</span><span class="p">,</span> <span class="s1">'attribute_id'</span><span class="p">,</span> <span class="p">[</span>
+        <span class="nv">$eavSetup</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">eavSetupFactory</span><span class="o">-&gt;</span><span class="nf">create</span><span class="p">([</span><span class="s1">'setup'</span> <span class="o">=&gt;</span> <span class="nv">$setup</span><span class="p">]);</span>
+        <span class="nv">$eavSetup</span><span class="o">-&gt;</span><span class="nf">addAttribute</span><span class="p">(</span><span class="err">\</span><span class="nc">Magento\Catalog\Model\Category</span><span class="o">::</span><span class="no">ENTITY</span><span class="p">,</span> <span class="s1">'attribute_id'</span><span class="p">,</span> <span class="p">[</span>
             <span class="s1">'type'</span>     <span class="o">=&gt;</span> <span class="s1">'int'</span><span class="p">,</span>
             <span class="s1">'label'</span>    <span class="o">=&gt;</span> <span class="s1">'Your Category Attribute Name'</span><span class="p">,</span>
             <span class="s1">'input'</span>    <span class="o">=&gt;</span> <span class="s1">'boolean'</span><span class="p">,</span>
@@ -3331,7 +3332,7 @@
             <span class="s1">'visible'</span>  <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
             <span class="s1">'default'</span>  <span class="o">=&gt;</span> <span class="s1">'0'</span><span class="p">,</span>
             <span class="s1">'required'</span> <span class="o">=&gt;</span> <span class="kc">false</span><span class="p">,</span>
-            <span class="s1">'global'</span>   <span class="o">=&gt;</span> <span class="nx">\Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface</span><span class="o">::</span><span class="na">SCOPE_STORE</span><span class="p">,</span>
+            <span class="s1">'global'</span>   <span class="o">=&gt;</span> <span class="err">\</span><span class="nc">Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface</span><span class="o">::</span><span class="no">SCOPE_STORE</span><span class="p">,</span>
             <span class="s1">'group'</span>    <span class="o">=&gt;</span> <span class="s1">'Display Settings'</span><span class="p">,</span>
         <span class="p">]);</span>
     <span class="p">}</span>
@@ -3340,10 +3341,10 @@
 
 <h2 id="step-2-display-the-attribute">Step #2: Display the Attribute</h2>
 
-<p>The category UI Component is rendered with configuration from the <code class="highlighter-rouge">category_form.xml</code> file. All files with that name are merged together. As a result, you can add a field by creating a <code class="highlighter-rouge">category_form.xml</code> file in the <code class="highlighter-rouge">view/adminhtml/ui_component</code> directory in your   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
+<p>The category UI Component is rendered with configuration from the <code class="language-plaintext highlighter-rouge">category_form.xml</code> file. All files with that name are merged together. As a result, you can add a field by creating a <code class="language-plaintext highlighter-rouge">category_form.xml</code> file in the <code class="language-plaintext highlighter-rouge">view/adminhtml/ui_component</code> directory in your   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
 .</p>
 
-<p>Here is a full example of adding a field under the “Display Settings” group. It is important to note that <code class="highlighter-rouge">attribute_id</code> should match the ID of the attribute that you created in the install script.</p>
+<p>Here is a full example of adding a field under the “Display Settings” group. It is important to note that <code class="language-plaintext highlighter-rouge">attribute_id</code> should match the ID of the attribute that you created in the install script.</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="c">&lt;!-- Namespace/Module/view/adminhtml/ui_component/category_form.xml --&gt;</span>
 <span class="cp">&lt;?xml version="1.0"?&gt;</span>
@@ -3374,11 +3375,11 @@
 
 <h2 id="how-it-works">How it works</h2>
 
-<p>UI Component configuration is merged. When you add a new file, Magento will merge that with the base UI Component configuration file. In the example above, that is <code class="highlighter-rouge">category_form.xml</code>. The nodes inside of that reflect the structure of the base file. There are only two nodes necessary in this case before the custom field is added: <code class="highlighter-rouge">&lt;form&gt;</code> and <code class="highlighter-rouge">&lt;fieldset&gt;</code>. Inside of that, the <code class="highlighter-rouge">&lt;field&gt;</code> node is used to add a field with a name that matches the id of the attribute you want to render.</p>
+<p>UI Component configuration is merged. When you add a new file, Magento will merge that with the base UI Component configuration file. In the example above, that is <code class="language-plaintext highlighter-rouge">category_form.xml</code>. The nodes inside of that reflect the structure of the base file. There are only two nodes necessary in this case before the custom field is added: <code class="language-plaintext highlighter-rouge">&lt;form&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;fieldset&gt;</code>. Inside of that, the <code class="language-plaintext highlighter-rouge">&lt;field&gt;</code> node is used to add a field with a name that matches the id of the attribute you want to render.</p>
 
-<p>The <code class="highlighter-rouge">&lt;field&gt;</code> node is declared originally in <code class="highlighter-rouge">vendor/magento/module-ui/view/base/ui_component/etc/definition.xml</code>. If you open that file and look for <code class="highlighter-rouge">&lt;field&gt;</code>, you will notice that there is only a PHP class referenced—nothing particularly helpful. This is where the <code class="highlighter-rouge">config</code> elements in the example above come in important. Notice the value of <code class="highlighter-rouge">&lt;item name="formElement"&gt;</code> (<code class="highlighter-rouge">checkbox</code>)? Now, if you look in <code class="highlighter-rouge">definition.xml</code>, you will find a <code class="highlighter-rouge">&lt;checkbox&gt;</code> node that has some configuration values. In the PHP class that the <code class="highlighter-rouge">&lt;field&gt;</code> element references, it looks up the <code class="highlighter-rouge">formElement</code> to use and loads that. As a result, <code class="highlighter-rouge">&lt;checkbox&gt;</code> is the node. In this case, that has the information that we are looking for.</p>
+<p>The <code class="language-plaintext highlighter-rouge">&lt;field&gt;</code> node is declared originally in <code class="language-plaintext highlighter-rouge">vendor/magento/module-ui/view/base/ui_component/etc/definition.xml</code>. If you open that file and look for <code class="language-plaintext highlighter-rouge">&lt;field&gt;</code>, you will notice that there is only a PHP class referenced—nothing particularly helpful. This is where the <code class="language-plaintext highlighter-rouge">config</code> elements in the example above come in important. Notice the value of <code class="language-plaintext highlighter-rouge">&lt;item name="formElement"&gt;</code> (<code class="language-plaintext highlighter-rouge">checkbox</code>)? Now, if you look in <code class="language-plaintext highlighter-rouge">definition.xml</code>, you will find a <code class="language-plaintext highlighter-rouge">&lt;checkbox&gt;</code> node that has some configuration values. In the PHP class that the <code class="language-plaintext highlighter-rouge">&lt;field&gt;</code> element references, it looks up the <code class="language-plaintext highlighter-rouge">formElement</code> to use and loads that. As a result, <code class="language-plaintext highlighter-rouge">&lt;checkbox&gt;</code> is the node. In this case, that has the information that we are looking for.</p>
 
-<p>One of those elements is particularly useful when determining what XML you need to provide for your field: <code class="highlighter-rouge">&lt;item name="component"&gt;</code>. That is a Javascript file that handles the functionality of the field. In our case, it is located in <code class="highlighter-rouge">vendor/magento/module-ui/view/base/web/js/form/element/single-checkbox.js</code>. If you open that file, there is a <code class="highlighter-rouge">defaults</code> object which contains values that can be modified through the XML above. For example, notice: <code class="highlighter-rouge">defaults.prefer: 'checkbox'</code>. In the XML above, we declared <code class="highlighter-rouge">&lt;item name="prefer"&gt;toggle&lt;/item&gt;</code>. As a result, the   <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span>
+<p>One of those elements is particularly useful when determining what XML you need to provide for your field: <code class="language-plaintext highlighter-rouge">&lt;item name="component"&gt;</code>. That is a Javascript file that handles the functionality of the field. In our case, it is located in <code class="language-plaintext highlighter-rouge">vendor/magento/module-ui/view/base/web/js/form/element/single-checkbox.js</code>. If you open that file, there is a <code class="language-plaintext highlighter-rouge">defaults</code> object which contains values that can be modified through the XML above. For example, notice: <code class="language-plaintext highlighter-rouge">defaults.prefer: 'checkbox'</code>. In the XML above, we declared <code class="language-plaintext highlighter-rouge">&lt;item name="prefer"&gt;toggle&lt;/item&gt;</code>. As a result, the   <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span>
  value overrides the default value, and the   <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">Javascript</span>
  renders a toggle instead of a plain checkbox.</p>
 

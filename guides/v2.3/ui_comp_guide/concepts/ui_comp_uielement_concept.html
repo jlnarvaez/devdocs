@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>About the uiElement class | Magento 2 Developer Documentation (copy)</title>
+	<title>About the uiElement class | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/ui_comp_guide/concepts/ui_comp_uielement_concept.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/ui_comp_guide/concepts/ui_comp_uielement_concept.html">Magento 2.0</a></li>
 		
@@ -3292,25 +3293,25 @@
 	<h1 class="page-heading">About the uiElement class</h1>
 </section>
 
-			<h2 id="what-is-the-uielement-class">What is the <code class="highlighter-rouge">uiElement</code> class</h2>
+			<h2 id="what-is-the-uielement-class">What is the <code class="language-plaintext highlighter-rouge">uiElement</code> class</h2>
 
-<p>The <code class="highlighter-rouge">uiElement</code> class is a direct successor of the <a href="/devdocs/guides/v2.3/ui_comp_guide/concepts/ui_comp_uiclass_concept.html">uiClass library</a>.
-When creating a new component, use the <code class="highlighter-rouge">uiElement</code> class as a direct parent, if your component will be the last in the components hierarchy chain.</p>
+<p>The <code class="language-plaintext highlighter-rouge">uiElement</code> class is a direct successor of the <a href="/devdocs/guides/v2.3/ui_comp_guide/concepts/ui_comp_uiclass_concept.html">uiClass library</a>.
+When creating a new component, use the <code class="language-plaintext highlighter-rouge">uiElement</code> class as a direct parent, if your component will be the last in the components hierarchy chain.</p>
 
-<p><code class="highlighter-rouge">uiElement</code> source code is <code class="highlighter-rouge">&lt;UI_Module_dir&gt;/view/base/web/js/lib/core/element/element.js</code>, in the Magento Open Source GitHub repository: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/core/element/element.js">app/code/Magento/Ui/view/base/web/js/lib/core/element/element.js</a>.</p>
+<p><code class="language-plaintext highlighter-rouge">uiElement</code> source code is <code class="language-plaintext highlighter-rouge">&lt;UI_Module_dir&gt;/view/base/web/js/lib/core/element/element.js</code>, in the Magento Open Source GitHub repository: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/core/element/element.js">app/code/Magento/Ui/view/base/web/js/lib/core/element/element.js</a>.</p>
 
-<h2 id="commonly-used-uielement-methods">Commonly used <code class="highlighter-rouge">uiElement</code> methods</h2>
+<h2 id="commonly-used-uielement-methods">Commonly used <code class="language-plaintext highlighter-rouge">uiElement</code> methods</h2>
 
 <ul>
   <li>
-    <p>The <code class="highlighter-rouge">initLinks()</code> method implements component communication by using <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/core/element/links.js"><code class="highlighter-rouge">links.js</code></a>.  <code class="highlighter-rouge">initLinks()</code> introduces processing of the <a href="/devdocs/guides/v2.0/ui-components/ui_components_js.html#comp_link"><code class="highlighter-rouge">exports</code>, <code class="highlighter-rouge">imports</code>, <code class="highlighter-rouge">links</code> and <code class="highlighter-rouge">listens</code> properties</a>.</p>
+    <p>The <code class="language-plaintext highlighter-rouge">initLinks()</code> method implements component communication by using <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/core/element/links.js"><code class="language-plaintext highlighter-rouge">links.js</code></a>.  <code class="language-plaintext highlighter-rouge">initLinks()</code> introduces processing of the <a href="/devdocs/guides/v2.0/ui-components/ui_components_js.html#comp_link"><code class="language-plaintext highlighter-rouge">exports</code>, <code class="language-plaintext highlighter-rouge">imports</code>, <code class="language-plaintext highlighter-rouge">links</code> and <code class="language-plaintext highlighter-rouge">listens</code> properties</a>.</p>
   </li>
   <li>
-    <p>The <code class="highlighter-rouge">initObservable()</code> method allows you to declare observable variables within the same instance.</p>
+    <p>The <code class="language-plaintext highlighter-rouge">initObservable()</code> method allows you to declare observable variables within the same instance.</p>
 
     <p>Example:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>initObservable: function () {
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>initObservable: function () {
     this._super();
 
     this.track('childTemplate')
@@ -3327,23 +3328,23 @@ When creating a new component, use the <code class="highlighter-rouge">uiElement
 
     <ul>
       <li>
-        <p>the <code class="highlighter-rouge">observe()</code> method is a wrapper for the <code class="highlighter-rouge">ko.observable()</code> and <code class="highlighter-rouge">ko.observableArray()</code> methods. It converts the properties of the current method into the observable properties.
-<code class="highlighter-rouge">observe([{Boolean} isTracked,] {String|Array|Object} listOfProperties)</code>:</p>
+        <p>the <code class="language-plaintext highlighter-rouge">observe()</code> method is a wrapper for the <code class="language-plaintext highlighter-rouge">ko.observable()</code> and <code class="language-plaintext highlighter-rouge">ko.observableArray()</code> methods. It converts the properties of the current method into the observable properties.
+<code class="language-plaintext highlighter-rouge">observe([{Boolean} isTracked,] {String|Array|Object} listOfProperties)</code>:</p>
 
         <ul>
-          <li><code class="highlighter-rouge">isTracked</code> - <code class="highlighter-rouge">{Boolean}</code>, optional, - defines access usage: whether to use observable properties (<code class="highlighter-rouge">isTracked = false</code>) or property accessors (<code class="highlighter-rouge">isTracked = true</code>).</li>
-          <li><code class="highlighter-rouge">listOfProperties</code> - <code class="highlighter-rouge">{String}</code> is treated as space-separated list of properties’ names. Initial values will be used from current instance (when corresponding property exist).</li>
-          <li><code class="highlighter-rouge">listOfProperties</code> - <code class="highlighter-rouge">{Array}</code> a list of properties’ names. Initial values will be used from current instance (when corresponding property exist).</li>
-          <li><code class="highlighter-rouge">listOfProperties</code> - <code class="highlighter-rouge">{Object}</code> a list of properties’ names. Initial values will be used from this object.</li>
+          <li><code class="language-plaintext highlighter-rouge">isTracked</code> - <code class="language-plaintext highlighter-rouge">{Boolean}</code>, optional, - defines access usage: whether to use observable properties (<code class="language-plaintext highlighter-rouge">isTracked = false</code>) or property accessors (<code class="language-plaintext highlighter-rouge">isTracked = true</code>).</li>
+          <li><code class="language-plaintext highlighter-rouge">listOfProperties</code> - <code class="language-plaintext highlighter-rouge">{String}</code> is treated as space-separated list of properties’ names. Initial values will be used from current instance (when corresponding property exist).</li>
+          <li><code class="language-plaintext highlighter-rouge">listOfProperties</code> - <code class="language-plaintext highlighter-rouge">{Array}</code> a list of properties’ names. Initial values will be used from current instance (when corresponding property exist).</li>
+          <li><code class="language-plaintext highlighter-rouge">listOfProperties</code> - <code class="language-plaintext highlighter-rouge">{Object}</code> a list of properties’ names. Initial values will be used from this object.</li>
         </ul>
       </li>
       <li>
-        <p>the <code class="highlighter-rouge">track(listOfProperties)</code> method is equal to <code class="highlighter-rouge">observe(true, listOfProperties)</code>.
-The main difference between <code class="highlighter-rouge">observe()</code> and <code class="highlighter-rouge">track()</code> is that <code class="highlighter-rouge">observe()</code> is mainly used without first boolean argument. So it really converts properties to observable functions. It changes how property can be accessed. Otherwise <code class="highlighter-rouge">track()</code> uses property accessors. So property access remains the same.</p>
+        <p>the <code class="language-plaintext highlighter-rouge">track(listOfProperties)</code> method is equal to <code class="language-plaintext highlighter-rouge">observe(true, listOfProperties)</code>.
+The main difference between <code class="language-plaintext highlighter-rouge">observe()</code> and <code class="language-plaintext highlighter-rouge">track()</code> is that <code class="language-plaintext highlighter-rouge">observe()</code> is mainly used without first boolean argument. So it really converts properties to observable functions. It changes how property can be accessed. Otherwise <code class="language-plaintext highlighter-rouge">track()</code> uses property accessors. So property access remains the same.</p>
 
         <p>Example:</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>this.observable = 1;
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>this.observable = 1;
 this.observe('observable');
 
 this.observable(2); // setter
@@ -3360,11 +3361,11 @@ this.trackable;     // getter
     </ul>
   </li>
   <li>
-    <p>The <code class="highlighter-rouge">initModules()</code> method initializes external UI components’ instances and links them to local variables. This method works with the <code class="highlighter-rouge">modules</code> section of the configuration, where we define the name of the external instance and the local variable. The <code class="highlighter-rouge">modules</code> section is an object where each key is the variable’s name and each value is the instance’s name. A developer does not need to be concerned with the instantiation of the module (external instance), because the <code class="highlighter-rouge">initModules()</code> method will resolve the variable when the instance is instantiated.</p>
+    <p>The <code class="language-plaintext highlighter-rouge">initModules()</code> method initializes external UI components’ instances and links them to local variables. This method works with the <code class="language-plaintext highlighter-rouge">modules</code> section of the configuration, where we define the name of the external instance and the local variable. The <code class="language-plaintext highlighter-rouge">modules</code> section is an object where each key is the variable’s name and each value is the instance’s name. A developer does not need to be concerned with the instantiation of the module (external instance), because the <code class="language-plaintext highlighter-rouge">initModules()</code> method will resolve the variable when the instance is instantiated.</p>
 
     <p>Example:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>// Config, where the `modules` property is declared
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>// Config, where the `modules` property is declared
 defaults: {
     modules: {
         '%myProperty%': '%linkToTheComponent%'
@@ -3373,10 +3374,10 @@ defaults: {
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>The <code class="highlighter-rouge">getTemplate()</code> method returns a file path to UI component’s template.</p>
+    <p>The <code class="language-plaintext highlighter-rouge">getTemplate()</code> method returns a file path to UI component’s template.</p>
   </li>
   <li>
-    <p>The <code class="highlighter-rouge">hasTemplate()</code> method verifies that the <code class="highlighter-rouge">template</code> property was specified in the instance configuration.</p>
+    <p>The <code class="language-plaintext highlighter-rouge">hasTemplate()</code> method verifies that the <code class="language-plaintext highlighter-rouge">template</code> property was specified in the instance configuration.</p>
   </li>
 </ul>
 

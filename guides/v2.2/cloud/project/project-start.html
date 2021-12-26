@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Project structure | Magento 2 Developer Documentation (copy)</title>
+	<title>Project structure | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/project/project-start.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/project/project-start.html">Magento 2.0</a></li>
 		
@@ -4325,57 +4326,57 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">/.magento/routes.yaml</code></td>
-      <td>Configuration file that redirects <code class="highlighter-rouge">www</code> to the naked domain and <code class="highlighter-rouge">php</code> application to serve HTTP. See <a href="/devdocs/guides/v2.2/cloud/env/environments.html">Configure environments</a>.</td>
+      <td><code class="language-plaintext highlighter-rouge">/.magento/routes.yaml</code></td>
+      <td>Configuration file that redirects <code class="language-plaintext highlighter-rouge">www</code> to the naked domain and <code class="language-plaintext highlighter-rouge">php</code> application to serve HTTP. See <a href="/devdocs/guides/v2.2/cloud/env/environments.html">Configure environments</a>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">/.magento/services.yaml</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/.magento/services.yaml</code></td>
       <td>Configuration file that defines a MySQL instance, Redis, and ElasticSearch. See <a href="/devdocs/guides/v2.2/cloud/env/environments.html">Configure environments</a>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">/app</code></td>
-      <td>The <code class="highlighter-rouge">code</code> folder is used for custom modules. The <code class="highlighter-rouge">design</code> folder is used for custom themes. See <a href="/devdocs/guides/v2.2/cloud/howtos/custom-theme.html">Install a theme</a>. The <code class="highlighter-rouge">etc</code> folder contains configuration files for Magento.</td>
+      <td><code class="language-plaintext highlighter-rouge">/app</code></td>
+      <td>The <code class="language-plaintext highlighter-rouge">code</code> folder is used for custom modules. The <code class="language-plaintext highlighter-rouge">design</code> folder is used for custom themes. See <a href="/devdocs/guides/v2.2/cloud/howtos/custom-theme.html">Install a theme</a>. The <code class="language-plaintext highlighter-rouge">etc</code> folder contains configuration files for Magento.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">/m2-hotfixes</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/m2-hotfixes</code></td>
       <td>Used for custom patches.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">/update</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/update</code></td>
       <td>A service folder used by the support module.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">.gitignore</code></td>
-      <td>Specify which files and directories to ignore. See <a href="#ignoring-files"><code class="highlighter-rouge">.gitignore</code> reference</a>.</td>
+      <td><code class="language-plaintext highlighter-rouge">.gitignore</code></td>
+      <td>Specify which files and directories to ignore. See <a href="#ignoring-files"><code class="language-plaintext highlighter-rouge">.gitignore</code> reference</a>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">.magento.app.yaml</code></td>
+      <td><code class="language-plaintext highlighter-rouge">.magento.app.yaml</code></td>
       <td>Configuration file that defines the properties to build your application. See <a href="/devdocs/guides/v2.2/cloud/env/environments.html">Configure environments</a>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">.magento.env.yaml</code></td>
+      <td><code class="language-plaintext highlighter-rouge">.magento.env.yaml</code></td>
       <td>Configuration file that defines actions for the build, deploy, and post-deploy phases. The ece-tools package includes a sample of this file with detailed descriptions for the available variables. See <a href="/devdocs/guides/v2.2/cloud/env/environments.html">Configure environments</a>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">composer.json</code></td>
+      <td><code class="language-plaintext highlighter-rouge">composer.json</code></td>
       <td>Fetches the Magento Enterprise Edition and the necessary configuration scripts to prepare your application. See <a href="/devdocs/guides/v2.2/cloud/setup/first-time-setup-import-prepare.html">Prepare your Magento install</a>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">composer.lock</code></td>
+      <td><code class="language-plaintext highlighter-rouge">composer.lock</code></td>
       <td>Stores version dependencies for every package.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">magento-vars.php</code></td>
+      <td><code class="language-plaintext highlighter-rouge">magento-vars.php</code></td>
       <td>A file used to define <a href="/devdocs/guides/v2.2/cloud/project/project-multi-sites.html#modify-the-magento-varsphp-file">multiple stores</a> and sites using <a href="/devdocs/guides/v2.2/config-guide/multi-site/ms_over.html">Magento variables</a>.</td>
     </tr>
   </tbody>
 </table>
 
-<p class="bs-callout bs-callout-info">When you push your local environment to the remote server, our deploy script uses the values defined by configuration files in the <code class="highlighter-rouge">.magento</code> directory, then the script deletes the directory and its contents. Your local development environment is not affected.</p>
+<p class="bs-callout bs-callout-info">When you push your local environment to the remote server, our deploy script uses the values defined by configuration files in the <code class="language-plaintext highlighter-rouge">.magento</code> directory, then the script deletes the directory and its contents. Your local development environment is not affected.</p>
 
 <h2 id="ignoring-files">Ignoring files</h2>
 
-<p>We include a base <code class="highlighter-rouge">.gitignore</code> file with the Magento Commerce Cloud project repository. See <a href="https://github.com/magento/magento-cloud/blob/master/.gitignore">.gitignore file</a>. You can add an ignored file when staging a commit by using the <code class="highlighter-rouge">-f</code> option:</p>
+<p>We include a base <code class="language-plaintext highlighter-rouge">.gitignore</code> file with the Magento Commerce Cloud project repository. See <a href="https://github.com/magento/magento-cloud/blob/master/.gitignore">.gitignore file</a>. You can add an ignored file when staging a commit by using the <code class="language-plaintext highlighter-rouge">-f</code> option:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git add &lt;path/filename&gt; <span class="nt">-f</span>
 </code></pre></div></div>
@@ -4387,15 +4388,15 @@
 <p>For Starter:</p>
 
 <ul>
-  <li>Integration environment—the Magento application is located in the <code class="highlighter-rouge">/app</code> directory.</li>
-  <li>Production environment—the Magento application is located in the <code class="highlighter-rouge">/&lt;project code&gt;</code> directory.</li>
+  <li>Integration environment—the Magento application is located in the <code class="language-plaintext highlighter-rouge">/app</code> directory.</li>
+  <li>Production environment—the Magento application is located in the <code class="language-plaintext highlighter-rouge">/&lt;project code&gt;</code> directory.</li>
 </ul>
 
 <p>For Pro:</p>
 
 <ul>
-  <li>Integration environment—the Magento application is located in the <code class="highlighter-rouge">/app</code> directory.</li>
-  <li>Staging environment—the Magento application is located in the <code class="highlighter-rouge">/&lt;project code&gt;_stg</code> directory.</li>
+  <li>Integration environment—the Magento application is located in the <code class="language-plaintext highlighter-rouge">/app</code> directory.</li>
+  <li>Staging environment—the Magento application is located in the <code class="language-plaintext highlighter-rouge">/&lt;project code&gt;_stg</code> directory.</li>
   <li>Production environment—the Magento application is located in the ` /<project code="">` directory.</project></li>
 </ul>
 
@@ -4404,28 +4405,28 @@
 <p>In Integration, Staging, and Production, <em>only</em> the following directories are writable due to security reasons:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">var</code></li>
-  <li><code class="highlighter-rouge">pub/static</code></li>
-  <li><code class="highlighter-rouge">pub/media</code></li>
-  <li><code class="highlighter-rouge">app/etc</code></li>
-  <li><code class="highlighter-rouge">/tmp</code></li>
+  <li><code class="language-plaintext highlighter-rouge">var</code></li>
+  <li><code class="language-plaintext highlighter-rouge">pub/static</code></li>
+  <li><code class="language-plaintext highlighter-rouge">pub/media</code></li>
+  <li><code class="language-plaintext highlighter-rouge">app/etc</code></li>
+  <li><code class="language-plaintext highlighter-rouge">/tmp</code></li>
 </ul>
 
-<p class="bs-callout bs-callout-info">In Production, each node in the three-node cluster has a <code class="highlighter-rouge">/tmp</code> directory that is not shared with the other nodes.</p>
+<p class="bs-callout bs-callout-info">In Production, each node in the three-node cluster has a <code class="language-plaintext highlighter-rouge">/tmp</code> directory that is not shared with the other nodes.</p>
 
 <h2 id="logs">Logs</h2>
 
-<p>Logs for all environments are located under the <code class="highlighter-rouge">/var/log</code> directory. You can access that directory by opening an SSH tunnel to the environment using the <code class="highlighter-rouge">magento-cloud environment:ssh -e &lt;environment id&gt;</code> command.</p>
+<p>Logs for all environments are located under the <code class="language-plaintext highlighter-rouge">/var/log</code> directory. You can access that directory by opening an SSH tunnel to the environment using the <code class="language-plaintext highlighter-rouge">magento-cloud environment:ssh -e &lt;environment id&gt;</code> command.</p>
 
-<p>For Pro, the deployment log for Staging and Production is located in <code class="highlighter-rouge">/var/log/platform/&lt;project ID&gt;</code>.</p>
+<p>For Pro, the deployment log for Staging and Production is located in <code class="language-plaintext highlighter-rouge">/var/log/platform/&lt;project ID&gt;</code>.</p>
 
-<p>Magento logs are located in the <code class="highlighter-rouge">&lt;magento root dir&gt;/var/log</code> directory.</p>
+<p>Magento logs are located in the <code class="language-plaintext highlighter-rouge">&lt;magento root dir&gt;/var/log</code> directory.</p>
 
 <p class="bs-callout bs-callout-tip">You can also <a href="/devdocs/guides/v2.2/cloud/env/setup-notifications.html">set up log-based Slack and email notifications</a>.</p>
 
 <h2 id="build-log">Build logs</h2>
 
-<p>After pushing to your environment, you can see the results of the both hooks. Logs from the build hook are redirected to the output stream of <code class="highlighter-rouge">git push</code>, so you can observe them in the terminal or capture them (along with error messages) with <code class="highlighter-rouge">git push &gt; build.log 2&gt;&amp;1</code>.</p>
+<p>After pushing to your environment, you can see the results of the both hooks. Logs from the build hook are redirected to the output stream of <code class="language-plaintext highlighter-rouge">git push</code>, so you can observe them in the terminal or capture them (along with error messages) with <code class="language-plaintext highlighter-rouge">git push &gt; build.log 2&gt;&amp;1</code>.</p>
 
 <h3 id="deploy-log">Deploy logs</h3>
 
@@ -4434,16 +4435,16 @@
 <p>Logs from the deploy hook are located on the server in the following locations:</p>
 
 <ul>
-  <li>Integration: <code class="highlighter-rouge">/var/log/deploy.log</code></li>
-  <li>Staging: <code class="highlighter-rouge">/var/log/platform/&lt;project ID&gt;/deploy.log</code></li>
-  <li>Production: <code class="highlighter-rouge">/var/log/platform/{1|2|3}.&lt;project ID&gt;/deploy.log</code></li>
+  <li>Integration: <code class="language-plaintext highlighter-rouge">/var/log/deploy.log</code></li>
+  <li>Staging: <code class="language-plaintext highlighter-rouge">/var/log/platform/&lt;project ID&gt;/deploy.log</code></li>
+  <li>Production: <code class="language-plaintext highlighter-rouge">/var/log/platform/{1|2|3}.&lt;project ID&gt;/deploy.log</code></li>
 </ul>
 
-<p>The value of <code class="highlighter-rouge">&lt;project ID&gt;</code> depends on the project ID and whether the environment is Staging or Production. For example, with a project ID of <code class="highlighter-rouge">yw1unoukjcawe</code>, the Staging environment user is <code class="highlighter-rouge">yw1unoukjcawe_stg</code> and the Production environment user is <code class="highlighter-rouge">yw1unoukjcawe</code>.</p>
+<p>The value of <code class="language-plaintext highlighter-rouge">&lt;project ID&gt;</code> depends on the project ID and whether the environment is Staging or Production. For example, with a project ID of <code class="language-plaintext highlighter-rouge">yw1unoukjcawe</code>, the Staging environment user is <code class="language-plaintext highlighter-rouge">yw1unoukjcawe_stg</code> and the Production environment user is <code class="language-plaintext highlighter-rouge">yw1unoukjcawe</code>.</p>
 
-<p>For example, on the Staging environment for project <code class="highlighter-rouge">yw1unoukjcawe</code>, the deploy log is located at <code class="highlighter-rouge">/var/log/platform/yw1unoukjcawe_stg/post_deploy.log</code>.</p>
+<p>For example, on the Staging environment for project <code class="language-plaintext highlighter-rouge">yw1unoukjcawe</code>, the deploy log is located at <code class="language-plaintext highlighter-rouge">/var/log/platform/yw1unoukjcawe_stg/post_deploy.log</code>.</p>
 
-<p>For Production, you have a three node structure. Logs are available with specific information for that node. For example, on the Production environment for project <code class="highlighter-rouge">yw1unoukjcawe</code>, the deploy log is located at node 1 <code class="highlighter-rouge">/var/log/platform/1.yw1unoukjcawe/post_deploy.log</code>, node 2 <code class="highlighter-rouge">/var/log/platform/2.yw1unoukjcawe/deploy.log</code>, and node 3 <code class="highlighter-rouge">/var/log/platform/3.yw1unoukjcawe/post_deploy.log</code>.</p>
+<p>For Production, you have a three node structure. Logs are available with specific information for that node. For example, on the Production environment for project <code class="language-plaintext highlighter-rouge">yw1unoukjcawe</code>, the deploy log is located at node 1 <code class="language-plaintext highlighter-rouge">/var/log/platform/1.yw1unoukjcawe/post_deploy.log</code>, node 2 <code class="language-plaintext highlighter-rouge">/var/log/platform/2.yw1unoukjcawe/deploy.log</code>, and node 3 <code class="language-plaintext highlighter-rouge">/var/log/platform/3.yw1unoukjcawe/post_deploy.log</code>.</p>
 
 <p>Logs for all deployments that have occurred on this environment are appended to this file. Check the timestamps on log entries to verify and locate the logs you want for a specific deployment.</p>
 
@@ -4462,13 +4463,13 @@
 </code></pre></div></div>
 
 <p>The deploy log contains start and stop messages for each of the two hooks:
-<code class="highlighter-rouge">Starting pre-deploy</code>, <code class="highlighter-rouge">Pre-deploy complete.</code>, <code class="highlighter-rouge">Start deploy.</code>, and <code class="highlighter-rouge">Deployment complete.</code>.</p>
+<code class="language-plaintext highlighter-rouge">Starting pre-deploy</code>, <code class="language-plaintext highlighter-rouge">Pre-deploy complete.</code>, <code class="language-plaintext highlighter-rouge">Start deploy.</code>, and <code class="language-plaintext highlighter-rouge">Deployment complete.</code>.</p>
 
 <h3 id="app-log">Application logs</h3>
 
-<p>To review other application logs in Staging or Production, you can access and review those logs in <code class="highlighter-rouge">/var/log/platform/ProjectID</code>.</p>
+<p>To review other application logs in Staging or Production, you can access and review those logs in <code class="language-plaintext highlighter-rouge">/var/log/platform/ProjectID</code>.</p>
 
-<p>For Pro plan Staging, the project ID has <code class="highlighter-rouge">_stg</code> at the end. For example, if you receive 500 errors in Staging and want to review the nginx logs, you can SSH to the Staging environment and locate the logs in <code class="highlighter-rouge">/var/log/platform/ProjectID_stg</code>.</p>
+<p>For Pro plan Staging, the project ID has <code class="language-plaintext highlighter-rouge">_stg</code> at the end. For example, if you receive 500 errors in Staging and want to review the nginx logs, you can SSH to the Staging environment and locate the logs in <code class="language-plaintext highlighter-rouge">/var/log/platform/ProjectID_stg</code>.</p>
 
 <p>For Pro plan Production, you have three nodes to check for logs.</p>
 

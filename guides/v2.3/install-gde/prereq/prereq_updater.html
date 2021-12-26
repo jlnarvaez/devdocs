@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Set up the updater | Magento 2 Developer Documentation (copy)</title>
+	<title>Set up the updater | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/install-gde/prereq/prereq_updater.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/install-gde/prereq/prereq_updater.html">Magento 2.0</a></li>
 		
@@ -4605,12 +4606,12 @@
 </section>
 
 			<p>The Magento 2 Updater enables you to use the Web Setup Wizard to manage the Magento system components.
-The updater uses the cron jobs <code class="highlighter-rouge">update/cron.php</code> and <code class="highlighter-rouge">bin/magento setup:cron:run</code>.
+The updater uses the cron jobs <code class="language-plaintext highlighter-rouge">update/cron.php</code> and <code class="language-plaintext highlighter-rouge">bin/magento setup:cron:run</code>.
 Learn more about the cron setup in <a href="/devdocs/guides/v2.3/install-gde/install/post-install-config.html">Configure the Magento application</a>.</p>
 
 <h2 id="clone-the-updater">Clone the updater</h2>
 
-<p>Clone the <a href="https://github.com/magento/magento2-updater">Magento 2 updater</a> to <code class="highlighter-rouge">&lt;your Magento install dir&gt;/update</code>.</p>
+<p>Clone the <a href="https://github.com/magento/magento2-updater">Magento 2 updater</a> to <code class="language-plaintext highlighter-rouge">&lt;your Magento install dir&gt;/update</code>.</p>
 
 <p>Example:</p>
 
@@ -4621,12 +4622,12 @@ Learn more about the cron setup in <a href="/devdocs/guides/v2.3/install-gde/ins
 
 <h2 id="install-the-updater">Install the updater</h2>
 
-<p>The Magento 2 updater contains the <code class="highlighter-rouge">composer.json</code> with dependencies that it requires to process.
+<p>The Magento 2 updater contains the <code class="language-plaintext highlighter-rouge">composer.json</code> with dependencies that it requires to process.
 Install the dependencies using Composer:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">cd </span>update
 </code></pre></div></div>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer install
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer <span class="nb">install</span>
 </code></pre></div></div>
 
 <h2 id="next-step">Next step</h2>

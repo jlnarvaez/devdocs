@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Manage your components | Magento 2 Developer Documentation (copy)</title>
+	<title>Manage your components | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/comp-mgr/module-man/compman-main-pg.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/comp-mgr/module-man/compman-main-pg.html">Magento 2.0</a></li>
 		
@@ -2643,23 +2644,23 @@
 <p>We define the following <em>components</em>:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">module</code> for a   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
+  <li><code class="language-plaintext highlighter-rouge">module</code> for a   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
  or   <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span>
  (that is,   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
  code that modifies Magento behavior)</li>
   <li>
-    <p><code class="highlighter-rouge">language</code> for a   <span term-uuid="9c4c7b9b-43f0-4454-8e8c-fb62ad40c35f" class="glossary-term" data-toggle="popover">language package</span>
+    <p><code class="language-plaintext highlighter-rouge">language</code> for a   <span term-uuid="9c4c7b9b-43f0-4454-8e8c-fb62ad40c35f" class="glossary-term" data-toggle="popover">language package</span>
  used to translate the Magento   <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>
  and   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span></p>
   </li>
-  <li><code class="highlighter-rouge">theme</code> for a collection of styles that affect the look of the storefront or Admin</li>
+  <li><code class="language-plaintext highlighter-rouge">theme</code> for a collection of styles that affect the look of the storefront or Admin</li>
   <li>
-    <p><code class="highlighter-rouge">library</code> for a library—such as a shared third-party   <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span></p>
+    <p><code class="language-plaintext highlighter-rouge">library</code> for a library—such as a shared third-party   <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span></p>
   </li>
-  <li><code class="highlighter-rouge">component</code> for any type of component that must be installed in the Magento root directory (this is a relatively uncommon type)</li>
+  <li><code class="language-plaintext highlighter-rouge">component</code> for any type of component that must be installed in the Magento root directory (this is a relatively uncommon type)</li>
 </ul>
 
-<p>We also use <code class="highlighter-rouge">metapackage</code> to group components; Magento Community Edition (CE) and Magento Enterprise Edition (EE) are examples of metapackages.</p>
+<p>We also use <code class="language-plaintext highlighter-rouge">metapackage</code> to group components; Magento Community Edition (CE) and Magento Enterprise Edition (EE) are examples of metapackages.</p>
 
 <p>You can perform actions on components differently, depending on whether the component is part of a   <span term-uuid="7490850a-0654-4ce1-83ff-d88c1d7d07fa" class="glossary-term" data-toggle="popover">metapackage</span>
  or not.</p>

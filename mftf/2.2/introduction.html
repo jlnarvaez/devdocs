@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Introduction to the Magento Functional Testing Framework version 2.2 | Magento 2 Developer Documentation (copy)</title>
+	<title>Introduction to the Magento Functional Testing Framework version 2.2 | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -2091,8 +2090,7 @@
 	<h1 class="page-heading">Introduction to the Magento Functional Testing Framework version 2.2</h1>
 </section>
 
-			
-<p style="text-align: right"><em>The latest MFTF 2.2 release is <a href="https://github.com/magento/magento2-functional-testing-framework/releases/tag/2.2.0">2.2.0</a>.</em></p>
+			<p style="text-align: right"><em>The latest MFTF 2.2 release is <a href="https://github.com/magento/magento2-functional-testing-framework/releases/tag/2.2.0">2.2.0</a>.</em></p>
 
 <p class="bs-callout bs-callout-info"><a href="./introduction.html#find-version">Find out your version</a> of the MFTF.
 If your version is 2.3.x, see the <a href="/devdocs/mftf/2.3/introduction.html">MFTF 2.3 documentation</a>.</p>
@@ -2114,7 +2112,7 @@ MFTF improves:</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>We are actively developing functional tests.
-Refer to <code class="highlighter-rouge">&lt;magento_root&gt;/app/code/&lt;vendor_name&gt;/&lt;module_name&gt;/Test/Mftf/</code> for examples.</p>
+Refer to <code class="language-plaintext highlighter-rouge">&lt;magento_root&gt;/app/code/&lt;vendor_name&gt;/&lt;module_name&gt;/Test/Mftf/</code> for examples.</p>
 </div>
 
 <h2 id="audience">Audience</h2>
@@ -2135,7 +2133,7 @@ Refer to <code class="highlighter-rouge">&lt;magento_root&gt;/app/code/&lt;vendo
 
 <ul>
   <li>Test user interactions with web applications in testing.</li>
-  <li>Write functional tests located in <code class="highlighter-rouge">&lt;magento_root&gt;/app/code/&lt;vendor_name&gt;/&lt;module_name&gt;/Test/Mftf/</code>.</li>
+  <li>Write functional tests located in <code class="language-plaintext highlighter-rouge">&lt;magento_root&gt;/app/code/&lt;vendor_name&gt;/&lt;module_name&gt;/Test/Mftf/</code>.</li>
   <li>Cover basic functionality using out-of-the-box tests. You can test extended functionality using custom tests.</li>
   <li>Automate regression testing.</li>
 </ul>
@@ -2148,7 +2146,7 @@ Refer to <code class="highlighter-rouge">&lt;magento_root&gt;/app/code/&lt;vendo
 
 <h2 id="find-version">Find your MFTF version</h2>
 
-<p>The MFTF is installed as a Composer dependency in <code class="highlighter-rouge">&lt;magento_root&gt;/app/code/&lt;vendor_name&gt;/&lt;module_name&gt;/Test/Mftf/composer.lock</code>.</p>
+<p>The MFTF is installed as a Composer dependency in <code class="language-plaintext highlighter-rouge">&lt;magento_root&gt;/app/code/&lt;vendor_name&gt;/&lt;module_name&gt;/Test/Mftf/composer.lock</code>.</p>
 
 <p>To find out the version, run:</p>
 
@@ -2159,7 +2157,7 @@ Refer to <code class="highlighter-rouge">&lt;magento_root&gt;/app/code/&lt;vendo
 
 <h2 id="contents-of-devtestsacceptance">Contents of dev/tests/acceptance</h2>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>tests
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>tests
     _data                       // Additional files required for tests (e.g. pictures, CSV files for import/export, etc.)
     _output                     // The directory is generated during test run. It contains testing reports.
     _suite                      // Test suites
@@ -2188,14 +2186,14 @@ pre-install.php                 // Script that checks the environment on whether
 
 <p>The MFTF supports two different locations for storing the tests and test artifacts:</p>
 <ul>
-  <li><code class="highlighter-rouge">&lt;magento_root&gt;/app/code/&lt;vendor_name&gt;/&lt;module_name&gt;/Test/Mftf/</code> is the directory to create new tests.</li>
-  <li><code class="highlighter-rouge">&lt;magento_root&gt;/vendor/&lt;vendor_name&gt;/&lt;module_name&gt;/Test/Mftf/</code> is the directory with the out of the box tests (fetched by the Composer).</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;magento_root&gt;/app/code/&lt;vendor_name&gt;/&lt;module_name&gt;/Test/Mftf/</code> is the directory to create new tests.</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;magento_root&gt;/vendor/&lt;vendor_name&gt;/&lt;module_name&gt;/Test/Mftf/</code> is the directory with the out of the box tests (fetched by the Composer).</li>
 </ul>
 
 <p>All tests and test data from these locations are merged in the order indicated in the above list.</p>
 
 <p>The file structure under all three path cases is the same:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;Path&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;Path&gt;
 ├── ActionGroup
 │   └── ...
 ├── Data

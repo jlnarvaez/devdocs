@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Manage source selection algorithms | Magento 2 Developer Documentation (copy)</title>
+	<title>Manage source selection algorithms | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/rest/modules/inventory/manage-source-selection.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/rest/modules/inventory/manage-source-selection.html">Magento 2.0</a></li>
 		
@@ -2465,13 +2466,13 @@
 
 <p><strong>Service names</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>inventorySourceSelectionApiGetSourceSelectionAlgorithmListV1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>inventorySourceSelectionApiGetSourceSelectionAlgorithmListV1
 inventorySourceSelectionApiSourceSelectionServiceV1
 </code></pre></div></div>
 
 <p><strong>REST endpoints</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>GET /V1/inventory/source-selection-algorithm-list
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>GET /V1/inventory/source-selection-algorithm-list
 POST /V1/inventory/source-selection-algorithm-result
 </code></pre></div></div>
 
@@ -2481,7 +2482,7 @@ POST /V1/inventory/source-selection-algorithm-result
 
 <p><strong>Sample usage</strong></p>
 
-<p><code class="highlighter-rouge">GET http://&lt;host&gt;/rest/us/V1/inventory/source-selection-algorithm-list</code></p>
+<p><code class="language-plaintext highlighter-rouge">GET http://&lt;host&gt;/rest/us/V1/inventory/source-selection-algorithm-list</code></p>
 
 <p><strong>Payload</strong></p>
 
@@ -2493,20 +2494,20 @@ POST /V1/inventory/source-selection-algorithm-result
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"priority"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Source Priority"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Algorithm which provides Source Selections based on predefined priority of Source"</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"priority"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Source Priority"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Algorithm which provides Source Selections based on predefined priority of Source"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
 
 <h2 id="run-the-ssa">Run the SSA</h2>
 
-<p>The <code class="highlighter-rouge">POST V1/inventory/source-selection-algorithm-result</code> endpoint uses the algorithm defined by the <code class="highlighter-rouge">algorithmCode</code> attribute to calculate the recommended sources and quantities for each item defined in the items array.</p>
+<p>The <code class="language-plaintext highlighter-rouge">POST V1/inventory/source-selection-algorithm-result</code> endpoint uses the algorithm defined by the <code class="language-plaintext highlighter-rouge">algorithmCode</code> attribute to calculate the recommended sources and quantities for each item defined in the items array.</p>
 
 <p><strong>Sample usage</strong></p>
 
-<p><code class="highlighter-rouge">POST /V1/inventory/source-selection-algorithm-result</code></p>
+<p><code class="language-plaintext highlighter-rouge">POST /V1/inventory/source-selection-algorithm-result</code></p>
 
 <p><strong>inventoryRequest parameters</strong></p>
 
@@ -2521,32 +2522,32 @@ POST /V1/inventory/source-selection-algorithm-result
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">stock_id</code></td>
+      <td><code class="language-plaintext highlighter-rouge">stock_id</code></td>
       <td>The ID of the stock</td>
       <td>Integer</td>
       <td>Required</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">items</code></td>
+      <td><code class="language-plaintext highlighter-rouge">items</code></td>
       <td>An array containing the SKU and quantity of items in the order</td>
       <td>Array</td>
       <td>Required</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">sku</code></td>
+      <td><code class="language-plaintext highlighter-rouge">sku</code></td>
       <td>The SKU of a product to be shipped</td>
       <td>String</td>
       <td>Required for each item</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">qty</code></td>
+      <td><code class="language-plaintext highlighter-rouge">qty</code></td>
       <td>The quantity of a product to be shipped</td>
       <td>Number</td>
       <td>Required for each item</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">algorithmCode</code></td>
-      <td>The name of the SSA to implement. For 2.3, this value must be <code class="highlighter-rouge">priority</code>.</td>
+      <td><code class="language-plaintext highlighter-rouge">algorithmCode</code></td>
+      <td>The name of the SSA to implement. For 2.3, this value must be <code class="language-plaintext highlighter-rouge">priority</code>.</td>
       <td>String</td>
       <td>Required</td>
     </tr>
@@ -2555,7 +2556,7 @@ POST /V1/inventory/source-selection-algorithm-result
 
 <p><strong>Payload</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>{
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>{
     "inventoryRequest": {
         "stockId": 2,
         "items": [{
@@ -2574,39 +2575,39 @@ POST /V1/inventory/source-selection-algorithm-result
 <p><strong>Response</strong></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"source_selection_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="nl">"source_selection_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"baltimore_wh"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sp1"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"qty_to_deduct"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"qty_available"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="w">
+            </span><span class="nl">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"baltimore_wh"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sp1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"qty_to_deduct"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"qty_available"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"austin_wh"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sp1"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"qty_to_deduct"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"qty_available"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+            </span><span class="nl">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"austin_wh"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sp1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"qty_to_deduct"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"qty_available"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reno_wh"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sp1"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"qty_to_deduct"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"qty_available"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+            </span><span class="nl">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reno_wh"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sp1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"qty_to_deduct"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"qty_available"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"baltimore_wh"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sp2"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"qty_to_deduct"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"qty_available"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="w">
+            </span><span class="nl">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"baltimore_wh"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sp2"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"qty_to_deduct"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"qty_available"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reno_wh"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sp2"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"qty_to_deduct"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"qty_available"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="w">
+            </span><span class="nl">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reno_wh"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sp2"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"qty_to_deduct"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"qty_available"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"shippable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="nl">"shippable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 

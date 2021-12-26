@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>USPS Service Name Change | Magento 2 Developer Documentation (copy)</title>
+	<title>USPS Service Name Change | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/release-notes/tech_bull_USPS-patch-Sept2017.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/release-notes/tech_bull_USPS-patch-Sept2017.html">Magento 2.0</a></li>
 		
@@ -2782,7 +2783,7 @@
 
 <p><em>last revised: September 12, 2017</em></p>
 
-<p>On September 1, USPS changed their First-Class Mail Parcel Service to First-Class Package Service – Retail. Because the First-Class Mail Parcel is no longer available after September 1,  Magento 1.x and 2.x merchants offering this service must change this service name in the <code class="highlighter-rouge">Usps.php</code> as soon as possible.</p>
+<p>On September 1, USPS changed their First-Class Mail Parcel Service to First-Class Package Service – Retail. Because the First-Class Mail Parcel is no longer available after September 1,  Magento 1.x and 2.x merchants offering this service must change this service name in the <code class="language-plaintext highlighter-rouge">Usps.php</code> as soon as possible.</p>
 
 <p>If you do not take action, your store will not support checkout using the First-Class Package Service - Retail mailing option.</p>
 
@@ -2796,7 +2797,7 @@
 
 <h3 id="recommended-magento-1x-actions">Recommended Magento 1.x actions</h3>
 
-<p>We’ve provided the following workaround to address this change to the USPS API. Additionally, we have released the <code class="highlighter-rouge">SUPEE-10336 for 1.x</code> patch for this issue. If you implement the following workaround, note that you must undo the workaround before installing the patch.</p>
+<p>We’ve provided the following workaround to address this change to the USPS API. Additionally, we have released the <code class="language-plaintext highlighter-rouge">SUPEE-10336 for 1.x</code> patch for this issue. If you implement the following workaround, note that you must undo the workaround before installing the patch.</p>
 
 <h4 id="access-magento-1x-patches">Access Magento 1.x patches</h4>
 
@@ -2822,15 +2823,15 @@
 
 <h3 id="workaround-for-magento-1x">Workaround for Magento 1.x</h3>
 
-<p>Follow this procedure to edit the <code class="highlighter-rouge">Usps.php</code> file to use the new shipping method name:</p>
+<p>Follow this procedure to edit the <code class="language-plaintext highlighter-rouge">Usps.php</code> file to use the new shipping method name:</p>
 
-<p>1) Navigate to <code class="highlighter-rouge">app/code/core/Mage/Usa/Model/Shipping/Carrier/Usps.php</code>.</p>
+<p>1) Navigate to <code class="language-plaintext highlighter-rouge">app/code/core/Mage/Usa/Model/Shipping/Carrier/Usps.php</code>.</p>
 
-<p>2) Search for the string <code class="highlighter-rouge">First-Class Mail Parcel</code>. This files by default contains two occurrences of this string.</p>
+<p>2) Search for the string <code class="language-plaintext highlighter-rouge">First-Class Mail Parcel</code>. This files by default contains two occurrences of this string.</p>
 
-<p>3) Replace all the occurrences of <code class="highlighter-rouge">First-Class Mail Parcel</code> with <code class="highlighter-rouge">First-Class Package Service - Retail</code>.</p>
+<p>3) Replace all the occurrences of <code class="language-plaintext highlighter-rouge">First-Class Mail Parcel</code> with <code class="language-plaintext highlighter-rouge">First-Class Package Service - Retail</code>.</p>
 
-<p>4) Save your changes to <code class="highlighter-rouge">Usps.php</code>.</p>
+<p>4) Save your changes to <code class="language-plaintext highlighter-rouge">Usps.php</code>.</p>
 
 <p>5) Flush the Magento cache.</p>
 
@@ -2846,15 +2847,15 @@
 
 <h3 id="workaround-for-magento-2x">Workaround for Magento 2.x</h3>
 
-<p>Follow this procedure to edit the <code class="highlighter-rouge">Carrier.php</code> file to use the new shipping method name:</p>
+<p>Follow this procedure to edit the <code class="language-plaintext highlighter-rouge">Carrier.php</code> file to use the new shipping method name:</p>
 
-<p>1) Navigate to <code class="highlighter-rouge">vendor/magento/module-usps/Model/Carrier.php</code>.</p>
+<p>1) Navigate to <code class="language-plaintext highlighter-rouge">vendor/magento/module-usps/Model/Carrier.php</code>.</p>
 
-<p>2) Search for the string <code class="highlighter-rouge">First-Class Mail Parcel</code>. This file by default contains the two occurrences of this string.</p>
+<p>2) Search for the string <code class="language-plaintext highlighter-rouge">First-Class Mail Parcel</code>. This file by default contains the two occurrences of this string.</p>
 
-<p>3) Replace all the occurrences of <code class="highlighter-rouge">First-Class Mail Parcel</code> with <code class="highlighter-rouge">First-Class Package Service - Retail</code>.</p>
+<p>3) Replace all the occurrences of <code class="language-plaintext highlighter-rouge">First-Class Mail Parcel</code> with <code class="language-plaintext highlighter-rouge">First-Class Package Service - Retail</code>.</p>
 
-<p>4) Save your changes to <code class="highlighter-rouge">Carrier.php</code>.</p>
+<p>4) Save your changes to <code class="language-plaintext highlighter-rouge">Carrier.php</code>.</p>
 
 <p>5) Flush the Magento cache.</p>
 

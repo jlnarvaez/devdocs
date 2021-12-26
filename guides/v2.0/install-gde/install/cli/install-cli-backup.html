@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Back up and roll back the file system, media, and database | Magento 2 Developer Documentation (copy)</title>
+	<title>Back up and roll back the file system, media, and database | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/install-gde/install/cli/install-cli-backup.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/install-gde/install/cli/install-cli-backup.html">Magento 2.0</a></li>
 		
@@ -4432,7 +4433,7 @@
   <li>The Magento 2 database</li>
 </ul>
 
-<p>Backups are stored in the <code class="highlighter-rouge">var/backups</code> directory and can be restored at any time using the <a href="/devdocs/guides/v2.0/install-gde/install/cli/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">magento setup:rollback</a> command.</p>
+<p>Backups are stored in the <code class="language-plaintext highlighter-rouge">var/backups</code> directory and can be restored at any time using the <a href="/devdocs/guides/v2.0/install-gde/install/cli/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">magento setup:rollback</a> command.</p>
 
 <p>After backing up, you can <a href="#instgde-cli-uninst-roll">roll back</a> at a later time.</p>
 
@@ -4444,31 +4445,31 @@
 
     <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
 </code></pre></div>    </div>
 
     <p>If the Magento file system owner does not allow logins you can do the following:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
+    <p>To run Magento commands from any directory, add <code class="language-plaintext highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="language-plaintext highlighter-rouge">PATH</code>.</p>
 
     <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables">unix.stackexchange.com</a>.</p>
 
     <p>bash shell example for CentOS:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>export PATH=$PATH:/var/www/html/magento2/bin
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>export PATH=$PATH:/var/www/html/magento2/bin
 </code></pre></div>    </div>
   </li>
 </ol>
 
 <p class="bs-callout bs-callout-info">You can also run the commands in the following ways:</p>
 <ul>
-  <li><code class="highlighter-rouge">cd &lt;your Magento install dir&gt;/bin</code> and run them as <code class="highlighter-rouge">./magento &lt;command name&gt;</code></li>
-  <li><code class="highlighter-rouge">php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li>
-  <li><code class="highlighter-rouge">&lt;your Magento install dir&gt;</code> is a subdirectory of your web server’s docroot. <a href="/devdocs/guides/v2.0/install-gde/basics/basics_docroot.html">Need help locating the docroot?</a></li>
+  <li><code class="language-plaintext highlighter-rouge">cd &lt;your Magento install dir&gt;/bin</code> and run them as <code class="language-plaintext highlighter-rouge">./magento &lt;command name&gt;</code></li>
+  <li><code class="language-plaintext highlighter-rouge">php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;your Magento install dir&gt;</code> is a subdirectory of your web server’s docroot. <a href="/devdocs/guides/v2.0/install-gde/basics/basics_docroot.html">Need help locating the docroot?</a></li>
 </ul>
 
 <p>In addition to the command arguments discussed here, see <a href="/devdocs/guides/v2.0/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
@@ -4476,13 +4477,13 @@
 <h2 id="instgde-cli-ulimit">Set ulimit for the web server user</h2>
 <h3 id="why-to-set-ulimit">Why to set ulimit</h3>
 
-<p>Rolling back to a previous backup can silently fail, resulting in incomplete data being written to the file system or database. (This includes all types of rollbacks, including using System Upgrade, Component Manager, or the <a href="/devdocs/guides/v2.0/install-gde/install/cli/install-cli-backup.html#instgde-cli-uninst-roll"><code class="highlighter-rouge">magento setup:rollback</code></a> command.)</p>
+<p>Rolling back to a previous backup can silently fail, resulting in incomplete data being written to the file system or database. (This includes all types of rollbacks, including using System Upgrade, Component Manager, or the <a href="/devdocs/guides/v2.0/install-gde/install/cli/install-cli-backup.html#instgde-cli-uninst-roll"><code class="language-plaintext highlighter-rouge">magento setup:rollback</code></a> command.)</p>
 
 <p>In some cases, a very long query string causes the user’s allocated memory space to run out of memory because of too many recursive calls.</p>
 
 <h3 id="how-to-set-ulimit">How to set ulimit</h3>
 
-<p>We recommend setting the <a href="http://ss64.com/bash/ulimit.html"><code class="highlighter-rouge">ulimit</code></a> for the Magento file system user to a value of 65536 or more.</p>
+<p>We recommend setting the <a href="http://ss64.com/bash/ulimit.html"><code class="language-plaintext highlighter-rouge">ulimit</code></a> for the Magento file system user to a value of 65536 or more.</p>
 
 <p>You can do this either on the command line or you can make it a permanent setting for the user by editing their shell script.</p>
 
@@ -4490,34 +4491,34 @@
 
 <p>Command:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ulimit -s 65536
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ulimit -s 65536
 </code></pre></div></div>
 
 <p>You can change this to a larger value if needed.</p>
 
-<p class="bs-callout bs-callout-info">The syntax for <code class="highlighter-rouge">ulimit</code> depends on the UNIX shell you use. The preceding setting should work with CentOS and Ubuntu with the Bash shell. However, for Mac OS, the correct setting is <code class="highlighter-rouge">ulimit -S 65532</code>. Consult a man page or operating system reference for more information.</p>
+<p class="bs-callout bs-callout-info">The syntax for <code class="language-plaintext highlighter-rouge">ulimit</code> depends on the UNIX shell you use. The preceding setting should work with CentOS and Ubuntu with the Bash shell. However, for Mac OS, the correct setting is <code class="language-plaintext highlighter-rouge">ulimit -S 65532</code>. Consult a man page or operating system reference for more information.</p>
 
 <p>To optionally set the value in the user’s Bash shell:</p>
 
 <ol>
   <li>If you haven’t done so already, switch to the <a href="/devdocs/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
-  <li>Open <code class="highlighter-rouge">/home/&lt;username&gt;/.bashrc</code> in a text editor.</li>
+  <li>Open <code class="language-plaintext highlighter-rouge">/home/&lt;username&gt;/.bashrc</code> in a text editor.</li>
   <li>
     <p>Add the following line:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ulimit -s 65536
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ulimit -s 65536
 </code></pre></div>    </div>
   </li>
-  <li>Save your changes to <code class="highlighter-rouge">.bashrc</code> and exit the text editor.</li>
+  <li>Save your changes to <code class="language-plaintext highlighter-rouge">.bashrc</code> and exit the text editor.</li>
 </ol>
 
-<p class="bs-callout bs-callout-warning">We recommend you avoid setting a value for <a href="http://php.net/manual/en/pcre.configuration.php"><code class="highlighter-rouge">pcre.recursion_limit</code></a> in <code class="highlighter-rouge">php.ini</code> because it can result in incomplete rollbacks with no failure notice.</p>
+<p class="bs-callout bs-callout-warning">We recommend you avoid setting a value for <a href="http://php.net/manual/en/pcre.configuration.php"><code class="language-plaintext highlighter-rouge">pcre.recursion_limit</code></a> in <code class="language-plaintext highlighter-rouge">php.ini</code> because it can result in incomplete rollbacks with no failure notice.</p>
 
 <h2 id="instgde-cli-uninst-back">Backing up</h2>
 
 <p>Command usage:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento setup:backup [--code] [--media] [--db]
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento setup:backup [--code] [--media] [--db]
 </code></pre></div></div>
 
 <p>The command performs the following tasks:</p>
@@ -4561,12 +4562,12 @@
 
 <p>For example, to back up the file system and database,</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento setup:backup --code --db
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento setup:backup --code --db
 </code></pre></div></div>
 
 <p>Messages similar to the following display:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Enabling maintenance mode
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Enabling maintenance mode
 Code backup is starting...
 Code backup filename: 1434133011_filesystem.tgz (The archive can be uncompressed with 7-Zip on Windows systems)
 Code backup path: /var/www/html/magento2/var/backups/1434133011_filesystem.tgz
@@ -4584,29 +4585,29 @@ Disabling maintenance mode
 
 <p>To find the name of your backups, enter:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento info:backups:list
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento info:backups:list
 </code></pre></div></div>
 
 <p>The first string in the backup file name is the timestamp.</p>
 
 <p>To roll back to a previous backup, enter:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento setup:rollback [-c|--code-file="&lt;name&gt;"] [-m|--media-file="&lt;name&gt;"] [-d|--db-file="&lt;name&gt;"]
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento setup:rollback [-c|--code-file="&lt;name&gt;"] [-m|--media-file="&lt;name&gt;"] [-d|--db-file="&lt;name&gt;"]
 </code></pre></div></div>
 
-<p>For example, to restore a media backup named <code class="highlighter-rouge">1440611839_filesystem_media.tgz</code>, enter</p>
+<p>For example, to restore a media backup named <code class="language-plaintext highlighter-rouge">1440611839_filesystem_media.tgz</code>, enter</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento setup:rollback -m 1440611839_filesystem_media.tgz
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento setup:rollback -m 1440611839_filesystem_media.tgz
 </code></pre></div></div>
 
 <p>Messages similar to the following display:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>[SUCCESS]: Media rollback completed successfully.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>[SUCCESS]: Media rollback completed successfully.
 Please set file permission of bin/magento to executable
 Disabling maintenance mode
 </code></pre></div></div>
 
-<p class="bs-callout bs-callout-info">If the command results in a <code class="highlighter-rouge">Segmentation fault</code> message, see <a href="/devdocs/guides/v2.0/install-gde/trouble/tshoot_segfault.html">Segmentation fault during rollback</a>.</p>
+<p class="bs-callout bs-callout-info">If the command results in a <code class="language-plaintext highlighter-rouge">Segmentation fault</code> message, see <a href="/devdocs/guides/v2.0/install-gde/trouble/tshoot_segfault.html">Segmentation fault during rollback</a>.</p>
 
 <h4 id="related-topics">Related topics</h4>
 

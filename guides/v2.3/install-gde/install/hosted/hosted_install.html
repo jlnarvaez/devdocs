@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Install the Magento software | Magento 2 Developer Documentation (copy)</title>
+	<title>Install the Magento software | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/install-gde/install/hosted/hosted_install.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/install-gde/install/hosted/hosted_install.html">Magento 2.0</a></li>
 		
@@ -4639,21 +4640,21 @@
     <p>Module A conflicts with Module B. You can disable Module A and Module B, or you can disable either module but you <em>cannot</em> enable Module A and Module B at the same time.</p>
   </li>
   <li>
-    <p>Dependencies are declared in the <code class="highlighter-rouge">require</code> field in Magento’s <code class="highlighter-rouge">composer.json</code> file for each module. Conflicts are declared in the <code class="highlighter-rouge">conflict</code> field in modules’ <code class="highlighter-rouge">composer.json</code> files. We use that information to build a dependency graph:
-<code class="highlighter-rouge">A-&gt;B</code> means module A depends on module B.</p>
+    <p>Dependencies are declared in the <code class="language-plaintext highlighter-rouge">require</code> field in Magento’s <code class="language-plaintext highlighter-rouge">composer.json</code> file for each module. Conflicts are declared in the <code class="language-plaintext highlighter-rouge">conflict</code> field in modules’ <code class="language-plaintext highlighter-rouge">composer.json</code> files. We use that information to build a dependency graph:
+<code class="language-plaintext highlighter-rouge">A-&gt;B</code> means module A depends on module B.</p>
   </li>
   <li>
-    <p>A <em>dependency chain</em> is the path from a module to another one. For example, if module A depends on module B and module B depends on module C, then the dependency chain is <code class="highlighter-rouge">A-&gt;B-&gt;C</code>.</p>
+    <p>A <em>dependency chain</em> is the path from a module to another one. For example, if module A depends on module B and module B depends on module C, then the dependency chain is <code class="language-plaintext highlighter-rouge">A-&gt;B-&gt;C</code>.</p>
   </li>
 </ul>
 
 <p>If you attempt to enable or disable a module that depends on other modules, the dependency graph displays in the error message.</p>
 
-<p class="bs-callout bs-callout-info">It’s possible that module A’s <code class="highlighter-rouge">composer.json</code> declares a conflict with module B but not vice versa.</p>
+<p class="bs-callout bs-callout-info">It’s possible that module A’s <code class="language-plaintext highlighter-rouge">composer.json</code> declares a conflict with module B but not vice versa.</p>
 
-<p><em>Command line <a href="/devdocs/guides/v2.3/install-gde/install/cli/install-cli-subcommands-enable.html">module enable or disable subcommand</a> only:</em> To force a module to be enabled or disabled regardless of its dependencies, use the optional<code class="highlighter-rouge">--force</code> argument.</p>
+<p><em>Command line <a href="/devdocs/guides/v2.3/install-gde/install/cli/install-cli-subcommands-enable.html">module enable or disable subcommand</a> only:</em> To force a module to be enabled or disabled regardless of its dependencies, use the optional<code class="language-plaintext highlighter-rouge">--force</code> argument.</p>
 
-<p class="bs-callout bs-callout-info">Using <code class="highlighter-rouge">--force</code> can disable your Magento store and cause problems accessing the Magento Admin.</p>
+<p class="bs-callout bs-callout-info">Using <code class="language-plaintext highlighter-rouge">--force</code> can disable your Magento store and cause problems accessing the Magento Admin.</p>
 
 <h2 id="instgde-install-magento-web">Running the Setup Wizard</h2>
 
@@ -4672,12 +4673,12 @@
   <li>
     <p>Enter the following URL in the browser’s address or location bar:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>http://&lt;Magento host or IP&gt;/&lt;path to Magento root&gt;/setup
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>http://&lt;Magento host or IP&gt;/&lt;path to Magento root&gt;/setup
 </code></pre></div>    </div>
 
-    <p>For example, if the Magento server’s IP address is 192.0.2.10 and you installed Magento 2 in the <code class="highlighter-rouge">magento2/</code> directory relative to the web server’s docroot, and you did not configure a Virtual Host, enter:</p>
+    <p>For example, if the Magento server’s IP address is 192.0.2.10 and you installed Magento 2 in the <code class="language-plaintext highlighter-rouge">magento2/</code> directory relative to the web server’s docroot, and you did not configure a Virtual Host, enter:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>http://192.0.2.10/magento2/setup
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>http://192.0.2.10/magento2/setup
 </code></pre></div>    </div>
   </li>
   <li>

@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Versioning | Magento 2 Developer Documentation (copy)</title>
+	<title>Versioning | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/extension-dev-guide/versioning">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/extension-dev-guide/versioning">Magento 2.0</a></li>
 		
@@ -3034,9 +3035,9 @@ This version change does not reflect the nature of the changes in the code base.
 
 <h2 id="module-version-format">Module version format</h2>
 
-<p>The <code class="highlighter-rouge">version</code> field in a modules <a href="/devdocs/guides/v2.1/extension-dev-guide/build/composer-integration.html"><code class="highlighter-rouge">composer.json</code></a> file specifies the module version and consists of three numbers in the following format:</p>
+<p>The <code class="language-plaintext highlighter-rouge">version</code> field in a modules <a href="/devdocs/guides/v2.1/extension-dev-guide/build/composer-integration.html"><code class="language-plaintext highlighter-rouge">composer.json</code></a> file specifies the module version and consists of three numbers in the following format:</p>
 
-<p><code class="highlighter-rouge">MAJOR.MINOR.PATCH</code></p>
+<p><code class="language-plaintext highlighter-rouge">MAJOR.MINOR.PATCH</code></p>
 
 <p>The format follows <a href="http://semver.org/">Semantic Versioning</a> rules:</p>
 
@@ -3050,16 +3051,16 @@ This version change does not reflect the nature of the changes in the code base.
 
 <p>For pre-release versions, the format is:</p>
 
-<p><code class="highlighter-rouge">MAJOR.MINOR.PATCH-&lt;alpha | beta | rc&gt;n</code></p>
+<p><code class="language-plaintext highlighter-rouge">MAJOR.MINOR.PATCH-&lt;alpha | beta | rc&gt;n</code></p>
 
 <table>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">alpha</code>, <code class="highlighter-rouge">beta</code> or <code class="highlighter-rouge">rc</code></td>
-      <td>Stability indicators, as described in the <a href="http://php.net/version_compare" target="_blank"><code class="highlighter-rouge">version_compare()</code></a> specification</td>
+      <td><code class="language-plaintext highlighter-rouge">alpha</code>, <code class="language-plaintext highlighter-rouge">beta</code> or <code class="language-plaintext highlighter-rouge">rc</code></td>
+      <td>Stability indicators, as described in the <a href="http://php.net/version_compare" target="_blank"><code class="language-plaintext highlighter-rouge">version_compare()</code></a> specification</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">n</code></td>
+      <td><code class="language-plaintext highlighter-rouge">n</code></td>
       <td>An increment number to distinguish releases of the non-stable versions</td>
     </tr>
   </tbody>
@@ -3070,24 +3071,24 @@ This version change does not reflect the nature of the changes in the code base.
 <ul>
   <li><a href="http://semver.org/" target="_blank">Semantic Versioning</a></li>
   <li><a href="https://getcomposer.org/doc/04-schema.md#version" target="_blank">Composer version specification</a></li>
-  <li><a href="http://php.net/version_compare" target="_blank">PHP <code class="highlighter-rouge">version_compare()</code> specification</a></li>
+  <li><a href="http://php.net/version_compare" target="_blank">PHP <code class="language-plaintext highlighter-rouge">version_compare()</code> specification</a></li>
 </ul>
 
 <h2 id="where-versioning-is-used">Where versioning is used</h2>
 
 <p>The software version can be found in the source code of any   <span term-uuid="3425e9ae-5edf-4fc6-b645-06023e9e5e5b" class="glossary-term" data-toggle="popover">Magento component</span>
- or bundle, inside the <code class="highlighter-rouge">composer.json</code> file.</p>
+ or bundle, inside the <code class="language-plaintext highlighter-rouge">composer.json</code> file.</p>
 
 <p>It can be declared as the version of the component:</p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"acme/foo"</span><span class="p">,</span><span class="w">
-</span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.2</span><span class="err">.</span><span class="mi">0</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"acme/foo"</span><span class="err">,</span><span class="w">
+</span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.2</span><span class="err">.</span><span class="mi">0</span></code></pre></figure>
 
 <p>Or it can be used to declare a dependency on a particular version of a component:</p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"acme/foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.2.*"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"acme/bar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.2.0"</span><span class="w">
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="nl">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"acme/foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.2.*"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"acme/bar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.2.0"</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 
 <h3 id="version-usage-example">Version usage example</h3>
@@ -3104,12 +3105,12 @@ This version change does not reflect the nature of the changes in the code base.
 
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myexamplestore/sample-site"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A sample site"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"myexamplestore/product-bundle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0.0-RC1"</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myexamplestore/sample-site"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A sample site"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"myexamplestore/product-bundle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0.0-RC1"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 
@@ -3121,13 +3122,13 @@ This version change does not reflect the nature of the changes in the code base.
 
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myexamplestore/sample-site"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A sample site"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"myexamplestore/product-bundle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0.0-RC1"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"myexamplestore/acme-extension"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~1.0"</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myexamplestore/sample-site"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A sample site"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"myexamplestore/product-bundle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0.0-RC1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"myexamplestore/acme-extension"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~1.0"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 
@@ -3139,13 +3140,13 @@ This version change does not reflect the nature of the changes in the code base.
 
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myexamplestore/sample-site"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A sample site"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"myexamplestore/product-bundle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0.0"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"myexamplestore/acme-extension"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~1.0"</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myexamplestore/sample-site"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A sample site"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"myexamplestore/product-bundle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"myexamplestore/acme-extension"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~1.0"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 
@@ -3160,13 +3161,13 @@ This version change does not reflect the nature of the changes in the code base.
 
    
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myexamplestore/sample-site"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A sample site"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"myexamplestore/product-bundle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.4.0-RC1"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"myexamplestore/acme-extension"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~1.0"</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myexamplestore/sample-site"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A sample site"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"myexamplestore/product-bundle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.4.0-RC1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"myexamplestore/acme-extension"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~1.0"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 
@@ -3178,13 +3179,13 @@ This version change does not reflect the nature of the changes in the code base.
 
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myexamplestore/sample-site"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A sample site"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"myexamplestore/product-bundle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.4.0-RC1"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"myexamplestore/acme-extension"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.0"</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myexamplestore/sample-site"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A sample site"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"myexamplestore/product-bundle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.4.0-RC1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"myexamplestore/acme-extension"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.0"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 

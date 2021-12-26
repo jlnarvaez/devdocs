@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Image Resize Issue with Magento version 2.1.6 | Magento 2 Developer Documentation (copy)</title>
+	<title>Image Resize Issue with Magento version 2.1.6 | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/release-notes/tech_bull_216-imageresize.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/release-notes/tech_bull_216-imageresize.html">Magento 2.0</a></li>
 		
@@ -2791,17 +2792,17 @@
     <p>all images on the product frontend appear reduced in size, including the base image</p>
   </li>
   <li>
-    <p>images do not have uniform sizes – some are greatly reduced, while others appear as expected. (This particular anomaly occurs after you’ve run the <code class="highlighter-rouge">bin/magento catalog:images:resize</code> command.)</p>
+    <p>images do not have uniform sizes – some are greatly reduced, while others appear as expected. (This particular anomaly occurs after you’ve run the <code class="language-plaintext highlighter-rouge">bin/magento catalog:images:resize</code> command.)</p>
   </li>
 </ul>
 
-<p>You cannot change the size of the base image within the gallery by editing <code class="highlighter-rouge">etc &gt; view.xml</code>. Instead, using this method increases image size as well as gallery size, which renders the image out of alignment.</p>
+<p>You cannot change the size of the base image within the gallery by editing <code class="language-plaintext highlighter-rouge">etc &gt; view.xml</code>. Instead, using this method increases image size as well as gallery size, which renders the image out of alignment.</p>
 
 <h3 id="background">Background</h3>
 
-<p>Magento 2.1.6 introduced a change in how the platform handles images associated with custom themes. The <code class="highlighter-rouge">frame</code> element adds white space around your image. In Magento 2.1.6, the default value of this optional setting is <strong>true</strong>.</p>
+<p>Magento 2.1.6 introduced a change in how the platform handles images associated with custom themes. The <code class="language-plaintext highlighter-rouge">frame</code> element adds white space around your image. In Magento 2.1.6, the default value of this optional setting is <strong>true</strong>.</p>
 
-<p>If your custom theme doesn’t include the <code class="highlighter-rouge">frame</code> element, or a value has not been assigned to it, then Magento will rely upon the <code class="highlighter-rouge">product_image_white_borders</code> option in the Catalog module for the value of the <code class="highlighter-rouge">frame</code> option. The <code class="highlighter-rouge">product_image_white_borders</code> setting typically has a value of <strong>1</strong>,  but is overridden to <strong>0</strong> in the default Luma and Blank themes.</p>
+<p>If your custom theme doesn’t include the <code class="language-plaintext highlighter-rouge">frame</code> element, or a value has not been assigned to it, then Magento will rely upon the <code class="language-plaintext highlighter-rouge">product_image_white_borders</code> option in the Catalog module for the value of the <code class="language-plaintext highlighter-rouge">frame</code> option. The <code class="language-plaintext highlighter-rouge">product_image_white_borders</code> setting typically has a value of <strong>1</strong>,  but is overridden to <strong>0</strong> in the default Luma and Blank themes.</p>
 
 <h3 id="action">Action</h3>
 
@@ -2809,17 +2810,17 @@
 
 <h4 id="magento-21x-ce">Magento 2.1.x CE</h4>
 
-<p>You can fix this issue with image resizing by downloading  and installing the <code class="highlighter-rouge">CE-MAGETWO-67805.patch</code> hot fix, and then immediately upgrading to Magento 2.1.7, as soon as it is available.</p>
+<p>You can fix this issue with image resizing by downloading  and installing the <code class="language-plaintext highlighter-rouge">CE-MAGETWO-67805.patch</code> hot fix, and then immediately upgrading to Magento 2.1.7, as soon as it is available.</p>
 
 <p>To download this patch,</p>
 
 <p>1) On <a href="https://magento.com/tech-resources/download" target="_blank">Magento Tech Resources</a>, choose <strong>Downloads &gt; Magento Community Edition Patches &gt; 2.x</strong>.</p>
 
-<p>2) Select the <code class="highlighter-rouge">CE-MAGETWO-67805.patch</code> hot fix.</p>
+<p>2) Select the <code class="language-plaintext highlighter-rouge">CE-MAGETWO-67805.patch</code> hot fix.</p>
 
 <h4 id="magento-21x-ee">Magento 2.1.x EE</h4>
 
-<p>You can fix this issue with image resizing by downloading and installing the <code class="highlighter-rouge">EE-MAGETWO-67805.patch</code> hot fix, and then immediately upgrading to Magento 2.1.7, as soon as it is available.</p>
+<p>You can fix this issue with image resizing by downloading and installing the <code class="language-plaintext highlighter-rouge">EE-MAGETWO-67805.patch</code> hot fix, and then immediately upgrading to Magento 2.1.7, as soon as it is available.</p>
 
 <p>To download this patch,</p>
 
@@ -2827,13 +2828,13 @@
 
 <p>2) After logging in, navigate to MAGETWO-67805 on the Support Patches page (<strong>Downloads &gt; Magento Enterprise Edition 2.X &gt; Magento Enterprise Edition 2.x Release &gt; Support Patches &gt; MAGETWO-67805</strong>).</p>
 
-<p>3) Select and install the <code class="highlighter-rouge">EE-MAGETWO-67805.patch</code> hot fix.</p>
+<p>3) Select and install the <code class="language-plaintext highlighter-rouge">EE-MAGETWO-67805.patch</code> hot fix.</p>
 
 <h4 id="magento-commerce-cloud">Magento Commerce (Cloud)</h4>
 
-<p>General Magento Commerce (Cloud) patches are provided for all Magento Commerce (Cloud) customers in a repository referenced in your <code class="highlighter-rouge">composer.json</code>. We apply patches automatically during the build phase when a patch is available. <code class="highlighter-rouge">magento-cloud-configuration 101.6.2</code> contains the hot fix for this image resize issue.</p>
+<p>General Magento Commerce (Cloud) patches are provided for all Magento Commerce (Cloud) customers in a repository referenced in your <code class="language-plaintext highlighter-rouge">composer.json</code>. We apply patches automatically during the build phase when a patch is available. <code class="language-plaintext highlighter-rouge">magento-cloud-configuration 101.6.2</code> contains the hot fix for this image resize issue.</p>
 
-<p>See <a href="/devdocs/guides/v2.1/cloud/howtos/update-components.html" target="_blank">Update extensions</a> for more information on running <code class="highlighter-rouge">composer update</code> to upgrade your Cloud extension.</p>
+<p>See <a href="/devdocs/guides/v2.1/cloud/howtos/update-components.html" target="_blank">Update extensions</a> for more information on running <code class="language-plaintext highlighter-rouge">composer update</code> to upgrade your Cloud extension.</p>
 
 <h3 id="more-information">More information</h3>
 

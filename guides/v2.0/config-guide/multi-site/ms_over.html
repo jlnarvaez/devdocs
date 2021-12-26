@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Multiple websites or stores | Magento 2 Developer Documentation (copy)</title>
+	<title>Multiple websites or stores | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/config-guide/multi-site/ms_over.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/config-guide/multi-site/ms_over.html">Magento 2.0</a></li>
 		
@@ -3306,13 +3307,13 @@
  to administer and display different stores.</p>
 
 <p>You configure the websites, stores, and store views in the Magento   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>
-. You use the <code class="highlighter-rouge">MAGE_RUN_TYPE</code> and <code class="highlighter-rouge">MAGE_RUN_CODE</code> variables in virtual hosts to start the Magento application using these websites or store views.</p>
+. You use the <code class="language-plaintext highlighter-rouge">MAGE_RUN_TYPE</code> and <code class="language-plaintext highlighter-rouge">MAGE_RUN_CODE</code> variables in virtual hosts to start the Magento application using these websites or store views.</p>
 
-<p>A typical use of <code class="highlighter-rouge">MAGE_RUN_TYPE</code> and <code class="highlighter-rouge">MAGE_RUN_CODE</code> is to set up stores with different options in different domains. For example, you could have one set of categories and products on one domain and another domain that has categories and products for a different language.</p>
+<p>A typical use of <code class="language-plaintext highlighter-rouge">MAGE_RUN_TYPE</code> and <code class="language-plaintext highlighter-rouge">MAGE_RUN_CODE</code> is to set up stores with different options in different domains. For example, you could have one set of categories and products on one domain and another domain that has categories and products for a different language.</p>
 
 <h2 id="magerun-conf">Configure Magento websites and stores</h2>
 
-<p>This section discusses the minimum tasks required to use the <code class="highlighter-rouge">MAGE_RUN_TYPE</code> and <code class="highlighter-rouge">MAGE_RUN_CODE</code> variables.</p>
+<p>This section discusses the minimum tasks required to use the <code class="language-plaintext highlighter-rouge">MAGE_RUN_TYPE</code> and <code class="language-plaintext highlighter-rouge">MAGE_RUN_CODE</code> variables.</p>
 
 <p>We use the following terms:</p>
 
@@ -3331,19 +3332,19 @@
 </ul>
 
 <p>Each website and each   <span term-uuid="ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f" class="glossary-term" data-toggle="popover">store view</span>
- must have a unique identifier. This identifier is required to use <code class="highlighter-rouge">MAGE_RUN_TYPE</code> and <code class="highlighter-rouge">MAGE_RUN_CODE</code> as follows:</p>
+ must have a unique identifier. This identifier is required to use <code class="language-plaintext highlighter-rouge">MAGE_RUN_TYPE</code> and <code class="language-plaintext highlighter-rouge">MAGE_RUN_CODE</code> as follows:</p>
 
 <ul>
   <li>
-    <p><code class="highlighter-rouge">MAGE_RUN_TYPE</code> can be either <code class="highlighter-rouge">store</code> or <code class="highlighter-rouge">website</code></p>
+    <p><code class="language-plaintext highlighter-rouge">MAGE_RUN_TYPE</code> can be either <code class="language-plaintext highlighter-rouge">store</code> or <code class="language-plaintext highlighter-rouge">website</code></p>
 
     <ul>
-      <li>Use <code class="highlighter-rouge">website</code> to load a website in your storefront.</li>
-      <li>Use <code class="highlighter-rouge">store</code> to load any store view in your storefront.</li>
+      <li>Use <code class="language-plaintext highlighter-rouge">website</code> to load a website in your storefront.</li>
+      <li>Use <code class="language-plaintext highlighter-rouge">store</code> to load any store view in your storefront.</li>
     </ul>
   </li>
   <li>
-    <p><code class="highlighter-rouge">MAGE_RUN_CODE</code> is the unique website or store view code that corresponds to <code class="highlighter-rouge">MAGE_RUN_TYPE</code></p>
+    <p><code class="language-plaintext highlighter-rouge">MAGE_RUN_CODE</code> is the unique website or store view code that corresponds to <code class="language-plaintext highlighter-rouge">MAGE_RUN_TYPE</code></p>
   </li>
 </ul>
 
@@ -3352,7 +3353,7 @@
 <ol>
   <li>Define websites, stores, and store views in the Magento Admin.</li>
   <li>Create one virtual host per Magento website or store view.</li>
-  <li>Pass the values of <code class="highlighter-rouge">MAGE_RUN_TYPE</code> and <code class="highlighter-rouge">MAGE_RUN_CODE</code> to the web server.</li>
+  <li>Pass the values of <code class="language-plaintext highlighter-rouge">MAGE_RUN_TYPE</code> and <code class="language-plaintext highlighter-rouge">MAGE_RUN_CODE</code> to the web server.</li>
 </ol>
 
 <h4 id="related-topics">Related topics</h4>

@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Search using REST endpoints | Magento 2 Developer Documentation (copy)</title>
+	<title>Search using REST endpoints | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/rest/performing-searches.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/rest/performing-searches.html">Magento 2.0</a></li>
 		
@@ -1950,19 +1951,19 @@
  require the service method parameters to be in the body of the request. For example, to create a Customer, you would specify a JSON array (or   <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span>
  structure) in the body of the message.</p>
 
-<p>For search APIs that invoke a <code class="highlighter-rouge">*Repository::getList(SearchCriteriaInterface *)</code> call, the searchCriteria must be specified in the   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>
+<p>For search APIs that invoke a <code class="language-plaintext highlighter-rouge">*Repository::getList(SearchCriteriaInterface *)</code> call, the searchCriteria must be specified in the   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>
  of the GET request. The basic pattern for specifying the criteria is</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html">searchCriteria[filter_groups][<span class="nt">&lt;index&gt;</span>][filters][<span class="nt">&lt;index&gt;</span>][field]=<span class="nt">&lt;field</span><span class="na">_name</span><span class="nt">&gt;</span>
-searchCriteria[filter_groups][<span class="nt">&lt;index&gt;</span>][filters][<span class="nt">&lt;index&gt;</span>][value]=<span class="nt">&lt;search</span><span class="na">_value</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">searchCriteria[filter_groups][<span class="nt">&lt;index&gt;</span>][filters][<span class="nt">&lt;index&gt;</span>][field]=<span class="nt">&lt;field_name&gt;</span>
+searchCriteria[filter_groups][<span class="nt">&lt;index&gt;</span>][filters][<span class="nt">&lt;index&gt;</span>][value]=<span class="nt">&lt;search_value&gt;</span>
 searchCriteria[filter_groups][<span class="nt">&lt;index&gt;</span>][filters][<span class="nt">&lt;index&gt;</span>][condition_type]=<span class="nt">&lt;operator&gt;</span></code></pre></figure>
 
 <p>where:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">field</code> is an attribute name.</li>
-  <li><code class="highlighter-rouge">value</code> specifies the value to search for.</li>
-  <li><code class="highlighter-rouge">condition_type</code> is one of the following values:</li>
+  <li><code class="language-plaintext highlighter-rouge">field</code> is an attribute name.</li>
+  <li><code class="language-plaintext highlighter-rouge">value</code> specifies the value to search for.</li>
+  <li><code class="language-plaintext highlighter-rouge">condition_type</code> is one of the following values:</li>
 </ul>
 
 <table style="table-layout:auto;">
@@ -1974,78 +1975,78 @@ searchCriteria[filter_groups][<span class="nt">&lt;index&gt;</span>][filters][<s
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">eq</code></td>
+      <td><code class="language-plaintext highlighter-rouge">eq</code></td>
       <td>Equals.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">finset</code></td>
+      <td><code class="language-plaintext highlighter-rouge">finset</code></td>
       <td>A value within a set of values</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">from</code></td>
-      <td>The beginning of a range. Must be used with <code class="highlighter-rouge">to</code></td>
+      <td><code class="language-plaintext highlighter-rouge">from</code></td>
+      <td>The beginning of a range. Must be used with <code class="language-plaintext highlighter-rouge">to</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">gt</code></td>
+      <td><code class="language-plaintext highlighter-rouge">gt</code></td>
       <td>Greater than</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">gteq</code></td>
+      <td><code class="language-plaintext highlighter-rouge">gteq</code></td>
       <td>Greater than or equal</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">in</code></td>
-      <td>In. The <code class="highlighter-rouge">value</code> can contain a comma-separated list of values.</td>
+      <td><code class="language-plaintext highlighter-rouge">in</code></td>
+      <td>In. The <code class="language-plaintext highlighter-rouge">value</code> can contain a comma-separated list of values.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">like</code></td>
-      <td>Like. The <code class="highlighter-rouge">value</code> can contain the SQL wildcard characters when <code class="highlighter-rouge">like</code> is specified.</td>
+      <td><code class="language-plaintext highlighter-rouge">like</code></td>
+      <td>Like. The <code class="language-plaintext highlighter-rouge">value</code> can contain the SQL wildcard characters when <code class="language-plaintext highlighter-rouge">like</code> is specified.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">lt</code></td>
+      <td><code class="language-plaintext highlighter-rouge">lt</code></td>
       <td>Less than</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">lteq</code></td>
+      <td><code class="language-plaintext highlighter-rouge">lteq</code></td>
       <td>Less than or equal</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">moreq</code></td>
+      <td><code class="language-plaintext highlighter-rouge">moreq</code></td>
       <td>More or equal</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">neq</code></td>
+      <td><code class="language-plaintext highlighter-rouge">neq</code></td>
       <td>Not equal</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">nin</code></td>
-      <td>Not in. The <code class="highlighter-rouge">value</code> can contain a comma-separated list of values.</td>
+      <td><code class="language-plaintext highlighter-rouge">nin</code></td>
+      <td>Not in. The <code class="language-plaintext highlighter-rouge">value</code> can contain a comma-separated list of values.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">notnull</code></td>
+      <td><code class="language-plaintext highlighter-rouge">notnull</code></td>
       <td>Not null</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">null</code></td>
+      <td><code class="language-plaintext highlighter-rouge">null</code></td>
       <td>Null</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">to</code></td>
-      <td>The end of a range. Must be used with <code class="highlighter-rouge">from</code></td>
+      <td><code class="language-plaintext highlighter-rouge">to</code></td>
+      <td>The end of a range. Must be used with <code class="language-plaintext highlighter-rouge">from</code></td>
     </tr>
   </tbody>
 </table>
 
-<p class="bs-callout bs-callout-info"><code class="highlighter-rouge">condition_type</code> is optional if the operator is <code class="highlighter-rouge">eq</code>.</p>
+<p class="bs-callout bs-callout-info"><code class="language-plaintext highlighter-rouge">condition_type</code> is optional if the operator is <code class="language-plaintext highlighter-rouge">eq</code>.</p>
 
-<p>The <code class="highlighter-rouge">filter_groups</code> array defines one or more <code class="highlighter-rouge">filters</code>. Each filter defines a search term, and the <code class="highlighter-rouge">field</code>, <code class="highlighter-rouge">value</code>, and <code class="highlighter-rouge">condition_type</code> of a search term must be assigned the same index number, starting with 0. Increment additional terms as needed.</p>
+<p>The <code class="language-plaintext highlighter-rouge">filter_groups</code> array defines one or more <code class="language-plaintext highlighter-rouge">filters</code>. Each filter defines a search term, and the <code class="language-plaintext highlighter-rouge">field</code>, <code class="language-plaintext highlighter-rouge">value</code>, and <code class="language-plaintext highlighter-rouge">condition_type</code> of a search term must be assigned the same index number, starting with 0. Increment additional terms as needed.</p>
 
 <p>When constructing a search, keep the following in mind:</p>
 
 <ul>
-  <li>To perform a logical OR, specify multiple <code class="highlighter-rouge">filters</code> within a <code class="highlighter-rouge">filter_groups</code>.</li>
-  <li>To perform a logical AND, specify multiple <code class="highlighter-rouge">filter_groups</code>.</li>
-  <li>You cannot perform a logical OR across different <code class="highlighter-rouge">filter_groups</code>, such as <code class="highlighter-rouge">(A AND B) OR (X AND Y)</code>. ORs can be performed only within the context of a single <code class="highlighter-rouge">filter_groups</code>.</li>
+  <li>To perform a logical OR, specify multiple <code class="language-plaintext highlighter-rouge">filters</code> within a <code class="language-plaintext highlighter-rouge">filter_groups</code>.</li>
+  <li>To perform a logical AND, specify multiple <code class="language-plaintext highlighter-rouge">filter_groups</code>.</li>
+  <li>You cannot perform a logical OR across different <code class="language-plaintext highlighter-rouge">filter_groups</code>, such as <code class="language-plaintext highlighter-rouge">(A AND B) OR (X AND Y)</code>. ORs can be performed only within the context of a single <code class="language-plaintext highlighter-rouge">filter_groups</code>.</li>
   <li>You can only search top-level attributes.</li>
 </ul>
 
@@ -2053,9 +2054,9 @@ searchCriteria[filter_groups][<span class="nt">&lt;index&gt;</span>][filters][<s
 
 <h2 id="simple-search">Simple search</h2>
 
-<p>The Magento Open Source sample data uses the <code class="highlighter-rouge">category_gear</code> field to describe the categories for each item listed under Gear on sample store. Each item can be assigned to multiple categories. Electronics are assigned the code 86. The following example returns all gear tagged as electronics.</p>
+<p>The Magento Open Source sample data uses the <code class="language-plaintext highlighter-rouge">category_gear</code> field to describe the categories for each item listed under Gear on sample store. Each item can be assigned to multiple categories. Electronics are assigned the code 86. The following example returns all gear tagged as electronics.</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>GET http://<span class="nt">&lt;magento</span><span class="na">_host</span><span class="nt">&gt;</span>/rest/V1/products/?
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>GET http://<span class="nt">&lt;magento_host&gt;</span>/rest/V1/products/?
 searchCriteria[filter_groups][0][filters][0][field]=category_gear<span class="err">&amp;</span>
 searchCriteria[filter_groups][0][filters][0][value]=86<span class="err">&amp;</span>
 searchCriteria[filter_groups][0][filters][0][condition_type]=finset
@@ -2063,7 +2064,7 @@ searchCriteria[filter_groups][0][filters][0][condition_type]=finset
 
 <p>The system creates an array, as shown in the following pseudo-code.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>searchCriteria =&gt; [
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>searchCriteria =&gt; [
   'filterGroups' =&gt; [
     0 =&gt; [
       'filters' =&gt; [
@@ -2083,7 +2084,7 @@ searchCriteria[filter_groups][0][filters][0][condition_type]=finset
 
 <p>The following search finds all invoices created after the specified time (midnight, July 1 2016). You can set up a similar search to run periodically to poll for changes.</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>GET http://<span class="nt">&lt;magento</span><span class="na">_host</span><span class="nt">&gt;</span>/rest/V1/invoices?
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>GET http://<span class="nt">&lt;magento_host&gt;</span>/rest/V1/invoices?
 searchCriteria[filter_groups][0][filters][0][field]=created_at<span class="err">&amp;</span>
 searchCriteria[filter_groups][0][filters][0][value]=2016-07-01 00:00:00<span class="err">&amp;</span>
 searchCriteria[filter_groups][0][filters][0][condition_type]=gt
@@ -2091,9 +2092,9 @@ searchCriteria[filter_groups][0][filters][0][condition_type]=gt
 
 <h3 id="logical-or-search">Logical OR search</h3>
 
-<p>The following example searches for all products whose names contain the string <code class="highlighter-rouge">Leggings</code> or <code class="highlighter-rouge">Parachute</code>. The instances of <code class="highlighter-rouge">%25</code> in the example are converted into the SQL wildcard character <code class="highlighter-rouge">%</code>.</p>
+<p>The following example searches for all products whose names contain the string <code class="language-plaintext highlighter-rouge">Leggings</code> or <code class="language-plaintext highlighter-rouge">Parachute</code>. The instances of <code class="language-plaintext highlighter-rouge">%25</code> in the example are converted into the SQL wildcard character <code class="language-plaintext highlighter-rouge">%</code>.</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>GET http://<span class="nt">&lt;magento</span><span class="na">_host</span><span class="nt">&gt;</span>/index.php/rest/V1/products?
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>GET http://<span class="nt">&lt;magento_host&gt;</span>/index.php/rest/V1/products?
 searchCriteria[filter_groups][0][filters][0][field]=name<span class="err">&amp;</span>
 searchCriteria[filter_groups][0][filters][0][value]=%25Leggings%25<span class="err">&amp;</span>
 searchCriteria[filter_groups][0][filters][0][condition_type]=like<span class="err">&amp;</span>
@@ -2104,7 +2105,7 @@ searchCriteria[filter_groups][0][filters][1][condition_type]=like
 
 <p>The system creates an array, as shown in the following pseudo-code.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>searchCriteria =&gt; [
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>searchCriteria =&gt; [
   'filterGroups' =&gt; [
     0 =&gt; [
       'filters' =&gt; [
@@ -2123,13 +2124,13 @@ searchCriteria[filter_groups][0][filters][1][condition_type]=like
   ]
 </code></pre></div></div>
 
-<p>The search returns 14 products that contain the string <code class="highlighter-rouge">Leggings</code> in the <code class="highlighter-rouge">name</code> field and 14 products that contain the string <code class="highlighter-rouge">Parachute</code>.</p>
+<p>The search returns 14 products that contain the string <code class="language-plaintext highlighter-rouge">Leggings</code> in the <code class="language-plaintext highlighter-rouge">name</code> field and 14 products that contain the string <code class="language-plaintext highlighter-rouge">Parachute</code>.</p>
 
 <h3 id="logical-and-search">Logical AND search</h3>
 
-<p>This sample searches for women’s shorts that are size 31 and costs less than $30. In the CE sample data, women’s shorts have a <code class="highlighter-rouge">sku</code> value that begins with <code class="highlighter-rouge">WSH</code>. The <code class="highlighter-rouge">sku</code> also contains the size and color, such as <code class="highlighter-rouge">WSH02-31-Yellow</code>.</p>
+<p>This sample searches for women’s shorts that are size 31 and costs less than $30. In the CE sample data, women’s shorts have a <code class="language-plaintext highlighter-rouge">sku</code> value that begins with <code class="language-plaintext highlighter-rouge">WSH</code>. The <code class="language-plaintext highlighter-rouge">sku</code> also contains the size and color, such as <code class="language-plaintext highlighter-rouge">WSH02-31-Yellow</code>.</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>GET http://<span class="nt">&lt;magento</span><span class="na">_host</span><span class="nt">&gt;</span>/rest/V1/products?
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>GET http://<span class="nt">&lt;magento_host&gt;</span>/rest/V1/products?
 searchCriteria[filter_groups][0][filters][0][field]=sku<span class="err">&amp;</span>
 searchCriteria[filter_groups][0][filters][0][value]=WSH%2531%25<span class="err">&amp;</span>
 searchCriteria[filter_groups][0][filters][0][condition_type]=like<span class="err">&amp;</span>
@@ -2140,7 +2141,7 @@ searchCriteria[filter_groups][1][filters][0][condition_type]=lt
 
 <p>The system creates an array, as shown in the following pseudo-code.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>searchCriteria =&gt; [
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>searchCriteria =&gt; [
   'filterGroups' =&gt; [
     0 =&gt; [
       'filters' =&gt; [
@@ -2165,9 +2166,9 @@ searchCriteria[filter_groups][1][filters][0][condition_type]=lt
 
 <h3 id="logical-and-and-or-search">Logical AND and OR search</h3>
 
-<p>This sample is similar the Logical AND sample. It searches the <code class="highlighter-rouge">sku</code>s for women’s shorts (WSH%) or pants (WP%)in size 29. The system performs two logical ANDs to restrict the results to those that cost from $40 to $49.99</p>
+<p>This sample is similar the Logical AND sample. It searches the <code class="language-plaintext highlighter-rouge">sku</code>s for women’s shorts (WSH%) or pants (WP%)in size 29. The system performs two logical ANDs to restrict the results to those that cost from $40 to $49.99</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>GET http://<span class="nt">&lt;magento</span><span class="na">_host</span><span class="nt">&gt;</span>/rest/V1/products?
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>GET http://<span class="nt">&lt;magento_host&gt;</span>/rest/V1/products?
 searchCriteria[filter_groups][0][filters][0][field]=sku<span class="err">&amp;</span>
 searchCriteria[filter_groups][0][filters][0][value]=WSH%2529%25<span class="err">&amp;</span>
 searchCriteria[filter_groups][0][filters][0][condition_type]=like<span class="err">&amp;</span>
@@ -2190,16 +2191,16 @@ searchCriteria[filter_groups][2][filters][0][condition_type]=to
 
 <ul>
   <li>
-    <p><code class="highlighter-rouge">searchCriteria[sortOrders][&lt;index&gt;][field]=&lt;field-name&gt;</code> - Specifies the field to sort on. By default, search results are returned in descending order. You can sort on multiple fields. For example, to sort on <code class="highlighter-rouge">price</code> first and then by <code class="highlighter-rouge">name</code>, call <code class="highlighter-rouge">searchCriteria[sortOrders][0][field]=price&amp;searchCriteria[sortOrders][1][field]=name</code>.</p>
+    <p><code class="language-plaintext highlighter-rouge">searchCriteria[sortOrders][&lt;index&gt;][field]=&lt;field-name&gt;</code> - Specifies the field to sort on. By default, search results are returned in descending order. You can sort on multiple fields. For example, to sort on <code class="language-plaintext highlighter-rouge">price</code> first and then by <code class="language-plaintext highlighter-rouge">name</code>, call <code class="language-plaintext highlighter-rouge">searchCriteria[sortOrders][0][field]=price&amp;searchCriteria[sortOrders][1][field]=name</code>.</p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">searchCriteria[sortOrders][&lt;index&gt;][direction]=ASC | DESC</code> - Specifies whether to return results in ascending (ASC) or descending (DESC) order. To expand the previous example and sort the <code class="highlighter-rouge">price</code> fields in descending order and the <code class="highlighter-rouge">name</code> fields in ascending order, call <code class="highlighter-rouge">searchCriteria[sortOrders][0][field]=price&amp;searchCriteria[sortOrders][1][field]=name&amp;searchCriteria[sortOrders][1][direction]=ASC</code>.</p>
+    <p><code class="language-plaintext highlighter-rouge">searchCriteria[sortOrders][&lt;index&gt;][direction]=ASC | DESC</code> - Specifies whether to return results in ascending (ASC) or descending (DESC) order. To expand the previous example and sort the <code class="language-plaintext highlighter-rouge">price</code> fields in descending order and the <code class="language-plaintext highlighter-rouge">name</code> fields in ascending order, call <code class="language-plaintext highlighter-rouge">searchCriteria[sortOrders][0][field]=price&amp;searchCriteria[sortOrders][1][field]=name&amp;searchCriteria[sortOrders][1][direction]=ASC</code>.</p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">searchCriteria[pageSize]</code> - Specifies the maximum number of items to return. The value must be an integer. If the <code class="highlighter-rouge">pageSize</code> is not specified, the system returns all matches.</p>
+    <p><code class="language-plaintext highlighter-rouge">searchCriteria[pageSize]</code> - Specifies the maximum number of items to return. The value must be an integer. If the <code class="language-plaintext highlighter-rouge">pageSize</code> is not specified, the system returns all matches.</p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">searchCriteria[currentPage]</code> - Returns the current page.</p>
+    <p><code class="language-plaintext highlighter-rouge">searchCriteria[currentPage]</code> - Returns the current page.</p>
   </li>
 </ul>
 

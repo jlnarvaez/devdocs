@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>About the uiCollection class | Magento 2 Developer Documentation (copy)</title>
+	<title>About the uiCollection class | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/ui_comp_guide/concepts/ui_comp_uicollection_concept.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/ui_comp_guide/concepts/ui_comp_uicollection_concept.html">Magento 2.0</a></li>
 		
@@ -3292,19 +3293,19 @@
 	<h1 class="page-heading">About the uiCollection class</h1>
 </section>
 
-			<h2 id="what-is-uicollection">What is <code class="highlighter-rouge">uiCollection</code></h2>
+			<h2 id="what-is-uicollection">What is <code class="language-plaintext highlighter-rouge">uiCollection</code></h2>
 
-<p>The <code class="highlighter-rouge">uiCollection</code> library class should be used as a base class by any components that contain a collection of child UI components.  <code class="highlighter-rouge">uiCollection</code> inherits from the <a href="/devdocs/guides/v2.3/ui_comp_guide/concepts/ui_comp_uielement_concept.html">uiElement class</a>.</p>
+<p>The <code class="language-plaintext highlighter-rouge">uiCollection</code> library class should be used as a base class by any components that contain a collection of child UI components.  <code class="language-plaintext highlighter-rouge">uiCollection</code> inherits from the <a href="/devdocs/guides/v2.3/ui_comp_guide/concepts/ui_comp_uielement_concept.html">uiElement class</a>.</p>
 
-<p><code class="highlighter-rouge">uiCollection</code> source code is <code class="highlighter-rouge">&lt;UI_Module_dir&gt;/view/base/web/js/lib/core/collection.js</code>, in the Magento Open Source GitHub repository: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/core/collection.js">app/code/Magento/Ui/view/base/web/js/lib/core/collection.js</a>.</p>
+<p><code class="language-plaintext highlighter-rouge">uiCollection</code> source code is <code class="language-plaintext highlighter-rouge">&lt;UI_Module_dir&gt;/view/base/web/js/lib/core/collection.js</code>, in the Magento Open Source GitHub repository: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/core/collection.js">app/code/Magento/Ui/view/base/web/js/lib/core/collection.js</a>.</p>
 
-<h2 id="commonly-used-uicollection-methods">Commonly used <code class="highlighter-rouge">uiCollection</code> methods</h2>
+<h2 id="commonly-used-uicollection-methods">Commonly used <code class="language-plaintext highlighter-rouge">uiCollection</code> methods</h2>
 
-<p>The <code class="highlighter-rouge">uiCollection</code> class implements the following methods:</p>
+<p>The <code class="language-plaintext highlighter-rouge">uiCollection</code> class implements the following methods:</p>
 
 <ul>
   <li>
-    <p>The <code class="highlighter-rouge">initElement()</code> method allows you to add custom functionality to a child UI component or to the current UI component at the moment when the child UI component initializes. The <code class="highlighter-rouge">initElement()</code> method gets the child   <span term-uuid="9bcc648c-bd08-4feb-906d-1e24c4f2f422" class="glossary-term" data-toggle="popover">UI component</span>
+    <p>The <code class="language-plaintext highlighter-rouge">initElement()</code> method allows you to add custom functionality to a child UI component or to the current UI component at the moment when the child UI component initializes. The <code class="language-plaintext highlighter-rouge">initElement()</code> method gets the child   <span term-uuid="9bcc648c-bd08-4feb-906d-1e24c4f2f422" class="glossary-term" data-toggle="popover">UI component</span>
  instance as a parameter.</p>
 
     <p>Example:</p>
@@ -3318,9 +3319,9 @@
   </code></pre></figure>
 
 <ul>
-  <li>The <code class="highlighter-rouge">destroy()</code> method removes the following for the child components and itself:
+  <li>The <code class="language-plaintext highlighter-rouge">destroy()</code> method removes the following for the child components and itself:
     <ul>
-      <li>link to the component in <code class="highlighter-rouge">uiRegistry</code></li>
+      <li>link to the component in <code class="language-plaintext highlighter-rouge">uiRegistry</code></li>
       <li>link to the component in the parent component</li>
       <li>event listeners</li>
     </ul>
@@ -3333,7 +3334,7 @@
 
 <ul>
   <li>
-    <p>The <code class="highlighter-rouge">getChild()</code> method returns an element from the collection of child UI components.</p>
+    <p>The <code class="language-plaintext highlighter-rouge">getChild()</code> method returns an element from the collection of child UI components.</p>
 
     <p>Example:</p>
   </li>
@@ -3341,13 +3342,13 @@
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js">    <span class="k">this</span><span class="p">.</span><span class="nx">getChild</span><span class="p">(</span><span class="nx">childIndex</span><span class="p">)</span></code></pre></figure>
 
-<p>where <code class="highlighter-rouge">childIndex</code> is the value of the child element’s <code class="highlighter-rouge">index</code> property.</p>
+<p>where <code class="language-plaintext highlighter-rouge">childIndex</code> is the value of the child element’s <code class="language-plaintext highlighter-rouge">index</code> property.</p>
 
-<h2 id="commonly-used-uicollection-properties">Commonly used <code class="highlighter-rouge">uiCollection</code> properties</h2>
+<h2 id="commonly-used-uicollection-properties">Commonly used <code class="language-plaintext highlighter-rouge">uiCollection</code> properties</h2>
 
 <ul>
   <li>
-    <p><code class="highlighter-rouge">elems</code> is the observable property that contains the collection of child UI components.</p>
+    <p><code class="language-plaintext highlighter-rouge">elems</code> is the observable property that contains the collection of child UI components.</p>
 
     <p>Example:</p>
   </li>
@@ -3363,12 +3364,12 @@
 <span class="c1">// ]</span></code></pre></figure>
 
 <ul>
-  <li><code class="highlighter-rouge">childDefaults</code> can be used to set the children defaults: properties from <code class="highlighter-rouge">childDefaults</code> are set into child elements’ <a href="/devdocs/guides/v2.3/ui_comp_guide/concepts/ui_comp_uiclass_concept.html#uiclass_properties"><code class="highlighter-rouge">defaults</code> property</a>.</li>
+  <li><code class="language-plaintext highlighter-rouge">childDefaults</code> can be used to set the children defaults: properties from <code class="language-plaintext highlighter-rouge">childDefaults</code> are set into child elements’ <a href="/devdocs/guides/v2.3/ui_comp_guide/concepts/ui_comp_uiclass_concept.html#uiclass_properties"><code class="language-plaintext highlighter-rouge">defaults</code> property</a>.</li>
 </ul>
 
 <h2 id="uicollection_template">uiCollection template</h2>
 
-<p>The <code class="highlighter-rouge">uiCollection</code> template is <code class="highlighter-rouge">&lt;UI_Module_dir&gt;/view/base/web/templates/collection.html</code>, in the Magento Open Source GitHub repository: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/templates/collection.html"><code class="highlighter-rouge">app/code/Magento/Ui/view/base/web/templates/collection.html</code></a>.</p>
+<p>The <code class="language-plaintext highlighter-rouge">uiCollection</code> template is <code class="language-plaintext highlighter-rouge">&lt;UI_Module_dir&gt;/view/base/web/templates/collection.html</code>, in the Magento Open Source GitHub repository: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/templates/collection.html"><code class="language-plaintext highlighter-rouge">app/code/Magento/Ui/view/base/web/templates/collection.html</code></a>.</p>
 
 <p>This template performs only one task: renders child templates if they exist.</p>
 
@@ -3378,7 +3379,7 @@
     <span class="nt">&lt;render</span> <span class="na">if=</span><span class="s">"hasTemplate()"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/each&gt;</span></code></pre></figure>
 
-<p>Here <code class="highlighter-rouge">elems</code> is the collection of the child elements of <code class="highlighter-rouge">uiCollection</code>. As far as <code class="highlighter-rouge">elems</code> is the observable property, the templates of the components added to <code class="highlighter-rouge">elems</code> in the runtime, are also rendered.</p>
+<p>Here <code class="language-plaintext highlighter-rouge">elems</code> is the collection of the child elements of <code class="language-plaintext highlighter-rouge">uiCollection</code>. As far as <code class="language-plaintext highlighter-rouge">elems</code> is the observable property, the templates of the components added to <code class="language-plaintext highlighter-rouge">elems</code> in the runtime, are also rendered.</p>
 
 			
 		</div>

@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento_SampleData module | Magento 2 Developer Documentation (copy)</title>
+	<title>Magento_SampleData module | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/mrg/ce/SampleData.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/mrg/ce/SampleData.html">Magento 2.0</a></li>
 		
@@ -6814,22 +6815,22 @@ If you want to contribute, refer to <a href="/devdocs/guides/v2.3/contributor-gu
   <li>From the Magento GitHub repository</li>
 </ul>
 
-<p>If your Magento code base was cloned from the <code class="highlighter-rouge">master</code> branch, you can use either source of the sample data. If it was cloned from the <code class="highlighter-rouge">develop</code> branch, use the GitHub repository and choose to get sample data modules from the <code class="highlighter-rouge">develop</code> branch.</p>
+<p>If your Magento code base was cloned from the <code class="language-plaintext highlighter-rouge">master</code> branch, you can use either source of the sample data. If it was cloned from the <code class="language-plaintext highlighter-rouge">develop</code> branch, use the GitHub repository and choose to get sample data modules from the <code class="language-plaintext highlighter-rouge">develop</code> branch.</p>
 
 <h3 id="deploy-sample-data-from-composer-repository">Deploy Sample Data from Composer Repository</h3>
 
 <p>To deploy sample data from the Magento composer repository using Magento CLI:</p>
 
 <ol>
-  <li>If your Magento instance is already installed, skip this step. Otherwise, in the Magento root directory, run: <code class="highlighter-rouge"># composer install</code>.</li>
-  <li>In the Magento root directory, run: <code class="highlighter-rouge"># bin/magento sampledata:deploy</code>. This command collects the dependencies from the <code class="highlighter-rouge">suggest</code> sections of the <code class="highlighter-rouge">composer.json</code> files of modules, which suggest to install sample data (like <code class="highlighter-rouge">Magento_Catalog</code>, <code class="highlighter-rouge">Magento_Sales</code>, and so on).</li>
+  <li>If your Magento instance is already installed, skip this step. Otherwise, in the Magento root directory, run: <code class="language-plaintext highlighter-rouge"># composer install</code>.</li>
+  <li>In the Magento root directory, run: <code class="language-plaintext highlighter-rouge"># bin/magento sampledata:deploy</code>. This command collects the dependencies from the <code class="language-plaintext highlighter-rouge">suggest</code> sections of the <code class="language-plaintext highlighter-rouge">composer.json</code> files of modules, which suggest to install sample data (like <code class="language-plaintext highlighter-rouge">Magento_Catalog</code>, <code class="language-plaintext highlighter-rouge">Magento_Sales</code>, and so on).</li>
 </ol>
 
 <p>To deploy sample data from the Magento composer repository without Magento CLI:</p>
 
 <ol>
-  <li>Specify sample data packages in the <code class="highlighter-rouge">require</code> section of the root <code class="highlighter-rouge">composer.json</code> file, for example:
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>{
+  <li>Specify sample data packages in the <code class="language-plaintext highlighter-rouge">require</code> section of the root <code class="language-plaintext highlighter-rouge">composer.json</code> file, for example:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>{
  "require": {
      ...
      "magento/module-catalog-sample-data": "{version}",
@@ -6843,12 +6844,12 @@ If you want to contribute, refer to <a href="/devdocs/guides/v2.3/contributor-gu
   </li>
 </ol>
 
-<p>Where <code class="highlighter-rouge">&lt;version&gt;</code> is the version of the packages; it should correspond to the version of the Magento instance.</p>
+<p>Where <code class="language-plaintext highlighter-rouge">&lt;version&gt;</code> is the version of the packages; it should correspond to the version of the Magento instance.</p>
 
 <p>Each package corresponds to a sample data module. The complete list of available modules can be viewed in the [sample data GitHub repository] (https://github.com/magento/magento2-sample-data/tree/develop/app/code/Magento)</p>
 
 <ol>
-  <li>To update the dependencies, in the Magento root directory, run: <code class="highlighter-rouge"># composer update</code></li>
+  <li>To update the dependencies, in the Magento root directory, run: <code class="language-plaintext highlighter-rouge"># composer update</code></li>
 </ol>
 
 <h3 id="deploy-sample-data-from-github-repository">Deploy Sample Data from GitHub Repository</h3>
@@ -6856,8 +6857,8 @@ If you want to contribute, refer to <a href="/devdocs/guides/v2.3/contributor-gu
 <p>To deploy sample data from the GitHub repository:</p>
 
 <ol>
-  <li>Clone sample data from <code class="highlighter-rouge">https://github.com/magento/magento2-sample-data</code>. If your Magento instance was cloned from the <code class="highlighter-rouge">master</code> branch, choose the <code class="highlighter-rouge">master</code> branch when cloning sample data; choose the <code class="highlighter-rouge">develop</code> branch if Magento was cloned from <code class="highlighter-rouge">develop</code>.</li>
-  <li>Link the sample data and your Magento instance by running: <code class="highlighter-rouge"># php -f &lt;sample-data_clone_dir&gt;/dev/tools/build-sample-data.php -- --ce-source="&lt;path_to_your_magento_instance&gt;"</code></li>
+  <li>Clone sample data from <code class="language-plaintext highlighter-rouge">https://github.com/magento/magento2-sample-data</code>. If your Magento instance was cloned from the <code class="language-plaintext highlighter-rouge">master</code> branch, choose the <code class="language-plaintext highlighter-rouge">master</code> branch when cloning sample data; choose the <code class="language-plaintext highlighter-rouge">develop</code> branch if Magento was cloned from <code class="language-plaintext highlighter-rouge">develop</code>.</li>
+  <li>Link the sample data and your Magento instance by running: <code class="language-plaintext highlighter-rouge"># php -f &lt;sample-data_clone_dir&gt;/dev/tools/build-sample-data.php -- --ce-source="&lt;path_to_your_magento_instance&gt;"</code></li>
 </ol>
 
 <h2 id="install-sample-data">Install Sample Data</h2>
@@ -6867,9 +6868,9 @@ If you want to contribute, refer to <a href="/devdocs/guides/v2.3/contributor-gu
 <p>To remove the sample data modules from the code base, run one of the following commands from the Magento root directory:</p>
 
 <ul>
-  <li>If sample data was deployed from the composer repository, run: <code class="highlighter-rouge"># bin/magento sampledata:remove</code></li>
+  <li>If sample data was deployed from the composer repository, run: <code class="language-plaintext highlighter-rouge"># bin/magento sampledata:remove</code></li>
   <li>If sample data was deployed from the GitHub repository and linked to your Magento instance, run:
-<code class="highlighter-rouge"># php -f &lt;sample-data_clone_dir&gt;/dev/tools/build-sample-data.php – --command=unlink --ce-source="&lt;path_to_your_magento_instance&gt;"</code></li>
+<code class="language-plaintext highlighter-rouge"># php -f &lt;sample-data_clone_dir&gt;/dev/tools/build-sample-data.php – --command=unlink --ce-source="&lt;path_to_your_magento_instance&gt;"</code></li>
 </ul>
 
 <p>To delete all the products and other entities provided by the sample data modules, delete the database and reinstall Magento with a clean database.</p>
@@ -6878,7 +6879,7 @@ If you want to contribute, refer to <a href="/devdocs/guides/v2.3/contributor-gu
 <p>If you have deleted certain entities provided by sample data and want to restore them, take the following steps:</p>
 
 <ol>
-  <li>From the Magento root directory, run the following command: <code class="highlighter-rouge"># bin/magento sampledata:reset</code></li>
+  <li>From the Magento root directory, run the following command: <code class="language-plaintext highlighter-rouge"># bin/magento sampledata:reset</code></li>
   <li>Upgrade Magento as usual.</li>
 </ol>
 

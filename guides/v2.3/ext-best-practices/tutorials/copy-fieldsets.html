@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Copying fieldsets | Magento 2 Developer Documentation (copy)</title>
+	<title>Copying fieldsets | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/ext-best-practices/tutorials/copy-fieldsets.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/ext-best-practices/tutorials/copy-fieldsets.html">Magento 2.0</a></li>
 		
@@ -1988,7 +1989,7 @@
 
 <h2 id="step-1">Step 1: Define your attributes</h2>
 
-<p>The following code defines a simple <a href="/devdocs/guides/v2.3/extension-dev-guide/attributes.html">extension attribute</a> named <code class="highlighter-rouge">demo</code> for the Cart and Order objects.</p>
+<p>The following code defines a simple <a href="/devdocs/guides/v2.3/extension-dev-guide/attributes.html">extension attribute</a> named <code class="language-plaintext highlighter-rouge">demo</code> for the Cart and Order objects.</p>
 
 <p><strong>extension_attributes.xml</strong></p>
 
@@ -2003,7 +2004,7 @@
 
 <h2 id="step-2">Step 2: Configure the fieldset</h2>
 
-<p>The following code adds the <code class="highlighter-rouge">demo</code> field to the <code class="highlighter-rouge">sales_convert_quote</code> fieldset with the <code class="highlighter-rouge">to_order</code> aspect.
+<p>The following code adds the <code class="language-plaintext highlighter-rouge">demo</code> field to the <code class="language-plaintext highlighter-rouge">sales_convert_quote</code> fieldset with the <code class="language-plaintext highlighter-rouge">to_order</code> aspect.
 The code snippet in the next step uses the name of the fieldset and aspect to specify which fields to copy.</p>
 
 <p><strong>fieldset.xml</strong></p>
@@ -2020,46 +2021,46 @@ The code snippet in the next step uses the name of the fieldset and aspect to sp
 
 <h2 id="step-3">Step 3: Copy the fieldset</h2>
 
-<p>The following code snippets highlight the code pieces needed to copy a fieldset using the <code class="highlighter-rouge">\Magento\Framework\DataObject\Copy</code> class.</p>
+<p>The following code snippets highlight the code pieces needed to copy a fieldset using the <code class="language-plaintext highlighter-rouge">\Magento\Framework\DataObject\Copy</code> class.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">...</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="mf">...</span>
 
-<span class="sd">/**
+<span class="cd">/**
  * @var \Magento\Framework\DataObject\Copy
  */</span>
 <span class="k">protected</span> <span class="nv">$objectCopyService</span><span class="p">;</span>
 
-<span class="o">...</span>
+<span class="mf">...</span>
 
-<span class="sd">/**
+<span class="cd">/**
  * @param \Magento\Framework\DataObject\Copy $objectCopyService
   ...
  */</span>
-<span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
-  <span class="nx">\Magento\Framework\DataObject\Copy</span> <span class="nv">$objectCopyService</span><span class="p">,</span>
-  <span class="o">...</span>
+<span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span>
+  <span class="err">\</span><span class="nc">Magento\Framework\DataObject\Copy</span> <span class="nv">$objectCopyService</span><span class="p">,</span>
+  <span class="mf">...</span>
 <span class="p">)</span> <span class="p">{</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">objectCopyService</span> <span class="o">=</span> <span class="nv">$objectCopyService</span><span class="p">;</span>
-    <span class="o">...</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">objectCopyService</span> <span class="o">=</span> <span class="nv">$objectCopyService</span><span class="p">;</span>
+    <span class="mf">...</span>
   <span class="p">}</span>
 
-<span class="o">...</span>
+<span class="mf">...</span>
 
-<span class="sd">/**
+<span class="cd">/**
  * @param $quote \Magento\Quote\Api\Data\CartInterface
  * @param $order \Magento\Sales\Api\Data\Order
  */</span>
-<span class="k">private</span> <span class="k">function</span> <span class="nf">copyQuoteToOrder</span><span class="p">(</span><span class="nv">$quote</span><span class="p">,</span> <span class="nv">$order</span><span class="p">)</span>
+<span class="k">private</span> <span class="k">function</span> <span class="n">copyQuoteToOrder</span><span class="p">(</span><span class="nv">$quote</span><span class="p">,</span> <span class="nv">$order</span><span class="p">)</span>
 <span class="p">{</span>
-  <span class="o">...</span>
-  <span class="nv">$copy</span><span class="o">-&gt;</span><span class="na">copyFieldsetToTarget</span><span class="p">(</span><span class="s1">'sales_convert_quote'</span><span class="p">,</span> <span class="s1">'to_order'</span><span class="p">,</span> <span class="nv">$quote</span><span class="p">,</span> <span class="nv">$order</span><span class="p">);</span>
-  <span class="o">...</span>
+  <span class="mf">...</span>
+  <span class="nv">$copy</span><span class="o">-&gt;</span><span class="nf">copyFieldsetToTarget</span><span class="p">(</span><span class="s1">'sales_convert_quote'</span><span class="p">,</span> <span class="s1">'to_order'</span><span class="p">,</span> <span class="nv">$quote</span><span class="p">,</span> <span class="nv">$order</span><span class="p">);</span>
+  <span class="mf">...</span>
 <span class="p">}</span>
 
-<span class="o">...</span></code></pre></figure>
+<span class="mf">...</span></code></pre></figure>
 
-<p>In the code, an instance of the <code class="highlighter-rouge">Copy</code> class is obtained from the constructor using <a href="/devdocs/guides/v2.3/extension-dev-guide/depend-inj.html">dependency injection</a>.
-The <code class="highlighter-rouge">copyFieldsetToTarget</code> function call with the <code class="highlighter-rouge">$quote</code> and <code class="highlighter-rouge">$order</code> parameters copies the fieldset for the two objects..</p>
+<p>In the code, an instance of the <code class="language-plaintext highlighter-rouge">Copy</code> class is obtained from the constructor using <a href="/devdocs/guides/v2.3/extension-dev-guide/depend-inj.html">dependency injection</a>.
+The <code class="language-plaintext highlighter-rouge">copyFieldsetToTarget</code> function call with the <code class="language-plaintext highlighter-rouge">$quote</code> and <code class="language-plaintext highlighter-rouge">$order</code> parameters copies the fieldset for the two objects..</p>
 
 
 			

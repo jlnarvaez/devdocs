@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Advanced setup | Magento 2 Developer Documentation (copy)</title>
+	<title>Advanced setup | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/performance-best-practices/advanced-setup.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/performance-best-practices/advanced-setup.html">Magento 2.0</a></li>
 		
@@ -1779,7 +1780,7 @@
 
 <p>When dealing with large amounts of data, re-indexing can become a concern. The Magento team selected the most loaded indexes and enabled batch indexing, which  allows you to set a portion of data to be processed on each iteration. This way, the user can tune batch sizes based on the type and size of data in the database.</p>
 
-<p>To manage this setting, edit the <code class="highlighter-rouge">batchRowsCount</code> parameter in the <code class="highlighter-rouge">di.xml</code> file of the corresponding module. The following indexes support this feature:</p>
+<p>To manage this setting, edit the <code class="language-plaintext highlighter-rouge">batchRowsCount</code> parameter in the <code class="language-plaintext highlighter-rouge">di.xml</code> file of the corresponding module. The following indexes support this feature:</p>
 
 <ul>
   <li>Category Product Index (Catalog Module)</li>
@@ -1790,7 +1791,7 @@
 
 <p>You can tune indexer performance by adjusting the index batching size variables. This controls how many entities are processed at a time by the indexer. In some situations, we have seen significant decreases in indexing time.</p>
 
-<p>For example, if you are running a profile similar to B2B Medium, you can override the configuration value <code class="highlighter-rouge">batchRowsCount</code> in <code class="highlighter-rouge">app/code/Magento/catalog/etc/di.xml</code> and override the default value of <code class="highlighter-rouge">5000</code> to <code class="highlighter-rouge">1000</code>. This reduces the full indexing time from 4 hours down to 2 hours with a default MySQL configuration.</p>
+<p>For example, if you are running a profile similar to B2B Medium, you can override the configuration value <code class="language-plaintext highlighter-rouge">batchRowsCount</code> in <code class="language-plaintext highlighter-rouge">app/code/Magento/catalog/etc/di.xml</code> and override the default value of <code class="language-plaintext highlighter-rouge">5000</code> to <code class="language-plaintext highlighter-rouge">1000</code>. This reduces the full indexing time from 4 hours down to 2 hours with a default MySQL configuration.</p>
 
 <p class="bs-callout bs-callout-info">We have not enabled batching for the catalog rules indexer. Merchants with a large number of catalog rules need to adjust their MySQL configuration to optimize indexing time. In this case, editing your MySQL configuration file and allocating more memory to the TMP_TABLE_SIZE and MAX_HEAP_TABLE_SIZE configuration values (the default is 16M for both) will improve performance for this indexer, but will result in MySQL consuming more RAM.</p>
 
@@ -1820,9 +1821,9 @@
 
 <p>To configure additional databases, you must create an empty database and run one of the following commands:</p>
 
-<p><code class="highlighter-rouge">bin/magento setup:db-schema:split-quote</code> (for Checkout Master DB)</p>
+<p><code class="language-plaintext highlighter-rouge">bin/magento setup:db-schema:split-quote</code> (for Checkout Master DB)</p>
 
-<p><code class="highlighter-rouge">bin/magento setup:db-schema:split-sales</code> (for OMS Master DB)</p>
+<p><code class="language-plaintext highlighter-rouge">bin/magento setup:db-schema:split-sales</code> (for OMS Master DB)</p>
 
 <p>These commands migrate specific domain tables from the main database to a domain database. They also change the Magento configuration to allow corresponding connectivity and constraints processing.</p>
 

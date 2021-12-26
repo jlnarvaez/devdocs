@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento Cloud CLI reference | Magento 2 Developer Documentation (copy)</title>
+	<title>Magento Cloud CLI reference | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/reference/cli-ref-topic.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/reference/cli-ref-topic.html">Magento 2.0</a></li>
 		
@@ -4356,7 +4357,7 @@
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud list
 </code></pre></div></div>
 
-<p>Magento designed these commands to manage Cloud Integration environments. It is a best practice to run the Magento Cloud CLI from a project directory, because you can omit the <code class="highlighter-rouge">-p &lt;project ID&gt;</code> parameter.</p>
+<p>Magento designed these commands to manage Cloud Integration environments. It is a best practice to run the Magento Cloud CLI from a project directory, because you can omit the <code class="language-plaintext highlighter-rouge">-p &lt;project ID&gt;</code> parameter.</p>
 
 <h4 id="to-log-in-to-a-project">To log in to a project:</h4>
 
@@ -4368,18 +4369,18 @@
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud project:get &lt;PROJECT_ID&gt; &lt;DIRECTORY&gt; <span class="nt">-e</span> &lt;ENVIRONMENT_ID&gt;
 </code></pre></div></div>
 
-<p>If you want to clone the <code class="highlighter-rouge">master</code> environment, omit the <code class="highlighter-rouge">-e &lt;ENVIRONMENT_ID&gt;</code> parameter.</p>
+<p>If you want to clone the <code class="language-plaintext highlighter-rouge">master</code> environment, omit the <code class="language-plaintext highlighter-rouge">-e &lt;ENVIRONMENT_ID&gt;</code> parameter.</p>
 
 <h4 id="to-list-the-environments-in-the-current-project">To list the environments in the current project:</h4>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:list
 </code></pre></div></div>
 
-<p>The <code class="highlighter-rouge">magento-cloud environment:list</code> command displays environment hierarchies, whereas <code class="highlighter-rouge">git branch</code> does not. If you have any nested environments, use the <code class="highlighter-rouge">magento-cloud environment:list</code> command.</p>
+<p>The <code class="language-plaintext highlighter-rouge">magento-cloud environment:list</code> command displays environment hierarchies, whereas <code class="language-plaintext highlighter-rouge">git branch</code> does not. If you have any nested environments, use the <code class="language-plaintext highlighter-rouge">magento-cloud environment:list</code> command.</p>
 
 <h2 id="git-commands">Git commands</h2>
 
-<p>You may notice that some of these commands are similar to Git commands. The <code class="highlighter-rouge">magento-cloud</code> Git commands directly connect to the Magento Git-based Cloud project with additional features. For example, when you push a Git branch, it is not activated until you access GitHub. The Magento CLI command includes activation.</p>
+<p>You may notice that some of these commands are similar to Git commands. The <code class="language-plaintext highlighter-rouge">magento-cloud</code> Git commands directly connect to the Magento Git-based Cloud project with additional features. For example, when you push a Git branch, it is not activated until you access GitHub. The Magento CLI command includes activation.</p>
 
 <h4 id="to-push-an-empty-commit-and-force-a-redeployment">To push an empty commit and force a redeployment:</h4>
 
@@ -4397,7 +4398,7 @@
 
 <p>The environment <em>name</em> is different from the environment <em>ID</em> only if you use spaces or capital letters in the environment name. An environment ID consists of all lowercase letters, numbers, and allowed symbols. Capital letters in an environment name are converted to lowercase in the ID; spaces in an environment name are converted to dashes.</p>
 
-<p>An environment name <em>cannot</em> include characters reserved for your Linux shell or for regular expressions. Forbidden characters include curly braces (<code class="highlighter-rouge">{ }</code>), parentheses, asterisk (<code class="highlighter-rouge">*</code>), angle brackets (<code class="highlighter-rouge">&lt; &gt;</code>), ampersand (<code class="highlighter-rouge">&amp;</code>), percent (<code class="highlighter-rouge">%</code>), and other characters.</p>
+<p>An environment name <em>cannot</em> include characters reserved for your Linux shell or for regular expressions. Forbidden characters include curly braces (<code class="language-plaintext highlighter-rouge">{ }</code>), parentheses, asterisk (<code class="language-plaintext highlighter-rouge">*</code>), angle brackets (<code class="language-plaintext highlighter-rouge">&lt; &gt;</code>), ampersand (<code class="language-plaintext highlighter-rouge">&amp;</code>), percent (<code class="language-plaintext highlighter-rouge">%</code>), and other characters.</p>
 
 <h4 id="to-check-out-an-existing-environment">To check out an existing environment:</h4>
 
@@ -4445,35 +4446,35 @@ Are you sure you want to redeploy the environment &lt;environment_name&gt;? <spa
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">clear-cache</code></td>
+      <td><code class="language-plaintext highlighter-rouge">clear-cache</code></td>
       <td>Clear the cache for the CLI.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">clean</code></td>
-      <td>Remove old project builds. When using <code class="highlighter-rouge">local:build</code> in a separate location from your code, use <em>clean</em> to clear those builds. By default, your latest five builds are not deleted.</td>
+      <td><code class="language-plaintext highlighter-rouge">clean</code></td>
+      <td>Remove old project builds. When using <code class="language-plaintext highlighter-rouge">local:build</code> in a separate location from your code, use <em>clean</em> to clear those builds. By default, your latest five builds are not deleted.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">docs</code></td>
+      <td><code class="language-plaintext highlighter-rouge">docs</code></td>
       <td>Provides a link for documentation.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">help</code></td>
+      <td><code class="language-plaintext highlighter-rouge">help</code></td>
       <td>Display help information for the command.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">list</code></td>
+      <td><code class="language-plaintext highlighter-rouge">list</code></td>
       <td>List all available commands in the Magento Cloud CLI.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">multi</code></td>
-      <td>Executes a command on multiple projects. Use the <code class="highlighter-rouge">-p</code> option to provide a list of project IDs.</td>
+      <td><code class="language-plaintext highlighter-rouge">multi</code></td>
+      <td>Executes a command on multiple projects. Use the <code class="language-plaintext highlighter-rouge">-p</code> option to provide a list of project IDs.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">redeploy</code></td>
+      <td><code class="language-plaintext highlighter-rouge">redeploy</code></td>
       <td>Redeploys the application.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">web</code></td>
+      <td><code class="language-plaintext highlighter-rouge">web</code></td>
       <td>Opens a web UI based on the parameters you enter.</td>
     </tr>
   </tbody>
@@ -4521,7 +4522,7 @@ Help:
 
 <h2 id="update-magento-cloud-cli">Update Magento Cloud CLI</h2>
 
-<p>The Magento Cloud CLI checks for available updates upon login, but you can also check for updates using the <code class="highlighter-rouge">self:update</code> command. If there is an update available, follow the instructions and enter <code class="highlighter-rouge">Y</code> for <em>yes</em> to update the CLI.</p>
+<p>The Magento Cloud CLI checks for available updates upon login, but you can also check for updates using the <code class="language-plaintext highlighter-rouge">self:update</code> command. If there is an update available, follow the instructions and enter <code class="language-plaintext highlighter-rouge">Y</code> for <em>yes</em> to update the CLI.</p>
 
 <p>If your Magento Cloud CLI is up to date, you see the following response:</p>
 

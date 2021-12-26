@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Step 5. Reassign products to custom sources | Magento 2 Developer Documentation (copy)</title>
+	<title>Step 5. Reassign products to custom sources | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/rest/tutorials/inventory/reassign-products-to-another-source.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/rest/tutorials/inventory/reassign-products-to-another-source.html">Magento 2.0</a></li>
 		
@@ -1664,38 +1665,38 @@
 
 <h2 id="unassign-products-from-the-default-source">Unassign products from the default source</h2>
 
-<p>Use the <code class="highlighter-rouge">POST V1/inventory/source-items-delete</code> endpoint to unassign one or more products from the specified source. The <code class="highlighter-rouge">sku</code> and <code class="highlighter-rouge">source_code</code> attributes are required for each product.</p>
+<p>Use the <code class="language-plaintext highlighter-rouge">POST V1/inventory/source-items-delete</code> endpoint to unassign one or more products from the specified source. The <code class="language-plaintext highlighter-rouge">sku</code> and <code class="language-plaintext highlighter-rouge">source_code</code> attributes are required for each product.</p>
 
 <p class="bs-callout bs-callout-warning">When you unassign a source from a product, all source data including inventory amounts is removed from that product. This can affect salable quantities and reservations for unprocessed orders. After checkout and before shipment, all product quantities in the order have associated reservations. If you unassign a source, you can cause issues with reservations and processing orders. In a production environment, Magento strongly recommends completing all orders and shipments for those products prior to removing the source.</p>
 
 <p><strong>Endpoint</strong></p>
 
-<p><code class="highlighter-rouge">POST http://&lt;host&gt;/rest/all/V1/inventory/source-items-delete</code></p>
+<p><code class="language-plaintext highlighter-rouge">POST http://&lt;host&gt;/rest/all/V1/inventory/source-items-delete</code></p>
 
 <p><strong>Scope</strong></p>
 
-<p><code class="highlighter-rouge">all</code> store views</p>
+<p><code class="language-plaintext highlighter-rouge">all</code> store views</p>
 
 <p><strong>Headers</strong></p>
 
-<p><code class="highlighter-rouge">Content-Type</code>: <code class="highlighter-rouge">application/json</code></p>
+<p><code class="language-plaintext highlighter-rouge">Content-Type</code>: <code class="language-plaintext highlighter-rouge">application/json</code></p>
 
-<p><code class="highlighter-rouge">Authorization</code>: <code class="highlighter-rouge">Bearer &lt;admin_token&gt;</code></p>
+<p><code class="language-plaintext highlighter-rouge">Authorization</code>: <code class="language-plaintext highlighter-rouge">Bearer &lt;admin_token&gt;</code></p>
 
 <p><strong>Payload</strong></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-	</span><span class="s2">"sourceItems"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-		</span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB01"</span><span class="p">,</span><span class="w">
-		</span><span class="s2">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default"</span><span class="w">
+	</span><span class="nl">"sourceItems"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+		</span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB01"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default"</span><span class="w">
 	</span><span class="p">},</span><span class="w">
 	</span><span class="p">{</span><span class="w">
-		</span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB03"</span><span class="p">,</span><span class="w">
-		</span><span class="s2">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default"</span><span class="w">
+		</span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB03"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default"</span><span class="w">
 	</span><span class="p">},</span><span class="w">
 	</span><span class="p">{</span><span class="w">
-		</span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240-LV06"</span><span class="p">,</span><span class="w">
-		</span><span class="s2">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default"</span><span class="w">
+		</span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240-LV06"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default"</span><span class="w">
 	</span><span class="p">}]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
@@ -1704,93 +1705,93 @@
 
 <p>Magento returns an empty array.</p>
 
-<p><code class="highlighter-rouge">[]</code></p>
+<p><code class="language-plaintext highlighter-rouge">[]</code></p>
 
 <h2 id="assign-products-to-custom-sources">Assign products to custom sources</h2>
 
-<p>Now we can assign each product to one or more sources. The <code class="highlighter-rouge">POST V1/inventory/source-items</code> endpoint allows you to specify the quantity of each product that is available at each source.</p>
+<p>Now we can assign each product to one or more sources. The <code class="language-plaintext highlighter-rouge">POST V1/inventory/source-items</code> endpoint allows you to specify the quantity of each product that is available at each source.</p>
 
 <p><strong>Endpoint</strong></p>
 
-<p><code class="highlighter-rouge">POST http://&lt;host&gt;/rest/all/V1/inventory/source-items</code></p>
+<p><code class="language-plaintext highlighter-rouge">POST http://&lt;host&gt;/rest/all/V1/inventory/source-items</code></p>
 
 <p><strong>Scope</strong></p>
 
-<p><code class="highlighter-rouge">all</code> store views</p>
+<p><code class="language-plaintext highlighter-rouge">all</code> store views</p>
 
 <p><strong>Headers</strong></p>
 
-<p><code class="highlighter-rouge">Content-Type</code>: <code class="highlighter-rouge">application/json</code>
-<code class="highlighter-rouge">Authorization</code>: <code class="highlighter-rouge">Bearer &lt;admin_token&gt;</code>`</p>
+<p><code class="language-plaintext highlighter-rouge">Content-Type</code>: <code class="language-plaintext highlighter-rouge">application/json</code>
+<code class="language-plaintext highlighter-rouge">Authorization</code>: <code class="language-plaintext highlighter-rouge">Bearer &lt;admin_token&gt;</code>`</p>
 
 <p><strong>Payload</strong></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"sourceItems"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-  	</span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB01"</span><span class="p">,</span><span class="w">
-  	</span><span class="s2">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"baltimore_wh"</span><span class="p">,</span><span class="w">
-  	</span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
-  	</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="nl">"sourceItems"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+  	</span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB01"</span><span class="p">,</span><span class="w">
+  	</span><span class="nl">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"baltimore_wh"</span><span class="p">,</span><span class="w">
+  	</span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
+  	</span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-  	</span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB01"</span><span class="p">,</span><span class="w">
-  	</span><span class="s2">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"austin_wh"</span><span class="p">,</span><span class="w">
-  	</span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-  	</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  	</span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB01"</span><span class="p">,</span><span class="w">
+  	</span><span class="nl">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"austin_wh"</span><span class="p">,</span><span class="w">
+  	</span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+  	</span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-  	</span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB01"</span><span class="p">,</span><span class="w">
-  	</span><span class="s2">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reno_wh"</span><span class="p">,</span><span class="w">
-  	</span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
-  	</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  	</span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB01"</span><span class="p">,</span><span class="w">
+  	</span><span class="nl">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reno_wh"</span><span class="p">,</span><span class="w">
+  	</span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+  	</span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-  	</span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB01"</span><span class="p">,</span><span class="w">
-  	</span><span class="s2">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"berlin_wh"</span><span class="p">,</span><span class="w">
-  	</span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
-  	</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  	</span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB01"</span><span class="p">,</span><span class="w">
+  	</span><span class="nl">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"berlin_wh"</span><span class="p">,</span><span class="w">
+  	</span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+  	</span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-  	</span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB01"</span><span class="p">,</span><span class="w">
-  	</span><span class="s2">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"frankfurt_wh"</span><span class="p">,</span><span class="w">
-  	</span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
-  	</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  	</span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB01"</span><span class="p">,</span><span class="w">
+  	</span><span class="nl">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"frankfurt_wh"</span><span class="p">,</span><span class="w">
+  	</span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+  	</span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-  	</span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB03"</span><span class="p">,</span><span class="w">
-  	</span><span class="s2">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"baltimore_wh"</span><span class="p">,</span><span class="w">
-  	</span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
-  	</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  	</span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB03"</span><span class="p">,</span><span class="w">
+  	</span><span class="nl">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"baltimore_wh"</span><span class="p">,</span><span class="w">
+  	</span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
+  	</span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-  	</span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB03"</span><span class="p">,</span><span class="w">
-  	</span><span class="s2">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"austin_wh"</span><span class="p">,</span><span class="w">
-  	</span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  	</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  	</span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB03"</span><span class="p">,</span><span class="w">
+  	</span><span class="nl">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"austin_wh"</span><span class="p">,</span><span class="w">
+  	</span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  	</span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-  	</span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB03"</span><span class="p">,</span><span class="w">
-  	</span><span class="s2">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reno_wh"</span><span class="p">,</span><span class="w">
-  	</span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w">
-  	</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  	</span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB03"</span><span class="p">,</span><span class="w">
+  	</span><span class="nl">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reno_wh"</span><span class="p">,</span><span class="w">
+  	</span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w">
+  	</span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-  	</span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB03"</span><span class="p">,</span><span class="w">
-  	</span><span class="s2">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"berlin_wh"</span><span class="p">,</span><span class="w">
-  	</span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w">
-  	</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  	</span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB03"</span><span class="p">,</span><span class="w">
+  	</span><span class="nl">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"berlin_wh"</span><span class="p">,</span><span class="w">
+  	</span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w">
+  	</span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-  	</span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB03"</span><span class="p">,</span><span class="w">
-  	</span><span class="s2">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"frankfurt_wh"</span><span class="p">,</span><span class="w">
-  	</span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
-  	</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  	</span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB03"</span><span class="p">,</span><span class="w">
+  	</span><span class="nl">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"frankfurt_wh"</span><span class="p">,</span><span class="w">
+  	</span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+  	</span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-  	</span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240-LV06"</span><span class="p">,</span><span class="w">
-  	</span><span class="s2">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hq"</span><span class="p">,</span><span class="w">
-  	</span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">9999</span><span class="p">,</span><span class="w">
-  	</span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  	</span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"240-LV06"</span><span class="p">,</span><span class="w">
+  	</span><span class="nl">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hq"</span><span class="p">,</span><span class="w">
+  	</span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">9999</span><span class="p">,</span><span class="w">
+  	</span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
   </span><span class="p">}]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
@@ -1799,11 +1800,11 @@
 
 <p>Magento returns an empty array.</p>
 
-<p><code class="highlighter-rouge">[]</code></p>
+<p><code class="language-plaintext highlighter-rouge">[]</code></p>
 
 <h2 id="verify-this-step">Verify this step</h2>
 
-<p>In Admin, click <strong>Catalog</strong> &gt; <strong>Products</strong>.  Products <code class="highlighter-rouge">24-WB01</code>, <code class="highlighter-rouge">24-WB03</code>, and <code class="highlighter-rouge">240-LV06</code> display quantities per assigned source in the <strong>Quantity Per Source</strong> column and an aggregated total of products per stock in the <strong>Salable Quantity</strong> column.</p>
+<p>In Admin, click <strong>Catalog</strong> &gt; <strong>Products</strong>.  Products <code class="language-plaintext highlighter-rouge">24-WB01</code>, <code class="language-plaintext highlighter-rouge">24-WB03</code>, and <code class="language-plaintext highlighter-rouge">240-LV06</code> display quantities per assigned source in the <strong>Quantity Per Source</strong> column and an aggregated total of products per stock in the <strong>Salable Quantity</strong> column.</p>
 
 
       <div class="horisontal-nav">

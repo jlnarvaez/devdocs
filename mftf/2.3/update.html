@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Update the Magento Functional Testing Framework | Magento 2 Developer Documentation (copy)</title>
+	<title>Update the Magento Functional Testing Framework | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -2157,8 +2156,7 @@
 	<h1 class="page-heading">Update the Magento Functional Testing Framework</h1>
 </section>
 
-			
-<p style="text-align: right"><em>This topic was updated due to the 2.3.0 MFTF release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.3.0 MFTF release.</em></p>
 
 <p class="bs-callout bs-callout-info"><a href="./introduction.html#find-version">Find out your version</a> of the MFTF.
 If your version is 2.2, see the <a href="/devdocs/mftf/2.2/introduction.html">MFTF 2.2 documentation</a>.</p>
@@ -2169,7 +2167,7 @@ If your version is 2.2, see the <a href="/devdocs/mftf/2.2/introduction.html">MF
 When you pull changes in the Magento code, you’re potentially pulling corresponding tests as well.</p>
 
 <p>The MFTF is installed separately as a dependency using Composer.
-When pulling the latest Magento code, update the corresponding Composer dependencies in the <code class="highlighter-rouge">magento2</code> root directory.
+When pulling the latest Magento code, update the corresponding Composer dependencies in the <code class="language-plaintext highlighter-rouge">magento2</code> root directory.
 This ensures that the MFTF is up to date.</p>
 
 <h2 id="update-the-mftf-from-23x">Update the MFTF from 2.3.x</h2>
@@ -2199,23 +2197,23 @@ This ensures that the MFTF is up to date.</p>
 
 <ol>
   <li>When you update Magento, verify that the Magento <a href="getting-started.html#wysiwyg-settings">WYSIWYG settings</a> and <a href="getting-started.html#security-settings">Security settings</a> are set appropriately.</li>
-  <li>Starting at the <code class="highlighter-rouge">magento2/</code> root directory remove the <code class="highlighter-rouge">vendor/</code> directory:
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>rm <span class="nt">-rf</span> vendor/
+  <li>Starting at the <code class="language-plaintext highlighter-rouge">magento2/</code> root directory remove the <code class="language-plaintext highlighter-rouge">vendor/</code> directory:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">rm</span> <span class="nt">-rf</span> vendor/
 </code></pre></div>    </div>
   </li>
   <li>Get the latest framework version from the Composer dependencies:
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer install
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer <span class="nb">install</span>
 </code></pre></div>    </div>
   </li>
-  <li>Remove the <code class="highlighter-rouge">vendor/</code> directory at <code class="highlighter-rouge">magento2/dev/tests/acceptance/</code>:
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>rm <span class="nt">-rf</span> dev/tests/acceptance/vendor/
+  <li>Remove the <code class="language-plaintext highlighter-rouge">vendor/</code> directory at <code class="language-plaintext highlighter-rouge">magento2/dev/tests/acceptance/</code>:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">rm</span> <span class="nt">-rf</span> dev/tests/acceptance/vendor/
 </code></pre></div>    </div>
   </li>
   <li>Install dependencies at that level:
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer install <span class="nt">-d</span> dev/tests/acceptance/
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer <span class="nb">install</span> <span class="nt">-d</span> dev/tests/acceptance/
 </code></pre></div>    </div>
   </li>
-  <li>Run the <code class="highlighter-rouge">upgrade:tests</code> using the new command line tool:
+  <li>Run the <code class="language-plaintext highlighter-rouge">upgrade:tests</code> using the new command line tool:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vendor/bin/mftf upgrade:tests app
 </code></pre></div>    </div>
   </li>

@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Application | Magento 2 Developer Documentation (copy)</title>
+	<title>Application | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/project/project-conf-files_magento-app.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/project/project-conf-files_magento-app.html">Magento 2.0</a></li>
 		
@@ -4342,61 +4343,61 @@
 	<h1 class="page-heading">Application</h1>
 </section>
 
-			<p>The <code class="highlighter-rouge">.magento.app.yaml</code> file controls the way your application builds and deploys. Although Magento Commerce Cloud supports multiple applications per project, typically, a project has a single application with the <code class="highlighter-rouge">.magento.app.yaml</code> file at the root of the repository.</p>
+			<p>The <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> file controls the way your application builds and deploys. Although Magento Commerce Cloud supports multiple applications per project, typically, a project has a single application with the <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> file at the root of the repository.</p>
 
-<p>The <code class="highlighter-rouge">.magento.app.yaml</code> has many default values, see <a href="https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml">a sample <code class="highlighter-rouge">.magento.app.yaml</code> file</a>. Make sure to review the <code class="highlighter-rouge">.magento.app.yaml</code> for your installed version. This file can differ across Magento Commerce Cloud versions.</p>
+<p>The <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> has many default values, see <a href="https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml">a sample <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> file</a>. Make sure to review the <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> for your installed version. This file can differ across Magento Commerce Cloud versions.</p>
 
 <p class="bs-callout bs-callout-info">For Pro projects <strong>created before October 23, 2017</strong>, the changes you make using this YAML file affects your Integration environment only. To make these changes in a Staging or Production environment, you must <a href="/devdocs/guides/v2.3/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>.</p>
 
 <h2 id="properties">Properties</h2>
 
-<p>Use the following properties to build your application configuration file. The <code class="highlighter-rouge">name</code>, <code class="highlighter-rouge">type</code>, <code class="highlighter-rouge">disk</code>, and one <code class="highlighter-rouge">web</code> or <code class="highlighter-rouge">worker</code> block is required.</p>
+<p>Use the following properties to build your application configuration file. The <code class="language-plaintext highlighter-rouge">name</code>, <code class="language-plaintext highlighter-rouge">type</code>, <code class="language-plaintext highlighter-rouge">disk</code>, and one <code class="language-plaintext highlighter-rouge">web</code> or <code class="language-plaintext highlighter-rouge">worker</code> block is required.</p>
 
-<h3 id="name"><code class="highlighter-rouge">name</code></h3>
-<p>Magento Commerce supports multiple applications in a project, so you need a unique name that identifies the application in the project. You must use lower case alphanumeric characters, such as <code class="highlighter-rouge">a</code> to <code class="highlighter-rouge">z</code> and <code class="highlighter-rouge">0</code> to <code class="highlighter-rouge">9</code> for the name.</p>
+<h3 id="name"><code class="language-plaintext highlighter-rouge">name</code></h3>
+<p>Magento Commerce supports multiple applications in a project, so you need a unique name that identifies the application in the project. You must use lower case alphanumeric characters, such as <code class="language-plaintext highlighter-rouge">a</code> to <code class="language-plaintext highlighter-rouge">z</code> and <code class="language-plaintext highlighter-rouge">0</code> to <code class="language-plaintext highlighter-rouge">9</code> for the name.</p>
 
-<p>The name is used in the <a href="/devdocs/guides/v2.3/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">routes.yaml</code></a> file to define the HTTP upstream (by default, <code class="highlighter-rouge">php:http</code>). For example, if the value of <code class="highlighter-rouge">name</code> is <code class="highlighter-rouge">app</code>, you must use <code class="highlighter-rouge">app:http</code> in the upstream field. You can also use this name in multi-application relationships.</p>
+<p>The name is used in the <a href="/devdocs/guides/v2.3/cloud/project/project-conf-files_routes.html"><code class="language-plaintext highlighter-rouge">routes.yaml</code></a> file to define the HTTP upstream (by default, <code class="language-plaintext highlighter-rouge">php:http</code>). For example, if the value of <code class="language-plaintext highlighter-rouge">name</code> is <code class="language-plaintext highlighter-rouge">app</code>, you must use <code class="language-plaintext highlighter-rouge">app:http</code> in the upstream field. You can also use this name in multi-application relationships.</p>
 
 <p class="bs-callout bs-callout-info">Do not change the name of an application after it has been deployed.</p>
 
-<h3 id="type-and-build"><code class="highlighter-rouge">type</code> and <code class="highlighter-rouge">build</code></h3>
-<p>The <code class="highlighter-rouge">type</code>  and <code class="highlighter-rouge">build</code> properties provide information about the base container image to build and run the project.</p>
+<h3 id="type-and-build"><code class="language-plaintext highlighter-rouge">type</code> and <code class="language-plaintext highlighter-rouge">build</code></h3>
+<p>The <code class="language-plaintext highlighter-rouge">type</code>  and <code class="language-plaintext highlighter-rouge">build</code> properties provide information about the base container image to build and run the project.</p>
 
-<p>The supported <code class="highlighter-rouge">type</code> language is   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
+<p>The supported <code class="language-plaintext highlighter-rouge">type</code> language is   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
 . Specify the PHP version as follows:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="na">type</span><span class="pi">:</span> <span class="s">php:7.1</span>
 </code></pre></div></div>
 
-<p>The <code class="highlighter-rouge">build</code> property determines what happens by default when building the project. The <code class="highlighter-rouge">flavor</code> specifies a default set of build tasks to run. The supported flavor is <code class="highlighter-rouge">composer</code>.</p>
+<p>The <code class="language-plaintext highlighter-rouge">build</code> property determines what happens by default when building the project. The <code class="language-plaintext highlighter-rouge">flavor</code> specifies a default set of build tasks to run. The supported flavor is <code class="language-plaintext highlighter-rouge">composer</code>.</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="na">build</span><span class="pi">:</span>
     <span class="na">flavor</span><span class="pi">:</span> <span class="s">composer</span>
 </code></pre></div></div>
 
-<h3 id="access"><code class="highlighter-rouge">access</code></h3>
+<h3 id="access"><code class="language-plaintext highlighter-rouge">access</code></h3>
 <p>The <em>access</em> property indicates a minimum user role level that is allowed SSH access to the environments. The available user roles are:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">admin</code>—Can change settings and execute actions in the environment. Also has <em>contributor</em> and <em>viewer</em> rights.</li>
-  <li><code class="highlighter-rouge">contributor</code>—Can push code to this environment and branch from the environment. Also has <em>viewer</em> rights.</li>
-  <li><code class="highlighter-rouge">viewer</code>—Can view the environment only.</li>
+  <li><code class="language-plaintext highlighter-rouge">admin</code>—Can change settings and execute actions in the environment. Also has <em>contributor</em> and <em>viewer</em> rights.</li>
+  <li><code class="language-plaintext highlighter-rouge">contributor</code>—Can push code to this environment and branch from the environment. Also has <em>viewer</em> rights.</li>
+  <li><code class="language-plaintext highlighter-rouge">viewer</code>—Can view the environment only.</li>
 </ul>
 
-<p>The default user role is <code class="highlighter-rouge">contributor</code>, which restricts the SSH access from users with only <em>viewer</em> rights. You can change the user role to <code class="highlighter-rouge">viewer</code> to allow SSH access for users with only <em>viewer</em> rights:</p>
+<p>The default user role is <code class="language-plaintext highlighter-rouge">contributor</code>, which restricts the SSH access from users with only <em>viewer</em> rights. You can change the user role to <code class="language-plaintext highlighter-rouge">viewer</code> to allow SSH access for users with only <em>viewer</em> rights:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="na">access</span><span class="pi">:</span>
     <span class="na">ssh</span><span class="pi">:</span> <span class="s">viewer</span>
 </code></pre></div></div>
 
-<h3 id="relationships"><code class="highlighter-rouge">relationships</code></h3>
+<h3 id="relationships"><code class="language-plaintext highlighter-rouge">relationships</code></h3>
 <p>Defines the service mapping in your application.</p>
 
-<p>The left-hand side is the name of the relationship as it will be exposed to the application in the <code class="highlighter-rouge">MAGENTO_CLOUD_RELATIONSHIPS</code> environment variable. The right-hand side is in the form <code class="highlighter-rouge">&lt;service name&gt;:&lt;endpoint name&gt;</code>, where <code class="highlighter-rouge">&lt;service name&gt;</code> comes from <code class="highlighter-rouge">.magento/services.yaml</code> and  <code class="highlighter-rouge">&lt;endpoint name&gt;</code> should be the same as the value of <code class="highlighter-rouge">type</code>  declared in that same file.</p>
+<p>The left-hand side is the name of the relationship as it will be exposed to the application in the <code class="language-plaintext highlighter-rouge">MAGENTO_CLOUD_RELATIONSHIPS</code> environment variable. The right-hand side is in the form <code class="language-plaintext highlighter-rouge">&lt;service name&gt;:&lt;endpoint name&gt;</code>, where <code class="language-plaintext highlighter-rouge">&lt;service name&gt;</code> comes from <code class="language-plaintext highlighter-rouge">.magento/services.yaml</code> and  <code class="language-plaintext highlighter-rouge">&lt;endpoint name&gt;</code> should be the same as the value of <code class="language-plaintext highlighter-rouge">type</code>  declared in that same file.</p>
 
 <p>Example of valid options are:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>database: "mysql:mysql"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>database: "mysql:mysql"
 database2: "mysql2:mysql"
 cache: "arediscache:redis"
 search: "searchengine:solr"
@@ -4404,30 +4405,30 @@ search: "searchengine:solr"
 
 <p>See <a href="/devdocs/guides/v2.3/cloud/project/project-conf-files_services.html">Services</a> for a full list of currently supported service types and endpoints.</p>
 
-<h3 id="web"><code class="highlighter-rouge">web</code></h3>
-<p>The <code class="highlighter-rouge">web</code> property defines how your application is exposed to the web (in HTTP). It determines how the web application serves content— from the front-controller script to a non-static request to an <code class="highlighter-rouge">index.php</code> file on the root. We support any directory structure so the static file can be in a sub directory, and the <code class="highlighter-rouge">index.php</code> file can be further down.</p>
+<h3 id="web"><code class="language-plaintext highlighter-rouge">web</code></h3>
+<p>The <code class="language-plaintext highlighter-rouge">web</code> property defines how your application is exposed to the web (in HTTP). It determines how the web application serves content— from the front-controller script to a non-static request to an <code class="language-plaintext highlighter-rouge">index.php</code> file on the root. We support any directory structure so the static file can be in a sub directory, and the <code class="language-plaintext highlighter-rouge">index.php</code> file can be further down.</p>
 
-<p>You can specify the following attributes for the <code class="highlighter-rouge">web</code> property:</p>
+<p>You can specify the following attributes for the <code class="language-plaintext highlighter-rouge">web</code> property:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">document_root</code>: The path relative to the root of the application that is exposed on the web. Typical values include <code class="highlighter-rouge">/public</code> and <code class="highlighter-rouge">/web</code>.</li>
-  <li><code class="highlighter-rouge">passthru</code>: The URL used in the event a static file or PHP file could not be found. This would typically be your applications front controller, often <code class="highlighter-rouge">/index.php</code> or <code class="highlighter-rouge">/app.php</code>.</li>
-  <li><code class="highlighter-rouge">index_files</code>: To use a static file (for example, <code class="highlighter-rouge">index.html</code>) to serve your application. This key expects a collection. For this to work, the static file(s) should be included in your whitelist. For example, to use a file named <code class="highlighter-rouge">index.html</code> as an index file, your whitelist should include an element that matches the filename, like <code class="highlighter-rouge">- \.html$</code>.</li>
-  <li><code class="highlighter-rouge">blacklist</code>: A list of files that should never be executed. Has no effect on static files.</li>
-  <li><code class="highlighter-rouge">whitelist</code>: A list of static files (as regular expressions) that can be served. Dynamic files (for example, PHP files) are treated as static files and have their source code served, but they are not executed.</li>
-  <li><code class="highlighter-rouge">expires</code>: The number of seconds whitelisted (that is, static) content should be cached by the browser. This enables the cache-control and expires headers for static content. The <code class="highlighter-rouge">expires</code> directive and resulting headers are left out entirely if this is not set.</li>
+  <li><code class="language-plaintext highlighter-rouge">document_root</code>: The path relative to the root of the application that is exposed on the web. Typical values include <code class="language-plaintext highlighter-rouge">/public</code> and <code class="language-plaintext highlighter-rouge">/web</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">passthru</code>: The URL used in the event a static file or PHP file could not be found. This would typically be your applications front controller, often <code class="language-plaintext highlighter-rouge">/index.php</code> or <code class="language-plaintext highlighter-rouge">/app.php</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">index_files</code>: To use a static file (for example, <code class="language-plaintext highlighter-rouge">index.html</code>) to serve your application. This key expects a collection. For this to work, the static file(s) should be included in your whitelist. For example, to use a file named <code class="language-plaintext highlighter-rouge">index.html</code> as an index file, your whitelist should include an element that matches the filename, like <code class="language-plaintext highlighter-rouge">- \.html$</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">blacklist</code>: A list of files that should never be executed. Has no effect on static files.</li>
+  <li><code class="language-plaintext highlighter-rouge">whitelist</code>: A list of static files (as regular expressions) that can be served. Dynamic files (for example, PHP files) are treated as static files and have their source code served, but they are not executed.</li>
+  <li><code class="language-plaintext highlighter-rouge">expires</code>: The number of seconds whitelisted (that is, static) content should be cached by the browser. This enables the cache-control and expires headers for static content. The <code class="language-plaintext highlighter-rouge">expires</code> directive and resulting headers are left out entirely if this is not set.</li>
 </ul>
 
-<p>Contrary to standard <code class="highlighter-rouge">.htaccess</code> approaches, which accept a <em>blacklist</em> and allow everything to be accessed except a specific list, we accept a <em>whitelist</em>, which means that anything not matched will trigger a 404 error and will be passed through to your <code class="highlighter-rouge">passthru</code> URL.</p>
+<p>Contrary to standard <code class="language-plaintext highlighter-rouge">.htaccess</code> approaches, which accept a <em>blacklist</em> and allow everything to be accessed except a specific list, we accept a <em>whitelist</em>, which means that anything not matched will trigger a 404 error and will be passed through to your <code class="language-plaintext highlighter-rouge">passthru</code> URL.</p>
 
 <p>Our default configuration allows the following:</p>
 
 <ul>
-  <li>From the root (<code class="highlighter-rouge">/</code>) path, only web, media, and <code class="highlighter-rouge">robots.txt</code> files can be accessed</li>
-  <li>From the <code class="highlighter-rouge">/pub/static</code> and <code class="highlighter-rouge">/pub/media</code> paths, any file can be accessed</li>
+  <li>From the root (<code class="language-plaintext highlighter-rouge">/</code>) path, only web, media, and <code class="language-plaintext highlighter-rouge">robots.txt</code> files can be accessed</li>
+  <li>From the <code class="language-plaintext highlighter-rouge">/pub/static</code> and <code class="language-plaintext highlighter-rouge">/pub/media</code> paths, any file can be accessed</li>
 </ul>
 
-<p>The following displays the default set of web accessible locations associated with an entry in <a href="#mounts"><code class="highlighter-rouge">mounts</code></a>:</p>
+<p>The following displays the default set of web accessible locations associated with an entry in <a href="#mounts"><code class="language-plaintext highlighter-rouge">mounts</code></a>:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> <span class="c1"># The configuration of app when it is exposed to the web.</span>
 <span class="na">web</span><span class="pi">:</span>
@@ -4462,16 +4463,16 @@ search: "searchengine:solr"
                     <span class="na">passthru</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/static/$resource"</span>
 </code></pre></div></div>
 
-<h3 id="disk"><code class="highlighter-rouge">disk</code></h3>
+<h3 id="disk"><code class="language-plaintext highlighter-rouge">disk</code></h3>
 <p>Defines the persistent disk size of the application in MB.</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="na">disk</span><span class="pi">:</span> <span class="s">2048</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="na">disk</span><span class="pi">:</span> <span class="m">2048</span>
 </code></pre></div></div>
 
-<p class="bs-callout bs-callout-info">The minimal recommended disk size is 256MB. If you see the error <code class="highlighter-rouge">UserError: Error building the project: Disk size may not be smaller than 128MB</code>, increase the size to 256MB.” %}</p>
+<p class="bs-callout bs-callout-info">The minimal recommended disk size is 256MB. If you see the error <code class="language-plaintext highlighter-rouge">UserError: Error building the project: Disk size may not be smaller than 128MB</code>, increase the size to 256MB.” %}</p>
 
-<h3 id="mounts"><code class="highlighter-rouge">mounts</code></h3>
-<p>An object whose keys are paths relative to the root of the application. The mount is a writable area on the disk for files. The following is a default list of mounts configured in the <code class="highlighter-rouge">magento.app.yaml</code> file using the <code class="highlighter-rouge">volume_id[/subpath]</code> syntax:</p>
+<h3 id="mounts"><code class="language-plaintext highlighter-rouge">mounts</code></h3>
+<p>An object whose keys are paths relative to the root of the application. The mount is a writable area on the disk for files. The following is a default list of mounts configured in the <code class="language-plaintext highlighter-rouge">magento.app.yaml</code> file using the <code class="language-plaintext highlighter-rouge">volume_id[/subpath]</code> syntax:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> <span class="c1"># The mounts that will be performed when the package is deployed.</span>
 <span class="na">mounts</span><span class="pi">:</span>
@@ -4483,19 +4484,19 @@ search: "searchengine:solr"
 
 <p>The format for adding your mount to this list is as follows:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>"/public/sites/default/files": "shared:files/files"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>"/public/sites/default/files": "shared:files/files"
 </code></pre></div></div>
 
 <ul>
-  <li><code class="highlighter-rouge">shared</code>—Shares a volume between your applications inside an environment.</li>
-  <li><code class="highlighter-rouge">disk</code>—Defines the size available for the shared volume.</li>
+  <li><code class="language-plaintext highlighter-rouge">shared</code>—Shares a volume between your applications inside an environment.</li>
+  <li><code class="language-plaintext highlighter-rouge">disk</code>—Defines the size available for the shared volume.</li>
 </ul>
 
 <p class="bs-callout bs-callout-warning">The subpath portion of the mount is the unique identifier of the files area. If changed, files at the old location will be permanently lost. Do not change this value once your site has data unless you really want to lose all existing data.</p>
 
-<p>You can make the mount web accessible by adding it to the <a href="#web"><code class="highlighter-rouge">web</code></a> block of locations.</p>
+<p>You can make the mount web accessible by adding it to the <a href="#web"><code class="language-plaintext highlighter-rouge">web</code></a> block of locations.</p>
 
-<h3 id="dependencies"><code class="highlighter-rouge">dependencies</code></h3>
+<h3 id="dependencies"><code class="language-plaintext highlighter-rouge">dependencies</code></h3>
 <p>Enables you to specify dependencies that your application might need during the build process.</p>
 
 <p>Magento Commerce supports dependencies on the following
@@ -4507,57 +4508,57 @@ languages:</p>
   <li>NodeJS</li>
 </ul>
 
-<p>Those dependencies are independent of the eventual dependencies of your application, and are available in the <code class="highlighter-rouge">PATH</code>, during the build process and in the runtime environment of your application.</p>
+<p>Those dependencies are independent of the eventual dependencies of your application, and are available in the <code class="language-plaintext highlighter-rouge">PATH</code>, during the build process and in the runtime environment of your application.</p>
 
 <p>You can specify those dependencies as follows:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ruby:
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ruby:
    sass: "~3.4"
 nodejs:
    grunt-cli: "~0.3"
 </code></pre></div></div>
 
-<h3 id="hooks"><code class="highlighter-rouge">hooks</code></h3>
-<p>Use the <code class="highlighter-rouge">hooks</code> section to run shell commands during the build, deploy, and post-deploy phases:</p>
+<h3 id="hooks"><code class="language-plaintext highlighter-rouge">hooks</code></h3>
+<p>Use the <code class="language-plaintext highlighter-rouge">hooks</code> section to run shell commands during the build, deploy, and post-deploy phases:</p>
 
 <ul>
-  <li><strong><code class="highlighter-rouge">build</code></strong>—Execute commands <em>before</em> packaging your application. Services, such as the database or Redis, are not available at this time since the application has not been deployed yet. You must add custom commands <em>before</em> the default <code class="highlighter-rouge">php ./vendor/bin/ece-tools</code> command to make sure custom-generated content makes it to the deployment phase.</li>
-  <li><strong><code class="highlighter-rouge">deploy</code></strong>—Execute commands <em>after</em> packaging and deploying your application. You can access other services at this point. Since the default <code class="highlighter-rouge">php ./vendor/bin/ece-tools</code> command copies the <code class="highlighter-rouge">app/etc</code> directory to the correct location, you must add custom commands <em>after</em> the deploy command to prevent custom commands from failing.</li>
-  <li><strong><code class="highlighter-rouge">post_deploy</code></strong>—Execute commands <em>after</em> deploying your application and <em>after</em> the container begins accepting connections. The <code class="highlighter-rouge">post_deploy</code> hook clears the cache and preloads (warms) the cache. You can customize the list of pages using the <code class="highlighter-rouge">WARM_UP_PAGES</code> variable in the <a href="/devdocs/guides/v2.1/cloud/env/variables-post-deploy.html">Post-deploy stage</a>. It is available only for Pro projects that contain <a href="/devdocs/guides/v2.3/cloud/trouble/pro-env-management.html">Staging and Production environments in the Project Web UI</a> and for Starter projects. Although not required, this works in tandem with the <code class="highlighter-rouge">SCD_ON_DEMAND</code> environment variable.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">build</code></strong>—Execute commands <em>before</em> packaging your application. Services, such as the database or Redis, are not available at this time since the application has not been deployed yet. You must add custom commands <em>before</em> the default <code class="language-plaintext highlighter-rouge">php ./vendor/bin/ece-tools</code> command to make sure custom-generated content makes it to the deployment phase.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">deploy</code></strong>—Execute commands <em>after</em> packaging and deploying your application. You can access other services at this point. Since the default <code class="language-plaintext highlighter-rouge">php ./vendor/bin/ece-tools</code> command copies the <code class="language-plaintext highlighter-rouge">app/etc</code> directory to the correct location, you must add custom commands <em>after</em> the deploy command to prevent custom commands from failing.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">post_deploy</code></strong>—Execute commands <em>after</em> deploying your application and <em>after</em> the container begins accepting connections. The <code class="language-plaintext highlighter-rouge">post_deploy</code> hook clears the cache and preloads (warms) the cache. You can customize the list of pages using the <code class="language-plaintext highlighter-rouge">WARM_UP_PAGES</code> variable in the <a href="/devdocs/guides/v2.1/cloud/env/variables-post-deploy.html">Post-deploy stage</a>. It is available only for Pro projects that contain <a href="/devdocs/guides/v2.3/cloud/trouble/pro-env-management.html">Staging and Production environments in the Project Web UI</a> and for Starter projects. Although not required, this works in tandem with the <code class="language-plaintext highlighter-rouge">SCD_ON_DEMAND</code> environment variable.</li>
 </ul>
 
-<p>Add CLI commands under the <code class="highlighter-rouge">build</code>, <code class="highlighter-rouge">deploy</code>, or <code class="highlighter-rouge">post_deploy</code> sections <em>before</em> the <code class="highlighter-rouge">ece-tools</code> command:</p>
+<p>Add CLI commands under the <code class="language-plaintext highlighter-rouge">build</code>, <code class="language-plaintext highlighter-rouge">deploy</code>, or <code class="language-plaintext highlighter-rouge">post_deploy</code> sections <em>before</em> the <code class="language-plaintext highlighter-rouge">ece-tools</code> command:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="na">hooks</span><span class="pi">:</span>
     <span class="c1"># We run build hooks before your application has been packaged.</span>
     <span class="na">build</span><span class="pi">:</span> <span class="pi">|</span>
-        <span class="no">php ./vendor/bin/ece-tools build</span>
+        <span class="s">php ./vendor/bin/ece-tools build</span>
     <span class="c1"># We run deploy hook after your application has been deployed and started.</span>
     <span class="na">deploy</span><span class="pi">:</span> <span class="pi">|</span>
-        <span class="no">php ./vendor/bin/ece-tools deploy</span>
+        <span class="s">php ./vendor/bin/ece-tools deploy</span>
     <span class="c1"># We run post deploy hook to clean and warm the cache. Available with ECE-Tools 2002.0.10.</span>
     <span class="na">post_deploy</span><span class="pi">:</span> <span class="pi">|</span>
-        <span class="no">php ./vendor/bin/ece-tools post-deploy</span>
+        <span class="s">php ./vendor/bin/ece-tools post-deploy</span>
 </code></pre></div></div>
 
-<p>Also, you can customize the build phase further by using the <code class="highlighter-rouge">generate</code> and <code class="highlighter-rouge">transfer</code> commands to perform additional actions when specifically building code or moving files.</p>
+<p>Also, you can customize the build phase further by using the <code class="language-plaintext highlighter-rouge">generate</code> and <code class="language-plaintext highlighter-rouge">transfer</code> commands to perform additional actions when specifically building code or moving files.</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="na">hooks</span><span class="pi">:</span>
     <span class="c1"># We run build hooks before your application has been packaged.</span>
     <span class="na">build</span><span class="pi">:</span> <span class="pi">|</span>
-        <span class="no">set -e</span>
-        <span class="no">php ./vendor/bin/ece-tools build:generate</span>
-        <span class="no"># php /path/to/your/script</span>
-        <span class="no">php ./vendor/bin/ece-tools build:transfer</span>
+        <span class="s">set -e</span>
+        <span class="s">php ./vendor/bin/ece-tools build:generate</span>
+        <span class="s"># php /path/to/your/script</span>
+        <span class="s">php ./vendor/bin/ece-tools build:transfer</span>
 </code></pre></div></div>
 
 <ul>
-  <li><code class="highlighter-rouge">set -e</code>—causes hooks to fail on the first failed command, instead of the final failed command.</li>
-  <li><code class="highlighter-rouge">build:generate</code>—applies patches, validates configuration, generates DI, and generates static content if SCD is enabled for build phase.</li>
-  <li><code class="highlighter-rouge">build:transfer</code>—transfers generated code and static content to the final destination.</li>
+  <li><code class="language-plaintext highlighter-rouge">set -e</code>—causes hooks to fail on the first failed command, instead of the final failed command.</li>
+  <li><code class="language-plaintext highlighter-rouge">build:generate</code>—applies patches, validates configuration, generates DI, and generates static content if SCD is enabled for build phase.</li>
+  <li><code class="language-plaintext highlighter-rouge">build:transfer</code>—transfers generated code and static content to the final destination.</li>
 </ul>
 
-<p>The commands run from the application (<code class="highlighter-rouge">/app</code>) directory. You can use the <code class="highlighter-rouge">cd</code> command to change the directory. The hooks fail if the final command in them fails. To cause them to fail on the first failed command, add <code class="highlighter-rouge">set -e</code> to the beginning of the hook.</p>
+<p>The commands run from the application (<code class="language-plaintext highlighter-rouge">/app</code>) directory. You can use the <code class="language-plaintext highlighter-rouge">cd</code> command to change the directory. The hooks fail if the final command in them fails. To cause them to fail on the first failed command, add <code class="language-plaintext highlighter-rouge">set -e</code> to the beginning of the hook.</p>
 
 <h4 id="to-compile-sass-files-using-grunt">To compile Sass files using grunt:</h4>
 
@@ -4569,23 +4570,23 @@ nodejs:
 
 <span class="na">hooks</span><span class="pi">:</span>
     <span class="na">build</span><span class="pi">:</span> <span class="pi">|</span>
-        <span class="no">cd public/profiles/project_name/themes/custom/theme_name</span>
-        <span class="no">npm install</span>
-        <span class="no">grunt</span>
-        <span class="no">cd</span>
-        <span class="no">php ./vendor/bin/ece-tools</span>
+        <span class="s">cd public/profiles/project_name/themes/custom/theme_name</span>
+        <span class="s">npm install</span>
+        <span class="s">grunt</span>
+        <span class="s">cd</span>
+        <span class="s">php ./vendor/bin/ece-tools</span>
 </code></pre></div></div>
 
-<p>You must compile Sass files using <code class="highlighter-rouge">grunt</code> before static content deployment, which happens during the build. Place the <code class="highlighter-rouge">grunt</code> command before the <code class="highlighter-rouge">build</code> command.</p>
+<p>You must compile Sass files using <code class="language-plaintext highlighter-rouge">grunt</code> before static content deployment, which happens during the build. Place the <code class="language-plaintext highlighter-rouge">grunt</code> command before the <code class="language-plaintext highlighter-rouge">build</code> command.</p>
 
-<h3 id="crons"><code class="highlighter-rouge">crons</code></h3>
-<p>Describes processes that are triggered on a schedule. We recommend you run <code class="highlighter-rouge">cron</code> as the <a href="/devdocs/guides/v2.3/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>. Do <em>not</em> run cron as <code class="highlighter-rouge">root</code> or as the web server user.</p>
+<h3 id="crons"><code class="language-plaintext highlighter-rouge">crons</code></h3>
+<p>Describes processes that are triggered on a schedule. We recommend you run <code class="language-plaintext highlighter-rouge">cron</code> as the <a href="/devdocs/guides/v2.3/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>. Do <em>not</em> run cron as <code class="language-plaintext highlighter-rouge">root</code> or as the web server user.</p>
 
-<p><code class="highlighter-rouge">crons</code> support the following:</p>
+<p><code class="language-plaintext highlighter-rouge">crons</code> support the following:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">spec</code>—The cron specification. For Starter environments and Pro Integration environments, the minimum interval is once per five minutes and once per one minute in Pro Staging and Production environments. You need to complete <a href="/devdocs/guides/v2.3/cloud/configure/setup-cron-jobs.html#add-cron">additional configurations</a> for crons in those environments.</li>
-  <li><code class="highlighter-rouge">cmd</code>—The command to execute.</li>
+  <li><code class="language-plaintext highlighter-rouge">spec</code>—The cron specification. For Starter environments and Pro Integration environments, the minimum interval is once per five minutes and once per one minute in Pro Staging and Production environments. You need to complete <a href="/devdocs/guides/v2.3/cloud/configure/setup-cron-jobs.html#add-cron">additional configurations</a> for crons in those environments.</li>
+  <li><code class="language-plaintext highlighter-rouge">cmd</code>—The command to execute.</li>
 </ul>
 
 <p>A Cron job is well suited for the following tasks:</p>
@@ -4611,7 +4612,7 @@ nodejs:
 
 <h2 id="variables">Variables</h2>
 
-<p>The following environment variables are included in <code class="highlighter-rouge">.magento.app.yaml</code>. These are required for Magento Commerce Cloud 2.2.X.</p>
+<p>The following environment variables are included in <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code>. These are required for Magento Commerce Cloud 2.2.X.</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="na">variables</span><span class="pi">:</span>
   <span class="na">env</span><span class="pi">:</span>
@@ -4622,9 +4623,9 @@ nodejs:
 
 <h2 id="configure-php-options">Configure PHP options</h2>
 
-<p>You can choose which version of PHP to run in your <code class="highlighter-rouge">.magento.app.yaml</code> file:</p>
+<p>You can choose which version of PHP to run in your <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> file:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>name: mymagento
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>name: mymagento
 type: php:7.1
 </code></pre></div></div>
 
@@ -4649,7 +4650,7 @@ type: php:7.1
 
 <p>To view the current list of PHP extensions, SSH into your environment and enter the following command:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php -m
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php -m
 </code></pre></div></div>
 
 <p>Magento requires the following PHP extensions that are enabled by default:</p>
@@ -4681,12 +4682,12 @@ type: php:7.1
 <p>You must install the following extensions:</p>
 
 <ul>
-  <li><a href="http://php.net/manual/en/book.imagick.php">ImageMagick</a> 6.3.7 (or later), ImageMagick can optionally be used with the <code class="highlighter-rouge">gd</code> extension</li>
+  <li><a href="http://php.net/manual/en/book.imagick.php">ImageMagick</a> 6.3.7 (or later), ImageMagick can optionally be used with the <code class="language-plaintext highlighter-rouge">gd</code> extension</li>
   <li><a href="http://php.net/manual/en/book.xsl.php">xsl</a></li>
   <li><a href="https://pecl.php.net/package/redis">redis</a></li>
 </ul>
 
-<p>In addition, we strongly recommend you enable <code class="highlighter-rouge">opcache</code>.</p>
+<p>In addition, we strongly recommend you enable <code class="language-plaintext highlighter-rouge">opcache</code>.</p>
 
 <p>Optional PHP extensions available to install:</p>
 
@@ -4717,24 +4718,24 @@ type: php:7.1
 
 <p class="bs-callout bs-callout-warning">PHP compiled with debug is not supported and the Probe may conflict with XDebug or XHProf. Disable those extensions when enabling the Probe. The Probe conflicts with some PHP extensions like Pinba or IonCube.</p>
 
-<h3 id="customize-phpini-settings">Customize <code class="highlighter-rouge">php.ini</code> settings</h3>
+<h3 id="customize-phpini-settings">Customize <code class="language-plaintext highlighter-rouge">php.ini</code> settings</h3>
 
-<p>You can also create and push a <code class="highlighter-rouge">php.ini</code> file that is appended to the configuration maintained by Magento Commerce.</p>
+<p>You can also create and push a <code class="language-plaintext highlighter-rouge">php.ini</code> file that is appended to the configuration maintained by Magento Commerce.</p>
 
-<p>In your repository, the <code class="highlighter-rouge">php.ini</code> file should be added to the root of the application (the repository root).</p>
+<p>In your repository, the <code class="language-plaintext highlighter-rouge">php.ini</code> file should be added to the root of the application (the repository root).</p>
 
 <p class="bs-callout bs-callout-info">Configuring PHP settings improperly can cause issues. We recommend only advanced administrators set these options.</p>
 
 <p>For example, if you need to increase the PHP memory limit:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>memory_limit = 756M
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>memory_limit = 756M
 </code></pre></div></div>
 
 <p>For a list of recommended PHP configuration settings, see <a href="/devdocs/guides/v2.3/install-gde/prereq/php-settings.html">Required PHP settings</a>.</p>
 
 <p>After pushing your file, you can check that the custom PHP configuration has been added to your environment by <a href="/devdocs/guides/v2.3/cloud/env/environments-start.html#env-start-tunn">creating an SSH tunnel</a> to your environment and entering:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cat /etc/php5/fpm/php.ini
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cat /etc/php5/fpm/php.ini
 </code></pre></div></div>
 
 <h2 id="workers">Workers</h2>
@@ -4747,7 +4748,7 @@ requests to the worker.</p>
 
 <p>A worker instance has the exact same code and compilation output as a web instance.
 The container image is built once and deployed multiple times if needed using the
-same <code class="highlighter-rouge">build</code> hook and <code class="highlighter-rouge">dependencies</code>. You can customize the container and
+same <code class="language-plaintext highlighter-rouge">build</code> hook and <code class="language-plaintext highlighter-rouge">dependencies</code>. You can customize the container and
 allocated resources.</p>
 
 <p>Use worker instances for background tasks including:</p>
@@ -4762,7 +4763,7 @@ allocated resources.</p>
 
 <p>A basic, common worker configuration could look like this:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>workers:
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>workers:
     queue:
         size: S
         commands:
@@ -4770,7 +4771,7 @@ allocated resources.</p>
                 php worker.php
 </code></pre></div></div>
 
-<p>This example defines a single worker named queue, with a “small” container, and runs the command <code class="highlighter-rouge">php worker.php</code> on startup. If <code class="highlighter-rouge">worker.php</code> exits, it is automatically restarted.</p>
+<p>This example defines a single worker named queue, with a “small” container, and runs the command <code class="language-plaintext highlighter-rouge">php worker.php</code> on startup. If <code class="language-plaintext highlighter-rouge">worker.php</code> exits, it is automatically restarted.</p>
 
 <p>For Magento Commerce Cloud 2.1.X, you can use only <a href="#workers">workers</a> and <a href="#crons">cron jobs</a>. For Magento Commerce Cloud 2.2.X, cron jobs launch consumers to process batches of messages, and does not require additional configuration.</p>
 

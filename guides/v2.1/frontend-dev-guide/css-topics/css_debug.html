@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Compile Less with Grunt | Magento 2 Developer Documentation (copy)</title>
+	<title>Compile Less with Grunt | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/frontend-dev-guide/css-topics/css_debug.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/frontend-dev-guide/css-topics/css_debug.html">Magento 2.0</a></li>
 		
@@ -2741,7 +2742,7 @@
 
 			<h2 id="whats-in-this-topic">What’s in this topic</h2>
 
-<p>The topic describes how to install, configure and use <a href="http://gruntjs.com/">Grunt JavaScript task runner</a> for compiling <code class="highlighter-rouge">.less</code> files in Magento 2.</p>
+<p>The topic describes how to install, configure and use <a href="http://gruntjs.com/">Grunt JavaScript task runner</a> for compiling <code class="language-plaintext highlighter-rouge">.less</code> files in Magento 2.</p>
 
 <h2 id="prerequisites">Prerequisites</h2>
 
@@ -2756,42 +2757,42 @@
     <p>Install <a href="https://github.com/joyent/node/wiki/installing-node.js-via-package-manager">node.js</a> to any location on your machine.</p>
   </li>
   <li>Install the Grunt CLI globally:
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> npm install <span class="nt">-g</span> grunt-cli
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> npm <span class="nb">install</span> <span class="nt">-g</span> grunt-cli
 </code></pre></div>    </div>
   </li>
   <li>Rename the following files in your Magento root directory:
     <ul>
-      <li><code class="highlighter-rouge">package.json.sample</code> to <code class="highlighter-rouge">package.json</code></li>
-      <li><code class="highlighter-rouge">Gruntfile.js.sample</code> to <code class="highlighter-rouge">Gruntfile.js</code></li>
+      <li><code class="language-plaintext highlighter-rouge">package.json.sample</code> to <code class="language-plaintext highlighter-rouge">package.json</code></li>
+      <li><code class="language-plaintext highlighter-rouge">Gruntfile.js.sample</code> to <code class="language-plaintext highlighter-rouge">Gruntfile.js</code></li>
     </ul>
   </li>
-  <li>Install (or refresh) the <code class="highlighter-rouge">node.js</code> project dependency, including Grunt, for your Magento instance. To do this, run the following commands in a command prompt:
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> cd &lt;your_Magento_instance_directory&gt;
+  <li>Install (or refresh) the <code class="language-plaintext highlighter-rouge">node.js</code> project dependency, including Grunt, for your Magento instance. To do this, run the following commands in a command prompt:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> cd &lt;your_Magento_instance_directory&gt;
  npm install
  npm update
 </code></pre></div>    </div>
   </li>
   <li>Add your   <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>
- to Grunt configuration. To do this, in the <code class="highlighter-rouge">dev/tools/grunt/configs/themes.js</code> file, add your theme to <code class="highlighter-rouge">module.exports</code> like following:
+ to Grunt configuration. To do this, in the <code class="language-plaintext highlighter-rouge">dev/tools/grunt/configs/themes.js</code> file, add your theme to <code class="language-plaintext highlighter-rouge">module.exports</code> like following:
     <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
 
      <span class="o">&lt;</span><span class="nx">theme</span><span class="o">&gt;</span><span class="p">:</span> <span class="p">{</span>
-         <span class="na">area</span><span class="p">:</span> <span class="s1">'frontend'</span><span class="p">,</span>
-         <span class="na">name</span><span class="p">:</span> <span class="s1">'&lt;Vendor&gt;/&lt;theme&gt;'</span><span class="p">,</span>
-         <span class="na">locale</span><span class="p">:</span> <span class="s1">'&lt;language&gt;'</span><span class="p">,</span>
+         <span class="na">area</span><span class="p">:</span> <span class="dl">'</span><span class="s1">frontend</span><span class="dl">'</span><span class="p">,</span>
+         <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">&lt;Vendor&gt;/&lt;theme&gt;</span><span class="dl">'</span><span class="p">,</span>
+         <span class="na">locale</span><span class="p">:</span> <span class="dl">'</span><span class="s1">&lt;language&gt;</span><span class="dl">'</span><span class="p">,</span>
          <span class="na">files</span><span class="p">:</span> <span class="p">[</span>
-             <span class="s1">'&lt;path_to_file1&gt;'</span><span class="p">,</span> <span class="c1">//path to root source file</span>
-             <span class="s1">'&lt;path_to_file2&gt;'</span>
+             <span class="dl">'</span><span class="s1">&lt;path_to_file1&gt;</span><span class="dl">'</span><span class="p">,</span> <span class="c1">//path to root source file</span>
+             <span class="dl">'</span><span class="s1">&lt;path_to_file2&gt;</span><span class="dl">'</span>
          <span class="p">],</span>
-         <span class="na">dsl</span><span class="p">:</span> <span class="s1">'less'</span>
+         <span class="na">dsl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">less</span><span class="dl">'</span>
      <span class="p">},</span>
 </code></pre></div>    </div>
 
     <p>Where the following notation is used:</p>
     <ul>
-      <li><code class="highlighter-rouge">&lt;theme&gt;</code>: your theme code, conventionally should correspond to the theme directory name.</li>
-      <li><code class="highlighter-rouge">&lt;language&gt;</code>: specified in the <code class="highlighter-rouge">code_subtag</code> format, for example <code class="highlighter-rouge">en_US</code>. Only one locale can be specified here. To debug the theme with another locale, create one more theme declaration, having specified another value for <code class="highlighter-rouge">language</code></li>
-      <li><code class="highlighter-rouge">&lt;path_to_file&gt;</code>: path to the root source file, relative to the <code class="highlighter-rouge">app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web</code> directory. You need to specify all <a href="/devdocs/guides/v2.1/frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms">root source files of the theme</a>. If your theme <a href="/devdocs/guides/v2.1/frontend-dev-guide/themes/theme-inherit.html">inherits</a> from a certain theme, and does not contain its own root source files, specify the root source files of the parent theme.</li>
+      <li><code class="language-plaintext highlighter-rouge">&lt;theme&gt;</code>: your theme code, conventionally should correspond to the theme directory name.</li>
+      <li><code class="language-plaintext highlighter-rouge">&lt;language&gt;</code>: specified in the <code class="language-plaintext highlighter-rouge">code_subtag</code> format, for example <code class="language-plaintext highlighter-rouge">en_US</code>. Only one locale can be specified here. To debug the theme with another locale, create one more theme declaration, having specified another value for <code class="language-plaintext highlighter-rouge">language</code></li>
+      <li><code class="language-plaintext highlighter-rouge">&lt;path_to_file&gt;</code>: path to the root source file, relative to the <code class="language-plaintext highlighter-rouge">app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web</code> directory. You need to specify all <a href="/devdocs/guides/v2.1/frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms">root source files of the theme</a>. If your theme <a href="/devdocs/guides/v2.1/frontend-dev-guide/themes/theme-inherit.html">inherits</a> from a certain theme, and does not contain its own root source files, specify the root source files of the parent theme.</li>
     </ul>
   </li>
   <li>(Optional) If you want to use Grunt for “watching” changes automatically, without reloading pages in a browser each time, install the <a href="http://livereload.com/extensions/">LiveReload extension</a> in your browser.</li>
@@ -2811,19 +2812,19 @@
   <tbody>
     <tr>
       <td>grunt clean</td>
-      <td>Removes the theme related static files in the <code class="highlighter-rouge">pub/static</code> and <code class="highlighter-rouge">var</code> directories.</td>
+      <td>Removes the theme related static files in the <code class="language-plaintext highlighter-rouge">pub/static</code> and <code class="language-plaintext highlighter-rouge">var</code> directories.</td>
     </tr>
     <tr>
       <td>grunt exec</td>
-      <td>Republishes symlinks to the source files to the <code class="highlighter-rouge">pub/static/frontend///</code> directory.</td>
+      <td>Republishes symlinks to the source files to the <code class="language-plaintext highlighter-rouge">pub/static/frontend///</code> directory.</td>
     </tr>
     <tr>
       <td>grunt less</td>
-      <td>Compiles <code class="highlighter-rouge">.css</code> files using the symlinks published in the <code class="highlighter-rouge">pub/static/frontend///</code> directory.</td>
+      <td>Compiles <code class="language-plaintext highlighter-rouge">.css</code> files using the symlinks published in the <code class="language-plaintext highlighter-rouge">pub/static/frontend///</code> directory.</td>
     </tr>
     <tr>
       <td>grunt watch</td>
-      <td>Tracks the changes in the source files, recompiles <code class="highlighter-rouge">.css</code> files, and reloads the page in the browser.</td>
+      <td>Tracks the changes in the source files, recompiles <code class="language-plaintext highlighter-rouge">.css</code> files, and reloads the page in the browser.</td>
     </tr>
   </tbody>
 </table>
@@ -2833,30 +2834,30 @@
 <p>The following shows which Grunt tasks to use for debugging:</p>
 
 <ul>
-  <li>After you switch the compilation mode from client-side to server-side, run the <code class="highlighter-rouge">exec</code> command.</li>
-  <li>After you customize the content of any <code class="highlighter-rouge">.less</code> file, except the root source files, run the <code class="highlighter-rouge">less</code> task and reload the page.</li>
-  <li>After you <a href="/devdocs/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html#css_exception">customize the root source files or move the files included to the root files</a>, run the <code class="highlighter-rouge">exec</code> command and reload the page.</li>
+  <li>After you switch the compilation mode from client-side to server-side, run the <code class="language-plaintext highlighter-rouge">exec</code> command.</li>
+  <li>After you customize the content of any <code class="language-plaintext highlighter-rouge">.less</code> file, except the root source files, run the <code class="language-plaintext highlighter-rouge">less</code> task and reload the page.</li>
+  <li>After you <a href="/devdocs/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html#css_exception">customize the root source files or move the files included to the root files</a>, run the <code class="language-plaintext highlighter-rouge">exec</code> command and reload the page.</li>
 </ul>
 
-<p>If you have LiveReload installed, run the <code class="highlighter-rouge">grunt watch</code> command, and the flow is even simpler:</p>
+<p>If you have LiveReload installed, run the <code class="language-plaintext highlighter-rouge">grunt watch</code> command, and the flow is even simpler:</p>
 <ul>
-  <li>After you customize the content of any <code class="highlighter-rouge">.less</code> file, changes are applied and the page reloads automatically. No additional changes are required.</li>
-  <li>After you <a href="/devdocs/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html#css_exception">customize the root source files or move the files included to the root files</a>, run the <code class="highlighter-rouge">clean</code> and <code class="highlighter-rouge">exec</code> commands, and the browser page reloads automatically.</li>
+  <li>After you customize the content of any <code class="language-plaintext highlighter-rouge">.less</code> file, changes are applied and the page reloads automatically. No additional changes are required.</li>
+  <li>After you <a href="/devdocs/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html#css_exception">customize the root source files or move the files included to the root files</a>, run the <code class="language-plaintext highlighter-rouge">clean</code> and <code class="language-plaintext highlighter-rouge">exec</code> commands, and the browser page reloads automatically.</li>
 </ul>
 
 <h2 id="source_maps">CSS source maps</h2>
 
 <p>When using Grunt for styles preprocessing, you can enable the CSS source maps generation in your browser. It will make the theme styles debugging easier.</p>
 
-<p>For each theme, Magento compiles all theme <code class="highlighter-rouge">.less</code> files into two CSS files: <code class="highlighter-rouge">styles-m.css</code> and <code class="highlighter-rouge">styles-l.css</code>. So when you debug a theme, you browser only sees <code class="highlighter-rouge">styles-m.css</code> and it might be difficult to define which exactly <code class="highlighter-rouge">.css</code> or <code class="highlighter-rouge">.less</code> file requires corrections. For example:</p>
+<p>For each theme, Magento compiles all theme <code class="language-plaintext highlighter-rouge">.less</code> files into two CSS files: <code class="language-plaintext highlighter-rouge">styles-m.css</code> and <code class="language-plaintext highlighter-rouge">styles-l.css</code>. So when you debug a theme, you browser only sees <code class="language-plaintext highlighter-rouge">styles-m.css</code> and it might be difficult to define which exactly <code class="language-plaintext highlighter-rouge">.css</code> or <code class="language-plaintext highlighter-rouge">.less</code> file requires corrections. For example:</p>
 
 <p><img src="/devdocs/common/images/fdg/no-map.png" alt="node declaration autocomplete" width="610px" /></p>
 
-<p>CSS source maps solve this issue. They help to find the <code class="highlighter-rouge">.less</code> file, where the style is specified. For example:</p>
+<p>CSS source maps solve this issue. They help to find the <code class="language-plaintext highlighter-rouge">.less</code> file, where the style is specified. For example:</p>
 
 <p><img src="/devdocs/common/images/fdg/with-map.png" alt="node declaration autocomplete" width="610px" /></p>
 
-<p>CSS source maps are generated automatically when you compile CSS for your theme using the <code class="highlighter-rouge">grunt less: &lt;theme&gt;</code> command. To use them, you need to enable source maps displaying in your browser.</p>
+<p>CSS source maps are generated automatically when you compile CSS for your theme using the <code class="language-plaintext highlighter-rouge">grunt less: &lt;theme&gt;</code> command. To use them, you need to enable source maps displaying in your browser.</p>
 
 <p>The path to the CSS source maps configuration differs, depending on the browser.</p>
 

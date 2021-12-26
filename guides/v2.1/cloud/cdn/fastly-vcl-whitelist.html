@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Custom whitelist VCL | Magento 2 Developer Documentation (copy)</title>
+	<title>Custom whitelist VCL | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/cdn/fastly-vcl-whitelist.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/cdn/fastly-vcl-whitelist.html">Magento 2.0</a></li>
 		
@@ -4233,7 +4234,7 @@
 <ul>
   <li>List of client IPs to allow access</li>
   <li>Account access and URL to the Magento Admin for the Staging or Production environment</li>
-  <li>URL for the Magento Admin. If you changed this URL from <code class="highlighter-rouge">/admin</code>, you will need to modify the code in this example.</li>
+  <li>URL for the Magento Admin. If you changed this URL from <code class="language-plaintext highlighter-rouge">/admin</code>, you will need to modify the code in this example.</li>
 </ul>
 
 <p class="bs-callout bs-callout-info">This information is just the code portion for setting up your VCL. Use this information with <a href="/devdocs/guides/v2.1/cloud/cdn/cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a>.</p>
@@ -4259,35 +4260,35 @@
 
 <p>To allow only whitelisted IPs access to Staging and Production environments, you can use the same VCL snippet file without edits.</p>
 
-<p>Create an <code class="highlighter-rouge">allowlist.json</code> file with the following JSON content:</p>
+<p>Create an <code class="language-plaintext highlighter-rouge">allowlist.json</code> file with the following JSON content:</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allowlist"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"dynamic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"recv"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"priority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"if ((req.url ~ </span><span class="se">\"</span><span class="s2">^/admin</span><span class="se">\"</span><span class="s2">) &amp;&amp; !(client.ip ~ allowlist) &amp;&amp; !req.http.Fastly-FF) { error 403 </span><span class="se">\"</span><span class="s2">Forbidden</span><span class="se">\"</span><span class="s2">; }"</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allowlist"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"dynamic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"recv"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"priority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"if ((req.url ~ </span><span class="se">\"</span><span class="s2">^/admin</span><span class="se">\"</span><span class="s2">) &amp;&amp; !(client.ip ~ allowlist) &amp;&amp; !req.http.Fastly-FF) { error 403 </span><span class="se">\"</span><span class="s2">Forbidden</span><span class="se">\"</span><span class="s2">; }"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
 <p>Review the following values for the code to determine if you need to make changes:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">name</code>: Name for the VCL snippet. For this example, we used the name <code class="highlighter-rouge">allowlist</code>.</li>
-  <li><code class="highlighter-rouge">priority</code>: Determines the order VCL snippets call. You want to set the priority to 5 to immediately run and check for whitelisted, allowed IPs. This priority runs the snippet immediately and before any of the uploaded and default Magento VCL snippets (magentomodule) that have a priority of 50.</li>
-  <li><code class="highlighter-rouge">type</code>: For this VCL, we use <code class="highlighter-rouge">recv</code>, which places it in the vcl_recv subroutine by below the boilerplate VCL and above any objects.</li>
+  <li><code class="language-plaintext highlighter-rouge">name</code>: Name for the VCL snippet. For this example, we used the name <code class="language-plaintext highlighter-rouge">allowlist</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">priority</code>: Determines the order VCL snippets call. You want to set the priority to 5 to immediately run and check for whitelisted, allowed IPs. This priority runs the snippet immediately and before any of the uploaded and default Magento VCL snippets (magentomodule) that have a priority of 50.</li>
+  <li><code class="language-plaintext highlighter-rouge">type</code>: For this VCL, we use <code class="language-plaintext highlighter-rouge">recv</code>, which places it in the vcl_recv subroutine by below the boilerplate VCL and above any objects.</li>
   <li>
-    <p><code class="highlighter-rouge">content</code>: The snippet of VCL code to run, which verifies the client IP. The following occurs in this code:</p>
+    <p><code class="language-plaintext highlighter-rouge">content</code>: The snippet of VCL code to run, which verifies the client IP. The following occurs in this code:</p>
 
     <ul>
       <li>If the IP is in the Edge ACL, it is allowed access. If not, they receive a 403 Forbidden error.</li>
-      <li>If your URL for your Magento Admin was changed, make sure to edit <code class="highlighter-rouge">/admin</code> with the new URL. For example, <code class="highlighter-rouge">/company-admin</code>.</li>
-      <li>In the code sample, the condition <code class="highlighter-rouge">!req.http.Fastly-FF</code> is important when using Origin Shielding. Do not remove or edit this code.</li>
+      <li>If your URL for your Magento Admin was changed, make sure to edit <code class="language-plaintext highlighter-rouge">/admin</code> with the new URL. For example, <code class="language-plaintext highlighter-rouge">/company-admin</code>.</li>
+      <li>In the code sample, the condition <code class="language-plaintext highlighter-rouge">!req.http.Fastly-FF</code> is important when using Origin Shielding. Do not remove or edit this code.</li>
     </ul>
   </li>
 </ul>
 
-<p class="bs-callout bs-callout-info">The default VCL snippets you uploaded included a prepended name of <code class="highlighter-rouge">magentomodule_</code> with a priority of 50. For your custom VCL snippets, <strong>do not use the <code class="highlighter-rouge">magentomodule_</code> name</strong>. Also consider the priority of your custom snippets if they should override the default snippets.</p>
+<p class="bs-callout bs-callout-info">The default VCL snippets you uploaded included a prepended name of <code class="language-plaintext highlighter-rouge">magentomodule_</code> with a priority of 50. For your custom VCL snippets, <strong>do not use the <code class="language-plaintext highlighter-rouge">magentomodule_</code> name</strong>. Also consider the priority of your custom snippets if they should override the default snippets.</p>
 
 <h2 id="complete">Finish adding the VCL</h2>
 

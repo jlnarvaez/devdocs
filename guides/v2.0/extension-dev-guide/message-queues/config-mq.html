@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Configure message queue topology | Magento 2 Developer Documentation (copy)</title>
+	<title>Configure message queue topology | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/extension-dev-guide/message-queues/config-mq.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/extension-dev-guide/message-queues/config-mq.html">Magento 2.0</a></li>
 		
@@ -2903,11 +2904,11 @@
 			<p class="bs-callout bs-callout-warning">The message queue topology can only be configured after Magento Open Source has been installed and before Magento Commerce has been installed.</p>
 
 <p>Each module that is to be a   <span term-uuid="d5777fe2-f786-45d9-b052-cca8a10120d9" class="glossary-term" data-toggle="popover">publisher</span>
- must be configured as such. If you want a module to use the MQF, create a <code class="highlighter-rouge">&lt;module&gt;/etc/queue.xml</code> file and define the publisher, consumers, exchanges and bindings.</p>
+ must be configured as such. If you want a module to use the MQF, create a <code class="language-plaintext highlighter-rouge">&lt;module&gt;/etc/queue.xml</code> file and define the publisher, consumers, exchanges and bindings.</p>
 
 <h2 id="edit-the-queuexml-file">Edit the <code>queue.xml</code> file</h2>
 
-<p>The <code class="highlighter-rouge">queue.xml</code> file can contain the following elements:</p>
+<p>The <code class="language-plaintext highlighter-rouge">queue.xml</code> file can contain the following elements:</p>
 
 <ul>
   <li>publisher</li>
@@ -2918,7 +2919,7 @@
 
 <h3 id="required-elements">Required elements</h3>
 
-<p>Each <code class="highlighter-rouge">queue.xml</code> file must contain the following lines:</p>
+<p>Each <code class="language-plaintext highlighter-rouge">queue.xml</code> file must contain the following lines:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0"?&gt;</span>
 
@@ -2930,7 +2931,7 @@
 
 <h3 id="publisher-element">publisher element</h3>
 
-<p>The <code class="highlighter-rouge">publisher</code> element configures the type of connection and the exchange to publish to. By default, Magento uses one exchange. The name of exchange is a part of the publisher configuration. However multiple exchanges are supported, based on the AMQP model.</p>
+<p>The <code class="language-plaintext highlighter-rouge">publisher</code> element configures the type of connection and the exchange to publish to. By default, Magento uses one exchange. The name of exchange is a part of the publisher configuration. However multiple exchanges are supported, based on the AMQP model.</p>
 <table>
 <tr>
 <th>Parameter</th><th>Description</th>
@@ -2952,7 +2953,7 @@
 
 <h3 id="topic-element">topic element</h3>
 
-<p>Configuring the <code class="highlighter-rouge">topic</code> element defines the interface that processes the message and assigns a publisher.</p>
+<p>Configuring the <code class="language-plaintext highlighter-rouge">topic</code> element defines the interface that processes the message and assigns a publisher.</p>
 <table>
 <tr>
 <th><p>Parameter</p></th><th><p>Description</p></th>
@@ -2979,7 +2980,7 @@
 
 <h3 id="consumer-element">consumer element</h3>
 
-<p>Each <code class="highlighter-rouge">consumer</code> elements maps the receiver of a message to a specific queue. The <code class="highlighter-rouge">class</code> and <code class="highlighter-rouge">method</code> parameters indicate what receives and processes the message.</p>
+<p>Each <code class="language-plaintext highlighter-rouge">consumer</code> elements maps the receiver of a message to a specific queue. The <code class="language-plaintext highlighter-rouge">class</code> and <code class="language-plaintext highlighter-rouge">method</code> parameters indicate what receives and processes the message.</p>
 <table>
 <tr>
 <th>Parameter</th><th>Description</th>
@@ -3012,7 +3013,7 @@
 
 <h3 id="bind-element">bind element</h3>
 
-<p>The <code class="highlighter-rouge">bind</code> elements link topics to queues and exchanges, defining the message queue topology. A topic can be sent to any number of queues.</p>
+<p>The <code class="language-plaintext highlighter-rouge">bind</code> elements link topics to queues and exchanges, defining the message queue topology. A topic can be sent to any number of queues.</p>
 
 <table>
 <tr>
@@ -3032,7 +3033,7 @@
 </tr>
 </table>
 
-<h2 id="sample-queuexml-file">Sample <code class="highlighter-rouge">queue.xml</code> file</h2>
+<h2 id="sample-queuexml-file">Sample <code class="language-plaintext highlighter-rouge">queue.xml</code> file</h2>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework-message-queue:etc/queue.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;publisher</span> <span class="na">name=</span><span class="s">"test-publisher-1"</span> <span class="na">connection=</span><span class="s">"rabbitmq"</span> <span class="na">exchange=</span><span class="s">"magento"</span><span class="nt">/&gt;</span>

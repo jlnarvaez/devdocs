@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Step 12. Create a shipment | Magento 2 Developer Documentation (copy)</title>
+	<title>Step 12. Create a shipment | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/rest/tutorials/inventory/create-shipment.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/rest/tutorials/inventory/create-shipment.html">Magento 2.0</a></li>
 		
@@ -1627,58 +1628,58 @@
 	<h1 class="page-heading">Step 12. Create a shipment</h1>
 </section>
 
-			<p>In the previous step, the SSA recommended shipping 20 <code class="highlighter-rouge">24-WB01</code> items and 19 <code class="highlighter-rouge">24-WB03</code> items from Baltimore. It also recommended shipping 31 <code class="highlighter-rouge">24-WB03</code> items from Reno.</p>
+			<p>In the previous step, the SSA recommended shipping 20 <code class="language-plaintext highlighter-rouge">24-WB01</code> items and 19 <code class="language-plaintext highlighter-rouge">24-WB03</code> items from Baltimore. It also recommended shipping 31 <code class="language-plaintext highlighter-rouge">24-WB03</code> items from Reno.</p>
 
-<p>You can always override the SSA recommendations. It would be valid, for example, to ship all the <code class="highlighter-rouge">24-WB01</code> items and 42 <code class="highlighter-rouge">24-WB03</code> items from Reno, leaving 8 <code class="highlighter-rouge">24-WB03</code> items to be shipped from Baltimore.</p>
+<p>You can always override the SSA recommendations. It would be valid, for example, to ship all the <code class="language-plaintext highlighter-rouge">24-WB01</code> items and 42 <code class="language-plaintext highlighter-rouge">24-WB03</code> items from Reno, leaving 8 <code class="language-plaintext highlighter-rouge">24-WB03</code> items to be shipped from Baltimore.</p>
 
 <p>Fulfilling the order requires two partial shipments (unless you want to create a scenario that also involves the Austin warehouse). In this example, we’ll follow the SSA recommendations.</p>
 
 <p>When you complete a partial or full shipment, Magento deducts the reserved products from corresponding sources.</p>
 
-<h2 id="recommended-ship-using--post-v1orderorderidship">Recommended: Ship using  <code class="highlighter-rouge">POST /V1/order/:orderId/ship</code></h2>
+<h2 id="recommended-ship-using--post-v1orderorderidship">Recommended: Ship using  <code class="language-plaintext highlighter-rouge">POST /V1/order/:orderId/ship</code></h2>
 
-<p>Although you can use the <code class="highlighter-rouge">POST V1/shipment</code> endpoint to create a shipment, the <code class="highlighter-rouge">POST /V1/order/:orderId/ship</code> endpoint is a better option in that it is more efficient and the payload can be simpler.</p>
+<p>Although you can use the <code class="language-plaintext highlighter-rouge">POST V1/shipment</code> endpoint to create a shipment, the <code class="language-plaintext highlighter-rouge">POST /V1/order/:orderId/ship</code> endpoint is a better option in that it is more efficient and the payload can be simpler.</p>
 
 <h3 id="ship-from-the-baltimore-warehouse">Ship from the Baltimore warehouse</h3>
 
-<p>We’ll ship 20 <code class="highlighter-rouge">24-WB01</code> items and 19 <code class="highlighter-rouge">24-WB03</code> items from the Baltimore warehouse. The <code class="highlighter-rouge">order_item_id</code> value for <code class="highlighter-rouge">24-WB01</code> is 3, and the value for <code class="highlighter-rouge">24-WB03</code> is 4.</p>
+<p>We’ll ship 20 <code class="language-plaintext highlighter-rouge">24-WB01</code> items and 19 <code class="language-plaintext highlighter-rouge">24-WB03</code> items from the Baltimore warehouse. The <code class="language-plaintext highlighter-rouge">order_item_id</code> value for <code class="language-plaintext highlighter-rouge">24-WB01</code> is 3, and the value for <code class="language-plaintext highlighter-rouge">24-WB03</code> is 4.</p>
 
 <p><strong>Endpoint</strong></p>
 
-<p><code class="highlighter-rouge">POST http://&lt;host&gt;/rest/us/V1/order/3/ship</code></p>
+<p><code class="language-plaintext highlighter-rouge">POST http://&lt;host&gt;/rest/us/V1/order/3/ship</code></p>
 
-<p>where <code class="highlighter-rouge">3</code> is the <code class="highlighter-rouge">orderid</code></p>
+<p>where <code class="language-plaintext highlighter-rouge">3</code> is the <code class="language-plaintext highlighter-rouge">orderid</code></p>
 
 <p><strong>Scope</strong></p>
 
-<p><code class="highlighter-rouge">us</code> store view</p>
+<p><code class="language-plaintext highlighter-rouge">us</code> store view</p>
 
 <p><strong>Headers</strong></p>
 
-<p><code class="highlighter-rouge">Content-Type</code>: <code class="highlighter-rouge">application/json</code></p>
+<p><code class="language-plaintext highlighter-rouge">Content-Type</code>: <code class="language-plaintext highlighter-rouge">application/json</code></p>
 
-<p><code class="highlighter-rouge">Authorization</code>: <code class="highlighter-rouge">Bearer &lt;admin token&gt;</code></p>
+<p><code class="language-plaintext highlighter-rouge">Authorization</code>: <code class="language-plaintext highlighter-rouge">Bearer &lt;admin token&gt;</code></p>
 
 <p><strong>Payload</strong></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
+      </span><span class="nl">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="w">
+      </span><span class="nl">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"notify"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shipment from Baltimore"</span><span class="w">
+  </span><span class="nl">"notify"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shipment from Baltimore"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"arguments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"baltimore_wh"</span><span class="w">
+  </span><span class="nl">"arguments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"baltimore_wh"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1686,28 +1687,28 @@
 
 <p><strong>Response</strong></p>
 
-<p>The shipment ID, such as <code class="highlighter-rouge">3</code>.</p>
+<p>The shipment ID, such as <code class="language-plaintext highlighter-rouge">3</code>.</p>
 
 <h3 id="ship-from-the-reno-warehouse">Ship from the Reno warehouse</h3>
 
-<p>Use the same endpoint to ship the remaining 31 <code class="highlighter-rouge">24-WB03</code> items from the Reno warehouse.</p>
+<p>Use the same endpoint to ship the remaining 31 <code class="language-plaintext highlighter-rouge">24-WB03</code> items from the Reno warehouse.</p>
 
 <p><strong>Payload</strong></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="w">
+      </span><span class="nl">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"notify"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shipment from Reno"</span><span class="w">
+  </span><span class="nl">"notify"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shipment from Reno"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"arguments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reno_wh"</span><span class="w">
+  </span><span class="nl">"arguments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reno_wh"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1715,57 +1716,57 @@
 
 <p><strong>Response</strong></p>
 
-<p>The shipment ID, such as <code class="highlighter-rouge">4</code>.</p>
+<p>The shipment ID, such as <code class="language-plaintext highlighter-rouge">4</code>.</p>
 
-<h2 id="alternative-ship-using-post-v1shipment">Alternative: Ship using <code class="highlighter-rouge">POST /V1/shipment</code></h2>
+<h2 id="alternative-ship-using-post-v1shipment">Alternative: Ship using <code class="language-plaintext highlighter-rouge">POST /V1/shipment</code></h2>
 
-<p>Magento also supports the <code class="highlighter-rouge">POST /V1/shipment</code> endpoint for sending full or partial shipments.</p>
+<p>Magento also supports the <code class="language-plaintext highlighter-rouge">POST /V1/shipment</code> endpoint for sending full or partial shipments.</p>
 
 <h3 id="ship-from-the-baltimore-warehouse-1">Ship from the Baltimore warehouse</h3>
 
 <p><strong>Endpoint</strong></p>
 
-<p><code class="highlighter-rouge">POST http://&lt;host&gt;/rest/us/V1/shipment</code></p>
+<p><code class="language-plaintext highlighter-rouge">POST http://&lt;host&gt;/rest/us/V1/shipment</code></p>
 
 <p><strong>Scope</strong></p>
 
-<p><code class="highlighter-rouge">us</code> store view</p>
+<p><code class="language-plaintext highlighter-rouge">us</code> store view</p>
 
 <p><strong>Headers</strong></p>
 
-<p><code class="highlighter-rouge">Content-Type</code>: <code class="highlighter-rouge">application/json</code></p>
+<p><code class="language-plaintext highlighter-rouge">Content-Type</code>: <code class="language-plaintext highlighter-rouge">application/json</code></p>
 
-<p><code class="highlighter-rouge">Authorization</code>: <code class="highlighter-rouge">Bearer &lt;admin token&gt;</code></p>
+<p><code class="language-plaintext highlighter-rouge">Authorization</code>: <code class="language-plaintext highlighter-rouge">Bearer &lt;admin token&gt;</code></p>
 
 <p><strong>Payload</strong></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"entity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"billing_address_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"total_qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">39</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"entity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"billing_address_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"total_qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">39</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Voyage Yoga Bag"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB01"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Voyage Yoga Bag"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB01"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Driven Backpack"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">36</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB03"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Driven Backpack"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">36</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB03"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"baltimore_wh"</span><span class="w">
+    </span><span class="nl">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"baltimore_wh"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1774,67 +1775,67 @@
 <p><strong>Response</strong></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-02 21:14:43"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"increment_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2000000013"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"packages"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-    </span><span class="s2">"total_qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-02 21:14:43"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-02 21:14:43"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"increment_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2000000013"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"packages"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"total_qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-02 21:14:43"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Voyage Yoga Bag"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB01"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
+            </span><span class="nl">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Voyage Yoga Bag"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB01"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Driven Backpack"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">36</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB03"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="w">
+            </span><span class="nl">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Driven Backpack"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">36</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB03"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"tracks"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-    </span><span class="s2">"comments"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-    </span><span class="s2">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"baltimore_wh"</span><span class="w">
+    </span><span class="nl">"tracks"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"comments"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"baltimore_wh"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
 <h3 id="ship-from-the-reno-warehouse-1">Ship from the Reno warehouse</h3>
 
-<p>Use the same endpoint to ship the remaining 35 <code class="highlighter-rouge">sp2</code> items from the Reno warehouse.</p>
+<p>Use the same endpoint to ship the remaining 35 <code class="language-plaintext highlighter-rouge">sp2</code> items from the Reno warehouse.</p>
 
 <p><strong>Payload</strong></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"entity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"total_qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"entity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"total_qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Driven Backpack"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">36</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB03"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Driven Backpack"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">36</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB03"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reno_wh"</span><span class="w">
+    </span><span class="nl">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reno_wh"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1843,31 +1844,31 @@
 <p><strong>Response</strong></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-02 22:22:23"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"increment_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2000000016"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"packages"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-    </span><span class="s2">"shipment_status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"total_qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-02 22:22:23"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-02 22:22:23"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"increment_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2000000016"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"packages"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"shipment_status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"total_qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-02 22:22:23"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Driven Backpack"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">36</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB03"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="w">
+            </span><span class="nl">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Driven Backpack"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">36</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-WB03"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"order_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"tracks"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-    </span><span class="s2">"comments"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-    </span><span class="s2">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reno_wh"</span><span class="w">
+    </span><span class="nl">"tracks"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"comments"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"source_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reno_wh"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>

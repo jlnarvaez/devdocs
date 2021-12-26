@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Technical guidelines | Magento 2 Developer Documentation (copy)</title>
+	<title>Technical guidelines | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/coding-standards/technical-guidelines.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/coding-standards/technical-guidelines.html">Magento 2.0</a></li>
 		
@@ -1818,35 +1819,35 @@
     <tr>
         <td>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Config</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="kd">class</span> <span class="nc">Config</span>
 <span class="p">{</span>
     <span class="k">private</span> <span class="nv">$data</span><span class="p">;</span>
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">init</span><span class="p">()</span> <span class="c1">// or load()
-</span>    <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">fileReader</span><span class="o">-&gt;</span><span class="na">load</span><span class="p">(</span><span class="s1">'cache.xml'</span><span class="p">);</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">init</span><span class="p">()</span> <span class="c1">// or load()</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">fileReader</span><span class="o">-&gt;</span><span class="nf">load</span><span class="p">(</span><span class="s1">'cache.xml'</span><span class="p">);</span>
     <span class="p">}</span>
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getValue</span><span class="p">(</span><span class="nv">$key</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">getValue</span><span class="p">(</span><span class="nv">$key</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span><span class="p">[</span><span class="nv">$key</span><span class="p">];</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">[</span><span class="nv">$key</span><span class="p">];</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
         </td>
         <td>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Config</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="kd">class</span> <span class="nc">Config</span>
 <span class="p">{</span>
     <span class="k">private</span> <span class="nv">$data</span><span class="p">;</span>
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getValue</span><span class="p">(</span><span class="nv">$key</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">getValue</span><span class="p">(</span><span class="nv">$key</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">fileReader</span><span class="o">-&gt;</span><span class="na">load</span><span class="p">(</span><span class="s1">'cache.xml'</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">fileReader</span><span class="o">-&gt;</span><span class="nf">load</span><span class="p">(</span><span class="s1">'cache.xml'</span><span class="p">);</span>
         <span class="p">}</span>
 
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span><span class="p">[</span><span class="nv">$key</span><span class="p">];</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">[</span><span class="nv">$key</span><span class="p">];</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
@@ -1864,27 +1865,27 @@
 
 <div class="collapsible">
     <b class="collapsible-title">Example: </b>
-    <div class="collapsible-content"><div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="k">class</span> <span class="nc">Composite</span>
+    <div class="collapsible-content"><div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="kd">class</span> <span class="nc">Composite</span>
 <span class="p">{</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * @var RendererInterface[]
      */</span>
     <span class="k">private</span> <span class="nv">$renderers</span><span class="p">;</span>
 
-    <span class="sd">/**
+    <span class="cd">/**
      * @param RendererInterface[] $renderers
      * @throws InvalidArgumentException
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="k">array</span> <span class="nv">$renderers</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="kt">array</span> <span class="nv">$renderers</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="k">foreach</span> <span class="p">(</span><span class="nv">$renderers</span> <span class="k">as</span> <span class="nv">$renderer</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$renderer</span> <span class="nx">instanceof</span> <span class="nx">RendererInterface</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">throw</span> <span class="k">new</span> <span class="nx">InvalidArgumentException</span><span class="p">(</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$renderer</span> <span class="k">instanceof</span> <span class="nc">RendererInterface</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">throw</span> <span class="k">new</span> <span class="nc">InvalidArgumentException</span><span class="p">(</span>
                     <span class="nb">sprintf</span><span class="p">(</span><span class="s1">'Instance of the phrase renderer is expected, got %s instead.'</span><span class="p">,</span> <span class="nb">get_class</span><span class="p">(</span><span class="nv">$renderer</span><span class="p">))</span>
                 <span class="p">);</span>
             <span class="p">}</span>
         <span class="p">}</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">renderers</span> <span class="o">=</span> <span class="nv">$renderers</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">renderers</span> <span class="o">=</span> <span class="nv">$renderers</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -1905,39 +1906,39 @@
     <tr>
         <td>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Config</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="kd">class</span> <span class="nc">Config</span>
 <span class="p">{</span>
     <span class="k">private</span> <span class="nv">$data</span><span class="p">;</span>
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nv">$fileReader</span><span class="p">,</span> <span class="nv">$eventManager</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="nv">$fileReader</span><span class="p">,</span> <span class="nv">$eventManager</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span> <span class="o">=</span> <span class="nv">$fileReader</span><span class="o">-&gt;</span><span class="na">read</span><span class="p">(</span><span class="s1">'cache.xml'</span><span class="p">);</span>
-        <span class="nv">$eventManager</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">(</span><span class="s1">'config_read_after'</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">=</span> <span class="nv">$fileReader</span><span class="o">-&gt;</span><span class="nf">read</span><span class="p">(</span><span class="s1">'cache.xml'</span><span class="p">);</span>
+        <span class="nv">$eventManager</span><span class="o">-&gt;</span><span class="nf">dispatch</span><span class="p">(</span><span class="s1">'config_read_after'</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
         </td>
         <td>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Config</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="kd">class</span> <span class="nc">Config</span>
 <span class="p">{</span>
     <span class="k">private</span> <span class="nv">$fileReader</span><span class="p">;</span>
 
     <span class="k">private</span> <span class="nv">$eventManager</span><span class="p">;</span>
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nv">$fileReader</span><span class="p">,</span> <span class="nv">$eventManager</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="nv">$fileReader</span><span class="p">,</span> <span class="nv">$eventManager</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eventManager</span> <span class="o">=</span> <span class="nv">$eventManager</span><span class="p">;</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">fileReader</span> <span class="o">=</span> <span class="nv">$fileReader</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">eventManager</span> <span class="o">=</span> <span class="nv">$eventManager</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">fileReader</span> <span class="o">=</span> <span class="nv">$fileReader</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getData</span><span class="p">(</span><span class="nv">$key</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">getData</span><span class="p">(</span><span class="nv">$key</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">fileReader</span><span class="o">-&gt;</span><span class="na">read</span><span class="p">(</span><span class="s1">'cache.xml'</span><span class="p">);</span>
-            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eventManager</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">(</span><span class="s1">'config_read_after'</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">fileReader</span><span class="o">-&gt;</span><span class="nf">read</span><span class="p">(</span><span class="s1">'cache.xml'</span><span class="p">);</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">eventManager</span><span class="o">-&gt;</span><span class="nf">dispatch</span><span class="p">(</span><span class="s1">'config_read_after'</span><span class="p">);</span>
         <span class="p">}</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span><span class="p">[</span><span class="nv">$key</span><span class="p">];</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">[</span><span class="nv">$key</span><span class="p">];</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
@@ -1961,32 +1962,32 @@
     <tr>
         <td>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">interface</span> <span class="nx">SessionAdapterInterface</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="kd">interface</span> <span class="nc">SessionAdapterInterface</span>
 <span class="p">{}</span>
 
-<span class="nx">RedisSessionAdapter</span> <span class="k">implements</span> <span class="nx">SessionAdapterInterface</span>
+<span class="nc">RedisSessionAdapter</span> <span class="kd">implements</span> <span class="nc">SessionAdapterInterface</span>
 <span class="p">{}</span>
 
-<span class="k">class</span> <span class="nc">SessionManager</span>
+<span class="kd">class</span> <span class="nc">SessionManager</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">RedisSessionAdapter</span> <span class="nv">$sessionAdapter</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="kt">RedisSessionAdapter</span> <span class="nv">$sessionAdapter</span><span class="p">)</span>
     <span class="p">{}</span>
 <span class="p">}</span>
 
-<span class="o">//</span> <span class="nx">Breaks</span> <span class="nx">polymorphism</span> <span class="nx">principle</span><span class="p">,</span> <span class="nx">restricts</span> <span class="nx">what</span> <span class="nx">types</span> <span class="nx">can</span> <span class="nx">be</span> <span class="nx">passed</span> <span class="nx">at</span> <span class="nx">the</span> <span class="nx">runtime</span><span class="o">.</span></code></pre></figure>
+<span class="c1">// Breaks polymorphism principle, restricts what types can be passed at the runtime.</span></code></pre></figure>
 
         </td>
         <td>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">interface</span> <span class="nx">SessionAdapterInterface</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="kd">interface</span> <span class="nc">SessionAdapterInterface</span>
 <span class="p">{}</span>
 
-<span class="nx">RedisSessionAdapter</span> <span class="k">implements</span> <span class="nx">SessionAdapterInterface</span>
+<span class="nc">RedisSessionAdapter</span> <span class="kd">implements</span> <span class="nc">SessionAdapterInterface</span>
 <span class="p">{}</span>
 
-<span class="k">class</span> <span class="nc">SessionManager</span>
+<span class="kd">class</span> <span class="nc">SessionManager</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">SessionAdapterInterface</span> <span class="nv">$sessionAdapter</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="kt">SessionAdapterInterface</span> <span class="nv">$sessionAdapter</span><span class="p">)</span>
     <span class="p">{}</span>
 <span class="p">}</span></code></pre></figure>
 
@@ -2011,52 +2012,52 @@
     <tr>
         <td>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">AbstractController</span> <span class="k">extends</span> <span class="nx">Action</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="kd">class</span> <span class="nc">AbstractController</span> <span class="kd">extends</span> <span class="nc">Action</span>
 <span class="p">{</span>
-    <span class="c1">// ...
-</span>    <span class="k">protected</span> <span class="k">function</span> <span class="nf">validate</span><span class="p">(</span>
+    <span class="c1">// ...</span>
+    <span class="k">protected</span> <span class="k">function</span> <span class="n">validate</span><span class="p">(</span>
         <span class="nv">$request</span>
     <span class="p">)</span> <span class="p">{}</span>
 
-    <span class="k">protected</span> <span class="k">function</span> <span class="nf">generateHash</span><span class="p">(</span>
+    <span class="k">protected</span> <span class="k">function</span> <span class="n">generateHash</span><span class="p">(</span>
         <span class="nv">$request</span>
     <span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span>
 
-<span class="k">class</span> <span class="nc">Edit</span> <span class="k">extends</span> <span class="nx">AbstractController</span>
+<span class="kd">class</span> <span class="nc">Edit</span> <span class="kd">extends</span> <span class="nc">AbstractController</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">()</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">execute</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="nv">$errors</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">(</span>
+        <span class="nv">$errors</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">validate</span><span class="p">(</span>
             <span class="nv">$request</span>
         <span class="p">);</span>
 
-        <span class="c1">// ...
-</span>
-        <span class="nv">$hash</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">generateHash</span><span class="p">(</span>
+        <span class="c1">// ...</span>
+
+        <span class="nv">$hash</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">generateHash</span><span class="p">(</span>
             <span class="nv">$request</span>
         <span class="p">);</span>
-        <span class="c1">// ...
-</span>    <span class="p">}</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="o">//</span> <span class="nx">Smaller</span> <span class="nx">classes</span><span class="p">,</span> <span class="nx">one</span> <span class="nx">responsibility</span><span class="p">,</span> <span class="nx">more</span> <span class="nx">flexible</span><span class="p">,</span> <span class="nx">easy</span> <span class="nx">to</span> <span class="nx">understand</span><span class="p">,</span> <span class="nx">more</span> <span class="nx">testable</span><span class="o">.</span></code></pre></figure>
+<span class="c1">// Smaller classes, one responsibility, more flexible, easy to understand, more testable.</span></code></pre></figure>
 
         </td>
         <td>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Edit</span> <span class="k">extends</span> <span class="nx">Action</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="kd">class</span> <span class="nc">Edit</span> <span class="kd">extends</span> <span class="nc">Action</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">__constructor</span><span class="p">(</span>
-        <span class="nx">ValidatorInterface</span> <span class="nv">$validator</span><span class="p">,</span>
-        <span class="nx">HashGeneratorInterface</span> <span class="nv">$hashGenerator</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">__constructor</span><span class="p">(</span>
+        <span class="kt">ValidatorInterface</span> <span class="nv">$validator</span><span class="p">,</span>
+        <span class="kt">HashGeneratorInterface</span> <span class="nv">$hashGenerator</span>
     <span class="p">)</span> <span class="p">{}</span>
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">()</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">execute</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="nv">$errors</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validator</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">(</span><span class="nv">$request</span><span class="p">);</span>
-        <span class="c1">// ...
-</span>        <span class="nv">$hash</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">hashGenerator</span><span class="o">-&gt;</span><span class="na">generateHash</span><span class="p">(</span><span class="nv">$request</span><span class="p">);</span>
+        <span class="nv">$errors</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">validator</span><span class="o">-&gt;</span><span class="nf">validate</span><span class="p">(</span><span class="nv">$request</span><span class="p">);</span>
+        <span class="c1">// ...</span>
+        <span class="nv">$hash</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">hashGenerator</span><span class="o">-&gt;</span><span class="nf">generateHash</span><span class="p">(</span><span class="nv">$request</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
@@ -2070,9 +2071,9 @@
 
 <p>2.7. All non-public properties and methods SHOULD be private.</p>
 
-<p>2.8. Abstract classes MUST NOT be marked as public <code class="highlighter-rouge">@api</code>.</p>
+<p>2.8. Abstract classes MUST NOT be marked as public <code class="language-plaintext highlighter-rouge">@api</code>.</p>
 
-<p>2.9. Service classes (ones that provide behavior but not data, like <code class="highlighter-rouge">EventManager</code>) SHOULD NOT have a mutable state.</p>
+<p>2.9. Service classes (ones that provide behavior but not data, like <code class="language-plaintext highlighter-rouge">EventManager</code>) SHOULD NOT have a mutable state.</p>
 
 <p>2.10. Only data objects or entities (Product, Category, etc.) MAY have any observable state.</p>
 
@@ -2093,27 +2094,27 @@
     <tr>
         <td>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$url</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Url</span><span class="p">();</span>
-<span class="nv">$url</span><span class="o">-&gt;</span><span class="na">setBaseUrl</span><span class="p">(</span><span class="nv">$baseUrl</span><span class="p">);</span>
-<span class="k">echo</span> <span class="nv">$url</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'custom/path'</span><span class="p">);</span> <span class="c1">// prints full URL
-</span>
-<span class="c1">// Developer forgot or didn’t know that you need to call setBaseUrl
-</span><span class="nv">$url</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Url</span><span class="p">();</span>
-<span class="k">echo</span> <span class="nv">$url</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'custom/path'</span><span class="p">);</span> <span class="c1">// Throws exception, which makes issue smaller. If it doesn't throw and exception, it could lead to a hidden bug more likely.
-</span>
-<span class="o">//</span> <span class="nx">Method</span> <span class="nx">with</span> <span class="nx">out</span> <span class="nx">parameters</span> <span class="nx">that</span> <span class="nx">doesn</span><span class="err">’</span><span class="nx">t</span> <span class="k">return</span> <span class="nx">anything</span> <span class="nx">could</span> <span class="nx">be</span> <span class="nx">sign</span> <span class="nx">of</span> <span class="nx">temporal</span> <span class="nx">coupling</span><span class="o">.</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$url</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Url</span><span class="p">();</span>
+<span class="nv">$url</span><span class="o">-&gt;</span><span class="nf">setBaseUrl</span><span class="p">(</span><span class="nv">$baseUrl</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$url</span><span class="o">-&gt;</span><span class="nf">get</span><span class="p">(</span><span class="s1">'custom/path'</span><span class="p">);</span> <span class="c1">// prints full URL</span>
+
+<span class="c1">// Developer forgot or didn’t know that you need to call setBaseUrl</span>
+<span class="nv">$url</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Url</span><span class="p">();</span>
+<span class="k">echo</span> <span class="nv">$url</span><span class="o">-&gt;</span><span class="nf">get</span><span class="p">(</span><span class="s1">'custom/path'</span><span class="p">);</span> <span class="c1">// Throws exception, which makes issue smaller. If it doesn't throw and exception, it could lead to a hidden bug more likely.</span>
+
+<span class="c1">// Method with out parameters that doesn’t return anything could be sign of temporal coupling.</span></code></pre></figure>
 
         </td>
         <td>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$url</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Url</span><span class="p">(</span><span class="nv">$baseUrl</span><span class="p">);</span>
-<span class="k">echo</span> <span class="nv">$url</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'custom/path'</span><span class="p">);</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$url</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Url</span><span class="p">(</span><span class="nv">$baseUrl</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$url</span><span class="o">-&gt;</span><span class="nf">get</span><span class="p">(</span><span class="s1">'custom/path'</span><span class="p">);</span>
 
-<span class="c1">// Or
-</span><span class="nv">$url</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Url</span><span class="p">();</span>
-<span class="k">echo</span> <span class="nv">$url</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="nv">$baseUrl</span><span class="p">,</span> <span class="s1">'custom/path'</span><span class="p">);</span>
+<span class="c1">// Or</span>
+<span class="nv">$url</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Url</span><span class="p">();</span>
+<span class="k">echo</span> <span class="nv">$url</span><span class="o">-&gt;</span><span class="nf">get</span><span class="p">(</span><span class="nv">$baseUrl</span><span class="p">,</span> <span class="s1">'custom/path'</span><span class="p">);</span>
 
-<span class="o">//</span> <span class="nx">Only</span> <span class="nx">one</span> <span class="nx">way</span> <span class="nx">to</span> <span class="k">use</span> <span class="nx">API</span><span class="p">,</span> <span class="nx">no</span> <span class="nx">temporal</span> <span class="nx">coupling</span><span class="o">.</span></code></pre></figure>
+<span class="c1">// Only one way to use API, no temporal coupling.</span></code></pre></figure>
 
         </td>
     </tr>
@@ -2133,47 +2134,47 @@
     <tr>
         <td>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Edit</span> <span class="k">extends</span> <span class="nx">Action</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="kd">class</span> <span class="nc">Edit</span> <span class="kd">extends</span> <span class="nc">Action</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">()</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">execute</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="c1">// ...
-</span>        <span class="nv">$product</span> <span class="o">=</span> <span class="nv">$productResource</span><span class="o">-&gt;</span><span class="na">load</span><span class="p">(</span><span class="nv">$product</span><span class="p">,</span> <span class="nv">$productSku</span><span class="p">,</span> <span class="s1">'sku'</span><span class="p">);</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">registry</span><span class="o">-&gt;</span><span class="na">register</span><span class="p">(</span><span class="s1">'product'</span><span class="p">,</span> <span class="nv">$product</span><span class="p">);</span>
+        <span class="c1">// ...</span>
+        <span class="nv">$product</span> <span class="o">=</span> <span class="nv">$productResource</span><span class="o">-&gt;</span><span class="nf">load</span><span class="p">(</span><span class="nv">$product</span><span class="p">,</span> <span class="nv">$productSku</span><span class="p">,</span> <span class="s1">'sku'</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">registry</span><span class="o">-&gt;</span><span class="nf">register</span><span class="p">(</span><span class="s1">'product'</span><span class="p">,</span> <span class="nv">$product</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="k">class</span> <span class="nc">View</span> <span class="k">extends</span> <span class="nx">Template</span>
+<span class="kd">class</span> <span class="nc">View</span> <span class="kd">extends</span> <span class="nc">Template</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getProductName</span><span class="p">()</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">getProductName</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="nv">$product</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">registry</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'product'</span><span class="p">);</span>
-        <span class="k">return</span> <span class="nv">$product</span><span class="o">-&gt;</span><span class="na">getName</span><span class="p">();</span>
+        <span class="nv">$product</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">registry</span><span class="o">-&gt;</span><span class="nf">get</span><span class="p">(</span><span class="s1">'product'</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nv">$product</span><span class="o">-&gt;</span><span class="nf">getName</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
         </td>
         <td>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">Edit</span> <span class="k">extends</span> <span class="nx">Action</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="kd">class</span> <span class="nc">Edit</span> <span class="kd">extends</span> <span class="nc">Action</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">()</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">execute</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="c1">// ...
-</span>        <span class="nv">$product</span> <span class="o">=</span> <span class="nv">$productRepository</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="nv">$productSku</span><span class="p">);</span>
+        <span class="c1">// ...</span>
+        <span class="nv">$product</span> <span class="o">=</span> <span class="nv">$productRepository</span><span class="o">-&gt;</span><span class="nf">get</span><span class="p">(</span><span class="nv">$productSku</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="k">class</span> <span class="nc">View</span> <span class="k">extends</span> <span class="nx">Template</span>
+<span class="kd">class</span> <span class="nc">View</span> <span class="kd">extends</span> <span class="nc">Template</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getProductName</span><span class="p">()</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">getProductName</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="c1">// ...
-</span>        <span class="nv">$product</span> <span class="o">=</span> <span class="nv">$productRepository</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="nv">$productSku</span><span class="p">);</span>
-        <span class="k">return</span> <span class="nv">$product</span><span class="o">-&gt;</span><span class="na">getName</span><span class="p">();</span>
+        <span class="c1">// ...</span>
+        <span class="nv">$product</span> <span class="o">=</span> <span class="nv">$productRepository</span><span class="o">-&gt;</span><span class="nf">get</span><span class="p">(</span><span class="nv">$productSku</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nv">$product</span><span class="o">-&gt;</span><span class="nf">getName</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
-<span class="o">//</span> <span class="nx">More</span> <span class="nx">flexible</span><span class="p">,</span> <span class="nx">no</span> <span class="nx">dependencies</span> <span class="nx">between</span> <span class="nx">classes</span><span class="p">,</span> <span class="nx">no</span> <span class="nx">temporal</span> <span class="nx">coupling</span><span class="o">.</span></code></pre></figure>
+<span class="c1">// More flexible, no dependencies between classes, no temporal coupling.</span></code></pre></figure>
 </td></tr></table>
 </div>
   </div>
@@ -2192,7 +2193,7 @@
 
 <div class="collapsible">
     <b class="collapsible-title">Example: </b>
-    <div class="collapsible-content"><p>You need to read configuration from different sources (like database or filesystem) and want to make the reading process configurable: allow extensions to add more configuration sources. In this case, you can create a <code class="highlighter-rouge">ConfigReaderInterface</code> with a composite implementation - <code class="highlighter-rouge">ConfigReaderComposite</code>, and configure particular readers as children of a composite reader.</p>
+    <div class="collapsible-content"><p>You need to read configuration from different sources (like database or filesystem) and want to make the reading process configurable: allow extensions to add more configuration sources. In this case, you can create a <code class="language-plaintext highlighter-rouge">ConfigReaderInterface</code> with a composite implementation - <code class="language-plaintext highlighter-rouge">ConfigReaderComposite</code>, and configure particular readers as children of a composite reader.</p>
 </div>
   </div>
 
@@ -2203,12 +2204,12 @@
 
 <p>3.1. There SHOULD be no circular dependencies between objects.</p>
 
-<p>3.2. The <code class="highlighter-rouge">app/etc/di.xml</code> file MUST contain only framework-level   <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">Dependency Injection</span>
+<p>3.2. The <code class="language-plaintext highlighter-rouge">app/etc/di.xml</code> file MUST contain only framework-level   <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">Dependency Injection</span>
  (DI) settings.</p>
 
-<p>3.3. All modular DI settings (except for Presentation layer configuration) SHOULD be stored in <code class="highlighter-rouge">&lt;module_dir&gt;/etc/di.xml</code>.</p>
+<p>3.3. All modular DI settings (except for Presentation layer configuration) SHOULD be stored in <code class="language-plaintext highlighter-rouge">&lt;module_dir&gt;/etc/di.xml</code>.</p>
 
-<p>3.4. All modular Presentation layer DI settings SHOULD be stored in <code class="highlighter-rouge">&lt;module_dir&gt;/etc/&lt;area_code&gt;/di.xml</code>.</p>
+<p>3.4. All modular Presentation layer DI settings SHOULD be stored in <code class="language-plaintext highlighter-rouge">&lt;module_dir&gt;/etc/&lt;area_code&gt;/di.xml</code>.</p>
 
 <h2 id="4-interception">4. Interception</h2>
 
@@ -2248,14 +2249,14 @@
 
 <p>5.6. The short name of an exception class MUST be clear, meaningful, and state the cause of exception.</p>
 
-<p>5.7. Thrown exceptions SHOULD be as specific as possible. The top generic <code class="highlighter-rouge">\Exception</code> SHOULD NOT be thrown anywhere.</p>
+<p>5.7. Thrown exceptions SHOULD be as specific as possible. The top generic <code class="language-plaintext highlighter-rouge">\Exception</code> SHOULD NOT be thrown anywhere.</p>
 
 <p>5.8. All direct communications with third-party libraries MUST be wrapped with a try/catch statement.</p>
 
-<p>5.9. <code class="highlighter-rouge">\Exception</code> SHOULD be caught only in the code that calls third-party libraries, in addition to catching specific exceptions thrown by the   <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span>
+<p>5.9. <code class="language-plaintext highlighter-rouge">\Exception</code> SHOULD be caught only in the code that calls third-party libraries, in addition to catching specific exceptions thrown by the   <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span>
 .</p>
 
-<p>5.10. <code class="highlighter-rouge">\Exception</code> SHOULD NOT be thrown in Front Controller and Action Controllers.</p>
+<p>5.10. <code class="language-plaintext highlighter-rouge">\Exception</code> SHOULD NOT be thrown in Front Controller and Action Controllers.</p>
 
 <p>5.11. A separate exceptions hierarchy SHOULD be defined on each application layer. It is allowed to throw exceptions that are only defined on the same layer.</p>
 
@@ -2263,13 +2264,13 @@
 
 <p>5.13. It is not allowed to absorb exceptions with no logging or/and any workaround operation executed.</p>
 
-<p>5.14. Any exception SHOULD be logged only in the <code class="highlighter-rouge">catch</code> block where it is processed, and SHOULD NOT be re-thrown.</p>
+<p>5.14. Any exception SHOULD be logged only in the <code class="language-plaintext highlighter-rouge">catch</code> block where it is processed, and SHOULD NOT be re-thrown.</p>
 
-<p>5.15. Exceptions SHOULD NOT be caught in a loop. The loop SHOULD be wrapped with a <code class="highlighter-rouge">try/catch</code> construct instead.</p>
+<p>5.15. Exceptions SHOULD NOT be caught in a loop. The loop SHOULD be wrapped with a <code class="language-plaintext highlighter-rouge">try/catch</code> construct instead.</p>
 
-<p>5.16. If a method uses system resources (such as files, sockets, streams, etc.), the code MUST be wrapped with a <code class="highlighter-rouge">try</code> block and the corresponding <code class="highlighter-rouge">finally</code> block. In the <code class="highlighter-rouge">finally</code> sections, all resources SHOULD be properly released.</p>
+<p>5.16. If a method uses system resources (such as files, sockets, streams, etc.), the code MUST be wrapped with a <code class="language-plaintext highlighter-rouge">try</code> block and the corresponding <code class="language-plaintext highlighter-rouge">finally</code> block. In the <code class="language-plaintext highlighter-rouge">finally</code> sections, all resources SHOULD be properly released.</p>
 
-<p>5.17. <code class="highlighter-rouge">LocalizedException</code> SHOULD only be thrown in the Presentation layer (Controllers, Blocks).</p>
+<p>5.17. <code class="language-plaintext highlighter-rouge">LocalizedException</code> SHOULD only be thrown in the Presentation layer (Controllers, Blocks).</p>
 
 <h2 id="6-application-layers">6. Application layers</h2>
 
@@ -2295,7 +2296,7 @@
 
 <p>6.2.2. Request, Response, Session, Store Manager and Cookie objects MUST be used only in the Presentation layer.</p>
 
-<p>6.2.3. All actions MUST return the <code class="highlighter-rouge">ResultInterface</code> implementation.</p>
+<p>6.2.3. All actions MUST return the <code class="language-plaintext highlighter-rouge">ResultInterface</code> implementation.</p>
 
 <p>6.2.4. Actions MUST NOT reference blocks declared in layout.</p>
 
@@ -2307,7 +2308,7 @@
 
 <p>6.3.3. Entities MUST NOT contain persistence-related logic.</p>
 
-<p>6.3.4. MySQL’s <code class="highlighter-rouge">strict_mode</code> variable SHOULD be aligned with the default <code class="highlighter-rouge">strict_mode</code> of the latest MySQL release.</p>
+<p>6.3.4. MySQL’s <code class="language-plaintext highlighter-rouge">strict_mode</code> variable SHOULD be aligned with the default <code class="language-plaintext highlighter-rouge">strict_mode</code> of the latest MySQL release.</p>
 
 <h3 id="64-service-contracts-application-layer">6.4. Service Contracts (Application) layer</h3>
 
@@ -2368,19 +2369,19 @@
 
 <p>7.7. All XML configuration formats MUST be declarative. Imperative nodes are not allowed.</p>
 
-<p>7.8. All Configuration objects MUST use <code class="highlighter-rouge">Magento\Framework\Config</code>.</p>
+<p>7.8. All Configuration objects MUST use <code class="language-plaintext highlighter-rouge">Magento\Framework\Config</code>.</p>
 
 <h2 id="8-modularity">8. Modularity</h2>
 
-<p>8.1. The Application Framework (<code class="highlighter-rouge">Magento\Framework\*</code>) MUST NOT depend on application modules.</p>
+<p>8.1. The Application Framework (<code class="language-plaintext highlighter-rouge">Magento\Framework\*</code>) MUST NOT depend on application modules.</p>
 
-<p>8.2. All dependencies MUST be declared in the component’s <code class="highlighter-rouge">composer.json</code> file.</p>
+<p>8.2. All dependencies MUST be declared in the component’s <code class="language-plaintext highlighter-rouge">composer.json</code> file.</p>
 
-<p>8.3. If component A uses behavior of Component B, such Component B MUST be declared in the <code class="highlighter-rouge">require</code> section of Component A’s <code class="highlighter-rouge">composer.json</code> file, except for cases where Component B is used in the code that customizes the behavior of Component B.</p>
+<p>8.3. If component A uses behavior of Component B, such Component B MUST be declared in the <code class="language-plaintext highlighter-rouge">require</code> section of Component A’s <code class="language-plaintext highlighter-rouge">composer.json</code> file, except for cases where Component B is used in the code that customizes the behavior of Component B.</p>
 
-<p>8.4. If component A extends/customizes the behavior of component B through its customization points (layout handles, plugins, events, etc.), such Component B MUST be declared in the <code class="highlighter-rouge">suggest</code> section of Component A.</p>
+<p>8.4. If component A extends/customizes the behavior of component B through its customization points (layout handles, plugins, events, etc.), such Component B MUST be declared in the <code class="language-plaintext highlighter-rouge">suggest</code> section of Component A.</p>
 
-<p>8.5. Only the <code class="highlighter-rouge">@api</code> code of any module can be referenced by other modules.</p>
+<p>8.5. Only the <code class="language-plaintext highlighter-rouge">@api</code> code of any module can be referenced by other modules.</p>
 
 <p>8.6. A module MUST NOT contain references to   <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>
  resources.</p>
@@ -2414,7 +2415,7 @@
 
 <p>9.10. The Request, Session, and Cookie objects MUST NOT be injected in an object constructor. They MUST be passed only as method arguments.</p>
 
-<p>9.11. Operation scopes MUST always be explicitly requested by operations (<code class="highlighter-rouge">StoreManager</code> SHOULD NOT be used to retrieve the store ID).</p>
+<p>9.11. Operation scopes MUST always be explicitly requested by operations (<code class="language-plaintext highlighter-rouge">StoreManager</code> SHOULD NOT be used to retrieve the store ID).</p>
 
 <h2 id="10-javascript-js-application">10. JavaScript (JS) application</h2>
 
@@ -2423,7 +2424,7 @@
 
 <p>10.2. Only private content SHOULD be rendered in browser.</p>
 
-<p>10.3. All module dependencies of a RequireJS module MUST be declared in the module’s definition header. No direct calls to <code class="highlighter-rouge">require</code> SHOULD be made unless the list of modules to be loaded is dynamic.</p>
+<p>10.3. All module dependencies of a RequireJS module MUST be declared in the module’s definition header. No direct calls to <code class="language-plaintext highlighter-rouge">require</code> SHOULD be made unless the list of modules to be loaded is dynamic.</p>
 
 <p>10.4. The <a href="https://w3c.github.io/webappsec-csp/">W3C Content Security Policy</a> MUST be followed.</p>
 
@@ -2431,7 +2432,7 @@
 
 <p>10.5.1. ES5 SHOULD be used as a JS standard.</p>
 
-<p>10.5.2. Language features (closures) MUST be used for scope management. There SHOULD be no <code class="highlighter-rouge">_</code> (underscore) naming convention for private properties.</p>
+<p>10.5.2. Language features (closures) MUST be used for scope management. There SHOULD be no <code class="language-plaintext highlighter-rouge">_</code> (underscore) naming convention for private properties.</p>
 
 <p>10.5.3. All asynchronous operations MUST be represented with JQuery AJAX calls.</p>
 
@@ -2453,9 +2454,9 @@
 
 <p>11.2.1. All objects SHOULD be tested in isolation.</p>
 
-<p>11.2.2. <code class="highlighter-rouge">ObjectManager</code> MUST NOT be used in unit tests.</p>
+<p>11.2.2. <code class="language-plaintext highlighter-rouge">ObjectManager</code> MUST NOT be used in unit tests.</p>
 
-<p>11.2.3. <code class="highlighter-rouge">ObjectManagerHelper</code> MAY BE used to automatically mock all dependencies of the object under test.</p>
+<p>11.2.3. <code class="language-plaintext highlighter-rouge">ObjectManagerHelper</code> MAY BE used to automatically mock all dependencies of the object under test.</p>
 
 <h2 id="12-web-api">12. Web API</h2>
 
@@ -2481,23 +2482,23 @@
 
 <div class="collapsible">
     <b class="collapsible-title">Example: </b>
-    <div class="collapsible-content"><div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="k">class</span> <span class="nc">SampleEventObserverThatModifiesInputs</span>
+    <div class="collapsible-content"><div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="kd">class</span> <span class="nc">SampleEventObserverThatModifiesInputs</span>
 <span class="p">{</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * @param \Magento\Framework\Event\Observer $observer
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">(</span><span class="nx">\Magento\Framework\Event\Observer</span> <span class="nv">$observer</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">execute</span><span class="p">(</span><span class="err">\</span><span class="nc">Magento\Framework\Event\Observer</span> <span class="nv">$observer</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="sd">/** @var \Magento\Framework\App\DataObject $transport */</span>
-        <span class="nv">$transport</span> <span class="o">=</span> <span class="nv">$observer</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">(</span><span class="s1">'transport'</span><span class="p">);</span>
+        <span class="cd">/** @var \Magento\Framework\App\DataObject $transport */</span>
+        <span class="nv">$transport</span> <span class="o">=</span> <span class="nv">$observer</span><span class="o">-&gt;</span><span class="nf">getData</span><span class="p">(</span><span class="s1">'transport'</span><span class="p">);</span>
 
-        <span class="k">if</span> <span class="p">(</span><span class="nv">$transport</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">(</span><span class="s1">'some_value'</span><span class="p">)</span> <span class="o">===</span> <span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
-            <span class="sd">/**
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$transport</span><span class="o">-&gt;</span><span class="nf">getData</span><span class="p">(</span><span class="s1">'some_value'</span><span class="p">)</span> <span class="o">===</span> <span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+            <span class="cd">/**
              * Expecting this value to go back to the original event dispatcher violates
              * this rule. Other observers could change the data, or Magento could make
              * architectural changes always sending immutable objects.
              */</span>
-            <span class="nv">$transport</span><span class="o">-&gt;</span><span class="na">setData</span><span class="p">(</span><span class="s1">'output_return_value'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+            <span class="nv">$transport</span><span class="o">-&gt;</span><span class="nf">setData</span><span class="p">(</span><span class="s1">'output_return_value'</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -2507,7 +2508,7 @@
 
 <hr />
 
-<p start="14.2">14.2. Events used SHOULD be observed as specifically as possible. A <code class="highlighter-rouge">global</code> subscription to an event SHOULD NOT be used when the area impacted is just <code class="highlighter-rouge">frontend</code>.</p>
+<p start="14.2">14.2. Events used SHOULD be observed as specifically as possible. A <code class="language-plaintext highlighter-rouge">global</code> subscription to an event SHOULD NOT be used when the area impacted is just <code class="language-plaintext highlighter-rouge">frontend</code>.</p>
 
 <h2 id="15-security">15. Security</h2>
 
@@ -2573,15 +2574,15 @@
 
 <p>15.10. Remote Code Execution (RCE) protection.</p>
 
-<p>15.10.1. <code class="highlighter-rouge">eval()</code>, <code class="highlighter-rouge">passthru()</code>, <code class="highlighter-rouge">system()</code>, <code class="highlighter-rouge">shell_exec()</code>, <code class="highlighter-rouge">serialize()</code>, <code class="highlighter-rouge">unserialize()</code>, <code class="highlighter-rouge">md5()</code>, <code class="highlighter-rouge">srand()</code>, <code class="highlighter-rouge">mt_srand()</code> SHOULD NOT be used.</p>
+<p>15.10.1. <code class="language-plaintext highlighter-rouge">eval()</code>, <code class="language-plaintext highlighter-rouge">passthru()</code>, <code class="language-plaintext highlighter-rouge">system()</code>, <code class="language-plaintext highlighter-rouge">shell_exec()</code>, <code class="language-plaintext highlighter-rouge">serialize()</code>, <code class="language-plaintext highlighter-rouge">unserialize()</code>, <code class="language-plaintext highlighter-rouge">md5()</code>, <code class="language-plaintext highlighter-rouge">srand()</code>, <code class="language-plaintext highlighter-rouge">mt_srand()</code> SHOULD NOT be used.</p>
 
-<p>15.10.2. User-submitted values SHOULD NOT be passed directly to <code class="highlighter-rouge">include*()</code>, <code class="highlighter-rouge">require*()</code>, <code class="highlighter-rouge">create_function()</code>, <code class="highlighter-rouge">fopen()</code>, <code class="highlighter-rouge">preg_replace()</code>.</p>
+<p>15.10.2. User-submitted values SHOULD NOT be passed directly to <code class="language-plaintext highlighter-rouge">include*()</code>, <code class="language-plaintext highlighter-rouge">require*()</code>, <code class="language-plaintext highlighter-rouge">create_function()</code>, <code class="language-plaintext highlighter-rouge">fopen()</code>, <code class="language-plaintext highlighter-rouge">preg_replace()</code>.</p>
 
 <p>15.10.3. Variable functions SHOULD NOT be used if the variable values are submitted by the user.</p>
 
 <p>15.11. Security capabilities SHOULD be implemented either on the Magento Framework level or in a dedicated module(s) and utilized by the entire application in a centralize manner.</p>
 
-<p>15.12. Files MUST be secured by a web server configuration (e.g., <code class="highlighter-rouge">.htaccess</code> or <code class="highlighter-rouge">nginx.conf</code>), except files that are intended to be publicly accessible.</p>
+<p>15.12. Files MUST be secured by a web server configuration (e.g., <code class="language-plaintext highlighter-rouge">.htaccess</code> or <code class="language-plaintext highlighter-rouge">nginx.conf</code>), except files that are intended to be publicly accessible.</p>
 
 <!-- LINKS: DEFINITIONS AND ADDRESSES -->
 

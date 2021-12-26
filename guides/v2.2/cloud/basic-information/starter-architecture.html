@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Starter architecture | Magento 2 Developer Documentation (copy)</title>
+	<title>Starter architecture | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/basic-information/starter-architecture.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/basic-information/starter-architecture.html">Magento 2.0</a></li>
 		
@@ -4314,7 +4315,7 @@
 	<h1 class="page-heading">Starter architecture</h1>
 </section>
 
-			<p>All of your code is contained in the Magento Commerce Cloud Starter project. The <em>project</em> is your Magento store code, extensions, and integrations on a <code class="highlighter-rouge">master</code> branch. Each project supports up to 4 total environments including up to three active Integration <em>environments</em> and a Production environment using the <code class="highlighter-rouge">master</code> branch.</p>
+			<p>All of your code is contained in the Magento Commerce Cloud Starter project. The <em>project</em> is your Magento store code, extensions, and integrations on a <code class="language-plaintext highlighter-rouge">master</code> branch. Each project supports up to 4 total environments including up to three active Integration <em>environments</em> and a Production environment using the <code class="language-plaintext highlighter-rouge">master</code> branch.</p>
 
 <p>All environments are in PaaS (Platform-as-a-Service) containers. These containers are deployed inside highly restricted containers on a grid of servers. These environments are read-only, accepting deployed code changes from branches pushed from your local workspace.</p>
 
@@ -4324,17 +4325,17 @@
 
 <h2 id="cloud-arch-prod">Production with a master branch</h2>
 
-<p>The Production environment is your live store(s) and site(s). The environment includes your <code class="highlighter-rouge">master</code> branch, a web server, database, and configured services to fully test your site.</p>
+<p>The Production environment is your live store(s) and site(s). The environment includes your <code class="language-plaintext highlighter-rouge">master</code> branch, a web server, database, and configured services to fully test your site.</p>
 
 <p>The Production environment runs your public-facing Magento single and multi-site storefronts. This system is read-only, requiring deployment across the architecture from the Integration environment to the Staging environment, and finally to the Production environment.</p>
 
 <p>We walk you through <a href="/devdocs/guides/v2.2/cloud/live/stage-prod-live.html">deploying to Production</a> and <a href="/devdocs/guides/v2.2/cloud/live/live.html">Go Live</a> requirements and processes.</p>
 
-<p>We highly recommend fully testing in your Staging environment and branch before pushing to the <code class="highlighter-rouge">master</code> branch which deploys to the Production environment.</p>
+<p>We highly recommend fully testing in your Staging environment and branch before pushing to the <code class="language-plaintext highlighter-rouge">master</code> branch which deploys to the Production environment.</p>
 
 <h2 id="cloud-arch-stage">Staging branch and environment</h2>
 
-<p>We recommend creating a branch called <code class="highlighter-rouge">staging</code> from <code class="highlighter-rouge">master</code>. The Staging environment is created from the <code class="highlighter-rouge">staging</code> branch to provide a pre-production environment to test code, modules and extensions, payment gateways, shipping, product data, and much more. This environment provides the configuration for all services to match the Production environment including Fastly, New Relic, Blackfire, and search.</p>
+<p>We recommend creating a branch called <code class="language-plaintext highlighter-rouge">staging</code> from <code class="language-plaintext highlighter-rouge">master</code>. The Staging environment is created from the <code class="language-plaintext highlighter-rouge">staging</code> branch to provide a pre-production environment to test code, modules and extensions, payment gateways, shipping, product data, and much more. This environment provides the configuration for all services to match the Production environment including Fastly, New Relic, Blackfire, and search.</p>
 
 <p>Additional sections in this guide provide instructions and walk-throughs for final code deployments and testing production level interactions in a safe Staging environment. For best performance and feature testing, replicate your Production database into the Staging environment.</p>
 
@@ -4362,10 +4363,10 @@
 <p>The process for developing in Integration requires the following process:</p>
 
 <ul>
-  <li>Branch and develop off of the <code class="highlighter-rouge">staging</code> branch</li>
+  <li>Branch and develop off of the <code class="language-plaintext highlighter-rouge">staging</code> branch</li>
   <li>Develop all work on your local workspace in these branches</li>
   <li>Push code to Git to build and deploy on an Integration environment for testing</li>
-  <li>As work is completed, merge to the <code class="highlighter-rouge">staging</code> branch</li>
+  <li>As work is completed, merge to the <code class="language-plaintext highlighter-rouge">staging</code> branch</li>
 </ul>
 
 <p>Additional sections in this guide provide instructions and walk-throughs for setting up your <a href="/devdocs/guides/v2.2/cloud/before/before-workspace.html">local workspace</a>, working with branches, and <a href="/devdocs/guides/v2.2/cloud/live/stage-prod-live.html">deploying code</a>.</p>
@@ -4423,9 +4424,9 @@
 <p>You use the following files to configure the software versions that you want to use in your implementation.</p>
 
 <ul>
-  <li><a href="/devdocs/guides/v2.2/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a></li>
-  <li><a href="/devdocs/guides/v2.2/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">routes.yaml</code></a></li>
-  <li><a href="/devdocs/guides/v2.2/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a></li>
+  <li><a href="/devdocs/guides/v2.2/cloud/project/project-conf-files_magento-app.html"><code class="language-plaintext highlighter-rouge">.magento.app.yaml</code></a></li>
+  <li><a href="/devdocs/guides/v2.2/cloud/project/project-conf-files_routes.html"><code class="language-plaintext highlighter-rouge">routes.yaml</code></a></li>
+  <li><a href="/devdocs/guides/v2.2/cloud/project/project-conf-files_services.html"><code class="language-plaintext highlighter-rouge">services.yaml</code></a></li>
 </ul>
 
 <h3 id="backup">Backup and disaster recovery</h3>
@@ -4438,9 +4439,9 @@
 
 <ul>
   <li>Set up your local environment</li>
-  <li>Clone the <code class="highlighter-rouge">master</code> branch from the Project to your local environment</li>
-  <li>Create a <code class="highlighter-rouge">staging</code> branch from <code class="highlighter-rouge">master</code></li>
-  <li>Create branches for development from <code class="highlighter-rouge">staging</code></li>
+  <li>Clone the <code class="language-plaintext highlighter-rouge">master</code> branch from the Project to your local environment</li>
+  <li>Create a <code class="language-plaintext highlighter-rouge">staging</code> branch from <code class="language-plaintext highlighter-rouge">master</code></li>
+  <li>Create branches for development from <code class="language-plaintext highlighter-rouge">staging</code></li>
   <li>Push code to Git that builds and deploys to an environment for testing</li>
 </ul>
 

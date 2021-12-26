@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Introduction | Magento 2 Developer Documentation (copy)</title>
+	<title>Introduction | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/extension-dev-guide/introduction.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/extension-dev-guide/introduction.html">Magento 2.0</a></li>
 		
@@ -1471,14 +1472,14 @@
 
 <h2 id="magento-is-made-up-of-the-following-types-of-components">Magento is made up of the following types of components:</h2>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>*	Modules (extend Magento capabilities)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>*	Modules (extend Magento capabilities)
 *	Themes (change the look and feel of your storefront and Admin)
 *	Language packages (localize the storefront and Admin)
 *	Libraries (common code)
 </code></pre></div></div>
 
 <p>A Magento <em>module</em> is a discrete chunk of code that accomplishes a particular business function or handles a Magento feature. A   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
- is typically a collection <code class="highlighter-rouge">.php</code> and <code class="highlighter-rouge">.xml</code> files, and the bulk of your work in modules will be in these files.  Modules interact with each other. A module also contains any user interface required for a user’s interaction with the module, and any application interfaces that another module or code chunk might call, if you decide to expose any application interface to other Magento modules.</p>
+ is typically a collection <code class="language-plaintext highlighter-rouge">.php</code> and <code class="language-plaintext highlighter-rouge">.xml</code> files, and the bulk of your work in modules will be in these files.  Modules interact with each other. A module also contains any user interface required for a user’s interaction with the module, and any application interfaces that another module or code chunk might call, if you decide to expose any application interface to other Magento modules.</p>
 
 <p>Themes can be applied to the module to change its appearance. So when you are building a module, you might also touch themes and language packages.</p>
 
@@ -1493,7 +1494,7 @@
 
 <h2 id="magento-module-example">Magento module example</h2>
 
-<p>Modules are declared in the <code class="highlighter-rouge">module.xml</code> file. Here is a minimal example:</p>
+<p>Modules are declared in the <code class="language-plaintext highlighter-rouge">module.xml</code> file. Here is a minimal example:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="cp">&lt;?xml version="1.0"?&gt;</span>
         <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:Module/etc/module.xsd"</span><span class="nt">&gt;</span>

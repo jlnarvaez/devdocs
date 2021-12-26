@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Blackfire Profiler | Magento 2 Developer Documentation (copy)</title>
+	<title>Blackfire Profiler | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/project/project-integrate-blackfire.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/project/project-integrate-blackfire.html">Magento 2.0</a></li>
 		
@@ -3552,9 +3553,9 @@
 <p>Blackfire includes the following <a href="https://blackfire.io/docs/reference-guide/environments" target="_blank">environments</a> through their site:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">Magento Cloud (&lt;your instance reference&gt;)</code> - Integration and Development</li>
-  <li><code class="highlighter-rouge">Magento Cloud (&lt;your instance reference&gt;)</code> - Staging</li>
-  <li><code class="highlighter-rouge">Magento Cloud (&lt;your instance reference&gt;)</code> - Production</li>
+  <li><code class="language-plaintext highlighter-rouge">Magento Cloud (&lt;your instance reference&gt;)</code> - Integration and Development</li>
+  <li><code class="language-plaintext highlighter-rouge">Magento Cloud (&lt;your instance reference&gt;)</code> - Staging</li>
+  <li><code class="language-plaintext highlighter-rouge">Magento Cloud (&lt;your instance reference&gt;)</code> - Production</li>
 </ul>
 
 <p class="bs-callout bs-callout-info">For Pro plans, you need to enter a Support ticket with your Blackfire credentials to get Staging and Production configured with Blackfire. We’ll help you get Blackfire configured in those environments.</p>
@@ -3601,7 +3602,7 @@
 
 <p>We recommend enabling Blackfire in all of your environments including Integration. To integrate, you begin in the Blackfire site. For full details, see <a href="https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-3-configure-the-server-credentials-the-integration-with-magento-cloud" target="_blank">their guide.</a>. You can integrate with Pro’s Integration environment and Starter’s development branches.</p>
 
-<p class="bs-callout bs-callout-info">For Starter plans, pushing your code and <code class="highlighter-rouge">.magento.app.yaml</code> file to Staging and Master branches updates those environments directly. You can directly add Blackfire to those environments the way you do with development.</p>
+<p class="bs-callout bs-callout-info">For Starter plans, pushing your code and <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> file to Staging and Master branches updates those environments directly. You can directly add Blackfire to those environments the way you do with development.</p>
 
 <p>These instructions assume you have fully set up your <a href="/devdocs/guides/v2.0/cloud/before/before-workspace.html">local workspace</a>.</p>
 
@@ -3631,16 +3632,16 @@
 
 <h3 id="magentoappyaml">Add Blackfire to .magento.app.yaml</h3>
 
-<p>By default, the Blackfire module is included in the <code class="highlighter-rouge">.magento.app.yaml</code> file as part of your Git branch.</p>
+<p>By default, the Blackfire module is included in the <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> file as part of your Git branch.</p>
 
-<p>The following instructions provide additional instructions if the module is not added to <code class="highlighter-rouge">.magento.app.yaml</code>. To enable and integrate Blackfire into your code, you will modify the <code class="highlighter-rouge">.magento.app.yaml</code> file, push the file into your remote Git branch, merge, and deploy across all environments.</p>
+<p>The following instructions provide additional instructions if the module is not added to <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code>. To enable and integrate Blackfire into your code, you will modify the <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> file, push the file into your remote Git branch, merge, and deploy across all environments.</p>
 
 <ul>
   <li>For Starter, merging your Git branch across all environments adds the module.</li>
-  <li>For Pro, you need to enter a Support ticket to have <code class="highlighter-rouge">.magento.app.yaml</code> updated to Staging and Production.</li>
+  <li>For Pro, you need to enter a Support ticket to have <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> updated to Staging and Production.</li>
 </ul>
 
-<p>We recommend working in a branch and creating a snapshot prior to installing. If you have a branch already created, you can skip down to the steps for modifying the <code class="highlighter-rouge">.magento.app.yaml</code> file. If you need instructions creating a branch, complete the following:</p>
+<p>We recommend working in a branch and creating a snapshot prior to installing. If you have a branch already created, you can skip down to the steps for modifying the <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> file. If you need instructions creating a branch, complete the following:</p>
 
 <ol>
   <li>
@@ -3673,7 +3674,7 @@
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:checkout &lt;environment ID&gt;
 </code></pre></div>    </div>
 
-    <p>You can also create a new branch using the <code class="highlighter-rouge">magento-cloud environment:branch</code> command.</p>
+    <p>You can also create a new branch using the <code class="language-plaintext highlighter-rouge">magento-cloud environment:branch</code> command.</p>
   </li>
   <li>
     <p>Back up the environment using a snapshot:</p>
@@ -3683,12 +3684,12 @@
   </li>
 </ol>
 
-<p>Next, modify the <code class="highlighter-rouge">.magento.app.yaml</code> file:</p>
+<p>Next, modify the <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> file:</p>
 
 <ol>
-  <li>Use a text editor to locate and edit <code class="highlighter-rouge">&lt;project root dir&gt;/.magento.app.yaml</code> in your branch.</li>
+  <li>Use a text editor to locate and edit <code class="language-plaintext highlighter-rouge">&lt;project root dir&gt;/.magento.app.yaml</code> in your branch.</li>
   <li>
-    <p>Enter <code class="highlighter-rouge">- name: blackfire</code> in the <code class="highlighter-rouge">extensions</code> block under <code class="highlighter-rouge">runtime</code>.</p>
+    <p>Enter <code class="language-plaintext highlighter-rouge">- name: blackfire</code> in the <code class="language-plaintext highlighter-rouge">extensions</code> block under <code class="language-plaintext highlighter-rouge">runtime</code>.</p>
 
     <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="na">runtime</span><span class="pi">:</span>
     <span class="na">extensions</span><span class="pi">:</span>
@@ -3699,7 +3700,7 @@
     <span class="pi">-</span> <span class="s">blackfire</span>
 </code></pre></div>    </div>
   </li>
-  <li>Save your changes to <code class="highlighter-rouge">.magento.app.yaml</code> and exit the text editor.</li>
+  <li>Save your changes to <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> and exit the text editor.</li>
   <li>
     <p>Add, commit, and push your changes to the environment:</p>
 
@@ -3708,7 +3709,7 @@ git commit <span class="nt">-m</span> <span class="s2">"&lt;message&gt;"</span>
 git push origin
 </code></pre></div>    </div>
 
-    <p>If errors display during deployment, open <code class="highlighter-rouge">.magento.app.yaml</code> and check the syntax. Check indentation and spelling and try again.</p>
+    <p>If errors display during deployment, open <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> and check the syntax. Check indentation and spelling and try again.</p>
   </li>
 </ol>
 
@@ -3725,10 +3726,10 @@ git push origin
   </li>
   <li>Copy the commands from step 3 on the Blackfire Magento Cloud integration page.</li>
   <li>
-    <p>Paste and enter the commands in the Magento Cloud CLI. Since you are already in your project, remove the <code class="highlighter-rouge">--project='&lt;Project ID&gt;'</code> content from the command. The commands include the Project ID and Blackfire server ID and token. The commands may look like the following:</p>
+    <p>Paste and enter the commands in the Magento Cloud CLI. Since you are already in your project, remove the <code class="language-plaintext highlighter-rouge">--project='&lt;Project ID&gt;'</code> content from the command. The commands include the Project ID and Blackfire server ID and token. The commands may look like the following:</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud project:variable:set env:BLACKFIRE_SERVER_ID &lt;Blackfire Server ID&gt;
-magento-cloud project:variable:set env:BLACKFIRE_SERVER_TOKEN &lt;Blackfire Server Token&gt;
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud project:variable:set <span class="nb">env</span>:BLACKFIRE_SERVER_ID &lt;Blackfire Server ID&gt;
+magento-cloud project:variable:set <span class="nb">env</span>:BLACKFIRE_SERVER_TOKEN &lt;Blackfire Server Token&gt;
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -3760,16 +3761,16 @@ magento-cloud project:variable:set env:BLACKFIRE_SERVER_TOKEN &lt;Blackfire Serv
 
 <h3 id="route">Add a default route</h3>
 
-<p>If you do not have a default route specified in <code class="highlighter-rouge">routes.yaml</code>, or want to define which route to use instead of the default route, you will add it to Blackfire and <code class="highlighter-rouge">routes.yaml</code>.</p>
+<p>If you do not have a default route specified in <code class="language-plaintext highlighter-rouge">routes.yaml</code>, or want to define which route to use instead of the default route, you will add it to Blackfire and <code class="language-plaintext highlighter-rouge">routes.yaml</code>.</p>
 
 <p>Add route information on the Blackfire Magento Cloud integration page:</p>
 
 <ol>
-  <li>Locate step 5 and enter the default route. It should look like <code class="highlighter-rouge">https://example.com/</code> or <code class="highlighter-rouge">http://*.{default}/</code>. If you leave this field blank, we will try the following keys in this order: <code class="highlighter-rouge">https://{default}/</code>, <code class="highlighter-rouge">https://www.{default}/</code>, <code class="highlighter-rouge">http://{default}/</code>, <code class="highlighter-rouge">http://www.{default}/</code>.</li>
-  <li>If you use a wildcard <code class="highlighter-rouge">*</code> in step 5 for the default rote, you need to enter a resolved value for the <code class="highlighter-rouge">*</code> value in step 6. Otherwise, leave step 6 empty. For example, if you specified the route key <code class="highlighter-rouge">https://*.{default}</code> in step 5, you would need you to specify a route placeholder in step 6.</li>
+  <li>Locate step 5 and enter the default route. It should look like <code class="language-plaintext highlighter-rouge">https://example.com/</code> or <code class="language-plaintext highlighter-rouge">http://*.{default}/</code>. If you leave this field blank, we will try the following keys in this order: <code class="language-plaintext highlighter-rouge">https://{default}/</code>, <code class="language-plaintext highlighter-rouge">https://www.{default}/</code>, <code class="language-plaintext highlighter-rouge">http://{default}/</code>, <code class="language-plaintext highlighter-rouge">http://www.{default}/</code>.</li>
+  <li>If you use a wildcard <code class="language-plaintext highlighter-rouge">*</code> in step 5 for the default rote, you need to enter a resolved value for the <code class="language-plaintext highlighter-rouge">*</code> value in step 6. Otherwise, leave step 6 empty. For example, if you specified the route key <code class="language-plaintext highlighter-rouge">https://*.{default}</code> in step 5, you would need you to specify a route placeholder in step 6.</li>
 </ol>
 
-<p>If adding a route to Blackfire, make sure to add the default route to <code class="highlighter-rouge">routes.yaml</code>:</p>
+<p>If adding a route to Blackfire, make sure to add the default route to <code class="language-plaintext highlighter-rouge">routes.yaml</code>:</p>
 
 <ol>
   <li>
@@ -3802,7 +3803,7 @@ magento-cloud project:variable:set env:BLACKFIRE_SERVER_TOKEN &lt;Blackfire Serv
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:checkout &lt;environment ID&gt;
 </code></pre></div>    </div>
 
-    <p>You can also create a new branch using the <code class="highlighter-rouge">magento-cloud environment:branch</code> command.</p>
+    <p>You can also create a new branch using the <code class="language-plaintext highlighter-rouge">magento-cloud environment:branch</code> command.</p>
   </li>
   <li>
     <p>Back up the environment using a snapshot:</p>
@@ -3810,17 +3811,17 @@ magento-cloud project:variable:set env:BLACKFIRE_SERVER_TOKEN &lt;Blackfire Serv
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud snapshot:create <span class="nt">-e</span> &lt;environment ID&gt;
 </code></pre></div>    </div>
   </li>
-  <li>Use a text editor to locate and edit <code class="highlighter-rouge">&lt;project root dir&gt;/magento/routes.yaml</code> in your branch.</li>
+  <li>Use a text editor to locate and edit <code class="language-plaintext highlighter-rouge">&lt;project root dir&gt;/magento/routes.yaml</code> in your branch.</li>
   <li>
-    <p>Add the route the file. For details, see <a href="/devdocs/guides/v2.0/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">routes.yaml</code></a>. Here’s an example:</p>
+    <p>Add the route the file. For details, see <a href="/devdocs/guides/v2.0/cloud/project/project-conf-files_routes.html"><code class="language-plaintext highlighter-rouge">routes.yaml</code></a>. Here’s an example:</p>
 
     <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="s2">"</span><span class="s">http://{default}/"</span><span class="pi">:</span>
 <span class="na">type</span><span class="pi">:</span> <span class="s">upstream</span>
 <span class="na">upstream</span><span class="pi">:</span> <span class="s2">"</span><span class="s">blackfire:php"</span>
 </code></pre></div>    </div>
   </li>
-  <li>Save your changes to <code class="highlighter-rouge">routes.yaml</code> and exit the text editor. It should look like <code class="highlighter-rouge">https://example.com/</code> or <code class="highlighter-rouge">http://*.{default}/</code>.
-If you leave this field blank, we will try the following keys in this order: <code class="highlighter-rouge">https://{default}/</code>, <code class="highlighter-rouge">https://www.{default}/</code>, <code class="highlighter-rouge">http://{default}/</code>, <code class="highlighter-rouge">http://www.{default}/</code>.</li>
+  <li>Save your changes to <code class="language-plaintext highlighter-rouge">routes.yaml</code> and exit the text editor. It should look like <code class="language-plaintext highlighter-rouge">https://example.com/</code> or <code class="language-plaintext highlighter-rouge">http://*.{default}/</code>.
+If you leave this field blank, we will try the following keys in this order: <code class="language-plaintext highlighter-rouge">https://{default}/</code>, <code class="language-plaintext highlighter-rouge">https://www.{default}/</code>, <code class="language-plaintext highlighter-rouge">http://{default}/</code>, <code class="language-plaintext highlighter-rouge">http://www.{default}/</code>.</li>
   <li>
     <p>Add, commit, and push your changes to the environment:</p>
 
@@ -3829,7 +3830,7 @@ git commit <span class="nt">-m</span> <span class="s2">"&lt;message&gt;"</span>
 git push origin
 </code></pre></div>    </div>
 
-    <p>If errors display during deployment, open <code class="highlighter-rouge">routes.yaml</code> and check the syntax. Check indentation and spelling and try again.</p>
+    <p>If errors display during deployment, open <code class="language-plaintext highlighter-rouge">routes.yaml</code> and check the syntax. Check indentation and spelling and try again.</p>
   </li>
 </ol>
 

@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento Open Source 2.1.2 Release Notes | Magento 2 Developer Documentation (copy)</title>
+	<title>Magento Open Source 2.1.2 Release Notes | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/release-notes/ReleaseNotes2.1.2CE.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/release-notes/ReleaseNotes2.1.2CE.html">Magento 2.0</a></li>
 		
@@ -2797,7 +2798,7 @@
   <li>
     <p><i>Two new web APIs (or service contracts) for the Sales module</i> that incorporate functionality into the Sales   <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span>
  that is currently available in the   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>
- interface. After you install this patch, you’ll be able to use the Sales API <code class="highlighter-rouge">ShipOrder</code> and <code class="highlighter-rouge">InvoiceOrder</code> methods to capture payment and ship product. See <a href="/devdocs/guides/v2.1/mrg/intro.html" target="_blank">Module Reference Guide</a> for information on using the <code class="highlighter-rouge">ShipOrder</code> and <code class="highlighter-rouge">InvoiceOrder</code> interfaces.</p>
+ interface. After you install this patch, you’ll be able to use the Sales API <code class="language-plaintext highlighter-rouge">ShipOrder</code> and <code class="language-plaintext highlighter-rouge">InvoiceOrder</code> methods to capture payment and ship product. See <a href="/devdocs/guides/v2.1/mrg/intro.html" target="_blank">Module Reference Guide</a> for information on using the <code class="language-plaintext highlighter-rouge">ShipOrder</code> and <code class="language-plaintext highlighter-rouge">InvoiceOrder</code> interfaces.</p>
   </li>
 </ul>
 
@@ -2839,7 +2840,7 @@
 
 <!--- 53971-->
 <ul>
-  <li>Fixed issue with running <code class="highlighter-rouge">cron</code> jobs less frequently than specified by the application <code class="highlighter-rouge">cron</code> setting.</li>
+  <li>Fixed issue with running <code class="language-plaintext highlighter-rouge">cron</code> jobs less frequently than specified by the application <code class="language-plaintext highlighter-rouge">cron</code> setting.</li>
 </ul>
 
 <!--- 57965-->
@@ -2911,7 +2912,7 @@
   <li>
     <p>We’ve added the ability to change the status of a   <span term-uuid="c8f00e9d-7f70-4561-9773-60da604ba5c9" class="glossary-term" data-toggle="popover">shipment</span>
  through the   <span term-uuid="377dc0a3-b8a7-4dfa-808e-2de37e4c0029" class="glossary-term" data-toggle="popover">web API</span>
-.  The new <code class="highlighter-rouge">ShipOrder</code> interface supports tasks you can already do through the Admin dashboard, including the ability to:</p>
+.  The new <code class="language-plaintext highlighter-rouge">ShipOrder</code> interface supports tasks you can already do through the Admin dashboard, including the ability to:</p>
 
     <ul>
       <li>
@@ -2933,7 +2934,7 @@
 <!--- 56428 -->
 <ul>
   <li>
-    <p>We’ve added the ability to change the status of an invoice through the web API.  The new <code class="highlighter-rouge">InvoiceOrder</code> interface supports tasks you can already do through the Admin dashboard, including the ability to:</p>
+    <p>We’ve added the ability to change the status of an invoice through the web API.  The new <code class="language-plaintext highlighter-rouge">InvoiceOrder</code> interface supports tasks you can already do through the Admin dashboard, including the ability to:</p>
 
     <ul>
       <li>
@@ -3013,7 +3014,7 @@
 
 <!--- 56952-->
 <ul>
-  <li>We’ve resolved an issue with the get active payment methods (<code class="highlighter-rouge">getActiveMethods</code>). <a href="https://github.com/magento/magento2/issues/5413" target="_blank">(GITHUB-5413)</a></li>
+  <li>We’ve resolved an issue with the get active payment methods (<code class="language-plaintext highlighter-rouge">getActiveMethods</code>). <a href="https://github.com/magento/magento2/issues/5413" target="_blank">(GITHUB-5413)</a></li>
 </ul>
 
 <!--- 58568-->
@@ -3053,7 +3054,7 @@
 <!--- 57291-->
 
 <ul>
-  <li><strong>Issue</strong>: The <code class="highlighter-rouge">catalogProductRepository</code> API (REST) returns an unexpected attribute type. Certain <code class="highlighter-rouge">attribute_code</code> values (for example,  <code class="highlighter-rouge">category_ids</code>) return an array instead of the expected string. <strong>Workaround</strong>: As needed, adjust your code so that it handles the response as an array.</li>
+  <li><strong>Issue</strong>: The <code class="language-plaintext highlighter-rouge">catalogProductRepository</code> API (REST) returns an unexpected attribute type. Certain <code class="language-plaintext highlighter-rouge">attribute_code</code> values (for example,  <code class="language-plaintext highlighter-rouge">category_ids</code>) return an array instead of the expected string. <strong>Workaround</strong>: As needed, adjust your code so that it handles the response as an array.</li>
 </ul>
 
 <!--- 56853-->
@@ -3085,16 +3086,16 @@
 
 <h3 id="install-rc-composer" class="no_toc">Get the Magento Open Source software using Composer</h3>
 
-<p>The Open Source software is available from <code class="highlighter-rouge">repo.magento.com</code>. Before getting the Open Source software, familiarize yourself with the Composer metapackage  <a href="/devdocs/guides/v2.1/install-gde/composer.html">prerequisites</a>, then run</p>
+<p>The Open Source software is available from <code class="language-plaintext highlighter-rouge">repo.magento.com</code>. Before getting the Open Source software, familiarize yourself with the Composer metapackage  <a href="/devdocs/guides/v2.1/install-gde/composer.html">prerequisites</a>, then run</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer create-project --repository=https://repo.magento.com/ magento/project-community-edition=&lt;version&gt; &lt;installation directory name&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer create-project --repository=https://repo.magento.com/ magento/project-community-edition=&lt;version&gt; &lt;installation directory name&gt;
 </code></pre></div></div>
 
-<p>where <code class="highlighter-rouge">&lt;version&gt;</code> is <code class="highlighter-rouge">2.1.0</code>, <code class="highlighter-rouge">2.1.1</code>, and so on</p>
+<p>where <code class="language-plaintext highlighter-rouge">&lt;version&gt;</code> is <code class="language-plaintext highlighter-rouge">2.1.0</code>, <code class="language-plaintext highlighter-rouge">2.1.1</code>, and so on</p>
 
-<p>For example, to install Magento Open Source 2.1.1 in the <code class="highlighter-rouge">magento2</code> directory:</p>
+<p>For example, to install Magento Open Source 2.1.1 in the <code class="language-plaintext highlighter-rouge">magento2</code> directory:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer create-project --repository=https://repo.magento.com/ magento/project-community-edition=2.1.1 magento2
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer create-project --repository=https://repo.magento.com/ magento/project-community-edition=2.1.1 magento2
 </code></pre></div></div>
 
 <h3 id="install-archive" class="no_toc">Get a compressed archive</h3>
@@ -3108,7 +3109,7 @@
 
 <p>These packages are easy to get and install. You don’t need to use Composer, all you need to do is to upload a package to your Magento server or hosted platform, unpack it, and run the web-based Setup Wizard.</p>
 
-<p>Archives are available in the following formats: <code class="highlighter-rouge">.zip</code>, <code class="highlighter-rouge">.tar.bz2</code>, <code class="highlighter-rouge">.tar.gz</code></p>
+<p>Archives are available in the following formats: <code class="language-plaintext highlighter-rouge">.zip</code>, <code class="language-plaintext highlighter-rouge">.tar.bz2</code>, <code class="language-plaintext highlighter-rouge">.tar.gz</code></p>
 
 <p>To get the Magento Open Source software archive:</p>
 
@@ -3118,11 +3119,11 @@
     <p>Choose either the software or the software and sample data:</p>
 
     <ul>
-      <li><code class="highlighter-rouge">Magento-CE-&lt;version&gt;.*</code> (without sample data)</li>
-      <li><code class="highlighter-rouge">Magento-CE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
+      <li><code class="language-plaintext highlighter-rouge">Magento-CE-&lt;version&gt;.*</code> (without sample data)</li>
+      <li><code class="language-plaintext highlighter-rouge">Magento-CE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
     </ul>
 
-    <p><code class="highlighter-rouge">&lt;version&gt;</code> is the three-digit release number (for example, <code class="highlighter-rouge">2.0.7</code>, <code class="highlighter-rouge">2.1.0</code>, and so on).</p>
+    <p><code class="language-plaintext highlighter-rouge">&lt;version&gt;</code> is the three-digit release number (for example, <code class="language-plaintext highlighter-rouge">2.0.7</code>, <code class="language-plaintext highlighter-rouge">2.1.0</code>, and so on).</p>
   </li>
 </ol>
 

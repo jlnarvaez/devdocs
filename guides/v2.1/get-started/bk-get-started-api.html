@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Getting Started with Magento Web APIs | Magento 2 Developer Documentation (copy)</title>
+	<title>Getting Started with Magento Web APIs | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/get-started/bk-get-started-api.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/get-started/bk-get-started-api.html">Magento 2.0</a></li>
 		
@@ -1783,7 +1784,7 @@
   </li>
   <li>
     <p>Any Magento or third-party service can be <a href="/devdocs/guides/v2.1/extension-dev-guide/service-contracts/service-to-web-service.html">configured as a web API</a> with a few lines of   <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">xml</span>
-. To configure a web API, you define XML elements and attributes in a <code class="highlighter-rouge">webapi.xml</code> configuration file. If a service is not defined in a configuration file, it will not be exposed at all.</p>
+. To configure a web API, you define XML elements and attributes in a <code class="language-plaintext highlighter-rouge">webapi.xml</code> configuration file. If a service is not defined in a configuration file, it will not be exposed at all.</p>
   </li>
   <li>
     <p>The framework is based on the CRUD (create, read, update, delete) &amp; search model. The system does not currently support webhooks.</p>
@@ -1792,7 +1793,7 @@
     <p>The framework supports field filtering of web API responses to conserve mobile bandwidth.</p>
   </li>
   <li>Integration style web APIs enable a single web API call to run multiple services at once for a more efficient integration.  An example of this behavior can be seen in the   <span term-uuid="8d40d668-4996-4856-9f81-b1386cf4b14f" class="glossary-term" data-toggle="popover">Catalog</span>
- where one web API call can create a product. If your payload includes the <code class="highlighter-rouge">stock_item</code> and <code class="highlighter-rouge">media_gallery_entries</code> objects, then the framework will also create the product’s inventory &amp; media in that one API call.</li>
+ where one web API call can create a product. If your payload includes the <code class="language-plaintext highlighter-rouge">stock_item</code> and <code class="language-plaintext highlighter-rouge">media_gallery_entries</code> objects, then the framework will also create the product’s inventory &amp; media in that one API call.</li>
 </ul>
 
 <h2 id="uses">What can I do with the Magento web APIs?</h2>

@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Add Staging and Production to Pro projects UI | Magento 2 Developer Documentation (copy)</title>
+	<title>Add Staging and Production to Pro projects UI | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/trouble/pro-env-management.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/trouble/pro-env-management.html">Magento 2.0</a></li>
 		
@@ -4333,8 +4334,8 @@
   <li>Sync code between Staging and Production to Integration environments</li>
   <li>Merge code from Integration environment to Staging environment to Production environment</li>
   <li>Add and manage environment variables</li>
-  <li>Manage build and deploy hooks with the <code class="highlighter-rouge">.magento.app.yaml</code> file</li>
-  <li>Manage PHP versions and variables with the <code class="highlighter-rouge">.magento.app.yaml</code> file</li>
+  <li>Manage build and deploy hooks with the <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> file</li>
+  <li>Manage PHP versions and variables with the <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> file</li>
   <li>Configure environment settings</li>
   <li>Access the environments using SSH and URL</li>
   <li>View status, build logs, and deployment history</li>
@@ -4344,7 +4345,7 @@
 
 <ul>
   <li>Cron jobs</li>
-  <li>Redirects from <code class="highlighter-rouge">routes.yaml</code> file</li>
+  <li>Redirects from <code class="language-plaintext highlighter-rouge">routes.yaml</code> file</li>
   <li>Managing PHP extensions</li>
   <li>Managing mounts</li>
 </ul>
@@ -4360,7 +4361,7 @@
 
 <h3 id="branching-hierarchy">Branching hierarchy</h3>
 
-<p>Before converting your project, the branches include a repository for Integration, Staging, and Production. Each repository has a <code class="highlighter-rouge">master</code> branch with deployment targets configured for Staging and Production.</p>
+<p>Before converting your project, the branches include a repository for Integration, Staging, and Production. Each repository has a <code class="language-plaintext highlighter-rouge">master</code> branch with deployment targets configured for Staging and Production.</p>
 
 <p>After converting your project, the hierarchical relationships appear in your Project Web Interface with three, main environment branches for Integration, Staging, and Production:</p>
 
@@ -4370,7 +4371,7 @@
 
 <h2 id="before-you-upgrade">Before you upgrade</h2>
 
-<p>When we add Staging and Production access to the Project Web Interface, we leverage the user accounts, branch user permissions, and environment variables from your Integration <code class="highlighter-rouge">master</code> environment.</p>
+<p>When we add Staging and Production access to the Project Web Interface, we leverage the user accounts, branch user permissions, and environment variables from your Integration <code class="language-plaintext highlighter-rouge">master</code> environment.</p>
 
 <p>To prepare, verify that your settings and environment variables are correct.</p>
 
@@ -4404,14 +4405,14 @@
 
 <ol>
   <li>Log in to <a href="https://accounts.magento.cloud">your Magento Commerce Cloud account</a>.</li>
-  <li>From your project, click the Integration <code class="highlighter-rouge">master</code> branch to view the environment information and settings.</li>
+  <li>From your project, click the Integration <code class="language-plaintext highlighter-rouge">master</code> branch to view the environment information and settings.</li>
   <li>Click <strong>Configure environment</strong>.</li>
   <li>On the <em>Variables</em> tab, review the environment variables.<br />
  To create a new variable, click <strong>Add Variable</strong>.<br />
  To update an existing variable, click <strong>Edit</strong> next to the variable.</li>
 </ol>
 
-<p>For environment-specific variables, including sensitive data and values, you can add those variables after we update your Project Web Interface. If you have environment variables in an <code class="highlighter-rouge">env.php</code> file, the file continues working after converting. You can add and manage these variables via SSH and CLI commands directly into the Staging and Production environments.</p>
+<p>For environment-specific variables, including sensitive data and values, you can add those variables after we update your Project Web Interface. If you have environment variables in an <code class="language-plaintext highlighter-rouge">env.php</code> file, the file continues working after converting. You can add and manage these variables via SSH and CLI commands directly into the Staging and Production environments.</p>
 
 <h2 id="enable">Enter a ticket for updating the Project Web Interface</h2>
 
@@ -4442,7 +4443,7 @@
 
 <p>When accessing the Project Web Interface, you should see a hierarchy of branches starting from Production to Staging to Integration. Any branches you create display as children from Integration `master. For more information, see <a href="/devdocs/guides/v2.2/cloud/architecture/pro-architecture.html">Pro architecture</a>.</p>
 
-<p>You can add environment-specific variables, including sensitive data and values, after we update your Project Web Interface. If you have environment variables in an <code class="highlighter-rouge">env.php</code> file, the file continues working after converting. See <a href="/devdocs/guides/v2.2/cloud/env/environments.html">Configure environments</a>.</p>
+<p>You can add environment-specific variables, including sensitive data and values, after we update your Project Web Interface. If you have environment variables in an <code class="language-plaintext highlighter-rouge">env.php</code> file, the file continues working after converting. See <a href="/devdocs/guides/v2.2/cloud/env/environments.html">Configure environments</a>.</p>
 
 <h2 id="request-an-upgrade">Request an upgrade</h2>
 

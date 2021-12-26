@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Component deployment failure | Magento 2 Developer Documentation (copy)</title>
+	<title>Component deployment failure | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/trouble/trouble_comp-deploy-fail.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/trouble/trouble_comp-deploy-fail.html">Magento 2.0</a></li>
 		
@@ -4349,12 +4350,12 @@
 
 <ul>
   <li><a href="/devdocs/guides/v2.3/cloud/project/project-webint-snap.html">Restore a snapshot</a> if you have one</li>
-  <li>Remove the component from your environment’s <code class="highlighter-rouge">composer.json</code> and redeploy the environment</li>
+  <li>Remove the component from your environment’s <code class="language-plaintext highlighter-rouge">composer.json</code> and redeploy the environment</li>
 </ul>
 
-<h2 id="remove-the-component-from-composerjson-and-redeploy">Remove the component from <code class="highlighter-rouge">composer.json</code> and redeploy</h2>
+<h2 id="remove-the-component-from-composerjson-and-redeploy">Remove the component from <code class="language-plaintext highlighter-rouge">composer.json</code> and redeploy</h2>
 
-<p>This section discusses how to remove the component from the root <code class="highlighter-rouge">composer.json</code> in your environment and redeploy the environment:</p>
+<p>This section discusses how to remove the component from the root <code class="language-plaintext highlighter-rouge">composer.json</code> in your environment and redeploy the environment:</p>
 
 <h2 id="get-started">Get started</h2>
 
@@ -4364,61 +4365,61 @@
   <li>
     <p>Enter the following command in a terminal to log in to your project:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud login
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud login
 </code></pre></div>    </div>
   </li>
   <li>
     <p>List your projects. With the project ID, you can complete additional commands.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud project:list
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud project:list
 </code></pre></div>    </div>
   </li>
   <li>
     <p>If necessary, clone the project to your local. You should have cloned when setting up your local development workspace.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud project:get &lt;project ID&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud project:get &lt;project ID&gt;
 </code></pre></div>    </div>
   </li>
-  <li>Change to a project directory. For example, <code class="highlighter-rouge">cd /var/www/html/magento2</code></li>
+  <li>Change to a project directory. For example, <code class="language-plaintext highlighter-rouge">cd /var/www/html/magento2</code></li>
   <li>
     <p>List environments in the project. Every environment includes an active Git branch of your code, database, environment variables, configurations, and services.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:list
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:list
 </code></pre></div>    </div>
 
-  	<code class="highlighter-rouge">magento-cloud environment:list</code>—displays environment hierarchies whereas the <code class="highlighter-rouge">git branch</code> command does not.
+  	<code class="language-plaintext highlighter-rouge">magento-cloud environment:list</code>—displays environment hierarchies whereas the <code class="language-plaintext highlighter-rouge">git branch</code> command does not.
   </li>
   <li>
     <p>Fetch origin branches to get the latest code:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git fetch origin
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git fetch origin
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Check out, or switch to, a specific branch and environment. Git commands only checkout the Git branch. The Magento Cloud command also switches to the active environment.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:checkout &lt;environment ID&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:checkout &lt;environment ID&gt;
 </code></pre></div>    </div>
 
-    <p>To create a new environment, use <code class="highlighter-rouge">magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
+    <p>To create a new environment, use <code class="language-plaintext highlighter-rouge">magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
   </li>
   <li>
     <p>Pull any updated code to your local for the environment ID (which is the Git branch):</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git pull origin &lt;environment ID&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git pull origin &lt;environment ID&gt;
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Create a <a href="/devdocs/guides/v2.3/cloud/project/project-webint-snap.html">snapshot</a> of the environment as a backup:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
 </code></pre></div>    </div>
   </li>
 </ol>
 
 <h2 id="find-a-components-composer-name">Find a component’s Composer name</h2>
 
-<p>This section discusses how to get a module’s Composer name and its version from Magento Marketplace. Alternatively, you can find the name and version of <em>any</em> module (whether or not you purchased it on Marketplace) in the module’s <code class="highlighter-rouge">composer.json</code> file. Open <code class="highlighter-rouge">composer.json</code> in a text editor and write down the values of <code class="highlighter-rouge">"name"</code> and <code class="highlighter-rouge">"version"</code>.</p>
+<p>This section discusses how to get a module’s Composer name and its version from Magento Marketplace. Alternatively, you can find the name and version of <em>any</em> module (whether or not you purchased it on Marketplace) in the module’s <code class="language-plaintext highlighter-rouge">composer.json</code> file. Open <code class="language-plaintext highlighter-rouge">composer.json</code> in a text editor and write down the values of <code class="language-plaintext highlighter-rouge">"name"</code> and <code class="language-plaintext highlighter-rouge">"version"</code>.</p>
 
 <h4 id="to-get-the-modules-composer-name-from-magento-marketplace">To get the module’s Composer name from Magento Marketplace:</h4>
 
@@ -4442,33 +4443,33 @@
   <li>Click <strong>Copy</strong> to copy the component name to the clipboard.</li>
   <li>Open a text editor.</li>
   <li>Paste the module name in the text editor.</li>
-  <li>Append a colon character (<code class="highlighter-rouge">:</code>) to the component name.</li>
+  <li>Append a colon character (<code class="language-plaintext highlighter-rouge">:</code>) to the component name.</li>
   <li>In <strong>Technical Details</strong> on the My Purchases page, click <strong>Copy</strong> to copy the version to the clipboard.</li>
   <li>
     <p>Append the version number to the component name after the colon.</p>
 
     <p>A sample follows:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>pixlee/magento2:1.0.1
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>pixlee/magento2:1.0.1
 </code></pre></div>    </div>
   </li>
 </ol>
 
-<h2 id="clear-var-directories">Clear <code class="highlighter-rouge">var</code> directories</h2>
+<h2 id="clear-var-directories">Clear <code class="language-plaintext highlighter-rouge">var</code> directories</h2>
 
-<p>To clean up from the previous deployment, you must SSH to the environment and manually clear the contents of the Magento <code class="highlighter-rouge">var</code> directory.</p>
+<p>To clean up from the previous deployment, you must SSH to the environment and manually clear the contents of the Magento <code class="language-plaintext highlighter-rouge">var</code> directory.</p>
 
 <ol>
   <li>
     <p>Enter the following command to SSH to the current environment:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:ssh
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:ssh
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Clear the <code class="highlighter-rouge">var</code> directory:</p>
+    <p>Clear the <code class="language-plaintext highlighter-rouge">var</code> directory:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>rm -rf var/*
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>rm -rf var/*
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -4482,19 +4483,19 @@
   <li>
     <p>Enter the following command:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer remove &lt;component-name&gt;:&lt;version&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer remove &lt;component-name&gt;:&lt;version&gt;
 </code></pre></div>    </div>
 
     <p>If the following message displays, you don’t need to do anything further:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Package "&lt;name&gt;:&lt;version&gt;" listed for update is not installed. Ignoring.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Package "&lt;name&gt;:&lt;version&gt;" listed for update is not installed. Ignoring.
 </code></pre></div>    </div>
   </li>
   <li>Wait while dependencies are updated.</li>
   <li>
     <p>Enter the following commands in the order shown to commit the changes and deploy the project:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git add -A
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git add -A
 git commit -m "&lt;message&gt;"
 git push origin &lt;environment ID&gt;
 </code></pre></div>    </div>

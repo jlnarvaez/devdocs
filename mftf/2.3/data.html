@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Input testing data | Magento 2 Developer Documentation (copy)</title>
+	<title>Input testing data | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -2157,13 +2156,12 @@
 	<h1 class="page-heading">Input testing data</h1>
 </section>
 
-			
-<p style="text-align: right"><em>This topic was updated due to the 2.3.0 MFTF release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.3.0 MFTF release.</em></p>
 
-<p>The MFTF enables you to specify and use <code class="highlighter-rouge">&lt;data&gt;</code> entities defined in XML. Default <code class="highlighter-rouge">&lt;data&gt;</code> entities are provided for use and as templates for entity creation and manipulation.
+<p>The MFTF enables you to specify and use <code class="language-plaintext highlighter-rouge">&lt;data&gt;</code> entities defined in XML. Default <code class="language-plaintext highlighter-rouge">&lt;data&gt;</code> entities are provided for use and as templates for entity creation and manipulation.
 The following diagram shows the XML structure of an MFTF data object:</p>
 
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<p>&lt;?xml version=”1.0” encoding=”UTF-8” standalone=”no”?&gt;</p>
 <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="496" height="218" version="1.1" id="svg176" sodipodi:docname="data-dia.svg" inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
   <metadata id="metadata182">
     <rdf:RDF>
@@ -2280,7 +2278,7 @@ The following diagram shows the XML structure of an MFTF data object:</p>
 
 <h2 id="supply-data-to-test-by-reference-to-a-data-entity">Supply data to test by reference to a data entity</h2>
 
-<p>Test steps requiring <code class="highlighter-rouge">&lt;data&gt;</code> input in an action, like filling a field with a string, may reference an attribute from a data entity:</p>
+<p>Test steps requiring <code class="language-plaintext highlighter-rouge">&lt;data&gt;</code> input in an action, like filling a field with a string, may reference an attribute from a data entity:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>userInput="{{SimpleSubCategory.name}}"
 </code></pre></div></div>
@@ -2288,8 +2286,8 @@ The following diagram shows the XML structure of an MFTF data object:</p>
 <p>In this example:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">SimpleSubCategory</code> is an entity name.</li>
-  <li><code class="highlighter-rouge">name</code> is a <code class="highlighter-rouge">&lt;data&gt;</code> key of the entity. The corresponding value will be assigned to <code class="highlighter-rouge">userInput</code> as a result.</li>
+  <li><code class="language-plaintext highlighter-rouge">SimpleSubCategory</code> is an entity name.</li>
+  <li><code class="language-plaintext highlighter-rouge">name</code> is a <code class="language-plaintext highlighter-rouge">&lt;data&gt;</code> key of the entity. The corresponding value will be assigned to <code class="language-plaintext highlighter-rouge">userInput</code> as a result.</li>
 </ul>
 
 <h3 id="environmental-data">Environmental data</h3>
@@ -2300,9 +2298,9 @@ The following diagram shows the XML structure of an MFTF data object:</p>
 <p>In this example:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">_ENV</code> is a reference to the <code class="highlighter-rouge">dev/tests/acceptance/.env</code> file, where basic environment variables are set.</li>
-  <li><code class="highlighter-rouge">MAGENTO_ADMIN_USERNAME</code> is a name of an environment variable.
- The corresponding value will be assigned to <code class="highlighter-rouge">userInput</code> as a result.</li>
+  <li><code class="language-plaintext highlighter-rouge">_ENV</code> is a reference to the <code class="language-plaintext highlighter-rouge">dev/tests/acceptance/.env</code> file, where basic environment variables are set.</li>
+  <li><code class="language-plaintext highlighter-rouge">MAGENTO_ADMIN_USERNAME</code> is a name of an environment variable.
+ The corresponding value will be assigned to <code class="language-plaintext highlighter-rouge">userInput</code> as a result.</li>
 </ul>
 
 <h3 id="sensitive-data">Sensitive data</h3>
@@ -2313,10 +2311,10 @@ The following diagram shows the XML structure of an MFTF data object:</p>
 <p>In this example:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">_CREDS</code> is a constant to reference to the <code class="highlighter-rouge">dev/tests/acceptance/.credentials</code> file, where sensitive data and secrets are stored for use in a test.</li>
-  <li><code class="highlighter-rouge">MY_SECRET_TOKEN</code> is the name of a key in the credentials variable.
-The corresponding value of the credential will be assigned to <code class="highlighter-rouge">userInput</code> as a result.</li>
-  <li>The decrypted values are only available in the <code class="highlighter-rouge">.credentials</code> file in which they are stored.</li>
+  <li><code class="language-plaintext highlighter-rouge">_CREDS</code> is a constant to reference to the <code class="language-plaintext highlighter-rouge">dev/tests/acceptance/.credentials</code> file, where sensitive data and secrets are stored for use in a test.</li>
+  <li><code class="language-plaintext highlighter-rouge">MY_SECRET_TOKEN</code> is the name of a key in the credentials variable.
+The corresponding value of the credential will be assigned to <code class="language-plaintext highlighter-rouge">userInput</code> as a result.</li>
+  <li>The decrypted values are only available in the <code class="language-plaintext highlighter-rouge">.credentials</code> file in which they are stored.</li>
 </ul>
 
 <p>Learn more in [Credentials][].</p>
@@ -2325,7 +2323,7 @@ The corresponding value of the credential will be assigned to <code class="highl
 
 <p>A test can specify an entity to be persisted (created in the database) so that the test actions could operate on the existing known data.</p>
 
-<p>Example of referencing <code class="highlighter-rouge">data</code> in a test:</p>
+<p>Example of referencing <code class="language-plaintext highlighter-rouge">data</code> in a test:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>userInput="$createCustomer.email$"
 </code></pre></div></div>
@@ -2333,9 +2331,9 @@ The corresponding value of the credential will be assigned to <code class="highl
 <p>In this example:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">createCustomer</code> is a step key of the corresponding test step that creates an entity.</li>
-  <li><code class="highlighter-rouge">email</code> is a data key of the entity.
-The corresponding value will be assigned to <code class="highlighter-rouge">userInput</code> as a result.</li>
+  <li><code class="language-plaintext highlighter-rouge">createCustomer</code> is a step key of the corresponding test step that creates an entity.</li>
+  <li><code class="language-plaintext highlighter-rouge">email</code> is a data key of the entity.
+The corresponding value will be assigned to <code class="language-plaintext highlighter-rouge">userInput</code> as a result.</li>
 </ul>
 
 <!-- Available note types: "info", "warning", "tip" -->
@@ -2343,19 +2341,19 @@ The corresponding value will be assigned to <code class="highlighter-rouge">user
 <div class="bs-callout bs-callout-info" id="info">
   <p>As of MFTF 2.3.6, you no longer need to differentiate between scopes (a test, a hook, or a suite) for persisted data when referencing it in tests.</p>
 
-  <p>The MFTF now stores the persisted data and attempts to retrieve it using the combination of <code class="highlighter-rouge">stepKey</code> and the scope of where it has been called.
+  <p>The MFTF now stores the persisted data and attempts to retrieve it using the combination of <code class="language-plaintext highlighter-rouge">stepKey</code> and the scope of where it has been called.
 The current scope is preferred, then widening to <em>test &gt; hook &gt; suite</em> or <em>hook &gt; test &gt; suite</em>.</p>
 
-  <p>This emphasizes the practice for the <code class="highlighter-rouge">stepKey</code> of <code class="highlighter-rouge">createData</code> to be descriptive and unique, as a duplicated <code class="highlighter-rouge">stepKey</code> in both a <code class="highlighter-rouge">&lt;test&gt;</code> and <code class="highlighter-rouge">&lt;before&gt;</code> prefers the <code class="highlighter-rouge">&lt;test&gt;</code> data.</p>
+  <p>This emphasizes the practice for the <code class="language-plaintext highlighter-rouge">stepKey</code> of <code class="language-plaintext highlighter-rouge">createData</code> to be descriptive and unique, as a duplicated <code class="language-plaintext highlighter-rouge">stepKey</code> in both a <code class="language-plaintext highlighter-rouge">&lt;test&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;before&gt;</code> prefers the <code class="language-plaintext highlighter-rouge">&lt;test&gt;</code> data.</p>
 </div>
 
 <h2 id="use-data-returned-by-test-actions">Use data returned by test actions</h2>
 
-<p>A test can also reference data that was returned as a result of <a href="./test/actions.html#actions-returning-a-variable">test actions</a>, like the action <code class="highlighter-rouge">&lt;grabValueFrom selector="someSelector" stepKey="grabStepKey&gt;</code>.</p>
+<p>A test can also reference data that was returned as a result of <a href="./test/actions.html#actions-returning-a-variable">test actions</a>, like the action <code class="language-plaintext highlighter-rouge">&lt;grabValueFrom selector="someSelector" stepKey="grabStepKey&gt;</code>.</p>
 
-<p>Further in the test, the data grabbed by the <code class="highlighter-rouge">someSelector</code> selector can be referenced using the <code class="highlighter-rouge">stepKey</code> value. In this case, it is <code class="highlighter-rouge">grabStepKey</code>.</p>
+<p>Further in the test, the data grabbed by the <code class="language-plaintext highlighter-rouge">someSelector</code> selector can be referenced using the <code class="language-plaintext highlighter-rouge">stepKey</code> value. In this case, it is <code class="language-plaintext highlighter-rouge">grabStepKey</code>.</p>
 
-<p>The following example shows the usage of <code class="highlighter-rouge">grabValueFrom</code> in testing, where the returned value is used by action’s <code class="highlighter-rouge">stepKey</code>:</p>
+<p>The following example shows the usage of <code class="language-plaintext highlighter-rouge">grabValueFrom</code> in testing, where the returned value is used by action’s <code class="language-plaintext highlighter-rouge">stepKey</code>:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;grabValueFrom</span> <span class="na">selector=</span><span class="s">"someSelector"</span> <span class="na">stepKey=</span><span class="s">"grabStepKey"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;fillField</span> <span class="na">selector=</span><span class="s">".functionalTestSelector"</span> <span class="na">userInput=</span><span class="s">"{$grabStepKey}"</span> <span class="na">stepKey=</span><span class="s">"fillFieldKey1"</span><span class="nt">/&gt;</span>
@@ -2372,7 +2370,7 @@ The current scope is preferred, then widening to <em>test &gt; hook &gt; suite</
 
 <h2 id="format">Format</h2>
 
-<p>The format of <code class="highlighter-rouge">&lt;data&gt;</code> is:</p>
+<p>The format of <code class="language-plaintext highlighter-rouge">&lt;data&gt;</code> is:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 
@@ -2390,17 +2388,17 @@ The current scope is preferred, then widening to <em>test &gt; hook &gt; suite</
 
 <h2 id="principles">Principles</h2>
 
-<p>The following conventions apply to MFTF <code class="highlighter-rouge">&lt;data&gt;</code>:</p>
+<p>The following conventions apply to MFTF <code class="language-plaintext highlighter-rouge">&lt;data&gt;</code>:</p>
 
 <ul>
-  <li>A <code class="highlighter-rouge">&lt;data&gt;</code> file may contain multiple data entities.</li>
-  <li>Camel case is used for <code class="highlighter-rouge">&lt;data&gt;</code> elements. The name represents the <code class="highlighter-rouge">&lt;data&gt;</code> type. For example, a file with customer data is <code class="highlighter-rouge">CustomerData.xml</code>. A file for simple product would be <code class="highlighter-rouge">SimpleProductData.xml</code>.</li>
+  <li>A <code class="language-plaintext highlighter-rouge">&lt;data&gt;</code> file may contain multiple data entities.</li>
+  <li>Camel case is used for <code class="language-plaintext highlighter-rouge">&lt;data&gt;</code> elements. The name represents the <code class="language-plaintext highlighter-rouge">&lt;data&gt;</code> type. For example, a file with customer data is <code class="language-plaintext highlighter-rouge">CustomerData.xml</code>. A file for simple product would be <code class="language-plaintext highlighter-rouge">SimpleProductData.xml</code>.</li>
   <li>Camel case is used for the entity name.</li>
 </ul>
 
 <h2 id="example">Example</h2>
 
-<p>Example (<code class="highlighter-rouge">.../Catalog/Data/CategoryData.xml</code> file):</p>
+<p>Example (<code class="language-plaintext highlighter-rouge">.../Catalog/Data/CategoryData.xml</code> file):</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 
@@ -2420,25 +2418,25 @@ The current scope is preferred, then widening to <em>test &gt; hook &gt; suite</
 <span class="nt">&lt;/entities&gt;</span>
 </code></pre></div></div>
 
-<p>This example declares two <code class="highlighter-rouge">&lt;data&gt;</code> entities: <code class="highlighter-rouge">_defaultCategory</code> and <code class="highlighter-rouge">SimpleSubCategory</code>. They set the data required for <a href="http://docs.magento.com/m2/ce/user_guide/catalog/category-create.html">category creation</a>.</p>
+<p>This example declares two <code class="language-plaintext highlighter-rouge">&lt;data&gt;</code> entities: <code class="language-plaintext highlighter-rouge">_defaultCategory</code> and <code class="language-plaintext highlighter-rouge">SimpleSubCategory</code>. They set the data required for <a href="http://docs.magento.com/m2/ce/user_guide/catalog/category-create.html">category creation</a>.</p>
 
-<p>All entities that have the same name will be merged during test generation. Both entities are of the <code class="highlighter-rouge">category</code> type.</p>
+<p>All entities that have the same name will be merged during test generation. Both entities are of the <code class="language-plaintext highlighter-rouge">category</code> type.</p>
 
-<p><code class="highlighter-rouge">_defaultCategory</code> sets three data fields:</p>
+<p><code class="language-plaintext highlighter-rouge">_defaultCategory</code> sets three data fields:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">name</code> defines the category name as <code class="highlighter-rouge">simpleCategory</code> with a unique suffix. Example: <code class="highlighter-rouge">simpleCategory598742365</code>.</li>
-  <li><code class="highlighter-rouge">name_lwr</code> defines the category name in lowercase format with a unique suffix. Example: <code class="highlighter-rouge">simplecategory697543215</code>.</li>
-  <li><code class="highlighter-rouge">is_active</code> sets the enable category to <code class="highlighter-rouge">true</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">name</code> defines the category name as <code class="language-plaintext highlighter-rouge">simpleCategory</code> with a unique suffix. Example: <code class="language-plaintext highlighter-rouge">simpleCategory598742365</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">name_lwr</code> defines the category name in lowercase format with a unique suffix. Example: <code class="language-plaintext highlighter-rouge">simplecategory697543215</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">is_active</code> sets the enable category to <code class="language-plaintext highlighter-rouge">true</code>.</li>
 </ul>
 
-<p><code class="highlighter-rouge">SimpleSubCategory</code> sets four data fields:</p>
+<p><code class="language-plaintext highlighter-rouge">SimpleSubCategory</code> sets four data fields:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">name</code> that defines the category name with a unique suffix. Example: <code class="highlighter-rouge">SimpleSubCategory458712365</code>.</li>
-  <li><code class="highlighter-rouge">name_lwr</code> that defines the category name in lowercase format with a unique suffix. Example: <code class="highlighter-rouge">simplesubcategory753698741</code>.</li>
-  <li><code class="highlighter-rouge">is_active</code> sets the enable category to <code class="highlighter-rouge">true</code>.</li>
-  <li><code class="highlighter-rouge">include_in_menu</code> that sets the include in the menu to <code class="highlighter-rouge">true</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">name</code> that defines the category name with a unique suffix. Example: <code class="language-plaintext highlighter-rouge">SimpleSubCategory458712365</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">name_lwr</code> that defines the category name in lowercase format with a unique suffix. Example: <code class="language-plaintext highlighter-rouge">simplesubcategory753698741</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">is_active</code> sets the enable category to <code class="language-plaintext highlighter-rouge">true</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">include_in_menu</code> that sets the include in the menu to <code class="language-plaintext highlighter-rouge">true</code>.</li>
 </ul>
 
 <p>The following is an example of a call in test:</p>
@@ -2446,17 +2444,17 @@ The current scope is preferred, then widening to <em>test &gt; hook &gt; suite</
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;fillField</span> <span class="na">selector=</span><span class="s">"{{AdminCategoryBasicFieldSection.categoryNameInput}}"</span> <span class="na">userInput=</span><span class="s">"{{_defaultCategory.name}}"</span> <span class="na">stepKey=</span><span class="s">"enterCategoryName"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<p>This action inputs data from the <code class="highlighter-rouge">name</code> of the <code class="highlighter-rouge">_defaultCategory</code> entity (for example, <code class="highlighter-rouge">simpleCategory598742365</code>) into the field with the locator defined in the selector of the <code class="highlighter-rouge">categoryNameInput</code> element of the <code class="highlighter-rouge">AdminCategoryBasicFieldSection</code>.</p>
+<p>This action inputs data from the <code class="language-plaintext highlighter-rouge">name</code> of the <code class="language-plaintext highlighter-rouge">_defaultCategory</code> entity (for example, <code class="language-plaintext highlighter-rouge">simpleCategory598742365</code>) into the field with the locator defined in the selector of the <code class="language-plaintext highlighter-rouge">categoryNameInput</code> element of the <code class="language-plaintext highlighter-rouge">AdminCategoryBasicFieldSection</code>.</p>
 
 <h2 id="reference">Reference</h2>
 
 <h3 id="entities-tag">entities</h3>
 
-<p><code class="highlighter-rouge">&lt;entities&gt;</code> is an element that contains all <code class="highlighter-rouge">&lt;entity&gt;</code>  elements.</p>
+<p><code class="language-plaintext highlighter-rouge">&lt;entities&gt;</code> is an element that contains all <code class="language-plaintext highlighter-rouge">&lt;entity&gt;</code>  elements.</p>
 
 <h3 id="entity-tag">entity</h3>
 
-<p><code class="highlighter-rouge">&lt;entity&gt;</code> is an element that contains <code class="highlighter-rouge">&lt;data&gt;</code> elements.</p>
+<p><code class="language-plaintext highlighter-rouge">&lt;entity&gt;</code> is an element that contains <code class="language-plaintext highlighter-rouge">&lt;data&gt;</code> elements.</p>
 
 <table>
   <thead>
@@ -2469,25 +2467,25 @@ The current scope is preferred, then widening to <em>test &gt; hook &gt; suite</
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">name</code></td>
+      <td><code class="language-plaintext highlighter-rouge">name</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>Name of the <code class="highlighter-rouge">&lt;entity&gt;</code>.</td>
+      <td>Name of the <code class="language-plaintext highlighter-rouge">&lt;entity&gt;</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">type</code></td>
+      <td><code class="language-plaintext highlighter-rouge">type</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>Node containing the exact name of <code class="highlighter-rouge">&lt;entity&gt;</code> type. Used later to find specific Persistence Layer Model class. <code class="highlighter-rouge">type</code> in <code class="highlighter-rouge">&lt;data&gt;</code> can be whatever the user wants; There are no constraints. It is important when persisting data, depending on the <code class="highlighter-rouge">type</code> given, as it will try to match a metadata definition with the operation being done. Example: A <code class="highlighter-rouge">myCustomer</code> entity with <code class="highlighter-rouge">type="customer"</code>, calling <code class="highlighter-rouge">&lt;createData entity="myCustomer"/&gt;</code>, will try to find a metadata entry with the following attributes: <code class="highlighter-rouge">&lt;operation dataType="customer" type="create"&gt;</code>.</td>
+      <td>Node containing the exact name of <code class="language-plaintext highlighter-rouge">&lt;entity&gt;</code> type. Used later to find specific Persistence Layer Model class. <code class="language-plaintext highlighter-rouge">type</code> in <code class="language-plaintext highlighter-rouge">&lt;data&gt;</code> can be whatever the user wants; There are no constraints. It is important when persisting data, depending on the <code class="language-plaintext highlighter-rouge">type</code> given, as it will try to match a metadata definition with the operation being done. Example: A <code class="language-plaintext highlighter-rouge">myCustomer</code> entity with <code class="language-plaintext highlighter-rouge">type="customer"</code>, calling <code class="language-plaintext highlighter-rouge">&lt;createData entity="myCustomer"/&gt;</code>, will try to find a metadata entry with the following attributes: <code class="language-plaintext highlighter-rouge">&lt;operation dataType="customer" type="create"&gt;</code>.</td>
     </tr>
   </tbody>
 </table>
 
-<p><code class="highlighter-rouge">&lt;entity&gt;</code> may contain one or more <a href="#data-tag"><code class="highlighter-rouge">&lt;data&gt;</code></a>, <a href="#var-tag"><code class="highlighter-rouge">&lt;var&gt;</code></a>, <a href="#requiredentity-tag"><code class="highlighter-rouge">&lt;required-entities&gt;</code></a>, or <a href="#array-tag"><code class="highlighter-rouge">&lt;array&gt;</code></a> elements in any sequence.</p>
+<p><code class="language-plaintext highlighter-rouge">&lt;entity&gt;</code> may contain one or more <a href="#data-tag"><code class="language-plaintext highlighter-rouge">&lt;data&gt;</code></a>, <a href="#var-tag"><code class="language-plaintext highlighter-rouge">&lt;var&gt;</code></a>, <a href="#requiredentity-tag"><code class="language-plaintext highlighter-rouge">&lt;required-entities&gt;</code></a>, or <a href="#array-tag"><code class="language-plaintext highlighter-rouge">&lt;array&gt;</code></a> elements in any sequence.</p>
 
 <h3 id="data-tag">data</h3>
 
-<p><code class="highlighter-rouge">&lt;data&gt;</code> is an element containing a data/value pair.</p>
+<p><code class="language-plaintext highlighter-rouge">&lt;data&gt;</code> is an element containing a data/value pair.</p>
 
 <table>
   <thead>
@@ -2500,14 +2498,14 @@ The current scope is preferred, then widening to <em>test &gt; hook &gt; suite</
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">key</code></td>
+      <td><code class="language-plaintext highlighter-rouge">key</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Key attribute of data/value pair.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">unique</code></td>
-      <td>enum: <code class="highlighter-rouge">"prefix"</code>, <code class="highlighter-rouge">"suffix"</code></td>
+      <td><code class="language-plaintext highlighter-rouge">unique</code></td>
+      <td>enum: <code class="language-plaintext highlighter-rouge">"prefix"</code>, <code class="language-plaintext highlighter-rouge">"suffix"</code></td>
       <td>optional</td>
       <td>Add suite or test wide unique sequence as “prefix” or “suffix” to the data value if specified.</td>
     </tr>
@@ -2516,7 +2514,7 @@ The current scope is preferred, then widening to <em>test &gt; hook &gt; suite</
 
 <h3 id="var-tag">var</h3>
 
-<p><code class="highlighter-rouge">&lt;var&gt;</code> is an element that can be used to grab a key value from another entity. For example, when creating a customer with the <code class="highlighter-rouge">&lt;createData&gt;</code> action, the server responds with the auto-incremented ID of that customer. Use <code class="highlighter-rouge">&lt;var&gt;</code> to access that ID and use it in another data entity.</p>
+<p><code class="language-plaintext highlighter-rouge">&lt;var&gt;</code> is an element that can be used to grab a key value from another entity. For example, when creating a customer with the <code class="language-plaintext highlighter-rouge">&lt;createData&gt;</code> action, the server responds with the auto-incremented ID of that customer. Use <code class="language-plaintext highlighter-rouge">&lt;var&gt;</code> to access that ID and use it in another data entity.</p>
 
 <table>
   <thead>
@@ -2529,25 +2527,25 @@ The current scope is preferred, then widening to <em>test &gt; hook &gt; suite</
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">key</code></td>
+      <td><code class="language-plaintext highlighter-rouge">key</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Key attribute of this entity to assign a value to.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">entityType</code></td>
+      <td><code class="language-plaintext highlighter-rouge">entityType</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Type attribute of referenced entity.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">entityKey</code></td>
+      <td><code class="language-plaintext highlighter-rouge">entityKey</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Key attribute of the referenced entity from which to get a value.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">unique</code></td>
+      <td><code class="language-plaintext highlighter-rouge">unique</code></td>
       <td>–</td>
       <td>–</td>
       <td><em>This attribute hasn’t been implemented yet.</em></td>
@@ -2557,7 +2555,7 @@ The current scope is preferred, then widening to <em>test &gt; hook &gt; suite</
 
 <h3 id="requiredentity-tag">requiredEntity</h3>
 
-<p><code class="highlighter-rouge">&lt;requiredEntity&gt;</code> is an element that specifies the parent/child relationship between complex types.</p>
+<p><code class="language-plaintext highlighter-rouge">&lt;requiredEntity&gt;</code> is an element that specifies the parent/child relationship between complex types.</p>
 
 <p>Example: You have customer address info. To specify that relationship:</p>
 
@@ -2579,17 +2577,17 @@ The current scope is preferred, then widening to <em>test &gt; hook &gt; suite</
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">type</code></td>
+      <td><code class="language-plaintext highlighter-rouge">type</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>Type attribute of <code class="highlighter-rouge">&lt;requiredEntity&gt;</code>.</td>
+      <td>Type attribute of <code class="language-plaintext highlighter-rouge">&lt;requiredEntity&gt;</code>.</td>
     </tr>
   </tbody>
 </table>
 
 <h3 id="array-tag">array</h3>
 
-<p><code class="highlighter-rouge">&lt;array&gt;</code> is an element that contains a reference to an array of values.</p>
+<p><code class="language-plaintext highlighter-rouge">&lt;array&gt;</code> is an element that contains a reference to an array of values.</p>
 
 <p>Example:</p>
 
@@ -2614,7 +2612,7 @@ The current scope is preferred, then widening to <em>test &gt; hook &gt; suite</
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">key</code></td>
+      <td><code class="language-plaintext highlighter-rouge">key</code></td>
       <td>string</td>
       <td>required</td>
       <td>Key attribute of this entity in which to assign a value.</td>
@@ -2622,11 +2620,11 @@ The current scope is preferred, then widening to <em>test &gt; hook &gt; suite</
   </tbody>
 </table>
 
-<p><code class="highlighter-rouge">&lt;array&gt;</code> may contain <a href="#item-tag"><code class="highlighter-rouge">&lt;item&gt;</code></a> elements.</p>
+<p><code class="language-plaintext highlighter-rouge">&lt;array&gt;</code> may contain <a href="#item-tag"><code class="language-plaintext highlighter-rouge">&lt;item&gt;</code></a> elements.</p>
 
 <h3 id="item-tag">item</h3>
 
-<p><code class="highlighter-rouge">&lt;item&gt;</code> is an individual piece of data to be passed in as part of the parent <code class="highlighter-rouge">&lt;array&gt;</code> type.</p>
+<p><code class="language-plaintext highlighter-rouge">&lt;item&gt;</code> is an individual piece of data to be passed in as part of the parent <code class="language-plaintext highlighter-rouge">&lt;array&gt;</code> type.</p>
 
 
 			

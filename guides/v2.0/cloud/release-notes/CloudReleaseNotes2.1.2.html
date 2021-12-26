@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento Commerce (Cloud) 2.1.2 and 2.0.10 Release Notes | Magento 2 Developer Documentation (copy)</title>
+	<title>Magento Commerce (Cloud) 2.1.2 and 2.0.10 Release Notes | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/release-notes/CloudReleaseNotes2.1.2.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.2.html">Magento 2.0</a></li>
 		
@@ -1603,7 +1604,7 @@
 <p>We made the following change in this release:</p>
 
 <ul>
-  <li>Added a new environment variable, <code class="highlighter-rouge">UPDATE_URLS</code>, which if set to <code class="highlighter-rouge">enabled</code> causes Magento base URLs in the database with to be replaced with Cloud project URLs. By default, <code class="highlighter-rouge">UPDATE_URLS</code> is set to <code class="highlighter-rouge">enabled</code>. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs. You should set this variable to <code class="highlighter-rouge">disabled</code> <em>only</em> in staging or production, where the base URLs can’t change.</li>
+  <li>Added a new environment variable, <code class="language-plaintext highlighter-rouge">UPDATE_URLS</code>, which if set to <code class="language-plaintext highlighter-rouge">enabled</code> causes Magento base URLs in the database with to be replaced with Cloud project URLs. By default, <code class="language-plaintext highlighter-rouge">UPDATE_URLS</code> is set to <code class="language-plaintext highlighter-rouge">enabled</code>. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs. You should set this variable to <code class="language-plaintext highlighter-rouge">disabled</code> <em>only</em> in staging or production, where the base URLs can’t change.</li>
   <li>Staging and Production environments in the UI for Pro projects. You can enter a ticket to have your project updated. For more information, see <a href="/devdocs/guides/v2.0/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>.</li>
 </ul>
 
@@ -1614,8 +1615,8 @@
 <ul>
   <li>Improved the performance of static file deployment.</li>
   <li>You can now upgrade to version 2.1.2 if you enabled <a href="http://docs.magento.com/m2/ee/user_guide/system/static-file-signature.html" target="_blank">static file signatures</a>.</li>
-  <li>You no longer need a <code class="highlighter-rouge">pub/front-static.php</code> in your template.</li>
-  <li>We now back up <code class="highlighter-rouge">env.php</code> before disabling the Redis cache during deployment.</li>
+  <li>You no longer need a <code class="language-plaintext highlighter-rouge">pub/front-static.php</code> in your template.</li>
+  <li>We now back up <code class="language-plaintext highlighter-rouge">env.php</code> before disabling the Redis cache during deployment.</li>
   <li>Patches are now applied in alphabetical order.</li>
   <li>Staging and Production environments in the UI for Pro projects. Starting October 23, 2017, all projects created using the free 30-day trial or provisioned for new accounts includes Staging and Production environments in the Project Web Interface. Existing accounts created before October 23, 2017 can enter a ticket to be updated. For more information, see <a href="/devdocs/guides/v2.0/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>.</li>
 </ul>
@@ -1624,7 +1625,7 @@
 
 <p>Note the following issue in this release:</p>
 
-<p>The <code class="highlighter-rouge">magento setup:install</code> command (used for deployment) fails in either a staging or production environment if a Magento database already exists in the following scenario:</p>
+<p>The <code class="language-plaintext highlighter-rouge">magento setup:install</code> command (used for deployment) fails in either a staging or production environment if a Magento database already exists in the following scenario:</p>
 
 <ul>
   <li>You installed or updated a component in your integration environment that modifies the database (especially if the component adds tables).</li>

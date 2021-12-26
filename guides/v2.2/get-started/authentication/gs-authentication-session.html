@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Session-based authentication | Magento 2 Developer Documentation (copy)</title>
+	<title>Session-based authentication | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/get-started/authentication/gs-authentication-session.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/get-started/authentication/gs-authentication-session.html">Magento 2.0</a></li>
 		
@@ -1830,22 +1831,22 @@
 <p>The Magento web   <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span>
  framework uses your logged-in session information to verify your identity and authorize access to the requested resource.</p>
 
-<p>Customers can access resources that are configured with <code class="highlighter-rouge">anonymous</code> or <code class="highlighter-rouge">self</code>  permission in the <code class="highlighter-rouge">webapi.xml</code> configuration file.</p>
+<p>Customers can access resources that are configured with <code class="language-plaintext highlighter-rouge">anonymous</code> or <code class="language-plaintext highlighter-rouge">self</code>  permission in the <code class="language-plaintext highlighter-rouge">webapi.xml</code> configuration file.</p>
 
 <p>Admins can access resources that are assigned to their Magento Admin profile.</p>
 
 <p class="bs-callout bs-callout-info">The Magento   <span term-uuid="377dc0a3-b8a7-4dfa-808e-2de37e4c0029" class="glossary-term" data-toggle="popover">web API</span>
- framework enables guest users to access resources that are configured with <code class="highlighter-rouge">anonymous</code> permission. Any user that the framework cannot authenticate through existing authentication mechanisms is considered a guest user.</p>
+ framework enables guest users to access resources that are configured with <code class="language-plaintext highlighter-rouge">anonymous</code> permission. Any user that the framework cannot authenticate through existing authentication mechanisms is considered a guest user.</p>
 
 <p>For example, if a customer is logged in to the Magento storefront and the   <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span>
    <span term-uuid="f0dcf847-ce21-4b88-8b45-83e1cbf08100" class="glossary-term" data-toggle="popover">widget</span>
- invokes the <code class="highlighter-rouge">self</code> API, details for the logged-in customer are fetched:</p>
+ invokes the <code class="language-plaintext highlighter-rouge">self</code> API, details for the logged-in customer are fetched:</p>
 
-<p><code class="highlighter-rouge">GET /rest/V1/customers/me</code></p>
+<p><code class="language-plaintext highlighter-rouge">GET /rest/V1/customers/me</code></p>
 
 <p>Similarly, if an admin is logged in to the Magento Admin
-and the JavaScript widget <code class="highlighter-rouge">Magento_Customer::group</code> API, details for the logged-in admin are fetched.
-The web API framework establishes the identity of the admin user based on logged-in session information and authorizes access to the <code class="highlighter-rouge">Magento_Customer::group</code> resource.</p>
+and the JavaScript widget <code class="language-plaintext highlighter-rouge">Magento_Customer::group</code> API, details for the logged-in admin are fetched.
+The web API framework establishes the identity of the admin user based on logged-in session information and authorizes access to the <code class="language-plaintext highlighter-rouge">Magento_Customer::group</code> resource.</p>
 
 <p class="bs-callout bs-callout-info">The session based authentication functionality is restricted to only allow for AJAX calls and not direct browser requests due to security vulnerabilities. A developer can create a custom storefront widget that can issue requests without additional authentication steps.</p>
 

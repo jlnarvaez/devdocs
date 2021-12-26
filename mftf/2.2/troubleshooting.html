@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Troubleshooting | Magento 2 Developer Documentation (copy)</title>
+	<title>Troubleshooting | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -2091,8 +2090,7 @@
 	<h1 class="page-heading">Troubleshooting</h1>
 </section>
 
-			
-<p style="text-align: right"><em>This topic was updated due to the 2.0.2 MFTF release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.0.2 MFTF release.</em></p>
 
 <p>Having a little trouble with the MFTF? See some common errors and fixes below.</p>
 
@@ -2104,7 +2102,7 @@
 
 <p>You are unable to upload file input using the MFTF actions and are seeing the following exception:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>[Facebook\WebDriver\Exception\NoSuchDriverException]
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>[Facebook\WebDriver\Exception\NoSuchDriverException]
 No active session with ID e56f9260-b366-11e7-966b-db3e6f35d8e1
 </code></pre></div></div>
 
@@ -2120,7 +2118,7 @@ No active session with ID e56f9260-b366-11e7-966b-db3e6f35d8e1
 
 <p>You are seeing an “unhandled inspector error” exception:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>[Facebook\WebDriver\Exception\UnknownServerException]
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>[Facebook\WebDriver\Exception\UnknownServerException]
 unknown error: undhandled inspector error: {"code":-32601, "message":
 "'Network.deleteCookie' wasn't found"} ....
 </code></pre></div></div>
@@ -2137,11 +2135,11 @@ unknown error: undhandled inspector error: {"code":-32601, "message":
 
 <h3 id="firefox">Firefox</h3>
 
-<p>Tests that use the <code class="highlighter-rouge">moveMouseOver</code> action cause an error when run locally.</p>
+<p>Tests that use the <code class="language-plaintext highlighter-rouge">moveMouseOver</code> action cause an error when run locally.</p>
 
 <h4 id="reason-2">Reason</h4>
 
-<p>There’s a compatibility issue with Codeception’s <code class="highlighter-rouge">moveMouseOver</code> function and GeckoDriver with Firefox.</p>
+<p>There’s a compatibility issue with Codeception’s <code class="language-plaintext highlighter-rouge">moveMouseOver</code> function and GeckoDriver with Firefox.</p>
 
 <h4 id="solution-2">Solution</h4>
 

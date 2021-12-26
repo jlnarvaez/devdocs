@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Packages | Magento 2 Developer Documentation (copy)</title>
+	<title>Packages | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/marketplace/eqp/packages.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/marketplace/eqp/packages.html">Magento 2.0</a></li>
 		
@@ -1671,7 +1672,7 @@
   </li>
 </ul>
 
-<p>Before submitting a package, you must first <a href="/devdocs/guides/v2.2/marketplace/eqp/files.html">upload your files</a> and associate the ID returned by the <code class="highlighter-rouge">/rest/v1/files/uploads</code> endpoint with your package using JSON parameters in the request body.</p>
+<p>Before submitting a package, you must first <a href="/devdocs/guides/v2.2/marketplace/eqp/files.html">upload your files</a> and associate the ID returned by the <code class="language-plaintext highlighter-rouge">/rest/v1/files/uploads</code> endpoint with your package using JSON parameters in the request body.</p>
 
 <p>You can also check package submission status and retrieve reports about technical and marketing issues discovered during the EQP process.</p>
 
@@ -1692,7 +1693,7 @@
 
 <p>The following table describes all package object properties:</p>
 
-<p class="bs-callout bs-callout-info">Both <code class="highlighter-rouge">POST</code> and <code class="highlighter-rouge">PUT</code> requests support a batch model where multiple packages can be created or updated.</p>
+<p class="bs-callout bs-callout-info">Both <code class="language-plaintext highlighter-rouge">POST</code> and <code class="language-plaintext highlighter-rouge">PUT</code> requests support a batch model where multiple packages can be created or updated.</p>
 
 <table class="style=&quot;table-layout:">
   <thead>
@@ -1717,14 +1718,14 @@
       <td>string</td>
       <td>GET, POST, PUT</td>
       <td>technical</td>
-      <td>Type of package. Valid values include <code class="highlighter-rouge">extension</code>, <code class="highlighter-rouge">theme</code>, <code class="highlighter-rouge">shared_package</code> or <code class="highlighter-rouge">all</code>. Shared packages are only applicable for Magento 2 extensions. Default is <code class="highlighter-rouge">all</code></td>
+      <td>Type of package. Valid values include <code class="language-plaintext highlighter-rouge">extension</code>, <code class="language-plaintext highlighter-rouge">theme</code>, <code class="language-plaintext highlighter-rouge">shared_package</code> or <code class="language-plaintext highlighter-rouge">all</code>. Shared packages are only applicable for Magento 2 extensions. Default is <code class="language-plaintext highlighter-rouge">all</code></td>
     </tr>
     <tr>
       <td>platform</td>
       <td>string</td>
       <td>GET, POST, PUT</td>
       <td>technical</td>
-      <td>The Magento platform compatibility of this package. Valid values include  <code class="highlighter-rouge">M1</code> for Magento 1 or <code class="highlighter-rouge">M2</code> for Magento 2.</td>
+      <td>The Magento platform compatibility of this package. Valid values include  <code class="language-plaintext highlighter-rouge">M1</code> for Magento 1 or <code class="language-plaintext highlighter-rouge">M2</code> for Magento 2.</td>
     </tr>
     <tr>
       <td>version_compatibility</td>
@@ -1745,7 +1746,7 @@
       <td>string</td>
       <td>GET</td>
       <td>-</td>
-      <td>The package version in the format <code class="highlighter-rouge">major.minor.patch</code>. For example, <code class="highlighter-rouge">2.5.3</code>.</td>
+      <td>The package version in the format <code class="language-plaintext highlighter-rouge">major.minor.patch</code>. For example, <code class="language-plaintext highlighter-rouge">2.5.3</code>.</td>
     </tr>
     <tr>
       <td>short_description</td>
@@ -1780,7 +1781,7 @@
       <td>DateTime</td>
       <td>POST, PUT</td>
       <td>marketing</td>
-      <td>The UTC date and time (<code class="highlighter-rouge">YYYY-MM-DD HH:MM:SS</code>) when the package should be released to the store. If not supplied, it will be released to the store after all checks have passed.</td>
+      <td>The UTC date and time (<code class="language-plaintext highlighter-rouge">YYYY-MM-DD HH:MM:SS</code>) when the package should be released to the store. If not supplied, it will be released to the store after all checks have passed.</td>
     </tr>
     <tr>
       <td>artifact</td>
@@ -1808,7 +1809,7 @@
       <td>array</td>
       <td>GET, POST, PUT</td>
       <td>marketing</td>
-      <td>The list of categories expressed as a <code class="highlighter-rouge">path</code> for the package. For example, <code class="highlighter-rouge">//Extension//Marketing//SEO/SEM</code>. Note that the path separator is <code class="highlighter-rouge">//</code> which allows for a single slash like <code class="highlighter-rouge">SEO/SEM</code> in the path name. Refer to the <a href="https://marketplace.magento.com">Marketplace Store</a> for a list of valid categories.</td>
+      <td>The list of categories expressed as a <code class="language-plaintext highlighter-rouge">path</code> for the package. For example, <code class="language-plaintext highlighter-rouge">//Extension//Marketing//SEO/SEM</code>. Note that the path separator is <code class="language-plaintext highlighter-rouge">//</code> which allows for a single slash like <code class="language-plaintext highlighter-rouge">SEO/SEM</code> in the path name. Refer to the <a href="https://marketplace.magento.com">Marketplace Store</a> for a list of valid categories.</td>
     </tr>
     <tr>
       <td>media_artifacts</td>
@@ -1843,14 +1844,14 @@
       <td>string</td>
       <td>GET, POST, PUT</td>
       <td>marketing</td>
-      <td>The name of the license if <code class="highlighter-rouge">license_type</code> is set to <code class="highlighter-rouge">custom</code>.</td>
+      <td>The name of the license if <code class="language-plaintext highlighter-rouge">license_type</code> is set to <code class="language-plaintext highlighter-rouge">custom</code>.</td>
     </tr>
     <tr>
       <td>custom_license_url</td>
       <td>string</td>
       <td>GET, POST, PUT</td>
       <td>marketing</td>
-      <td>The URL of the license if <code class="highlighter-rouge">license_type</code> is set to <code class="highlighter-rouge">custom</code>.</td>
+      <td>The URL of the license if <code class="language-plaintext highlighter-rouge">license_type</code> is set to <code class="language-plaintext highlighter-rouge">custom</code>.</td>
     </tr>
     <tr>
       <td>external_services</td>
@@ -1906,35 +1907,35 @@
       <td>integer</td>
       <td>GET</td>
       <td>-</td>
-      <td>In combination with the <code class="highlighter-rouge">limit</code> parameter, it can be used for paging the collection of packages. Refer to <a href="#get-package-details">Get package details</a>. Default value is 0.</td>
+      <td>In combination with the <code class="language-plaintext highlighter-rouge">limit</code> parameter, it can be used for paging the collection of packages. Refer to <a href="#get-package-details">Get package details</a>. Default value is 0.</td>
     </tr>
     <tr>
       <td>limit</td>
       <td>integer</td>
       <td>GET</td>
       <td>-</td>
-      <td>Along with <code class="highlighter-rouge">offset</code>, it can be used for paging the collection of packages. Default value is 20. Specifying -1 implies unlimited.</td>
+      <td>Along with <code class="language-plaintext highlighter-rouge">offset</code>, it can be used for paging the collection of packages. Default value is 20. Specifying -1 implies unlimited.</td>
     </tr>
     <tr>
       <td>sort</td>
       <td>string</td>
       <td>GET</td>
       <td>-</td>
-      <td>A comma-separated list of fields to sort the list, each field prefixed by <code class="highlighter-rouge">-</code> for descending order, or <code class="highlighter-rouge">+</code> for ascending order. Refer to <a href="#get-package-details">Get package details</a>.</td>
+      <td>A comma-separated list of fields to sort the list, each field prefixed by <code class="language-plaintext highlighter-rouge">-</code> for descending order, or <code class="language-plaintext highlighter-rouge">+</code> for ascending order. Refer to <a href="#get-package-details">Get package details</a>.</td>
     </tr>
     <tr>
       <td>created_time</td>
       <td>DateTime</td>
       <td>GET</td>
       <td>-</td>
-      <td>The UTC date and time (<code class="highlighter-rouge">YYYY-MM-DD HH:MM:SS</code>) the package was first submitted.</td>
+      <td>The UTC date and time (<code class="language-plaintext highlighter-rouge">YYYY-MM-DD HH:MM:SS</code>) the package was first submitted.</td>
     </tr>
     <tr>
       <td>modified_time</td>
       <td>DateTime</td>
       <td>GET</td>
       <td>-</td>
-      <td>The UTC date and time (<code class="highlighter-rouge">YYYY-MM-DD HH:MM:SS</code>) the package was last updated.</td>
+      <td>The UTC date and time (<code class="language-plaintext highlighter-rouge">YYYY-MM-DD HH:MM:SS</code>) the package was last updated.</td>
     </tr>
   </tbody>
 </table>
@@ -1944,17 +1945,17 @@
 <ul>
   <li>For required fields in a POST or PUT operation, refer to the <a href="#package-submissions">Package submissions</a> section.</li>
   <li>The EQP Kind column indicates which part of the EQP pipeline will need to use or review the field values.</li>
-  <li>The list of valid values for <code class="highlighter-rouge">license_type</code> are:
+  <li>The list of valid values for <code class="language-plaintext highlighter-rouge">license_type</code> are:
     <ul>
-      <li><code class="highlighter-rouge">afl</code>—Academic Free License 3.0 (AFL)</li>
-      <li><code class="highlighter-rouge">apache</code>—Apache License 2.0</li>
-      <li><code class="highlighter-rouge">bsd</code>—BSD 2-Clause License</li>
-      <li><code class="highlighter-rouge">gnu-gpl</code>—GNU General Public License 3.0 (GPL-3.0)</li>
-      <li><code class="highlighter-rouge">gnu-lgpl</code>–GNU Lesser General Public License 3.0 (LGPL-3.0)</li>
-      <li><code class="highlighter-rouge">mit</code>—MIT License (MIT)</li>
-      <li><code class="highlighter-rouge">mozilla</code>—Mozilla Public License 1.1 (MPL-1.1)</li>
-      <li><code class="highlighter-rouge">osl</code>—Open Software License 3.0 (OSL-3.0)</li>
-      <li><code class="highlighter-rouge">custom</code>—Custom License</li>
+      <li><code class="language-plaintext highlighter-rouge">afl</code>—Academic Free License 3.0 (AFL)</li>
+      <li><code class="language-plaintext highlighter-rouge">apache</code>—Apache License 2.0</li>
+      <li><code class="language-plaintext highlighter-rouge">bsd</code>—BSD 2-Clause License</li>
+      <li><code class="language-plaintext highlighter-rouge">gnu-gpl</code>—GNU General Public License 3.0 (GPL-3.0)</li>
+      <li><code class="language-plaintext highlighter-rouge">gnu-lgpl</code>–GNU Lesser General Public License 3.0 (LGPL-3.0)</li>
+      <li><code class="language-plaintext highlighter-rouge">mit</code>—MIT License (MIT)</li>
+      <li><code class="language-plaintext highlighter-rouge">mozilla</code>—Mozilla Public License 1.1 (MPL-1.1)</li>
+      <li><code class="language-plaintext highlighter-rouge">osl</code>—Open Software License 3.0 (OSL-3.0)</li>
+      <li><code class="language-plaintext highlighter-rouge">custom</code>—Custom License</li>
     </ul>
   </li>
 </ul>
@@ -1969,51 +1970,51 @@
 
 <p>Assuming a Magento 2 package:</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="s2">"version_compatibility"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nl">"version_compatibility"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"CE"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"versions"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">“</span><span class="mf">2.0</span><span class="err">”</span><span class="p">,</span><span class="w"> </span><span class="err">”</span><span class="mf">2.1</span><span class="err">”</span><span class="p">,</span><span class="w"> </span><span class="s2">"2.2"</span><span class="p">]</span><span class="w">
+    </span><span class="nl">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"CE"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"versions"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">“</span><span class="mf">2.0</span><span class="err">”</span><span class="p">,</span><span class="w"> </span><span class="err">”</span><span class="mf">2.1</span><span class="err">”</span><span class="p">,</span><span class="w"> </span><span class="s2">"2.2"</span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"EE"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"versions"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">“</span><span class="mf">2.0</span><span class="err">”</span><span class="p">,</span><span class="err">”</span><span class="mf">2.1</span><span class="err">”</span><span class="p">,</span><span class="w"> </span><span class="s2">"2.2"</span><span class="p">]</span><span class="w">
+    </span><span class="nl">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"EE"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"versions"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">“</span><span class="mf">2.0</span><span class="err">”</span><span class="p">,</span><span class="err">”</span><span class="mf">2.1</span><span class="err">”</span><span class="p">,</span><span class="w"> </span><span class="s2">"2.2"</span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
 
 <h4 id="artifact">artifact</h4>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="s2">"artifact"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"dhsiXjdksW17623"</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nl">"artifact"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"dhsiXjdksW17623"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
 <h4 id="document_artifacts">document_artifacts</h4>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="s2">"documentation_artifacts"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="s2">"user"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"j47dVbsFgkl"</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nl">"documentation_artifacts"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"user"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"j47dVbsFgkl"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"installation"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"d67E82hVb20"</span><span class="w">
+  </span><span class="nl">"installation"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"d67E82hVb20"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"reference"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"9Rb5yQh7dfA"</span><span class="w">
+  </span><span class="nl">"reference"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"9Rb5yQh7dfA"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
 <h4 id="shared_packages">shared_packages</h4>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="err">“shared_packages”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="err">“shared_packages”</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">“artifact”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="err">“file_upload_id”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“sfRh</span><span class="mi">72</span><span class="err">Mx</span><span class="mi">9</span><span class="err">d”</span><span class="w">
+    </span><span class="err">“artifact”</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="err">“file_upload_id”</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="err">“sfRh</span><span class="mi">72</span><span class="err">Mx</span><span class="mi">9</span><span class="err">d”</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">“artifact”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="err">“file_upload_id”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“Gh</span><span class="mi">893</span><span class="err">dCxak”</span><span class="w">
+    </span><span class="err">“artifact”</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="err">“file_upload_id”</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="err">“Gh</span><span class="mi">893</span><span class="err">dCxak”</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
@@ -2021,28 +2022,28 @@
 
 <h4 id="media_artifacts">media_artifacts</h4>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="s2">"media_artifacts"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="s2">"icon_image"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"gAdh628bzXv"</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nl">"media_artifacts"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"icon_image"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"gAdh628bzXv"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"gallery_images"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"gallery_images"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"hj739djXvT"</span><span class="w">
+      </span><span class="nl">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"hj739djXvT"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"9Dfg73482E"</span><span class="w">
+      </span><span class="nl">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"9Dfg73482E"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"J87bdueDjxM"</span><span class="w">
+      </span><span class="nl">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"J87bdueDjxM"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Vhke71093Z4"</span><span class="w">
+      </span><span class="nl">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Vhke71093Z4"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Gh8273Cx78Q"</span><span class="w">
+      </span><span class="nl">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Gh8273Cx78Q"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"video_urls"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"video_urls"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="s2">"https://www.youtube.com/watch?v=l33T2-YC4tk"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"https://www.youtube.com/watch?v=682p52tFcmY"</span><span class="w">
   </span><span class="p">]</span><span class="w">
@@ -2053,50 +2054,50 @@
 
 <h4 id="prices">prices</h4>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="s2">"prices"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nl">"prices"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"CE"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"currency_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">15.50</span><span class="w">
+    </span><span class="nl">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"CE"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"currency_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">15.50</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"EE"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"currency_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">45.00</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"installation_price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="w">
+    </span><span class="nl">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"EE"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"currency_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">45.00</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"installation_price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
 
 <h4 id="support_tiers">support_tiers</h4>
 
-<p>Up to three tiers per edition (<code class="highlighter-rouge">CE</code> (Open Source) and <code class="highlighter-rouge">EE</code> (Commerce)) can be supported:</p>
+<p>Up to three tiers per edition (<code class="language-plaintext highlighter-rouge">CE</code> (Open Source) and <code class="language-plaintext highlighter-rouge">EE</code> (Commerce)) can be supported:</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="err">“suppport_tiers”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="err">“suppport_tiers”</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">“tier”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="err">“edition”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“CE”</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"monthly_period"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"short_description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“&lt;Short</span><span class="w"> </span><span class="err">description</span><span class="w"> </span><span class="err">goes</span><span class="w"> </span><span class="err">here.&gt;”</span><span class="p">,</span><span class="w">
+    </span><span class="err">“tier”</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="err">“edition”</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="err">“CE”</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"monthly_period"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"short_description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“&lt;Short</span><span class="w"> </span><span class="err">description</span><span class="w"> </span><span class="err">goes</span><span class="w"> </span><span class="err">here.&gt;”</span><span class="p">,</span><span class="w">
     </span><span class="err">“long_description”</span><span class="w"> </span><span class="err">“</span><span class="w"> </span><span class="err">“&lt;Long</span><span class="w"> </span><span class="err">description</span><span class="w"> </span><span class="err">goes</span><span class="w"> </span><span class="err">here.&gt;”</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"prices"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="nl">"prices"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"currency_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">25.00</span><span class="w">
+        </span><span class="nl">"currency_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">25.00</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="err">“tier”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="err">“edition”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“EE”</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"monthly_period"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"short_description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“&lt;Short</span><span class="w"> </span><span class="err">description</span><span class="w"> </span><span class="err">goes</span><span class="w"> </span><span class="err">here.&gt;”</span><span class="p">,</span><span class="w">
+    </span><span class="err">“tier”</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="err">“edition”</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="err">“EE”</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"monthly_period"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"short_description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“&lt;Short</span><span class="w"> </span><span class="err">description</span><span class="w"> </span><span class="err">goes</span><span class="w"> </span><span class="err">here.&gt;”</span><span class="p">,</span><span class="w">
     </span><span class="err">“long_description”</span><span class="w"> </span><span class="err">“</span><span class="w"> </span><span class="err">“&lt;Long</span><span class="w"> </span><span class="err">description</span><span class="w"> </span><span class="err">goes</span><span class="w"> </span><span class="err">here.&gt;”</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"prices"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="nl">"prices"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"currency_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">50.00</span><span class="w">
+        </span><span class="nl">"currency_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">50.00</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 
@@ -2108,11 +2109,11 @@
 
 <p>Sample structure for a package supporting only Chrome and Firefox:</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="s2">"browser_os_compatibility"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="s2">"chrome"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"mac"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="err">“</span><span class="mi">39</span><span class="err">”</span><span class="p">,</span><span class="w"> </span><span class="s2">"44”],
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nl">"browser_os_compatibility"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"chrome"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"mac"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="err">“</span><span class="mi">39</span><span class="err">”</span><span class="p">,</span><span class="w"> </span><span class="s2">"44”],
     "</span><span class="err">windows</span><span class="s2">" : [“43”, "</span><span class="mi">44</span><span class="err">”</span><span class="p">],</span><span class="w">
-    </span><span class="s2">"linux"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">“</span><span class="mi">43</span><span class="err">”</span><span class="p">,</span><span class="w"> </span><span class="s2">"44”]
+    </span><span class="nl">"linux"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">“</span><span class="mi">43</span><span class="err">”</span><span class="p">,</span><span class="w"> </span><span class="s2">"44”]
   },
   "</span><span class="err">firefox</span><span class="s2">" : {
     "</span><span class="err">mac</span><span class="s2">" : [ "</span><span class="mi">40</span><span class="err">”</span><span class="p">,</span><span class="w"> </span><span class="s2">"41”],
@@ -2122,22 +2123,22 @@
 }
 </span></code></pre></div></div>
 
-<p>The list of valid values for the <code class="highlighter-rouge">browser_os_compatibility</code> are:</p>
+<p>The list of valid values for the <code class="language-plaintext highlighter-rouge">browser_os_compatibility</code> are:</p>
 <ul>
   <li>Browsers:
     <ul>
-      <li><code class="highlighter-rouge">chrome</code></li>
-      <li><code class="highlighter-rouge">firefox</code></li>
-      <li><code class="highlighter-rouge">safari</code></li>
-      <li><code class="highlighter-rouge">opera</code></li>
-      <li><code class="highlighter-rouge">edge</code></li>
+      <li><code class="language-plaintext highlighter-rouge">chrome</code></li>
+      <li><code class="language-plaintext highlighter-rouge">firefox</code></li>
+      <li><code class="language-plaintext highlighter-rouge">safari</code></li>
+      <li><code class="language-plaintext highlighter-rouge">opera</code></li>
+      <li><code class="language-plaintext highlighter-rouge">edge</code></li>
     </ul>
   </li>
   <li>OS:
     <ul>
-      <li><code class="highlighter-rouge">linux</code></li>
-      <li><code class="highlighter-rouge">mac</code></li>
-      <li><code class="highlighter-rouge">windows</code></li>
+      <li><code class="language-plaintext highlighter-rouge">linux</code></li>
+      <li><code class="language-plaintext highlighter-rouge">mac</code></li>
+      <li><code class="language-plaintext highlighter-rouge">windows</code></li>
     </ul>
   </li>
 </ul>
@@ -2146,14 +2147,14 @@
 
 <p>Additional options that apply this package can be provided if applicable:</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="s2">"options"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="s2">"released_with_setup_scripts"</span><span class="w">         </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"included_service_contracts"</span><span class="w">          </span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"included_external_service_contracts"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"support_responsive_design"</span><span class="w">           </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"custom_implementation_ui"</span><span class="w">            </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"support_web_api"</span><span class="w">                     </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"support_test_coverage"</span><span class="w">               </span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nl">"options"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"released_with_setup_scripts"</span><span class="w">         </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"included_service_contracts"</span><span class="w">          </span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"included_external_service_contracts"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"support_responsive_design"</span><span class="w">           </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"custom_implementation_ui"</span><span class="w">            </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"support_web_api"</span><span class="w">                     </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"support_test_coverage"</span><span class="w">               </span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -2161,9 +2162,9 @@
 
 <p>During EQP process, it can take the following fields:</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="s2">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="s2">"technical"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"submit"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"marketing"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"submit"</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"technical"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"submit"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"marketing"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"submit"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -2196,8 +2197,8 @@
 
 <p>Once a package is published to the store, it can have the following field:</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="err">“action”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="err">“overall”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“publish”</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="err">“action”</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="err">“overall”</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="err">“publish”</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -2225,10 +2226,10 @@
 
 <h4 id="eqp_status">eqp_status</h4>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="s2">"eqp_status"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w">
-  </span><span class="s2">"overall"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"in_progress"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"technical"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"draft"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"marketing"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"approved"</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nl">"eqp_status"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"overall"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"in_progress"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"technical"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"draft"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"marketing"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"approved"</span><span class="w">
 
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
@@ -2262,7 +2263,7 @@
     <tr>
       <td>in_progress</td>
       <td>string</td>
-      <td>The submission is in the EQP pipeline. Refer to the <code class="highlighter-rouge">technical</code> and <code class="highlighter-rouge">marketing</code> status for more details.</td>
+      <td>The submission is in the EQP pipeline. Refer to the <code class="language-plaintext highlighter-rouge">technical</code> and <code class="language-plaintext highlighter-rouge">marketing</code> status for more details.</td>
     </tr>
     <tr>
       <td>approved</td>
@@ -2384,7 +2385,7 @@
 
 <h2 id="package-submissions">Package submissions</h2>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>POST /rest/v1/products/packages
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>POST /rest/v1/products/packages
 PUT /rest/v1/products/packages
 PUT /rest/v1/products/packages/:submission_id
 PUT /rest/v1/products/packages/:item_id
@@ -2395,110 +2396,110 @@ PUT /rest/v1/products/packages/:item_id
 <p>You can submit a package in either of the following ways:</p>
 
 <ul>
-  <li>A single POST request with all required fields set. You must explicitly indicate that you are for technical and marketing review using the <code class="highlighter-rouge">action</code> parameter.</li>
+  <li>A single POST request with all required fields set. You must explicitly indicate that you are for technical and marketing review using the <code class="language-plaintext highlighter-rouge">action</code> parameter.</li>
   <li>A series of requests, typically in the following order:
     <ol>
-      <li>A single POST request with the minimum required fields set and <code class="highlighter-rouge">action</code> set to <code class="highlighter-rouge">draft</code> in either <code class="highlighter-rouge">technical</code>, <code class="highlighter-rouge">marketing</code>, or both. This request accepts the new package and saves it on the Developer Portal for further updates. It returns a unique <code class="highlighter-rouge">submission_id</code> for subsequent PUT operations.</li>
-      <li>One or more PUT requests in which you configure the package parameters. In these requests, set <code class="highlighter-rouge">action</code> to <code class="highlighter-rouge">draft</code> in <code class="highlighter-rouge">technical</code>, <code class="highlighter-rouge">marketing</code>, or both.</li>
-      <li>A final PUT request indicating submission for <code class="highlighter-rouge">technical</code>, <code class="highlighter-rouge">marketing</code>, or both.</li>
+      <li>A single POST request with the minimum required fields set and <code class="language-plaintext highlighter-rouge">action</code> set to <code class="language-plaintext highlighter-rouge">draft</code> in either <code class="language-plaintext highlighter-rouge">technical</code>, <code class="language-plaintext highlighter-rouge">marketing</code>, or both. This request accepts the new package and saves it on the Developer Portal for further updates. It returns a unique <code class="language-plaintext highlighter-rouge">submission_id</code> for subsequent PUT operations.</li>
+      <li>One or more PUT requests in which you configure the package parameters. In these requests, set <code class="language-plaintext highlighter-rouge">action</code> to <code class="language-plaintext highlighter-rouge">draft</code> in <code class="language-plaintext highlighter-rouge">technical</code>, <code class="language-plaintext highlighter-rouge">marketing</code>, or both.</li>
+      <li>A final PUT request indicating submission for <code class="language-plaintext highlighter-rouge">technical</code>, <code class="language-plaintext highlighter-rouge">marketing</code>, or both.</li>
     </ol>
   </li>
 </ul>
 
-<p>You can update one or more parameters in <code class="highlighter-rouge">draft</code> mode, but the API does not check for validation errors.</p>
+<p>You can update one or more parameters in <code class="language-plaintext highlighter-rouge">draft</code> mode, but the API does not check for validation errors.</p>
 
-<p>When the <code class="highlighter-rouge">action</code> field is set to <code class="highlighter-rouge">publish</code>, the API validates fields to ensure all required parameters are available on the Developer Portal to initiate the EQP process.</p>
+<p>When the <code class="language-plaintext highlighter-rouge">action</code> field is set to <code class="language-plaintext highlighter-rouge">publish</code>, the API validates fields to ensure all required parameters are available on the Developer Portal to initiate the EQP process.</p>
 
-<p class="bs-callout bs-callout-info">All <code class="highlighter-rouge">action</code> fields are optional. If not specified, <code class="highlighter-rouge">draft</code> is the default value.</p>
+<p class="bs-callout bs-callout-info">All <code class="language-plaintext highlighter-rouge">action</code> fields are optional. If not specified, <code class="language-plaintext highlighter-rouge">draft</code> is the default value.</p>
 
 <p>The following example shows a POST request with all required parameters set for both technical and marketing submissions:</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"technical"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"submit"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"marketing"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"submit"</span><span class="w">
+    </span><span class="nl">"action"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"technical"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"submit"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"marketing"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"submit"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"extension"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"platform"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"M2"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"version_compatibility"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="nl">"type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"extension"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"platform"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"M2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version_compatibility"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"CE"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"versions"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"2.1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"2.2"</span><span class="p">]</span><span class="w">
+        </span><span class="nl">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"CE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"versions"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"2.1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"2.2"</span><span class="p">]</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"EE"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"versions"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"2.1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"2.2"</span><span class="p">]</span><span class="w">
+        </span><span class="nl">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"EE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"versions"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"2.1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"2.2"</span><span class="p">]</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"One Click Checkout"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"short_description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;Short description here&gt;"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"long_description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;Long description here&gt;"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"release_notes"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;Release notes here&gt;"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"artifact"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"dhsiXjdksW17623"</span><span class="w">
+    </span><span class="nl">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"One Click Checkout"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"short_description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;Short description here&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"long_description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;Long description here&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"release_notes"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;Release notes here&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"artifact"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"dhsiXjdksW17623"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"documentation_artifacts"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"user"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"j47dVbsFgkl"</span><span class="w">
+    </span><span class="nl">"documentation_artifacts"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"user"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"j47dVbsFgkl"</span><span class="w">
       </span><span class="p">},</span><span class="w">
-      </span><span class="s2">"installation"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"d67E82hVb20"</span><span class="w">
+      </span><span class="nl">"installation"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"d67E82hVb20"</span><span class="w">
       </span><span class="p">},</span><span class="w">
-      </span><span class="s2">"reference"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"9Rb5yQh7dfA"</span><span class="w">
+      </span><span class="nl">"reference"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"9Rb5yQh7dfA"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"media_artifacts"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"icon_image"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"gAdh628bzXv"</span><span class="w">
+    </span><span class="nl">"media_artifacts"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"icon_image"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"gAdh628bzXv"</span><span class="w">
       </span><span class="p">},</span><span class="w">
-      </span><span class="s2">"gallery_images"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="nl">"gallery_images"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"hj739djXvT"</span><span class="w">
+          </span><span class="nl">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"hj739djXvT"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"9Dfg73482E"</span><span class="w">
+          </span><span class="nl">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"9Dfg73482E"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"J87bdueDjxM"</span><span class="w">
+          </span><span class="nl">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"J87bdueDjxM"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Vhke71093Z4"</span><span class="w">
+          </span><span class="nl">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Vhke71093Z4"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Gh8273Cx78Q"</span><span class="w">
+          </span><span class="nl">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Gh8273Cx78Q"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"video_urls"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="nl">"video_urls"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="s2">"https://www.youtube.com/watch?v=l33T2-YC4tk"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"https://www.youtube.com/watch?v=682p52tFcmY"</span><span class="w">
       </span><span class="p">]</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"categories"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="nl">"categories"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="s2">"//Extensions//Payments &amp; Security//Checkout Enhancements"</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"prices"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="nl">"prices"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"CE"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"currency_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">15.50</span><span class="w">
+        </span><span class="nl">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"CE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"currency_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">15.50</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"EE"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"currency_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">45.00</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"installation_price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="w">
+        </span><span class="nl">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"EE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"currency_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">45.00</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"installation_price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"license_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"bsd"</span><span class="w">
+    </span><span class="nl">"license_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"bsd"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
 
 <p>Since the API accepts batch requests for both POST and PUT operations, send a single submission as an array with one item.</p>
 
-<p>If you save the request body to a file, for example, <code class="highlighter-rouge">/tmp/one-click-submission-1.0.0.json</code>, the following example shows the package submission process:</p>
+<p>If you save the request body to a file, for example, <code class="language-plaintext highlighter-rouge">/tmp/one-click-submission-1.0.0.json</code>, the following example shows the package submission process:</p>
 
 <p><strong>Request</strong></p>
 
@@ -2513,25 +2514,25 @@ PUT /rest/v1/products/packages/:item_id
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Success"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"submission_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f4eacd72be"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"eqp_status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"overall"</span><span class="p">:</span><span class="w"> </span><span class="s2">"in_progress"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"technical"</span><span class="p">:</span><span class="w"> </span><span class="s2">"in_automation"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"marketing"</span><span class="p">:</span><span class="w"> </span><span class="s2">"awaiting_marketing_review"</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Success"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"submission_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f4eacd72be"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"eqp_status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"overall"</span><span class="p">:</span><span class="w"> </span><span class="s2">"in_progress"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"technical"</span><span class="p">:</span><span class="w"> </span><span class="s2">"in_automation"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"marketing"</span><span class="p">:</span><span class="w"> </span><span class="s2">"awaiting_marketing_review"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-23 16:00:00"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"modified_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-02-23 16:00:00"</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-23 16:00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"modified_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-02-23 16:00:00"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
 
 <ul>
   <li>The API returns a HTTP 200 batch response listing items in the same order as they were provided in the request.</li>
-  <li>Each item contains a <code class="highlighter-rouge">code</code> and <code class="highlighter-rouge">message</code> indicating success or failure. Any non-200 code indicates an error. Refer to the message for more details.</li>
-  <li>A unique <code class="highlighter-rouge">submission_id</code> is returned for each successful item, which must be used for any GET, PUT, or DELETE methods.</li>
-  <li>Optionally, if a user-defined <code class="highlighter-rouge">item_id</code> was supplied during the POST, the response will echo back the same <code class="highlighter-rouge">item_id</code> for each item in the batch. The resource can be retrieved via GET using the <code class="highlighter-rouge">item_id</code>.</li>
+  <li>Each item contains a <code class="language-plaintext highlighter-rouge">code</code> and <code class="language-plaintext highlighter-rouge">message</code> indicating success or failure. Any non-200 code indicates an error. Refer to the message for more details.</li>
+  <li>A unique <code class="language-plaintext highlighter-rouge">submission_id</code> is returned for each successful item, which must be used for any GET, PUT, or DELETE methods.</li>
+  <li>Optionally, if a user-defined <code class="language-plaintext highlighter-rouge">item_id</code> was supplied during the POST, the response will echo back the same <code class="language-plaintext highlighter-rouge">item_id</code> for each item in the batch. The resource can be retrieved via GET using the <code class="language-plaintext highlighter-rouge">item_id</code>.</li>
   <li>Any non-200 HTTP response code indicates an error for the entire batch request.</li>
 </ul>
 
@@ -2550,9 +2551,9 @@ PUT /rest/v1/products/packages/:item_id
 
 <p>You cannot modify a package during the EQP process, except to recall the package.</p>
 
-<p>Updating several packages in a batch request is similar to the POST version above. The only difference is to supply <code class="highlighter-rouge">submission_id</code> for each item obtained from the POST request.</p>
+<p>Updating several packages in a batch request is similar to the POST version above. The only difference is to supply <code class="language-plaintext highlighter-rouge">submission_id</code> for each item obtained from the POST request.</p>
 
-<p>The PUT method also allows for updating a single package with <code class="highlighter-rouge">submission_id</code> as shown in the following example:</p>
+<p>The PUT method also allows for updating a single package with <code class="language-plaintext highlighter-rouge">submission_id</code> as shown in the following example:</p>
 
 <p><strong>Request</strong></p>
 
@@ -2567,7 +2568,7 @@ PUT /rest/v1/products/packages/:item_id
 
 <h4 id="required-parameters">Required parameters</h4>
 
-<p>If the <strong>action</strong> parameter indicates <code class="highlighter-rouge">submit</code> value for technical, or marketing or both, the required parameters are listed below by their respective parallel EQP pipelines:</p>
+<p>If the <strong>action</strong> parameter indicates <code class="language-plaintext highlighter-rouge">submit</code> value for technical, or marketing or both, the required parameters are listed below by their respective parallel EQP pipelines:</p>
 
 <h5 id="technical">Technical</h5>
 
@@ -2601,7 +2602,7 @@ PUT /rest/v1/products/packages/:item_id
     </tr>
     <tr>
       <td>documentation_artifacts</td>
-      <td>At least the <code class="highlighter-rouge">user</code> guide must be supplied.</td>
+      <td>At least the <code class="language-plaintext highlighter-rouge">user</code> guide must be supplied.</td>
     </tr>
   </tbody>
 </table>
@@ -2646,11 +2647,11 @@ PUT /rest/v1/products/packages/:item_id
     </tr>
     <tr>
       <td>custom_license_name</td>
-      <td>Only if license_type is <code class="highlighter-rouge">custom</code>.</td>
+      <td>Only if license_type is <code class="language-plaintext highlighter-rouge">custom</code>.</td>
     </tr>
     <tr>
       <td>custom_license_url</td>
-      <td>Only if license_type is <code class="highlighter-rouge">custom</code>.</td>
+      <td>Only if license_type is <code class="language-plaintext highlighter-rouge">custom</code>.</td>
     </tr>
     <tr>
       <td>submission_id</td>
@@ -2661,7 +2662,7 @@ PUT /rest/v1/products/packages/:item_id
 
 <h5 id="submission-in-several-steps">Submission in several steps</h5>
 
-<p>As described earlier, a submission can also be done in several steps in draft mode, followed by the action to <code class="highlighter-rouge">submit</code> for technical and/or <code class="highlighter-rouge">marketing</code> review. In such cases, the first
+<p>As described earlier, a submission can also be done in several steps in draft mode, followed by the action to <code class="language-plaintext highlighter-rouge">submit</code> for technical and/or <code class="language-plaintext highlighter-rouge">marketing</code> review. In such cases, the first
 POST request in draft mode can be done with a minimal set of parameters:</p>
 
 <table>
@@ -2695,11 +2696,11 @@ POST request in draft mode can be done with a minimal set of parameters:</p>
   </tbody>
 </table>
 
-<p>With the returned  <code class="highlighter-rouge">submission_id</code>, the remaining required parameters can be supplied using a PUT request in draft mode, and/or with an <code class="highlighter-rouge">action</code> to submit to either technical or marketing review; or both.</p>
+<p>With the returned  <code class="language-plaintext highlighter-rouge">submission_id</code>, the remaining required parameters can be supplied using a PUT request in draft mode, and/or with an <code class="language-plaintext highlighter-rouge">action</code> to submit to either technical or marketing review; or both.</p>
 
 <h2 id="get-package-details">Get package details</h2>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>GET /rest/v1/products/packages
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>GET /rest/v1/products/packages
 GET /rest/v1/products/packages/:submission_id
 GET /rest/v1/products/packages/skus
 GET /rest/v1/products/packages/skus/:url_encoded_sku
@@ -2710,25 +2711,25 @@ GET /rest/v1/products/packages/sku/:url_encoded_sku/status
 GET /rest/v1/products/packages/item/:item_id/status
 </code></pre></div></div>
 
-<p>There are various ways to retrieve package details, most of which are convenient alternatives to the typical way using <code class="highlighter-rouge">submission_id</code> for a specific package submission. The data returned is the same for the primary and the secondary ways.</p>
+<p>There are various ways to retrieve package details, most of which are convenient alternatives to the typical way using <code class="language-plaintext highlighter-rouge">submission_id</code> for a specific package submission. The data returned is the same for the primary and the secondary ways.</p>
 
 <p>The alternative ways provided are:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">skus</code>: Retrieves all versions of a particular package sku. An additional <code class="highlighter-rouge">version</code> filter is available to retrieve a specific sku and version.</li>
-  <li><code class="highlighter-rouge">item_id</code>: Retrieves package details by specifying a user-defined unique <code class="highlighter-rouge">item_id</code> if one was supplied during the POST call.</li>
+  <li><code class="language-plaintext highlighter-rouge">skus</code>: Retrieves all versions of a particular package sku. An additional <code class="language-plaintext highlighter-rouge">version</code> filter is available to retrieve a specific sku and version.</li>
+  <li><code class="language-plaintext highlighter-rouge">item_id</code>: Retrieves package details by specifying a user-defined unique <code class="language-plaintext highlighter-rouge">item_id</code> if one was supplied during the POST call.</li>
 </ul>
 
 <p>The following basic endpoints retrieve all package details (every version of every package submitted):</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>GET /rest/v1/products/packages
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>GET /rest/v1/products/packages
 GET /rest/v1/products/packages/skus
 GET /rest/v1/products/packages/items
 </code></pre></div></div>
 
 <p>The following status endpoints provide a detailed EQP status report of a packages:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>GET /rest/v1/products/packages/:submission_id/status
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>GET /rest/v1/products/packages/:submission_id/status
 GET /rest/v1/products/packages/sku/:url_encoded_sku/status
 GET /rest/v1/products/packages/item/:item_id/status
 </code></pre></div></div>
@@ -2746,153 +2747,153 @@ GET /rest/v1/products/packages/item/:item_id/status
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"submission_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"f4eacd72be"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"extension"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"platform"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"M2"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"version_compatibility"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="nl">"submission_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"f4eacd72be"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"extension"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"platform"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"M2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version_compatibility"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"CE"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"versions"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"2.1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"2.2"</span><span class="p">]</span><span class="w">
+        </span><span class="nl">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"CE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"versions"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"2.1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"2.2"</span><span class="p">]</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"EE"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"versions"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"2.1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"2.2"</span><span class="p">]</span><span class="w">
+        </span><span class="nl">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"EE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"versions"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"2.1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"2.2"</span><span class="p">]</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"One Click Checkout"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"short_description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;Short description here&gt;"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"long_description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;Long description here&gt;"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"sku"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"acme/one-click-checkout"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"version"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1.5"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"release_notes"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;Release notes here&gt;"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"artifact"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"dhsiXjdksW17623"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"filename"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"acme_one-click-checkout.zip"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"content_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"application/zip"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"size"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">182934</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"malware_status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"file_hash"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"f53f5db985b8815f1ce6fd4b48a0439a"</span><span class="w">
+    </span><span class="nl">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"One Click Checkout"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"short_description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;Short description here&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"long_description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;Long description here&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sku"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"acme/one-click-checkout"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1.5"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"release_notes"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;Release notes here&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"artifact"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"dhsiXjdksW17623"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"filename"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"acme_one-click-checkout.zip"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"content_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"application/zip"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"size"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">182934</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"malware_status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"file_hash"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"f53f5db985b8815f1ce6fd4b48a0439a"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"documentation_artifacts"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"user"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"j47dVbsFgkl"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"filename"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"user.pdf"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"content_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"application/pdf"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"size"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">48392</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"malware_status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"file_hash"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"7f99e16a20457859fc0c86b5676a62ca"</span><span class="w">
+    </span><span class="nl">"documentation_artifacts"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"user"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"j47dVbsFgkl"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"filename"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"user.pdf"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"content_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"application/pdf"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"size"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">48392</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"malware_status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"file_hash"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"7f99e16a20457859fc0c86b5676a62ca"</span><span class="w">
       </span><span class="p">},</span><span class="w">
-      </span><span class="s2">"installation"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"d67E82hVb20"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"filename"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"installation.pdf"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"content_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"application/pdf"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"size"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">34876</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"malware_status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"file_hash"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"94392b98f02c56083995d23f02e460ab"</span><span class="w">
+      </span><span class="nl">"installation"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"d67E82hVb20"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"filename"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"installation.pdf"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"content_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"application/pdf"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"size"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">34876</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"malware_status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"file_hash"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"94392b98f02c56083995d23f02e460ab"</span><span class="w">
       </span><span class="p">},</span><span class="w">
-      </span><span class="s2">"reference"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"9Rb5yQh7dfA"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"filename"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"reference.pdf"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"content_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"application/pdf"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"size"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">23845</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"malware_status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"file_hash"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"ec78ded664c71d80acf0e29f5dbafe2b"</span><span class="w">
+      </span><span class="nl">"reference"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"9Rb5yQh7dfA"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"filename"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"reference.pdf"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"content_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"application/pdf"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"size"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">23845</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"malware_status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"file_hash"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"ec78ded664c71d80acf0e29f5dbafe2b"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"media_artifacts"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"icon_image"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"gAdh628bzXv"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"filename"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"one-click-icon.png"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"content_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"size"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">37492</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"malware_status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"file_hash"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"dd0d04057cd1420afb76d6afa838d394"</span><span class="w">
+    </span><span class="nl">"media_artifacts"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"icon_image"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"gAdh628bzXv"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"filename"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"one-click-icon.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"content_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"size"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">37492</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"malware_status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"file_hash"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"dd0d04057cd1420afb76d6afa838d394"</span><span class="w">
       </span><span class="p">},</span><span class="w">
-      </span><span class="s2">"gallery_images"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="nl">"gallery_images"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"hj739djXvT"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"filename"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"acme-logo.png"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"content_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"size"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">23947</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"malware_status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"file_hash"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"515f2eaf3cd4e43c32fda89a004306aa"</span><span class="w">
+          </span><span class="nl">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"hj739djXvT"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"filename"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"acme-logo.png"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"content_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"size"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">23947</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"malware_status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"file_hash"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"515f2eaf3cd4e43c32fda89a004306aa"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"9Dfg73482E"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"filename"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"catalog_demo.png"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"content_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"size"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">37492</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"malware_status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"file_hash"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"8da78313887fdc3d2506f39c46ccde4e"</span><span class="w">
+          </span><span class="nl">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"9Dfg73482E"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"filename"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"catalog_demo.png"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"content_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"size"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">37492</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"malware_status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"file_hash"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"8da78313887fdc3d2506f39c46ccde4e"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"J87bdueDjxM"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"filename"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"cart-demo.png"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"content_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"size"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">38023</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"malware_status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"file_hash"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"30b6fef138e1433e6f8ff23a45b2fbb9"</span><span class="w">
+          </span><span class="nl">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"J87bdueDjxM"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"filename"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"cart-demo.png"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"content_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"size"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">38023</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"malware_status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"file_hash"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"30b6fef138e1433e6f8ff23a45b2fbb9"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Vhke71093Z4"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"filename"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"click-demo.png"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"content_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"size"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">48293</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"malware_status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"file_hash"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"0ced4d071dddc6e354acfa11f56a56f1"</span><span class="w">
+          </span><span class="nl">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Vhke71093Z4"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"filename"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"click-demo.png"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"content_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"size"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">48293</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"malware_status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"file_hash"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"0ced4d071dddc6e354acfa11f56a56f1"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Gh8273Cx78Q"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"filename"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"click-success.png"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"content_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"size"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">39482</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"malware_status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"file_hash"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"dfa3183472cc265a5510be1da0fe444c"</span><span class="w">
+          </span><span class="nl">"file_upload_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Gh8273Cx78Q"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"filename"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"click-success.png"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"content_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"size"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">39482</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"malware_status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"file_hash"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"dfa3183472cc265a5510be1da0fe444c"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"video_urls"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="nl">"video_urls"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="s2">"https://www.youtube.com/watch?v=l33T2-YC4tk"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"https://www.youtube.com/watch?v=682p52tFcmY"</span><span class="w">
       </span><span class="p">]</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"categories"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="nl">"categories"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="s2">"//Extensions//Payments &amp; Security//Checkout Enhancements"</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"prices"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="nl">"prices"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"CE"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"currency_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">15.50</span><span class="w">
+        </span><span class="nl">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"CE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"currency_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">15.50</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"EE"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"currency_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">45.00</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"installation_price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="w">
+        </span><span class="nl">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"EE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"currency_code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">45.00</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"installation_price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"license_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"bsd"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"eqp_status"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"overall"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"in_progress"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"technical"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"rejected"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"marketing"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"approved"</span><span class="w">
+    </span><span class="nl">"license_type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"bsd"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"eqp_status"</span><span class="w"> </span><span class="p">:</span><span class="w">  </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"overall"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"in_progress"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"technical"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"rejected"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"marketing"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"approved"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"created_time"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-23 16:00:00"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"modified_time"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-23 17:53:22"</span><span class="w">
+    </span><span class="nl">"created_time"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-23 16:00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"modified_time"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-23 17:53:22"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
 
 <ul>
   <li>The previous example shows one product only, but an array of products can be returned.</li>
-  <li>The <code class="highlighter-rouge">sku</code> and version will be determined from the code artifact (M1 tarball or M2 zip file) meta-information (M1 <code class="highlighter-rouge">packages.xml</code> or M2 <code class="highlighter-rouge">composer.json</code>), once it passes the malware checks.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">sku</code> and version will be determined from the code artifact (M1 tarball or M2 zip file) meta-information (M1 <code class="language-plaintext highlighter-rouge">packages.xml</code> or M2 <code class="language-plaintext highlighter-rouge">composer.json</code>), once it passes the malware checks.</li>
   <li>The code, documentation, and media artifact files have additional info indicating meta-information on these files, including their current malware status.</li>
-  <li>The <code class="highlighter-rouge">eqp_status</code> field will indicate the current state of the package in the EQP process.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">eqp_status</code> field will indicate the current state of the package in the EQP process.</li>
 </ul>
 
 <h3 id="get-eqp-status-details">Get EQP status details</h3>
 
-<p>In the previous example, submission <code class="highlighter-rouge">f4eacd72be</code> failed. Specify the submission_id query parameter to get a more detailed report:</p>
+<p>In the previous example, submission <code class="language-plaintext highlighter-rouge">f4eacd72be</code> failed. Specify the submission_id query parameter to get a more detailed report:</p>
 
 <p><strong>Request</strong></p>
 
@@ -2904,35 +2905,35 @@ GET /rest/v1/products/packages/item/:item_id/status
 <p><strong>Response</strong></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"fail"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"technical"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"fail"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"results"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"fail"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"technical"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"fail"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"results"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"tool"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"phpcs"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"reports"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="nl">"tool"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"phpcs"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"reports"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"platform"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"M2"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"CE"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"version"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2.1.12"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"php_version"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"7.1.16"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"details"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"platform"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"M2"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"CE"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"version"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2.1.12"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"php_version"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"7.1.16"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"details"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"tool"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"compile"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"reports"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="nl">"tool"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"compile"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"reports"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
           </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"platform"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"M2"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"CE"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"version"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2.2.3"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"php_version"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"7.1.16"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"fail"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"details"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-              </span><span class="s2">"output"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;output bin/magento deploy:mode:set production here &gt;"</span><span class="w">
+            </span><span class="nl">"platform"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"M2"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"edition"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"CE"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"version"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2.2.3"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"php_version"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"7.1.16"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"fail"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"details"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"output"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;output bin/magento deploy:mode:set production here &gt;"</span><span class="w">
             </span><span class="p">}</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
@@ -2941,9 +2942,9 @@ GET /rest/v1/products/packages/item/:item_id/status
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"marketing"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"results"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"marketing"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"results"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -2951,9 +2952,9 @@ GET /rest/v1/products/packages/item/:item_id/status
 
 <ul>
   <li>Technical reports include the Magento edition, version, and PHP version used to run tests.</li>
-  <li>The top-level <code class="highlighter-rouge">code</code> indicates the overall result, which can be <code class="highlighter-rouge">pass</code>, <code class="highlighter-rouge">fail</code>, or <code class="highlighter-rouge">in_progress</code>.</li>
-  <li>Each EQP review step, <code class="highlighter-rouge">technical</code> and <code class="highlighter-rouge">marketing</code> have their own overall status indicated by the <code class="highlighter-rouge">code</code> value, which can be <code class="highlighter-rouge">pass</code>, <code class="highlighter-rouge">fail</code> or <code class="highlighter-rouge">in_progress</code>.</li>
-  <li>The <code class="highlighter-rouge">results</code> list contains details for each tool and their respective outcome via the <code class="highlighter-rouge">status</code> field, which can be <code class="highlighter-rouge">pass</code> or <code class="highlighter-rouge">fail</code>.</li>
+  <li>The top-level <code class="language-plaintext highlighter-rouge">code</code> indicates the overall result, which can be <code class="language-plaintext highlighter-rouge">pass</code>, <code class="language-plaintext highlighter-rouge">fail</code>, or <code class="language-plaintext highlighter-rouge">in_progress</code>.</li>
+  <li>Each EQP review step, <code class="language-plaintext highlighter-rouge">technical</code> and <code class="language-plaintext highlighter-rouge">marketing</code> have their own overall status indicated by the <code class="language-plaintext highlighter-rouge">code</code> value, which can be <code class="language-plaintext highlighter-rouge">pass</code>, <code class="language-plaintext highlighter-rouge">fail</code> or <code class="language-plaintext highlighter-rouge">in_progress</code>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">results</code> list contains details for each tool and their respective outcome via the <code class="language-plaintext highlighter-rouge">status</code> field, which can be <code class="language-plaintext highlighter-rouge">pass</code> or <code class="language-plaintext highlighter-rouge">fail</code>.</li>
 </ul>
 
 <h3 id="sorting-and-filtering">Sorting and Filtering</h3>
@@ -3039,7 +3040,7 @@ GET /rest/v1/products/packages/item/:item_id/status
   </tbody>
 </table>
 
-<p>A sample cURL request filtering all <code class="highlighter-rouge">themes</code> sorted by <code class="highlighter-rouge">platform</code> in ascending order and <code class="highlighter-rouge">created_time</code> in descending order:</p>
+<p>A sample cURL request filtering all <code class="language-plaintext highlighter-rouge">themes</code> sorted by <code class="language-plaintext highlighter-rouge">platform</code> in ascending order and <code class="language-plaintext highlighter-rouge">created_time</code> in descending order:</p>
 
 <p><strong>Request</strong></p>
 
@@ -3054,13 +3055,13 @@ GET /rest/v1/products/packages/item/:item_id/status
 
 <h2 id="delete-a-package">Delete a package</h2>
 
-<p>You can delete a package only if you specify a <code class="highlighter-rouge">submission_id</code> or <code class="highlighter-rouge">item_id</code> as a query parameter. Deleting a package is risky operation, and as a result, you cannot delete them in a batch.</p>
+<p>You can delete a package only if you specify a <code class="language-plaintext highlighter-rouge">submission_id</code> or <code class="language-plaintext highlighter-rouge">item_id</code> as a query parameter. Deleting a package is risky operation, and as a result, you cannot delete them in a batch.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>DELETE /rest/v1/products/packages/:submission_id
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>DELETE /rest/v1/products/packages/:submission_id
 DELETE /rest/v1/products/packages/items/:item_id
 </code></pre></div></div>
 
-<p>The following example deletes the package with <code class="highlighter-rouge">submission_id</code> <code class="highlighter-rouge">6fd7eaacbc</code>:</p>
+<p>The following example deletes the package with <code class="language-plaintext highlighter-rouge">submission_id</code> <code class="language-plaintext highlighter-rouge">6fd7eaacbc</code>:</p>
 
 <p><strong>Request</strong></p>
 

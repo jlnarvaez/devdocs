@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Configure and use Varnish | Magento 2 Developer Documentation (copy)</title>
+	<title>Configure and use Varnish | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/config-guide/varnish/config-varnish.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/config-guide/varnish/config-varnish.html">Magento 2.0</a></li>
 		
@@ -3693,7 +3694,7 @@
 <p>As the web server returns assets, cacheable assets are stored in Varnish. Any subsequent requests for those assets are fulfilled by Varnish (meaning, the requests don’t reach the web server). Varnish returns cached content extremely quickly. The results are faster response times to return the content to users and a reduced number of requests that must be fulfilled by Magento.</p>
 
 <p>Assets cached by Varnish expire at a configurable interval or are replaced by newer versions of the same assets. You can also clear the cache manually either using the   <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>
- or the <a href="/devdocs/guides/v2.1/config-guide/cli/config-cli-subcommands-cache.html"><code class="highlighter-rouge">magento cache:clean</code></a> command.</p>
+ or the <a href="/devdocs/guides/v2.1/config-guide/cli/config-cli-subcommands-cache.html"><code class="language-plaintext highlighter-rouge">magento cache:clean</code></a> command.</p>
 
 <h2 id="config-varnish-process">Process overview</h2>
 
@@ -3709,12 +3710,12 @@
   <li>
     <p>Test everything again.</p>
 
-    <p>If there is nothing in your <code class="highlighter-rouge">&lt;your Magento install dir&gt;/var/page_cache</code> directory, you’ve successfully configured Varnish with Magento!</p>
+    <p>If there is nothing in your <code class="language-plaintext highlighter-rouge">&lt;your Magento install dir&gt;/var/page_cache</code> directory, you’ve successfully configured Varnish with Magento!</p>
   </li>
 </ol>
 
 <ul class="bs-callout bs-callout-info" id="info">
-  <li>Except where noted, you must enter all commands discussed in this topic as a user with <code class="highlighter-rouge">root</code> privileges.</li>
+  <li>Except where noted, you must enter all commands discussed in this topic as a user with <code class="language-plaintext highlighter-rouge">root</code> privileges.</li>
   <li>This topic is written for Varnish on CentOS and Apache 2.2. If you’re setting up Varnish in a different environment, some commands are likely different. Consult Varnish documentation for more information.</li>
 </ul>
 
@@ -3729,20 +3730,20 @@
     <p>As an alternative, use SSL termination or an <a href="https://en.wikipedia.org/wiki/TLS_termination_proxy">SSL termination proxy</a>.</p>
   </li>
   <li>
-    <p>If you manually delete the contents of the <code class="highlighter-rouge">&lt;your Magento install dir&gt;/var/cache</code> directory, you must restart Varnish.</p>
+    <p>If you manually delete the contents of the <code class="language-plaintext highlighter-rouge">&lt;your Magento install dir&gt;/var/cache</code> directory, you must restart Varnish.</p>
   </li>
   <li>
     <p>Possible error installing Magento:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Error 503 Service Unavailable
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Error 503 Service Unavailable
 Service Unavailable
 XID: 303394517
 Varnish cache server
 </code></pre></div>    </div>
 
-    <p>If you experience this error, edit <code class="highlighter-rouge">default.vcl</code> and add a timeout to the <code class="highlighter-rouge">backend</code> stanza as follows:</p>
+    <p>If you experience this error, edit <code class="language-plaintext highlighter-rouge">default.vcl</code> and add a timeout to the <code class="language-plaintext highlighter-rouge">backend</code> stanza as follows:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>backend default {
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>backend default {
   .host = "127.0.0.1";
   .port = "8080";
   .first_byte_timeout = 600s;

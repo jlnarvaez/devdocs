@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>JavaScript Bundling | Magento 2 Developer Documentation (copy)</title>
+	<title>JavaScript Bundling | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/frontend-dev-guide/themes/js-bundling.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/frontend-dev-guide/themes/js-bundling.html">Magento 2.0</a></li>
 		
@@ -2913,7 +2914,7 @@ Bundling accomplishes this by merging multiple JavaScript files together into on
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> php <span class="nt">-f</span> bin/magento config:set dev/static/sign 1
 </code></pre></div>    </div>
 
-    <p>For example, when <code class="highlighter-rouge">Sign Static Files</code> is disabled (which is the default: <code class="highlighter-rouge">config:set dev/static/sign 0</code>), the URL to a static file might look like this: <code class="highlighter-rouge">/static/frontend/Magento/luma/en_US/mage/dataPost.js</code>. But when you enable the setting (<code class="highlighter-rouge">config:set dev/static/sign 1</code>), the same URL might look something like this: <code class="highlighter-rouge">static/version40s2f9ef/frontend/Magento/luma/en_US/mage/dataPost.js</code>, with a version number added as shown. The next time this file is updated (with <code class="highlighter-rouge">bin/magento setup:static-content:deploy</code>), a new version will be generated, causing the browser to download a new file from the server, thus busting the browser’s cache.</p>
+    <p>For example, when <code class="language-plaintext highlighter-rouge">Sign Static Files</code> is disabled (which is the default: <code class="language-plaintext highlighter-rouge">config:set dev/static/sign 0</code>), the URL to a static file might look like this: <code class="language-plaintext highlighter-rouge">/static/frontend/Magento/luma/en_US/mage/dataPost.js</code>. But when you enable the setting (<code class="language-plaintext highlighter-rouge">config:set dev/static/sign 1</code>), the same URL might look something like this: <code class="language-plaintext highlighter-rouge">static/version40s2f9ef/frontend/Magento/luma/en_US/mage/dataPost.js</code>, with a version number added as shown. The next time this file is updated (with <code class="language-plaintext highlighter-rouge">bin/magento setup:static-content:deploy</code>), a new version will be generated, causing the browser to download a new file from the server, thus busting the browser’s cache.</p>
   </li>
 </ol>
 
@@ -2923,7 +2924,7 @@ Bundling accomplishes this by merging multiple JavaScript files together into on
 
 <h3 id="excluding-files">Excluding files</h3>
 
-<p>The <code class="highlighter-rouge">&lt;exclude&gt;</code> node in the <code class="highlighter-rouge">etc/view.xml</code> file for a theme specifies the files to exclude from the Magento JavaScript bundling process.
+<p>The <code class="language-plaintext highlighter-rouge">&lt;exclude&gt;</code> node in the <code class="language-plaintext highlighter-rouge">etc/view.xml</code> file for a theme specifies the files to exclude from the Magento JavaScript bundling process.
 JavaScript files excluded from bundling are loaded asynchronously by RequireJS as needed.</p>
 
 <p>As such, you should exclude the JavaScript files you use for testing or development so that they are not loaded on every page.</p>
@@ -2990,18 +2991,18 @@ JavaScript files excluded from bundling are loaded asynchronously by RequireJS a
 
 <h3 id="setting-bundle-file-size">Setting bundle file size</h3>
 
-<p>The <code class="highlighter-rouge">bundle_size</code> variable controls the file size of the generated bundles.
-Specifying a large <code class="highlighter-rouge">bundle_size</code> reduces the number of bundles generated, but generates larger file sizes.
-Specifying a smaller <code class="highlighter-rouge">bundle_size</code> generates more bundles with a smaller file sizes.</p>
+<p>The <code class="language-plaintext highlighter-rouge">bundle_size</code> variable controls the file size of the generated bundles.
+Specifying a large <code class="language-plaintext highlighter-rouge">bundle_size</code> reduces the number of bundles generated, but generates larger file sizes.
+Specifying a smaller <code class="language-plaintext highlighter-rouge">bundle_size</code> generates more bundles with a smaller file sizes.</p>
 
 <p>The goal is to balance the number of bundles to download with the size of each bundle.
 As a rule of thumb, each bundle should be at least 100 kB.</p>
 
 <h2 id="fine-tuning-your-theme">Fine tuning your theme</h2>
 
-<p>There are many ways to tune your theme using the <code class="highlighter-rouge">etc/view.xml</code> file.</p>
+<p>There are many ways to tune your theme using the <code class="language-plaintext highlighter-rouge">etc/view.xml</code> file.</p>
 
-<p>For example, the Magento Luma theme is configured to work well for all pages, but you can maximize browser performance for home, catalog, or product pages by adding items to or removing items from the <code class="highlighter-rouge">&lt;exclude&gt;</code> node.</p>
+<p>For example, the Magento Luma theme is configured to work well for all pages, but you can maximize browser performance for home, catalog, or product pages by adding items to or removing items from the <code class="language-plaintext highlighter-rouge">&lt;exclude&gt;</code> node.</p>
 
 <p>Follow these steps to help you identify which JavaScript files to bundle for your theme:</p>
 

@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Configuration | Magento 2 Developer Documentation (copy)</title>
+	<title>Configuration | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -2091,8 +2090,7 @@
 	<h1 class="page-heading">Configuration</h1>
 </section>
 
-			
-<p style="text-align: right"><em>This topic was updated due to the 2.1.2 MFTF release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.1.2 MFTF release.</em></p>
 
 <p>The <em>*.env</em> file provides additional configuration of the Magento Functional Testing Framework (MFTF).
 All MFTF users will need to set the basic configuration values.
@@ -2107,7 +2105,7 @@ Advanced users may need to set additional values to work with their environment.
 <ul>
   <li>Use: Required.</li>
   <li>Description: The root URL of the Magento application under test.</li>
-  <li>Example: <code class="highlighter-rouge">http://magento2.vagrant251</code></li>
+  <li>Example: <code class="language-plaintext highlighter-rouge">http://magento2.vagrant251</code></li>
 </ul>
 
 <h3 id="magento_backend_name">MAGENTO_BACKEND_NAME</h3>
@@ -2115,7 +2113,7 @@ Advanced users may need to set additional values to work with their environment.
 <ul>
   <li>Use: Required.</li>
   <li>Description: The path to the Magento Admin page.</li>
-  <li>Example: <code class="highlighter-rouge">admin_12346</code>.</li>
+  <li>Example: <code class="language-plaintext highlighter-rouge">admin_12346</code>.</li>
 </ul>
 
 <h3 id="magento_admin_username">MAGENTO_ADMIN_USERNAME</h3>
@@ -2123,7 +2121,7 @@ Advanced users may need to set additional values to work with their environment.
 <ul>
   <li>Use: Required.</li>
   <li>Description: The username that tests will use to log in to the Magento Admin page.</li>
-  <li>Example: <code class="highlighter-rouge">admin</code>.</li>
+  <li>Example: <code class="language-plaintext highlighter-rouge">admin</code>.</li>
 </ul>
 
 <h3 id="magento_admin_password">MAGENTO_ADMIN_PASSWORD</h3>
@@ -2131,7 +2129,7 @@ Advanced users may need to set additional values to work with their environment.
 <ul>
   <li>Use: Required.</li>
   <li>Description: The password that tests will use to log in to the Magento Admin page.</li>
-  <li>Example: <code class="highlighter-rouge">1234reTyt%$7</code></li>
+  <li>Example: <code class="language-plaintext highlighter-rouge">1234reTyt%$7</code></li>
 </ul>
 
 <h2 id="advanced-configuration">Advanced Configuration</h2>
@@ -2142,7 +2140,7 @@ But in case you do need to do some configuration, they are shown here for your r
 
 <h3 id="selenium">SELENIUM</h3>
 
-<p>The <code class="highlighter-rouge">SELENIUM_*</code> values are concatenated together to form the URL of a custom Selenium server to test against.
+<p>The <code class="language-plaintext highlighter-rouge">SELENIUM_*</code> values are concatenated together to form the URL of a custom Selenium server to test against.
 An example use case for these would be if you wanted to run your tests against any other external Selenium source instead of your local machine.</p>
 
 <div class="language-config highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="n">SELENIUM_HOST</span>
@@ -2156,7 +2154,7 @@ An example use case for these would be if you wanted to run your tests against a
 <ul>
   <li>Use: Optional</li>
   <li>Description: For overriding the default Selenium server URL.</li>
-  <li>Example: <code class="highlighter-rouge">user:pass@ondemand.saucelabs.com</code></li>
+  <li>Example: <code class="language-plaintext highlighter-rouge">user:pass@ondemand.saucelabs.com</code></li>
 </ul>
 
 <h4 id="selenium_port">SELENIUM_PORT</h4>
@@ -2164,7 +2162,7 @@ An example use case for these would be if you wanted to run your tests against a
 <ul>
   <li>Use: Optional</li>
   <li>Description: For overriding the default Selenium server URL.</li>
-  <li>Example: <code class="highlighter-rouge">443</code></li>
+  <li>Example: <code class="language-plaintext highlighter-rouge">443</code></li>
 </ul>
 
 <h4 id="selenium_protocol">SELENIUM_PROTOCOL</h4>
@@ -2172,7 +2170,7 @@ An example use case for these would be if you wanted to run your tests against a
 <ul>
   <li>Use: Optional</li>
   <li>Description: For overriding the default Selenium server URL.</li>
-  <li>Example: <code class="highlighter-rouge">https</code></li>
+  <li>Example: <code class="language-plaintext highlighter-rouge">https</code></li>
 </ul>
 
 <h4 id="selenium_path">SELENIUM_PATH</h4>
@@ -2180,12 +2178,12 @@ An example use case for these would be if you wanted to run your tests against a
 <ul>
   <li>Use: Optional</li>
   <li>Description: For overriding the default Selenium server URL.</li>
-  <li>Example: <code class="highlighter-rouge">/wd/hub</code></li>
+  <li>Example: <code class="language-plaintext highlighter-rouge">/wd/hub</code></li>
 </ul>
 
 <h3 id="magento_restapi">MAGENTO_RESTAPI</h3>
 
-<p>These <code class="highlighter-rouge">MAGENTO_RESTAPI_*</code> values are optional and can be used in cases where your Magento instance has a different API path than the standard <code class="highlighter-rouge">MAGENTO_BASE_URL</code>.</p>
+<p>These <code class="language-plaintext highlighter-rouge">MAGENTO_RESTAPI_*</code> values are optional and can be used in cases where your Magento instance has a different API path than the standard <code class="language-plaintext highlighter-rouge">MAGENTO_BASE_URL</code>.</p>
 
 <div class="language-config highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="n">MAGENTO_RESTAPI_SERVER_HOST</span>
 <span class="n">MAGENTO_RESTAPI_SERVER_PORT</span>
@@ -2196,7 +2194,7 @@ An example use case for these would be if you wanted to run your tests against a
 <ul>
   <li>Use: Optional</li>
   <li>Description: The protocol and host part of the API path.</li>
-  <li>Example: <code class="highlighter-rouge">http://localhost</code></li>
+  <li>Example: <code class="language-plaintext highlighter-rouge">http://localhost</code></li>
 </ul>
 
 <h4 id="magento_restapi_server_port">MAGENTO_RESTAPI_SERVER_PORT</h4>
@@ -2204,13 +2202,13 @@ An example use case for these would be if you wanted to run your tests against a
 <ul>
   <li>Use: Optional</li>
   <li>Description: The port part of the API path.</li>
-  <li>Example: <code class="highlighter-rouge">5000</code></li>
+  <li>Example: <code class="language-plaintext highlighter-rouge">5000</code></li>
 </ul>
 
 <h3 id="tests">TESTS</h3>
 
 <p>These values can be used in cases where you are working locally on both MFTF’s implementation code and Magento’s test case code.
-Use them if you have a more advanced local development setup involving symlinking MFTF into the <code class="highlighter-rouge">vendor</code> directory of <code class="highlighter-rouge">magento2</code>.</p>
+Use them if you have a more advanced local development setup involving symlinking MFTF into the <code class="language-plaintext highlighter-rouge">vendor</code> directory of <code class="language-plaintext highlighter-rouge">magento2</code>.</p>
 
 <div class="language-config highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="n">MAGENTO_BP</span>
 <span class="n">TESTS_BP</span>
@@ -2225,7 +2223,7 @@ Use them if you have a more advanced local development setup involving symlinkin
 <ul>
   <li>Use: Optional.</li>
   <li>Description: The path to a Magento2 codebase</li>
-  <li>Example: <code class="highlighter-rouge">~/magento2ce/</code></li>
+  <li>Example: <code class="language-plaintext highlighter-rouge">~/magento2ce/</code></li>
 </ul>
 
 <h4 id="tests_bp">TESTS_BP</h4>
@@ -2235,7 +2233,7 @@ Use them if you have a more advanced local development setup involving symlinkin
 <ul>
   <li>Use: Optional.</li>
   <li>Description: The path to where MFTF supplementary files are located in the Magento2 codebase.</li>
-  <li>Example: <code class="highlighter-rouge">~/magento2ce/dev/tests/acceptance</code></li>
+  <li>Example: <code class="language-plaintext highlighter-rouge">~/magento2ce/dev/tests/acceptance</code></li>
 </ul>
 
 <h4 id="fw_bp">FW_BP</h4>
@@ -2245,7 +2243,7 @@ Use them if you have a more advanced local development setup involving symlinkin
 <ul>
   <li>Use: Optional.</li>
   <li>Description: The path to where MFTF exists and from which it is symlinked.</li>
-  <li>Example: <code class="highlighter-rouge">~/magento/magento2-functional-testing-framework</code></li>
+  <li>Example: <code class="language-plaintext highlighter-rouge">~/magento/magento2-functional-testing-framework</code></li>
 </ul>
 
 <h4 id="tests_module_path">TESTS_MODULE_PATH</h4>
@@ -2253,13 +2251,13 @@ Use them if you have a more advanced local development setup involving symlinkin
 <ul>
   <li>Use: Optional.</li>
   <li>Description: The path to where MFTF modules mirror Magento’s modules.</li>
-  <li>Example: <code class="highlighter-rouge">~/magento2ce/dev/tests/acceptance/tests/functional/Magento/FunctionalTest</code></li>
+  <li>Example: <code class="language-plaintext highlighter-rouge">~/magento2ce/dev/tests/acceptance/tests/functional/Magento/FunctionalTest</code></li>
 </ul>
 
 <h3 id="module_whitelist">MODULE_WHITELIST</h3>
 
-<p>Use the <code class="highlighter-rouge">MODULE_WHITELIST</code> environment variable if you are working on a new module.
-When adding a new directory under <code class="highlighter-rouge">Magento/FunctionalTest</code>, add the directory name under <code class="highlighter-rouge">MODULE_WHITELIST</code> to enable the MFTF to process it.</p>
+<p>Use the <code class="language-plaintext highlighter-rouge">MODULE_WHITELIST</code> environment variable if you are working on a new module.
+When adding a new directory under <code class="language-plaintext highlighter-rouge">Magento/FunctionalTest</code>, add the directory name under <code class="language-plaintext highlighter-rouge">MODULE_WHITELIST</code> to enable the MFTF to process it.</p>
 
 			
 		</div>

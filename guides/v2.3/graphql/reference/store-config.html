@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>storeConfig endpoint | Magento 2 Developer Documentation (copy)</title>
+	<title>storeConfig endpoint | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/graphql/reference/store-config.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/graphql/reference/store-config.html">Magento 2.0</a></li>
 		
@@ -2183,11 +2184,11 @@
 	<h1 class="page-heading">storeConfig endpoint</h1>
 </section>
 
-			<p>The <code class="highlighter-rouge">storeConfig</code> endpoint returns information about a store’s configuration, including its locale, currency codes, and the secure and unsecure URLs.</p>
+			<p>The <code class="language-plaintext highlighter-rouge">storeConfig</code> endpoint returns information about a store’s configuration, including its locale, currency codes, and the secure and unsecure URLs.</p>
 
 <h2 id="query-structure">Query structure</h2>
 
-<p><code class="highlighter-rouge">storeConfig: StoreConfig</code></p>
+<p><code class="language-plaintext highlighter-rouge">storeConfig: StoreConfig</code></p>
 
 <h2 id="supported-attributes">Supported attributes</h2>
 
@@ -2201,84 +2202,84 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">id</code></td>
+      <td><code class="language-plaintext highlighter-rouge">id</code></td>
       <td>Integer</td>
       <td>The ID number assigned to the store</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">code</code></td>
+      <td><code class="language-plaintext highlighter-rouge">code</code></td>
       <td>String</td>
       <td>A unique identifier for the store</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">website_id</code></td>
+      <td><code class="language-plaintext highlighter-rouge">website_id</code></td>
       <td>Integer</td>
       <td>The ID number assigned to the parent website</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">locale</code></td>
+      <td><code class="language-plaintext highlighter-rouge">locale</code></td>
       <td>String</td>
-      <td>The store’s locale, such as <code class="highlighter-rouge">en_US</code></td>
+      <td>The store’s locale, such as <code class="language-plaintext highlighter-rouge">en_US</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">base_currency_code</code></td>
+      <td><code class="language-plaintext highlighter-rouge">base_currency_code</code></td>
       <td>String</td>
-      <td>The code representing the currency in which Magento processes all payment transactions, such as <code class="highlighter-rouge">USD</code></td>
+      <td>The code representing the currency in which Magento processes all payment transactions, such as <code class="language-plaintext highlighter-rouge">USD</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">default_display_currency_code</code></td>
+      <td><code class="language-plaintext highlighter-rouge">default_display_currency_code</code></td>
       <td>String</td>
-      <td>The code representing the currency displayed on the store, such as <code class="highlighter-rouge">USD</code></td>
+      <td>The code representing the currency displayed on the store, such as <code class="language-plaintext highlighter-rouge">USD</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">timezone</code></td>
+      <td><code class="language-plaintext highlighter-rouge">timezone</code></td>
       <td>String</td>
-      <td>The store’s time zone, such as <code class="highlighter-rouge">America/Chicago</code></td>
+      <td>The store’s time zone, such as <code class="language-plaintext highlighter-rouge">America/Chicago</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">weight_unit</code></td>
+      <td><code class="language-plaintext highlighter-rouge">weight_unit</code></td>
       <td>String</td>
-      <td>The weight unit for products, such as <code class="highlighter-rouge">lbs</code> or <code class="highlighter-rouge">kgs</code></td>
+      <td>The weight unit for products, such as <code class="language-plaintext highlighter-rouge">lbs</code> or <code class="language-plaintext highlighter-rouge">kgs</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">base_url</code></td>
+      <td><code class="language-plaintext highlighter-rouge">base_url</code></td>
       <td>String</td>
-      <td>The store’s fully-qualified base URL, such as <code class="highlighter-rouge">http://magentohost.example.com/</code></td>
+      <td>The store’s fully-qualified base URL, such as <code class="language-plaintext highlighter-rouge">http://magentohost.example.com/</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">base_link_url</code></td>
+      <td><code class="language-plaintext highlighter-rouge">base_link_url</code></td>
       <td>String</td>
-      <td>A fully-qualified URL that is used to create relative links to the <code class="highlighter-rouge">base_url</code></td>
+      <td>A fully-qualified URL that is used to create relative links to the <code class="language-plaintext highlighter-rouge">base_url</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">base_static_url</code></td>
+      <td><code class="language-plaintext highlighter-rouge">base_static_url</code></td>
       <td>String</td>
-      <td>The fully-qualified URL that specifies the location of static view files, such as <code class="highlighter-rouge">http://magentohost.example.com/pub/static/</code></td>
+      <td>The fully-qualified URL that specifies the location of static view files, such as <code class="language-plaintext highlighter-rouge">http://magentohost.example.com/pub/static/</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">base_media_url</code></td>
+      <td><code class="language-plaintext highlighter-rouge">base_media_url</code></td>
       <td>String</td>
-      <td>The fully-qualified URL that specifies the location of user media files, such as <code class="highlighter-rouge">http://magentohost.example.com/pub/media/</code></td>
+      <td>The fully-qualified URL that specifies the location of user media files, such as <code class="language-plaintext highlighter-rouge">http://magentohost.example.com/pub/media/</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">secure_base_url</code></td>
+      <td><code class="language-plaintext highlighter-rouge">secure_base_url</code></td>
       <td>String</td>
-      <td>The store’s fully-qualified secure base URL, such as <code class="highlighter-rouge">https://magentohost.example.com/</code></td>
+      <td>The store’s fully-qualified secure base URL, such as <code class="language-plaintext highlighter-rouge">https://magentohost.example.com/</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">secure_base_link_url</code></td>
+      <td><code class="language-plaintext highlighter-rouge">secure_base_link_url</code></td>
       <td>String</td>
-      <td>A fully-qualified URL that is used to create relative links to the <code class="highlighter-rouge">base_url</code></td>
+      <td>A fully-qualified URL that is used to create relative links to the <code class="language-plaintext highlighter-rouge">base_url</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">secure_base_static_url</code></td>
+      <td><code class="language-plaintext highlighter-rouge">secure_base_static_url</code></td>
       <td>String</td>
-      <td>The secure fully-qualified URL that specifies the location of static view files, such as <code class="highlighter-rouge">https://magentohost.example.com/pub/static/</code></td>
+      <td>The secure fully-qualified URL that specifies the location of static view files, such as <code class="language-plaintext highlighter-rouge">https://magentohost.example.com/pub/static/</code></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">secure_base_media_url</code></td>
+      <td><code class="language-plaintext highlighter-rouge">secure_base_media_url</code></td>
       <td>String</td>
-      <td>The secure fully-qualified URL that specifies the location of user media files, such as <code class="highlighter-rouge">https://magentohost.example.com/pub/media/</code></td>
+      <td>The secure fully-qualified URL that specifies the location of user media files, such as <code class="language-plaintext highlighter-rouge">https://magentohost.example.com/pub/media/</code></td>
     </tr>
   </tbody>
 </table>
@@ -2289,7 +2290,7 @@
 
 <p><strong>Request</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>{
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>{
   storeConfig{
       id,
     	code,
@@ -2314,24 +2315,24 @@
 <p><strong>Response</strong></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"storeConfig"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en_US"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"base_currency_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"default_display_currency_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/Chicago"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"weight_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lbs"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"base_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://magento2.vagrant193/"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"base_link_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://magento2.vagrant193/"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"base_static_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://magento2.vagrant193/pub/static/version1536249714/"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"base_media_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://magento2.vagrant193/pub/media/"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"secure_base_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://magento2.vagrant193/"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"secure_base_link_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://magento2.vagrant193/"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"secure_base_static_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://magento2.vagrant193/pub/static/version1536249714/"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"secure_base_media_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://magento2.vagrant193/pub/media/"</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"storeConfig"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en_US"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"base_currency_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"default_display_currency_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/Chicago"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"weight_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lbs"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"base_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://magento2.vagrant193/"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"base_link_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://magento2.vagrant193/"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"base_static_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://magento2.vagrant193/pub/static/version1536249714/"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"base_media_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://magento2.vagrant193/pub/media/"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"secure_base_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://magento2.vagrant193/"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"secure_base_link_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://magento2.vagrant193/"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"secure_base_static_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://magento2.vagrant193/pub/static/version1536249714/"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"secure_base_media_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://magento2.vagrant193/pub/media/"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">

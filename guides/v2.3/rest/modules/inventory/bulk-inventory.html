@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Inventory mass actions | Magento 2 Developer Documentation (copy)</title>
+	<title>Inventory mass actions | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/rest/modules/inventory/bulk-inventory.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/rest/modules/inventory/bulk-inventory.html">Magento 2.0</a></li>
 		
@@ -2452,14 +2453,14 @@
 
 <p><strong>Service names</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>inventoryCatalogApiBulkInventoryTransferV1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>inventoryCatalogApiBulkInventoryTransferV1
 inventoryCatalogApiBulkSourceAssignV1
 inventoryCatalogApiBulkSourceUnassignV1
 </code></pre></div></div>
 
 <p><strong>REST endpoints</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>POST /V1/inventory/bulk-product-source-transfer
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>POST /V1/inventory/bulk-product-source-transfer
 POST /V1/inventory/bulk-product-source-assign
 POST /V1/inventory/bulk-product-source-unassign
 </code></pre></div></div>
@@ -2485,26 +2486,26 @@ POST /V1/inventory/bulk-product-source-unassign
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">skus</code></td>
+      <td><code class="language-plaintext highlighter-rouge">skus</code></td>
       <td>A  comma-separated list of existing SKUs to transfer</td>
       <td>Array</td>
       <td>Required</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">originSource</code></td>
+      <td><code class="language-plaintext highlighter-rouge">originSource</code></td>
       <td>The current source of the SKUs</td>
       <td>String</td>
       <td>Required</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">destinationSource</code></td>
+      <td><code class="language-plaintext highlighter-rouge">destinationSource</code></td>
       <td>The target source for the SKUs. This source must be already defined.</td>
       <td>String</td>
       <td>Required</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">unassignFromOrigin</code></td>
-      <td>If <code class="highlighter-rouge">true</code>, the current source is removed as a source for the products. If <code class="highlighter-rouge">false</code>, the original source is retained, but the products are marked as being out of stock with a quantity of 0.</td>
+      <td><code class="language-plaintext highlighter-rouge">unassignFromOrigin</code></td>
+      <td>If <code class="language-plaintext highlighter-rouge">true</code>, the current source is removed as a source for the products. If <code class="language-plaintext highlighter-rouge">false</code>, the original source is retained, but the products are marked as being out of stock with a quantity of 0.</td>
       <td>Boolean</td>
       <td>Required</td>
     </tr>
@@ -2513,11 +2514,11 @@ POST /V1/inventory/bulk-product-source-unassign
 
 <p><strong>Sample usage</strong></p>
 
-<p><code class="highlighter-rouge">POST /V1/inventory/bulk-product-source-transfer</code></p>
+<p><code class="language-plaintext highlighter-rouge">POST /V1/inventory/bulk-product-source-transfer</code></p>
 
 <p><strong>Payload</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>{
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>{
   "skus": [
     "testConfigProduct-red",
     "testConfigProduct-blue"
@@ -2530,13 +2531,13 @@ POST /V1/inventory/bulk-product-source-unassign
 
 <p><strong>Response</strong></p>
 
-<p><code class="highlighter-rouge">true</code> if the request was successful</p>
+<p><code class="language-plaintext highlighter-rouge">true</code> if the request was successful</p>
 
 <h2 id="bulk-assign-sources">Bulk assign sources</h2>
 
-<p>Use the <code class="highlighter-rouge">POST /V1/inventory/bulk-product-source-assign</code> endpoint to add one or more sources to your products. This endpoint helps when creating and assigning custom sources to your default or custom stocks and preparing new locations and inventory.</p>
+<p>Use the <code class="language-plaintext highlighter-rouge">POST /V1/inventory/bulk-product-source-assign</code> endpoint to add one or more sources to your products. This endpoint helps when creating and assigning custom sources to your default or custom stocks and preparing new locations and inventory.</p>
 
-<p>After adding new custom sources, you can add inventory quantities per product or for multiple products using the <code class="highlighter-rouge">POST V1/inventory/source-items</code> endpoint. <a href="/devdocs/guides/v2.3/rest/modules/inventory/manage-source-items.html#assign">Assign products to a source</a> describes this endpoint.</p>
+<p>After adding new custom sources, you can add inventory quantities per product or for multiple products using the <code class="language-plaintext highlighter-rouge">POST V1/inventory/source-items</code> endpoint. <a href="/devdocs/guides/v2.3/rest/modules/inventory/manage-source-items.html#assign">Assign products to a source</a> describes this endpoint.</p>
 
 <p>The sources are added to the products with an inventory quantity of 0. You can add inventory amounts as available per source.</p>
 
@@ -2553,13 +2554,13 @@ POST /V1/inventory/bulk-product-source-unassign
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">skus</code></td>
+      <td><code class="language-plaintext highlighter-rouge">skus</code></td>
       <td>A comma-separated list of existing SKUs to assign</td>
       <td>Array</td>
       <td>Required</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">sourceCodes</code></td>
+      <td><code class="language-plaintext highlighter-rouge">sourceCodes</code></td>
       <td>A comma-separated list of existing sources</td>
       <td>Array</td>
       <td>Required</td>
@@ -2569,11 +2570,11 @@ POST /V1/inventory/bulk-product-source-unassign
 
 <p><strong>Sample usage</strong></p>
 
-<p><code class="highlighter-rouge">POST /V1/inventory/bulk-product-source-assign</code></p>
+<p><code class="language-plaintext highlighter-rouge">POST /V1/inventory/bulk-product-source-assign</code></p>
 
 <p><strong>Payload</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>{
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>{
   "skus": [
     "new-product3",
     "new-product4"
@@ -2587,11 +2588,11 @@ POST /V1/inventory/bulk-product-source-unassign
 
 <p><strong>Response</strong></p>
 
-<p>An ID that identifies the request, such as <code class="highlighter-rouge">1</code>.</p>
+<p>An ID that identifies the request, such as <code class="language-plaintext highlighter-rouge">1</code>.</p>
 
 <h2 id="bulk-unassign-sources">Bulk unassign sources</h2>
 
-<p>When unassigning a source from a product, you are indicating the product will no longer be stocked at that location. This process completely clears all inventory data (quantity, stock status, Notify Quantity threshold) for the source currently assigned to the product. If you need to move the existing inventory to a new location, consider using the bulk transfer endpoint (<code class="highlighter-rouge">POST /V1/inventory/bulk-product-source-transfer</code>).</p>
+<p>When unassigning a source from a product, you are indicating the product will no longer be stocked at that location. This process completely clears all inventory data (quantity, stock status, Notify Quantity threshold) for the source currently assigned to the product. If you need to move the existing inventory to a new location, consider using the bulk transfer endpoint (<code class="language-plaintext highlighter-rouge">POST /V1/inventory/bulk-product-source-transfer</code>).</p>
 
 <p class="bs-callout bs-callout-warning">When you unassign a source from a product, Magento deletes all source data, including inventory amounts, from that product. This can affect salable quantities and reservations for unprocessed orders. After checkout and before shipment, all product quantities in the order have associated reservations. If you unassign a source, you can cause issues with reservations and processing orders.</p>
 
@@ -2601,11 +2602,11 @@ POST /V1/inventory/bulk-product-source-unassign
 
 <p><strong>Sample usage</strong></p>
 
-<p><code class="highlighter-rouge">POST /V1/inventory/bulk-product-source-unassign</code></p>
+<p><code class="language-plaintext highlighter-rouge">POST /V1/inventory/bulk-product-source-unassign</code></p>
 
 <p><strong>Payload</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>{
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>{
   "skus": [
     "testSimpleProduct",
     "testSimpleProduct2"
@@ -2618,7 +2619,7 @@ POST /V1/inventory/bulk-product-source-unassign
 
 <p><strong>Response</strong></p>
 
-<p>An ID that identifies the request, such as <code class="highlighter-rouge">1</code>.</p>
+<p>An ID that identifies the request, such as <code class="language-plaintext highlighter-rouge">1</code>.</p>
 
 			
 		</div>

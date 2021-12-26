@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Create an Admin theme | Magento 2 Developer Documentation (copy)</title>
+	<title>Create an Admin theme | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/frontend-dev-guide/themes/admin_theme_create.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/frontend-dev-guide/themes/admin_theme_create.html">Magento 2.0</a></li>
 		
@@ -2856,9 +2857,9 @@
 
 <ol>
   <li><a href="#create_dir">Create a theme directory.</a></li>
-  <li><a href="#declare_theme">Add a declaration <code class="highlighter-rouge">theme.xml</code>.</a></li>
-  <li><a href="#add_registry">Add <code class="highlighter-rouge">registration.php</code>.</a></li>
-  <li><a href="#make_composer">Optionally add <code class="highlighter-rouge">composer.json</code>.</a></li>
+  <li><a href="#declare_theme">Add a declaration <code class="language-plaintext highlighter-rouge">theme.xml</code>.</a></li>
+  <li><a href="#add_registry">Add <code class="language-plaintext highlighter-rouge">registration.php</code>.</a></li>
+  <li><a href="#make_composer">Optionally add <code class="language-plaintext highlighter-rouge">composer.json</code>.</a></li>
   <li><a href="#logo">Optionally change theme logo.</a></li>
 </ol>
 
@@ -2866,13 +2867,13 @@
 
 <h2 id="create_dir">Create a theme directory</h2>
 
-<p>In the <code class="highlighter-rouge">app/design/adminhtml</code> directory create a new <code class="highlighter-rouge">&lt;Vendor&gt;/&lt;admin_theme&gt;</code> directory.</p>
+<p>In the <code class="language-plaintext highlighter-rouge">app/design/adminhtml</code> directory create a new <code class="language-plaintext highlighter-rouge">&lt;Vendor&gt;/&lt;admin_theme&gt;</code> directory.</p>
 
-<h2 id="declare_theme">Add a declaration <code class="highlighter-rouge">theme.xml</code></h2>
+<h2 id="declare_theme">Add a declaration <code class="language-plaintext highlighter-rouge">theme.xml</code></h2>
 
-<p>In the theme directory, add <code class="highlighter-rouge">theme.xml</code> containing at least the theme name and the parent theme name (if the theme <a href="/devdocs/guides/v2.2/frontend-dev-guide/themes/theme-inherit.html">inherits</a> from one). We recommend you to inherit from the default Magento Admin theme: <code class="highlighter-rouge">Magento/backend</code>.</p>
+<p>In the theme directory, add <code class="language-plaintext highlighter-rouge">theme.xml</code> containing at least the theme name and the parent theme name (if the theme <a href="/devdocs/guides/v2.2/frontend-dev-guide/themes/theme-inherit.html">inherits</a> from one). We recommend you to inherit from the default Magento Admin theme: <code class="language-plaintext highlighter-rouge">Magento/backend</code>.</p>
 
-<p>Add or copy from an existing <code class="highlighter-rouge">theme.xml</code> to your theme directory <code class="highlighter-rouge">app/design/adminhtml/&lt;Vendor&gt;/&lt;admin_theme&gt;</code>.</p>
+<p>Add or copy from an existing <code class="language-plaintext highlighter-rouge">theme.xml</code> to your theme directory <code class="language-plaintext highlighter-rouge">app/design/adminhtml/&lt;Vendor&gt;/&lt;admin_theme&gt;</code>.</p>
 
 <p>Configure it using the following example (replace placeholders with your   <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>
  information):</p>
@@ -2883,34 +2884,34 @@
 <span class="nt">&lt;/theme&gt;</span>
 </code></pre></div></div>
 
-<p>If you change the theme title or parent theme information in <code class="highlighter-rouge">theme.xml</code> after a theme was already <a href="#register_theme">registered</a>, you need to open or reload any   <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>
+<p>If you change the theme title or parent theme information in <code class="language-plaintext highlighter-rouge">theme.xml</code> after a theme was already <a href="#register_theme">registered</a>, you need to open or reload any   <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>
  page for your changes to be saved in the database.</p>
 
-<h2 id="add_registry">Add <code class="highlighter-rouge">registration.php</code></h2>
+<h2 id="add_registry">Add <code class="language-plaintext highlighter-rouge">registration.php</code></h2>
 
-<p>In your theme directory, create a <code class="highlighter-rouge">registration.php</code> file.
+<p>In your theme directory, create a <code class="language-plaintext highlighter-rouge">registration.php</code> file.
 In this file, add the following code, having replaced placeholders with your theme information:</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="cp">&lt;?php</span>
-<span class="sd">/**
+<span class="cd">/**
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */</span>
-<span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="na">register</span><span class="p">(</span>
-    <span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="na">THEME</span><span class="p">,</span>
-    <span class="s1">'adminhtml/%vendor_dir/your_theme_dir%'</span><span class="p">,</span> <span class="c1">// Example: 'adminhtml/Magento/backend'
-</span>    <span class="nx">__DIR__</span>
+<span class="err">\</span><span class="nc">Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="nf">register</span><span class="p">(</span>
+    <span class="err">\</span><span class="nc">Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="no">THEME</span><span class="p">,</span>
+    <span class="s1">'adminhtml/%vendor_dir/your_theme_dir%'</span><span class="p">,</span> <span class="c1">// Example: 'adminhtml/Magento/backend'</span>
+    <span class="k">__DIR__</span>
 <span class="p">);</span>  
 </code></pre></div></div>
 
-<h2 id="make_composer">Optionally add <code class="highlighter-rouge">composer.json</code></h2>
+<h2 id="make_composer">Optionally add <code class="language-plaintext highlighter-rouge">composer.json</code></h2>
 
 <p>See the <a href="/devdocs/guides/v2.2/frontend-dev-guide/themes/theme-create.html#fedg_create_theme_composer">Make your theme a Composer package (optional)</a></p>
 
 <h2 id="logo">Admin theme logo (optional)</h2>
 
-<p>In the default <code class="highlighter-rouge">Magento/backend</code> theme <code class="highlighter-rouge">lib/web/images/magento-logo.svg</code> is used as theme logo. 
-To override it, in your theme directory, create a <code class="highlighter-rouge">web/images</code> sub-directory, and add your custom file named <code class="highlighter-rouge">magento-logo.svg</code>. 
+<p>In the default <code class="language-plaintext highlighter-rouge">Magento/backend</code> theme <code class="language-plaintext highlighter-rouge">lib/web/images/magento-logo.svg</code> is used as theme logo. 
+To override it, in your theme directory, create a <code class="language-plaintext highlighter-rouge">web/images</code> sub-directory, and add your custom file named <code class="language-plaintext highlighter-rouge">magento-logo.svg</code>. 
 If you want to use the file with other name and/or format, you need to additionally declare it as described in <a href="/devdocs/guides/v2.2/frontend-dev-guide/themes/theme-create.html#logo_declare">Declaring theme logo</a>.</p>
 
 <h2 id="register_theme">Theme registration</h2>

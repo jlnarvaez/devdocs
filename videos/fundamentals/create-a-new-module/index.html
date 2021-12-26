@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Create a New Module | Magento 2 Developer Documentation (copy)</title>
+	<title>Create a New Module | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -1620,9 +1619,9 @@
 
 <ol>
   <li>Create the module folder.</li>
-  <li>Create the <code class="highlighter-rouge">etc/module.xml</code> file.</li>
-  <li>Create the <code class="highlighter-rouge">registration.php</code> file.</li>
-  <li>Run the <code class="highlighter-rouge">bin/magento setup:upgrade</code> script to install the new module.</li>
+  <li>Create the <code class="language-plaintext highlighter-rouge">etc/module.xml</code> file.</li>
+  <li>Create the <code class="language-plaintext highlighter-rouge">registration.php</code> file.</li>
+  <li>Run the <code class="language-plaintext highlighter-rouge">bin/magento setup:upgrade</code> script to install the new module.</li>
   <li>Check that the module is working.</li>
 </ol>
 
@@ -1632,27 +1631,27 @@
 
 <h4 id="there-are-two-possible-locations-for-modules-in-magento-2-the-appcode-folder-and-the-vendor-folder">There are two possible locations for modules in Magento 2: the app/code folder and the vendor folder</h4>
 
-<p>Depending on how Magento 2 has been installed, core modules can either be located in the <code class="highlighter-rouge">vendor/magento/magento-*</code>folders (for composer installation) or in the <code class="highlighter-rouge">app/code/Magento/</code> folder (for cloning GitHub).</p>
+<p>Depending on how Magento 2 has been installed, core modules can either be located in the <code class="language-plaintext highlighter-rouge">vendor/magento/magento-*</code>folders (for composer installation) or in the <code class="language-plaintext highlighter-rouge">app/code/Magento/</code> folder (for cloning GitHub).</p>
 
 <h4 id="which-of-these-locations-should-you-choose-for-your-new-module">Which of these locations should you choose for your new module?</h4>
 
 <p>If you build a module for a specific project, it is best to choose the app/code folder and commit to the project’s repository.</p>
 
-<p>If you build an extension to be reused, it is better to use composer to create it, and put your module in the <code class="highlighter-rouge">vendor/&lt;YOUR_VENDOR&gt;/module-something</code> folder.</p>
+<p>If you build an extension to be reused, it is better to use composer to create it, and put your module in the <code class="language-plaintext highlighter-rouge">vendor/&lt;YOUR_VENDOR&gt;/module-something</code> folder.</p>
 
 <p>Each module name in Magento 2 consists of two parts – the vendor and the module itself. In other words, modules are grouped into vendors, so you need to define the vendor and module names. For this example, let’s name the vendor “Learning” and the module “FirstUnit”.</p>
 
 <p>Let’s create the folder app/code/Learning and inside this folder place another folder: FirstUnit. If you’re using the command line, the code would be:</p>
 
 <ol>
-  <li><code class="highlighter-rouge">cd</code> to the root folder</li>
-  <li><code class="highlighter-rouge">mkdir app/code/Learning</code></li>
-  <li><code class="highlighter-rouge">mkdir app/code/Learning/FirstUnit</code></li>
+  <li><code class="language-plaintext highlighter-rouge">cd</code> to the root folder</li>
+  <li><code class="language-plaintext highlighter-rouge">mkdir app/code/Learning</code></li>
+  <li><code class="language-plaintext highlighter-rouge">mkdir app/code/Learning/FirstUnit</code></li>
 </ol>
 
 <h2 id="make-sure-you-have-permission-to-create-files-and-folders-in-your-installation">Make sure you have permission to create files and folders in your installation</h2>
 
-<p>Next, you need to create an <code class="highlighter-rouge">etc/module.xml</code> file. This file is required for the module to exist.</p>
+<p>Next, you need to create an <code class="language-plaintext highlighter-rouge">etc/module.xml</code> file. This file is required for the module to exist.</p>
 
 <p>This file contains the following information:</p>
 
@@ -1662,15 +1661,15 @@
   <li>Dependencies</li>
 </ul>
 
-<p>Module name is defined by the folders we just created, because in Magento 2, class names must follow the folder structure. Because we created the folders <code class="highlighter-rouge">Learning/FirstUnit</code>, our module name will be <code class="highlighter-rouge">Learning_FirstUnit</code> and all classes that belong to this module will begin with <code class="highlighter-rouge">Learning\FirstUnit</code> – for example: <code class="highlighter-rouge">Learning\FirstUnit\Observer\Test</code>.</p>
+<p>Module name is defined by the folders we just created, because in Magento 2, class names must follow the folder structure. Because we created the folders <code class="language-plaintext highlighter-rouge">Learning/FirstUnit</code>, our module name will be <code class="language-plaintext highlighter-rouge">Learning_FirstUnit</code> and all classes that belong to this module will begin with <code class="language-plaintext highlighter-rouge">Learning\FirstUnit</code> – for example: <code class="language-plaintext highlighter-rouge">Learning\FirstUnit\Observer\Test</code>.</p>
 
-<p>Module version indicates the current version of the database schema and data, and is used in upgrading. For example, assume you decide to modify a table’s schema in your module. How can you be sure that this change will happen on all instances where the code is deployed? Altering the database by direct SQL queries won’t work. Instead, Magento 2 has install and upgrade scripts in every module (optionally). These scripts contain commands to modify the database schema or data. To track whether to execute a script or not, Magento 2 uses module versions. Every time you implement a new database change, you implement a new version of a module and change the corresponding <code class="highlighter-rouge">module.xml</code>. Magento saves the current module’s version in a database, and if the database value and the one in the <code class="highlighter-rouge">module.xml</code> do not match, it will execute the upgrade code.</p>
+<p>Module version indicates the current version of the database schema and data, and is used in upgrading. For example, assume you decide to modify a table’s schema in your module. How can you be sure that this change will happen on all instances where the code is deployed? Altering the database by direct SQL queries won’t work. Instead, Magento 2 has install and upgrade scripts in every module (optionally). These scripts contain commands to modify the database schema or data. To track whether to execute a script or not, Magento 2 uses module versions. Every time you implement a new database change, you implement a new version of a module and change the corresponding <code class="language-plaintext highlighter-rouge">module.xml</code>. Magento saves the current module’s version in a database, and if the database value and the one in the <code class="language-plaintext highlighter-rouge">module.xml</code> do not match, it will execute the upgrade code.</p>
 
-<p>Dependencies. If one module depends on another, the <code class="highlighter-rouge">module.xml</code> file will have a special declaration that defines a list of modules that the current module depends on. For this example, we will make our module dependent on Magento_Catalog.</p>
+<p>Dependencies. If one module depends on another, the <code class="language-plaintext highlighter-rouge">module.xml</code> file will have a special declaration that defines a list of modules that the current module depends on. For this example, we will make our module dependent on Magento_Catalog.</p>
 
-<p>Using the following command-line code, create the folder <code class="highlighter-rouge">app/code/Learning/FirstUnit/etc</code>:</p>
+<p>Using the following command-line code, create the folder <code class="language-plaintext highlighter-rouge">app/code/Learning/FirstUnit/etc</code>:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mkdir app/code/Learning/FirstUnit/etc
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mkdir app/code/Learning/FirstUnit/etc
 </code></pre></div></div>
 
 <p>Then put the following code into it:</p>
@@ -1685,41 +1684,41 @@
 <p>Note that in the XML file we specified:</p>
 
 <ul>
-  <li>Module name: <code class="highlighter-rouge">Learning_FirstUnit</code> (based on the folders we created)</li>
+  <li>Module name: <code class="language-plaintext highlighter-rouge">Learning_FirstUnit</code> (based on the folders we created)</li>
   <li>Version: 0.0.1 (initial version of our module)</li>
-  <li>Dependency: Magento_Catalog. We could have multiple dependencies. In this case, we would put <code class="highlighter-rouge">&lt;module name=”..” /&gt;</code> nodes under the sequence node.</li>
+  <li>Dependency: Magento_Catalog. We could have multiple dependencies. In this case, we would put <code class="language-plaintext highlighter-rouge">&lt;module name=”..” /&gt;</code> nodes under the sequence node.</li>
 </ul>
 
 <h2 id="create-the-registrationphp-file">Create the registration.php file</h2>
 
 <p>Each module must have this file, which tells Magento how to locate the module. Continuing our example, create the file
-<code class="highlighter-rouge">app/code/Learning/FirstUnit/registration.php</code>. Then put the following content into it:</p>
+<code class="language-plaintext highlighter-rouge">app/code/Learning/FirstUnit/registration.php</code>. Then put the following content into it:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> <span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="na">register</span><span class="p">(</span>
-<span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="na">MODULE</span><span class="p">,</span> <span class="s1">'Learning_FirstUnit'</span><span class="p">,</span>
-<span class="nx">__DIR__</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> <span class="err">\</span><span class="nc">Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="nf">register</span><span class="p">(</span>
+<span class="err">\</span><span class="nc">Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="no">MODULE</span><span class="p">,</span> <span class="s1">'Learning_FirstUnit'</span><span class="p">,</span>
+<span class="k">__DIR__</span>
 <span class="p">);</span></code></pre></figure>
 
-<p>The <code class="highlighter-rouge">registration.php</code> is a standardized file that follows the same pattern for all modules.</p>
+<p>The <code class="language-plaintext highlighter-rouge">registration.php</code> is a standardized file that follows the same pattern for all modules.</p>
 
-<p>The only thing that varies is the module name, which in our case is <code class="highlighter-rouge">Learning_FirstUnit</code>.</p>
+<p>The only thing that varies is the module name, which in our case is <code class="language-plaintext highlighter-rouge">Learning_FirstUnit</code>.</p>
 
 <h2 id="run-the-setupupgrade-command">Run the “setup:upgrade” command</h2>
 
 <p>Running this command makes your new module active, notifying Magento of its presence.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php bin/magento setup:upgrade
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php bin/magento setup:upgrade
 </code></pre></div></div>
 
-<p>It should echo a large amount of output, one line of which should be <code class="highlighter-rouge">Learning_FirstUnit</code>. Verify that this line of code is there.</p>
+<p>It should echo a large amount of output, one line of which should be <code class="language-plaintext highlighter-rouge">Learning_FirstUnit</code>. Verify that this line of code is there.</p>
 
 <h2 id="check-that-the-new-module-is-active">Check that the new module is active</h2>
 
-<p>So far, we haven’t added any useful code to our module – it is still empty (and therefore invisible). In order to verify that it has been recognized, check the file <code class="highlighter-rouge">app/etc/config.php</code>. It has a list of auto-generated modules that are active.</p>
+<p>So far, we haven’t added any useful code to our module – it is still empty (and therefore invisible). In order to verify that it has been recognized, check the file <code class="language-plaintext highlighter-rouge">app/etc/config.php</code>. It has a list of auto-generated modules that are active.</p>
 
 <p>Never change this list manually!</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>grep Learning_FirstUnit app/etc/config.php
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>grep Learning_FirstUnit app/etc/config.php
 </code></pre></div></div>
 
 <p>Employing these steps, you can successfully create a new module in Magento 2.</p>

@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Set up Elasticsearch service | Magento 2 Developer Documentation (copy)</title>
+	<title>Set up Elasticsearch service | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/project/project-conf-files_services-elastic.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/project/project-conf-files_services-elastic.html">Magento 2.0</a></li>
 		
@@ -3556,30 +3557,30 @@
 
 <p class="bs-callout bs-callout-info">If you’re upgrading to Magento Commerce 2.1.3, you must change your configuration as discussed in <a href="/devdocs/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.3.html#cloud-rn-213-es">the 2.1.3 Release Notes</a>.</p>
 
-<p class="bs-callout bs-callout-warning">If you prefer using an existing search service, like Elasticsearch, instead of relying on Magento Commerce Cloud to create it for you, use the <a href="/devdocs/guides/v2.1/cloud/env/working-with-variables.html"><code class="highlighter-rouge">SEARCH_CONFIGURATION</code></a> environment variable to connect it to your site.</p>
+<p class="bs-callout bs-callout-warning">If you prefer using an existing search service, like Elasticsearch, instead of relying on Magento Commerce Cloud to create it for you, use the <a href="/devdocs/guides/v2.1/cloud/env/working-with-variables.html"><code class="language-plaintext highlighter-rouge">SEARCH_CONFIGURATION</code></a> environment variable to connect it to your site.</p>
 
 <h2 id="settings">Add Elasticsearch in services.yaml and .magento.app.yaml</h2>
 
-<p>To enable Elasticsearch, add the following code with your installed version and allocated disk space in MB to <code class="highlighter-rouge">.magento/services.yaml</code>.</p>
+<p>To enable Elasticsearch, add the following code with your installed version and allocated disk space in MB to <code class="language-plaintext highlighter-rouge">.magento/services.yaml</code>.</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">elasticsearch</span><span class="pi">:</span>
    <span class="na">type</span><span class="pi">:</span> <span class="s">elasticsearch:1.7</span>
    <span class="na">disk</span><span class="pi">:</span> <span class="s">1024</span></code></pre></figure>
 
-<p>To configure the relationships for the environment variable, set a relationship in your <code class="highlighter-rouge">.magento.app.yaml</code> in the Git branch. For example:</p>
+<p>To configure the relationships for the environment variable, set a relationship in your <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> in the Git branch. For example:</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">relationships</span><span class="pi">:</span>
     <span class="na">elasticsearch</span><span class="pi">:</span> <span class="s2">"</span><span class="s">elasticsearch:elasticsearch"</span></code></pre></figure>
 
-<p>Merge and deploy the code to set the configurations for Elasticsearch. For information on how these changes affect your environments, see <a href="/devdocs/guides/v2.0/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a>.</p>
+<p>Merge and deploy the code to set the configurations for Elasticsearch. For information on how these changes affect your environments, see <a href="/devdocs/guides/v2.0/cloud/project/project-conf-files_services.html"><code class="language-plaintext highlighter-rouge">services.yaml</code></a>.</p>
 
 <h3 id="addplugins">Add Elasticsearch plugins</h3>
 
-<p>Optionally, you can add the plugins through the <code class="highlighter-rouge">.magento/services.yaml</code> file. For example, to enable ICU analysis plugin and Python script support plugins, add the configuration plugins section with the listed plugin codes:</p>
+<p>Optionally, you can add the plugins through the <code class="language-plaintext highlighter-rouge">.magento/services.yaml</code> file. For example, to enable ICU analysis plugin and Python script support plugins, add the configuration plugins section with the listed plugin codes:</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">elasticsearch</span><span class="pi">:</span>
    <span class="na">type</span><span class="pi">:</span> <span class="s">elasticsearch:1.7</span>
-   <span class="na">disk</span><span class="pi">:</span> <span class="s">1024</span>
+   <span class="na">disk</span><span class="pi">:</span> <span class="m">1024</span>
    <span class="na">configuration</span><span class="pi">:</span>
     <span class="na">plugins</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="s">analysis-icu</span>
@@ -3589,7 +3590,7 @@
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">elasticsearch</span><span class="pi">:</span>
    <span class="na">type</span><span class="pi">:</span> <span class="s">elasticsearch:2.4</span>
-   <span class="na">disk</span><span class="pi">:</span> <span class="s">1024</span>
+   <span class="na">disk</span><span class="pi">:</span> <span class="m">1024</span>
    <span class="na">configuration</span><span class="pi">:</span>
     <span class="na">plugins</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="s">analysis-icu</span>
@@ -3598,30 +3599,30 @@
 <p>The following are supported Elasticsearch plugins for version 2.4:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">analysis-icu</code>: ICU Analysis Plugin, Support ICU Unicode text analysis</li>
-  <li><code class="highlighter-rouge">analysis-kuromoji</code>: Japanese (kuromoji) Analysis Plugin, Japanese language support</li>
-  <li><code class="highlighter-rouge">analysis-phonetic</code>: Phonetic Analysis Plugin, Phonetic analysis</li>
-  <li><code class="highlighter-rouge">analysis-smartcn</code>: Smart Chinese Analysis Plugins</li>
-  <li><code class="highlighter-rouge">analysis-stempel</code>: Stempel Polish Analysis Plugin</li>
-  <li><code class="highlighter-rouge">cloud-aws</code>: AWS Cloud Plugin, allows storing indices on AWS S3</li>
-  <li><code class="highlighter-rouge">cloud-azure</code>: Azure Cloud Plugin</li>
-  <li><code class="highlighter-rouge">cloud-gce</code>: GCE Cloud Plugin</li>
-  <li><code class="highlighter-rouge">delete-by-query</code>: Support for deleting documents matching a given query</li>
-  <li><code class="highlighter-rouge">discovery-multicast</code>: Ability to form a cluster using TCP/IP multicast messages</li>
-  <li><code class="highlighter-rouge">lang-javascript</code>: Javascript language plugin, allows the use of Javascript in Elasticsearch scripts</li>
-  <li><code class="highlighter-rouge">lang-python</code>: Python language plugin, allows the use of Python in Elasticsearch scripts</li>
-  <li><code class="highlighter-rouge">mapper-attachments</code>: Mapper attachments plugin for indexing common file types</li>
-  <li><code class="highlighter-rouge">mapper-murmur3</code>: Murmur3 mapper plugin for computing hashes at index-time</li>
-  <li><code class="highlighter-rouge">mapper-size</code>: Size mapper plugin, enables the <code class="highlighter-rouge">_size</code> meta field</li>
+  <li><code class="language-plaintext highlighter-rouge">analysis-icu</code>: ICU Analysis Plugin, Support ICU Unicode text analysis</li>
+  <li><code class="language-plaintext highlighter-rouge">analysis-kuromoji</code>: Japanese (kuromoji) Analysis Plugin, Japanese language support</li>
+  <li><code class="language-plaintext highlighter-rouge">analysis-phonetic</code>: Phonetic Analysis Plugin, Phonetic analysis</li>
+  <li><code class="language-plaintext highlighter-rouge">analysis-smartcn</code>: Smart Chinese Analysis Plugins</li>
+  <li><code class="language-plaintext highlighter-rouge">analysis-stempel</code>: Stempel Polish Analysis Plugin</li>
+  <li><code class="language-plaintext highlighter-rouge">cloud-aws</code>: AWS Cloud Plugin, allows storing indices on AWS S3</li>
+  <li><code class="language-plaintext highlighter-rouge">cloud-azure</code>: Azure Cloud Plugin</li>
+  <li><code class="language-plaintext highlighter-rouge">cloud-gce</code>: GCE Cloud Plugin</li>
+  <li><code class="language-plaintext highlighter-rouge">delete-by-query</code>: Support for deleting documents matching a given query</li>
+  <li><code class="language-plaintext highlighter-rouge">discovery-multicast</code>: Ability to form a cluster using TCP/IP multicast messages</li>
+  <li><code class="language-plaintext highlighter-rouge">lang-javascript</code>: Javascript language plugin, allows the use of Javascript in Elasticsearch scripts</li>
+  <li><code class="language-plaintext highlighter-rouge">lang-python</code>: Python language plugin, allows the use of Python in Elasticsearch scripts</li>
+  <li><code class="language-plaintext highlighter-rouge">mapper-attachments</code>: Mapper attachments plugin for indexing common file types</li>
+  <li><code class="language-plaintext highlighter-rouge">mapper-murmur3</code>: Murmur3 mapper plugin for computing hashes at index-time</li>
+  <li><code class="language-plaintext highlighter-rouge">mapper-size</code>: Size mapper plugin, enables the <code class="language-plaintext highlighter-rouge">_size</code> meta field</li>
 </ul>
 
-<p>If using <a href="https://github.com/Smile-SA/elasticsuite" target="_blank">Smile ElasticSuite</a>, the required plugins are <code class="highlighter-rouge">analysis-icu</code> and <code class="highlighter-rouge">analysis-phonetic</code>. Make sure to add these to the plugins section of <code class="highlighter-rouge">services.yaml.</code> See <a href="#addplugins">Add Elasticsearch plugins</a>.</p>
+<p>If using <a href="https://github.com/Smile-SA/elasticsuite" target="_blank">Smile ElasticSuite</a>, the required plugins are <code class="language-plaintext highlighter-rouge">analysis-icu</code> and <code class="language-plaintext highlighter-rouge">analysis-phonetic</code>. Make sure to add these to the plugins section of <code class="language-plaintext highlighter-rouge">services.yaml.</code> See <a href="#addplugins">Add Elasticsearch plugins</a>.</p>
 
 <p>For full documentation on these plugins, see <a href="https://www.elastic.co/guide/en/elasticsearch/plugins/2.4/index.html" target="_blank">Elasticsearch plugin documentation</a>.</p>
 
 <h2 id="cloud-es-config-mg">Verify environment-related relationships</h2>
 
-<p>We use the Magento Commerce Cloud environment variable <a href="/devdocs/guides/v2.0/cloud/env/environment-vars_cloud.html"><code class="highlighter-rouge">$MAGENTO_CLOUD_RELATIONSHIPS</code></a>, a JSON object, to retrieve environment-related relationships.</p>
+<p>We use the Magento Commerce Cloud environment variable <a href="/devdocs/guides/v2.0/cloud/env/environment-vars_cloud.html"><code class="language-plaintext highlighter-rouge">$MAGENTO_CLOUD_RELATIONSHIPS</code></a>, a JSON object, to retrieve environment-related relationships.</p>
 
 <p class="bs-callout bs-callout-info">You will use this information to <a href="#configure">complete Elasticsearch configuration</a> in the Admin Panel.</p>
 
@@ -3632,7 +3633,7 @@
   <li>
     <p>Enter the following command to pretty-print connection information for Elasticsearch. You will use this information when configuring Elasticsearch through the Magento Admin.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -3650,7 +3651,7 @@
 
 <h2 id="configure">Configure Elasticsearch for your site</h2>
 
-<p>The last step is to configure Elasticsearch for your catalog search options through the Magento Admin. You will need the information from the variable <code class="highlighter-rouge">MAGENTO_CLOUD_RELATIONSHIPS</code>. See <a href="/devdocs/guides/v2.1/config-guide/elasticsearch/configure-magento.html">Configure Magento to use Elasticsearch</a> to complete your Admin configurations.</p>
+<p>The last step is to configure Elasticsearch for your catalog search options through the Magento Admin. You will need the information from the variable <code class="language-plaintext highlighter-rouge">MAGENTO_CLOUD_RELATIONSHIPS</code>. See <a href="/devdocs/guides/v2.1/config-guide/elasticsearch/configure-magento.html">Configure Magento to use Elasticsearch</a> to complete your Admin configurations.</p>
 
 <p class="bs-callout bs-callout-warning">Staging and Production environments share a single Elasticsearch instance, so you must specify a unique Elasticsearch prefix for each of these environments.</p>
 

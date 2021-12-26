@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Add a custom payment method to checkout | Magento 2 Developer Documentation (copy)</title>
+	<title>Add a custom payment method to checkout | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/howdoi/checkout/checkout_payment.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/howdoi/checkout/checkout_payment.html">Magento 2.0</a></li>
 		
@@ -1530,8 +1531,8 @@
 <p>To implement a payment method rendering in checkout, you need to take the following steps:</p>
 
 <ol>
-  <li><a href="#create">Create the <code class="highlighter-rouge">.js</code> file implementing the component (payment method renderer).</a></li>
-  <li><a href="#register">Create the <code class="highlighter-rouge">.js</code> component registering the payment method renderer.</a></li>
+  <li><a href="#create">Create the <code class="language-plaintext highlighter-rouge">.js</code> file implementing the component (payment method renderer).</a></li>
+  <li><a href="#register">Create the <code class="language-plaintext highlighter-rouge">.js</code> component registering the payment method renderer.</a></li>
   <li><a href="#template">Create a template for the payment method renderer.</a></li>
   <li><a href="#layout">Declare the new payment in the checkout page layout.</a></li>
 </ol>
@@ -1539,13 +1540,13 @@
 <h2 id="create">Step 1: Create the .js component file</h2>
 
 <p>Your payment method renderer must be implemented as a   <span term-uuid="9bcc648c-bd08-4feb-906d-1e24c4f2f422" class="glossary-term" data-toggle="popover">UI component</span>
-. For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should depend on the <code class="highlighter-rouge">Magento_Checkout</code> module. Module dependencies are specified in the <a href="/devdocs/guides/v2.1/extension-dev-guide/build/composer-integration.html">module’s <code class="highlighter-rouge">composer.json</code></a>.</p>
+. For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should depend on the <code class="language-plaintext highlighter-rouge">Magento_Checkout</code> module. Module dependencies are specified in the <a href="/devdocs/guides/v2.1/extension-dev-guide/build/composer-integration.html">module’s <code class="language-plaintext highlighter-rouge">composer.json</code></a>.</p>
 
-<p>Do not use <code class="highlighter-rouge">Ui</code> for your custom module name, because <code class="highlighter-rouge">%Vendor%_Ui</code> notation, required when specifying paths, might cause issues.</p>
+<p>Do not use <code class="language-plaintext highlighter-rouge">Ui</code> for your custom module name, because <code class="language-plaintext highlighter-rouge">%Vendor%_Ui</code> notation, required when specifying paths, might cause issues.</p>
 
-<p>In your custom module directory create the component’s <code class="highlighter-rouge">.js</code> file (payment method renderer). It must be located under the <code class="highlighter-rouge">&lt;your_module_dir&gt;/view/frontend/web/js/view/</code> directory. For example in the Magento modules, the payment methods renderers are stored in the <code class="highlighter-rouge">&lt;Magento_module_dir&gt;/view/frontend/web/js/view/payment/method-renderer/</code> directory.</p>
+<p>In your custom module directory create the component’s <code class="language-plaintext highlighter-rouge">.js</code> file (payment method renderer). It must be located under the <code class="language-plaintext highlighter-rouge">&lt;your_module_dir&gt;/view/frontend/web/js/view/</code> directory. For example in the Magento modules, the payment methods renderers are stored in the <code class="language-plaintext highlighter-rouge">&lt;Magento_module_dir&gt;/view/frontend/web/js/view/payment/method-renderer/</code> directory.</p>
 
-<p>Usually, your component will extend the default payment method component (default payment method renderer) implemented in the <code class="highlighter-rouge">&lt;Magento_Checkout_module_dir&gt;/view/frontend/web/js/view/payment/default.js</code> file. The following table contains the list of the <code class="highlighter-rouge">default</code> component’s methods.</p>
+<p>Usually, your component will extend the default payment method component (default payment method renderer) implemented in the <code class="language-plaintext highlighter-rouge">&lt;Magento_Checkout_module_dir&gt;/view/frontend/web/js/view/payment/default.js</code> file. The following table contains the list of the <code class="language-plaintext highlighter-rouge">default</code> component’s methods.</p>
 
 <table>
    <tbody>
@@ -1601,13 +1602,13 @@
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nx">define</span><span class="p">(</span>
     <span class="p">[</span>
-        <span class="s1">'Magento_Checkout/js/view/payment/default'</span>
+        <span class="dl">'</span><span class="s1">Magento_Checkout/js/view/payment/default</span><span class="dl">'</span>
     <span class="p">],</span>
     <span class="kd">function</span> <span class="p">(</span><span class="nx">Component</span><span class="p">)</span> <span class="p">{</span>
-        <span class="s1">'use strict'</span><span class="p">;</span>
+        <span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
         <span class="k">return</span> <span class="nx">Component</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
             <span class="na">defaults</span><span class="p">:</span> <span class="p">{</span>
-                <span class="na">template</span><span class="p">:</span> <span class="s1">'%path to template%'</span>
+                <span class="na">template</span><span class="p">:</span> <span class="dl">'</span><span class="s1">%path to template%</span><span class="dl">'</span>
             <span class="p">},</span>
             <span class="c1">// add required logic here</span>
         <span class="p">});</span>
@@ -1615,7 +1616,7 @@
 <span class="p">);</span>
 </code></pre></div></div>
 
-<p>If your payment method requires credit cards information, you might use the Magento renderer implementing a credit card form: <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Payment/view/frontend/web/js/view/payment/cc-form.js"><code class="highlighter-rouge">&lt;Magento_Payment_module_dir&gt;/view/frontend/web/js/view/payment/cc-form.js</code></a>. It also extends the default payment renderer, but has the following own methods:</p>
+<p>If your payment method requires credit cards information, you might use the Magento renderer implementing a credit card form: <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Payment/view/frontend/web/js/view/payment/cc-form.js"><code class="language-plaintext highlighter-rouge">&lt;Magento_Payment_module_dir&gt;/view/frontend/web/js/view/payment/cc-form.js</code></a>. It also extends the default payment renderer, but has the following own methods:</p>
 
 <table>
    <tr>
@@ -1668,27 +1669,27 @@
 
 <p>Your payment method might need to get data that cannot be defined in   <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span>
  configuration, JS components or templates directly, for example, data from the Magento system config.
-This configuration is stored in the <code class="highlighter-rouge">window.checkoutConfig</code> variable that is defined in root checkout template.</p>
+This configuration is stored in the <code class="language-plaintext highlighter-rouge">window.checkoutConfig</code> variable that is defined in root checkout template.</p>
 
-<p>In order to get access to the system configuration, your payment method or a group of payment methods has to implement the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Checkout/Model/ConfigProviderInterface.php"><code class="highlighter-rouge">\Magento\Checkout\Model\ConfigProviderInterface</code></a> interface, and the class implementing it must be injected to the composite config provider via DI   <span term-uuid="b00459e5-a793-44dd-98d5-852ab33fc344" class="glossary-term" data-toggle="popover">frontend</span>
+<p>In order to get access to the system configuration, your payment method or a group of payment methods has to implement the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Checkout/Model/ConfigProviderInterface.php"><code class="language-plaintext highlighter-rouge">\Magento\Checkout\Model\ConfigProviderInterface</code></a> interface, and the class implementing it must be injected to the composite config provider via DI   <span term-uuid="b00459e5-a793-44dd-98d5-852ab33fc344" class="glossary-term" data-toggle="popover">frontend</span>
  configuration. The following code samples illustrate this.</p>
 
-<p>A sample <code class="highlighter-rouge">.php</code> class implementing <code class="highlighter-rouge">\Magento\Checkout\Model\ConfigProviderInterface</code>:</p>
+<p>A sample <code class="language-plaintext highlighter-rouge">.php</code> class implementing <code class="language-plaintext highlighter-rouge">\Magento\Checkout\Model\ConfigProviderInterface</code>:</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="k">class</span> <span class="nc">MyCustomPaymentConfigProvider</span> <span class="k">implements</span> <span class="nx">\Magento\Checkout\Model\ConfigProviderInterface</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="kd">class</span> <span class="nc">MyCustomPaymentConfigProvider</span> <span class="k">implements</span> <span class="err">\</span><span class="nc">Magento\Checkout\Model\ConfigProviderInterface</span>
 <span class="p">{</span>
-<span class="o">...</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getConfig</span><span class="p">()</span>
+<span class="mf">...</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">getConfig</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="k">return</span> <span class="p">[</span>
-            <span class="c1">// 'key' =&gt; 'value' pairs of configuration
-</span>        <span class="p">];</span>
+            <span class="c1">// 'key' =&gt; 'value' pairs of configuration</span>
+        <span class="p">];</span>
     <span class="p">}</span>
-<span class="o">...</span>
+<span class="mf">...</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>A sample DI configuration file of a custom module <code class="highlighter-rouge">&lt;your_module_dir&gt;/etc/frontend/di.xml</code>:</p>
+<p>A sample DI configuration file of a custom module <code class="language-plaintext highlighter-rouge">&lt;your_module_dir&gt;/etc/frontend/di.xml</code>:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>...
 <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Checkout\Model\CompositeConfigProvider"</span><span class="nt">&gt;</span>
@@ -1709,24 +1710,24 @@ This configuration is stored in the <code class="highlighter-rouge">window.check
 
 <h2 id="register">Step 2: Create the .js component that registers the renderer</h2>
 
-<p>In your custom module directory create the <code class="highlighter-rouge">.js</code> UI component that registers the payment method renderer in the renderers list. It must be located under the <code class="highlighter-rouge">&lt;your_module_dir&gt;/view/frontend/web/js/view/</code> directory. For example in the Magento modules, the payment methods renderers are stored in the <code class="highlighter-rouge">&lt;Magento_module_dir&gt;/view/frontend/web/js/view/payment/</code> directory.</p>
+<p>In your custom module directory create the <code class="language-plaintext highlighter-rouge">.js</code> UI component that registers the payment method renderer in the renderers list. It must be located under the <code class="language-plaintext highlighter-rouge">&lt;your_module_dir&gt;/view/frontend/web/js/view/</code> directory. For example in the Magento modules, the payment methods renderers are stored in the <code class="language-plaintext highlighter-rouge">&lt;Magento_module_dir&gt;/view/frontend/web/js/view/payment/</code> directory.</p>
 
 <p>The file content must be similar to the following:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nx">define</span><span class="p">(</span>
     <span class="p">[</span>
-        <span class="s1">'uiComponent'</span><span class="p">,</span>
-        <span class="s1">'Magento_Checkout/js/model/payment/renderer-list'</span>
+        <span class="dl">'</span><span class="s1">uiComponent</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">Magento_Checkout/js/model/payment/renderer-list</span><span class="dl">'</span>
     <span class="p">],</span>
     <span class="kd">function</span> <span class="p">(</span>
         <span class="nx">Component</span><span class="p">,</span>
         <span class="nx">rendererList</span>
     <span class="p">)</span> <span class="p">{</span>
-        <span class="s1">'use strict'</span><span class="p">;</span>
+        <span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
         <span class="nx">rendererList</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span>
             <span class="p">{</span>
-                <span class="na">type</span><span class="p">:</span> <span class="s1">'%payment_method_code%'</span><span class="p">,</span>
-                <span class="na">component</span><span class="p">:</span> <span class="s1">'%js_renderer_component%'</span>
+                <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">%payment_method_code%</span><span class="dl">'</span><span class="p">,</span>
+                <span class="na">component</span><span class="p">:</span> <span class="dl">'</span><span class="s1">%js_renderer_component%</span><span class="dl">'</span>
             <span class="p">},</span>
             <span class="c1">// other payment method renderers if required</span>
         <span class="p">);</span>
@@ -1741,13 +1742,13 @@ This configuration is stored in the <code class="highlighter-rouge">window.check
 
 <h2 id="template">Step 3: Create the template for the payment method component</h2>
 
-<p>In your custom module directory create a new <code class="highlighter-rouge">&lt;your_module_dir&gt;/view/frontend/web/template/&lt;your_template&gt;.html</code> file. The template can use <a href="http://knockoutjs.com/">Knockout JS</a> syntax. You can find a sample <code class="highlighter-rouge">.html</code> template in any module implementing payment methods, for example the Magento_Authorizenet module.</p>
+<p>In your custom module directory create a new <code class="language-plaintext highlighter-rouge">&lt;your_module_dir&gt;/view/frontend/web/template/&lt;your_template&gt;.html</code> file. The template can use <a href="http://knockoutjs.com/">Knockout JS</a> syntax. You can find a sample <code class="language-plaintext highlighter-rouge">.html</code> template in any module implementing payment methods, for example the Magento_Authorizenet module.</p>
 
-<p>The template for rendering the Authorize.Net payment method in checkout is <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Authorizenet/view/frontend/web/template/payment/authorizenet-directpost.html"><code class="highlighter-rouge">&lt;Magento_Authorizenet_module_dir&gt;/view/frontend/web/template/payment/authorizenet-directpost.html</code></a>.</p>
+<p>The template for rendering the Authorize.Net payment method in checkout is <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Authorizenet/view/frontend/web/template/payment/authorizenet-directpost.html"><code class="language-plaintext highlighter-rouge">&lt;Magento_Authorizenet_module_dir&gt;/view/frontend/web/template/payment/authorizenet-directpost.html</code></a>.</p>
 
 <h2 id="layout">Step 4: Declare the payment method in layout</h2>
 
-<p>In your custom module directory, create a new <code class="highlighter-rouge">&lt;your_module_dir&gt;/view/frontend/layout/checkout_index_index.xml</code> file. In this file, add the following:</p>
+<p>In your custom module directory, create a new <code class="language-plaintext highlighter-rouge">&lt;your_module_dir&gt;/view/frontend/layout/checkout_index_index.xml</code> file. In this file, add the following:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">layout=</span><span class="s">"1column"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;body&gt;</span>
@@ -1819,7 +1820,7 @@ This configuration is stored in the <code class="highlighter-rouge">window.check
 <span class="nt">&lt;/page&gt;</span>
 </code></pre></div></div>
 
-<p>For an illustration of <code class="highlighter-rouge">checkout_index_index.xml</code> where a new payment method is declared, view <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Authorizenet/view/frontend/layout/checkout_index_index.xml">app/code/Magento/Authorizenet/view/frontend/layout/checkout_index_index.xml</a></p>
+<p>For an illustration of <code class="language-plaintext highlighter-rouge">checkout_index_index.xml</code> where a new payment method is declared, view <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Authorizenet/view/frontend/layout/checkout_index_index.xml">app/code/Magento/Authorizenet/view/frontend/layout/checkout_index_index.xml</a></p>
 
 
       <div class="horisontal-nav">

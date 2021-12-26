@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Inventory management architecture | Magento 2 Developer Documentation (copy)</title>
+	<title>Inventory management architecture | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/inventory/architecture.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/inventory/architecture.html">Magento 2.0</a></li>
 		
@@ -1688,7 +1689,7 @@
   <li>Replace a module without breaking the system or other extensions relying on these contracts</li>
 </ul>
 
-<p>In Magento 2, a set of interfaces in a module’s <code class="highlighter-rouge">/Api</code> directory typically define the service contracts, including the APIs and their implementations. A module interface expresses the elements (entity interfaces and services to manipulate them) that the module requires. These elements defined in the interface represent a gateway for communication between modules. The implementation contains the working business logic that corresponds to the elements declared in the interface.</p>
+<p>In Magento 2, a set of interfaces in a module’s <code class="language-plaintext highlighter-rouge">/Api</code> directory typically define the service contracts, including the APIs and their implementations. A module interface expresses the elements (entity interfaces and services to manipulate them) that the module requires. These elements defined in the interface represent a gateway for communication between modules. The implementation contains the working business logic that corresponds to the elements declared in the interface.</p>
 
 <p>By placing service contracts (APIs), implementations, and UI code in the same module, Magento combines different architectural layers of the system in the scope of one component. Unfortunately, this means that a developer who wants to tweak a module’s UI would be changing the same module as another developer who would like to substitute the  implementation for predefined business logic. Even modules that the developer expects to be used in headless Magento installations (those that don’t use the Magento Admin at all) must contain UI code.</p>
 
@@ -1707,14 +1708,14 @@
 
 <p>The Admin and frontend UIs can be separated, because it’s possible to have two different technology stacks. The Admin UI uses UI components, while the frontend UI can use the <a href="https://magento-research.github.io/pwa-studio/">PWA</a> studio stack, consisting of technology such as webpack, React, Redux, and GraphQL.</p>
 
-<p>Now, instead of creating one module that covers a specialized business domain, we create up to four modules, each one responsible for a dedicated layer of the system to provide high granularity for customizations. For example, in the standard Magento architecture, the <code class="highlighter-rouge">InventorySales</code> module would have contained all the APIs, business logic, and UI definitions. Now, these responsibilities are defined in the <code class="highlighter-rouge">InventorySales</code>,  <code class="highlighter-rouge">InventorySalesApi</code>, <code class="highlighter-rouge">InventorySalesAdminUI</code>, and <code class="highlighter-rouge">InventorySalesFrontendUI</code> modules.</p>
+<p>Now, instead of creating one module that covers a specialized business domain, we create up to four modules, each one responsible for a dedicated layer of the system to provide high granularity for customizations. For example, in the standard Magento architecture, the <code class="language-plaintext highlighter-rouge">InventorySales</code> module would have contained all the APIs, business logic, and UI definitions. Now, these responsibilities are defined in the <code class="language-plaintext highlighter-rouge">InventorySales</code>,  <code class="language-plaintext highlighter-rouge">InventorySalesApi</code>, <code class="language-plaintext highlighter-rouge">InventorySalesAdminUI</code>, and <code class="language-plaintext highlighter-rouge">InventorySalesFrontendUI</code> modules.</p>
 
 <p>This approach implies additional code limitations in the modules:</p>
 
 <ul>
-  <li>All modules should depend on the API module. Implementations can be swapped in <code class="highlighter-rouge">di.xml</code> files.</li>
-  <li>API modules should contain web API tests. These tests cover API endpoints agnostically to the implementation details. Example: <code class="highlighter-rouge">InventoryApi\Tests\Api\*</code></li>
-  <li>Only UI modules should contain MFTF tests, because these tests cover the interaction between the user and the UI. Example: <code class="highlighter-rouge">InventoryCatalogAdminUi\Test\Mftf\*</code>.</li>
+  <li>All modules should depend on the API module. Implementations can be swapped in <code class="language-plaintext highlighter-rouge">di.xml</code> files.</li>
+  <li>API modules should contain web API tests. These tests cover API endpoints agnostically to the implementation details. Example: <code class="language-plaintext highlighter-rouge">InventoryApi\Tests\Api\*</code></li>
+  <li>Only UI modules should contain MFTF tests, because these tests cover the interaction between the user and the UI. Example: <code class="language-plaintext highlighter-rouge">InventoryCatalogAdminUi\Test\Mftf\*</code>.</li>
 </ul>
 
 <h2 id="module-dependencies">Module dependencies</h2>

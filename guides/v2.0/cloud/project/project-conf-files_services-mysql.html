@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Set up MySQL service | Magento 2 Developer Documentation (copy)</title>
+	<title>Set up MySQL service | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/project/project-conf-files_services-mysql.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/project/project-conf-files_services-mysql.html">Magento 2.0</a></li>
 		
@@ -3543,7 +3544,7 @@
 	<h1 class="page-heading">Set up MySQL service</h1>
 </section>
 
-			<p>The <code class="highlighter-rouge">mysql</code> service provides data storage. It’s based on <a href="https://mariadb.com/products/subscription-plans" target="_blank">MariaDB</a>, supporting the <a href="https://www.percona.com/software/mysql-database/percona-server/xtradb" target="_blank">XtraDB</a> storage
+			<p>The <code class="language-plaintext highlighter-rouge">mysql</code> service provides data storage. It’s based on <a href="https://mariadb.com/products/subscription-plans" target="_blank">MariaDB</a>, supporting the <a href="https://www.percona.com/software/mysql-database/percona-server/xtradb" target="_blank">XtraDB</a> storage
 engine (equivalent to MySQL with InnoDB).</p>
 
 <p>We support MariaDB version 10.0, which includes reimplemented features from MySQL 5.6 and 5.7.</p>
@@ -3551,34 +3552,34 @@ engine (equivalent to MySQL with InnoDB).</p>
 <p>To access the MariaDB database directly, <a href="/devdocs/guides/v2.0/cloud/env/environments-start.html#env-start-tunn">open an SSH tunnel</a> and use the
 following command:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql -h database.internal -u user
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql -h database.internal -u user
 </code></pre></div></div>
 
 <h2 id="cloud-appyaml-mysqlusers">Set up multiple database users</h2>
 
-<p>You can optionally set up multiple databases as well as multiple users with different permissions. By default, there is one endpoint named <code class="highlighter-rouge">mysql</code> that has administrator access to all defined databases.</p>
+<p>You can optionally set up multiple databases as well as multiple users with different permissions. By default, there is one endpoint named <code class="language-plaintext highlighter-rouge">mysql</code> that has administrator access to all defined databases.</p>
 
 <p>To set up multiple databases and users, you must specify multiple endpoints. An <em>endpoint</em> is a user who has privileges you specify.</p>
 
-<p class="bs-callout bs-callout-warning">You can’t use multiple <em>databases</em> with Magento Commerce at this time. You can, however, create multiple endpoints to restrict access to the <code class="highlighter-rouge">main</code> database.</p>
+<p class="bs-callout bs-callout-warning">You can’t use multiple <em>databases</em> with Magento Commerce at this time. You can, however, create multiple endpoints to restrict access to the <code class="language-plaintext highlighter-rouge">main</code> database.</p>
 
-<p>To specify user access, use the <code class="highlighter-rouge">endpoints</code> nested array. Each endpoint can have access to one or more schemas (databases), and can have different levels of permission on each.</p>
+<p>To specify user access, use the <code class="language-plaintext highlighter-rouge">endpoints</code> nested array. Each endpoint can have access to one or more schemas (databases), and can have different levels of permission on each.</p>
 
 <p>The valid permission levels are:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">ro</code>: Only SELECT queries are allowed.</li>
-  <li><code class="highlighter-rouge">rw</code>: SELECT queries as well as INSERT/UPDATE/DELETE queries are allowed.</li>
-  <li><code class="highlighter-rouge">admin</code>: All queries are allowed, including DDL queries (CREATE TABLE, DROP TABLE, and so on).</li>
+  <li><code class="language-plaintext highlighter-rouge">ro</code>: Only SELECT queries are allowed.</li>
+  <li><code class="language-plaintext highlighter-rouge">rw</code>: SELECT queries as well as INSERT/UPDATE/DELETE queries are allowed.</li>
+  <li><code class="language-plaintext highlighter-rouge">admin</code>: All queries are allowed, including DDL queries (CREATE TABLE, DROP TABLE, and so on).</li>
 </ul>
 
-<p>If no endpoints are defined, a single endpoint named <code class="highlighter-rouge">mysql</code> has <code class="highlighter-rouge">admin</code> access to the <code class="highlighter-rouge">main</code> database.</p>
+<p>If no endpoints are defined, a single endpoint named <code class="language-plaintext highlighter-rouge">mysql</code> has <code class="language-plaintext highlighter-rouge">admin</code> access to the <code class="language-plaintext highlighter-rouge">main</code> database.</p>
 
 <p>Example:</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">mysqldb</span><span class="pi">:</span>
     <span class="na">type</span><span class="pi">:</span> <span class="s">mysql:10.0</span>
-    <span class="na">disk</span><span class="pi">:</span> <span class="s">2048</span>
+    <span class="na">disk</span><span class="pi">:</span> <span class="m">2048</span>
     <span class="na">configuration</span><span class="pi">:</span>
         <span class="na">schemas</span><span class="pi">:</span>
             <span class="pi">-</span> <span class="s">main</span>
@@ -3594,39 +3595,39 @@ following command:</p>
                 <span class="na">privileges</span><span class="pi">:</span>
                     <span class="na">main</span><span class="pi">:</span> <span class="s">rw</span></code></pre></figure>
 
-<p>In the preceding example, the endpoint (that is, user) <code class="highlighter-rouge">reporter</code> has <code class="highlighter-rouge">ro</code> privileges to the <code class="highlighter-rouge">main</code> database and endpoint <code class="highlighter-rouge">importer</code> has <code class="highlighter-rouge">rw</code> access to the <code class="highlighter-rouge">main</code> database. This means that:</p>
+<p>In the preceding example, the endpoint (that is, user) <code class="language-plaintext highlighter-rouge">reporter</code> has <code class="language-plaintext highlighter-rouge">ro</code> privileges to the <code class="language-plaintext highlighter-rouge">main</code> database and endpoint <code class="language-plaintext highlighter-rouge">importer</code> has <code class="language-plaintext highlighter-rouge">rw</code> access to the <code class="language-plaintext highlighter-rouge">main</code> database. This means that:</p>
 
 <ul>
-  <li>The <code class="highlighter-rouge">admin</code> user has full control of the database.</li>
-  <li>The <code class="highlighter-rouge">repoter</code> user has SELECT privileges only.</li>
-  <li>The <code class="highlighter-rouge">importer</code> user has SELECT, INSERT, UPDATE, and DELETE privileges.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">admin</code> user has full control of the database.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">repoter</code> user has SELECT privileges only.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">importer</code> user has SELECT, INSERT, UPDATE, and DELETE privileges.</li>
 </ul>
 
 <h2 id="settings">Add MySQL in services.yaml and .magento.app.yaml</h2>
 
-<p>To enable MySQL, add the following code with your installed version and allocated disk space in MB to <code class="highlighter-rouge">.magento/services.yaml</code>.</p>
+<p>To enable MySQL, add the following code with your installed version and allocated disk space in MB to <code class="language-plaintext highlighter-rouge">.magento/services.yaml</code>.</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">mysql</span><span class="pi">:</span>
     <span class="na">type</span><span class="pi">:</span> <span class="s">mysql:10.0</span>
     <span class="na">disk</span><span class="pi">:</span> <span class="s">2048</span></code></pre></figure>
 
-<p>To configure the relationships for the environment variable, set a relationship in your <code class="highlighter-rouge">.magento.app.yaml</code> in the Git branch. For example:</p>
+<p>To configure the relationships for the environment variable, set a relationship in your <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> in the Git branch. For example:</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">relationships</span><span class="pi">:</span>
     <span class="na">database</span><span class="pi">:</span> <span class="s2">"</span><span class="s">mydatabase:mysql"</span></code></pre></figure>
 
-<p>Merge and deploy the code to set the configurations for Redis. For information on how these changes affect your environments, see <a href="/devdocs/guides/v2.0/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a>.</p>
+<p>Merge and deploy the code to set the configurations for Redis. For information on how these changes affect your environments, see <a href="/devdocs/guides/v2.0/cloud/project/project-conf-files_services.html"><code class="language-plaintext highlighter-rouge">services.yaml</code></a>.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <ul>
-    <li>If you configure one MySQL user, you cannot use the <a href="http://dev.mysql.com/doc/refman/5.6/en/show-grants.html" target="_blank"><code class="highlighter-rouge">DEFINER</code></a> access control mechanism for stored procedures and views.</li>
-    <li>MySQL errors such as <code class="highlighter-rouge">PDO Exception 'MySQL server has gone away</code> are usually the result of exhausting your existing disk space. Be sure you have sufficient space allocated to the service in <a href="/devdocs/guides/v2.0/cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-disk"><code class="highlighter-rouge">.magento/services.yaml</code></a>.</li>
+    <li>If you configure one MySQL user, you cannot use the <a href="http://dev.mysql.com/doc/refman/5.6/en/show-grants.html" target="_blank"><code class="language-plaintext highlighter-rouge">DEFINER</code></a> access control mechanism for stored procedures and views.</li>
+    <li>MySQL errors such as <code class="language-plaintext highlighter-rouge">PDO Exception 'MySQL server has gone away</code> are usually the result of exhausting your existing disk space. Be sure you have sufficient space allocated to the service in <a href="/devdocs/guides/v2.0/cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-disk"><code class="language-plaintext highlighter-rouge">.magento/services.yaml</code></a>.</li>
   </ul>
 </div>
 
 <h2 id="cloud-es-config-mg">Verify environment-related relationships</h2>
 
-<p>We use the Magento Commerce Cloud environment variable <a href="/devdocs/guides/v2.0/cloud/env/environment-vars_cloud.html"><code class="highlighter-rouge">$MAGENTO_CLOUD_RELATIONSHIPS</code></a>, a JSON object, to retrieve environment-related relationships.</p>
+<p>We use the Magento Commerce Cloud environment variable <a href="/devdocs/guides/v2.0/cloud/env/environment-vars_cloud.html"><code class="language-plaintext highlighter-rouge">$MAGENTO_CLOUD_RELATIONSHIPS</code></a>, a JSON object, to retrieve environment-related relationships.</p>
 
 <p>To verify this information used for configurations and settings:</p>
 
@@ -3635,7 +3636,7 @@ following command:</p>
   <li>
     <p>Enter the following command to pretty-print connection information for MySQL:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -3662,9 +3663,9 @@ following command:</p>
 <h4 id="related-topics">Related topics</h4>
 
 <ul>
-  <li><a href="/devdocs/guides/v2.0/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a></li>
-  <li><a href="/devdocs/guides/v2.0/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a></li>
-  <li><a href="/devdocs/guides/v2.0/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">routes.yaml</code></a></li>
+  <li><a href="/devdocs/guides/v2.0/cloud/project/project-conf-files_services.html"><code class="language-plaintext highlighter-rouge">services.yaml</code></a></li>
+  <li><a href="/devdocs/guides/v2.0/cloud/project/project-conf-files_magento-app.html"><code class="language-plaintext highlighter-rouge">.magento.app.yaml</code></a></li>
+  <li><a href="/devdocs/guides/v2.0/cloud/project/project-conf-files_routes.html"><code class="language-plaintext highlighter-rouge">routes.yaml</code></a></li>
 </ul>
 
 			

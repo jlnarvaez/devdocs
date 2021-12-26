@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Optional software | Magento 2 Developer Documentation (copy)</title>
+	<title>Optional software | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/install-gde/prereq/optional.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/install-gde/prereq/optional.html">Magento 2.0</a></li>
 		
@@ -4568,7 +4569,7 @@
 
 <p>Enter the following command to install NTP:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>apt-get install ntp
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>apt-get install ntp
 </code></pre></div></div>
 
 <p>Continue with <a href="#install-optional-ntp-servers">Use NTP pool servers</a></p>
@@ -4581,22 +4582,22 @@
   <li>
     <p>Enter the following command to find the appropriate NTP software:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>yum search ntp
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>yum search ntp
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Select a package to install. For example, <code class="highlighter-rouge">ntp.x86_64</code>.</p>
+    <p>Select a package to install. For example, <code class="language-plaintext highlighter-rouge">ntp.x86_64</code>.</p>
   </li>
   <li>
     <p>Install the package.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>yum -y install ntp.x86_64
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>yum -y install ntp.x86_64
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Enter the following command so that NTP starts when the server starts.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>chkconfig ntpd on
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>chkconfig ntpd on
 </code></pre></div>    </div>
   </li>
   <li>
@@ -4610,12 +4611,12 @@
 
 <ol>
   <li>
-    <p>Open <code class="highlighter-rouge">/etc/ntp.conf</code> in a text editor.</p>
+    <p>Open <code class="language-plaintext highlighter-rouge">/etc/ntp.conf</code> in a text editor.</p>
   </li>
   <li>
     <p>Look for lines similar to the following:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>server 0.centos.pool.ntp.org
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>server 0.centos.pool.ntp.org
 server 1.centos.pool.ntp.org
 server 2.centos.pool.ntp.org
 </code></pre></div>    </div>
@@ -4626,42 +4627,42 @@ server 2.centos.pool.ntp.org
   <li>
     <p>An example of using three United States-based NTP servers follows:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>server 0.us.pool.ntp.org
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>server 0.us.pool.ntp.org
 server 1.us.pool.ntp.org
 server 2.us.pool.ntp.org
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Save your changes to <code class="highlighter-rouge">/etc/ntp.conf</code> and exit the text editor.</p>
+    <p>Save your changes to <code class="language-plaintext highlighter-rouge">/etc/ntp.conf</code> and exit the text editor.</p>
   </li>
   <li>
     <p>Restart the service.</p>
 
-    <p>Ubuntu: <code class="highlighter-rouge">service ntp restart</code></p>
+    <p>Ubuntu: <code class="language-plaintext highlighter-rouge">service ntp restart</code></p>
 
-    <p>CentOS: <code class="highlighter-rouge">service ntpd restart</code></p>
+    <p>CentOS: <code class="language-plaintext highlighter-rouge">service ntpd restart</code></p>
   </li>
   <li>
-    <p>Enter <code class="highlighter-rouge">date</code> to check the server’s date.</p>
+    <p>Enter <code class="language-plaintext highlighter-rouge">date</code> to check the server’s date.</p>
 
     <p>If the date is incorrect, make sure the NTP client port (typically, UDP 123) is open in your firewall.</p>
 
-    <p>Try the <code class="highlighter-rouge">ntpdate _[pool server hostname]_</code> command. If it fails, search for the error it returns.</p>
+    <p>Try the <code class="language-plaintext highlighter-rouge">ntpdate _[pool server hostname]_</code> command. If it fails, search for the error it returns.</p>
 
     <p>If all else fails, try rebooting the server.</p>
   </li>
 </ol>
 
 <h2 id="install-optional-phpinfo">Create phpinfo.php</h2>
-<p><a href="http://php.net/manual/en/function.phpinfo.php" target="_blank"><code class="highlighter-rouge">phpinfo.php</code></a> displays a large amount of information about   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
+<p><a href="http://php.net/manual/en/function.phpinfo.php" target="_blank"><code class="language-plaintext highlighter-rouge">phpinfo.php</code></a> displays a large amount of information about   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
  and its extensions.</p>
 
-<p class="bs-callout bs-callout-info">Use <code class="highlighter-rouge">phpinfo.php</code> in a development system <em>only</em>. It can be a security issue in production.</p>
+<p class="bs-callout bs-callout-info">Use <code class="language-plaintext highlighter-rouge">phpinfo.php</code> in a development system <em>only</em>. It can be a security issue in production.</p>
 
 <p>Add the following code anywhere in your web server’s docroot:
 	&lt;?php</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>// Show all information, defaults to INFO_ALL
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>// Show all information, defaults to INFO_ALL
 phpinfo();
 </code></pre></div></div>
 
@@ -4670,7 +4671,7 @@ phpinfo();
 <p>To view the results, enter the following   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>
  in your browser’s location or address field:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>http://&lt;web server host or IP&gt;/phpinfo.php
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>http://&lt;web server host or IP&gt;/phpinfo.php
 </code></pre></div></div>
 
 <p>If a 404 (Not Found) error displays, check the following:</p>
@@ -4687,9 +4688,9 @@ phpinfo();
 </ul>
 
 <h2 id="install-optional-phpmyadmin">Install phpmyadmin</h2>
-<p><code class="highlighter-rouge">phpmyadmin</code> is an easy-to-use, free database administration utility. You can use it to check and manipulate the contents of your database. You must log in to <code class="highlighter-rouge">phpmyadmin</code> as the MySQL database administrative user.</p>
+<p><code class="language-plaintext highlighter-rouge">phpmyadmin</code> is an easy-to-use, free database administration utility. You can use it to check and manipulate the contents of your database. You must log in to <code class="language-plaintext highlighter-rouge">phpmyadmin</code> as the MySQL database administrative user.</p>
 
-<p>For more information about <code class="highlighter-rouge">phpmyadmin</code>, see the <a href="http://www.phpmyadmin.net/home_page/index.php" target="_blank">phpmyadmin home page</a>.</p>
+<p>For more information about <code class="language-plaintext highlighter-rouge">phpmyadmin</code>, see the <a href="http://www.phpmyadmin.net/home_page/index.php" target="_blank">phpmyadmin home page</a>.</p>
 
 <p>For more detailed information about installation, see the <a href="http://docs.phpmyadmin.net/en/latest/setup.html#quick-install" target="_blank">phpmyadmin installation documentation</a>.</p>
 
@@ -4703,7 +4704,7 @@ phpinfo();
   <li>
     <p>Use the following command:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>apt-get install phpmyadmin
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>apt-get install phpmyadmin
 </code></pre></div>    </div>
   </li>
   <li>
@@ -4712,11 +4713,11 @@ phpinfo();
   <li>
     <p>To use phpmyadmin, enter the following URL in your browser’s address or location field:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>http://&lt;web server host or IP&gt;/phpmyadmin
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>http://&lt;web server host or IP&gt;/phpmyadmin
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>When prompted, log in using your MySQL database <code class="highlighter-rouge">root</code> or administrative user’s username and password.</p>
+    <p>When prompted, log in using your MySQL database <code class="language-plaintext highlighter-rouge">root</code> or administrative user’s username and password.</p>
   </li>
 </ol>
 
@@ -4728,15 +4729,15 @@ phpinfo();
   <li>
     <p>Download the epel RPM for the version of CentOS you’re using. A sample follows.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd /tmp
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd /tmp
 wget http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
 rpm -ivh epel-release-6-8.noarch.rpm
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Install <code class="highlighter-rouge">phpmyadmin</code> as follows:</p>
+    <p>Install <code class="language-plaintext highlighter-rouge">phpmyadmin</code> as follows:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>yum -y install phpmyadmin
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>yum -y install phpmyadmin
 </code></pre></div>    </div>
   </li>
   <li>
@@ -4744,48 +4745,48 @@ rpm -ivh epel-release-6-8.noarch.rpm
 
     <p>Open the following file for editing:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vim /etc/httpd/conf.d/phpMyAdmin.conf
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vim /etc/httpd/conf.d/phpMyAdmin.conf
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Replace the following IP address with your IP address</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Require ip localhost
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Require ip localhost
 </code></pre></div>    </div>
 
     <p>For example,</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Require ip 192.51.100.101
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Require ip 192.51.100.101
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Replace the following IP with your IP address:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Allow from localhost
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Allow from localhost
 </code></pre></div>    </div>
 
     <p>For example,</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Allow from 192.51.100.101
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Allow from 192.51.100.101
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Save your changes to <code class="highlighter-rouge">/etc/httpd/conf.d/phpMyAdmin.conf</code> and exit the text editor.</p>
+    <p>Save your changes to <code class="language-plaintext highlighter-rouge">/etc/httpd/conf.d/phpMyAdmin.conf</code> and exit the text editor.</p>
   </li>
   <li>
     <p>Restart Apache.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>service httpd Restart
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>service httpd Restart
 </code></pre></div>    </div>
   </li>
   <li>
     <p>To use phpmyadmin, enter the following command in your browser’s address or location field:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>http://&lt;web server host or IP&gt;/phpmyadmin
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>http://&lt;web server host or IP&gt;/phpmyadmin
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>When prompted, log in using your MySQL database <code class="highlighter-rouge">root</code> or administrative user’s username and password.</p>
+    <p>When prompted, log in using your MySQL database <code class="language-plaintext highlighter-rouge">root</code> or administrative user’s username and password.</p>
   </li>
 </ol>
 

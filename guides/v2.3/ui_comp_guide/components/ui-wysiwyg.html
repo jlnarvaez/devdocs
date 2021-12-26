@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>WYSIWYG component | Magento 2 Developer Documentation (copy)</title>
+	<title>WYSIWYG component | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/ui_comp_guide/components/ui-wysiwyg.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/ui_comp_guide/components/ui-wysiwyg.html">Magento 2.0</a></li>
 		
@@ -3294,16 +3295,16 @@
 
 			<p>The WYSIWYG component is an   <span term-uuid="edb42858-1ff8-41f9-80a6-edf0d86d7e10" class="glossary-term" data-toggle="popover">adapter</span>
  for <a href="https://www.tinymce.com/" target="_blank">TinyMCE v4</a> that integrates an editor instance with the <a href="/devdocs/guides/v2.3/ui_comp_guide/components/ui-form.html">form component</a>. It expects a complete   <span term-uuid="f0dcf847-ce21-4b88-8b45-83e1cbf08100" class="glossary-term" data-toggle="popover">widget</span>
- declaration in the <code class="highlighter-rouge">content</code> option, which should contain both   <span term-uuid="8f407f13-4350-449b-9dc5-217dcf01bc42" class="glossary-term" data-toggle="popover">markup</span>
+ declaration in the <code class="language-plaintext highlighter-rouge">content</code> option, which should contain both   <span term-uuid="8f407f13-4350-449b-9dc5-217dcf01bc42" class="glossary-term" data-toggle="popover">markup</span>
  and the script responsible for creating the editor’s instance.</p>
 
-<p>Magento supports all selector, plugin, and toolbar/menu configuration options supported by the TinyMCE v4 <code class="highlighter-rouge">tinymce.init()</code> method. However, Magento doesn’t validate TinyMCE configuration options or flag invalid values before adding the editor to a page.</p>
+<p>Magento supports all selector, plugin, and toolbar/menu configuration options supported by the TinyMCE v4 <code class="language-plaintext highlighter-rouge">tinymce.init()</code> method. However, Magento doesn’t validate TinyMCE configuration options or flag invalid values before adding the editor to a page.</p>
 
 <p class="bs-callout bs-callout-info">Refer to <a href="https://www.tinymce.com/docs/" target="_blank">TinyMCE’s documentation</a> for more information.</p>
 
 <h2 id="configuration-options">Configuration options</h2>
 
-<p>Extends all <code class="highlighter-rouge">abstract</code> configuration.</p>
+<p>Extends all <code class="language-plaintext highlighter-rouge">abstract</code> configuration.</p>
 
 <p>Wysiwyg-specific options:</p>
 
@@ -3365,15 +3366,15 @@
 <p>The following are available events for use in the WYSIWYG component adapter for TinyMCE4:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">tinymceBeforeSetContent</code> - fires before the contents are inserted into the editor</li>
-  <li><code class="highlighter-rouge">tinymcePaste</code> - fires when a paste is done within the editor</li>
-  <li><code class="highlighter-rouge">tinymceSaveContent</code> - fires when the contents in the editor are saved</li>
-  <li><code class="highlighter-rouge">tinymceSaveContent</code> (<code class="highlighter-rouge">PostProcess</code>) - fires when the contents in the editor are being serialized</li>
-  <li><code class="highlighter-rouge">tinymceUndo</code> - fires when the contents have been reverted to a previous state</li>
-  <li><code class="highlighter-rouge">tinymceFocus</code> - fires when the editor is focused</li>
-  <li><code class="highlighter-rouge">tinymceBlur</code> - fires when the editor is blurred</li>
-  <li><code class="highlighter-rouge">tinymceChange</code> - fires when undo level is added to the editor</li>
-  <li><code class="highlighter-rouge">wysiwygEditorInitialized</code> - fires when the WYSIWYG editor is initialized</li>
+  <li><code class="language-plaintext highlighter-rouge">tinymceBeforeSetContent</code> - fires before the contents are inserted into the editor</li>
+  <li><code class="language-plaintext highlighter-rouge">tinymcePaste</code> - fires when a paste is done within the editor</li>
+  <li><code class="language-plaintext highlighter-rouge">tinymceSaveContent</code> - fires when the contents in the editor are saved</li>
+  <li><code class="language-plaintext highlighter-rouge">tinymceSaveContent</code> (<code class="language-plaintext highlighter-rouge">PostProcess</code>) - fires when the contents in the editor are being serialized</li>
+  <li><code class="language-plaintext highlighter-rouge">tinymceUndo</code> - fires when the contents have been reverted to a previous state</li>
+  <li><code class="language-plaintext highlighter-rouge">tinymceFocus</code> - fires when the editor is focused</li>
+  <li><code class="language-plaintext highlighter-rouge">tinymceBlur</code> - fires when the editor is blurred</li>
+  <li><code class="language-plaintext highlighter-rouge">tinymceChange</code> - fires when undo level is added to the editor</li>
+  <li><code class="language-plaintext highlighter-rouge">wysiwygEditorInitialized</code> - fires when the WYSIWYG editor is initialized</li>
 </ul>
 
 <h2 id="add-a-default-editor">Add a default editor</h2>
@@ -3388,9 +3389,9 @@
 
 <p>The following example shows how to integrate the default Magento WYSIWYG editor as a UI component inside a custom form.</p>
 
-<p>First, create a layout file in the <code class="highlighter-rouge">ModuleName\view\adminhtml\layout</code> directory and register the UI component:</p>
+<p>First, create a layout file in the <code class="language-plaintext highlighter-rouge">ModuleName\view\adminhtml\layout</code> directory and register the UI component:</p>
 
-<h4 class="no_toc" id="modulenameviewadminhtmllayoutwysiwyg_on_custom_pagexml"><code class="highlighter-rouge">ModuleName\view\adminhtml\layout\wysiwyg_on_custom_page.xml</code></h4>
+<h4 class="no_toc" id="modulenameviewadminhtmllayoutwysiwyg_on_custom_pagexml"><code class="language-plaintext highlighter-rouge">ModuleName\view\adminhtml\layout\wysiwyg_on_custom_page.xml</code></h4>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
 <span class="c">&lt;!--
@@ -3408,9 +3409,9 @@
 <span class="nt">&lt;/page&gt;</span>
 </code></pre></div></div>
 
-<p>Next, create a custom form in the <code class="highlighter-rouge">ModuleName\view\adminhtml\ui_component</code> directory:</p>
+<p>Next, create a custom form in the <code class="language-plaintext highlighter-rouge">ModuleName\view\adminhtml\ui_component</code> directory:</p>
 
-<h4 class="no_toc" id="modulenameviewadminhtmlui_componentwysiwyg_custom_formxml"><code class="highlighter-rouge">ModuleName\view\adminhtml\ui_component\wysiwyg_custom_form.xml</code></h4>
+<h4 class="no_toc" id="modulenameviewadminhtmlui_componentwysiwyg_custom_formxml"><code class="language-plaintext highlighter-rouge">ModuleName\view\adminhtml\ui_component\wysiwyg_custom_form.xml</code></h4>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
 <span class="c">&lt;!--
@@ -3448,30 +3449,30 @@
 
 <p class="bs-callout bs-callout-info">Refer to <a href="/devdocs/guides/v2.3/ui_comp_guide/concepts/ui_comp_modifier_concept.html">About PHP modifiers in UI components</a> for more information.</p>
 
-<p>To use PHP modifiers, your data provider must inherit from <code class="highlighter-rouge">ModifierPoolDataProvider</code>. The following class adds support for modifier pools, which are required when using modifiers. Inheriting from this class allows you to use modifiers.</p>
+<p>To use PHP modifiers, your data provider must inherit from <code class="language-plaintext highlighter-rouge">ModifierPoolDataProvider</code>. The following class adds support for modifier pools, which are required when using modifiers. Inheriting from this class allows you to use modifiers.</p>
 
-<h4 class="no_toc" id="magentouidataprovidermodifierpooldataprovider"><code class="highlighter-rouge">Magento\Ui\DataProvider\ModifierPoolDataProvider</code></h4>
+<h4 class="no_toc" id="magentouidataprovidermodifierpooldataprovider"><code class="language-plaintext highlighter-rouge">Magento\Ui\DataProvider\ModifierPoolDataProvider</code></h4>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="cp">&lt;?php</span>
-<span class="sd">/**
+<span class="cd">/**
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */</span>
-<span class="k">namespace</span> <span class="nx">Magento\Ui\DataProvider</span><span class="p">;</span>
+<span class="kn">namespace</span> <span class="nn">Magento\Ui\DataProvider</span><span class="p">;</span>
 
-<span class="k">use</span> <span class="nx">Magento\Framework\App\ObjectManager</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Ui\DataProvider\Modifier\ModifierInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Ui\DataProvider\Modifier\Pool</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Ui\DataProvider\Modifier\PoolInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Framework\App\ObjectManager</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Ui\DataProvider\Modifier\ModifierInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Ui\DataProvider\Modifier\Pool</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Ui\DataProvider\Modifier\PoolInterface</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">ModifierPoolDataProvider</span> <span class="k">extends</span> <span class="nx">AbstractDataProvider</span>
+<span class="kd">class</span> <span class="nc">ModifierPoolDataProvider</span> <span class="kd">extends</span> <span class="nc">AbstractDataProvider</span>
 <span class="p">{</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * @var PoolInterface
      */</span>
     <span class="k">private</span> <span class="nv">$pool</span><span class="p">;</span>
 
-    <span class="sd">/**
+    <span class="cd">/**
      * @param string $name
      * @param string $primaryFieldName
      * @param string $requestFieldName
@@ -3479,99 +3480,99 @@
      * @param array $meta
      * @param array $data
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span>
         <span class="nv">$name</span><span class="p">,</span>
         <span class="nv">$primaryFieldName</span><span class="p">,</span>
         <span class="nv">$requestFieldName</span><span class="p">,</span>
-        <span class="k">array</span> <span class="nv">$meta</span> <span class="o">=</span> <span class="p">[],</span>
-        <span class="k">array</span> <span class="nv">$data</span> <span class="o">=</span> <span class="p">[],</span>
-        <span class="nx">PoolInterface</span> <span class="nv">$pool</span> <span class="o">=</span> <span class="kc">null</span>
+        <span class="kt">array</span> <span class="nv">$meta</span> <span class="o">=</span> <span class="p">[],</span>
+        <span class="kt">array</span> <span class="nv">$data</span> <span class="o">=</span> <span class="p">[],</span>
+        <span class="kt">PoolInterface</span> <span class="nv">$pool</span> <span class="o">=</span> <span class="kc">null</span>
     <span class="p">)</span> <span class="p">{</span>
-        <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">(</span><span class="nv">$name</span><span class="p">,</span> <span class="nv">$primaryFieldName</span><span class="p">,</span> <span class="nv">$requestFieldName</span><span class="p">,</span> <span class="nv">$meta</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">pool</span> <span class="o">=</span> <span class="nv">$pool</span> <span class="o">?:</span> <span class="nx">ObjectManager</span><span class="o">::</span><span class="na">getInstance</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="nx">PoolInterface</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
+        <span class="k">parent</span><span class="o">::</span><span class="nf">__construct</span><span class="p">(</span><span class="nv">$name</span><span class="p">,</span> <span class="nv">$primaryFieldName</span><span class="p">,</span> <span class="nv">$requestFieldName</span><span class="p">,</span> <span class="nv">$meta</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">pool</span> <span class="o">=</span> <span class="nv">$pool</span> <span class="o">?:</span> <span class="nc">ObjectManager</span><span class="o">::</span><span class="nf">getInstance</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">get</span><span class="p">(</span><span class="nc">PoolInterface</span><span class="o">::</span><span class="n">class</span><span class="p">);</span>
     <span class="p">}</span>
 
-    <span class="sd">/**
+    <span class="cd">/**
      * {@inheritdoc}
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getData</span><span class="p">()</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">getData</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getConfigData</span><span class="p">();</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">getConfigData</span><span class="p">();</span>
 
-        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">pool</span><span class="o">-&gt;</span><span class="na">getModifiersInstances</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$modifier</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span> <span class="o">=</span> <span class="nv">$modifier</span><span class="o">-&gt;</span><span class="na">modifyData</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span><span class="p">);</span>
+        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">pool</span><span class="o">-&gt;</span><span class="nf">getModifiersInstances</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$modifier</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">=</span> <span class="nv">$modifier</span><span class="o">-&gt;</span><span class="nf">modifyData</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">);</span>
         <span class="p">}</span>
 
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span><span class="p">;</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="sd">/**
+    <span class="cd">/**
      * {@inheritdoc}
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getMeta</span><span class="p">()</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">getMeta</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">meta</span> <span class="o">=</span> <span class="k">parent</span><span class="o">::</span><span class="na">getMeta</span><span class="p">();</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">meta</span> <span class="o">=</span> <span class="k">parent</span><span class="o">::</span><span class="nf">getMeta</span><span class="p">();</span>
 
-        <span class="sd">/** @var ModifierInterface $modifier */</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">pool</span><span class="o">-&gt;</span><span class="na">getModifiers</span><span class="p">();</span>
+        <span class="cd">/** @var ModifierInterface $modifier */</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">pool</span><span class="o">-&gt;</span><span class="nf">getModifiers</span><span class="p">();</span>
 
-        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">pool</span><span class="o">-&gt;</span><span class="na">getModifiersInstances</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$modifier</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">meta</span> <span class="o">=</span> <span class="nv">$modifier</span><span class="o">-&gt;</span><span class="na">modifyMeta</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">meta</span><span class="p">);</span>
+        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">pool</span><span class="o">-&gt;</span><span class="nf">getModifiersInstances</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$modifier</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">meta</span> <span class="o">=</span> <span class="nv">$modifier</span><span class="o">-&gt;</span><span class="nf">modifyMeta</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">meta</span><span class="p">);</span>
         <span class="p">}</span>
 
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">meta</span><span class="p">;</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">meta</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>Your form must then use a data provider that inherits from <code class="highlighter-rouge">ModifierPoolDataProvider</code>. For example:</p>
+<p>Your form must then use a data provider that inherits from <code class="language-plaintext highlighter-rouge">ModifierPoolDataProvider</code>. For example:</p>
 
-<h4 class="no_toc" id="testmodulemodeldataprovider"><code class="highlighter-rouge">Test\Module\Model\DataProvider</code></h4>
+<h4 class="no_toc" id="testmodulemodeldataprovider"><code class="language-plaintext highlighter-rouge">Test\Module\Model\DataProvider</code></h4>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="cp">&lt;?php</span>
-<span class="sd">/**
+<span class="cd">/**
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */</span>
-<span class="k">namespace</span> <span class="nx">Test\Module\Model</span><span class="p">;</span>
+<span class="kn">namespace</span> <span class="nn">Test\Module\Model</span><span class="p">;</span>
 
-<span class="sd">/**
+<span class="cd">/**
  * Class DataProvider
  */</span>
-<span class="k">class</span> <span class="nc">DataProvider</span> <span class="k">extends</span> <span class="nx">\Magento\Ui\DataProvider\ModifierPoolDataProvider</span>
+<span class="kd">class</span> <span class="nc">DataProvider</span> <span class="k">extends</span> <span class="err">\</span><span class="nc">Magento\Ui\DataProvider\ModifierPoolDataProvider</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span>
         <span class="nv">$name</span><span class="p">,</span>
         <span class="nv">$primaryFieldName</span><span class="p">,</span>
         <span class="nv">$requestFieldName</span><span class="p">,</span>
-        <span class="nx">Test\Module\Model\ResourceModel\WysiwygContent\CollectionFactory</span> <span class="nv">$collectionFactory</span><span class="p">,</span>
+        <span class="kt">Test</span><span class="err">\</span><span class="nc">Module\Model\ResourceModel\WysiwygContent\CollectionFactory</span> <span class="nv">$collectionFactory</span><span class="p">,</span>
         <span class="k">array</span> <span class="nv">$meta</span> <span class="o">=</span> <span class="p">[],</span>
         <span class="k">array</span> <span class="nv">$data</span> <span class="o">=</span> <span class="p">[],</span>
-        <span class="nx">\Magento\Ui\DataProvider\Modifier\PoolInterface</span> <span class="nv">$pool</span>
+        <span class="err">\</span><span class="nc">Magento\Ui\DataProvider\Modifier\PoolInterface</span> <span class="nv">$pool</span>
     <span class="p">)</span> <span class="p">{</span>
-        <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">(</span><span class="nv">$name</span><span class="p">,</span> <span class="nv">$primaryFieldName</span><span class="p">,</span> <span class="nv">$requestFieldName</span><span class="p">,</span> <span class="nv">$meta</span><span class="p">,</span> <span class="nv">$data</span><span class="p">,</span> <span class="nv">$pool</span><span class="p">);</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">collection</span> <span class="o">=</span> <span class="nv">$collectionFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">();</span>
+        <span class="k">parent</span><span class="o">::</span><span class="nf">__construct</span><span class="p">(</span><span class="nv">$name</span><span class="p">,</span> <span class="nv">$primaryFieldName</span><span class="p">,</span> <span class="nv">$requestFieldName</span><span class="p">,</span> <span class="nv">$meta</span><span class="p">,</span> <span class="nv">$data</span><span class="p">,</span> <span class="nv">$pool</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">collection</span> <span class="o">=</span> <span class="nv">$collectionFactory</span><span class="o">-&gt;</span><span class="nf">create</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>After you configure the modifier pool in your data provider, you must create the modifier. This is the code that changes the default configuration defined in <code class="highlighter-rouge">Magento\Cms\Model\Wysiwyg\Config.php</code>. Modifier values override the default configuration, so they allow you to change default behavior.</p>
+<p>After you configure the modifier pool in your data provider, you must create the modifier. This is the code that changes the default configuration defined in <code class="language-plaintext highlighter-rouge">Magento\Cms\Model\Wysiwyg\Config.php</code>. Modifier values override the default configuration, so they allow you to change default behavior.</p>
 
 <p>The following example shows how to change the default Magento WYSIWYG editor toolbar and plugins configuration:</p>
 
-<h4 class="no_toc" id="testmoduleuidataprovidercustommodifierwysiwygconfigmodifier"><code class="highlighter-rouge">Test\Module\Ui\DataProvider\Custom\Modifier\WysiwygConfigModifier</code></h4>
+<h4 class="no_toc" id="testmoduleuidataprovidercustommodifierwysiwygconfigmodifier"><code class="language-plaintext highlighter-rouge">Test\Module\Ui\DataProvider\Custom\Modifier\WysiwygConfigModifier</code></h4>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="cp">&lt;?php</span>
-<span class="sd">/**
+<span class="cd">/**
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */</span>
-<span class="k">namespace</span> <span class="nx">Test\Module\Ui\DataProvider\Custom\Modifier</span><span class="p">;</span>
+<span class="kn">namespace</span> <span class="nn">Test\Module\Ui\DataProvider\Custom\Modifier</span><span class="p">;</span>
 
-<span class="k">use</span> <span class="nx">Magento\Ui\DataProvider\Modifier\ModifierInterface</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Ui\DataProvider\Modifier\WysiwygModifierInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Ui\DataProvider\Modifier\ModifierInterface</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Ui\DataProvider\Modifier\WysiwygModifierInterface</span><span class="p">;</span>
 
-<span class="sd">/**
+<span class="cd">/**
  * Class WysiwygConfigModifier
  *
  * @api
@@ -3579,24 +3580,24 @@
  * @SuppressWarnings(PHPMD.NumberOfChildren)
  * @since 101.0.0
  */</span>
-<span class="k">class</span> <span class="nc">WysiwygConfigModifier</span> <span class="k">implements</span> <span class="nx">ModifierInterface</span>
+<span class="kd">class</span> <span class="nc">WysiwygConfigModifier</span> <span class="kd">implements</span> <span class="nc">ModifierInterface</span>
 <span class="p">{</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * @param array $data
      * @return array
      * @since 100.1.0
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">modifyData</span><span class="p">(</span><span class="k">array</span> <span class="nv">$data</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">modifyData</span><span class="p">(</span><span class="kt">array</span> <span class="nv">$data</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="sd">/**
+    <span class="cd">/**
      * @param array $meta
      * @return array
      * @since 100.1.0
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">modifyMeta</span><span class="p">(</span><span class="k">array</span> <span class="nv">$meta</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">modifyMeta</span><span class="p">(</span><span class="kt">array</span> <span class="nv">$meta</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="nv">$meta</span><span class="p">[</span><span class="s1">'content'</span><span class="p">][</span><span class="s1">'children'</span><span class="p">][</span><span class="s1">'custom_wysiwyg_on_custom_page'</span><span class="p">][</span><span class="s1">'arguments'</span><span class="p">][</span><span class="s1">'data'</span><span class="p">][</span><span class="s1">'config'</span><span class="p">][</span><span class="s1">'wysiwygConfigData'</span><span class="p">][</span><span class="s1">'tinymce4'</span><span class="p">][</span><span class="s1">'toolbar'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'bold italic underline | alignleft aligncenter alignright | code'</span><span class="p">;</span>
         <span class="nv">$meta</span><span class="p">[</span><span class="s1">'content'</span><span class="p">][</span><span class="s1">'children'</span><span class="p">][</span><span class="s1">'custom_wysiwyg_on_custom_page'</span><span class="p">][</span><span class="s1">'arguments'</span><span class="p">][</span><span class="s1">'data'</span><span class="p">][</span><span class="s1">'config'</span><span class="p">][</span><span class="s1">'wysiwygConfigData'</span><span class="p">][</span><span class="s1">'tinymce4'</span><span class="p">][</span><span class="s1">'plugins'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'advlist autolink lists link image charmap media table contextmenu paste code help table'</span><span class="p">;</span>
@@ -3605,13 +3606,13 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>The last thing you need to do is configure the data provider’s pool and connect the pool to your modifier. This is done through dependency injection, so you need to add a <code class="highlighter-rouge">di.xml</code> file to your project at <code class="highlighter-rouge">ModuleName\etc\adminhtml\di.xml</code>.</p>
+<p>The last thing you need to do is configure the data provider’s pool and connect the pool to your modifier. This is done through dependency injection, so you need to add a <code class="language-plaintext highlighter-rouge">di.xml</code> file to your project at <code class="language-plaintext highlighter-rouge">ModuleName\etc\adminhtml\di.xml</code>.</p>
 
 <p>Here’s an example that connects the data provider and modifier created in the previous steps:</p>
 
-<h4 class="no_toc" id="testmoduleetcadminhtmldixml"><code class="highlighter-rouge">Test\Module\etc\adminhtml\di.xml</code></h4>
+<h4 class="no_toc" id="testmoduleetcadminhtmldixml"><code class="language-plaintext highlighter-rouge">Test\Module\etc\adminhtml\di.xml</code></h4>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="cp">&lt;?</span><span class="nx">xml</span> <span class="nx">version</span><span class="o">=</span><span class="s2">"1.0"</span><span class="cp">?&gt;</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="cp">&lt;?</span><span class="n">xml</span> <span class="n">version</span><span class="o">=</span><span class="s2">"1.0"</span><span class="cp">?&gt;</span>
 <span class="c">&lt;!--
 /**
  * Copyright © Magento, Inc. All rights reserved.

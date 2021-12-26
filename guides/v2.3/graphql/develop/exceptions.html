@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Exception handling | Magento 2 Developer Documentation (copy)</title>
+	<title>Exception handling | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/graphql/develop/exceptions.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/graphql/develop/exceptions.html">Magento 2.0</a></li>
 		
@@ -2183,11 +2184,11 @@
 	<h1 class="page-heading">Exception handling</h1>
 </section>
 
-			<p>The WebApi module has an implementation to “mask” <code class="highlighter-rouge">LocalizedExceptions</code> so they aren’t exposed to the client. GraphQL accomplishes this by restricting verbose output to only those exceptions implementing <code class="highlighter-rouge">\GraphQL\Error\ClientAware</code>, and only if the system is in developer mode. In these circumstances, Magento returns a full stack trace. Otherwise, Magento writes these exceptions to the system <code class="highlighter-rouge">exception.log</code> file while returning an “internal server error” to the client.</p>
+			<p>The WebApi module has an implementation to “mask” <code class="language-plaintext highlighter-rouge">LocalizedExceptions</code> so they aren’t exposed to the client. GraphQL accomplishes this by restricting verbose output to only those exceptions implementing <code class="language-plaintext highlighter-rouge">\GraphQL\Error\ClientAware</code>, and only if the system is in developer mode. In these circumstances, Magento returns a full stack trace. Otherwise, Magento writes these exceptions to the system <code class="language-plaintext highlighter-rouge">exception.log</code> file while returning an “internal server error” to the client.</p>
 
-<p>You should implement the <code class="highlighter-rouge">\GraphQL\Error\ClientAware</code> interface to handle errors in your module that are directly related to a GraphQL field having an anticipated exception. If you don’t, the client will not receive useful messages. However, you should ensure that you don’t implement the <code class="highlighter-rouge">ClientAware</code> interface for too many exceptions. Doing this risks exposing sensitive data to the client.</p>
+<p>You should implement the <code class="language-plaintext highlighter-rouge">\GraphQL\Error\ClientAware</code> interface to handle errors in your module that are directly related to a GraphQL field having an anticipated exception. If you don’t, the client will not receive useful messages. However, you should ensure that you don’t implement the <code class="language-plaintext highlighter-rouge">ClientAware</code> interface for too many exceptions. Doing this risks exposing sensitive data to the client.</p>
 
-<p>Magento provides the following exception classes in <code class="highlighter-rouge">Magento\Framework\GraphQl\Exception</code>. The exception category string</p>
+<p>Magento provides the following exception classes in <code class="language-plaintext highlighter-rouge">Magento\Framework\GraphQl\Exception</code>. The exception category string</p>
 
 <table>
   <thead>
@@ -2199,18 +2200,18 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">GraphQlAuthorizationException</code></td>
-      <td><code class="highlighter-rouge">graphql-authorization</code></td>
+      <td><code class="language-plaintext highlighter-rouge">GraphQlAuthorizationException</code></td>
+      <td><code class="language-plaintext highlighter-rouge">graphql-authorization</code></td>
       <td>Thrown when an authorization error occurs</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">GraphQlInputException</code></td>
-      <td><code class="highlighter-rouge">graphql-input</code></td>
+      <td><code class="language-plaintext highlighter-rouge">GraphQlInputException</code></td>
+      <td><code class="language-plaintext highlighter-rouge">graphql-input</code></td>
       <td>Thrown when a query contains invalid input</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">GraphQlNoSuchEntityException</code></td>
-      <td><code class="highlighter-rouge">graphql-no-such-entity</code></td>
+      <td><code class="language-plaintext highlighter-rouge">GraphQlNoSuchEntityException</code></td>
+      <td><code class="language-plaintext highlighter-rouge">graphql-no-such-entity</code></td>
       <td>Thrown when an expected resource doesn’t exist</td>
     </tr>
   </tbody>

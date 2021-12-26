@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Package a component | Magento 2 Developer Documentation (copy)</title>
+	<title>Package a component | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/extension-dev-guide/package/package_module.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/extension-dev-guide/package/package_module.html">Magento 2.0</a></li>
 		
@@ -3260,8 +3261,8 @@
 <p>To package a component, you must:</p>
 
 <ul>
-  <li>Create a Magento Composer file (<code class="highlighter-rouge">composer.json</code>).</li>
-  <li>Register the component using <code class="highlighter-rouge">registration.php</code></li>
+  <li>Create a Magento Composer file (<code class="language-plaintext highlighter-rouge">composer.json</code>).</li>
+  <li>Register the component using <code class="language-plaintext highlighter-rouge">registration.php</code></li>
   <li>
     <p>Package and publish your component.</p>
 
@@ -3271,10 +3272,10 @@
 
 <h2 id="composer">Create a Magento Composer file</h2>
 
-<p>The Magento <code class="highlighter-rouge">composer.json</code> file defines the name, requirements, version, and other basic information about the component. This file must be placed in the root directory of the   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
+<p>The Magento <code class="language-plaintext highlighter-rouge">composer.json</code> file defines the name, requirements, version, and other basic information about the component. This file must be placed in the root directory of the   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
 .</p>
 
-<p>The <code class="highlighter-rouge">composer.json</code> uses <a href="https://getcomposer.org/doc/04-schema.md">Composer’s generic schema</a>, with the following restrictions:</p>
+<p>The <code class="language-plaintext highlighter-rouge">composer.json</code> uses <a href="https://getcomposer.org/doc/04-schema.md">Composer’s generic schema</a>, with the following restrictions:</p>
 
 <table>
   <thead>
@@ -3285,21 +3286,21 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">name</code></td>
-      <td>A fully-qualified component name, in the format <code class="highlighter-rouge">&lt;vendor-name&gt;/&lt;component-name&gt;</code>. All letters must be in lowercase. Use dashes in the <code class="highlighter-rouge">&lt;component-name&gt;</code> to separate words.</td>
+      <td><code class="language-plaintext highlighter-rouge">name</code></td>
+      <td>A fully-qualified component name, in the format <code class="language-plaintext highlighter-rouge">&lt;vendor-name&gt;/&lt;component-name&gt;</code>. All letters must be in lowercase. Use dashes in the <code class="language-plaintext highlighter-rouge">&lt;component-name&gt;</code> to separate words.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">type</code></td>
-      <td>For modules, this value must be set to <code class="highlighter-rouge">magento2-module</code>. Other possible types are <code class="highlighter-rouge">metapackage</code>, <code class="highlighter-rouge">magento2-theme</code>, and <code class="highlighter-rouge">magento2-language</code>.</td>
+      <td><code class="language-plaintext highlighter-rouge">type</code></td>
+      <td>For modules, this value must be set to <code class="language-plaintext highlighter-rouge">magento2-module</code>. Other possible types are <code class="language-plaintext highlighter-rouge">metapackage</code>, <code class="language-plaintext highlighter-rouge">magento2-theme</code>, and <code class="language-plaintext highlighter-rouge">magento2-language</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">autoload</code></td>
+      <td><code class="language-plaintext highlighter-rouge">autoload</code></td>
       <td>Specify necessary information to be loaded, such as <a href="/devdocs/guides/v2.2/extension-dev-guide/build/component-registration.html">registration.php</a>. For more information, see <a href="https://getcomposer.org/doc/01-basic-usage.md#autoloading">Autoloading</a> from Composer.</td>
     </tr>
   </tbody>
 </table>
 
-<p>The following table discusses the component types that Magento Marketplace supports. The composer <code class="highlighter-rouge">type</code> column in the following table specifies the value of the <code class="highlighter-rouge">type</code> field you must add to <code class="highlighter-rouge">composer.json</code> for that type of component.</p>
+<p>The following table discusses the component types that Magento Marketplace supports. The composer <code class="language-plaintext highlighter-rouge">type</code> column in the following table specifies the value of the <code class="language-plaintext highlighter-rouge">type</code> field you must add to <code class="language-plaintext highlighter-rouge">composer.json</code> for that type of component.</p>
 
 <table style="table-layout:auto;">
   <thead>
@@ -3313,7 +3314,7 @@
     <tr>
       <td>Metapackage</td>
       <td>metapackage</td>
-      <td>Technically, a Composer package type, not a Magento component type. A metapackage consists of only a <code class="highlighter-rouge">composer.json</code> file that specifies a list of components and their dependencies. For example, both Magento Open Source and Magento Commerce are metapackages.</td>
+      <td>Technically, a Composer package type, not a Magento component type. A metapackage consists of only a <code class="language-plaintext highlighter-rouge">composer.json</code> file that specifies a list of components and their dependencies. For example, both Magento Open Source and Magento Commerce are metapackages.</td>
     </tr>
     <tr>
       <td>Module</td>
@@ -3337,48 +3338,48 @@
 
 <p>Metapackages allow you to group an   <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span>
  that consists of multiple packages into a cohesive unit. This works exactly as described in standard <a href="https://getcomposer.org/doc/04-schema.md#type">composer.json documentation</a>. If you have an extension that uses more than one package you must use a   <span term-uuid="7490850a-0654-4ce1-83ff-d88c1d7d07fa" class="glossary-term" data-toggle="popover">metapackage</span>
- as the <em>root package</em>. Otherwise you should not use metapackage. A metapackage that you submit to Magento Marketplace should be a .zip file containing only the metapackage <code class="highlighter-rouge">composer.json</code> file.</p>
+ as the <em>root package</em>. Otherwise you should not use metapackage. A metapackage that you submit to Magento Marketplace should be a .zip file containing only the metapackage <code class="language-plaintext highlighter-rouge">composer.json</code> file.</p>
 
 <p class="bs-callout bs-callout-info">We recommend metapackages refer to specific component versions. Do not use wildcards to represent version ranges.</p>
 
 <h4 id="metapackage-example">Metapackage example</h4>
 
-<p>The following example is a <code class="highlighter-rouge">composer.json</code> for a metapackage:</p>
+<p>The following example is a <code class="language-plaintext highlighter-rouge">composer.json</code> for a metapackage:</p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"magento/product-community-edition"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A sample metapackage"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0.0"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"metapackage"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"php"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~5.5.0|~5.6.0|~7.0.0"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"zendframework/zend-stdlib"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"zendframework/zend-code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"zendframework/zend-server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"zendframework/zend-soap"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"zendframework/zend-uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"zendframework/zend-validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"zendframework/zend-crypt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"zendframework/zend-console"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"zendframework/zend-modulemanager"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"zendframework/zend-mvc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"zendframework/zend-text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"zendframework/zend-i18n"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"ext-ctype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"ext-gd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"ext-spl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"ext-dom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"ext-simplexml"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"ext-mcrypt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"ext-hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"ext-curl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"ext-iconv"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"ext-intl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"ext-xsl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"ext-mbstring"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"ext-openssl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"magento/product-community-edition"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A sample metapackage"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"metapackage"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"php"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~5.5.0|~5.6.0|~7.0.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"zendframework/zend-stdlib"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"zendframework/zend-code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"zendframework/zend-server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"zendframework/zend-soap"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"zendframework/zend-uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"zendframework/zend-validator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"zendframework/zend-crypt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"zendframework/zend-console"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"zendframework/zend-modulemanager"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"zendframework/zend-mvc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"zendframework/zend-text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"zendframework/zend-i18n"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~2.4.6"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ext-ctype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ext-gd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ext-spl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ext-dom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ext-simplexml"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ext-mcrypt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ext-hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ext-curl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ext-iconv"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ext-intl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ext-xsl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ext-mbstring"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ext-openssl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="w">
         </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"license"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="nl">"license"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="s2">"OSL-3.0"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"AFL-3.0"</span><span class="w">
     </span><span class="p">]</span><span class="w">
@@ -3386,25 +3387,25 @@
 
 <h3 id="sample-composerjson-file">Sample composer.json file</h3>
 
-<p>The following example is a <code class="highlighter-rouge">composer.json</code> file for a module:</p>
+<p>The following example is a <code class="language-plaintext highlighter-rouge">composer.json</code> file for a module:</p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"magento/sample-module-newpage"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A Magento 2 module that creates a new page"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"magento2-module"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"license"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"magento/sample-module-newpage"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A Magento 2 module that creates a new page"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"magento2-module"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"license"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="s2">"OSL-3.0"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"AFL-3.0"</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"php"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~5.5.0|~5.6.0|~7.0.0"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"magento/framework"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~100.0.4"</span><span class="w">
+  </span><span class="nl">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"php"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~5.5.0|~5.6.0|~7.0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"magento/framework"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~100.0.4"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"autoload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"registration.php"</span><span class="w"> </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"psr-4"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"Magento</span><span class="se">\\</span><span class="s2">SampleNewPage</span><span class="se">\\</span><span class="s2">"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+  </span><span class="nl">"autoload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"registration.php"</span><span class="w"> </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"psr-4"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"Magento\\SampleNewPage\\"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
@@ -3413,7 +3414,7 @@
 
 <p>Create a package of your extension by performing a zip operation on the directory with your extension (excluding unnecessary directories). For example:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>zip -r vendor-name_package-name-1.0.0.zip package-path/ -x 'package-path/.git/*'
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>zip -r vendor-name_package-name-1.0.0.zip package-path/ -x 'package-path/.git/*'
 </code></pre></div></div>
 
 <p>Use alphanumeric characters for the package filename with dashes to separate words. Do not use whitespaces.</p>
@@ -3430,7 +3431,7 @@
 <p>Prerequisite: Git must be set up on your machine.</p>
 
 <ol>
-  <li>Navigate to your component directory, with the <code class="highlighter-rouge">composer.json</code> file in the root, and make it a new Git repository. See the <a href="https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/">GitHub documentation</a> for details.</li>
+  <li>Navigate to your component directory, with the <code class="language-plaintext highlighter-rouge">composer.json</code> file in the root, and make it a new Git repository. See the <a href="https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/">GitHub documentation</a> for details.</li>
   <li>When you have committed and pushed your component to your GitHub repository, you can either:
     <ul>
       <li>Use <a href="https://getcomposer.org/doc/05-repositories.md#vcs">Composer to refer to it directly</a>, or</li>
@@ -3438,7 +3439,7 @@
     </ul>
     <ol>
       <li>Register an account at <a href="https://packagist.org/">packagist.org</a>.</li>
-      <li>Click the Submit Package button and paste your GitHub repository link. Packagist automatically gathers the information from the component’s <code class="highlighter-rouge">composer.json</code> file and link it to the GitHub repository, allowing you to reference the package as <code class="highlighter-rouge">vendor/module</code> without any additional repository information, because this is required solely using GitHub.</li>
+      <li>Click the Submit Package button and paste your GitHub repository link. Packagist automatically gathers the information from the component’s <code class="language-plaintext highlighter-rouge">composer.json</code> file and link it to the GitHub repository, allowing you to reference the package as <code class="language-plaintext highlighter-rouge">vendor/module</code> without any additional repository information, because this is required solely using GitHub.</li>
     </ol>
   </li>
 </ol>
@@ -3451,19 +3452,19 @@
   <li>Set up your own Composer packaging repository using a system such as <a href="https://getcomposer.org/doc/articles/handling-private-packages-with-satis.md">Satis</a> or <a href="https://packagist.com/">Private Packagist</a>.</li>
   <li>Create the package in a way similar to the described above.</li>
   <li>Submit/register the package on your own repository. For example, it can be hosted as a reference to a code repository or submitted as a zip-archive.</li>
-  <li>To use the private packaging repository in a project, add the following to your <code class="highlighter-rouge">composer.json</code>file:</li>
+  <li>To use the private packaging repository in a project, add the following to your <code class="language-plaintext highlighter-rouge">composer.json</code>file:</li>
 </ol>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-    </span><span class="s2">"repositories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="nl">"repositories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"composer"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">repository</span><span class="w"> </span><span class="err">url</span><span class="w"> </span><span class="err">here</span><span class="p">]</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"composer"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">repository</span><span class="w"> </span><span class="err">url</span><span class="w"> </span><span class="err">here</span><span class="p">]</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 
-<p>All packages on the private repository can now be referenced within the <code class="highlighter-rouge">require</code> field.</p>
+<p>All packages on the private repository can now be referenced within the <code class="language-plaintext highlighter-rouge">require</code> field.</p>
 
 <p>Refer to the <a href="https://packagist.com/features/private-vcs-packages">official documentation</a> for more details on how to configure your project to use Private Packagist.
 <!-- ##Submitting your module to Marketplace --></p>

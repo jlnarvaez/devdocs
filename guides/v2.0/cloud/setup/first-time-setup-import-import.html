@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Import Magento EE into Magento Commerce (Cloud) | Magento 2 Developer Documentation (copy)</title>
+	<title>Import Magento EE into Magento Commerce (Cloud) | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/setup/first-time-setup-import-import.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/setup/first-time-setup-import-import.html">Magento 2.0</a></li>
 		
@@ -3545,9 +3546,9 @@
 
 			<p>QUESTION: Do we really want to support a full overwrite?</p>
 
-<p>The following instructions walk-through importing your Magento Commerce code into your current project code. When importing, you are force pushing your existing code in a Git repository over the Magento Commerce Cloud’s Git <code class="highlighter-rouge">master</code> branch.</p>
+<p>The following instructions walk-through importing your Magento Commerce code into your current project code. When importing, you are force pushing your existing code in a Git repository over the Magento Commerce Cloud’s Git <code class="language-plaintext highlighter-rouge">master</code> branch.</p>
 
-<p class="bs-callout bs-callout-warning">Warning: When you force push code from an existing Git branch to your Magento Commerce Cloud project, you overwrite the project code in <code class="highlighter-rouge">master</code>. Any data, websites, stores, and so on will be lost.
+<p class="bs-callout bs-callout-warning">Warning: When you force push code from an existing Git branch to your Magento Commerce Cloud project, you overwrite the project code in <code class="language-plaintext highlighter-rouge">master</code>. Any data, websites, stores, and so on will be lost.
 Before you continue, make sure there is nothing in your Magento Commerce Cloud project you want to keep.</p>
 
 <h2 id="required-information">Required information</h2>
@@ -3566,27 +3567,27 @@ Before you continue, make sure there is nothing in your Magento Commerce Cloud p
 <ol>
   <li>Log in to your local Magento Commerce Cloud development machine as, or switch to, the <a href="/devdocs/guides/v2.0/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
   <li>
-    <p>Make a copy of <code class="highlighter-rouge">composer.json</code> <em>in a non-tracked directory</em> so it doesn’t get overwritten.</p>
+    <p>Make a copy of <code class="language-plaintext highlighter-rouge">composer.json</code> <em>in a non-tracked directory</em> so it doesn’t get overwritten.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>   cp composer.json ../composer.json.cloud
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>   cp composer.json ../composer.json.cloud
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Rename your Cloud Git remote from <code class="highlighter-rouge">origin</code> to <code class="highlighter-rouge">cloud-project</code> to make it clear which repository is which:</p>
+    <p>Rename your Cloud Git remote from <code class="language-plaintext highlighter-rouge">origin</code> to <code class="language-plaintext highlighter-rouge">cloud-project</code> to make it clear which repository is which:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git remote rename origin cloud-project
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git remote rename origin cloud-project
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Add a remote upstream for your existing Magento Commerce installation:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git remote add prev-project &lt;git url&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git remote add prev-project &lt;git url&gt;
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Confirm what you’ve done so far.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git remote -v
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git remote -v
 </code></pre></div>    </div>
 
     <p>Results are displayed as follows.</p>
@@ -3599,15 +3600,15 @@ prev-project    git@github.com:mygitusername/myeereponame.git (fetch)
 prev-project    git@github.com:mygitusername/myeereponame.git (push)</pre>
   </li>
   <li>
-    <p>Make sure you’re on the Cloud project <code class="highlighter-rouge">master</code> branch.</p>
+    <p>Make sure you’re on the Cloud project <code class="language-plaintext highlighter-rouge">master</code> branch.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:checkout master
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:checkout master
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Make sure this <code class="highlighter-rouge">master</code> branch is set up to import code to the Cloud project.</p>
+    <p>Make sure this <code class="language-plaintext highlighter-rouge">master</code> branch is set up to import code to the Cloud project.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git fetch cloud-project
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git fetch cloud-project
 git branch -u cloud-project/master
 </code></pre></div>    </div>
   </li>
@@ -3623,24 +3624,24 @@ git branch -u cloud-project/master
   <li>
     <p>Fetch the Magento Commerce branch.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git fetch prev-project
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git fetch prev-project
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Reset your Cloud <code class="highlighter-rouge">master</code> branch to contain the code and the commit history of your Magento Commerce branch.</p>
+    <p>Reset your Cloud <code class="language-plaintext highlighter-rouge">master</code> branch to contain the code and the commit history of your Magento Commerce branch.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git reset --hard prev-project/&lt;branch name&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git reset --hard prev-project/&lt;branch name&gt;
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Push code from your Magento Commerce project to your Magento Commerce Cloud project, overwriting the previous contents and commit history with that of your project.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git push -f cloud-project master
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git push -f cloud-project master
 </code></pre></div>    </div>
 
     <p>A successful deployment is indicated by the following messages:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Re-deploying environment 43biovskhelhy-master-l5ut8gq.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Re-deploying environment 43biovskhelhy-master-l5ut8gq.
    Environment configuration:
      mymagento (type: php:7.0, size: S, disk: 2048)
      mysql (type: mysql:10.0, size: S, disk: 2048)
@@ -3675,44 +3676,44 @@ Environment routes:
   <li>
     <p>SSH to the Integration environment.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud ssh
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud ssh
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Connect to the database.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql -h &lt;db-host&gt; -P &lt;db-port&gt; -p -u &lt;db-user&gt; &lt;db-name&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql -h &lt;db-host&gt; -P &lt;db-port&gt; -p -u &lt;db-user&gt; &lt;db-name&gt;
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Drop the database. At the <code class="highlighter-rouge">MariaDB [main]&gt;</code> prompt, enter:</p>
+    <p>Drop the database. At the <code class="language-plaintext highlighter-rouge">MariaDB [main]&gt;</code> prompt, enter:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>drop database main;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>drop database main;
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Re-create the database:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>create database main;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>create database main;
 </code></pre></div>    </div>
   </li>
-  <li>At the <code class="highlighter-rouge">MariaDB [main]&gt;</code> prompt, enter <code class="highlighter-rouge">exit</code>.</li>
+  <li>At the <code class="language-plaintext highlighter-rouge">MariaDB [main]&gt;</code> prompt, enter <code class="language-plaintext highlighter-rouge">exit</code>.</li>
   <li>
     <p>At the shell command prompt, enter the following command to re-create the database.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>zcat var/db.sql.tgz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h &lt;db-host&gt; -P &lt;db-port&gt; -p -u &lt;db-user&gt; &lt;db-name&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>zcat var/db.sql.tgz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h &lt;db-host&gt; -P &lt;db-port&gt; -p -u &lt;db-user&gt; &lt;db-name&gt;
 </code></pre></div>    </div>
 
     <p>For example,</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>zcat var/db.sql.tgz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h database.internal -p -u user main
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>zcat var/db.sql.tgz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h database.internal -p -u user main
 </code></pre></div>    </div>
   </li>
 </ol>
 
 <h3 id="baseurl">Update base URLs</h3>
 
-<p>Before you can access Magento from your local Cloud development system, you must change the Base URLs in the Magento database. Base URLs are stored in the <code class="highlighter-rouge">core_config_data</code> table.</p>
+<p>Before you can access Magento from your local Cloud development system, you must change the Base URLs in the Magento database. Base URLs are stored in the <code class="language-plaintext highlighter-rouge">core_config_data</code> table.</p>
 
 <p>The following example shows how to change <em>only</em> the insecure URL but you can use the same procedure to change secure URLs as well.</p>
 
@@ -3722,38 +3723,38 @@ Environment routes:
   <li>
     <p>If you haven’t already done so, SSH to the Cloud integration server.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>    magento-cloud ssh
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>    magento-cloud ssh
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Connect to the database.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql -h &lt;db-host&gt; -P &lt;db-port&gt; -p -u &lt;db-user&gt; &lt;db-name&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql -h &lt;db-host&gt; -P &lt;db-port&gt; -p -u &lt;db-user&gt; &lt;db-name&gt;
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Show the contents of the <code class="highlighter-rouge">core_config_data</code> table.</p>
+    <p>Show the contents of the <code class="language-plaintext highlighter-rouge">core_config_data</code> table.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>SELECT * from core_config_data;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>SELECT * from core_config_data;
 </code></pre></div>    </div>
 
-    <p>Note the <code class="highlighter-rouge">path</code> of <code class="highlighter-rouge">web/unsecure/base_url</code>; this is the value you’ll change.</p>
+    <p>Note the <code class="language-plaintext highlighter-rouge">path</code> of <code class="language-plaintext highlighter-rouge">web/unsecure/base_url</code>; this is the value you’ll change.</p>
   </li>
   <li>
-    <p>Enter the following command to change the value of <code class="highlighter-rouge">path</code> to your integration server’s unsecure base URL:</p>
+    <p>Enter the following command to change the value of <code class="language-plaintext highlighter-rouge">path</code> to your integration server’s unsecure base URL:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>UPDATE core_config_data SET value='&lt;Cloud unsecure base URL&gt;' WHERE path='web/unsecure/base_url';
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>UPDATE core_config_data SET value='&lt;Cloud unsecure base URL&gt;' WHERE path='web/unsecure/base_url';
 </code></pre></div>    </div>
 
-    <p class="bs-callout bs-callout-warning">The base URL <em>must</em> end with a <code class="highlighter-rouge">/</code> character.</p>
+    <p class="bs-callout bs-callout-warning">The base URL <em>must</em> end with a <code class="language-plaintext highlighter-rouge">/</code> character.</p>
   </li>
   <li>
     <p>Confirm the change by entering the following command:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>SELECT * from core_config_data;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>SELECT * from core_config_data;
 </code></pre></div>    </div>
   </li>
-  <li>If the change was successful, enter <code class="highlighter-rouge">exit</code> to exit the <code class="highlighter-rouge">[Maria DB]</code> prompt.</li>
+  <li>If the change was successful, enter <code class="language-plaintext highlighter-rouge">exit</code> to exit the <code class="language-plaintext highlighter-rouge">[Maria DB]</code> prompt.</li>
   <li>Continue with the next section.</li>
 </ol>
 
@@ -3761,7 +3762,7 @@ Environment routes:
 
 <h2 id="encryption-key">Add the Magento encryption key</h2>
 
-<p>The Magento Commerce encryption key is required as an environment variable in <code class="highlighter-rouge">env.php</code> for Integration, Staging, and Production environments. If you deployed Magento when first creating a project across all environments, the encryption key should have been saved to <code class="highlighter-rouge">env.php</code>. If you have not deployed previously, you should verify and add the encryption key if needed in every environment. Without this key, the store encounters authentication and authorization errors such as payments and shipping.</p>
+<p>The Magento Commerce encryption key is required as an environment variable in <code class="language-plaintext highlighter-rouge">env.php</code> for Integration, Staging, and Production environments. If you deployed Magento when first creating a project across all environments, the encryption key should have been saved to <code class="language-plaintext highlighter-rouge">env.php</code>. If you have not deployed previously, you should verify and add the encryption key if needed in every environment. Without this key, the store encounters authentication and authorization errors such as payments and shipping.</p>
 
 <p>You copied the key in a <a href="/devdocs/guides/v2.0/cloud/setup/first-time-setup-import-prepare.html#encryption-key">previous step</a>.</p>
 
@@ -3771,12 +3772,12 @@ Environment routes:
   <li>
     <p>If you haven’t done so already, SSH to the Cloud environment.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:ssh
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:ssh
 </code></pre></div>    </div>
   </li>
-  <li>Open <code class="highlighter-rouge">app/etc/env.php</code> in a text editor.</li>
+  <li>Open <code class="language-plaintext highlighter-rouge">app/etc/env.php</code> in a text editor.</li>
   <li>
-    <p>Replace the existing value of <code class="highlighter-rouge">key</code> with your <a href="/devdocs/guides/v2.0/cloud/setup/first-time-setup-import-prepare.html#encryption-key">Magento Commerce key</a>.</p>
+    <p>Replace the existing value of <code class="language-plaintext highlighter-rouge">key</code> with your <a href="/devdocs/guides/v2.0/cloud/setup/first-time-setup-import-prepare.html#encryption-key">Magento Commerce key</a>.</p>
 
     <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="k">return</span> <span class="k">array</span> <span class="p">(</span>
   <span class="s1">'crypt'</span> <span class="o">=&gt;</span>
@@ -3787,9 +3788,9 @@ Environment routes:
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Save your changes to <code class="highlighter-rouge">env.php</code> and exit the text editor.</p>
+    <p>Save your changes to <code class="language-plaintext highlighter-rouge">env.php</code> and exit the text editor.</p>
 
-    <p class="bs-callout bs-callout-info">Make sure to add this key to the <code class="highlighter-rouge">env.php</code> file for all environments: Integration, Staging, and Production.</p>
+    <p class="bs-callout bs-callout-info">Make sure to add this key to the <code class="language-plaintext highlighter-rouge">env.php</code> file for all environments: Integration, Staging, and Production.</p>
   </li>
 </ol>
 
@@ -3801,19 +3802,19 @@ Environment routes:
   <li>
     <p>If you haven’t done so already, SSH to the Cloud environment.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud ssh -p &lt;project ID&gt; -e &lt;environment ID&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud ssh -p &lt;project ID&gt; -e &lt;environment ID&gt;
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Enter the following command to clear existing media files:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>rm -rf pub/media/*
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>rm -rf pub/media/*
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Enter the following command to extract the media files to the <code class="highlighter-rouge">pub/media</code> directory:</p>
+    <p>Enter the following command to extract the media files to the <code class="language-plaintext highlighter-rouge">pub/media</code> directory:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>tar -xzf var/media.tgz pub/media
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>tar -xzf var/media.tgz pub/media
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -3822,13 +3823,13 @@ Environment routes:
 
 <p>On the Cloud environment, enter the following commands in the order shown:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento setup:upgrade
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>bin/magento setup:upgrade
 bin/magento magento setup:static-content:deploy
 bin/magento cache:clean
 </code></pre></div></div>
 
 <p>After the   <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>
- flushes, enter <code class="highlighter-rouge">exit</code> to close the SSH tunnel.</p>
+ flushes, enter <code class="language-plaintext highlighter-rouge">exit</code> to close the SSH tunnel.</p>
 
 <h2 id="verify">Verify the import</h2>
 
@@ -3839,7 +3840,7 @@ bin/magento cache:clean
     <p>On your Cloud environment, enter the following commands to find the information to log in to the   <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>
  and to view the storefront:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:url
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:url
 </code></pre></div>    </div>
   </li>
   <li>Log in to the Magento   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>

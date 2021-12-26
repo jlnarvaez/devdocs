@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento Commerce 2.1.13 Release Notes | Magento 2 Developer Documentation (copy)</title>
+	<title>Magento Commerce 2.1.13 Release Notes | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/release-notes/ReleaseNotes2.1.13EE.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/release-notes/ReleaseNotes2.1.13EE.html">Magento 2.0</a></li>
 		
@@ -2820,17 +2821,17 @@
 
 <!--- MAGETWO-86298 -->
 <ul>
-  <li>The sample  <code class="highlighter-rouge">.htaccess</code> file Options <code class="highlighter-rouge">All -Indexes</code> directive has been replaced with Options <code class="highlighter-rouge">-Indexes</code>. Previously, the <code class="highlighter-rouge">All -Indexes</code> directive caused problems in shared hosting environments. <em>Fix submitted by <a href="https://github.com/dverkade">Danny Verkade</a> in pull request 12959</em>. <a href="https://github.com/magento/magento2/issues/10812">GitHub-10812</a></li>
+  <li>The sample  <code class="language-plaintext highlighter-rouge">.htaccess</code> file Options <code class="language-plaintext highlighter-rouge">All -Indexes</code> directive has been replaced with Options <code class="language-plaintext highlighter-rouge">-Indexes</code>. Previously, the <code class="language-plaintext highlighter-rouge">All -Indexes</code> directive caused problems in shared hosting environments. <em>Fix submitted by <a href="https://github.com/dverkade">Danny Verkade</a> in pull request 12959</em>. <a href="https://github.com/magento/magento2/issues/10812">GitHub-10812</a></li>
 </ul>
 
 <!--- MAGETWO-69036 -->
 <ul>
-  <li>Lazy-loaders have been moved from <code class="highlighter-rouge">getter</code> methods to  constructor injection in classes, and factory parameters are no longer required. (These parameters will be created inside  constructor methods if they weren’t provided.)</li>
+  <li>Lazy-loaders have been moved from <code class="language-plaintext highlighter-rouge">getter</code> methods to  constructor injection in classes, and factory parameters are no longer required. (These parameters will be created inside  constructor methods if they weren’t provided.)</li>
 </ul>
 
 <!--- MAGETWO-58072 -->
 <ul>
-  <li>Magento no longer creates an <code class="highlighter-rouge">/ i18n</code> at system root (<code class="highlighter-rouge">/</code>) in addition to the expected language file when you run <code class="highlighter-rouge">bin/magento i18n:pack</code> to install a language pack. <a href="https://github.com/magento/magento2/issues/6260">GitHub-6260</a></li>
+  <li>Magento no longer creates an <code class="language-plaintext highlighter-rouge">/ i18n</code> at system root (<code class="language-plaintext highlighter-rouge">/</code>) in addition to the expected language file when you run <code class="language-plaintext highlighter-rouge">bin/magento i18n:pack</code> to install a language pack. <a href="https://github.com/magento/magento2/issues/6260">GitHub-6260</a></li>
 </ul>
 
 <h3 id="bundle">Bundle</h3>
@@ -2864,12 +2865,12 @@
 
 <!--- MAGETWO-84688 -->
 <ul>
-  <li>When you set the <code class="highlighter-rouge">category_ids</code> attribute to be visible in the storefront catalog, Magento now displays catalog listings as expected. Previously, Magento threw an exception. <em>Fix submitted by <a href="https://github.com/manuelson">Manu Gonzalez Rodriguez</a> in pull request</em>.</li>
+  <li>When you set the <code class="language-plaintext highlighter-rouge">category_ids</code> attribute to be visible in the storefront catalog, Magento now displays catalog listings as expected. Previously, Magento threw an exception. <em>Fix submitted by <a href="https://github.com/manuelson">Manu Gonzalez Rodriguez</a> in pull request</em>.</li>
 </ul>
 
 <!--- MAGETWO-84432 -->
 <ul>
-  <li>Magento now saves images as expected when you create a new category that contains an image, and then edit and re-save that category.  Previously, it appeared that Magento saved the category as expected, but <code class="highlighter-rouge">exception.log</code> stated that there was a problem saving the images. <em>Fix submitted by <a href="https://github.com/nemesis-back">IvanK</a> in pull request 12368</em>. <a href="https://github.com/magento/magento2/issues/8069">GitHub-8069</a></li>
+  <li>Magento now saves images as expected when you create a new category that contains an image, and then edit and re-save that category.  Previously, it appeared that Magento saved the category as expected, but <code class="language-plaintext highlighter-rouge">exception.log</code> stated that there was a problem saving the images. <em>Fix submitted by <a href="https://github.com/nemesis-back">IvanK</a> in pull request 12368</em>. <a href="https://github.com/magento/magento2/issues/8069">GitHub-8069</a></li>
 </ul>
 
 <!--- MAGETWO-72312 -->
@@ -2884,7 +2885,7 @@
 
 <!--- MAGETWO-83631 -->
 <ul>
-  <li>The <code class="highlighter-rouge">\Magento\Quote\Model\ResourceModel\Quote\Item\Collection</code> now returns items that have  existing relations only  in <code class="highlighter-rouge">catalog_product_entity</code> table.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">\Magento\Quote\Model\ResourceModel\Quote\Item\Collection</code> now returns items that have  existing relations only  in <code class="language-plaintext highlighter-rouge">catalog_product_entity</code> table.</li>
 </ul>
 
 <!--- MAGETWO-83204 -->
@@ -2941,12 +2942,12 @@ did not change after you selected <strong>Disable product</strong>.</li>
 
 <!--- MAGETWO-85674 -->
 <ul>
-  <li><code class="highlighter-rouge">window.checkout.customerLoginUrl</code> now contains a URL that includes the referer in base64 encoding (for example, https://myshop.com/customer/account/login/referer/aHR0cHM6Ly9teXNob3AuY29tL2NoZWNrb3V0). Previously, the login URL did not include a referer (for example, https://myshop.com/customer/account/login). <em>Fix submitted by <a href="https://github.com/quisse">Tommy Quissens</a> in pull request 12629</em>. <a href="https://github.com/magento/magento2/issues/12627">GitHub-12627</a></li>
+  <li><code class="language-plaintext highlighter-rouge">window.checkout.customerLoginUrl</code> now contains a URL that includes the referer in base64 encoding (for example, https://myshop.com/customer/account/login/referer/aHR0cHM6Ly9teXNob3AuY29tL2NoZWNrb3V0). Previously, the login URL did not include a referer (for example, https://myshop.com/customer/account/login). <em>Fix submitted by <a href="https://github.com/quisse">Tommy Quissens</a> in pull request 12629</em>. <a href="https://github.com/magento/magento2/issues/12627">GitHub-12627</a></li>
 </ul>
 
 <!--- MAGETWO-84861 -->
 <ul>
-  <li>Administrators can now reset customer passwords as expected when the <strong>max wait time between password resets</strong> setting has been disabled.  Previously, when an administrator attempted to reset a customer’s password from the Admin, Magento displayed this error, <code class="highlighter-rouge">Too many password reset requests</code>, even when the <strong>max wait time between password resets</strong> setting had been disabled. <em>Fix submitted by <a href="https://github.com/adrian-martinez-interactiv4">adrian-martinez-interactiv4</a> in pull request 11436</em>. <a href="https://github.com/magento/magento2/issues/12627">GitHub-12627</a></li>
+  <li>Administrators can now reset customer passwords as expected when the <strong>max wait time between password resets</strong> setting has been disabled.  Previously, when an administrator attempted to reset a customer’s password from the Admin, Magento displayed this error, <code class="language-plaintext highlighter-rouge">Too many password reset requests</code>, even when the <strong>max wait time between password resets</strong> setting had been disabled. <em>Fix submitted by <a href="https://github.com/adrian-martinez-interactiv4">adrian-martinez-interactiv4</a> in pull request 11436</em>. <a href="https://github.com/magento/magento2/issues/12627">GitHub-12627</a></li>
 </ul>
 
 <!--- MAGETWO-71669 -->
@@ -2956,14 +2957,14 @@ did not change after you selected <strong>Disable product</strong>.</li>
 
 <!--- MAGETWO-84733 -->
 <ul>
-  <li>Magento now refreshes customer data in <code class="highlighter-rouge">localStorage</code> upon customer log in, which results in proper loading of the customer’s cart. Previously, when a customer with existing cart items logged in using the authentication popup, the mini cart did  not display her cart items. <em>Fix submitted by <a href="https://github.com/pmclain">Patrick McLain</a> in pull request 12246</em>.</li>
+  <li>Magento now refreshes customer data in <code class="language-plaintext highlighter-rouge">localStorage</code> upon customer log in, which results in proper loading of the customer’s cart. Previously, when a customer with existing cart items logged in using the authentication popup, the mini cart did  not display her cart items. <em>Fix submitted by <a href="https://github.com/pmclain">Patrick McLain</a> in pull request 12246</em>.</li>
 </ul>
 
 <h3 id="framework">Framework</h3>
 
 <!--- MAGETWO-86676 -->
 <ul>
-  <li><code class="highlighter-rouge">vendor/magento/framework/composer.json</code> now declares a dependency on <code class="highlighter-rouge">magento/zendframework1</code>. Previously, packages depending on <code class="highlighter-rouge">magento/framework</code> packages failed to execute. <em>Fix submitted by <a href="https://github.com/ihor-sviziev">Ihor Sviziev</a> in pull request 12991</em>. <a href="https://github.com/magento/magento2/issues/12967">GitHub-12967</a></li>
+  <li><code class="language-plaintext highlighter-rouge">vendor/magento/framework/composer.json</code> now declares a dependency on <code class="language-plaintext highlighter-rouge">magento/zendframework1</code>. Previously, packages depending on <code class="language-plaintext highlighter-rouge">magento/framework</code> packages failed to execute. <em>Fix submitted by <a href="https://github.com/ihor-sviziev">Ihor Sviziev</a> in pull request 12991</em>. <a href="https://github.com/magento/magento2/issues/12967">GitHub-12967</a></li>
 </ul>
 
 <h4 id="configuration-framework">Configuration framework</h4>
@@ -2984,21 +2985,21 @@ did not change after you selected <strong>Disable product</strong>.</li>
 
 <!--- MAGETWO-59726 -->
 <ul>
-  <li>When you used REST to create a paginated search of products, Magento now includes <code class="highlighter-rouge">category_id</code>s   as expected in the <code class="highlighter-rouge">custom_attributes</code> section of listed products. <a href="https://github.com/magento/magento2/issues/6127">GitHub-6127</a></li>
+  <li>When you used REST to create a paginated search of products, Magento now includes <code class="language-plaintext highlighter-rouge">category_id</code>s   as expected in the <code class="language-plaintext highlighter-rouge">custom_attributes</code> section of listed products. <a href="https://github.com/magento/magento2/issues/6127">GitHub-6127</a></li>
 </ul>
 
 <h4 id="zend">Zend</h4>
 
 <!--- MAGETWO-86300 -->
 <ul>
-  <li>We’ve upgraded the Zend framework <code class="highlighter-rouge">Zend_Service</code> component. <em>Fix submitted by <a href="https://github.com/dverkade">Danny Verkade</a> in pull request 12958</em>. <a href="https://github.com/magento/magento2/issues/9243">GitHub-9243</a></li>
+  <li>We’ve upgraded the Zend framework <code class="language-plaintext highlighter-rouge">Zend_Service</code> component. <em>Fix submitted by <a href="https://github.com/dverkade">Danny Verkade</a> in pull request 12958</em>. <a href="https://github.com/magento/magento2/issues/9243">GitHub-9243</a></li>
 </ul>
 
 <h3 id="general">General</h3>
 
 <!--- MAGETWO-86284 -->
 <ul>
-  <li>The <code class="highlighter-rouge">htmlentities</code> function has been replaced with the <code class="highlighter-rouge">htmlspecialchars</code> function.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">htmlentities</code> function has been replaced with the <code class="language-plaintext highlighter-rouge">htmlspecialchars</code> function.</li>
 </ul>
 
 <!--- MAGETWO-85930 -->
@@ -3013,7 +3014,7 @@ did not change after you selected <strong>Disable product</strong>.</li>
 
 <!--- MAGETWO-83631 -->
 <ul>
-  <li>The <code class="highlighter-rouge">\Magento\Quote\Model\ResourceModel\Quote\Item\Collection</code> now returns items that have only existing relations in <code class="highlighter-rouge">catalog_product_entity</code> table, which prevents the loading of quote items for non-existing products.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">\Magento\Quote\Model\ResourceModel\Quote\Item\Collection</code> now returns items that have only existing relations in <code class="language-plaintext highlighter-rouge">catalog_product_entity</code> table, which prevents the loading of quote items for non-existing products.</li>
 </ul>
 
 <!--- MAGETWO-71701 -->
@@ -3038,12 +3039,12 @@ did not change after you selected <strong>Disable product</strong>.</li>
 
 <!--- MAGETWO-87443 -->
 <ul>
-  <li>You can now  use the custom layout handler form (<code class="highlighter-rouge">cms_page_view_id_cms_page</code>).  Previously the cms module added an additional layout update handler with an identifier on page view, and problems occurred when slashes were used in the page identifier. <em>Fix submitted by <a href="https://github.com/simpleadm">Sergey P</a> in pull request 13489</em>.</li>
+  <li>You can now  use the custom layout handler form (<code class="language-plaintext highlighter-rouge">cms_page_view_id_cms_page</code>).  Previously the cms module added an additional layout update handler with an identifier on page view, and problems occurred when slashes were used in the page identifier. <em>Fix submitted by <a href="https://github.com/simpleadm">Sergey P</a> in pull request 13489</em>.</li>
 </ul>
 
 <!--- MAGETWO-84907 -->
 <ul>
-  <li>Duplicate array keys in <code class="highlighter-rouge">app/code/Magento/Bundle/Block/Adminhtml/Catalog/Product/Edit/Tab/Attributes/Extend.php</code> and <code class="highlighter-rouge">app/code/Magento/Downloadable/Helper/File.php</code> have been removed. <em>Fix submitted by <a href="https://github.com/lfluvisotto">Leandro F. L.</a> in pull request 12519</em>.</li>
+  <li>Duplicate array keys in <code class="language-plaintext highlighter-rouge">app/code/Magento/Bundle/Block/Adminhtml/Catalog/Product/Edit/Tab/Attributes/Extend.php</code> and <code class="language-plaintext highlighter-rouge">app/code/Magento/Downloadable/Helper/File.php</code> have been removed. <em>Fix submitted by <a href="https://github.com/lfluvisotto">Leandro F. L.</a> in pull request 12519</em>.</li>
 </ul>
 
 <h3 id="gift-card">Gift card</h3>
@@ -3057,7 +3058,7 @@ did not change after you selected <strong>Disable product</strong>.</li>
 
 <!--- MAGETWO-83478 -->
 <ul>
-  <li>You can now view the state of the <code class="highlighter-rouge">mview</code> queue in real time, which can be useful when debugging indexing issues. You can now view how many items are in the queue pending processing, as well as view information from the <code class="highlighter-rouge">mview_state</code> table. <em>Fix submitted by <a href="https://github.com/convenient">Luke Rodgers</a> in pull request 12050</em>.</li>
+  <li>You can now view the state of the <code class="language-plaintext highlighter-rouge">mview</code> queue in real time, which can be useful when debugging indexing issues. You can now view how many items are in the queue pending processing, as well as view information from the <code class="language-plaintext highlighter-rouge">mview_state</code> table. <em>Fix submitted by <a href="https://github.com/convenient">Luke Rodgers</a> in pull request 12050</em>.</li>
 </ul>
 
 <h3 id="newsletter">Newsletter</h3>
@@ -3081,19 +3082,19 @@ did not change after you selected <strong>Disable product</strong>.</li>
 
 <!--- MAGETWO-84108 -->
 <ul>
-  <li>You can now alter the transport variable in the <code class="highlighter-rouge">email_invoice_set_template_vars_before</code> event. <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in pull request 12135</em>. <a href="https://github.com/magento/magento2/issues/10210">GitHub-10210</a></li>
+  <li>You can now alter the transport variable in the <code class="language-plaintext highlighter-rouge">email_invoice_set_template_vars_before</code> event. <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in pull request 12135</em>. <a href="https://github.com/magento/magento2/issues/10210">GitHub-10210</a></li>
 </ul>
 
 <h3 id="payment-methods">Payment methods</h3>
 
 <!--- MAGETWO-86343 -->
 <ul>
-  <li>The <code class="highlighter-rouge">is_active</code> and <code class="highlighter-rouge">is_visible</code> columns now default to <code class="highlighter-rouge">true</code> even when column default values are not set in the <code class="highlighter-rouge">vault_payment_token</code> installation script. <em>Fix submitted by <a href="https://github.com/p-bystritsky">p-bystritsky</a> in pull request 1149</em>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">is_active</code> and <code class="language-plaintext highlighter-rouge">is_visible</code> columns now default to <code class="language-plaintext highlighter-rouge">true</code> even when column default values are not set in the <code class="language-plaintext highlighter-rouge">vault_payment_token</code> installation script. <em>Fix submitted by <a href="https://github.com/p-bystritsky">p-bystritsky</a> in pull request 1149</em>.</li>
 </ul>
 
 <!--- MAGETWO-65734 -->
 <ul>
-  <li>Magento now processes credit memos as expected when refunding an order from PayPal. Previously, when Magento refunded  an order from PayPal, it created a credit memo, but the credit memo was not assigned a status (that is, the database status field is <code class="highlighter-rouge">null</code>), and the order status remained as processing.</li>
+  <li>Magento now processes credit memos as expected when refunding an order from PayPal. Previously, when Magento refunded  an order from PayPal, it created a credit memo, but the credit memo was not assigned a status (that is, the database status field is <code class="language-plaintext highlighter-rouge">null</code>), and the order status remained as processing.</li>
 </ul>
 
 <!--- MAGETWO-80643 -->
@@ -3184,7 +3185,7 @@ did not change after you selected <strong>Disable product</strong>.</li>
 
 <!--- MAGETWO-86204-->
 <ul>
-  <li>The default value for a wish list item’s <code class="highlighter-rouge">buyRequest</code> data is now always an array. Previously, this value was set to <code class="highlighter-rouge">null</code>. <em>Fix submitted by <a href="https://github.com/jameshalsall">James Halsall</a> in pull request 12930</em>.</li>
+  <li>The default value for a wish list item’s <code class="language-plaintext highlighter-rouge">buyRequest</code> data is now always an array. Previously, this value was set to <code class="language-plaintext highlighter-rouge">null</code>. <em>Fix submitted by <a href="https://github.com/jameshalsall">James Halsall</a> in pull request 12930</em>.</li>
 </ul>
 
 <!--- NOT NEEDED  MAGETWO-89535 MAGETWO-89066 MAGETWO-88992 MAGETWO-88336 MAGETWO-53814 MAGETWO-60969 MAGETWO-61020 MAGETWO-85904 MAGETWO-85755 MAGETWO-84822 MAGETWO-69577 MAGETWO-69213 MAGETWO-83326 MAGETWO-84738 MAGETWO-87517 MAGETWO-84238 MAGETWO-87517 MAGETWO-84849 MAGETWO-84848 MAGETWO-84346 MAGETWO-87348 MAGETWO-87346 MAGETWO-87343 MAGETWO-86454 MAGETWO-85030 MAGETWO-83115 MAGETWO-65534 MAGETWO-59163 MAGETWO-84138 MAGETWO-80426 MAGETWO-60154 MAGETWO-85206 MAGETWO-83426 MAGETWO-80324 MAGETWO-89646  -->

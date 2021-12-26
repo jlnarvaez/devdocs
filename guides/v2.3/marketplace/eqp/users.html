@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Users | Magento 2 Developer Documentation (copy)</title>
+	<title>Users | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/marketplace/eqp/users.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/marketplace/eqp/users.html">Magento 2.0</a></li>
 		
@@ -1701,23 +1702,23 @@
 	<h1 class="page-heading">Users</h1>
 </section>
 
-			<p>The <code class="highlighter-rouge">users</code> resource accesses and updates your user profile. You can also access reports you own.</p>
+			<p>The <code class="language-plaintext highlighter-rouge">users</code> resource accesses and updates your user profile. You can also access reports you own.</p>
 
 <p class="bs-callout bs-callout-info">You cannot use this resource to create a new
 profile. You must create a new profile on the <a href="https://developer.magento.com">Developer Portal</a>.</p>
 
 <h2 id="profile">Profile</h2>
 
-<p>You must use the <code class="highlighter-rouge">mage_id</code> associated with the client application in your developer account when making request to these endpoints. You can get this ID when obtaining a <a href="/devdocs/guides/v2.3/marketplace/eqp/auth.html#session-token">session token</a>.</p>
+<p>You must use the <code class="language-plaintext highlighter-rouge">mage_id</code> associated with the client application in your developer account when making request to these endpoints. You can get this ID when obtaining a <a href="/devdocs/guides/v2.3/marketplace/eqp/auth.html#session-token">session token</a>.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>GET /rest/v1/users/:mage_id
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>GET /rest/v1/users/:mage_id
 GET /rest/v1/users/:mage_id?style=summary
 PUT /rest/v1/users/:mage_id
 </code></pre></div></div>
 
 <h3 id="get-profile-data">Get profile data</h3>
 
-<p>By default, requests for profile data return all fields. You can limit the amount of data that the request returns by using the <code class="highlighter-rouge">style=summary</code> option.</p>
+<p>By default, requests for profile data return all fields. You can limit the amount of data that the request returns by using the <code class="language-plaintext highlighter-rouge">style=summary</code> option.</p>
 
 <p>The following example shows the request/response body for retrieving all profile data:</p>
 
@@ -1731,56 +1732,56 @@ PUT /rest/v1/users/:mage_id
 <p><strong>Response</strong></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-        </span><span class="s2">"mage_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MAG123456789"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="err">“Chuck”</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="err">“Norris”</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="err">cnorris@example.com</span><span class="s2">",
+        </span><span class="nl">"mage_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MAG123456789"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="err">“Chuck”</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="err">“Norris”</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="err">cnorris@example.com</span><span class="s2">",
         "</span><span class="err">screen_name</span><span class="s2">": “ninjachuck”,
         "</span><span class="err">has_completed_profile</span><span class="s2">": true,
         "</span><span class="err">has_accepted_tos</span><span class="s2">": true,
         "</span><span class="err">profile_image_artifact</span><span class="s2">": {
             "</span><span class="err">file_upload_id</span><span class="s2">": "</span><span class="err">uuid</span><span class="mi">-001-234567</span><span class="mf">-123.461</span><span class="s2">",
             "</span><span class="err">filename</span><span class="s2">": “chuck.png"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"content_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image.png"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="err">“https</span><span class="p">:</span><span class="err">//static-mp.magento.com/user/</span><span class="mi">68</span><span class="err">/f</span><span class="mi">3</span><span class="err">/</span><span class="mi">68</span><span class="err">f</span><span class="mi">360</span><span class="err">d</span><span class="mi">3516</span><span class="err">f</span><span class="mi">594</span><span class="err">fc</span><span class="mi">957</span><span class="err">c</span><span class="mi">4179</span><span class="err">ed</span><span class="mi">4</span><span class="err">a</span><span class="mi">7</span><span class="err">a</span><span class="mi">872911</span><span class="err">f</span><span class="mi">07</span><span class="err">/pub/d</span><span class="mi">9</span><span class="err">/c</span><span class="mi">2</span><span class="err">/d</span><span class="mi">9</span><span class="err">c</span><span class="mi">23</span><span class="err">dd</span><span class="mi">795</span><span class="err">a</span><span class="mi">5</span><span class="err">faaab</span><span class="mi">603</span><span class="err">b</span><span class="mi">6</span><span class="err">b</span><span class="mi">5965</span><span class="err">eca</span><span class="mi">8</span><span class="err">a</span><span class="mi">6</span><span class="err">d</span><span class="mi">9430</span><span class="err">f</span><span class="mi">2</span><span class="err">/chuck.png”</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"file_hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d5db29cd03a2ed055086cef9c31c252b4587ffff"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"malware_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"content_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image.png"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="err">“https://static-mp.magento.com/user/</span><span class="mi">68</span><span class="err">/f</span><span class="mi">3</span><span class="err">/</span><span class="mi">68</span><span class="err">f</span><span class="mi">360</span><span class="err">d</span><span class="mi">3516</span><span class="err">f</span><span class="mi">594</span><span class="err">fc</span><span class="mi">957</span><span class="err">c</span><span class="mi">4179</span><span class="err">ed</span><span class="mi">4</span><span class="err">a</span><span class="mi">7</span><span class="err">a</span><span class="mi">872911</span><span class="err">f</span><span class="mi">07</span><span class="err">/pub/d</span><span class="mi">9</span><span class="err">/c</span><span class="mi">2</span><span class="err">/d</span><span class="mi">9</span><span class="err">c</span><span class="mi">23</span><span class="err">dd</span><span class="mi">795</span><span class="err">a</span><span class="mi">5</span><span class="err">faaab</span><span class="mi">603</span><span class="err">b</span><span class="mi">6</span><span class="err">b</span><span class="mi">5965</span><span class="err">eca</span><span class="mi">8</span><span class="err">a</span><span class="mi">6</span><span class="err">d</span><span class="mi">9430</span><span class="err">f</span><span class="mi">2</span><span class="err">/chuck.png”</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"file_hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d5db29cd03a2ed055086cef9c31c252b4587ffff"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"malware_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="w">
+        </span><span class="p">}</span><span class="err">,</span><span class="w">
 
-        </span><span class="s2">"tos_accepted_version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"tos_accepted_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-16 01:23:45"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"is_company"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"vendor_name"</span><span class="p">:</span><span class="w"> </span><span class="err">“chucknorris”</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"partner_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en-US"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UTC"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"payment_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"payment_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"paypal_email“ : “cnorris@example.com"</span><span class="p">},</span><span class="w">
-        </span><span class="s2">"taxpayer_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"tax_review_status"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="err">;</span><span class="w">
-        </span><span class="s2">"tax_withhold_percent"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"extension_share_percent"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"theme_share_percent"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"install_share_percent"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"support_share_percent"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tos_accepted_version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="err">,</span><span class="w">
+        </span><span class="nl">"tos_accepted_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-16 01:23:45"</span><span class="err">,</span><span class="w">
+        </span><span class="nl">"is_company"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="err">,</span><span class="w">
+        </span><span class="nl">"vendor_name"</span><span class="p">:</span><span class="w"> </span><span class="err">“chucknorris”,</span><span class="w">
+        </span><span class="nl">"partner_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="err">,</span><span class="w">
+        </span><span class="nl">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en-US"</span><span class="err">,</span><span class="w">
+        </span><span class="nl">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UTC"</span><span class="err">,</span><span class="w">
+        </span><span class="nl">"payment_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="err">,</span><span class="w">
+        </span><span class="nl">"payment_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"paypal_email“ : “cnorris@example.com"</span><span class="p">}</span><span class="err">,</span><span class="w">
+        </span><span class="nl">"taxpayer_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="err">,</span><span class="w">
+        </span><span class="nl">"tax_review_status"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="err">;</span><span class="w">
+        </span><span class="nl">"tax_withhold_percent"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="err">,</span><span class="w">
+        </span><span class="nl">"extension_share_percent"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7</span><span class="err">,</span><span class="w">
+        </span><span class="nl">"theme_share_percent"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7</span><span class="err">,</span><span class="w">
+        </span><span class="nl">"install_share_percent"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="err">,</span><span class="w">
+        </span><span class="nl">"support_share_percent"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="err">,</span><span class="w">
 
-        </span><span class="s2">"personal_profile"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"personal_profile"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="s2">"bio"</span><span class="p">,</span><span class="w"> </span><span class="err">“Sets</span><span class="w"> </span><span class="err">ants</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">fire</span><span class="w"> </span><span class="err">using</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">magnifying</span><span class="w"> </span><span class="err">glass.</span><span class="w"> </span><span class="err">At</span><span class="w"> </span><span class="err">night.”</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"last_logged_in"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-30 8:09:10"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-02-29 14:04:59"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"modified_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-16 01:23:45"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"social_media_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="err">“@chucknorrismagento”</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"stackexchange_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"facebook_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"linkedin_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"github_username"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+            </span><span class="nl">"last_logged_in"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-30 8:09:10"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-02-29 14:04:59"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"modified_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-16 01:23:45"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"social_media_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="err">“@chucknorrismagento”</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"stackexchange_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"facebook_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"linkedin_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"github_username"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
             </span><span class="p">},</span><span class="w">
-            </span><span class="s2">"addresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="nl">"addresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                 </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"address_key"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"address_line_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123 Lonestar Way”,
+                    </span><span class="nl">"address_key"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"address_line_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123 Lonestar Way”,
                     "</span><span class="err">state</span><span class="s2">": “Texas”,
                     "</span><span class="err">country</span><span class="s2">": “USA”,
                     "</span><span class="err">postal_code</span><span class="s2">": “77777”,
@@ -1794,11 +1795,11 @@ PUT /rest/v1/users/:mage_id
         "</span><span class="err">company_profile</span><span class="s2">": {
             "</span><span class="err">name</span><span class="s2">": “Ninja Norris Inc.”,
             "</span><span class="err">bio</span><span class="s2">": “Ninja Extension Builder.”,
-            "</span><span class="err">website_url</span><span class="s2">": "</span><span class="err">https</span><span class="p">:</span><span class="err">//www.example.com/”</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"primary_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cnorris@example.com"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"support_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"support@example.com”,
-            "</span><span class="err">created_at</span><span class="s2">": "</span><span class="mi">2016-02-29</span><span class="w"> </span><span class="mi">14</span><span class="p">:</span><span class="mi">04</span><span class="p">:</span><span class="mi">59</span><span class="s2">",
-            "</span><span class="err">modified_at</span><span class="s2">": "</span><span class="mi">2017-09-30</span><span class="w"> </span><span class="mi">01</span><span class="p">:</span><span class="mi">23</span><span class="p">:</span><span class="mi">45</span><span class="s2">",
+            "</span><span class="err">website_url</span><span class="s2">": "</span><span class="err">https://www.example.com/”</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"primary_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cnorris@example.com"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"support_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"support@example.com”,
+            "</span><span class="err">created_at</span><span class="s2">": "</span><span class="mi">2016-02-29</span><span class="w"> </span><span class="mi">14</span><span class="err">:</span><span class="mi">04</span><span class="err">:</span><span class="mi">59</span><span class="s2">",
+            "</span><span class="err">modified_at</span><span class="s2">": "</span><span class="mi">2017-09-30</span><span class="w"> </span><span class="mi">01</span><span class="err">:</span><span class="mi">23</span><span class="err">:</span><span class="mi">45</span><span class="s2">",
             "</span><span class="err">social_media_info</span><span class="s2">": {
                 "</span><span class="err">twitter</span><span class="s2">": “@chucknorrismagento”,
                 "</span><span class="err">stackexchange_url</span><span class="s2">": "",
@@ -1810,12 +1811,12 @@ PUT /rest/v1/users/:mage_id
                 {
                     "</span><span class="err">address_key</span><span class="s2">": 1,
                     "</span><span class="err">address_line_</span><span class="mi">1</span><span class="s2">": "</span><span class="mi">123</span><span class="w"> </span><span class="err">Lonestar</span><span class="w"> </span><span class="err">Way”</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="err">“Texas”</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="err">“USA”</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="err">“</span><span class="mi">77777</span><span class="err">”</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="err">“</span><span class="mi">555-1234-5678</span><span class="err">”</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"country_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+1"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"is_primary"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+                    </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="err">“Texas”</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="err">“USA”</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="err">“</span><span class="mi">77777</span><span class="err">”</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="err">“</span><span class="mi">555-1234-5678</span><span class="err">”</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"country_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+1"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"is_primary"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
                 </span><span class="p">}</span><span class="w">
             </span><span class="p">]</span><span class="w">
         </span><span class="p">}</span><span class="w">
@@ -1834,22 +1835,22 @@ PUT /rest/v1/users/:mage_id
 <p><strong>Response</strong></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-        </span><span class="s2">"mage_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MAG123456789"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="err">“Chuck”</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="err">“Norris”</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="err">“cnorris@example.com</span><span class="s2">",
+        </span><span class="nl">"mage_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MAG123456789"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="err">“Chuck”</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="err">“Norris”</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="err">“cnorris@example.com</span><span class="s2">",
         "</span><span class="err">screen_name</span><span class="s2">": “ninjachuck”,
         "</span><span class="err">has_completed_profile</span><span class="s2">": true,
         "</span><span class="err">has_accepted_tos</span><span class="s2">": true,
         "</span><span class="err">profile_image_artifact</span><span class="s2">": {
             "</span><span class="err">file_upload_id</span><span class="s2">": "</span><span class="err">uuid</span><span class="mi">-001-234567</span><span class="mf">-123.461</span><span class="s2">",
             "</span><span class="err">filename</span><span class="s2">": “chuck.png"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"content_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image.png"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="err">“https</span><span class="p">:</span><span class="err">//static-mp.magento.com/user/</span><span class="mi">68</span><span class="err">/f</span><span class="mi">3</span><span class="err">/</span><span class="mi">68</span><span class="err">f</span><span class="mi">360</span><span class="err">d</span><span class="mi">3516</span><span class="err">f</span><span class="mi">594</span><span class="err">fc</span><span class="mi">957</span><span class="err">c</span><span class="mi">4179</span><span class="err">ed</span><span class="mi">4</span><span class="err">a</span><span class="mi">7</span><span class="err">a</span><span class="mi">872911</span><span class="err">f</span><span class="mi">07</span><span class="err">/pub/d</span><span class="mi">9</span><span class="err">/c</span><span class="mi">2</span><span class="err">/d</span><span class="mi">9</span><span class="err">c</span><span class="mi">23</span><span class="err">dd</span><span class="mi">795</span><span class="err">a</span><span class="mi">5</span><span class="err">faaab</span><span class="mi">603</span><span class="err">b</span><span class="mi">6</span><span class="err">b</span><span class="mi">5965</span><span class="err">eca</span><span class="mi">8</span><span class="err">a</span><span class="mi">6</span><span class="err">d</span><span class="mi">9430</span><span class="err">f</span><span class="mi">2</span><span class="err">/chuck.png”</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"file_hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d5db29cd03a2ed055086cef9c31c252b4587ffff"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"malware_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"content_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image.png"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="err">“https://static-mp.magento.com/user/</span><span class="mi">68</span><span class="err">/f</span><span class="mi">3</span><span class="err">/</span><span class="mi">68</span><span class="err">f</span><span class="mi">360</span><span class="err">d</span><span class="mi">3516</span><span class="err">f</span><span class="mi">594</span><span class="err">fc</span><span class="mi">957</span><span class="err">c</span><span class="mi">4179</span><span class="err">ed</span><span class="mi">4</span><span class="err">a</span><span class="mi">7</span><span class="err">a</span><span class="mi">872911</span><span class="err">f</span><span class="mi">07</span><span class="err">/pub/d</span><span class="mi">9</span><span class="err">/c</span><span class="mi">2</span><span class="err">/d</span><span class="mi">9</span><span class="err">c</span><span class="mi">23</span><span class="err">dd</span><span class="mi">795</span><span class="err">a</span><span class="mi">5</span><span class="err">faaab</span><span class="mi">603</span><span class="err">b</span><span class="mi">6</span><span class="err">b</span><span class="mi">5965</span><span class="err">eca</span><span class="mi">8</span><span class="err">a</span><span class="mi">6</span><span class="err">d</span><span class="mi">9430</span><span class="err">f</span><span class="mi">2</span><span class="err">/chuck.png”</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"file_hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d5db29cd03a2ed055086cef9c31c252b4587ffff"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"malware_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="w">
+        </span><span class="p">}</span><span class="err">,</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -1860,18 +1861,18 @@ PUT /rest/v1/users/:mage_id
 <p>The following example shows a request to update the personal profile bio field:</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-  </span><span class="err">“action”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“publish”</span><span class="p">,</span><span class="w">
-  </span><span class="err">“personal_profile”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-     </span><span class="err">“bio”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“I</span><span class="w"> </span><span class="err">can</span><span class="w"> </span><span class="err">make</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">fire</span><span class="w"> </span><span class="err">by</span><span class="w"> </span><span class="err">rubbing</span><span class="w"> </span><span class="err">two</span><span class="w"> </span><span class="err">ice</span><span class="w"> </span><span class="err">cubes.”</span><span class="w">
+  </span><span class="err">“action”</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="err">“publish”</span><span class="p">,</span><span class="w">
+  </span><span class="err">“personal_profile”</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="err">“bio”</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="err">“I</span><span class="w"> </span><span class="err">can</span><span class="w"> </span><span class="err">make</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">fire</span><span class="w"> </span><span class="err">by</span><span class="w"> </span><span class="err">rubbing</span><span class="w"> </span><span class="err">two</span><span class="w"> </span><span class="err">ice</span><span class="w"> </span><span class="err">cubes.”</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<p>The <code class="highlighter-rouge">action</code> field specifies which update operation to perform:</p>
+<p>The <code class="language-plaintext highlighter-rouge">action</code> field specifies which update operation to perform:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">publish</code>—The default if not specified. Publishes the profile to the relevant <a href="https://marketplace.magento.com/partners.html">Marketplace Store Partners page</a>.</li>
-  <li><code class="highlighter-rouge">draft</code>—The update is saved on the Developer Portal, but not published.</li>
+  <li><code class="language-plaintext highlighter-rouge">publish</code>—The default if not specified. Publishes the profile to the relevant <a href="https://marketplace.magento.com/partners.html">Marketplace Store Partners page</a>.</li>
+  <li><code class="language-plaintext highlighter-rouge">draft</code>—The update is saved on the Developer Portal, but not published.</li>
 </ul>
 
 <p><strong>Request</strong></p>
@@ -1889,7 +1890,7 @@ PUT /rest/v1/users/:mage_id
 
 <p>Use these APIs to manage Magento 1 and Magento 2 package access keys.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>GET     /rest/v1/users/:mage_id/keys
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>GET     /rest/v1/users/:mage_id/keys
 POST    /rest/v1/users/:mage_id/keys
 PUT     /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
 DELETE  /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
@@ -1897,9 +1898,9 @@ DELETE  /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
 
 <h3 id="get-keys">Get keys</h3>
 
-<p>Use this API to return the keys associated with the specified <code class="highlighter-rouge">mage_id</code>.</p>
+<p>Use this API to return the keys associated with the specified <code class="language-plaintext highlighter-rouge">mage_id</code>.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>GET /rest/v1/users/:mage_id/keys
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>GET /rest/v1/users/:mage_id/keys
 </code></pre></div></div>
 
 <p>The following table lists available query parameters, all of which are optional:</p>
@@ -1941,25 +1942,25 @@ DELETE  /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
 <p><strong>Response</strong></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"m2"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="nl">"m2"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="err">“main_key”</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"user_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d41d8cd98f00b204e9800998ecf8427e"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"password_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12cbdcd3332eb8f166f62ee1a9bd33d0"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"is_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+                </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="err">“main_key”</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"user_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d41d8cd98f00b204e9800998ecf8427e"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"password_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12cbdcd3332eb8f166f62ee1a9bd33d0"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"is_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"key_for_bob"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"user_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4b335b25f8eb3449e7e222e8f9e052b0"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"password_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9ca8abe7376f451bde40513474c13c3c"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"is_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+                </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"key_for_bob"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"user_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4b335b25f8eb3449e7e222e8f9e052b0"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"password_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9ca8abe7376f451bde40513474c13c3c"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"is_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
 
-    </span><span class="s2">"m1"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="nl">"m1"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
-                </span><span class="err">“product_name”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“acme/one-click-checkout</span><span class="mf">-1.0</span><span class="err">.</span><span class="mi">0</span><span class="err">”</span><span class="p">,</span><span class="w">
-                </span><span class="err">“product_key”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“https</span><span class="p">:</span><span class="err">//connect</span><span class="mi">20</span><span class="err">.magentocommerce.com/e</span><span class="mi">8</span><span class="err">c</span><span class="mi">258702e443</span><span class="err">c</span><span class="mi">509</span><span class="err">b</span><span class="mi">42</span><span class="err">fc</span><span class="mi">44</span><span class="err">a</span><span class="mi">49</span><span class="err">b</span><span class="mi">83</span><span class="err">b</span><span class="mi">0</span><span class="err">/acme+one-click-checkout</span><span class="mf">-1.0</span><span class="err">.</span><span class="mi">0</span><span class="err">”</span><span class="w">
+                </span><span class="err">“product_name”</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="err">“acme/one-click-checkout</span><span class="mf">-1.0</span><span class="err">.</span><span class="mi">0</span><span class="err">”</span><span class="p">,</span><span class="w">
+                </span><span class="err">“product_key”</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="err">“https://connect</span><span class="mi">20</span><span class="err">.magentocommerce.com/e</span><span class="mi">8</span><span class="err">c</span><span class="mi">258702e443</span><span class="err">c</span><span class="mi">509</span><span class="err">b</span><span class="mi">42</span><span class="err">fc</span><span class="mi">44</span><span class="err">a</span><span class="mi">49</span><span class="err">b</span><span class="mi">83</span><span class="err">b</span><span class="mi">0</span><span class="err">/acme+one-click-checkout</span><span class="mf">-1.0</span><span class="err">.</span><span class="mi">0</span><span class="err">”</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1968,8 +1969,8 @@ DELETE  /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
 <h4 id="magento-2-keys">Magento 2 keys</h4>
 
 <ul>
-  <li>Each Composer key-pair has unique <code class="highlighter-rouge">label</code> and <code class="highlighter-rouge">is_enabled</code> flags to indicate whether the key is enabled.</li>
-  <li>A Composer key-pair is identified by <code class="highlighter-rouge">user_key</code> (username) and <code class="highlighter-rouge">password_key</code> (password) when prompted for Composer credentials.</li>
+  <li>Each Composer key-pair has unique <code class="language-plaintext highlighter-rouge">label</code> and <code class="language-plaintext highlighter-rouge">is_enabled</code> flags to indicate whether the key is enabled.</li>
+  <li>A Composer key-pair is identified by <code class="language-plaintext highlighter-rouge">user_key</code> (username) and <code class="language-plaintext highlighter-rouge">password_key</code> (password) when prompted for Composer credentials.</li>
 </ul>
 
 <h4 id="magento-1-keys">Magento 1 keys</h4>
@@ -1983,16 +1984,16 @@ DELETE  /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
 
 <p>Use this API to create new Magento 2 Composer key-pairs. You must specify a unique label for each key. You can create multiple key-pairs in a single request.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>POST /rest/v1/users/:mage_id/keys
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>POST /rest/v1/users/:mage_id/keys
 </code></pre></div></div>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"m2"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="nl">"m2"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"key_for_alice"</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"key_for_alice"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"key_for_charlie"</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"key_for_charlie"</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -2010,17 +2011,17 @@ DELETE  /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
 <p><strong>Response</strong></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"m2"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="nl">"m2"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="err">“key_for_alice”</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"user_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5c75f32248bdd335dc8d8d5a3e5cb52e"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"password_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"44db283cbb5fdf2c25cbc9352c2a75eb"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"is_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-                </span><span class="err">“code”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-                </span><span class="err">“message”</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">“Success”</span><span class="w">
+                </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="err">“key_for_alice”</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"user_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5c75f32248bdd335dc8d8d5a3e5cb52e"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"password_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"44db283cbb5fdf2c25cbc9352c2a75eb"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"is_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="err">“code”</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+                </span><span class="err">“message”</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="err">“Success”</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"key_for_charlie”,
+                </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"key_for_charlie”,
                 "</span><span class="err">user_key</span><span class="s2">": "</span><span class="mi">19</span><span class="err">ba</span><span class="mi">9488</span><span class="err">ff</span><span class="mi">99</span><span class="err">a</span><span class="mi">9346</span><span class="err">bdeb</span><span class="mi">39</span><span class="err">ad</span><span class="mi">4</span><span class="err">ab</span><span class="mi">1</span><span class="err">a</span><span class="mi">26</span><span class="s2">",
                 "</span><span class="err">password_key</span><span class="s2">": "</span><span class="mi">82167</span><span class="err">d</span><span class="mi">38238911</span><span class="err">d</span><span class="mi">212</span><span class="err">cc</span><span class="mi">02</span><span class="err">a</span><span class="mi">96</span><span class="err">f</span><span class="mi">3</span><span class="err">f</span><span class="mi">66</span><span class="err">f</span><span class="mi">9</span><span class="s2">",
                 "</span><span class="err">is_enabled</span><span class="s2">": true,
@@ -2034,14 +2035,14 @@ DELETE  /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
 <ul>
   <li>The API returns a batch response for each label.</li>
   <li>A 200 OK HTTP response code indicates a successful update.</li>
-  <li>Any non-200 HTTP response code indicates an error. See the <code class="highlighter-rouge">message</code> field for details.</li>
+  <li>Any non-200 HTTP response code indicates an error. See the <code class="language-plaintext highlighter-rouge">message</code> field for details.</li>
 </ul>
 
 <h3 id="update-keys">Update keys</h3>
 
 <p>Use this API to enable or disable a Magento 2 Composer key-pair. You must specify the key-pair in the request using a URL-encoded string.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>PUT /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>PUT /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
 </code></pre></div></div>
 
 <p><strong>Request</strong></p>
@@ -2056,12 +2057,12 @@ DELETE  /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
 <p><strong>Response</strong></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"m2"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="nl">"m2"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"key_for_bob"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"user_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4b335b25f8eb3449e7e222e8f9e052b0"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"password_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9ca8abe7376f451bde40513474c13c3c"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"is_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+                </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"key_for_bob"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"user_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4b335b25f8eb3449e7e222e8f9e052b0"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"password_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9ca8abe7376f451bde40513474c13c3c"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"is_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
             </span><span class="p">}</span><span class="w">
      </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -2071,7 +2072,7 @@ DELETE  /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
 
 <p>This API can be used to remove a Magento 2 composer key-pair identified by the given url-encoded label.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>DELETE /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>DELETE /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
 </code></pre></div></div>
 
 <p>The following curl example illustrates the call to be made:</p>
@@ -2089,7 +2090,7 @@ DELETE  /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
 
 <p>Use this API to retrieve reports owned by a specific user. Reports contain information about extensions sales, payout status, aggregate sales, refund data, and more.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>GET /rest/v1/users/:mage_id/reports/pageviews
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>GET /rest/v1/users/:mage_id/reports/pageviews
 GET /rest/v1/users/:mage_id/reports/totals
 GET /rest/v1/users/:mage_id/reports/sales
 GET /rest/v1/users/:mage_id/reports/refunds

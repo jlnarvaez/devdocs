@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Constraint | Magento 2 Developer Documentation (copy)</title>
+	<title>Constraint | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/mtf/mtf_entities/mtf_constraint.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/mtf/mtf_entities/mtf_constraint.html">Magento 2.0</a></li>
 		
@@ -2238,9 +2239,9 @@ Each constraint name must be globally unique in Magento application and must be 
 
 <h2 id="mtf_constraint_structure">Constraint structure</h2>
 
-<h3 id="mtf_constraint_directory"><code class="highlighter-rouge">Constraint</code> directory</h3>
+<h3 id="mtf_constraint_directory"><code class="language-plaintext highlighter-rouge">Constraint</code> directory</h3>
 
-<p>A module in functional tests (<code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/app/Magento/</code>) stores constraints in the <code class="highlighter-rouge">Constraint</code> directory. The following image shows the <code class="highlighter-rouge">Constraint</code> directory of the Magento_Widget module.</p>
+<p>A module in functional tests (<code class="language-plaintext highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/app/Magento/</code>) stores constraints in the <code class="language-plaintext highlighter-rouge">Constraint</code> directory. The following image shows the <code class="language-plaintext highlighter-rouge">Constraint</code> directory of the Magento_Widget module.</p>
 
 <p><img src="/devdocs/common/images/ftf/mtf_constraint_dir.png" alt="" /></p>
 
@@ -2251,12 +2252,12 @@ Each constraint name must be globally unique in Magento application and must be 
 
 <ul>
   <li>
-    <p>Have unique name created using the following template <code class="highlighter-rouge">Assert{MagentoEntityName}{verification|action|place}</code>. For example:</p>
+    <p>Have unique name created using the following template <code class="language-plaintext highlighter-rouge">Assert{MagentoEntityName}{verification|action|place}</code>. For example:</p>
 
     <ul>
-      <li><code class="highlighter-rouge">AssertUserSuccessDeleteMessage</code> corresponds to <code class="highlighter-rouge">Assert{entityName}{verification}</code></li>
-      <li><code class="highlighter-rouge">AssertOrderPlaced</code> corresponds to <code class="highlighter-rouge">Assert{entityName}{action}</code></li>
-      <li><code class="highlighter-rouge">AssertProductForm</code> corresponds to <code class="highlighter-rouge">Assert{entityName}{place}</code></li>
+      <li><code class="language-plaintext highlighter-rouge">AssertUserSuccessDeleteMessage</code> corresponds to <code class="language-plaintext highlighter-rouge">Assert{entityName}{verification}</code></li>
+      <li><code class="language-plaintext highlighter-rouge">AssertOrderPlaced</code> corresponds to <code class="language-plaintext highlighter-rouge">Assert{entityName}{action}</code></li>
+      <li><code class="language-plaintext highlighter-rouge">AssertProductForm</code> corresponds to <code class="language-plaintext highlighter-rouge">Assert{entityName}{place}</code></li>
     </ul>
   </li>
   <li>
@@ -2266,39 +2267,39 @@ Each constraint name must be globally unique in Magento application and must be 
     <p>Contain the following methods:</p>
 
     <ul>
-      <li><code class="highlighter-rouge">processAssert()</code> which contains assertions. A <code class="highlighter-rouge">PHPUnit_Framework_Assert</code> class (<code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/vendor/phpunit/phpunit/src/Framework/Assert.php</code>) can be used to simplify assertions.</li>
-      <li><code class="highlighter-rouge">toString()</code> which returns a success message if the assertion is performed successfully</li>
+      <li><code class="language-plaintext highlighter-rouge">processAssert()</code> which contains assertions. A <code class="language-plaintext highlighter-rouge">PHPUnit_Framework_Assert</code> class (<code class="language-plaintext highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/vendor/phpunit/phpunit/src/Framework/Assert.php</code>) can be used to simplify assertions.</li>
+      <li><code class="language-plaintext highlighter-rouge">toString()</code> which returns a success message if the assertion is performed successfully</li>
     </ul>
   </li>
 </ul>
 
 <h3 id="constraint-arguments">Constraint arguments</h3>
 
-<p>In the FTF, <a href="/devdocs/guides/v2.1/mtf/mtf_entities/mtf_dataset.html">data set</a> values are shared with a test class and constraints. A node name in data set can be complex like <code class="highlighter-rouge">item1/item2/item3</code>. The argument name in <code class="highlighter-rouge">processAssert()</code> must be the same as the <code class="highlighter-rouge">item1</code> to transfer data from data set to constraint.</p>
+<p>In the FTF, <a href="/devdocs/guides/v2.1/mtf/mtf_entities/mtf_dataset.html">data set</a> values are shared with a test class and constraints. A node name in data set can be complex like <code class="language-plaintext highlighter-rouge">item1/item2/item3</code>. The argument name in <code class="language-plaintext highlighter-rouge">processAssert()</code> must be the same as the <code class="language-plaintext highlighter-rouge">item1</code> to transfer data from data set to constraint.</p>
 
-<p>If a data set variable is used in the test, and is overwritten, it is transferred as altered to the constraint. Variables can be overwritten in the <em>injectable</em> <a href="/devdocs/guides/v2.1/mtf/mtf_entities/mtf_testcase.html">test case</a>  class in <code class="highlighter-rouge">test()</code>, <code class="highlighter-rouge">__inject()</code> and <code class="highlighter-rouge">__prepare()</code> methods, and then passed to the constraint class by <code class="highlighter-rouge">return</code>. Furthermore, any returned value of these methods can be used as an argument in constraint.</p>
+<p>If a data set variable is used in the test, and is overwritten, it is transferred as altered to the constraint. Variables can be overwritten in the <em>injectable</em> <a href="/devdocs/guides/v2.1/mtf/mtf_entities/mtf_testcase.html">test case</a>  class in <code class="language-plaintext highlighter-rouge">test()</code>, <code class="language-plaintext highlighter-rouge">__inject()</code> and <code class="language-plaintext highlighter-rouge">__prepare()</code> methods, and then passed to the constraint class by <code class="language-plaintext highlighter-rouge">return</code>. Furthermore, any returned value of these methods can be used as an argument in constraint.</p>
 
 <p>An object that is not defined in the data set or isn’t returned from the test case is created using the Object Manager.</p>
 
-<p>Let’s see the following images for the <code class="highlighter-rouge">CreateSimpleProductEntityTest</code> test and the <code class="highlighter-rouge">AssertProductPricesOnCategoryPage</code> constraint. Data set from the diagrams contains three variables with data: <code class="highlighter-rouge">product</code>, <code class="highlighter-rouge">category</code> and <code class="highlighter-rouge">price</code>.</p>
+<p>Let’s see the following images for the <code class="language-plaintext highlighter-rouge">CreateSimpleProductEntityTest</code> test and the <code class="language-plaintext highlighter-rouge">AssertProductPricesOnCategoryPage</code> constraint. Data set from the diagrams contains three variables with data: <code class="language-plaintext highlighter-rouge">product</code>, <code class="language-plaintext highlighter-rouge">category</code> and <code class="language-plaintext highlighter-rouge">price</code>.</p>
 
 <p><img src="/devdocs/common/images/ftf/mtf_constraint_arguments_green.png" alt="" width="800" /></p>
 
-<p><span style="color: #21610B; font-weight:bold">Green arrows</span> show that <code class="highlighter-rouge">product</code> value is transferred to the test and the constraint.</p>
+<p><span style="color: #21610B; font-weight:bold">Green arrows</span> show that <code class="language-plaintext highlighter-rouge">product</code> value is transferred to the test and the constraint.</p>
 
 <p><img src="/devdocs/common/images/ftf/mtf_constraint_arguments_orange.png" alt="" width="800" /></p>
 
-<p><span style="color: #FF8000; font-weight:bold">Orange arrows</span> show that <code class="highlighter-rouge">category</code> variable is transferred to the test directly, overwritten by <code class="highlighter-rouge">testCreate()</code> method and only then transferred to constraint.</p>
+<p><span style="color: #FF8000; font-weight:bold">Orange arrows</span> show that <code class="language-plaintext highlighter-rouge">category</code> variable is transferred to the test directly, overwritten by <code class="language-plaintext highlighter-rouge">testCreate()</code> method and only then transferred to constraint.</p>
 
 <p><img src="/devdocs/common/images/ftf/mtf_constraint_arguments_blue.png" alt="" width="800" /></p>
 
-<p><span style="color: #0000FF; font-weight:bold">Blue arrow</span> shows that <code class="highlighter-rouge">price</code> value is transferred to the constraint only.</p>
+<p><span style="color: #0000FF; font-weight:bold">Blue arrow</span> shows that <code class="language-plaintext highlighter-rouge">price</code> value is transferred to the constraint only.</p>
 
 <h3 id="mtf_constraint_variation">Constraint in the test</h3>
 
 <p>A <a href="/devdocs/guides/v2.1/mtf/mtf_entities/mtf_testcase.html">test case</a>’s constraints are nodes in variations of a data set. The data set has references to the PHP classes with assertions.</p>
 
-<p>Constraints are performed in order they listed in the data set. However, you can use <code class="highlighter-rouge">prev</code> (previous) and <code class="highlighter-rouge">next</code> attributes to set your custom order.</p>
+<p>Constraints are performed in order they listed in the data set. However, you can use <code class="language-plaintext highlighter-rouge">prev</code> (previous) and <code class="language-plaintext highlighter-rouge">next</code> attributes to set your custom order.</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">"Magento\Catalog\Test\Constraint\AssertCategorySaveMessage"</span> <span class="na">next=</span><span class="s">"Magento\Catalog\Test\Constraint\AssertCategoryForm"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">"Magento\Catalog\Test\Constraint\AssertCategoryForm"</span> <span class="na">prev=</span><span class="s">"Magento\Catalog\Test\Constraint\AssertCategorySaveMessage"</span> <span class="na">next=</span><span class="s">"Magento\Catalog\Test\Constraint\AssertCategoryPage"</span><span class="nt">/&gt;</span>
@@ -2311,7 +2312,7 @@ Each constraint name must be globally unique in Magento application and must be 
 
 <p class="bs-callout bs-callout-warning">Be careful when you use constraints from another module. A module that is referred by constraint can be disabled, that fails in the test execution. It is safe to use constraints of different modules in one test case if that modules have hard dependencies.   </p>
 
-<p>The following example shows the <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/TestCase/DeleteWidgetEntityTest.xml</code> <a href="/devdocs/guides/v2.1/mtf/mtf_entities/mtf_dataset.html">data set</a> with two constraints.</p>
+<p>The following example shows the <code class="language-plaintext highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/TestCase/DeleteWidgetEntityTest.xml</code> <a href="/devdocs/guides/v2.1/mtf/mtf_entities/mtf_dataset.html">data set</a> with two constraints.</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>
 <span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
@@ -2339,21 +2340,21 @@ Each constraint name must be globally unique in Magento application and must be 
 
 <p>Tagging enables you to indicate what constraints must be called.</p>
 
-<p>You can tag constraints in <code class="highlighter-rouge">&lt;module&gt;/Test/etc/di.xml</code> using a <code class="highlighter-rouge">severity</code> argument. Severity tagging of constraints is used for the customization of test run.</p>
+<p>You can tag constraints in <code class="language-plaintext highlighter-rouge">&lt;module&gt;/Test/etc/di.xml</code> using a <code class="language-plaintext highlighter-rouge">severity</code> argument. Severity tagging of constraints is used for the customization of test run.</p>
 
 <p>You can use the following severity tags:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">high</code></li>
-  <li><code class="highlighter-rouge">middle</code></li>
-  <li><code class="highlighter-rouge">low</code></li>
+  <li><code class="language-plaintext highlighter-rouge">high</code></li>
+  <li><code class="language-plaintext highlighter-rouge">middle</code></li>
+  <li><code class="language-plaintext highlighter-rouge">low</code></li>
 </ul>
 
 <p>To assign severity tags do the following:</p>
 
 <ul>
-  <li>Create <code class="highlighter-rouge">di.xml</code> file in <code class="highlighter-rouge">Test/etc</code> of the module.</li>
-  <li>Assign <code class="highlighter-rouge">severity</code> to constraints in the following format:</li>
+  <li>Create <code class="language-plaintext highlighter-rouge">di.xml</code> file in <code class="language-plaintext highlighter-rouge">Test/etc</code> of the module.</li>
+  <li>Assign <code class="language-plaintext highlighter-rouge">severity</code> to constraints in the following format:</li>
 </ul>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\[Module_name]\Test\Constraint\Assert..."</span><span class="nt">&gt;</span>
@@ -2363,34 +2364,7 @@ Each constraint name must be globally unique in Magento application and must be 
 <span class="nt">&lt;/type&gt;</span>
 </code></pre></div></div>
 
-<p>For example, <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/CatalogRule/Test/etc/di.xml</code>:</p>
-
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
-<span class="c">&lt;!--
-/**
- * Copyright © 2013-2017 Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */
- --&gt;</span>
-<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:ObjectManager/etc/config.xsd"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\CatalogRule\Test\Constraint\AssertCatalogPriceRuleAppliedProductPage"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;arguments&gt;</span>
-      <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"severity"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>high<span class="nt">&lt;/argument&gt;</span>
-    <span class="nt">&lt;/arguments&gt;</span>
-  <span class="nt">&lt;/type&gt;</span>
-  <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\CatalogRule\Test\Constraint\AssertCatalogPriceRuleAppliedCatalogPage"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;arguments&gt;</span>
-      <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"severity"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>high<span class="nt">&lt;/argument&gt;</span>
-    <span class="nt">&lt;/arguments&gt;</span>
-  <span class="nt">&lt;/type&gt;</span>
-  <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\CatalogRule\Test\Constraint\AssertCatalogPriceRuleAppliedShoppingCart"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;arguments&gt;</span>
-      <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"severity"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>high<span class="nt">&lt;/argument&gt;</span>
-    <span class="nt">&lt;/arguments&gt;</span>
-  <span class="nt">&lt;/type&gt;</span>
-<span class="nt">&lt;/config&gt;</span>
-
-</code></pre></div></div>
+<p>For example, <code class="language-plaintext highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/CatalogRule/Test/etc/di.xml</code>.</p>
 
 <h2 id="mtf_constraint_create">How to create constraint</h2>
 
@@ -2399,42 +2373,42 @@ Each constraint name must be globally unique in Magento application and must be 
 <p>Step 1. What module does it belong?</p>
 
 <p>Widget grid and widget fixture are related to the Magento_Widget module.
-  Thus, we need to create constraint in the Magento_Widget module, in <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Constraint</code>.</p>
+  Thus, we need to create constraint in the Magento_Widget module, in <code class="language-plaintext highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Constraint</code>.</p>
 
 <p>Step 2. What name should constraint have?</p>
 
-<p>Using <a href="#mtf_constraint_assert">constraint naming principle</a>, the constraint should be named as <code class="highlighter-rouge">AssertWidgetInGrid</code>.</p>
+<p>Using <a href="#mtf_constraint_assert">constraint naming principle</a>, the constraint should be named as <code class="language-plaintext highlighter-rouge">AssertWidgetInGrid</code>.</p>
 
-<p>Step 3. Create <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Constraint/AssertWidgetInGrid.php</code> with <a href="#mtf_constraint_assert">required structure</a></p>
+<p>Step 3. Create <code class="language-plaintext highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Constraint/AssertWidgetInGrid.php</code> with <a href="#mtf_constraint_assert">required structure</a></p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>
 <span class="cp">&lt;?php</span>
 
-<span class="k">namespace</span> <span class="nx">Magento\Widget\Test\Constraint</span><span class="p">;</span>
+<span class="kn">namespace</span> <span class="nn">Magento\Widget\Test\Constraint</span><span class="p">;</span>
 
-<span class="k">use</span> <span class="nx">Magento\Mtf\Constraint\AbstractConstraint</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Mtf\Constraint\AbstractConstraint</span><span class="p">;</span>
 
-<span class="sd">/**
+<span class="cd">/**
  * Assert widget is available in widget grid.
  */</span>
-<span class="k">class</span> <span class="nc">AssertWidgetInGrid</span> <span class="k">extends</span> <span class="nx">AbstractConstraint</span>
+<span class="kd">class</span> <span class="nc">AssertWidgetInGrid</span> <span class="kd">extends</span> <span class="nc">AbstractConstraint</span>
 <span class="p">{</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * Assert widget availability in widget grid.
      * 
      * @return void
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">processAssert</span><span class="p">()</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">processAssert</span><span class="p">()</span>
     <span class="p">{</span>
 
     <span class="p">}</span>
 
-    <span class="sd">/**
+    <span class="cd">/**
      * Returns a string representation of the object.
      *
      * @return string
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">toString</span><span class="p">()</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">toString</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="k">return</span> <span class="s1">'Widget is present in widget grid.'</span><span class="p">;</span>
     <span class="p">}</span>
@@ -2442,45 +2416,45 @@ Each constraint name must be globally unique in Magento application and must be 
 
 </code></pre></div></div>
 
-<p>Step 4. Implement assertion in <code class="highlighter-rouge">processAssert()</code></p>
+<p>Step 4. Implement assertion in <code class="language-plaintext highlighter-rouge">processAssert()</code></p>
 
 <p><strong>Assertion logic</strong>: Take title of the widget from the widget <a href="/devdocs/guides/v2.1/mtf/mtf_entities/mtf_fixture.html">fixture</a>, open the page with a grid, check if the grid has our title.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>
 <span class="cp">&lt;?php</span>
 
-<span class="k">namespace</span> <span class="nx">Magento\Widget\Test\Constraint</span><span class="p">;</span>
+<span class="kn">namespace</span> <span class="nn">Magento\Widget\Test\Constraint</span><span class="p">;</span>
 
-<span class="k">use</span> <span class="nx">Magento\Widget\Test\Fixture\Widget</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Widget\Test\Page\Adminhtml\WidgetInstanceIndex</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Mtf\Constraint\AbstractConstraint</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Widget\Test\Fixture\Widget</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Widget\Test\Page\Adminhtml\WidgetInstanceIndex</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Mtf\Constraint\AbstractConstraint</span><span class="p">;</span>
 
-<span class="sd">/**
+<span class="cd">/**
  * Assert widget is available in widget grid.
  */</span>
-<span class="k">class</span> <span class="nc">AssertWidgetInGrid</span> <span class="k">extends</span> <span class="nx">AbstractConstraint</span>
+<span class="kd">class</span> <span class="nc">AssertWidgetInGrid</span> <span class="kd">extends</span> <span class="nc">AbstractConstraint</span>
 <span class="p">{</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * Assert widget availability in widget grid.
      * 
      * @return void
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">processAssert</span><span class="p">(</span><span class="nx">Widget</span> <span class="nv">$widget</span><span class="p">,</span> <span class="nx">WidgetInstanceIndex</span> <span class="nv">$widgetInstanceIndex</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">processAssert</span><span class="p">(</span><span class="kt">Widget</span> <span class="nv">$widget</span><span class="p">,</span> <span class="kt">WidgetInstanceIndex</span> <span class="nv">$widgetInstanceIndex</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="nv">$filter</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'title'</span> <span class="o">=&gt;</span> <span class="nv">$widget</span><span class="o">-&gt;</span><span class="na">getTitle</span><span class="p">()];</span>
-        <span class="nv">$widgetInstanceIndex</span><span class="o">-&gt;</span><span class="na">open</span><span class="p">();</span>
-        <span class="nx">\PHPUnit_Framework_Assert</span><span class="o">::</span><span class="na">assertTrue</span><span class="p">(</span>
-            <span class="nv">$widgetInstanceIndex</span><span class="o">-&gt;</span><span class="na">getWidgetGrid</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">isRowVisible</span><span class="p">(</span><span class="nv">$filter</span><span class="p">),</span>
-            <span class="s1">'Widget with title \''</span> <span class="o">.</span> <span class="nv">$widget</span><span class="o">-&gt;</span><span class="na">getTitle</span><span class="p">()</span> <span class="o">.</span> <span class="s1">'\' is absent in Widget grid.'</span>
+        <span class="nv">$filter</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'title'</span> <span class="o">=&gt;</span> <span class="nv">$widget</span><span class="o">-&gt;</span><span class="nf">getTitle</span><span class="p">()];</span>
+        <span class="nv">$widgetInstanceIndex</span><span class="o">-&gt;</span><span class="nf">open</span><span class="p">();</span>
+        <span class="err">\</span><span class="n">PHPUnit_Framework_Assert</span><span class="o">::</span><span class="nf">assertTrue</span><span class="p">(</span>
+            <span class="nv">$widgetInstanceIndex</span><span class="o">-&gt;</span><span class="nf">getWidgetGrid</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">isRowVisible</span><span class="p">(</span><span class="nv">$filter</span><span class="p">),</span>
+            <span class="s1">'Widget with title \''</span> <span class="mf">.</span> <span class="nv">$widget</span><span class="o">-&gt;</span><span class="nf">getTitle</span><span class="p">()</span> <span class="mf">.</span> <span class="s1">'\' is absent in Widget grid.'</span>
         <span class="p">);</span>
     <span class="p">}</span>
 
-    <span class="sd">/**
+    <span class="cd">/**
      * Returns a string representation of the object.
      *
      * @return string
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">toString</span><span class="p">()</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">toString</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="k">return</span> <span class="s1">'Widget is present in widget grid.'</span><span class="p">;</span>
     <span class="p">}</span>

@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Navigation widget | Magento 2 Developer Documentation (copy)</title>
+	<title>Navigation widget | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/javascript-dev-guide/widgets/widget_navigation.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/javascript-dev-guide/widgets/widget_navigation.html">Magento 2.0</a></li>
 		
@@ -2195,7 +2196,7 @@ level).</li>
 
 <h2 id="navigation_init">Initialize the navigation widget</h2>
 
-<p>For information about how to initialize a widget in a JS component or <code class="highlighter-rouge">.phtml</code> template, see the <a href="/devdocs/guides/v2.3/javascript-dev-guide/javascript/js_init.html">Initialize JavaScript</a> topic.</p>
+<p>For information about how to initialize a widget in a JS component or <code class="language-plaintext highlighter-rouge">.phtml</code> template, see the <a href="/devdocs/guides/v2.3/javascript-dev-guide/javascript/js_init.html">Initialize JavaScript</a> topic.</p>
 
 <h2 id="navigation_options">Options</h2>
 
@@ -2208,47 +2209,47 @@ level).</li>
   <li><a href="#n_responsiveAction">responsiveAction</a></li>
 </ul>
 
-<h3 id="n_breakpoint"><code class="highlighter-rouge">breakpoint</code></h3>
+<h3 id="n_breakpoint"><code class="language-plaintext highlighter-rouge">breakpoint</code></h3>
 
 <p>Width of user’s window in px for which the menu switches between mobile view and desktop view.</p>
 
 <p><strong>Type</strong>: Number</p>
 
-<p><strong>Default value</strong>: <code class="highlighter-rouge">768</code></p>
+<p><strong>Default value</strong>: <code class="language-plaintext highlighter-rouge">768</code></p>
 
-<h3 id="n_container"><code class="highlighter-rouge">container</code></h3>
+<h3 id="n_container"><code class="language-plaintext highlighter-rouge">container</code></h3>
 
 <p>Container to track the menu overflow on responsive navigation.</p>
 
 <p><strong>Type</strong>: String</p>
 
-<p><strong>Default value</strong>: <code class="highlighter-rouge">#menu</code></p>
+<p><strong>Default value</strong>: <code class="language-plaintext highlighter-rouge">#menu</code></p>
 
-<h3 id="n_maxItems"><code class="highlighter-rouge">maxItems</code></h3>
+<h3 id="n_maxItems"><code class="language-plaintext highlighter-rouge">maxItems</code></h3>
 
 <p>The number of top level navigational items in main menu.</p>
 
 <p><strong>Type</strong>: Number</p>
 
-<p><strong>Default value</strong>: <code class="highlighter-rouge">null</code></p>
+<p><strong>Default value</strong>: <code class="language-plaintext highlighter-rouge">null</code></p>
 
-<h3 id="n_moreText"><code class="highlighter-rouge">moreText</code></h3>
+<h3 id="n_moreText"><code class="language-plaintext highlighter-rouge">moreText</code></h3>
 
 <p>Set the text for the overflow menu (i.e. more)</p>
 
 <p><strong>Type</strong>: String</p>
 
-<p><strong>Default value</strong>: <code class="highlighter-rouge">more</code></p>
+<p><strong>Default value</strong>: <code class="language-plaintext highlighter-rouge">more</code></p>
 
-<h3 id="n_responsiveAction"><code class="highlighter-rouge">responsiveAction</code></h3>
+<h3 id="n_responsiveAction"><code class="language-plaintext highlighter-rouge">responsiveAction</code></h3>
 
 <p>The default responsive handler for the navigation widget.</p>
 
 <p><strong>Type</strong>: String</p>
 
-<p><strong>Default value</strong>: <code class="highlighter-rouge">'wrap'</code></p>
+<p><strong>Default value</strong>: <code class="language-plaintext highlighter-rouge">'wrap'</code></p>
 
-<p><strong>Accepted values</strong>: <code class="highlighter-rouge">wrap</code>, <code class="highlighter-rouge">onResize</code>, <code class="highlighter-rouge">onLoad</code></p>
+<p><strong>Accepted values</strong>: <code class="language-plaintext highlighter-rouge">wrap</code>, <code class="language-plaintext highlighter-rouge">onResize</code>, <code class="language-plaintext highlighter-rouge">onLoad</code></p>
 
 <h2 id="navigation_methods">Methods</h2>
 
@@ -2257,10 +2258,10 @@ level).</li>
   <li><a href="#nav_setupMoreMenu">setupMoreMenu()</a></li>
 </ul>
 
-<h3 id="nav_setMaxItems"><code class="highlighter-rouge">setMaxItems()</code></h3>
+<h3 id="nav_setMaxItems"><code class="language-plaintext highlighter-rouge">setMaxItems()</code></h3>
 <p>Moves the list items that are more than the total max item number set by the user option.</p>
 
-<h3 id="nav_setupMoreMenu"><code class="highlighter-rouge">setupMoreMenu()</code></h3>
+<h3 id="nav_setupMoreMenu"><code class="language-plaintext highlighter-rouge">setupMoreMenu()</code></h3>
 <p>Builds the more overflowing menu by cloning the main menu items.</p>
 
 

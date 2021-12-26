@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Advanced JavaScript bundling | Magento 2 Developer Documentation (copy)</title>
+	<title>Advanced JavaScript bundling | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/performance-best-practices/advanced-js-bundling.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/performance-best-practices/advanced-js-bundling.html">Magento 2.0</a></li>
 		
@@ -1862,48 +1863,48 @@
 
 <h4 id="1-add-a-buildjs-file">1. Add a build.js file</h4>
 
-<p>Create a <code class="highlighter-rouge">build.js</code> file in the Magento root directory. This file will contain the entire build configuration for your bundles.</p>
+<p>Create a <code class="language-plaintext highlighter-rouge">build.js</code> file in the Magento root directory. This file will contain the entire build configuration for your bundles.</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">({</span>
-    <span class="na">optimize</span><span class="p">:</span> <span class="s1">'none'</span><span class="p">,</span>
+    <span class="na">optimize</span><span class="p">:</span> <span class="dl">'</span><span class="s1">none</span><span class="dl">'</span><span class="p">,</span>
     <span class="na">inlineText</span><span class="p">:</span> <span class="kc">true</span>
 <span class="p">})</span>
 </code></pre></div></div>
 
-<p>Later, we will change the <code class="highlighter-rouge">optimize:</code> setting from_ <code class="highlighter-rouge">none</code> to <code class="highlighter-rouge">uglify2</code> to minify bundle output. But for now, during development, you can leave it set to <code class="highlighter-rouge">none</code> to  ensure faster builds.</p>
+<p>Later, we will change the <code class="language-plaintext highlighter-rouge">optimize:</code> setting from_ <code class="language-plaintext highlighter-rouge">none</code> to <code class="language-plaintext highlighter-rouge">uglify2</code> to minify bundle output. But for now, during development, you can leave it set to <code class="language-plaintext highlighter-rouge">none</code> to  ensure faster builds.</p>
 
 <h4 id="2-add-requirejs-dependencies-shims-paths-and-map">2. Add RequireJS dependencies, shims, paths, and map</h4>
 
-<p>Add the following RequireJS build configuration nodes, <code class="highlighter-rouge">deps</code>, <code class="highlighter-rouge">shim</code>, <code class="highlighter-rouge">paths</code>, and <code class="highlighter-rouge">map</code>, to your build file:</p>
+<p>Add the following RequireJS build configuration nodes, <code class="language-plaintext highlighter-rouge">deps</code>, <code class="language-plaintext highlighter-rouge">shim</code>, <code class="language-plaintext highlighter-rouge">paths</code>, and <code class="language-plaintext highlighter-rouge">map</code>, to your build file:</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">({</span>
-    <span class="na">optimize</span><span class="p">:</span> <span class="s1">'none'</span><span class="p">,</span>
+    <span class="na">optimize</span><span class="p">:</span> <span class="dl">'</span><span class="s1">none</span><span class="dl">'</span><span class="p">,</span>
     <span class="na">inlineText</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
     
     <span class="na">deps</span><span class="p">:</span> <span class="p">[],</span>
     <span class="na">shim</span><span class="p">:</span> <span class="p">{},</span>
     <span class="na">paths</span><span class="p">:</span> <span class="p">{},</span>
-    <span class="na">map</span><span class="p">:</span> <span class="p">{</span> <span class="s2">"*"</span><span class="p">:</span> <span class="p">{}</span> <span class="p">},</span>
+    <span class="na">map</span><span class="p">:</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">*</span><span class="dl">"</span><span class="p">:</span> <span class="p">{}</span> <span class="p">},</span>
 <span class="p">})</span>
 </code></pre></div></div>
 
 <h4 id="3-aggregate-the-requirejs-configjs-instance-values">3. Aggregate the requirejs-config.js instance values</h4>
 
-<p>In this step, you will need to aggregate all of the multiple <code class="highlighter-rouge">deps</code>, <code class="highlighter-rouge">shim</code>, <code class="highlighter-rouge">paths</code>, and <code class="highlighter-rouge">map </code> configuration nodes from your store’s <code class="highlighter-rouge">requirejs-config.js</code> file into the corresponding nodes in your <code class="highlighter-rouge">build.js</code> file. To do this, you can open the <strong>Network</strong> tab in your browser’s Developer Tools panel and navigate to any page in your store, such as the homepage. In the Network tab, you will see your store’s instance of the <code class="highlighter-rouge">requirejs-config.js</code> file near the top, highlighted here:</p>
+<p>In this step, you will need to aggregate all of the multiple <code class="language-plaintext highlighter-rouge">deps</code>, <code class="language-plaintext highlighter-rouge">shim</code>, <code class="language-plaintext highlighter-rouge">paths</code>, and <code class="language-plaintext highlighter-rouge">map </code> configuration nodes from your store’s <code class="language-plaintext highlighter-rouge">requirejs-config.js</code> file into the corresponding nodes in your <code class="language-plaintext highlighter-rouge">build.js</code> file. To do this, you can open the <strong>Network</strong> tab in your browser’s Developer Tools panel and navigate to any page in your store, such as the homepage. In the Network tab, you will see your store’s instance of the <code class="language-plaintext highlighter-rouge">requirejs-config.js</code> file near the top, highlighted here:</p>
 
 <p><img src="images/RequireJSConfig.png" alt="RequireJSConfig" /></p>
 
-<p>Within this file, you will find multiple entries for each of the configuration nodes (<code class="highlighter-rouge">deps</code>, <code class="highlighter-rouge">shim</code>, <code class="highlighter-rouge">paths</code>, <code class="highlighter-rouge">map</code>). You need to aggregate these multiple node values into your build.js file’s single configuration node. For example, if your store’s <code class="highlighter-rouge">requirejs-config.js</code> instance has entries for 15 separate <code class="highlighter-rouge">map</code> nodes, you will need to merge the entries for all 15 nodes into the single <code class="highlighter-rouge">map</code> node in your <code class="highlighter-rouge">build.js</code> file. The same will be true for the <code class="highlighter-rouge">deps</code>, <code class="highlighter-rouge">shim</code>, and <code class="highlighter-rouge">paths</code> nodes. Without a script to automate this process, it may take time.</p>
+<p>Within this file, you will find multiple entries for each of the configuration nodes (<code class="language-plaintext highlighter-rouge">deps</code>, <code class="language-plaintext highlighter-rouge">shim</code>, <code class="language-plaintext highlighter-rouge">paths</code>, <code class="language-plaintext highlighter-rouge">map</code>). You need to aggregate these multiple node values into your build.js file’s single configuration node. For example, if your store’s <code class="language-plaintext highlighter-rouge">requirejs-config.js</code> instance has entries for 15 separate <code class="language-plaintext highlighter-rouge">map</code> nodes, you will need to merge the entries for all 15 nodes into the single <code class="language-plaintext highlighter-rouge">map</code> node in your <code class="language-plaintext highlighter-rouge">build.js</code> file. The same will be true for the <code class="language-plaintext highlighter-rouge">deps</code>, <code class="language-plaintext highlighter-rouge">shim</code>, and <code class="language-plaintext highlighter-rouge">paths</code> nodes. Without a script to automate this process, it may take time.</p>
 
 <h4 id="4-add-a-modules-node">4. Add a modules node</h4>
 
-<p>At the end of the <code class="highlighter-rouge">build.js</code> file, add the modules[] array as a placeholder for the bundles you will define for your storefront later.</p>
+<p>At the end of the <code class="language-plaintext highlighter-rouge">build.js</code> file, add the modules[] array as a placeholder for the bundles you will define for your storefront later.</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">({</span>
-    <span class="na">optimize</span><span class="p">:</span> <span class="s1">'none'</span><span class="p">,</span>
+    <span class="na">optimize</span><span class="p">:</span> <span class="dl">'</span><span class="s1">none</span><span class="dl">'</span><span class="p">,</span>
     <span class="na">inlineText</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
     
     <span class="na">deps</span><span class="p">:</span> <span class="p">[],</span>
     <span class="na">shim</span><span class="p">:</span> <span class="p">{},</span>
     <span class="na">paths</span><span class="p">:</span> <span class="p">{},</span>
-    <span class="na">map</span><span class="p">:</span> <span class="p">{</span> <span class="s2">"*"</span><span class="p">:</span> <span class="p">{}</span> <span class="p">},</span>
+    <span class="na">map</span><span class="p">:</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">*</span><span class="dl">"</span><span class="p">:</span> <span class="p">{}</span> <span class="p">},</span>
     
     <span class="na">modules</span><span class="p">:</span> <span class="p">[],</span>
 <span class="p">})</span>
@@ -1919,20 +1920,20 @@
 
 <h4 id="to-use-phantomjs">To use PhantomJS:</h4>
 
-<p>In the Magento root directory, create a new file called <code class="highlighter-rouge">deps.js</code> and copy in the code below. This code uses PhantomJS to open a page and wait for the browser to load all page assets. It then outputs all the RequireJS dependencies for a given page.</p>
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="s2">"use strict"</span><span class="p">;</span>
-<span class="kd">var</span> <span class="nx">page</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'webpage'</span><span class="p">).</span><span class="nx">create</span><span class="p">(),</span>
-    <span class="nx">system</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'system'</span><span class="p">),</span>
+<p>In the Magento root directory, create a new file called <code class="language-plaintext highlighter-rouge">deps.js</code> and copy in the code below. This code uses PhantomJS to open a page and wait for the browser to load all page assets. It then outputs all the RequireJS dependencies for a given page.</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="dl">"</span><span class="s2">use strict</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">page</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">webpage</span><span class="dl">'</span><span class="p">).</span><span class="nx">create</span><span class="p">(),</span>
+    <span class="nx">system</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">system</span><span class="dl">'</span><span class="p">),</span>
     <span class="nx">address</span><span class="p">;</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="nx">system</span><span class="p">.</span><span class="nx">args</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Usage: $phantomjs deps.js url'</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Usage: $phantomjs deps.js url</span><span class="dl">'</span><span class="p">);</span>
     <span class="nx">phantom</span><span class="p">.</span><span class="nx">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
     <span class="nx">address</span> <span class="o">=</span> <span class="nx">system</span><span class="p">.</span><span class="nx">args</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
     <span class="nx">page</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="nx">address</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">status</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">status</span> <span class="o">!==</span> <span class="s1">'success'</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'FAIL to load the address'</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">status</span> <span class="o">!==</span> <span class="dl">'</span><span class="s1">success</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">FAIL to load the address</span><span class="dl">'</span><span class="p">);</span>
         <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
             <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
                 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">page</span><span class="p">.</span><span class="nx">evaluate</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
@@ -1949,10 +1950,10 @@
 phantomjs deps.js <i>url-to-specific-page</i> &gt; <i>text-file-representing-pagetype-dependencies</i> 
 </pre>
 <p>For example, here are four pages from the Luma themed sample Magento store that represent the four page types we will use to create our four bundles (homepage, category, product, cart):</p>
-<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="gp">phantomjs deps.js http://m2.loc/ &gt;</span> bundle/homepage.txt
-<span class="gp">phantomjs deps.js http://m2.loc/women/tops-women/jackets-women.html &gt;</span> bundle/category.txt
-<span class="gp">phantomjs deps.js http://m2.loc/beaumont-summit-kit.html &gt;</span> bundle/product.txt
-<span class="gp">phantomjs deps.js http://m2.loc/checkout/cart/?SID=m2tjdt7ipvep9g0h8pmsgie975 &gt;</span> bundle/cart.txt <span class="o">(</span>prepare a shopping cart<span class="o">)</span>
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="gp">phantomjs deps.js http://m2.loc/ &gt;</span><span class="w"> </span>bundle/homepage.txt
+<span class="gp">phantomjs deps.js http://m2.loc/women/tops-women/jackets-women.html &gt;</span><span class="w"> </span>bundle/category.txt
+<span class="gp">phantomjs deps.js http://m2.loc/beaumont-summit-kit.html &gt;</span><span class="w"> </span>bundle/product.txt
+<span class="gp">phantomjs deps.js http://m2.loc/checkout/cart/?SID=m2tjdt7ipvep9g0h8pmsgie975 &gt;</span><span class="w"> </span>bundle/cart.txt <span class="o">(</span>prepare a shopping cart<span class="o">)</span>
 <span class="c">..............
 </span></code></pre></div></div>
 
@@ -1984,10 +1985,10 @@ phantomjs deps.js <i>url-to-specific-page</i> &gt; <i>text-file-representing-pag
 <p>The goal is to create a common bundle of JavaScript files needed by all pages. That way the browser only needs to load the common bundle along with one or more specific page types.</p>
 
 <p>Open a terminal in the Magento root directory and use the following command to verify that you have dependencies you can split into separate bundles:</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>sort bundle/<span class="k">*</span>.txt |uniq <span class="nt">-c</span> |sort <span class="nt">-n</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">sort </span>bundle/<span class="k">*</span>.txt |uniq <span class="nt">-c</span> |sort <span class="nt">-n</span>
 </code></pre></div></div>
 
-<p>This command merges and sorts the dependencies found in the <code class="highlighter-rouge">bundle/*.txt</code> files.  The output also shows the number of files that contain each dependency:</p>
+<p>This command merges and sorts the dependencies found in the <code class="language-plaintext highlighter-rouge">bundle/*.txt</code> files.  The output also shows the number of files that contain each dependency:</p>
 <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="go">1 buildTools,
 1 jquery/jquery.parsequery,
 1 jsbuild,
@@ -2000,7 +2001,7 @@ phantomjs deps.js <i>url-to-specific-page</i> &gt; <i>text-file-representing-pag
 </span><span class="c">...
 </span></code></pre></div></div>
 
-<p>This output shows that <code class="highlighter-rouge">buildTools</code> is a dependency in only one of the bundle/*.txt files. The <code class="highlighter-rouge">jquery/jquery.metadata</code> dependency is in two (2) files and <code class="highlighter-rouge">es6-collections</code> is in three (3) files.</p>
+<p>This output shows that <code class="language-plaintext highlighter-rouge">buildTools</code> is a dependency in only one of the bundle/*.txt files. The <code class="language-plaintext highlighter-rouge">jquery/jquery.metadata</code> dependency is in two (2) files and <code class="language-plaintext highlighter-rouge">es6-collections</code> is in three (3) files.</p>
 
 <p>Our output shows only three page types (homepage, category, and product), which tells us:</p>
 <ul>
@@ -2013,8 +2014,8 @@ phantomjs deps.js <i>url-to-specific-page</i> &gt; <i>text-file-representing-pag
 
 <h4 id="8-create-a-dependencies-distribution-file">8. Create a dependencies distribution file</h4>
 
-<p>To find out which page types need which dependencies, create a new file in the Magento root directory called <code class="highlighter-rouge">deps-map.sh</code> and copy in the code below:</p>
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>awk <span class="s1">'END {
+<p>To find out which page types need which dependencies, create a new file in the Magento root directory called <code class="language-plaintext highlighter-rouge">deps-map.sh</code> and copy in the code below:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">awk</span> <span class="s1">'END {
  for (R in rec) {
    n = split(rec[R], t, "/")
    if (n &gt; 1)
@@ -2037,75 +2038,75 @@ phantomjs deps.js <i>url-to-specific-page</i> &gt; <i>text-file-representing-pag
 </code></pre></div></div>
 
 <p>The output from this script, applied to our three example page types, should look something like this (but much longer):</p>
-<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="gp">bundle/product.txt   --&gt;</span>   buildTools,
-<span class="gp">bundle/category.txt  --&gt;</span>   jquery/jquery.parsequery,
-<span class="gp">bundle/product.txt   --&gt;</span>   jsbuild,
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="gp">bundle/product.txt   --&gt;</span><span class="w">   </span>buildTools,
+<span class="gp">bundle/category.txt  --&gt;</span><span class="w">   </span>jquery/jquery.parsequery,
+<span class="gp">bundle/product.txt   --&gt;</span><span class="w">   </span>jsbuild,
 <span class="go">
-</span><span class="gp">bundle/category.txt/bundle/homepage.txt --&gt;</span>    jquery/jquery.metadata,
-<span class="gp">bundle/category.txt/bundle/homepage.txt --&gt;</span>    jquery/validate,
-<span class="gp">bundle/category.txt/bundle/homepage.txt --&gt;</span>    mage/bootstrap,
+</span><span class="gp">bundle/category.txt/bundle/homepage.txt --&gt;</span><span class="w">    </span>jquery/jquery.metadata,
+<span class="gp">bundle/category.txt/bundle/homepage.txt --&gt;</span><span class="w">    </span>jquery/validate,
+<span class="gp">bundle/category.txt/bundle/homepage.txt --&gt;</span><span class="w">    </span>mage/bootstrap,
 <span class="go">
-</span><span class="gp">bundle/category.txt/bundle/homepage.txt/bundle/product.txt --&gt;</span> jquery,
-<span class="gp">bundle/category.txt/bundle/homepage.txt/bundle/product.txt --&gt;</span> jquery/ui,
-<span class="gp">bundle/category.txt/bundle/homepage.txt/bundle/product.txt --&gt;</span> knockoutjs/knockout,
+</span><span class="gp">bundle/category.txt/bundle/homepage.txt/bundle/product.txt --&gt;</span><span class="w"> </span>jquery,
+<span class="gp">bundle/category.txt/bundle/homepage.txt/bundle/product.txt --&gt;</span><span class="w"> </span>jquery/ui,
+<span class="gp">bundle/category.txt/bundle/homepage.txt/bundle/product.txt --&gt;</span><span class="w"> </span>knockoutjs/knockout,
 </code></pre></div></div>
 
 <p>This is enough information to build a bundles configuration.</p>
 
 <h4 id="9-create-bundles-in-your-buildjs-file">9. Create bundles in your build.js file</h4>
 
-<p>Open the <code class="highlighter-rouge">build.js</code> configuration file and add your bundles to the <code class="highlighter-rouge">modules</code> node. Each bundle should define the following properties:</p>
+<p>Open the <code class="language-plaintext highlighter-rouge">build.js</code> configuration file and add your bundles to the <code class="language-plaintext highlighter-rouge">modules</code> node. Each bundle should define the following properties:</p>
 
 <ul>
   <li>
-    <p><code class="highlighter-rouge">name</code>— the name of the bundle. For example, a name of <code class="highlighter-rouge">bundles/cart</code> generates a <code class="highlighter-rouge">cart.js</code> bundle in a <code class="highlighter-rouge">bundles</code> subdirectory.</p>
+    <p><code class="language-plaintext highlighter-rouge">name</code>— the name of the bundle. For example, a name of <code class="language-plaintext highlighter-rouge">bundles/cart</code> generates a <code class="language-plaintext highlighter-rouge">cart.js</code> bundle in a <code class="language-plaintext highlighter-rouge">bundles</code> subdirectory.</p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">create</code>— a boolean flag to create the bundle (values: <code class="highlighter-rouge">true</code> or <code class="highlighter-rouge">false</code>).</p>
+    <p><code class="language-plaintext highlighter-rouge">create</code>— a boolean flag to create the bundle (values: <code class="language-plaintext highlighter-rouge">true</code> or <code class="language-plaintext highlighter-rouge">false</code>).</p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">include</code>— an array of assets (strings) included as dependencies for the page. RequireJS traces all dependencies and includes them in the bundle unless excluded.</p>
+    <p><code class="language-plaintext highlighter-rouge">include</code>— an array of assets (strings) included as dependencies for the page. RequireJS traces all dependencies and includes them in the bundle unless excluded.</p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">exclude</code>— an array of bundles or assets to exclude from the bundle.</p>
+    <p><code class="language-plaintext highlighter-rouge">exclude</code>— an array of bundles or assets to exclude from the bundle.</p>
   </li>
 </ul>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span>
-    <span class="nl">name</span><span class="p">:</span> <span class="s1">'bundles/catalog'</span><span class="p">,</span>
+    <span class="nl">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">bundles/catalog</span><span class="dl">'</span><span class="p">,</span>
     <span class="nx">create</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
     <span class="nx">include</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s1">'addToWishlist'</span><span class="p">,</span>
-        <span class="s1">'priceBundle'</span><span class="p">,</span>
-        <span class="s1">'priceUtils'</span><span class="p">,</span>
-        <span class="s1">'priceOptions'</span><span class="p">,</span>
-        <span class="s1">'sticky'</span><span class="p">,</span>
-        <span class="s1">'productSummary'</span><span class="p">,</span>
-        <span class="s1">'slide'</span>
+        <span class="dl">'</span><span class="s1">addToWishlist</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">priceBundle</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">priceUtils</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">priceOptions</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">sticky</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">productSummary</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">slide</span><span class="dl">'</span>
     <span class="p">],</span>
     <span class="nx">exclude</span><span class="p">:</span> <span class="p">[</span> 
-        <span class="s1">'requirejs/require'</span><span class="p">,</span>
-        <span class="s1">'bundles/default'</span><span class="p">,</span>
-        <span class="s1">'mage/bootstrap'</span>
+        <span class="dl">'</span><span class="s1">requirejs/require</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">bundles/default</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">mage/bootstrap</span><span class="dl">'</span>
     <span class="p">],</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>This example reuses <code class="highlighter-rouge">mage/bootstrap</code> and <code class="highlighter-rouge">requirejs/require</code> assets, placing higher priority on their most important components and components that have to be loaded synchronously. The bundles that are present are:</p>
+<p>This example reuses <code class="language-plaintext highlighter-rouge">mage/bootstrap</code> and <code class="language-plaintext highlighter-rouge">requirejs/require</code> assets, placing higher priority on their most important components and components that have to be loaded synchronously. The bundles that are present are:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">requirejs/require</code>—the only synchronously loaded bundle</li>
-  <li><code class="highlighter-rouge">mage/bootstrap</code>—the bootstrap bundle with UI components</li>
-  <li><code class="highlighter-rouge">bundles/default</code>—default bundle required for all pages</li>
-  <li><code class="highlighter-rouge">bundles/cart</code>—a bundle required for cart page</li>
-  <li><code class="highlighter-rouge">bundles/shipping</code>—common bundle for shopping cart and checkout page (assuming that checkout is never opened directly the checkout page loads even faster if cart page was opened previously and the shipping bundle was already loaded)</li>
-  <li><code class="highlighter-rouge">bundles/checkout</code>—everything for checkout</li>
-  <li><code class="highlighter-rouge">bundles/catalog</code>—everything for product and category pages</li>
+  <li><code class="language-plaintext highlighter-rouge">requirejs/require</code>—the only synchronously loaded bundle</li>
+  <li><code class="language-plaintext highlighter-rouge">mage/bootstrap</code>—the bootstrap bundle with UI components</li>
+  <li><code class="language-plaintext highlighter-rouge">bundles/default</code>—default bundle required for all pages</li>
+  <li><code class="language-plaintext highlighter-rouge">bundles/cart</code>—a bundle required for cart page</li>
+  <li><code class="language-plaintext highlighter-rouge">bundles/shipping</code>—common bundle for shopping cart and checkout page (assuming that checkout is never opened directly the checkout page loads even faster if cart page was opened previously and the shipping bundle was already loaded)</li>
+  <li><code class="language-plaintext highlighter-rouge">bundles/checkout</code>—everything for checkout</li>
+  <li><code class="language-plaintext highlighter-rouge">bundles/catalog</code>—everything for product and category pages</li>
 </ul>
 
 <h3 id="part-2-generate-bundles">Part 2: Generate bundles</h3>
 
-<p>The steps below describe the basic process for generating more efficient Magento bundles. You can automate this process any way you want, but you will still need to use <code class="highlighter-rouge">nodejs</code> and <code class="highlighter-rouge">r.js</code> to actually generate your bundles. And if your themes have JavaScript-related customizations and cannot reuse the same <code class="highlighter-rouge">build.js</code> file, you may need to create several <code class="highlighter-rouge">build.js</code> configurations per theme.</p>
+<p>The steps below describe the basic process for generating more efficient Magento bundles. You can automate this process any way you want, but you will still need to use <code class="language-plaintext highlighter-rouge">nodejs</code> and <code class="language-plaintext highlighter-rouge">r.js</code> to actually generate your bundles. And if your themes have JavaScript-related customizations and cannot reuse the same <code class="language-plaintext highlighter-rouge">build.js</code> file, you may need to create several <code class="language-plaintext highlighter-rouge">build.js</code> configurations per theme.</p>
 
 <h4 id="1-generate-static-store-sites">1. Generate static store sites</h4>
 
@@ -2129,22 +2130,22 @@ phantomjs deps.js <i>url-to-specific-page</i> &gt; <i>text-file-representing-pag
 
 <p>First, you need to move the static content from the target directory to some temporary directory because RequireJS replaces all the content within the target directory.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mv pub/static/frontend/Magento/<span class="o">{</span>theme<span class="o">}</span>/<span class="o">{</span>locale<span class="o">}</span> pub/static/frontend/Magento/<span class="o">{</span>theme<span class="o">}</span>/<span class="o">{</span>locale<span class="o">}</span>_tmp
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">mv </span>pub/static/frontend/Magento/<span class="o">{</span>theme<span class="o">}</span>/<span class="o">{</span>locale<span class="o">}</span> pub/static/frontend/Magento/<span class="o">{</span>theme<span class="o">}</span>/<span class="o">{</span>locale<span class="o">}</span>_tmp
 </code></pre></div></div>
 
 <p>For example:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mv pub/static/frontend/Magento/luma/en_US pub/static/frontend/Magento/luma/en_US_tmp
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">mv </span>pub/static/frontend/Magento/luma/en_US pub/static/frontend/Magento/luma/en_US_tmp
 </code></pre></div></div>
 
 <h4 id="3-run-the-rjs-optimizer">3. Run the r.js optimizer</h4>
 
-<p>Then run the r.js optimizer on the <code class="highlighter-rouge">build.js</code> file from Magento’s root directory. Paths to all directories and files are relative to the working directory.</p>
+<p>Then run the r.js optimizer on the <code class="language-plaintext highlighter-rouge">build.js</code> file from Magento’s root directory. Paths to all directories and files are relative to the working directory.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>r.js <span class="nt">-o</span> build.js <span class="nv">baseUrl</span><span class="o">=</span>pub/static/frontend/Magento/luma/en_US_tmp <span class="nv">dir</span><span class="o">=</span>pub/static/frontend/Magento/luma/en_US
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>r.js <span class="nt">-o</span> build.js <span class="nv">baseUrl</span><span class="o">=</span>pub/static/frontend/Magento/luma/en_US_tmp <span class="nb">dir</span><span class="o">=</span>pub/static/frontend/Magento/luma/en_US
 </code></pre></div></div>
 
-<p>This command generates bundles in a <code class="highlighter-rouge">bundles</code> subdirectory of the target directory, which in this case results in <code class="highlighter-rouge">pub/static/frontend/Magento/luma/en_US/bundles</code>.</p>
+<p>This command generates bundles in a <code class="language-plaintext highlighter-rouge">bundles</code> subdirectory of the target directory, which in this case results in <code class="language-plaintext highlighter-rouge">pub/static/frontend/Magento/luma/en_US/bundles</code>.</p>
 
 <p>Listing the contents of the new bundle directory might look like this:</p>
 
@@ -2162,17 +2163,17 @@ drwxr-xr-x 70 root root    4096 Mar 28 11:24 ../
 
 <h4 id="4-configure-requirejs-to-use-bundles">4. Configure RequireJS to use bundles</h4>
 
-<p>To get RequireJS to use your bundles, add a <code class="highlighter-rouge">onModuleBundleComplete</code>callback after the <code class="highlighter-rouge">modules</code> node in the <code class="highlighter-rouge">build.js</code> file:</p>
+<p>To get RequireJS to use your bundles, add a <code class="language-plaintext highlighter-rouge">onModuleBundleComplete</code>callback after the <code class="language-plaintext highlighter-rouge">modules</code> node in the <code class="language-plaintext highlighter-rouge">build.js</code> file:</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">[</span>
     <span class="p">{</span>
        <span class="c1">//...</span>
        <span class="na">exclude</span><span class="p">:</span> <span class="p">[</span> 
-           <span class="s1">'requirejs/require'</span><span class="p">,</span>
-           <span class="s1">'bundles/default'</span><span class="p">,</span>
-           <span class="s1">'bundles/checkout'</span><span class="p">,</span>
-           <span class="s1">'bundles/cart'</span><span class="p">,</span>
-           <span class="s1">'bundles/shipping'</span><span class="p">,</span>
-           <span class="s1">'mage/bootstrap'</span>
+           <span class="dl">'</span><span class="s1">requirejs/require</span><span class="dl">'</span><span class="p">,</span>
+           <span class="dl">'</span><span class="s1">bundles/default</span><span class="dl">'</span><span class="p">,</span>
+           <span class="dl">'</span><span class="s1">bundles/checkout</span><span class="dl">'</span><span class="p">,</span>
+           <span class="dl">'</span><span class="s1">bundles/cart</span><span class="dl">'</span><span class="p">,</span>
+           <span class="dl">'</span><span class="s1">bundles/shipping</span><span class="dl">'</span><span class="p">,</span>
+           <span class="dl">'</span><span class="s1">mage/bootstrap</span><span class="dl">'</span>
        <span class="p">],</span>
    <span class="p">},</span>
 <span class="p">]</span>
@@ -2182,7 +2183,7 @@ drwxr-xr-x 70 root root    4096 Mar 28 11:24 ../
        <span class="kd">const</span> <span class="nx">fileName</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">config</span><span class="p">.</span><span class="nx">dir</span><span class="p">}</span><span class="s2">/requirejs-config.js`</span><span class="p">;</span>
        <span class="kd">const</span> <span class="nx">bundleConfig</span> <span class="o">=</span> <span class="p">{};</span>
        <span class="nx">bundleConfig</span><span class="p">[</span><span class="nx">data</span><span class="p">.</span><span class="nx">name</span><span class="p">]</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">included</span><span class="p">;</span>
-       <span class="nx">bundleConfig</span><span class="p">[</span><span class="nx">data</span><span class="p">.</span><span class="nx">name</span><span class="p">]</span> <span class="o">=</span> <span class="nx">bundleConfig</span><span class="p">[</span><span class="nx">data</span><span class="p">.</span><span class="nx">name</span><span class="p">].</span><span class="nx">map</span><span class="p">(</span><span class="nx">bundle</span> <span class="o">=&gt;</span> <span class="nx">bundle</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">\.</span><span class="sr">js$/</span><span class="p">,</span> <span class="s1">''</span><span class="p">));</span>
+       <span class="nx">bundleConfig</span><span class="p">[</span><span class="nx">data</span><span class="p">.</span><span class="nx">name</span><span class="p">]</span> <span class="o">=</span> <span class="nx">bundleConfig</span><span class="p">[</span><span class="nx">data</span><span class="p">.</span><span class="nx">name</span><span class="p">].</span><span class="nx">map</span><span class="p">(</span><span class="nx">bundle</span> <span class="o">=&gt;</span> <span class="nx">bundle</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">\.</span><span class="sr">js$/</span><span class="p">,</span> <span class="dl">''</span><span class="p">));</span>
        <span class="kd">const</span> <span class="nx">contents</span> <span class="o">=</span> <span class="s2">`require.config({
            bundles: </span><span class="p">${</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">bundleConfig</span><span class="p">)}</span><span class="s2">,
        });`</span><span class="p">;</span>
@@ -2195,18 +2196,18 @@ drwxr-xr-x 70 root root    4096 Mar 28 11:24 ../
 <h4 id="5-rerun-deploy-command">5. Rerun deploy command</h4>
 
 <p>Run the following command to deploy:</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>r.js <span class="nt">-o</span> app/design/frontend/Magento/luma/build.js <span class="nv">baseUrl</span><span class="o">=</span>pub/static/frontend/Magento/luma/en_US_tmp <span class="nv">dir</span><span class="o">=</span>pub/static/frontend/Magento/luma/en_US
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>r.js <span class="nt">-o</span> app/design/frontend/Magento/luma/build.js <span class="nv">baseUrl</span><span class="o">=</span>pub/static/frontend/Magento/luma/en_US_tmp <span class="nb">dir</span><span class="o">=</span>pub/static/frontend/Magento/luma/en_US
 </code></pre></div></div>
-<p>Open <code class="highlighter-rouge">requirejs-config.js</code> in the <code class="highlighter-rouge">pub/static/frontend/Magento/luma/en_US</code> directory to verify that RequireJS appended the file with bundling configuration calls:</p>
+<p>Open <code class="language-plaintext highlighter-rouge">requirejs-config.js</code> in the <code class="language-plaintext highlighter-rouge">pub/static/frontend/Magento/luma/en_US</code> directory to verify that RequireJS appended the file with bundling configuration calls:</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nx">require</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
-                <span class="na">bundles</span><span class="p">:</span> <span class="p">{</span><span class="s2">"bundles/default"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"mage/template"</span><span class="p">,</span><span class="s2">"mage/apply/scripts"</span><span class="p">,</span><span class="s2">"mage/apply/main"</span><span class="p">,</span><span class="s2">"mage/mage"</span><span class="p">,</span><span class="s2">"mage/translate"</span><span class="p">,</span><span class="s2">"mage/loader"</span><span class="p">]</span>
+                <span class="na">bundles</span><span class="p">:</span> <span class="p">{</span><span class="dl">"</span><span class="s2">bundles/default</span><span class="dl">"</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">mage/template</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">mage/apply/scripts</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">mage/apply/main</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">mage/mage</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">mage/translate</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">mage/loader</span><span class="dl">"</span><span class="p">]</span>
             <span class="p">}});</span>
 <span class="nx">require</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
-                <span class="na">bundles</span><span class="p">:</span> <span class="p">{</span><span class="s2">"bundles/cart"</span><span class="p">:[</span><span class="s2">"Magento_Ui/js/lib/validation/utils"</span><span class="p">,</span><span class="s2">"Magento_Ui/js/lib/validation/rules"</span><span class="p">,</span><span class="s2">"Magento_Ui/js/lib/validation/validation"</span><span class="p">]</span>
+                <span class="na">bundles</span><span class="p">:</span> <span class="p">{</span><span class="dl">"</span><span class="s2">bundles/cart</span><span class="dl">"</span><span class="p">:[</span><span class="dl">"</span><span class="s2">Magento_Ui/js/lib/validation/utils</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">Magento_Ui/js/lib/validation/rules</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">Magento_Ui/js/lib/validation/validation</span><span class="dl">"</span><span class="p">]</span>
             <span class="p">}});</span>
 </code></pre></div></div>
 
-<p class="bs-callout bs-callout-info">When configuring bundles, make sure you put the <code class="highlighter-rouge">requirejs.config()</code> calls in the order you want them executed, because the calls are executed in the sequential order they appear.</p>
+<p class="bs-callout bs-callout-info">When configuring bundles, make sure you put the <code class="language-plaintext highlighter-rouge">requirejs.config()</code> calls in the order you want them executed, because the calls are executed in the sequential order they appear.</p>
 
 <h4 id="6-test-the-results">6. Test the results</h4>
 
@@ -2220,9 +2221,9 @@ drwxr-xr-x 70 root root    4096 Mar 28 11:24 ../
 
 <p>Even if gzipped, the JavaScript files are still large. Minify them with RequireJS, which uses uglifier for minifying JavaScript to good result.</p>
 
-<p>To enable the optimizer in your <code class="highlighter-rouge">build.js</code> file, add <code class="highlighter-rouge">uglify2</code> as the value for the optimize property at the top of the <code class="highlighter-rouge">build.js</code> file:</p>
+<p>To enable the optimizer in your <code class="language-plaintext highlighter-rouge">build.js</code> file, add <code class="language-plaintext highlighter-rouge">uglify2</code> as the value for the optimize property at the top of the <code class="language-plaintext highlighter-rouge">build.js</code> file:</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">({</span>
-    <span class="na">optimize</span><span class="p">:</span> <span class="s1">'uglify2'</span><span class="p">,</span>
+    <span class="na">optimize</span><span class="p">:</span> <span class="dl">'</span><span class="s1">uglify2</span><span class="dl">'</span><span class="p">,</span>
     <span class="na">inlineText</span><span class="p">:</span> <span class="kc">true</span>
 <span class="p">})</span>
 </code></pre></div></div>

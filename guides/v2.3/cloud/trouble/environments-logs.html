@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>View logs for troubleshooting | Magento 2 Developer Documentation (copy)</title>
+	<title>View logs for troubleshooting | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/trouble/environments-logs.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/trouble/environments-logs.html">Magento 2.0</a></li>
 		
@@ -4353,8 +4354,8 @@
 
     <ul>
       <li>Integration: Copy the link for the SSH command per environment through the Project Web Interface</li>
-      <li>Staging: <code class="highlighter-rouge">ssh -A &lt;project ID&gt;_stg@&lt;project ID&gt;.ent.magento.cloud</code></li>
-      <li>Production: <code class="highlighter-rouge">ssh -A &lt;project ID&gt;@&lt;project ID&gt;.ent.magento.cloud</code></li>
+      <li>Staging: <code class="language-plaintext highlighter-rouge">ssh -A &lt;project ID&gt;_stg@&lt;project ID&gt;.ent.magento.cloud</code></li>
+      <li>Production: <code class="language-plaintext highlighter-rouge">ssh -A &lt;project ID&gt;@&lt;project ID&gt;.ent.magento.cloud</code></li>
     </ul>
   </li>
 </ul>
@@ -4363,27 +4364,27 @@
 
 <h2 id="build-logs">Build logs</h2>
 
-<p>After pushing to your environment, you can see the results of the both hooks. Logs from the build hook are redirected to the output stream of <code class="highlighter-rouge">git push</code>, so you can observe them in the terminal or capture them (along with error messages) with <code class="highlighter-rouge">git push &gt; build.log 2&gt;&amp;1</code>.</p>
+<p>After pushing to your environment, you can see the results of the both hooks. Logs from the build hook are redirected to the output stream of <code class="language-plaintext highlighter-rouge">git push</code>, so you can observe them in the terminal or capture them (along with error messages) with <code class="language-plaintext highlighter-rouge">git push &gt; build.log 2&gt;&amp;1</code>.</p>
 
-<p>For 2.1.9 and later and 2.2.X, we include a <code class="highlighter-rouge">var/log/cloud.log</code> file inside the Magento application root directory, that compiles both build and deploy actions into one file.</p>
+<p>For 2.1.9 and later and 2.2.X, we include a <code class="language-plaintext highlighter-rouge">var/log/cloud.log</code> file inside the Magento application root directory, that compiles both build and deploy actions into one file.</p>
 
 <h2 id="log-deploy-log">Deploy logs</h2>
 
 <p>You can review these logs via SSH into the environment. Change to the directories listed below to review the logs.</p>
 
-<p>For 2.1.9 and later and 2.2.X, we include a <code class="highlighter-rouge">var/log/cloud.log</code> file inside the Magento application root directory, that compiles both build and deploy actions into one file.</p>
+<p>For 2.1.9 and later and 2.2.X, we include a <code class="language-plaintext highlighter-rouge">var/log/cloud.log</code> file inside the Magento application root directory, that compiles both build and deploy actions into one file.</p>
 
 <p>Logs from the deploy hook are located on the server in the following locations:</p>
 
 <ul>
-  <li>Integration: <code class="highlighter-rouge">/var/log/deploy.log</code></li>
-  <li>Staging: <code class="highlighter-rouge">/var/log/platform/&lt;project ID&gt;_stg/deploy.log</code></li>
-  <li>Production: <code class="highlighter-rouge">/var/log/platform/&lt;project ID&gt;/deploy.log</code></li>
+  <li>Integration: <code class="language-plaintext highlighter-rouge">/var/log/deploy.log</code></li>
+  <li>Staging: <code class="language-plaintext highlighter-rouge">/var/log/platform/&lt;project ID&gt;_stg/deploy.log</code></li>
+  <li>Production: <code class="language-plaintext highlighter-rouge">/var/log/platform/&lt;project ID&gt;/deploy.log</code></li>
 </ul>
 
-<p>The value of <code class="highlighter-rouge">&lt;project ID&gt;</code> depends on the project ID and whether the environment is Staging or Production. For example, with a project ID of <code class="highlighter-rouge">yw1unoukjcawe</code>, the Staging environment user is <code class="highlighter-rouge">yw1unoukjcawe_stg</code> and the Production environment user is <code class="highlighter-rouge">yw1unoukjcawe</code>.</p>
+<p>The value of <code class="language-plaintext highlighter-rouge">&lt;project ID&gt;</code> depends on the project ID and whether the environment is Staging or Production. For example, with a project ID of <code class="language-plaintext highlighter-rouge">yw1unoukjcawe</code>, the Staging environment user is <code class="language-plaintext highlighter-rouge">yw1unoukjcawe_stg</code> and the Production environment user is <code class="language-plaintext highlighter-rouge">yw1unoukjcawe</code>.</p>
 
-<p>For example, on the Staging environment for project <code class="highlighter-rouge">yw1unoukjcawe</code>, the deploy log is located at <code class="highlighter-rouge">/var/log/platform/yw1unoukjcawe_stg/deploy.log</code>.</p>
+<p>For example, on the Staging environment for project <code class="language-plaintext highlighter-rouge">yw1unoukjcawe</code>, the deploy log is located at <code class="language-plaintext highlighter-rouge">/var/log/platform/yw1unoukjcawe_stg/deploy.log</code>.</p>
 
 <p>Logs for all deployments that have occurred on this environment are appended to this file. Check the timestamps on log entries to verify and locate the logs you want for a specific deployment.</p>
 
@@ -4402,13 +4403,13 @@
 </code></pre></div></div>
 
 <p>The deploy log contains start and stop messages for each of the two hooks:
-<code class="highlighter-rouge">Starting pre-deploy</code>, <code class="highlighter-rouge">Pre-deploy complete.</code>, <code class="highlighter-rouge">Start deploy.</code>, and <code class="highlighter-rouge">Deployment complete.</code>.</p>
+<code class="language-plaintext highlighter-rouge">Starting pre-deploy</code>, <code class="language-plaintext highlighter-rouge">Pre-deploy complete.</code>, <code class="language-plaintext highlighter-rouge">Start deploy.</code>, and <code class="language-plaintext highlighter-rouge">Deployment complete.</code>.</p>
 
 <h2 id="app-log">Application logs</h2>
 
-<p>To review other application logs in Staging or Production, you can access and review those logs in <code class="highlighter-rouge">/var/log/platform/&lt;project ID&gt;</code>.</p>
+<p>To review other application logs in Staging or Production, you can access and review those logs in <code class="language-plaintext highlighter-rouge">/var/log/platform/&lt;project ID&gt;</code>.</p>
 
-<p>For Staging, the project ID has <code class="highlighter-rouge">_stg</code> at the end. For example, if you receive 500 errors in Staging and want to review the nginx logs, you can SSH to the Staging environment and locate the logs in <code class="highlighter-rouge">/var/log/platform/&lt;project ID&gt;_stg</code>.</p>
+<p>For Staging, the project ID has <code class="language-plaintext highlighter-rouge">_stg</code> at the end. For example, if you receive 500 errors in Staging and want to review the nginx logs, you can SSH to the Staging environment and locate the logs in <code class="language-plaintext highlighter-rouge">/var/log/platform/&lt;project ID&gt;_stg</code>.</p>
 
 <p>Remember, when viewing the logs for Production, you have three nodes to check.</p>
 

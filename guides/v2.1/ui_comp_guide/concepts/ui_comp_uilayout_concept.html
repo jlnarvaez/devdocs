@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>The uiLayout service object | Magento 2 Developer Documentation (copy)</title>
+	<title>The uiLayout service object | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/ui_comp_guide/concepts/ui_comp_uilayout_concept.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/ui_comp_guide/concepts/ui_comp_uilayout_concept.html">Magento 2.0</a></li>
 		
@@ -3015,14 +3016,14 @@
 	<h1 class="page-heading">The uiLayout service object</h1>
 </section>
 
-			<p>The <code class="highlighter-rouge">uiLayout</code> service object is a JavaScript function object used for initializing and configuring UI components.
-This object is defined in the <a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/Ui/view/base/web/js/core/renderer/layout.js"><code class="highlighter-rouge">layout.js</code></a> file in the UI module.</p>
+			<p>The <code class="language-plaintext highlighter-rouge">uiLayout</code> service object is a JavaScript function object used for initializing and configuring UI components.
+This object is defined in the <a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/Ui/view/base/web/js/core/renderer/layout.js"><code class="language-plaintext highlighter-rouge">layout.js</code></a> file in the UI module.</p>
 
-<h2 id="run-method"><code class="highlighter-rouge">run()</code> method</h2>
+<h2 id="run-method"><code class="language-plaintext highlighter-rouge">run()</code> method</h2>
 
-<p>The <code class="highlighter-rouge">run()</code> method is the class entry point represented by <code class="highlighter-rouge">uiLayout</code> and has the following signature:</p>
+<p>The <code class="language-plaintext highlighter-rouge">run()</code> method is the class entry point represented by <code class="language-plaintext highlighter-rouge">uiLayout</code> and has the following signature:</p>
 
-<p><code class="highlighter-rouge">run(nodes, parent, cached, merge)</code></p>
+<p><code class="language-plaintext highlighter-rouge">run(nodes, parent, cached, merge)</code></p>
 
 <table style="table-layout:auto;">
   <thead>
@@ -3034,34 +3035,34 @@ This object is defined in the <a href="https://github.com/magento/magento2/blob/
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">nodes</code></td>
+      <td><code class="language-plaintext highlighter-rouge">nodes</code></td>
       <td>Object</td>
       <td>Configuration object for a UI component</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">parent</code></td>
+      <td><code class="language-plaintext highlighter-rouge">parent</code></td>
       <td>Object</td>
       <td>The parent component of the UI component</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">cached</code></td>
+      <td><code class="language-plaintext highlighter-rouge">cached</code></td>
       <td>Boolean</td>
-      <td>Determines if <code class="highlighter-rouge">nodes</code> should be cached</td>
+      <td>Determines if <code class="language-plaintext highlighter-rouge">nodes</code> should be cached</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">merge</code></td>
+      <td><code class="language-plaintext highlighter-rouge">merge</code></td>
       <td>Boolean</td>
-      <td>Determines if <code class="highlighter-rouge">nodes</code> should be merged</td>
+      <td>Determines if <code class="language-plaintext highlighter-rouge">nodes</code> should be merged</td>
     </tr>
   </tbody>
 </table>
 
-<p>If <code class="highlighter-rouge">cached</code> is set to <code class="highlighter-rouge">true</code>, the key for the cache is constructed from the object keys in the <code class="highlighter-rouge">node</code> parameter.
-Use the <code class="highlighter-rouge">cached</code> and <code class="highlighter-rouge">merge</code> parameters when a UI component needs to be updated during runtime.</p>
+<p>If <code class="language-plaintext highlighter-rouge">cached</code> is set to <code class="language-plaintext highlighter-rouge">true</code>, the key for the cache is constructed from the object keys in the <code class="language-plaintext highlighter-rouge">node</code> parameter.
+Use the <code class="language-plaintext highlighter-rouge">cached</code> and <code class="language-plaintext highlighter-rouge">merge</code> parameters when a UI component needs to be updated during runtime.</p>
 
-<h3 id="nodes-configuration-object"><code class="highlighter-rouge">nodes</code> configuration object</h3>
+<h3 id="nodes-configuration-object"><code class="language-plaintext highlighter-rouge">nodes</code> configuration object</h3>
 
-<p>The <code class="highlighter-rouge">nodes</code> parameter is a JavaScript object used by the <code class="highlighter-rouge">run()</code> method to determine how a UI component is created.</p>
+<p>The <code class="language-plaintext highlighter-rouge">nodes</code> parameter is a JavaScript object used by the <code class="language-plaintext highlighter-rouge">run()</code> method to determine how a UI component is created.</p>
 
 <p>This object can have the following properties:</p>
 
@@ -3075,42 +3076,42 @@ Use the <code class="highlighter-rouge">cached</code> and <code class="highlight
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">name</code></td>
+      <td><code class="language-plaintext highlighter-rouge">name</code></td>
       <td>String</td>
       <td>Name of the component.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">parent</code></td>
+      <td><code class="language-plaintext highlighter-rouge">parent</code></td>
       <td>String</td>
       <td>Full name of the component’s parent element.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">template</code></td>
+      <td><code class="language-plaintext highlighter-rouge">template</code></td>
       <td>String</td>
-      <td>Path to the component’s <code class="highlighter-rouge">.html</code> template.</td>
+      <td>Path to the component’s <code class="language-plaintext highlighter-rouge">.html</code> template.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">config</code></td>
+      <td><code class="language-plaintext highlighter-rouge">config</code></td>
       <td>Object</td>
       <td>Configuration properties for the UI component.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">children</code></td>
+      <td><code class="language-plaintext highlighter-rouge">children</code></td>
       <td>Object</td>
       <td>Configuration nodes for children components.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">isTemplate</code></td>
+      <td><code class="language-plaintext highlighter-rouge">isTemplate</code></td>
       <td>Boolean</td>
       <td>Whether to save the configuration as a template.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">nodeTemplate</code></td>
+      <td><code class="language-plaintext highlighter-rouge">nodeTemplate</code></td>
       <td>String</td>
       <td>The full name of a saved configuration template.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">provider</code></td>
+      <td><code class="language-plaintext highlighter-rouge">provider</code></td>
       <td>String</td>
       <td>The full name of the DataSource UI component. This property is inherited from the parent if skipped.</td>
     </tr>
@@ -3120,54 +3121,54 @@ Use the <code class="highlighter-rouge">cached</code> and <code class="highlight
 <h4 id="naming">Naming</h4>
 
 <p>The name of the property is the shortened name of the component.
-It is used as the <code class="highlighter-rouge">index</code> property of the generated instance.</p>
+It is used as the <code class="language-plaintext highlighter-rouge">index</code> property of the generated instance.</p>
 
-<p>The full name of the created UI component is the concatenation of the parent’s <code class="highlighter-rouge">name</code> property and the component’s <code class="highlighter-rouge">name</code> property.
-If an instance with the same full name already exists, <code class="highlighter-rouge">uiLayout</code> will skip initialization.</p>
+<p>The full name of the created UI component is the concatenation of the parent’s <code class="language-plaintext highlighter-rouge">name</code> property and the component’s <code class="language-plaintext highlighter-rouge">name</code> property.
+If an instance with the same full name already exists, <code class="language-plaintext highlighter-rouge">uiLayout</code> will skip initialization.</p>
 
 <h4 id="parent-initialization">Parent initialization</h4>
 
-<p>If the parent component is not yet initialized, <code class="highlighter-rouge">uiLayout</code> waits for it to appear in the <code class="highlighter-rouge">uiRegistry</code>.</p>
+<p>If the parent component is not yet initialized, <code class="language-plaintext highlighter-rouge">uiLayout</code> waits for it to appear in the <code class="language-plaintext highlighter-rouge">uiRegistry</code>.</p>
 
 <h4 id="configuration-template">Configuration template</h4>
 
-<p>When <code class="highlighter-rouge">isTemplate</code> is set to <code class="highlighter-rouge">true</code>, <code class="highlighter-rouge">uiLayout</code> stores the configuration in a private <code class="highlighter-rouge">templates</code> variable instead of initializing the component.</p>
+<p>When <code class="language-plaintext highlighter-rouge">isTemplate</code> is set to <code class="language-plaintext highlighter-rouge">true</code>, <code class="language-plaintext highlighter-rouge">uiLayout</code> stores the configuration in a private <code class="language-plaintext highlighter-rouge">templates</code> variable instead of initializing the component.</p>
 
-<p>You can use this stored configuration to create dynamic component instances during runtime by specifying the full name of the configuration in <code class="highlighter-rouge">nodeTemplate</code>.
-If the configuration is found, <code class="highlighter-rouge">uiLayout</code> uses that configuration instead of the current values.</p>
+<p>You can use this stored configuration to create dynamic component instances during runtime by specifying the full name of the configuration in <code class="language-plaintext highlighter-rouge">nodeTemplate</code>.
+If the configuration is found, <code class="language-plaintext highlighter-rouge">uiLayout</code> uses that configuration instead of the current values.</p>
 
 <h2 id="code-samples">Code samples</h2>
 
-<p>The example module referenced in the following examples uses <code class="highlighter-rouge">OrangeCo</code> as its company value and <code class="highlighter-rouge">Sample</code> as the module name.</p>
+<p>The example module referenced in the following examples uses <code class="language-plaintext highlighter-rouge">OrangeCo</code> as its company value and <code class="language-plaintext highlighter-rouge">Sample</code> as the module name.</p>
 
 <p>It also assumes the existence of the following files:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">app/code/OrangeCo/Sample/view/base/web/js/my-new-component.js</code></li>
-  <li><code class="highlighter-rouge">app/code/OrangeCo/Sample/view/base/web/templates/my-new-component/main-template.html</code></li>
+  <li><code class="language-plaintext highlighter-rouge">app/code/OrangeCo/Sample/view/base/web/js/my-new-component.js</code></li>
+  <li><code class="language-plaintext highlighter-rouge">app/code/OrangeCo/Sample/view/base/web/templates/my-new-component/main-template.html</code></li>
 </ul>
 
 <h3 id="create-a-child-component">Create a child component</h3>
 
-<p>You can use <code class="highlighter-rouge">uiLayout</code> to create a UI component instance that is a child of another UI component.</p>
+<p>You can use <code class="language-plaintext highlighter-rouge">uiLayout</code> to create a UI component instance that is a child of another UI component.</p>
 
-<p>The following example creates an instance of the <code class="highlighter-rouge">my-new-component</code> component that is a child of the <code class="highlighter-rouge">uiCollection</code> component.</p>
+<p>The following example creates an instance of the <code class="language-plaintext highlighter-rouge">my-new-component</code> component that is a child of the <code class="language-plaintext highlighter-rouge">uiCollection</code> component.</p>
 
-<p><strong>Example component file:</strong> <code class="highlighter-rouge">app/code/OrangeCo/Sample/view/base/web/js/sample.js</code></p>
+<p><strong>Example component file:</strong> <code class="language-plaintext highlighter-rouge">app/code/OrangeCo/Sample/view/base/web/js/sample.js</code></p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nx">define</span><span class="p">([</span>
-    <span class="s1">'uiLayout'</span><span class="p">,</span>
-    <span class="s1">'uiCollection'</span>
+    <span class="dl">'</span><span class="s1">uiLayout</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">uiCollection</span><span class="dl">'</span>
 <span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">layout</span><span class="p">,</span> <span class="nx">Collection</span><span class="p">)</span> <span class="p">{</span>
-    <span class="s1">'use strict'</span><span class="p">;</span>
+    <span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
 
     <span class="k">return</span> <span class="nx">Collection</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
         <span class="na">defaults</span><span class="p">:</span> <span class="p">{</span>
             <span class="na">myNewComponentConfig</span><span class="p">:</span> <span class="p">{</span>
-                <span class="na">name</span><span class="p">:</span> <span class="s1">'myNewComponent'</span><span class="p">,</span>
-                <span class="na">component</span><span class="p">:</span> <span class="s1">'OrangeCo_Sample/js/my-new-component'</span><span class="p">,</span>
-                <span class="na">nodeTemplate</span><span class="p">:</span> <span class="s1">'OrangeCo_Sample/my-new-component/main-template'</span><span class="p">,</span>
-                <span class="na">parent</span><span class="p">:</span> <span class="s1">'${ $.name }'</span>
+                <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">myNewComponent</span><span class="dl">'</span><span class="p">,</span>
+                <span class="na">component</span><span class="p">:</span> <span class="dl">'</span><span class="s1">OrangeCo_Sample/js/my-new-component</span><span class="dl">'</span><span class="p">,</span>
+                <span class="na">nodeTemplate</span><span class="p">:</span> <span class="dl">'</span><span class="s1">OrangeCo_Sample/my-new-component/main-template</span><span class="dl">'</span><span class="p">,</span>
+                <span class="na">parent</span><span class="p">:</span> <span class="dl">'</span><span class="s1">${ $.name }</span><span class="dl">'</span>
             <span class="p">}</span>
         <span class="p">},</span>
         <span class="na">initialize</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
@@ -3180,35 +3181,35 @@ If the configuration is found, <code class="highlighter-rouge">uiLayout</code> u
 <span class="p">});</span>
 </code></pre></div></div>
 
-<p>The component instance is created when <code class="highlighter-rouge">myNewComponentConfig</code> is passed on to the <code class="highlighter-rouge">uiLayout</code> service object:</p>
+<p>The component instance is created when <code class="language-plaintext highlighter-rouge">myNewComponentConfig</code> is passed on to the <code class="language-plaintext highlighter-rouge">uiLayout</code> service object:</p>
 
-<p><code class="highlighter-rouge">layout([this.myNewComponentConfig]);</code></p>
+<p><code class="language-plaintext highlighter-rouge">layout([this.myNewComponentConfig]);</code></p>
 
-<p>This instance is stored in the <code class="highlighter-rouge">uiRegistry</code> with other components and rendered using the logic for rendering <code class="highlighter-rouge">uiCollection</code> children templates.</p>
+<p>This instance is stored in the <code class="language-plaintext highlighter-rouge">uiRegistry</code> with other components and rendered using the logic for rendering <code class="language-plaintext highlighter-rouge">uiCollection</code> children templates.</p>
 
 <h3 id="use-a-configuration-template">Use a configuration template</h3>
 
 <p>You can use the configuration of one UI component to create another UI component.
-The <code class="highlighter-rouge">isTemplate</code> configuration for the original UI component must be <code class="highlighter-rouge">true</code> to save its configuration as a template in <code class="highlighter-rouge">uiLayout</code>.</p>
+The <code class="language-plaintext highlighter-rouge">isTemplate</code> configuration for the original UI component must be <code class="language-plaintext highlighter-rouge">true</code> to save its configuration as a template in <code class="language-plaintext highlighter-rouge">uiLayout</code>.</p>
 
-<p>In the following example, a custom Table UI component is created using an existing configuration template with the name <code class="highlighter-rouge">my_row_template_component_name</code>.</p>
+<p>In the following example, a custom Table UI component is created using an existing configuration template with the name <code class="language-plaintext highlighter-rouge">my_row_template_component_name</code>.</p>
 
-<p>The <a href="https://github.com/magento/magento2/tree/2.3-develop/lib/web/mage/utils"><code class="highlighter-rouge">mageUtils</code></a> helper library is also used in this example to create the new component based on <code class="highlighter-rouge">myRowTemplateConfig</code>.</p>
+<p>The <a href="https://github.com/magento/magento2/tree/2.3-develop/lib/web/mage/utils"><code class="language-plaintext highlighter-rouge">mageUtils</code></a> helper library is also used in this example to create the new component based on <code class="language-plaintext highlighter-rouge">myRowTemplateConfig</code>.</p>
 
-<p><strong>Example component file:</strong> <code class="highlighter-rouge">app/code/OrangeCo/Sample/view/base/web/js/table.js</code></p>
+<p><strong>Example component file:</strong> <code class="language-plaintext highlighter-rouge">app/code/OrangeCo/Sample/view/base/web/js/table.js</code></p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nx">define</span><span class="p">([</span>
-    <span class="s1">'uiLayout'</span><span class="p">,</span>
-    <span class="s1">'uiCollection'</span><span class="p">,</span>
-    <span class="s1">'mageUtils'</span>
+    <span class="dl">'</span><span class="s1">uiLayout</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">uiCollection</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">mageUtils</span><span class="dl">'</span>
 <span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">layout</span><span class="p">,</span> <span class="nx">Collection</span><span class="p">,</span> <span class="nx">utils</span><span class="p">)</span> <span class="p">{</span>
-    <span class="s1">'use strict'</span><span class="p">;</span>
+    <span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
 
     <span class="k">return</span> <span class="nx">Collection</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
         <span class="na">defaults</span><span class="p">:</span> <span class="p">{</span>
             <span class="na">myRowTemplateConfig</span><span class="p">:</span> <span class="p">{</span>
-                <span class="na">parent</span><span class="p">:</span> <span class="s1">'${ $.name }'</span><span class="p">,</span>
-                <span class="na">nodeTemplate</span><span class="p">:</span> <span class="s1">'my_row_template_component_name'</span>
+                <span class="na">parent</span><span class="p">:</span> <span class="dl">'</span><span class="s1">${ $.name }</span><span class="dl">'</span><span class="p">,</span>
+                <span class="na">nodeTemplate</span><span class="p">:</span> <span class="dl">'</span><span class="s1">my_row_template_component_name</span><span class="dl">'</span>
         <span class="p">}</span>
     <span class="p">},</span>
 

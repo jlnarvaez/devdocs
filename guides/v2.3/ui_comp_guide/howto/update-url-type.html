@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Update the page URL type | Magento 2 Developer Documentation (copy)</title>
+	<title>Update the page URL type | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/ui_comp_guide/howto/update-url-type.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/ui_comp_guide/howto/update-url-type.html">Magento 2.0</a></li>
 		
@@ -3294,7 +3295,7 @@
 
 			<h2 id="whats-in-this-topic">What’s in this topic</h2>
 
-<p>This topic describes how to extend the existing <a href="../components/ui-urlinput.html"><code class="highlighter-rouge">UrlInput</code> component</a> to implement a new link type, or update an existing one, for your module.</p>
+<p>This topic describes how to extend the existing <a href="../components/ui-urlinput.html"><code class="language-plaintext highlighter-rouge">UrlInput</code> component</a> to implement a new link type, or update an existing one, for your module.</p>
 
 <h2 id="overview">Overview</h2>
 
@@ -3305,14 +3306,14 @@
   <li><a href="#di-xml">Add the link to the di.xml file</a>.</li>
   <li><a href="#js-implementation">Create the component’s JavaScript implementation</a>.</li>
   <li><a href="#search-page">Create a controller to search the page</a>.</li>
-  <li><a href="#return-page">Create a controller to return the page or array by <code class="highlighter-rouge">cmsPageId</code></a>.</li>
+  <li><a href="#return-page">Create a controller to return the page or array by <code class="language-plaintext highlighter-rouge">cmsPageId</code></a>.</li>
 </ol>
 
 <h2 id="link-class">Create the link class</h2>
 
-<p>Create a <code class="highlighter-rouge">.php</code> file implementing the new link class in the module directory containing the applicable UI component, such as <code class="highlighter-rouge">&lt;your-module&gt;/Ui/Component/UrlInput/</code>.</p>
+<p>Create a <code class="language-plaintext highlighter-rouge">.php</code> file implementing the new link class in the module directory containing the applicable UI component, such as <code class="language-plaintext highlighter-rouge">&lt;your-module&gt;/Ui/Component/UrlInput/</code>.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;?php
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;?php
 /**
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
@@ -3368,11 +3369,11 @@ class Page implements \Magento\Ui\Model\UrlInput\ConfigInterface
 }
 </code></pre></div></div>
 
-<h2 id="di-xml">Add the link to the <code class="highlighter-rouge">di.xml</code> file</h2>
+<h2 id="di-xml">Add the link to the <code class="language-plaintext highlighter-rouge">di.xml</code> file</h2>
 
-<p>Add the link class you just created to the <code class="highlighter-rouge">di.xml</code> file.</p>
+<p>Add the link class you just created to the <code class="language-plaintext highlighter-rouge">di.xml</code> file.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;type name="Magento\Ui\Model\UrlInput\LinksConfigProvider"&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;type name="Magento\Ui\Model\UrlInput\LinksConfigProvider"&gt;
     &lt;arguments&gt;
         &lt;argument name="linksConfiguration" xsi:type="array"&gt;
             &lt;item name="page" xsi:type="string"&gt;%link to your class%&lt;/item&gt;
@@ -3383,11 +3384,11 @@ class Page implements \Magento\Ui\Model\UrlInput\ConfigInterface
 
 <h2 id="js-implementation">Create the component’s JavaScript implementation</h2>
 
-<p>Create the JavaScript implementation for the applicable UI component in your module-specific directory, such as <code class="highlighter-rouge">&lt;your-module&gt;/view/&lt;area&gt;/web/js/form/element/page-ui-select.js</code>.</p>
+<p>Create the JavaScript implementation for the applicable UI component in your module-specific directory, such as <code class="language-plaintext highlighter-rouge">&lt;your-module&gt;/view/&lt;area&gt;/web/js/form/element/page-ui-select.js</code>.</p>
 
-<p><code class="highlighter-rouge">&lt;area&gt;</code> would be <code class="highlighter-rouge">adminhtml</code>, <code class="highlighter-rouge">frontend</code>, or <code class="highlighter-rouge">base</code> depending on where you are applying the component implementation.</p>
+<p><code class="language-plaintext highlighter-rouge">&lt;area&gt;</code> would be <code class="language-plaintext highlighter-rouge">adminhtml</code>, <code class="language-plaintext highlighter-rouge">frontend</code>, or <code class="language-plaintext highlighter-rouge">base</code> depending on where you are applying the component implementation.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>/**
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>/**
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
@@ -3486,7 +3487,7 @@ define([
 
 <p>Create a controller to search the page using a search key.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;?php
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;?php
 /**
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
@@ -3562,9 +3563,9 @@ class Search extends \Magento\Backend\App\Action
 </code></pre></div></div>
 <h2 id="return-page">Create a controller to return the page or array</h2>
 
-<p>Create a controller to return the page, or empty array if the option doesn’t exist, by the <code class="highlighter-rouge">cmsPageId</code>.</p>
+<p>Create a controller to return the page, or empty array if the option doesn’t exist, by the <code class="language-plaintext highlighter-rouge">cmsPageId</code>.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;?php
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;?php
 /**
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.

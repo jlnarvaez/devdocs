@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>CustomizableOptionInterface | Magento 2 Developer Documentation (copy)</title>
+	<title>CustomizableOptionInterface | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/graphql/reference/customizable-option-interface.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/graphql/reference/customizable-option-interface.html">Magento 2.0</a></li>
 		
@@ -2185,7 +2186,7 @@
 
 			<p>Customizable options for a product provide a way to offer customers a selection of options with a variety of text, selection, and date input types. All product types can contain customizable options.</p>
 
-<p><code class="highlighter-rouge">CustomizableOptionInterface</code> is defined in the <code class="highlighter-rouge">CatalogGraphQl</code> module, and its attributes can be used in any <code class="highlighter-rouge">products</code> query. This interface returns basic information about a customizable option and can be implemented by several types of configurable options:</p>
+<p><code class="language-plaintext highlighter-rouge">CustomizableOptionInterface</code> is defined in the <code class="language-plaintext highlighter-rouge">CatalogGraphQl</code> module, and its attributes can be used in any <code class="language-plaintext highlighter-rouge">products</code> query. This interface returns basic information about a customizable option and can be implemented by several types of configurable options:</p>
 
 <ul>
   <li>Text area</li>
@@ -2198,7 +2199,7 @@
 
 <p class="bs-callout bs-callout-info">Magento has not implemented all possible customizable product options for GraphQL.</p>
 
-<p><code class="highlighter-rouge">CustomizableOptionInterface</code> can contain the following attributes:</p>
+<p><code class="language-plaintext highlighter-rouge">CustomizableOptionInterface</code> can contain the following attributes:</p>
 
 <table>
   <thead>
@@ -2210,17 +2211,17 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">title</code></td>
+      <td><code class="language-plaintext highlighter-rouge">title</code></td>
       <td>String</td>
       <td>The display name for this option</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">required</code></td>
+      <td><code class="language-plaintext highlighter-rouge">required</code></td>
       <td>Boolean</td>
       <td>Indicates whether the option is required</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">sort_order</code></td>
+      <td><code class="language-plaintext highlighter-rouge">sort_order</code></td>
       <td>Int</td>
       <td>The order in which the option is displayed</td>
     </tr>
@@ -2229,7 +2230,7 @@
 
 <h2 id="customizableareaoption-object">CustomizableAreaOption object</h2>
 
-<p><code class="highlighter-rouge">CustomizableAreaOption</code> contains information about a text area that is defined as part of a customizable option.</p>
+<p><code class="language-plaintext highlighter-rouge">CustomizableAreaOption</code> contains information about a text area that is defined as part of a customizable option.</p>
 
 <table>
   <thead>
@@ -2241,12 +2242,12 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">value</code></td>
-      <td><code class="highlighter-rouge">CustomizableAreaValue</code></td>
+      <td><code class="language-plaintext highlighter-rouge">value</code></td>
+      <td><code class="language-plaintext highlighter-rouge">CustomizableAreaValue</code></td>
       <td>An object that defines a text area</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">product_sku</code></td>
+      <td><code class="language-plaintext highlighter-rouge">product_sku</code></td>
       <td>String</td>
       <td>The Stock Keeping Unit of the base product</td>
     </tr>
@@ -2255,7 +2256,7 @@
 
 <h3 id="customizableareavalue-object">CustomizableAreaValue object</h3>
 
-<p><code class="highlighter-rouge">CustomizableAreaValue</code> defines the attributes of a product whose page contains a customized text area.</p>
+<p><code class="language-plaintext highlighter-rouge">CustomizableAreaValue</code> defines the attributes of a product whose page contains a customized text area.</p>
 
 <table>
   <thead>
@@ -2267,22 +2268,22 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">price</code></td>
+      <td><code class="language-plaintext highlighter-rouge">price</code></td>
       <td>Float</td>
       <td>The price assigned to this option</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">price_type</code></td>
+      <td><code class="language-plaintext highlighter-rouge">price_type</code></td>
       <td>PriceTypeEnum</td>
       <td>FIXED, PERCENT, or DYNAMIC</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">sku</code></td>
+      <td><code class="language-plaintext highlighter-rouge">sku</code></td>
       <td>String</td>
       <td>The Stock Keeping Unit for this option</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">max_characters</code></td>
+      <td><code class="language-plaintext highlighter-rouge">max_characters</code></td>
       <td>Int</td>
       <td>The maximum number of characters that can be entered for this customizable option</td>
     </tr>
@@ -2291,7 +2292,7 @@
 
 <h2 id="customizabledateoption-object">CustomizableDateOption object</h2>
 
-<p><code class="highlighter-rouge">CustomizableDateOption</code> contains information about a date picker that is defined as part of a customizable option.</p>
+<p><code class="language-plaintext highlighter-rouge">CustomizableDateOption</code> contains information about a date picker that is defined as part of a customizable option.</p>
 
 <table>
   <thead>
@@ -2303,12 +2304,12 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">value</code></td>
-      <td><code class="highlighter-rouge">CustomizableDateValue</code></td>
+      <td><code class="language-plaintext highlighter-rouge">value</code></td>
+      <td><code class="language-plaintext highlighter-rouge">CustomizableDateValue</code></td>
       <td>An object that defines a date field in a customizable option.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">product_sku</code></td>
+      <td><code class="language-plaintext highlighter-rouge">product_sku</code></td>
       <td>String</td>
       <td>The Stock Keeping Unit of the base product</td>
     </tr>
@@ -2317,7 +2318,7 @@
 
 <h3 id="customizabledatevalue-object">CustomizableDateValue object</h3>
 
-<p><code class="highlighter-rouge">CustomizableDateValue</code> defines the attributes of a product whose page contains a customized date picker.</p>
+<p><code class="language-plaintext highlighter-rouge">CustomizableDateValue</code> defines the attributes of a product whose page contains a customized date picker.</p>
 
 <table>
   <thead>
@@ -2329,17 +2330,17 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">price</code></td>
+      <td><code class="language-plaintext highlighter-rouge">price</code></td>
       <td>Float</td>
       <td>The price assigned to this option</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">price_type</code></td>
+      <td><code class="language-plaintext highlighter-rouge">price_type</code></td>
       <td>PriceTypeEnum</td>
       <td>FIXED, PERCENT, or DYNAMIC</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">sku</code></td>
+      <td><code class="language-plaintext highlighter-rouge">sku</code></td>
       <td>String</td>
       <td>The Stock Keeping Unit for this option</td>
     </tr>
@@ -2348,7 +2349,7 @@
 
 <h2 id="customizabledropdownoption-object">CustomizableDropDownOption object</h2>
 
-<p><code class="highlighter-rouge">CustomizableDropDownOption</code> contains information about a drop down menu that is defined as part of a customizable option.</p>
+<p><code class="language-plaintext highlighter-rouge">CustomizableDropDownOption</code> contains information about a drop down menu that is defined as part of a customizable option.</p>
 
 <table>
   <thead>
@@ -2360,8 +2361,8 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">value</code></td>
-      <td><code class="highlighter-rouge">CustomizableDropDownValue</code></td>
+      <td><code class="language-plaintext highlighter-rouge">value</code></td>
+      <td><code class="language-plaintext highlighter-rouge">CustomizableDropDownValue</code></td>
       <td>An array that defines the set of options for a drop down menu</td>
     </tr>
   </tbody>
@@ -2369,7 +2370,7 @@
 
 <h3 id="customizabledropdownvalue-object">CustomizableDropDownValue object</h3>
 
-<p><code class="highlighter-rouge">CustomizableDropDownValue</code> defines the attributes of a product whose page contains a customized drop down menu.</p>
+<p><code class="language-plaintext highlighter-rouge">CustomizableDropDownValue</code> defines the attributes of a product whose page contains a customized drop down menu.</p>
 
 <table>
   <thead>
@@ -2381,32 +2382,32 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">option_type_id</code></td>
+      <td><code class="language-plaintext highlighter-rouge">option_type_id</code></td>
       <td>Int</td>
       <td>The ID assigned to the value</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">price</code></td>
+      <td><code class="language-plaintext highlighter-rouge">price</code></td>
       <td>Float</td>
       <td>The price assigned to this option</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">price_type</code></td>
+      <td><code class="language-plaintext highlighter-rouge">price_type</code></td>
       <td>PriceTypeEnum</td>
       <td>FIXED, PERCENT, or DYNAMIC</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">sku</code></td>
+      <td><code class="language-plaintext highlighter-rouge">sku</code></td>
       <td>String</td>
       <td>The Stock Keeping Unit for this option</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">title</code></td>
+      <td><code class="language-plaintext highlighter-rouge">title</code></td>
       <td>String</td>
       <td>The display name for this option</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">sort_order</code></td>
+      <td><code class="language-plaintext highlighter-rouge">sort_order</code></td>
       <td>Int</td>
       <td>The order in which the option is displayed</td>
     </tr>
@@ -2415,7 +2416,7 @@
 
 <h2 id="customizablefieldoption-object">CustomizableFieldOption object</h2>
 
-<p><code class="highlighter-rouge">CustomizableFieldOption</code> contains information about a text field that is defined as part of a customizable option.</p>
+<p><code class="language-plaintext highlighter-rouge">CustomizableFieldOption</code> contains information about a text field that is defined as part of a customizable option.</p>
 
 <table>
   <thead>
@@ -2427,12 +2428,12 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">value</code></td>
-      <td><code class="highlighter-rouge">CustomizableFieldValue</code></td>
+      <td><code class="language-plaintext highlighter-rouge">value</code></td>
+      <td><code class="language-plaintext highlighter-rouge">CustomizableFieldValue</code></td>
       <td>An object that defines a text field</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">product_sku</code></td>
+      <td><code class="language-plaintext highlighter-rouge">product_sku</code></td>
       <td>String</td>
       <td>The Stock Keeping Unit of the base product</td>
     </tr>
@@ -2441,7 +2442,7 @@
 
 <h3 id="customizablefieldvalue-object">CustomizableFieldValue object</h3>
 
-<p><code class="highlighter-rouge">CustomizableFieldValue</code> defines the attributes of a product whose page contains a customized text field.</p>
+<p><code class="language-plaintext highlighter-rouge">CustomizableFieldValue</code> defines the attributes of a product whose page contains a customized text field.</p>
 
 <table>
   <thead>
@@ -2453,22 +2454,22 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">price</code></td>
+      <td><code class="language-plaintext highlighter-rouge">price</code></td>
       <td>Float</td>
       <td>The price of the custom value</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">price_type</code></td>
+      <td><code class="language-plaintext highlighter-rouge">price_type</code></td>
       <td>PriceTypeEnum</td>
       <td>FIXED, PERCENT, or DYNAMIC</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">sku</code></td>
+      <td><code class="language-plaintext highlighter-rouge">sku</code></td>
       <td>String</td>
       <td>The Stock Keeping Unit for this option</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">max_characters</code></td>
+      <td><code class="language-plaintext highlighter-rouge">max_characters</code></td>
       <td>Int</td>
       <td>The maximum number of characters that can be entered for this customizable option</td>
     </tr>
@@ -2477,7 +2478,7 @@
 
 <h2 id="customizablefileoption-object">CustomizableFileOption object</h2>
 
-<p><code class="highlighter-rouge">CustomizableFileOption</code> contains information about a file picker that is defined as part of a customizable option.</p>
+<p><code class="language-plaintext highlighter-rouge">CustomizableFileOption</code> contains information about a file picker that is defined as part of a customizable option.</p>
 
 <table>
   <thead>
@@ -2489,12 +2490,12 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">value</code></td>
-      <td><code class="highlighter-rouge">CustomizableFileValue</code></td>
+      <td><code class="language-plaintext highlighter-rouge">value</code></td>
+      <td><code class="language-plaintext highlighter-rouge">CustomizableFileValue</code></td>
       <td>An object that defines a file name</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">product_sku</code></td>
+      <td><code class="language-plaintext highlighter-rouge">product_sku</code></td>
       <td>String</td>
       <td>The Stock Keeping Unit of the base product</td>
     </tr>
@@ -2503,7 +2504,7 @@
 
 <h3 id="customizablefilevalue-object">CustomizableFileValue object</h3>
 
-<p><code class="highlighter-rouge">CustomizableFileValue</code> defines the attributes of a product whose page contains a customized file picker.</p>
+<p><code class="language-plaintext highlighter-rouge">CustomizableFileValue</code> defines the attributes of a product whose page contains a customized file picker.</p>
 
 <table>
   <thead>
@@ -2515,32 +2516,32 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">price</code></td>
+      <td><code class="language-plaintext highlighter-rouge">price</code></td>
       <td>Float</td>
       <td>The price assigned to this option</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">price_type</code></td>
+      <td><code class="language-plaintext highlighter-rouge">price_type</code></td>
       <td>PriceTypeEnum</td>
       <td>FIXED, PERCENT, or DYNAMIC</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">sku</code></td>
+      <td><code class="language-plaintext highlighter-rouge">sku</code></td>
       <td>String</td>
       <td>The Stock Keeping Unit for this option</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">file_extension</code></td>
+      <td><code class="language-plaintext highlighter-rouge">file_extension</code></td>
       <td>String</td>
       <td>The file extension to accept</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">image_size_x</code></td>
+      <td><code class="language-plaintext highlighter-rouge">image_size_x</code></td>
       <td>Int</td>
       <td>The maximum width of an image</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">image_size_y</code></td>
+      <td><code class="language-plaintext highlighter-rouge">image_size_y</code></td>
       <td>Int</td>
       <td>The maximum height of an image</td>
     </tr>
@@ -2549,7 +2550,7 @@
 
 <h2 id="customizableradiooption-object">CustomizableRadioOption object</h2>
 
-<p><code class="highlighter-rouge">CustomizableRadioOption</code> contains information about a set of radio buttons that are defined as part of a customizable option.</p>
+<p><code class="language-plaintext highlighter-rouge">CustomizableRadioOption</code> contains information about a set of radio buttons that are defined as part of a customizable option.</p>
 
 <table>
   <thead>
@@ -2561,8 +2562,8 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">value</code></td>
-      <td><code class="highlighter-rouge">CustomizableRadioValue</code></td>
+      <td><code class="language-plaintext highlighter-rouge">value</code></td>
+      <td><code class="language-plaintext highlighter-rouge">CustomizableRadioValue</code></td>
       <td>An array that defines a set of radio buttons</td>
     </tr>
   </tbody>
@@ -2570,7 +2571,7 @@
 
 <h3 id="customizableradiovalue-object">CustomizableRadioValue object</h3>
 
-<p><code class="highlighter-rouge">CustomizableRadioValue</code> defines the attributes of a product whose page contains a customized set of radio buttons.</p>
+<p><code class="language-plaintext highlighter-rouge">CustomizableRadioValue</code> defines the attributes of a product whose page contains a customized set of radio buttons.</p>
 
 <table>
   <thead>
@@ -2582,32 +2583,32 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">option_type_id</code></td>
+      <td><code class="language-plaintext highlighter-rouge">option_type_id</code></td>
       <td>Int</td>
       <td>The ID assigned to the value</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">price</code></td>
+      <td><code class="language-plaintext highlighter-rouge">price</code></td>
       <td>Float</td>
       <td>The price assigned to this option</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">price_type</code></td>
+      <td><code class="language-plaintext highlighter-rouge">price_type</code></td>
       <td>PriceTypeEnum</td>
       <td>FIXED, PERCENT, or DYNAMIC</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">sku</code></td>
+      <td><code class="language-plaintext highlighter-rouge">sku</code></td>
       <td>String</td>
       <td>The Stock Keeping Unit for this option</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">title</code></td>
+      <td><code class="language-plaintext highlighter-rouge">title</code></td>
       <td>String</td>
       <td>The display name for this option</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">sort_order</code></td>
+      <td><code class="language-plaintext highlighter-rouge">sort_order</code></td>
       <td>Int</td>
       <td>The order in which the option is displayed</td>
     </tr>

@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Using environment variables | Magento 2 Developer Documentation (copy)</title>
+	<title>Using environment variables | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/config-guide/deployment/pipeline/example/environment-variables.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/config-guide/deployment/pipeline/example/environment-variables.html">Magento 2.0</a></li>
 		
@@ -4018,7 +4019,7 @@
 	<h1 class="page-heading">Using environment variables</h1>
 </section>
 
-			<p>This example shows how to set shared, system-specific, and sensitive values in your development system, then set all the values in your production system using a combination of the shared configuration, <code class="highlighter-rouge">config.php</code>, and PHP environment variables.</p>
+			<p>This example shows how to set shared, system-specific, and sensitive values in your development system, then set all the values in your production system using a combination of the shared configuration, <code class="language-plaintext highlighter-rouge">config.php</code>, and PHP environment variables.</p>
 
 <p>These configuration settings can be shared between the development and production systems:</p>
 
@@ -4052,8 +4053,8 @@
 
 <ul>
   <li>You use Git source control</li>
-  <li>The development system is available in a Git remote repository named <code class="highlighter-rouge">mconfig</code></li>
-  <li>Your Git working branch is named <code class="highlighter-rouge">m2.2_deploy</code></li>
+  <li>The development system is available in a Git remote repository named <code class="language-plaintext highlighter-rouge">mconfig</code></li>
+  <li>Your Git working branch is named <code class="language-plaintext highlighter-rouge">m2.2_deploy</code></li>
 </ul>
 
 <h2 id="deploy-sens-setconfig">Step 1: Set the configuration in the development system</h2>
@@ -4070,8 +4071,8 @@
   </li>
   <li>In the right pane, expand <strong>Store Information</strong>.</li>
   <li>If necessary, clear the <strong>Use Default</strong> checkbox next to the <strong>VAT Number</strong> field.</li>
-  <li>Enter a number in the field (for example, <code class="highlighter-rouge">12345</code>).</li>
-  <li>In the <strong>Store Name</strong> field, enter a value (like <code class="highlighter-rouge">My Store</code>).</li>
+  <li>Enter a number in the field (for example, <code class="language-plaintext highlighter-rouge">12345</code>).</li>
+  <li>In the <strong>Store Name</strong> field, enter a value (like <code class="language-plaintext highlighter-rouge">My Store</code>).</li>
   <li>Click <strong>Save Config</strong>.</li>
   <li>
     <p>Use the <strong>Store View</strong> list to select the <strong>Default Config</strong> as the following figure shows.</p>
@@ -4102,18 +4103,18 @@
   <li>
     <p>Enter the following commands in the order shown:</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">cd</span> &lt;Magento root dir&gt;
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">cd</span> &lt;Magento root <span class="nb">dir</span><span class="o">&gt;</span>
 php bin/magento app:config:dump
 </code></pre></div>    </div>
 
-    <p>For example, if Magento is installed in <code class="highlighter-rouge">/var/www/html/magento2</code>, enter:</p>
+    <p>For example, if Magento is installed in <code class="language-plaintext highlighter-rouge">/var/www/html/magento2</code>, enter:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">cd</span> /var/www/html/magento2
 php bin/magento app:config:dump
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>If you use Git, enter the following command to confirm that <code class="highlighter-rouge">app/etc/config.php</code> was updated:</p>
+    <p>If you use Git, enter the following command to confirm that <code class="language-plaintext highlighter-rouge">app/etc/config.php</code> was updated:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git status
 </code></pre></div>    </div>
@@ -4127,10 +4128,10 @@ Changed but not updated:
 <span class="go">       modified:   app/etc/config.php
 </span></code></pre></div>    </div>
 
-    <p class="bs-callout bs-callout-warning">Do <em>not</em> submit changes to the <code class="highlighter-rouge">generated</code>, <code class="highlighter-rouge">pub/media</code>, or <code class="highlighter-rouge">pub/static</code> directories to source control. You’ll generate those files on your build system. The production system likely has code, themes, and so on that aren’t ready to use on production.</p>
+    <p class="bs-callout bs-callout-warning">Do <em>not</em> submit changes to the <code class="language-plaintext highlighter-rouge">generated</code>, <code class="language-plaintext highlighter-rouge">pub/media</code>, or <code class="language-plaintext highlighter-rouge">pub/static</code> directories to source control. You’ll generate those files on your build system. The production system likely has code, themes, and so on that aren’t ready to use on production.</p>
   </li>
   <li>
-    <p>Check in your changes to <code class="highlighter-rouge">app/etc/config.php</code> only to source control.</p>
+    <p>Check in your changes to <code class="language-plaintext highlighter-rouge">app/etc/config.php</code> only to source control.</p>
 
     <p>The Git command follows:</p>
 
@@ -4139,7 +4140,7 @@ Changed but not updated:
   </li>
 </ol>
 
-<p>Note that even though <code class="highlighter-rouge">app/etc/env.php</code> (the system-specific configuration) was updated, don’t check it in to source control. You’ll create the same configuration settings on your production system later in this procedure.</p>
+<p>Note that even though <code class="language-plaintext highlighter-rouge">app/etc/env.php</code> (the system-specific configuration) was updated, don’t check it in to source control. You’ll create the same configuration settings on your production system later in this procedure.</p>
 
 <h2 id="step-3-update-your-build-system-and-generate-files">Step 3: Update your build system and generate files</h2>
 
@@ -4152,23 +4153,23 @@ Changed but not updated:
 .</li>
   <li>Change to the build system’s Magento root directory.</li>
   <li>
-    <p>Pull the changes to <code class="highlighter-rouge">app/etc/config.php</code> from source control.</p>
+    <p>Pull the changes to <code class="language-plaintext highlighter-rouge">app/etc/config.php</code> from source control.</p>
 
     <p>The Git command follows:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git pull mconfig m2.2_deploy
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git pull mconfig m2.2_deploy
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Compile code:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php bin/magento setup:di:compile
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php bin/magento setup:di:compile
 </code></pre></div>    </div>
   </li>
   <li>
     <p>After code has been compiled, generate static view files:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php bin/magento setup:static-content:deploy -f
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php bin/magento setup:static-content:deploy -f
 </code></pre></div>    </div>
   </li>
   <li>
@@ -4176,7 +4177,7 @@ Changed but not updated:
 
     <p>The Git command follows:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git add -A &amp;&amp; git commit -m "Updated files on build system" &amp;&amp; git push mconfig m2.2_deploy
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git add -A &amp;&amp; git commit -m "Updated files on build system" &amp;&amp; git push mconfig m2.2_deploy
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -4217,11 +4218,11 @@ Changed but not updated:
       <tbody>
         <tr>
           <td>Send Emails To</td>
-          <td><code class="highlighter-rouge">contact/email/recipient_email</code></td>
+          <td><code class="language-plaintext highlighter-rouge">contact/email/recipient_email</code></td>
         </tr>
         <tr>
           <td>Default Email Domain</td>
-          <td><code class="highlighter-rouge">customer/create_account/email_domain</code></td>
+          <td><code class="language-plaintext highlighter-rouge">customer/create_account/email_domain</code></td>
         </tr>
       </tbody>
     </table>
@@ -4234,12 +4235,12 @@ Changed but not updated:
 
 <p>As discussed in <a href="/devdocs/guides/v2.3/config-guide/prod/config-reference-var-name.html">Use environment variables to override configuration settings</a>, the format of variables is:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;SCOPE&gt;__&lt;SYSTEM__VARIABLE__NAME&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;SCOPE&gt;__&lt;SYSTEM__VARIABLE__NAME&gt;
 </code></pre></div></div>
 
-<p>The value of <code class="highlighter-rouge">&lt;SCOPE&gt;</code> is <code class="highlighter-rouge">CONFIG__DEFAULT__</code> for global scope or <code class="highlighter-rouge">CONFIG__WEBSITES__&lt;WEBSITE CODE&gt;</code> for website scope.</p>
+<p>The value of <code class="language-plaintext highlighter-rouge">&lt;SCOPE&gt;</code> is <code class="language-plaintext highlighter-rouge">CONFIG__DEFAULT__</code> for global scope or <code class="language-plaintext highlighter-rouge">CONFIG__WEBSITES__&lt;WEBSITE CODE&gt;</code> for website scope.</p>
 
-<p>To find the value of <code class="highlighter-rouge">&lt;SYSTEM__VARIABLE__NAME&gt;</code>, replace each <code class="highlighter-rouge">/</code> character in the configuration path with two underscores.</p>
+<p>To find the value of <code class="language-plaintext highlighter-rouge">&lt;SYSTEM__VARIABLE__NAME&gt;</code>, replace each <code class="language-plaintext highlighter-rouge">/</code> character in the configuration path with two underscores.</p>
 
 <p>The variable names follow:</p>
 
@@ -4254,24 +4255,24 @@ Changed but not updated:
   <tbody>
     <tr>
       <td>Send Emails To</td>
-      <td><code class="highlighter-rouge">contact/email/recipient_email</code></td>
-      <td><code class="highlighter-rouge">CONFIG__DEFAULT__CONTACT__EMAIL__RECIPIENT_EMAIL</code></td>
+      <td><code class="language-plaintext highlighter-rouge">contact/email/recipient_email</code></td>
+      <td><code class="language-plaintext highlighter-rouge">CONFIG__DEFAULT__CONTACT__EMAIL__RECIPIENT_EMAIL</code></td>
     </tr>
     <tr>
       <td>Default Email Domain</td>
-      <td><code class="highlighter-rouge">customer/create_account/email_domain</code></td>
-      <td><code class="highlighter-rouge">CONFIG__WEBSITES__BASE__CUSTOMER__CREATE_ACCOUNT__EMAIL_DOMAIN</code></td>
+      <td><code class="language-plaintext highlighter-rouge">customer/create_account/email_domain</code></td>
+      <td><code class="language-plaintext highlighter-rouge">CONFIG__WEBSITES__BASE__CUSTOMER__CREATE_ACCOUNT__EMAIL_DOMAIN</code></td>
     </tr>
   </tbody>
 </table>
 
-<p class="bs-callout bs-callout-info">The preceding table has a sample website code, <code class="highlighter-rouge">BASE</code>, for the Default Email Domain configuration setting. Replace <code class="highlighter-rouge">BASE</code> with the appropriate website code for your store.</p>
+<p class="bs-callout bs-callout-info">The preceding table has a sample website code, <code class="language-plaintext highlighter-rouge">BASE</code>, for the Default Email Domain configuration setting. Replace <code class="language-plaintext highlighter-rouge">BASE</code> with the appropriate website code for your store.</p>
 
 <h4 id="set-the-variables-using-environment-variables">Set the variables using environment variables</h4>
 
-<p>You can set the variable values in the Magento <code class="highlighter-rouge">index.php</code> using the following format:</p>
+<p>You can set the variable values in the Magento <code class="language-plaintext highlighter-rouge">index.php</code> using the following format:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>$_ENV['VARIABLE'] = 'value';
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>$_ENV['VARIABLE'] = 'value';
 </code></pre></div></div>
 
 <p>To set variable values:</p>
@@ -4279,15 +4280,15 @@ Changed but not updated:
 <ol>
   <li>Log in to your production system as, or switch to, the   <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span>
 .</li>
-  <li>Open <code class="highlighter-rouge">&lt;Magento root dir&gt;/index.php</code> in a text editor.</li>
+  <li>Open <code class="language-plaintext highlighter-rouge">&lt;Magento root dir&gt;/index.php</code> in a text editor.</li>
   <li>
-    <p>Anywhere in <code class="highlighter-rouge">index.php</code>, set values for the variables similar to the following:</p>
+    <p>Anywhere in <code class="language-plaintext highlighter-rouge">index.php</code>, set values for the variables similar to the following:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>$_ENV['CONFIG__DEFAULT__CONTACT__EMAIL__RECIPIENT_EMAIL'] = 'myname@example.com';
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>$_ENV['CONFIG__DEFAULT__CONTACT__EMAIL__RECIPIENT_EMAIL'] = 'myname@example.com';
 $_ENV['CONFIG__WEBSITES__BASE__CUSTOMER__CREATE_ACCOUNT__EMAIL_DOMAIN'] = 'magento.com';
 </code></pre></div>    </div>
   </li>
-  <li>Save your changes to <code class="highlighter-rouge">index.php</code> and exit the text editor.</li>
+  <li>Save your changes to <code class="language-plaintext highlighter-rouge">index.php</code> and exit the text editor.</li>
   <li>Continue with the next section.</li>
 </ol>
 
@@ -4303,11 +4304,11 @@ $_ENV['CONFIG__WEBSITES__BASE__CUSTOMER__CREATE_ACCOUNT__EMAIL_DOMAIN'] = 'magen
   <li>
     <p>Start maintenance mode:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd &lt;Magento root dir&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd &lt;Magento root dir&gt;
 php bin/magento maintenance:enable
 </code></pre></div>    </div>
 
-    <p>For additional options, such as the ability to set an IP address whitelist, see <a href="/devdocs/guides/v2.3/install-gde/install/cli/install-cli-subcommands-maint.html"><code class="highlighter-rouge">magento maintenance:enable</code></a>.</p>
+    <p>For additional options, such as the ability to set an IP address whitelist, see <a href="/devdocs/guides/v2.3/install-gde/install/cli/install-cli-subcommands-maint.html"><code class="language-plaintext highlighter-rouge">magento maintenance:enable</code></a>.</p>
   </li>
   <li>If you use Magento Commerce, stop queue workers. TBD</li>
   <li>
@@ -4315,25 +4316,25 @@ php bin/magento maintenance:enable
 
     <p>The Git command follows:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git pull mconfig m2.2_deploy
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git pull mconfig m2.2_deploy
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Update the configuration:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php bin/magento app:config:import
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php bin/magento app:config:import
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Clean the cache:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php bin/magento cache:clean
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php bin/magento cache:clean
 </code></pre></div>    </div>
   </li>
   <li>
     <p>End maintenance mode:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php bin/magento maintenance:disable
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php bin/magento maintenance:disable
 </code></pre></div>    </div>
   </li>
 </ol>

@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Service layer | Magento 2 Developer Documentation (copy)</title>
+	<title>Service layer | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/architecture/archi_perspectives/service_layer.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/architecture/archi_perspectives/service_layer.html">Magento 2.0</a></li>
 		
@@ -1960,20 +1961,20 @@ Once implemented, a web service can make a single API call and return an informa
 <h2 id="service-contract-anatomy">Service contract anatomy</h2>
 
 <p>The service contract of a   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
- is defined by the set of interfaces in the module’s <code class="highlighter-rouge">/Api</code> directory.</p>
+ is defined by the set of interfaces in the module’s <code class="language-plaintext highlighter-rouge">/Api</code> directory.</p>
 
 <p>This directory contains:</p>
 
 <ul>
   <li>
-    <p>Service interfaces in the <code class="highlighter-rouge">/Api</code>   <span term-uuid="621ef86b-7314-4fbc-a80d-ab7fa45a27cb" class="glossary-term" data-toggle="popover">namespace</span>
+    <p>Service interfaces in the <code class="language-plaintext highlighter-rouge">/Api</code>   <span term-uuid="621ef86b-7314-4fbc-a80d-ab7fa45a27cb" class="glossary-term" data-toggle="popover">namespace</span>
  of the module (e.g <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/Api">Catalog API</a>).</p>
   </li>
   <li>
-    <p>Data (or <em>entity</em>) interfaces in the <code class="highlighter-rouge">Api/Data</code> directory (e.g. <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/Api/Data">Catalog API/Data</a>).
+    <p>Data (or <em>entity</em>) interfaces in the <code class="language-plaintext highlighter-rouge">Api/Data</code> directory (e.g. <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/Api/Data">Catalog API/Data</a>).
 Data entities* are data structures passed to and returned from service interfaces.</p>
 
-    <p>Files in the data directory contain <code class="highlighter-rouge">get()</code> and <code class="highlighter-rouge">set()</code> methods for entries in the entity table and extension attributes.</p>
+    <p>Files in the data directory contain <code class="language-plaintext highlighter-rouge">get()</code> and <code class="language-plaintext highlighter-rouge">set()</code> methods for entries in the entity table and extension attributes.</p>
   </li>
 </ul>
 
@@ -2000,9 +2001,9 @@ Data entities* are data structures passed to and returned from service interface
  that adds or changes business logic-level resource models without breaking the system.</p>
 
 <p>This is done using the <em>&lt;preference&gt;</em> element in a custom module’s   <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span>
- configuration file (<code class="highlighter-rouge">di.xml</code>) file.</p>
+ configuration file (<code class="language-plaintext highlighter-rouge">di.xml</code>) file.</p>
 
-<p>The <code class="highlighter-rouge">di.xml</code> file specifies which PHP class to use for the interface <code class="highlighter-rouge">Magento\Customer\Api\CustomerRepositoryInterface</code>.</p>
+<p>The <code class="language-plaintext highlighter-rouge">di.xml</code> file specifies which PHP class to use for the interface <code class="language-plaintext highlighter-rouge">Magento\Customer\Api\CustomerRepositoryInterface</code>.</p>
 
 <p>Another module can change this interface file by specifying a different class name.
 However, if the client code uses the interface definition only, no class change is necessary.</p>

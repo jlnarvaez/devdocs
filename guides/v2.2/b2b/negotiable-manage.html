@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Manage negotiable quotes | Magento 2 Developer Documentation (copy)</title>
+	<title>Manage negotiable quotes | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/b2b/negotiable-manage.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/b2b/negotiable-manage.html">Magento 2.0</a></li>
 		
@@ -2066,14 +2067,14 @@
 </span><span class="err">POST</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/negotiableQuote/submitToCustomer</span><span class="w">
 </span><span class="err">POST</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/negotiableQuote/decline</span><span class="w">
 </span><span class="err">POST</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/negotiableQuote/pricesUpdated</span><span class="w">
-</span><span class="err">GET</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/negotiableQuote/</span><span class="p">:</span><span class="err">quoteId/comments</span><span class="w">
+</span><span class="err">GET</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/negotiableQuote/:quoteId/comments</span><span class="w">
 </span><span class="err">GET</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/negotiableQuote/attachmentContent</span><span class="w">
-</span><span class="err">PUT</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/negotiableQuote/</span><span class="p">:</span><span class="err">quoteId/shippingMethod</span><span class="w">
+</span><span class="err">PUT</span><span class="w"> </span><span class="err">/V</span><span class="mi">1</span><span class="err">/negotiableQuote/:quoteId/shippingMethod</span><span class="w">
 </span></code></pre></div></div>
 
 <p><strong>NegotiableQuoteManagementInterface Parameters</strong></p>
 
-<p>The following table lists the parameters defined in <code class="highlighter-rouge">CompanyInterface</code>.</p>
+<p>The following table lists the parameters defined in <code class="language-plaintext highlighter-rouge">CompanyInterface</code>.</p>
 
 <table style="table-layout:auto;">
   <thead>
@@ -2086,25 +2087,25 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">quoteId</code></td>
+      <td><code class="language-plaintext highlighter-rouge">quoteId</code></td>
       <td>Identifies the target quote for the operation.</td>
       <td>integer</td>
       <td>Required</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">quoteName</code></td>
+      <td><code class="language-plaintext highlighter-rouge">quoteName</code></td>
       <td>The name of the quote to be created.</td>
       <td>string</td>
       <td>Required</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">comment</code></td>
+      <td><code class="language-plaintext highlighter-rouge">comment</code></td>
       <td>The comment to add to the quote.</td>
       <td>string</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">files</code></td>
+      <td><code class="language-plaintext highlighter-rouge">files</code></td>
       <td>An array of files to add to the quote</td>
       <td>array</td>
       <td>Optional</td>
@@ -2114,7 +2115,7 @@
 
 <p>The buyer or the seller can optionally attach up to 10 files to provide details about the quote. Each file must be converted into base64.</p>
 
-<p>The <code class="highlighter-rouge">files</code> array contains the following parameters</p>
+<p>The <code class="language-plaintext highlighter-rouge">files</code> array contains the following parameters</p>
 
 <table style="table-layout:auto;">
   <thead>
@@ -2127,20 +2128,20 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">base64_encoded_data</code></td>
+      <td><code class="language-plaintext highlighter-rouge">base64_encoded_data</code></td>
       <td>A string in base 64 that defines the contents of the added file</td>
       <td>string</td>
       <td>Required</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">type</code></td>
-      <td>Defines the type of file, such as <code class="highlighter-rouge">text/plain</code> or <code class="highlighter-rouge">application/pdf</code></td>
+      <td><code class="language-plaintext highlighter-rouge">type</code></td>
+      <td>Defines the type of file, such as <code class="language-plaintext highlighter-rouge">text/plain</code> or <code class="language-plaintext highlighter-rouge">application/pdf</code></td>
       <td>string</td>
       <td>Optional</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">name</code></td>
-      <td>The name of the file to be uploaded, such as <code class="highlighter-rouge">quote.txt</code> or <code class="highlighter-rouge">quote.pdf</code>.</td>
+      <td><code class="language-plaintext highlighter-rouge">name</code></td>
+      <td>The name of the file to be uploaded, such as <code class="language-plaintext highlighter-rouge">quote.txt</code> or <code class="language-plaintext highlighter-rouge">quote.pdf</code>.</td>
       <td>string</td>
       <td>Required</td>
     </tr>
@@ -2152,32 +2153,32 @@
 <p>Before negotiable quote can begin, the following conditions must be met:</p>
 
 <ul>
-  <li>A regular Magento quote has been created (<code class="highlighter-rouge">POST /V1/customers/:customerId/carts</code> or <code class="highlighter-rouge">POST /V1/customers/carts/mine</code>)</li>
-  <li>The quote contains items (<code class="highlighter-rouge">POST /V1/carts/:quoteId/items</code>)</li>
+  <li>A regular Magento quote has been created (<code class="language-plaintext highlighter-rouge">POST /V1/customers/:customerId/carts</code> or <code class="language-plaintext highlighter-rouge">POST /V1/customers/carts/mine</code>)</li>
+  <li>The quote contains items (<code class="language-plaintext highlighter-rouge">POST /V1/carts/:quoteId/items</code>)</li>
 </ul>
 
-<p>If the negotiable quote requires a shipping address (for negotiation or tax calculations), you can add it to the standard quote before initiating the negotiable quote (<code class="highlighter-rouge">POST /V1/carts/:cartId/shipping-information</code>)</p>
+<p>If the negotiable quote requires a shipping address (for negotiation or tax calculations), you can add it to the standard quote before initiating the negotiable quote (<code class="language-plaintext highlighter-rouge">POST /V1/carts/:cartId/shipping-information</code>)</p>
 
 <p class="bs-callout bs-callout-info">Requesting a negotiable quote requires an admin authorization token.</p>
 
 <p><strong>Service Name</strong></p>
 
-<p><code class="highlighter-rouge">negotiableQuoteNegotiableQuoteManagementV1</code></p>
+<p><code class="language-plaintext highlighter-rouge">negotiableQuoteNegotiableQuoteManagementV1</code></p>
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code class="highlighter-rouge">POST V1/negotiableQuote/request</code></p>
+<p><code class="language-plaintext highlighter-rouge">POST V1/negotiableQuote/request</code></p>
 
 <p><strong>Payload</strong></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"quoteId"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"quoteName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First quote"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Requesting a 5% discount"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"quoteId"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"quoteName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First quote"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Requesting a 5% discount"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"base64_encoded_data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VGhhbmsgeW91IGZvciByZWFkaW5nIHRoZSBNYWdlbnRvIEIyQiBkb2N1bWVudGF0aW9uLg=="</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"quote.txt"</span><span class="w">
+      </span><span class="nl">"base64_encoded_data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VGhhbmsgeW91IGZvciByZWFkaW5nIHRoZSBNYWdlbnRvIEIyQiBkb2N1bWVudGF0aW9uLg=="</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"quote.txt"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -2185,9 +2186,9 @@
 
 <p><strong>Response</strong></p>
 
-<p><code class="highlighter-rouge">true</code>, indicating the request was successful</p>
+<p><code class="language-plaintext highlighter-rouge">true</code>, indicating the request was successful</p>
 
-<p>Magento creates a negotiable quote in the <code class="highlighter-rouge">Created</code> state.</p>
+<p>Magento creates a negotiable quote in the <code class="language-plaintext highlighter-rouge">Created</code> state.</p>
 
 <h3 id="submit-a-negotiable-quote-to-a-buyer">Submit a negotiable quote to a buyer</h3>
 
@@ -2211,27 +2212,27 @@
 
 <p><strong>Service Name</strong></p>
 
-<p><code class="highlighter-rouge">negotiableQuoteNegotiableQuoteManagementV1</code></p>
+<p><code class="language-plaintext highlighter-rouge">negotiableQuoteNegotiableQuoteManagementV1</code></p>
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code class="highlighter-rouge">POST /V1/negotiableQuote/submitToCustomer</code></p>
+<p><code class="language-plaintext highlighter-rouge">POST /V1/negotiableQuote/submitToCustomer</code></p>
 
 <p><strong>Payload</strong></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"quoteId"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"It'd be our pleasure. Please proceed with your order."</span><span class="w">
+  </span><span class="nl">"quoteId"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"It'd be our pleasure. Please proceed with your order."</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
 <p><strong>Response</strong></p>
 
-<p><code class="highlighter-rouge">true</code>, indicating the request was successful</p>
+<p><code class="language-plaintext highlighter-rouge">true</code>, indicating the request was successful</p>
 
 <h3 id="update-a-quote">Update a quote</h3>
 
-<p>Use the <code class="highlighter-rouge">PUT /V1/negotiableQuote/:quoteId</code> call to update a quote. See <a href="/devdocs/guides/v2.2/b2b/negotiable-update.html">Update a negotiable quote</a> for use cases.</p>
+<p>Use the <code class="language-plaintext highlighter-rouge">PUT /V1/negotiableQuote/:quoteId</code> call to update a quote. See <a href="/devdocs/guides/v2.2/b2b/negotiable-update.html">Update a negotiable quote</a> for use cases.</p>
 
 <h3 id="recalculate-prices">Recalculate prices</h3>
 
@@ -2241,31 +2242,31 @@
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code class="highlighter-rouge">POST /V1/negotiableQuote/pricesUpdated</code></p>
+<p><code class="language-plaintext highlighter-rouge">POST /V1/negotiableQuote/pricesUpdated</code></p>
 
 <p><strong>Payload</strong></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"quoteIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w">
+  </span><span class="nl">"quoteIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
 <p><strong>Response</strong></p>
 
-<p><code class="highlighter-rouge">true</code>, indicating the request was successful</p>
+<p><code class="language-plaintext highlighter-rouge">true</code>, indicating the request was successful</p>
 
 <h3 id="set-the-shipping-method">Set the shipping method</h3>
 
-<p>To set the shipping method, the quote must be in the <code class="highlighter-rouge">created</code>, <code class="highlighter-rouge">processing_by_admin</code> or <code class="highlighter-rouge">submitted_by_customer</code>. In addition, the quote must have a shipping address but no shipping method or shipping price.</p>
+<p>To set the shipping method, the quote must be in the <code class="language-plaintext highlighter-rouge">created</code>, <code class="language-plaintext highlighter-rouge">processing_by_admin</code> or <code class="language-plaintext highlighter-rouge">submitted_by_customer</code>. In addition, the quote must have a shipping address but no shipping method or shipping price.</p>
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code class="highlighter-rouge">PUT /V1/negotiableQuote/3/shippingMethod</code></p>
+<p><code class="language-plaintext highlighter-rouge">PUT /V1/negotiableQuote/3/shippingMethod</code></p>
 
 <p><strong>Payload</strong></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"shippingMethod"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixedrate"</span><span class="w">
+  </span><span class="nl">"shippingMethod"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixedrate"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -2285,23 +2286,23 @@
 
 <p><strong>Service Name</strong></p>
 
-<p><code class="highlighter-rouge">negotiableQuoteNegotiableQuoteManagementV1</code></p>
+<p><code class="language-plaintext highlighter-rouge">negotiableQuoteNegotiableQuoteManagementV1</code></p>
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code class="highlighter-rouge">POST /V1/negotiableQuote/decline</code></p>
+<p><code class="language-plaintext highlighter-rouge">POST /V1/negotiableQuote/decline</code></p>
 
 <p><strong>Payload</strong></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"quoteId"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Your order is too large. "</span><span class="w">
+  </span><span class="nl">"quoteId"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Your order is too large. "</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
 <p><strong>Response</strong></p>
 
-<p><code class="highlighter-rouge">true</code>, indicating the request was successful</p>
+<p><code class="language-plaintext highlighter-rouge">true</code>, indicating the request was successful</p>
 
 <h2 id="miscellaneous-operations">Miscellaneous operations</h2>
 
@@ -2309,11 +2310,11 @@
 
 <h3 id="list-all-comments-for-a-quote">List all comments for a quote</h3>
 
-<p>Magento returns all the comments associated with the specified quote ID. The comments are listed in chronological order, with the oldest comment listed first. A <code class="highlighter-rouge">creator_type</code> value of <code class="highlighter-rouge">3</code> indicates the buyer made the comment. If the value is <code class="highlighter-rouge">2</code>, the seller commented.</p>
+<p>Magento returns all the comments associated with the specified quote ID. The comments are listed in chronological order, with the oldest comment listed first. A <code class="language-plaintext highlighter-rouge">creator_type</code> value of <code class="language-plaintext highlighter-rouge">3</code> indicates the buyer made the comment. If the value is <code class="language-plaintext highlighter-rouge">2</code>, the seller commented.</p>
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code class="highlighter-rouge">GET /V1/negotiableQuote/87/comments</code></p>
+<p><code class="language-plaintext highlighter-rouge">GET /V1/negotiableQuote/87/comments</code></p>
 
 <p><strong>Payload</strong></p>
 
@@ -2323,91 +2324,91 @@
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">87</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"creator_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"is_decline"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"is_draft"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"creator_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Requesting a 5% discount"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01 21:14:51"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"attachments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="nl">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">87</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"creator_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"is_decline"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"is_draft"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"creator_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Requesting a 5% discount"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01 21:14:51"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"attachments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"attachment_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"comment_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hello.txt"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"file_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/h/e/hello.txt"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"file_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="nl">"attachment_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"comment_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hello.txt"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"file_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/h/e/hello.txt"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"file_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
     </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">87</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"creator_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"is_decline"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"is_draft"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"creator_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"We cannot discount Configurable Product 1, because the price is already discounted. We can adjust the overall price so the remaining items are discounted 5%. Please let us know whether this is acceptable. "</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01 21:29:15"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"attachments"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="nl">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">87</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"creator_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"is_decline"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"is_draft"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"creator_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"We cannot discount Configurable Product 1, because the price is already discounted. We can adjust the overall price so the remaining items are discounted 5%. Please let us know whether this is acceptable. "</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01 21:29:15"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"attachments"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">87</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"creator_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"is_decline"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"is_draft"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"creator_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"That is fine. Please apply the discounts to our order."</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01 21:30:30"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"attachments"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="nl">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">87</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"creator_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"is_decline"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"is_draft"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"creator_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"That is fine. Please apply the discounts to our order."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01 21:30:30"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"attachments"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">87</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"creator_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"is_decline"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"is_draft"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"creator_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"We&amp;#039;re taking $27.50 off your quote total. That&amp;#039;s 5% of the cost of the other items in your cart."</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01 21:40:19"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"attachments"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="nl">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">87</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"creator_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"is_decline"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"is_draft"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"creator_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"We&amp;#039;re taking $27.50 off your quote total. That&amp;#039;s 5% of the cost of the other items in your cart."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01 21:40:19"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"attachments"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">87</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"creator_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"is_decline"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"is_draft"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"creator_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Added a shipping address"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01 21:43:03"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"attachments"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="nl">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">87</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"creator_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"is_decline"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"is_draft"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"creator_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Added a shipping address"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01 21:43:03"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"attachments"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">87</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"creator_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"is_decline"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"is_draft"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"creator_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01 21:44:16"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"attachments"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="nl">"entity_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">87</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"creator_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"is_decline"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"is_draft"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"creator_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-01 21:44:16"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"attachments"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div></div>
 
 <h3 id="retrieve-a-negotiable-quote-attachment">Retrieve a negotiable quote attachment</h3>
 
-<p>Use the <code class="highlighter-rouge">attachmentContent</code> call to retrieve the files (in base64 format) attached to a negotiable quote.</p>
+<p>Use the <code class="language-plaintext highlighter-rouge">attachmentContent</code> call to retrieve the files (in base64 format) attached to a negotiable quote.</p>
 
-<p><code class="highlighter-rouge">negotiableQuoteAttachmentContentManagementV1</code></p>
+<p><code class="language-plaintext highlighter-rouge">negotiableQuoteAttachmentContentManagementV1</code></p>
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code class="highlighter-rouge">GET /V1/negotiableQuote/attachmentContent</code></p>
+<p><code class="language-plaintext highlighter-rouge">GET /V1/negotiableQuote/attachmentContent</code></p>
 
 <p><strong>Payload</strong></p>
 
@@ -2416,12 +2417,12 @@
 <p><strong>Response</strong></p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"quoteId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"quoteName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First quote"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"quoteId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"quoteName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First quote"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"files"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"base64_encoded_data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VGhhbmsgeW91IGZvciByZWFkaW5nIHRoZSBNYWdlbnRvIEIyQiBkb2N1bWVudGF0aW9uLg=="</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"quote.txt"</span><span class="w">
+      </span><span class="nl">"base64_encoded_data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VGhhbmsgeW91IGZvciByZWFkaW5nIHRoZSBNYWdlbnRvIEIyQiBkb2N1bWVudGF0aW9uLg=="</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"quote.txt"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">

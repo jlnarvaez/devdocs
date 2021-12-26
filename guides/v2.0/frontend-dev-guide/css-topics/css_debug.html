@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Compile LESS with Grunt | Magento 2 Developer Documentation (copy)</title>
+	<title>Compile LESS with Grunt | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/frontend-dev-guide/css-topics/css_debug.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/frontend-dev-guide/css-topics/css_debug.html">Magento 2.0</a></li>
 		
@@ -2820,15 +2821,15 @@ After you customize the content of any <code>.less</code> file, changes are appl
 
 <p>When using Grunt for styles preprocessing, you can enable the CSS source maps displaying in your browser. It will make the theme styles debugging easier.</p>
 
-<p>For each theme, Magento compiles all theme <code class="highlighter-rouge">.less</code> files into two CSS files: <code class="highlighter-rouge">styles-m.css</code> and <code class="highlighter-rouge">styles-l.css</code>. So when you debug a theme, you browser only sees <code class="highlighter-rouge">styles-m.css</code> and it might be difficult to define which exactly <code class="highlighter-rouge">.css</code> or <code class="highlighter-rouge">.less</code> file requires corrections. For example:</p>
+<p>For each theme, Magento compiles all theme <code class="language-plaintext highlighter-rouge">.less</code> files into two CSS files: <code class="language-plaintext highlighter-rouge">styles-m.css</code> and <code class="language-plaintext highlighter-rouge">styles-l.css</code>. So when you debug a theme, you browser only sees <code class="language-plaintext highlighter-rouge">styles-m.css</code> and it might be difficult to define which exactly <code class="language-plaintext highlighter-rouge">.css</code> or <code class="language-plaintext highlighter-rouge">.less</code> file requires corrections. For example:</p>
 
 <p><img src="/devdocs/common/images/fdg/no-map.png" alt="node declaration autocomplete" width="610px" /></p>
 
-<p>CSS source maps solve this issue. They help to find the <code class="highlighter-rouge">.less</code> file, where the style is specified. For example:</p>
+<p>CSS source maps solve this issue. They help to find the <code class="language-plaintext highlighter-rouge">.less</code> file, where the style is specified. For example:</p>
 
 <p><img src="/devdocs/common/images/fdg/with-map.png" alt="node declaration autocomplete" width="610px" /></p>
 
-<p>CSS source maps are generated automatically when you compile CSS for your theme using the <code class="highlighter-rouge">grunt less: &lt;theme&gt;</code> command. To use them, you need to enable source maps displaying in your browser.</p>
+<p>CSS source maps are generated automatically when you compile CSS for your theme using the <code class="language-plaintext highlighter-rouge">grunt less: &lt;theme&gt;</code> command. To use them, you need to enable source maps displaying in your browser.</p>
 
 <p>The path to the CSS source maps configuration differs, depending on the browser.</p>
 

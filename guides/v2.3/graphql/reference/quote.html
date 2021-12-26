@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>quote endpoint | Magento 2 Developer Documentation (copy)</title>
+	<title>quote endpoint | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/graphql/reference/quote.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/graphql/reference/quote.html">Magento 2.0</a></li>
 		
@@ -2193,11 +2194,11 @@
 
 <h2 id="mutations">Mutations</h2>
 
-<p>Magento 2.3.0  supports the <code class="highlighter-rouge">createEmptyCart</code> mutation only.</p>
+<p>Magento 2.3.0  supports the <code class="language-plaintext highlighter-rouge">createEmptyCart</code> mutation only.</p>
 
 <h3 id="create-an-empty-cart">Create an empty cart</h3>
 
-<p>The <code class="highlighter-rouge">createEmptyCart</code> mutation creates an empty shopping cart for a guest or logged in customer. If you are creating a cart for a logged in customer, you must include the customer’s authorization token in the header of the request.</p>
+<p>The <code class="language-plaintext highlighter-rouge">createEmptyCart</code> mutation creates an empty shopping cart for a guest or logged in customer. If you are creating a cart for a logged in customer, you must include the customer’s authorization token in the header of the request.</p>
 
 <p><strong>Request</strong></p>
 
@@ -2211,8 +2212,8 @@
 <p>The response is the quote ID, which is sometimes called the cart ID.</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"createEmptyCart"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6XZA7q1ooLEI0jLz8DfFrfruEqgxGzlt"</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"createEmptyCart"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6XZA7q1ooLEI0jLz8DfFrfruEqgxGzlt"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>

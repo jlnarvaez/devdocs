@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Update the Magento Functional Testing Framework | Magento 2 Developer Documentation (copy)</title>
+	<title>Update the Magento Functional Testing Framework | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -2091,8 +2090,7 @@
 	<h1 class="page-heading">Update the Magento Functional Testing Framework</h1>
 </section>
 
-			
-<p style="text-align: right"><em>This topic was updated due to the 2.0.2 MFTF release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.0.2 MFTF release.</em></p>
 
 <p class="bs-callout bs-callout-info"><a href="./introduction.html#find-version">Find out your version</a> of the MFTF.
 If your version is 2.3.x, see the <a href="/devdocs/mftf/2.3/introduction.html">MFTF 2.3 documentation</a>.</p>
@@ -2101,7 +2099,7 @@ If your version is 2.3.x, see the <a href="/devdocs/mftf/2.3/introduction.html">
 
 <p>Magento tests are stored in the same repository as the Magento code base. When you pull changes in the Magento code, you’re potentially pulling corresponding tests as well.</p>
 
-<p>The MFTF is installed separately as a dependency using Composer. When pulling the latest Magento code, update the corresponding Composer dependencies in the <code class="highlighter-rouge">magento2/dev/tests/acceptance</code> directory. This ensures that the MFTF is up to date.</p>
+<p>The MFTF is installed separately as a dependency using Composer. When pulling the latest Magento code, update the corresponding Composer dependencies in the <code class="language-plaintext highlighter-rouge">magento2/dev/tests/acceptance</code> directory. This ensures that the MFTF is up to date.</p>
 
 <h2 id="update-the-mftf">Update the MFTF</h2>
 
@@ -2110,14 +2108,14 @@ If your version is 2.3.x, see the <a href="/devdocs/mftf/2.3/introduction.html">
 <ol>
   <li>When you update Magento, verify that the Magento <a href="getting-started.html#wysiwyg-settings">WYSIWYG settings</a> and <a href="getting-started.html#security-settings">Security settings</a> are set appropriately.</li>
   <li>
-    <p>Go to the <code class="highlighter-rouge">magento2/dev/tests/acceptance</code> directory:</p>
+    <p>Go to the <code class="language-plaintext highlighter-rouge">magento2/dev/tests/acceptance</code> directory:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> <span class="nb">cd </span>dev/tests/acceptance
 </code></pre></div>    </div>
   </li>
   <li>Update your own tests, including data, metadata, etc. if they contain tags that are unsupported in the newer version. Check details about backward incompatible changes and see new MFTF release documentation in the <a href="https://github.com/magento/magento2-functional-testing-framework/blob/master/CHANGELOG.md">Changelog</a>.</li>
   <li>
-    <p>Run <code class="highlighter-rouge">composer update</code> to get the latest framework version:</p>
+    <p>Run <code class="language-plaintext highlighter-rouge">composer update</code> to get the latest framework version:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> composer update
 </code></pre></div>    </div>

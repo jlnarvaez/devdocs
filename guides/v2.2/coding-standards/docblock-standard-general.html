@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>DocBlock standard | Magento 2 Developer Documentation (copy)</title>
+	<title>DocBlock standard | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/coding-standards/docblock-standard-general.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/coding-standards/docblock-standard-general.html">Magento 2.0</a></li>
 		
@@ -1858,27 +1859,27 @@
 
 <ul>
   <li>Make code self-explanatory.</li>
-  <li>Put all possible information in the names of classes, methods, and variables. (e.g. use <code class="highlighter-rouge">$timeInSec</code> instead of <code class="highlighter-rouge">$time</code>)</li>
+  <li>Put all possible information in the names of classes, methods, and variables. (e.g. use <code class="language-plaintext highlighter-rouge">$timeInSec</code> instead of <code class="language-plaintext highlighter-rouge">$time</code>)</li>
   <li>Break down a method into smaller methods with descriptive names.
 See example below:</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="k">public</span> <span class="k">function</span> <span class="nf">getPrice</span><span class="p">()</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="k">public</span> <span class="k">function</span> <span class="n">getPrice</span><span class="p">()</span>
   <span class="p">{</span>
       <span class="nv">$price</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-      <span class="nv">$price</span> <span class="o">+=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getBasePrice</span><span class="p">();</span>
-      <span class="nv">$price</span> <span class="o">-=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getDiscount</span><span class="p">();</span>
+      <span class="nv">$price</span> <span class="o">+=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">getBasePrice</span><span class="p">();</span>
+      <span class="nv">$price</span> <span class="o">-=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">getDiscount</span><span class="p">();</span>
       <span class="k">return</span> <span class="nv">$price</span><span class="p">;</span>
   <span class="p">}</span>
 
-  <span class="k">private</span> <span class="k">function</span> <span class="nf">getBasePrice</span><span class="p">()</span>
+  <span class="k">private</span> <span class="k">function</span> <span class="n">getBasePrice</span><span class="p">()</span>
   <span class="p">{</span>
-      <span class="c1">// calculate base price
-</span>  <span class="p">}</span>
+      <span class="c1">// calculate base price</span>
+  <span class="p">}</span>
 
-  <span class="k">private</span> <span class="k">function</span> <span class="nf">getDiscount</span><span class="p">()</span>
+  <span class="k">private</span> <span class="k">function</span> <span class="n">getDiscount</span><span class="p">()</span>
   <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">it</span><span class="err">'</span><span class="nx">s</span> <span class="nx">discount</span> <span class="nb">time</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">it</span><span class="err">'</span><span class="n">s</span> <span class="n">discount</span> <span class="n">time</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">return</span> <span class="mi">10</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
@@ -1902,13 +1903,13 @@ See example below:</li>
 <p>Each Magento source code file must have a DocBlock header with short description of the file.
 After the short description, there can be a long description.</p>
 
-<p>Both short and long descriptions (for file headers and herein) must be separated from other elements using one empty line (implied empty line in terms of DocBlock syntax, where any line within DocBlock starts from <code class="highlighter-rouge">*</code>.</p>
+<p>Both short and long descriptions (for file headers and herein) must be separated from other elements using one empty line (implied empty line in terms of DocBlock syntax, where any line within DocBlock starts from <code class="language-plaintext highlighter-rouge">*</code>.</p>
 
-<p>If description or short description happens to be the first one after DocBlock opening tag (<code class="highlighter-rouge">/**</code>) or last one before closing tag (<code class="highlighter-rouge">*/</code>), it should not be separated with an empty line.</p>
+<p>If description or short description happens to be the first one after DocBlock opening tag (<code class="language-plaintext highlighter-rouge">/**</code>) or last one before closing tag (<code class="language-plaintext highlighter-rouge">*/</code>), it should not be separated with an empty line.</p>
 
 <p><strong>DocBlock Header in a PHP-file</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cd">/**
  * Short description...
  *
  * Long description
@@ -1946,21 +1947,21 @@ If the file contains a structural element (for example, a class), description fo
  Files</strong></p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="sd">/**
+<span class="cd">/**
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */</span>
 
-<span class="k">namespace</span> <span class="nx">Magento\Framework\Api</span><span class="p">;</span>
+<span class="kn">namespace</span> <span class="nn">Magento\Framework\Api</span><span class="p">;</span>
 
-<span class="sd">/**
+<span class="cd">/**
  * Provides metadata about an attribute.
  *
  * @api
  */</span>
-<span class="k">interface</span> <span class="nx">MetadataObjectInterface</span>
+<span class="kd">interface</span> <span class="nc">MetadataObjectInterface</span>
 <span class="p">{</span>
-   <span class="o">...</span>
+   <span class="mf">...</span>
 <span class="p">}</span></code></pre></figure>
 
 <p><strong>Template for   <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span>
@@ -1992,12 +1993,12 @@ For example: namespace, class, interface, function, property, method, and so on.
 
 <p><strong>DocBlock for a Class</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cd">/**
  * Autoloader with class map capability
  *
  * ...
  */</span>
-<span class="k">class</span> <span class="nc">Autoload</span>
+<span class="kd">class</span> <span class="nc">Autoload</span>
 <span class="p">{</span></code></pre></figure>
 
 <p>But if along with declaring class or function there must be another file with source code included, the inclusion construct must not be before file header and it must not separate element DocBlock from the element.
@@ -2010,44 +2011,44 @@ So there are two solutions possible:</p>
 
 <p><strong>DocBlock with Included Script File</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cd">/**
  * Magento integration Magento test framework (MTF) bootstrap
  *
  * ...
  */</span>
 
-<span class="k">require</span> <span class="nx">__DIR__</span> <span class="o">.</span> <span class="s1">'/../bootstrap.php'</span><span class="p">;</span>
+<span class="k">require</span> <span class="k">__DIR__</span> <span class="mf">.</span> <span class="s1">'/../bootstrap.php'</span><span class="p">;</span>
 
-<span class="k">namespace</span> <span class="nx">Magento\Test</span><span class="p">;</span>
+<span class="kn">namespace</span> <span class="nn">Magento\Test</span><span class="p">;</span>
 
-<span class="sd">/**
+<span class="cd">/**
  * Magento integration Magento test framework (MTF) bootstrap
  */</span>
-<span class="k">class</span> <span class="nc">Bootstrap</span>
+<span class="kd">class</span> <span class="nc">Bootstrap</span>
 <span class="p">{</span></code></pre></figure>
 
 <p><strong>DocBlock with Included Class File</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">Magento\Framework\Profiler\Adapter</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="kn">namespace</span> <span class="nn">Magento\Framework\Profiler\Adapter</span><span class="p">;</span>
 
-<span class="sd">/**
+<span class="cd">/**
  * Profiler CSV adapter
  *
  * ...
  */</span>
-<span class="k">class</span> <span class="nc">Csv</span> <span class="k">extends</span> <span class="nx">\Magento\Framework\Profiler\AdapterAbstract</span>
+<span class="kd">class</span> <span class="nc">Csv</span> <span class="k">extends</span> <span class="err">\</span><span class="nc">Magento\Framework\Profiler\AdapterAbstract</span>
 <span class="p">{</span>
-<span class="c1">// ...
-</span>    <span class="k">public</span> <span class="k">function</span> <span class="nf">setFile</span><span class="p">(</span><span class="nv">$file</span><span class="p">)</span>
+<span class="c1">// ...</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">setFile</span><span class="p">(</span><span class="nv">$file</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">isValidFile</span><span class="p">(</span><span class="nv">$file</span><span class="p">))</span> <span class="p">{</span>
-            <span class="k">throw</span> <span class="k">new</span> <span class="nx">\ArgumentException</span><span class="p">(</span><span class="s1">'A valid file name is expected.'</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nf">isValidFile</span><span class="p">(</span><span class="nv">$file</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="err">\</span><span class="nf">ArgumentException</span><span class="p">(</span><span class="s1">'A valid file name is expected.'</span><span class="p">);</span>
         <span class="p">}</span>
-        <span class="c1">// ...
-</span>    <span class="p">}</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="k">require_once</span> <span class="nx">__DIR__</span> <span class="o">.</span> <span class="s1">'/../../functions.php'</span><span class="p">;</span></code></pre></figure>
+<span class="k">require_once</span> <span class="k">__DIR__</span> <span class="mf">.</span> <span class="s1">'/../../functions.php'</span><span class="p">;</span></code></pre></figure>
 
 <h3 id="classes-interfaces">Classes and interfaces</h3>
 
@@ -2073,43 +2074,43 @@ class ErrorHandler { … }</p>
 
 <p>It is encouraged to use the short form of the name to encourage readability and consistency with the type hint.
 The only   <span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">exception</span>
- is in the <code class="highlighter-rouge">Service/DTO</code> classes due to tooling requirements.</p>
+ is in the <code class="language-plaintext highlighter-rouge">Service/DTO</code> classes due to tooling requirements.</p>
 
 <p><strong>Example of a Method DocBlock</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">use</span> <span class="nx">Magento\Logger</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Math\Random</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">Magento\Stdlib\DateTime</span> <span class="k">as</span> <span class="nx">StdlibDateTime</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="kn">use</span> <span class="nc">Magento\Logger</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Math\Random</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nc">Magento\Stdlib\DateTime</span> <span class="k">as</span> <span class="nc">StdlibDateTime</span><span class="p">;</span>
 
-<span class="sd">/**
+<span class="cd">/**
  * @var Logger
  */</span>
 <span class="k">protected</span> <span class="nv">$_logger</span><span class="p">;</span>
 
-<span class="sd">/**
+<span class="cd">/**
  * Description of method here.
  *
  * @param Random         $mathRandom
  * @param StdlibDateTime $dateTime
  * @param int            $number
  */</span>
-<span class="k">protected</span> <span class="k">function</span> <span class="nf">doSomething</span><span class="p">(</span><span class="nx">Random</span> <span class="nv">$mathRandom</span><span class="p">,</span> <span class="nx">StdlibDateTime</span> <span class="nv">$dateTime</span><span class="p">,</span> <span class="nv">$number</span><span class="p">)</span>
+<span class="k">protected</span> <span class="k">function</span> <span class="n">doSomething</span><span class="p">(</span><span class="kt">Random</span> <span class="nv">$mathRandom</span><span class="p">,</span> <span class="kt">StdlibDateTime</span> <span class="nv">$dateTime</span><span class="p">,</span> <span class="nv">$number</span><span class="p">)</span>
 <span class="p">{</span>
 
 <span class="p">}</span></code></pre></figure>
 
 <h3 id="class-attributes">Class attributes</h3>
 
-<p>Class attributes must have type declaration using <code class="highlighter-rouge">@var</code> tag.</p>
+<p>Class attributes must have type declaration using <code class="language-plaintext highlighter-rouge">@var</code> tag.</p>
 
 <p><strong>Example of Class Attribute</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="c1">// ...
-</span><span class="k">namespace</span> <span class="nx">Magento</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="c1">// ...</span>
+<span class="kn">namespace</span> <span class="nn">Magento</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">Profiler</span>
+<span class="kd">class</span> <span class="nc">Profiler</span>
 <span class="p">{</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * @var Profiler
      */</span>
     <span class="k">protected</span> <span class="k">static</span> <span class="nv">$instance</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span></code></pre></figure>
@@ -2130,12 +2131,12 @@ For example:</p>
 An implementation is non-obvious if another developer has questions about it.</li>
     </ul>
   </li>
-  <li>Declaration of all arguments (if any) using <code class="highlighter-rouge">@param</code> tag.
+  <li>Declaration of all arguments (if any) using <code class="language-plaintext highlighter-rouge">@param</code> tag.
 Appropriate argument type must be specified.</li>
-  <li>Declaration of return type using <code class="highlighter-rouge">@return</code> tag.
-If there is no such operator, the <code class="highlighter-rouge">@return</code> tag must have <code class="highlighter-rouge">void</code> as the return value.</li>
-  <li>Declaration of possibly thrown exception using <code class="highlighter-rouge">@throws</code> tag, if the actual body of function triggers throwing an exception.
-All occurrences of <code class="highlighter-rouge">@throws</code> in a DocBlock must be after <code class="highlighter-rouge">@param</code> and <code class="highlighter-rouge">@return</code> (if any).</li>
+  <li>Declaration of return type using <code class="language-plaintext highlighter-rouge">@return</code> tag.
+If there is no such operator, the <code class="language-plaintext highlighter-rouge">@return</code> tag must have <code class="language-plaintext highlighter-rouge">void</code> as the return value.</li>
+  <li>Declaration of possibly thrown exception using <code class="language-plaintext highlighter-rouge">@throws</code> tag, if the actual body of function triggers throwing an exception.
+All occurrences of <code class="language-plaintext highlighter-rouge">@throws</code> in a DocBlock must be after <code class="language-plaintext highlighter-rouge">@param</code> and <code class="language-plaintext highlighter-rouge">@return</code> (if any).</li>
 </ul>
 
 <p><strong>Exceptions to these rules:</strong></p>
@@ -2170,11 +2171,11 @@ All occurrences of <code class="highlighter-rouge">@throws</code> in a DocBlock 
       <li>
         <p>There is more than one possible input/output type.</p>
 
-        <p>For example: <code class="highlighter-rouge">@return Config|null</code>.
-The DockBlock needs to explain what situations return <code class="highlighter-rouge">null</code>.</p>
+        <p>For example: <code class="language-plaintext highlighter-rouge">@return Config|null</code>.
+The DockBlock needs to explain what situations return <code class="language-plaintext highlighter-rouge">null</code>.</p>
 
-        <p>Another example: <code class="highlighter-rouge">@param FileInterface | null</code>.
-The DocBlock needs to explain what happens when the value of the parameter is <code class="highlighter-rouge">null</code>.</p>
+        <p>Another example: <code class="language-plaintext highlighter-rouge">@param FileInterface | null</code>.
+The DocBlock needs to explain what happens when the value of the parameter is <code class="language-plaintext highlighter-rouge">null</code>.</p>
 
         <p>Ideally, implementations such as these should be avoided.</p>
       </li>
@@ -2197,40 +2198,40 @@ The algorithm must be self-explanatory and understood by reviewing the code and 
 
 <p><strong>Example of a Method DocBlock</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cd">/**
  * Merge the config XML files
  *
  * @param  array $configFiles
  * @return void
  * @throws \Magento\Exception if a non-existing or invalid XML file passed
  */</span>
-<span class="k">protected</span> <span class="k">function</span> <span class="nf">merge</span><span class="p">(</span><span class="nv">$configFiles</span><span class="p">)</span>
+<span class="k">protected</span> <span class="k">function</span> <span class="n">merge</span><span class="p">(</span><span class="nv">$configFiles</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="nv">$domConfig</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Magento\Config\Dom</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_getInitialXml</span><span class="p">(),</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_getIdAttributes</span><span class="p">());</span>
+    <span class="nv">$domConfig</span> <span class="o">=</span> <span class="k">new</span> <span class="err">\</span><span class="nf">Magento\Config\Dom</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">_getInitialXml</span><span class="p">(),</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">_getIdAttributes</span><span class="p">());</span>
     <span class="k">foreach</span> <span class="p">(</span><span class="nv">$configFiles</span> <span class="k">as</span> <span class="nv">$file</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">file_exists</span><span class="p">(</span><span class="nv">$file</span><span class="p">))</span> <span class="p">{</span>
-            <span class="k">throw</span> <span class="k">new</span> <span class="nx">\Magento\Exception</span><span class="p">(</span><span class="s2">"File does not exist: </span><span class="si">{</span><span class="nv">$file</span><span class="si">}</span><span class="s2">"</span><span class="p">);</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="err">\</span><span class="nf">Magento\Exception</span><span class="p">(</span><span class="s2">"File does not exist: </span><span class="si">{</span><span class="nv">$file</span><span class="si">}</span><span class="s2">"</span><span class="p">);</span>
         <span class="p">}</span>
-        <span class="nv">$domConfig</span><span class="o">-&gt;</span><span class="na">merge</span><span class="p">(</span><span class="nb">file_get_contents</span><span class="p">(</span><span class="nv">$file</span><span class="p">));</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$domConfig</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getSchemaFile</span><span class="p">(),</span> <span class="nv">$errors</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nv">$domConfig</span><span class="o">-&gt;</span><span class="nf">merge</span><span class="p">(</span><span class="nb">file_get_contents</span><span class="p">(</span><span class="nv">$file</span><span class="p">));</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$domConfig</span><span class="o">-&gt;</span><span class="nf">validate</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">getSchemaFile</span><span class="p">(),</span> <span class="nv">$errors</span><span class="p">))</span> <span class="p">{</span>
             <span class="nv">$message</span> <span class="o">=</span> <span class="s2">"Invalid XML file: </span><span class="si">{</span><span class="nv">$file</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
-            <span class="sd">/** @var libXMLError $error */</span>
+            <span class="cd">/** @var libXMLError $error */</span>
             <span class="k">foreach</span> <span class="p">(</span><span class="nv">$errors</span> <span class="k">as</span> <span class="nv">$error</span><span class="p">)</span> <span class="p">{</span>
-                <span class="nv">$message</span> <span class="o">.=</span> <span class="s2">"</span><span class="si">{</span><span class="nv">$error</span><span class="o">-&gt;</span><span class="na">message</span><span class="si">}</span><span class="s2"> Line: </span><span class="si">{</span><span class="nv">$error</span><span class="o">-&gt;</span><span class="na">line</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+                <span class="nv">$message</span> <span class="mf">.</span><span class="o">=</span> <span class="s2">"</span><span class="si">{</span><span class="nv">$error</span><span class="o">-&gt;</span><span class="n">message</span><span class="si">}</span><span class="s2"> Line: </span><span class="si">{</span><span class="nv">$error</span><span class="o">-&gt;</span><span class="n">line</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
             <span class="p">}</span>
-            <span class="k">throw</span> <span class="k">new</span> <span class="nx">\Magento\Exception</span><span class="p">(</span><span class="nv">$message</span><span class="p">);</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="err">\</span><span class="nf">Magento\Exception</span><span class="p">(</span><span class="nv">$message</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">}</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_dom</span> <span class="o">=</span> <span class="nv">$domConfig</span><span class="o">-&gt;</span><span class="na">getDom</span><span class="p">();</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">_dom</span> <span class="o">=</span> <span class="nv">$domConfig</span><span class="o">-&gt;</span><span class="nf">getDom</span><span class="p">();</span>
 <span class="p">}</span></code></pre></figure>
 
 <h4 id="throws">Divergence in @throws tag</h4>
 
-<p>In general, use the <code class="highlighter-rouge">@throws</code> tag when the code uses <em>throw</em>:</p>
+<p>In general, use the <code class="language-plaintext highlighter-rouge">@throws</code> tag when the code uses <em>throw</em>:</p>
 
 <p><strong>Example of Throwing Exception Explicitly</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cd">/**
  * Set an arbitrary value to specified element
  *
  * @param  string $elementId
@@ -2239,65 +2240,65 @@ The algorithm must be self-explanatory and understood by reviewing the code and 
  * @return self
  * @throws \InvalidArgumentException
  */</span>
-<span class="k">public</span> <span class="k">function</span> <span class="nf">setAttribute</span><span class="p">(</span><span class="nv">$elementId</span><span class="p">,</span> <span class="nv">$attribute</span><span class="p">,</span> <span class="nv">$value</span><span class="p">)</span>
+<span class="k">public</span> <span class="k">function</span> <span class="n">setAttribute</span><span class="p">(</span><span class="nv">$elementId</span><span class="p">,</span> <span class="nv">$attribute</span><span class="p">,</span> <span class="nv">$value</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_assertElementExists</span><span class="p">(</span><span class="nv">$elementId</span><span class="p">);</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">_assertElementExists</span><span class="p">(</span><span class="nv">$elementId</span><span class="p">);</span>
     <span class="k">switch</span> <span class="p">(</span><span class="nv">$attribute</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">case</span> <span class="nx">self</span><span class="o">::</span><span class="na">PARENT</span><span class="o">:</span> <span class="c1">// break is intentionally omitted
-</span>        <span class="k">case</span> <span class="nx">self</span><span class="o">::</span><span class="na">CHILDREN</span><span class="o">:</span>
-        <span class="k">case</span> <span class="nx">self</span><span class="o">::</span><span class="na">GROUPS</span><span class="o">:</span>
-            <span class="k">throw</span> <span class="k">new</span> <span class="nx">\InvalidArgumentException</span><span class="p">(</span><span class="s2">"Attribute '</span><span class="si">{</span><span class="nv">$attribute</span><span class="si">}</span><span class="s2">' is reserved and cannot be set."</span><span class="p">);</span>
+        <span class="k">case</span> <span class="k">self</span><span class="o">::</span><span class="k">PARENT</span><span class="o">:</span> <span class="c1">// break is intentionally omitted</span>
+        <span class="k">case</span> <span class="k">self</span><span class="o">::</span><span class="no">CHILDREN</span><span class="o">:</span>
+        <span class="k">case</span> <span class="k">self</span><span class="o">::</span><span class="no">GROUPS</span><span class="o">:</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="err">\</span><span class="nf">InvalidArgumentException</span><span class="p">(</span><span class="s2">"Attribute '</span><span class="si">{</span><span class="nv">$attribute</span><span class="si">}</span><span class="s2">' is reserved and cannot be set."</span><span class="p">);</span>
             <span class="k">break</span><span class="p">;</span>
         <span class="k">default</span><span class="o">:</span>
-            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_elements</span><span class="p">[</span><span class="nv">$elementId</span><span class="p">][</span><span class="nv">$attribute</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$value</span><span class="p">;</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">_elements</span><span class="p">[</span><span class="nv">$elementId</span><span class="p">][</span><span class="nv">$attribute</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$value</span><span class="p">;</span>
             <span class="k">break</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>In this general case, if an exception is thrown in a sub-routine, then <code class="highlighter-rouge">@throws</code> must not be used in the parent method.</p>
+<p>In this general case, if an exception is thrown in a sub-routine, then <code class="language-plaintext highlighter-rouge">@throws</code> must not be used in the parent method.</p>
 
-<p>However, if the only purpose of the referred sub-routine is to throw a specific exception – then <code class="highlighter-rouge">@throws</code> must be used in the parent method.
+<p>However, if the only purpose of the referred sub-routine is to throw a specific exception – then <code class="language-plaintext highlighter-rouge">@throws</code> must be used in the parent method.
 For example:</p>
 
 <p><strong>Throwing Exception Implicitly</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cd">/**
  * Recursively delete directory from storage
  *
  * @param  string $path Target dir
  * @return void
  * @throws Mage_Core_Exception when directories cannot be deleted
  */</span>
-<span class="k">public</span> <span class="k">function</span> <span class="nf">deleteDirectory</span><span class="p">(</span><span class="nv">$path</span><span class="p">)</span>
+<span class="k">public</span> <span class="k">function</span> <span class="n">deleteDirectory</span><span class="p">(</span><span class="nv">$path</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="c1">// prevent accidental root directory deleting
-</span>    <span class="nv">$rootCmp</span> <span class="o">=</span> <span class="nb">rtrim</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getHelper</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getStorageRoot</span><span class="p">(),</span> <span class="nx">DS</span><span class="p">);</span>
-    <span class="nv">$pathCmp</span> <span class="o">=</span> <span class="nb">rtrim</span><span class="p">(</span><span class="nv">$path</span><span class="p">,</span> <span class="nx">DS</span><span class="p">);</span>
+    <span class="c1">// prevent accidental root directory deleting</span>
+    <span class="nv">$rootCmp</span> <span class="o">=</span> <span class="nb">rtrim</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">getHelper</span><span class="p">()</span><span class="o">-&gt;</span><span class="nf">getStorageRoot</span><span class="p">(),</span> <span class="no">DS</span><span class="p">);</span>
+    <span class="nv">$pathCmp</span> <span class="o">=</span> <span class="nb">rtrim</span><span class="p">(</span><span class="nv">$path</span><span class="p">,</span> <span class="no">DS</span><span class="p">);</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="nv">$rootCmp</span> <span class="o">==</span> <span class="nv">$pathCmp</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">Mage</span><span class="o">::</span><span class="na">throwException</span><span class="p">(</span><span class="nx">Mage</span><span class="o">::</span><span class="na">helper</span><span class="p">(</span><span class="s1">'Mage_Cms_Helper_Data'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">__</span><span class="p">(</span><span class="s1">'Cannot delete root directory %s.'</span><span class="p">,</span> <span class="nv">$path</span><span class="p">));</span>
+        <span class="nc">Mage</span><span class="o">::</span><span class="nf">throwException</span><span class="p">(</span><span class="nc">Mage</span><span class="o">::</span><span class="nf">helper</span><span class="p">(</span><span class="s1">'Mage_Cms_Helper_Data'</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">__</span><span class="p">(</span><span class="s1">'Cannot delete root directory %s.'</span><span class="p">,</span> <span class="nv">$path</span><span class="p">));</span>
     <span class="p">}</span>
 
-    <span class="nv">$io</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Varien_Io_File</span><span class="p">();</span>
+    <span class="nv">$io</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Varien_Io_File</span><span class="p">();</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="nx">Mage</span><span class="o">::</span><span class="na">helper</span><span class="p">(</span><span class="s1">'Mage_Core_Helper_File_Storage_Database'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">checkDbUsage</span><span class="p">())</span> <span class="p">{</span>
-        <span class="nx">Mage</span><span class="o">::</span><span class="na">getModel</span><span class="p">(</span><span class="s1">'Mage_Core_Model_File_Storage_Directory_Database'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">deleteDirectory</span><span class="p">(</span><span class="nv">$path</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nc">Mage</span><span class="o">::</span><span class="nf">helper</span><span class="p">(</span><span class="s1">'Mage_Core_Helper_File_Storage_Database'</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">checkDbUsage</span><span class="p">())</span> <span class="p">{</span>
+        <span class="nc">Mage</span><span class="o">::</span><span class="nf">getModel</span><span class="p">(</span><span class="s1">'Mage_Core_Model_File_Storage_Directory_Database'</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">deleteDirectory</span><span class="p">(</span><span class="nv">$path</span><span class="p">);</span>
     <span class="p">}</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$io</span><span class="o">-&gt;</span><span class="na">rmdir</span><span class="p">(</span><span class="nv">$path</span><span class="p">,</span> <span class="kc">true</span><span class="p">))</span> <span class="p">{</span>
-        <span class="nx">Mage</span><span class="o">::</span><span class="na">throwException</span><span class="p">(</span><span class="nx">Mage</span><span class="o">::</span><span class="na">helper</span><span class="p">(</span><span class="s1">'Mage_Cms_Helper_Data'</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">__</span><span class="p">(</span><span class="s1">'Cannot delete directory %s.'</span><span class="p">,</span> <span class="nv">$path</span><span class="p">));</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$io</span><span class="o">-&gt;</span><span class="nb">rmdir</span><span class="p">(</span><span class="nv">$path</span><span class="p">,</span> <span class="kc">true</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nc">Mage</span><span class="o">::</span><span class="nf">throwException</span><span class="p">(</span><span class="nc">Mage</span><span class="o">::</span><span class="nf">helper</span><span class="p">(</span><span class="s1">'Mage_Cms_Helper_Data'</span><span class="p">)</span><span class="o">-&gt;</span><span class="nf">__</span><span class="p">(</span><span class="s1">'Cannot delete directory %s.'</span><span class="p">,</span> <span class="nv">$path</span><span class="p">));</span>
     <span class="p">}</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="nb">strpos</span><span class="p">(</span><span class="nv">$pathCmp</span><span class="p">,</span> <span class="nv">$rootCmp</span><span class="p">)</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nv">$io</span><span class="o">-&gt;</span><span class="na">rmdir</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getThumbnailRoot</span><span class="p">()</span> <span class="o">.</span> <span class="nx">DS</span> <span class="o">.</span> <span class="nb">ltrim</span><span class="p">(</span><span class="nb">substr</span><span class="p">(</span><span class="nv">$pathCmp</span><span class="p">,</span> <span class="nb">strlen</span><span class="p">(</span><span class="nv">$rootCmp</span><span class="p">)),</span> <span class="s1">'\\/'</span><span class="p">),</span> <span class="kc">true</span><span class="p">);</span>
+        <span class="nv">$io</span><span class="o">-&gt;</span><span class="nb">rmdir</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">getThumbnailRoot</span><span class="p">()</span> <span class="mf">.</span> <span class="no">DS</span> <span class="mf">.</span> <span class="nb">ltrim</span><span class="p">(</span><span class="nb">substr</span><span class="p">(</span><span class="nv">$pathCmp</span><span class="p">,</span> <span class="nb">strlen</span><span class="p">(</span><span class="nv">$rootCmp</span><span class="p">)),</span> <span class="s1">'\\/'</span><span class="p">),</span> <span class="kc">true</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
 <h4 id="return">@return tag</h4>
 
-<p>If there is no explicit return statement in a method or function, a <code class="highlighter-rouge">@return void</code> should be used in the documentation.</p>
+<p>If there is no explicit return statement in a method or function, a <code class="language-plaintext highlighter-rouge">@return void</code> should be used in the documentation.</p>
 
-<p>If the method returns itself, <code class="highlighter-rouge">return $this</code> should be used.</p>
+<p>If the method returns itself, <code class="language-plaintext highlighter-rouge">return $this</code> should be used.</p>
 
 <h3 id="constants">Constants</h3>
 
@@ -2305,102 +2306,102 @@ For example:</p>
 
 <p>For example, a global constant:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cd">/**
  * Directory separator shorthand
  */</span>
-<span class="nb">define</span><span class="p">(</span><span class="s1">'DS'</span><span class="p">,</span> <span class="nx">DIRECTORY_SEPARATOR</span><span class="p">);</span>
+<span class="nb">define</span><span class="p">(</span><span class="s1">'DS'</span><span class="p">,</span> <span class="no">DIRECTORY_SEPARATOR</span><span class="p">);</span>
 
-<span class="nx">Or</span> <span class="nx">constants</span> <span class="nx">in</span> <span class="nx">a</span> <span class="k">class</span><span class="err">:</span>
-<span class="nc">class</span> <span class="nx">Profiler</span>
+<span class="k">Or</span> <span class="n">constants</span> <span class="n">in</span> <span class="n">a</span> <span class="n">class</span><span class="o">:</span>
+<span class="kd">class</span> <span class="nc">Profiler</span>
 <span class="p">{</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * Separator literal to assemble timer identifier from timer names
      */</span>
     <span class="k">const</span> <span class="no">NESTING_SEPARATOR</span> <span class="o">=</span> <span class="s1">'-&gt;'</span><span class="p">;</span></code></pre></figure>
 
 <h3 id="DocBlock-templates">DocBlock templates</h3>
 
-<p>DocBlock template is a DocBlock that starts from <code class="highlighter-rouge">/**#@+*/</code> and ends with <code class="highlighter-rouge">/**#@-*/</code>.
+<p>DocBlock template is a DocBlock that starts from <code class="language-plaintext highlighter-rouge">/**#@+*/</code> and ends with <code class="language-plaintext highlighter-rouge">/**#@-*/</code>.
 Templates are not supported by PHPDocumentor anymore. Therefore, they MUST NOT be used.</p>
 
 <p>It’s encouraged to replace existing DocBlock templates with regular DocBlock comments when the file is being modified.</p>
 
 <h2 id="documentation-space">Structure of documentation space</h2>
 
-<p><code class="highlighter-rouge">@category</code>, <code class="highlighter-rouge">@package</code>, and <code class="highlighter-rouge">@subpackage</code> MUST NOT be used.
+<p><code class="language-plaintext highlighter-rouge">@category</code>, <code class="language-plaintext highlighter-rouge">@package</code>, and <code class="language-plaintext highlighter-rouge">@subpackage</code> MUST NOT be used.
 Documentation is organized with the use of namespaces.</p>
 
 <h2 id="other-DocBlock-tags">Other DocBlock tags</h2>
 
 <h3 id="inheritdoc">@inheritdoc tag</h3>
 
-<p>Whenever possible the <code class="highlighter-rouge">@inheritdoc</code> tag MUST be used for children to avoid duplication of doc blocks.</p>
+<p>Whenever possible the <code class="language-plaintext highlighter-rouge">@inheritdoc</code> tag MUST be used for children to avoid duplication of doc blocks.</p>
 
-<p>Even Though PHPDocumentor understands inheritance and uses the parent doc block by default (without <code class="highlighter-rouge">@inheritdoc</code> tag specified), including the tag helps ensure that the doc block is not missed at all.</p>
+<p>Even Though PHPDocumentor understands inheritance and uses the parent doc block by default (without <code class="language-plaintext highlighter-rouge">@inheritdoc</code> tag specified), including the tag helps ensure that the doc block is not missed at all.</p>
 
 <p>Rules for usage of the tag:</p>
 
 <ul>
-  <li>Use <code class="highlighter-rouge">@inheritdoc</code> (notice no braces around) to indicate that the entire doc block should be inherited from the parent method.</li>
-  <li>Use the inline <code class="highlighter-rouge">{@inheritdoc}</code> tag (with braces around) in long descriptions to reuse the parent’s long description. The tagged method MUST have its own short description.</li>
+  <li>Use <code class="language-plaintext highlighter-rouge">@inheritdoc</code> (notice no braces around) to indicate that the entire doc block should be inherited from the parent method.</li>
+  <li>Use the inline <code class="language-plaintext highlighter-rouge">{@inheritdoc}</code> tag (with braces around) in long descriptions to reuse the parent’s long description. The tagged method MUST have its own short description.</li>
 </ul>
 
 <p><strong>DocBlock for the Interface</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cd">/**
  * Interface for mutable value object for integer values
  */</span>
-<span class="k">interface</span> <span class="nx">MutableInterface</span>
+<span class="kd">interface</span> <span class="nc">MutableInterface</span>
 <span class="p">{</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * Get value
      *
      * Returns 0, if no value is available
      *
      * @return int
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getVal</span><span class="p">();</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">getVal</span><span class="p">();</span>
 
-    <span class="sd">/**
+    <span class="cd">/**
      * Set value
      *
      * Sets 0 in case a non-integer value is passed
      *
      * @param int $value
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">setVal</span><span class="p">(</span><span class="nv">$value</span><span class="p">);</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">setVal</span><span class="p">(</span><span class="nv">$value</span><span class="p">);</span>
 <span class="p">}</span></code></pre></figure>
 
 <p><strong>DocBlock for the implementation</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cd">/**
  * Limited mutable value object for integer values
  */</span>
-<span class="k">class</span> <span class="nc">LimitedMutableClass</span> <span class="k">implements</span> <span class="nx">MutableInterface</span>
+<span class="kd">class</span> <span class="nc">LimitedMutableClass</span> <span class="kd">implements</span> <span class="nc">MutableInterface</span>
 <span class="p">{</span>
-    <span class="sd">/**
+    <span class="cd">/**
      * @inheritdoc
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getVal</span><span class="p">()</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">getVal</span><span class="p">()</span>
     <span class="p">{</span>
     <span class="p">}</span>
 
-    <span class="sd">/**
+    <span class="cd">/**
      * Set value
      *
      * Sets 0 in case the value is bigger than max allowed value. {@inheritdoc}
      */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">setVal</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">setVal</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span>
     <span class="p">{</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
 <h3 id="api">@api tag</h3>
 
-<p>The <code class="highlighter-rouge">@api</code> tag indicates the code is part of the public API and is subject to the <a href="/devdocs/guides/v2.2/contributor-guide/backward-compatible-development/">Magento Backward Compatibility Policy</a>.</p>
+<p>The <code class="language-plaintext highlighter-rouge">@api</code> tag indicates the code is part of the public API and is subject to the <a href="/devdocs/guides/v2.2/contributor-guide/backward-compatible-development/">Magento Backward Compatibility Policy</a>.</p>
 
-<p>The <code class="highlighter-rouge">@api</code> tag can be applied to a constant, a method, or to the entire class/interface.
- If the <code class="highlighter-rouge">@api</code> tag is applied at the file level, then all methods within the file are part of the public   <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span>
+<p>The <code class="language-plaintext highlighter-rouge">@api</code> tag can be applied to a constant, a method, or to the entire class/interface.
+ If the <code class="language-plaintext highlighter-rouge">@api</code> tag is applied at the file level, then all methods within the file are part of the public   <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span>
 .
 You do not need to annotate each method individually.</p>
 
@@ -2411,14 +2412,14 @@ You do not need to annotate each method individually.</p>
 <p>A deprecated class or method is one that has been superseded and may cease to exist in the future.
  It will be retained to provide backward compatibility until next major component release.</p>
 
-<p>Use the <code class="highlighter-rouge">@deprecated</code> tag to indicate an element is to be deprecated.</p>
+<p>Use the <code class="language-plaintext highlighter-rouge">@deprecated</code> tag to indicate an element is to be deprecated.</p>
 
-<p>Motivation behind the added <code class="highlighter-rouge">@deprecated</code> tag MUST be explained.
-<code class="highlighter-rouge">@see</code> tag MUST be used with reference to new implementation when code is deprecated and there is a new alternative.</p>
+<p>Motivation behind the added <code class="language-plaintext highlighter-rouge">@deprecated</code> tag MUST be explained.
+<code class="language-plaintext highlighter-rouge">@see</code> tag MUST be used with reference to new implementation when code is deprecated and there is a new alternative.</p>
 
 <p>For example:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cd">/**
  * Get some object
  *
  * @deprecated Added to not break backward compatibility of the constructor signature
@@ -2426,41 +2427,41 @@ You do not need to annotate each method individually.</p>
  *             The method can be removed in a future major release, when constructor signature can be changed
  * @return SomeObjectInterface
  */</span>
-<span class="k">protected</span> <span class="k">function</span> <span class="nf">getSomeObject</span><span class="p">()</span>
+<span class="k">protected</span> <span class="k">function</span> <span class="n">getSomeObject</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="o">...</span>
+    <span class="mf">...</span>
 <span class="p">}</span>
 
-<span class="sd">/**
+<span class="cd">/**
  * Set price
  *
  * @deprecated Non-scoped price is not supported anymore
  * @see setScopedPrice()
  * @return void
  */</span>
-<span class="k">public</span> <span class="k">function</span> <span class="nf">setPrice</span><span class="p">(</span><span class="nv">$price</span><span class="p">)</span>
+<span class="k">public</span> <span class="k">function</span> <span class="n">setPrice</span><span class="p">(</span><span class="nv">$price</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="o">...</span>
+    <span class="mf">...</span>
 <span class="p">}</span>
 
-<span class="sd">/**
+<span class="cd">/**
  * Set price for specified scope
  *
  * @return void
  */</span>
-<span class="k">public</span> <span class="k">function</span> <span class="nf">setScopedPrice</span><span class="p">(</span><span class="nv">$price</span><span class="p">,</span> <span class="nv">$scopeType</span><span class="p">,</span> <span class="nv">$scopeId</span><span class="p">)</span>
+<span class="k">public</span> <span class="k">function</span> <span class="n">setScopedPrice</span><span class="p">(</span><span class="nv">$price</span><span class="p">,</span> <span class="nv">$scopeType</span><span class="p">,</span> <span class="nv">$scopeId</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="o">...</span>
+    <span class="mf">...</span>
 <span class="p">}</span></code></pre></figure>
 
 <h3 id="var">@var inline tag</h3>
 
-<p>For purpose of automatic type hinting in an IDE, an inline notation of <code class="highlighter-rouge">@var</code> tag can be used wherever the IDE is unable to resolve variable type.
+<p>For purpose of automatic type hinting in an IDE, an inline notation of <code class="language-plaintext highlighter-rouge">@var</code> tag can be used wherever the IDE is unable to resolve variable type.
 This tag declares variables that will emerge in next lines of code as follows:</p>
 
 <p><strong>Inline Type Hinting</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/** @var libXMLError $error */</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cd">/** @var libXMLError $error */</span>
 <span class="k">foreach</span> <span class="p">(</span><span class="nv">$errors</span> <span class="k">as</span> <span class="nv">$error</span><span class="p">)</span> <span class="p">{</span></code></pre></figure>
 
 <p>Some IDEs understand a different notation, where type is specified after variable name.
@@ -2468,16 +2469,16 @@ This notation is also valid:</p>
 
 <p><strong>Inline Type Hinting Variation</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/** @var $error libXMLError */</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cd">/** @var $error libXMLError */</span>
 <span class="k">foreach</span> <span class="p">(</span><span class="nv">$errors</span> <span class="k">as</span> <span class="nv">$error</span><span class="p">)</span> <span class="p">{</span></code></pre></figure>
 
 <h3 id="see">@see tag</h3>
 
-<p>Besides the normal way of using <code class="highlighter-rouge">@see</code> tag as <a href="http://www.phpdoc.org/docs/latest/references/phpdoc/tags/see.html">recommended by phpDocumentor</a>, it may be used as an addition to <code class="highlighter-rouge">@var</code>, when the <code class="highlighter-rouge">@var</code> is already used in this comment.</p>
+<p>Besides the normal way of using <code class="language-plaintext highlighter-rouge">@see</code> tag as <a href="http://www.phpdoc.org/docs/latest/references/phpdoc/tags/see.html">recommended by phpDocumentor</a>, it may be used as an addition to <code class="language-plaintext highlighter-rouge">@var</code>, when the <code class="language-plaintext highlighter-rouge">@var</code> is already used in this comment.</p>
 
 <p>Specifically, this is possible when a PHP-file composed from multiple file includes, as result variables may contain objects of different types depending on context:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cd">/**
  * @var $this ClassOne
  * @see ClassTwo
  * @see FooInterface
@@ -2493,7 +2494,7 @@ This notation is also valid:</p>
 
 <p>If there are two or more tags together in one DocBlock, their values may be padded, so that they could be visually aligned.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cd">/**
  * ...
  *
  * @param  string $argument
@@ -2509,7 +2510,7 @@ This notation is also valid:</p>
 
 <p><strong>Correct – align everything:</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cd">/**
  * ...
  *
  * @param  string   $parentId
@@ -2521,7 +2522,7 @@ This notation is also valid:</p>
 
 <p><strong>Also correct – don’t align anything:</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cd">/**
  * ...
  *
  * @param string   $parentId
@@ -2530,11 +2531,11 @@ This notation is also valid:</p>
  * @return int
  * @see _insertChild() for position explanation
  */</span>
-<span class="k">public</span> <span class="k">function</span> <span class="nf">reorderChild</span><span class="p">(</span><span class="nv">$parentId</span><span class="p">,</span> <span class="nv">$childId</span><span class="p">,</span> <span class="nv">$position</span><span class="p">)</span></code></pre></figure>
+<span class="k">public</span> <span class="k">function</span> <span class="n">reorderChild</span><span class="p">(</span><span class="nv">$parentId</span><span class="p">,</span> <span class="nv">$childId</span><span class="p">,</span> <span class="nv">$position</span><span class="p">)</span></code></pre></figure>
 
 <p><strong>Incorrect – align only partially:</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cd">/**
  * ...
  *
  * @param  string   $parentId

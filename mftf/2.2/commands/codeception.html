@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Codeception commands | Magento 2 Developer Documentation (copy)</title>
+	<title>Codeception commands | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -2091,8 +2090,7 @@
 	<h1 class="page-heading">Codeception commands</h1>
 </section>
 
-			
-<p style="text-align: right"><em>This topic was updated due to the 2.0.2 MFTF release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.0.2 MFTF release.</em></p>
 
 <p class="bs-callout bs-callout-warning">We do not recommend using Codeception commands directly as they can break the MFTF basic workflow.
 All the Codeception commands you need are wrapped using Robo.</p>
@@ -2104,31 +2102,31 @@ All the Codeception commands you need are wrapped using Robo.</p>
 
 <h2 id="examples">Examples</h2>
 
-<p>Run all tests in <code class="highlighter-rouge">dev/tests/acceptance/tests/functional/Magento/FunctionalTest</code>:</p>
+<p>Run all tests in <code class="language-plaintext highlighter-rouge">dev/tests/acceptance/tests/functional/Magento/FunctionalTest</code>:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vendor/bin/codecept run functional
 </code></pre></div></div>
 
-<p>Run all tests without the <code class="highlighter-rouge">&lt;group value="skpip"/&gt;</code> <a href="../test/annotations.html">annotation</a>:</p>
+<p>Run all tests without the <code class="language-plaintext highlighter-rouge">&lt;group value="skpip"/&gt;</code> <a href="../test/annotations.html">annotation</a>:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vendor/bin/codecept run functional <span class="nt">--skip-group</span> skip
 </code></pre></div></div>
 
-<p>Run all tests with the <code class="highlighter-rouge">&lt;group value="example"/&gt;</code> <a href="../test/annotations.html">annotation</a> but with no <code class="highlighter-rouge">&lt;group value="skpip"/&gt;</code>:</p>
+<p>Run all tests with the <code class="language-plaintext highlighter-rouge">&lt;group value="example"/&gt;</code> <a href="../test/annotations.html">annotation</a> but with no <code class="language-plaintext highlighter-rouge">&lt;group value="skpip"/&gt;</code>:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vendor/bin/codecept run functional <span class="nt">--group</span> example <span class="nt">--skip-group</span> skip
 </code></pre></div></div>
 
-<h2 id="codecept-run"><code class="highlighter-rouge">codecept run</code></h2>
+<h2 id="codecept-run"><code class="language-plaintext highlighter-rouge">codecept run</code></h2>
 
-<p><code class="highlighter-rouge">codecept run</code> runs the test suites:</p>
+<p><code class="language-plaintext highlighter-rouge">codecept run</code> runs the test suites:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>vendor/bin/codecept run
 </code></pre></div></div>
 
 <p class="bs-callout bs-callout-info">The following documentation corresponds to Codeception 2.3.8.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Full reference:
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>Full reference:
 
  Arguments:
    suite                 suite to be tested

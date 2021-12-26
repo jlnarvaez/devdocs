@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Test | Magento 2 Developer Documentation (copy)</title>
+	<title>Test | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -2091,25 +2090,24 @@
 	<h1 class="page-heading">Test</h1>
 </section>
 
-			
-<p style="text-align: right"><em>This topic was updated due to the 2.2.0 MFTF release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.2.0 MFTF release.</em></p>
 
-<p>Test cases in the Magento Functional Testing Framework (MFTF) are defined in XML as <a href="#test-tag"><code class="highlighter-rouge">&lt;tests&gt;</code></a>.
-<code class="highlighter-rouge">&lt;tests&gt;</code> is a <a href="https://codeception.com/docs/07-AdvancedUsage">Codeception test container</a> that contains multiple individual tests with test metadata and before and after actions.</p>
+<p>Test cases in the Magento Functional Testing Framework (MFTF) are defined in XML as <a href="#test-tag"><code class="language-plaintext highlighter-rouge">&lt;tests&gt;</code></a>.
+<code class="language-plaintext highlighter-rouge">&lt;tests&gt;</code> is a <a href="https://codeception.com/docs/07-AdvancedUsage">Codeception test container</a> that contains multiple individual tests with test metadata and before and after actions.</p>
 
-<p>MFTF <code class="highlighter-rouge">&lt;tests&gt;</code> is considered a sequence of actions with associated parameters.
+<p>MFTF <code class="language-plaintext highlighter-rouge">&lt;tests&gt;</code> is considered a sequence of actions with associated parameters.
 Any failed <a href="./test/assertions.html">assertion</a> within a test constitutes a failed test.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p><code class="highlighter-rouge">&lt;before&gt;</code> and <code class="highlighter-rouge">&lt;after&gt;</code> hooks are not global within <code class="highlighter-rouge">&lt;tests&gt;</code> like in MFTF 1.0.
-They only apply to the <code class="highlighter-rouge">&lt;test&gt;</code> in which they are declared.</p>
+  <p><code class="language-plaintext highlighter-rouge">&lt;before&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;after&gt;</code> hooks are not global within <code class="language-plaintext highlighter-rouge">&lt;tests&gt;</code> like in MFTF 1.0.
+They only apply to the <code class="language-plaintext highlighter-rouge">&lt;test&gt;</code> in which they are declared.</p>
 
-  <p>The steps in <code class="highlighter-rouge">&lt;after&gt;</code> are run in both successful <strong>and</strong> failed test runs.</p>
+  <p>The steps in <code class="language-plaintext highlighter-rouge">&lt;after&gt;</code> are run in both successful <strong>and</strong> failed test runs.</p>
 </div>
 
 <p>The following diagram shows the structure of an MFTF test case:</p>
 
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<p>&lt;?xml version=”1.0” encoding=”UTF-8” standalone=”no”?&gt;</p>
 <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="601" height="322" version="1.1" id="svg330" sodipodi:docname="test-dia.svg" inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
   <metadata id="metadata336">
     <rdf:RDF>
@@ -2355,7 +2353,7 @@ They only apply to the <code class="highlighter-rouge">&lt;test&gt;</code> in wh
 
 <h2 id="format">Format</h2>
 
-<p>The format of <code class="highlighter-rouge">&lt;tests&gt;</code> is:</p>
+<p>The format of <code class="language-plaintext highlighter-rouge">&lt;tests&gt;</code> is:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 
@@ -2383,27 +2381,27 @@ They only apply to the <code class="highlighter-rouge">&lt;test&gt;</code> in wh
 
 <ul>
   <li>All names within the framework are in the CamelCase format.</li>
-  <li><code class="highlighter-rouge">&lt;test&gt;</code> name must be alphanumeric.</li>
-  <li>Each action and action group has its own identifier <code class="highlighter-rouge">&lt;stepKey&gt;</code> for reference purposes.</li>
-  <li>A test may have any number of <a href="./test/assertions.html">assertions</a>, at any point within the <code class="highlighter-rouge">&lt;test&gt;</code>.</li>
-  <li>If <code class="highlighter-rouge">&lt;test&gt;</code> is included in <code class="highlighter-rouge">&lt;suite&gt;</code>, it <strong>cannot be generated in isolation</strong> to the rest of the contents of the suite (see <a href="./suite.html">suites</a> for details).</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;test&gt;</code> name must be alphanumeric.</li>
+  <li>Each action and action group has its own identifier <code class="language-plaintext highlighter-rouge">&lt;stepKey&gt;</code> for reference purposes.</li>
+  <li>A test may have any number of <a href="./test/assertions.html">assertions</a>, at any point within the <code class="language-plaintext highlighter-rouge">&lt;test&gt;</code>.</li>
+  <li>If <code class="language-plaintext highlighter-rouge">&lt;test&gt;</code> is included in <code class="language-plaintext highlighter-rouge">&lt;suite&gt;</code>, it <strong>cannot be generated in isolation</strong> to the rest of the contents of the suite (see <a href="./suite.html">suites</a> for details).</li>
 </ul>
 
 <p>Multiple <test> tags per XML file can make it hard to find and organize tags. To simplify, we generate one `test.php` file per <test> tag provided, though we support both single and multiple <test> tags per XML file.</test></test></test></p>
 
 <h2 id="elements-reference">Elements reference</h2>
 
-<p>There are several XML elements that are used in <code class="highlighter-rouge">&lt;tests&gt;</code> in the MFTF.</p>
+<p>There are several XML elements that are used in <code class="language-plaintext highlighter-rouge">&lt;tests&gt;</code> in the MFTF.</p>
 
 <h3 id="tests-tag">tests</h3>
 
-<p><code class="highlighter-rouge">&lt;tests&gt;</code> is a container for multiple tests. It is a group of test methods that define test flows within a test case.</p>
+<p><code class="language-plaintext highlighter-rouge">&lt;tests&gt;</code> is a container for multiple tests. It is a group of test methods that define test flows within a test case.</p>
 
-<p><code class="highlighter-rouge">&lt;tests&gt;</code> must contain at least one <a href="#test-tag"><code class="highlighter-rouge">&lt;test&gt;</code></a>.</p>
+<p><code class="language-plaintext highlighter-rouge">&lt;tests&gt;</code> must contain at least one <a href="#test-tag"><code class="language-plaintext highlighter-rouge">&lt;test&gt;</code></a>.</p>
 
 <h3 id="test-tag">test</h3>
 
-<p><code class="highlighter-rouge">&lt;test&gt;</code> is a set of steps, including <a href="./test/actions.html">actions</a> and <a href="./test/assertions.html">assertions</a>. It is a sequence of test steps that define test flow within a test method.</p>
+<p><code class="language-plaintext highlighter-rouge">&lt;test&gt;</code> is a set of steps, including <a href="./test/actions.html">actions</a> and <a href="./test/assertions.html">assertions</a>. It is a sequence of test steps that define test flow within a test method.</p>
 
 <table>
   <thead>
@@ -2416,21 +2414,21 @@ They only apply to the <code class="highlighter-rouge">&lt;test&gt;</code> in wh
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">name</code></td>
+      <td><code class="language-plaintext highlighter-rouge">name</code></td>
       <td>string</td>
       <td>optional</td>
       <td>A test identifier used while merging.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">remove</code></td>
+      <td><code class="language-plaintext highlighter-rouge">remove</code></td>
       <td>boolean</td>
       <td>optional</td>
-      <td>Set <code class="highlighter-rouge">true</code> to remove the test when merging.</td>
+      <td>Set <code class="language-plaintext highlighter-rouge">true</code> to remove the test when merging.</td>
     </tr>
   </tbody>
 </table>
 
-<p><code class="highlighter-rouge">&lt;test&gt;</code> may also contain <a href="#annotations-tag"><code class="highlighter-rouge">&lt;annotations&gt;</code></a>, <a href="#before-tag"><code class="highlighter-rouge">&lt;before&gt;</code></a>, <a href="#after-tag"><code class="highlighter-rouge">&lt;after&gt;</code></a>, any <a href="./test/actions.html">action</a>, or <a href="#actiongroup-tag"><code class="highlighter-rouge">&lt;actionGroup&gt;</code></a>.</p>
+<p><code class="language-plaintext highlighter-rouge">&lt;test&gt;</code> may also contain <a href="#annotations-tag"><code class="language-plaintext highlighter-rouge">&lt;annotations&gt;</code></a>, <a href="#before-tag"><code class="language-plaintext highlighter-rouge">&lt;before&gt;</code></a>, <a href="#after-tag"><code class="language-plaintext highlighter-rouge">&lt;after&gt;</code></a>, any <a href="./test/actions.html">action</a>, or <a href="#actiongroup-tag"><code class="language-plaintext highlighter-rouge">&lt;actionGroup&gt;</code></a>.</p>
 
 <h3 id="annotations-tag">annotations</h3>
 
@@ -2443,30 +2441,30 @@ Allure annotations provide metadata for reporting.</p>
 
 <h3 id="before-tag">before</h3>
 
-<p><code class="highlighter-rouge">&lt;before&gt;</code> wraps the steps to perform before the <a href="#test-tag"><code class="highlighter-rouge">&lt;test&gt;</code></a>.</p>
+<p><code class="language-plaintext highlighter-rouge">&lt;before&gt;</code> wraps the steps to perform before the <a href="#test-tag"><code class="language-plaintext highlighter-rouge">&lt;test&gt;</code></a>.</p>
 
-<p><code class="highlighter-rouge">&lt;before&gt;</code> may contain these child elements:</p>
+<p><code class="language-plaintext highlighter-rouge">&lt;before&gt;</code> may contain these child elements:</p>
 
 <ul>
-  <li>Any <a href="./test/actions.html"><code class="highlighter-rouge">&lt;action&gt;</code></a></li>
-  <li><a href="#actiongroup-tag"><code class="highlighter-rouge">&lt;actionGroup&gt;</code></a></li>
+  <li>Any <a href="./test/actions.html"><code class="language-plaintext highlighter-rouge">&lt;action&gt;</code></a></li>
+  <li><a href="#actiongroup-tag"><code class="language-plaintext highlighter-rouge">&lt;actionGroup&gt;</code></a></li>
 </ul>
 
 <h3 id="after-tag">after</h3>
 
-<p><code class="highlighter-rouge">&lt;after&gt;</code> wraps the steps to perform after the <a href="#test-tag"><code class="highlighter-rouge">&lt;test&gt;</code></a>.
+<p><code class="language-plaintext highlighter-rouge">&lt;after&gt;</code> wraps the steps to perform after the <a href="#test-tag"><code class="language-plaintext highlighter-rouge">&lt;test&gt;</code></a>.
 The steps are run in both successful <strong>and</strong> failed test runs.</p>
 
-<p><code class="highlighter-rouge">&lt;after&gt;</code> may contain:</p>
+<p><code class="language-plaintext highlighter-rouge">&lt;after&gt;</code> may contain:</p>
 
 <ul>
-  <li>Any <a href="./test/actions.html"><code class="highlighter-rouge">&lt;action&gt;</code></a></li>
-  <li><a href="#actiongroup-tag"><code class="highlighter-rouge">&lt;actionGroup&gt;</code></a></li>
+  <li>Any <a href="./test/actions.html"><code class="language-plaintext highlighter-rouge">&lt;action&gt;</code></a></li>
+  <li><a href="#actiongroup-tag"><code class="language-plaintext highlighter-rouge">&lt;actionGroup&gt;</code></a></li>
 </ul>
 
 <h3 id="actiongroup-tag">actionGroup</h3>
 
-<p><code class="highlighter-rouge">&lt;actionGroup&gt;</code> calls a corresponding <a href="./test/action-groups.html">action group</a>.</p>
+<p><code class="language-plaintext highlighter-rouge">&lt;actionGroup&gt;</code> calls a corresponding <a href="./test/action-groups.html">action group</a>.</p>
 
 <table>
   <thead>
@@ -2479,37 +2477,37 @@ The steps are run in both successful <strong>and</strong> failed test runs.</p>
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">ref</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ref</code></td>
       <td>string</td>
       <td>required</td>
-      <td>References the required action group by its <code class="highlighter-rouge">name</code>.</td>
+      <td>References the required action group by its <code class="language-plaintext highlighter-rouge">name</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td><code class="language-plaintext highlighter-rouge">stepKey</code></td>
       <td>string</td>
       <td>required</td>
-      <td>Identifies the element within <code class="highlighter-rouge">&lt;test&gt;</code>.</td>
+      <td>Identifies the element within <code class="language-plaintext highlighter-rouge">&lt;test&gt;</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">before</code></td>
+      <td><code class="language-plaintext highlighter-rouge">before</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">&lt;stepKey&gt;</code> of an action or action group that must be executed next while merging.</td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;stepKey&gt;</code> of an action or action group that must be executed next while merging.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">after</code></td>
+      <td><code class="language-plaintext highlighter-rouge">after</code></td>
       <td>string</td>
       <td>optional</td>
-      <td><code class="highlighter-rouge">&lt;stepKey&gt;</code> of an action or action group that must be executed one step before the current one while merging.</td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;stepKey&gt;</code> of an action or action group that must be executed one step before the current one while merging.</td>
     </tr>
   </tbody>
 </table>
 
-<p><code class="highlighter-rouge">&lt;actionGroup&gt;</code> may contain <a href="#argument-tag"><code class="highlighter-rouge">&lt;argument&gt;</code></a>.</p>
+<p><code class="language-plaintext highlighter-rouge">&lt;actionGroup&gt;</code> may contain <a href="#argument-tag"><code class="language-plaintext highlighter-rouge">&lt;argument&gt;</code></a>.</p>
 
 <h3 id="argument-tag">argument</h3>
 
-<p><code class="highlighter-rouge">&lt;argument&gt;</code> sets an argument that is used in the parent <a href="#actiongroup-tag"><code class="highlighter-rouge">&lt;actionGroup&gt;</code></a>.</p>
+<p><code class="language-plaintext highlighter-rouge">&lt;argument&gt;</code> sets an argument that is used in the parent <a href="#actiongroup-tag"><code class="language-plaintext highlighter-rouge">&lt;actionGroup&gt;</code></a>.</p>
 
 <table>
   <thead>
@@ -2522,13 +2520,13 @@ The steps are run in both successful <strong>and</strong> failed test runs.</p>
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">name</code></td>
+      <td><code class="language-plaintext highlighter-rouge">name</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Name of the argument.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">value</code></td>
+      <td><code class="language-plaintext highlighter-rouge">value</code></td>
       <td>string</td>
       <td>optional</td>
       <td>Value of the argument.</td>

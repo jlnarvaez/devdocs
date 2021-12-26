@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Cloud variables | Magento 2 Developer Documentation (copy)</title>
+	<title>Cloud variables | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/env/variables-cloud.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/env/variables-cloud.html">Magento 2.0</a></li>
 		
@@ -4314,7 +4315,7 @@
 	<h1 class="page-heading">Cloud variables</h1>
 </section>
 
-			<p>Environment variables that are specific to Magento Commerce Cloud use the <code class="highlighter-rouge">MAGENTO_CLOUD_*</code> prefix:</p>
+			<p>Environment variables that are specific to Magento Commerce Cloud use the <code class="language-plaintext highlighter-rouge">MAGENTO_CLOUD_*</code> prefix:</p>
 
 <table>
   <thead>
@@ -4325,59 +4326,59 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">MAGENTO_CLOUD_APP_DIR</code></td>
+      <td><code class="language-plaintext highlighter-rouge">MAGENTO_CLOUD_APP_DIR</code></td>
       <td>The absolute path to the application directory.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">MAGENTO_CLOUD_APPLICATION</code></td>
-      <td>A base64-encoded JSON object that describes the application. It maps to the <code class="highlighter-rouge">.magento.app.yaml</code> file content and has subkeys.</td>
+      <td><code class="language-plaintext highlighter-rouge">MAGENTO_CLOUD_APPLICATION</code></td>
+      <td>A base64-encoded JSON object that describes the application. It maps to the <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> file content and has subkeys.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">MAGENTO_CLOUD_APPLICATION_NAME</code></td>
-      <td>The name of the application configured in the <code class="highlighter-rouge">.magento.app.yaml</code> file.</td>
+      <td><code class="language-plaintext highlighter-rouge">MAGENTO_CLOUD_APPLICATION_NAME</code></td>
+      <td>The name of the application configured in the <code class="language-plaintext highlighter-rouge">.magento.app.yaml</code> file.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">MAGENTO_CLOUD_DOCUMENT_ROOT</code></td>
+      <td><code class="language-plaintext highlighter-rouge">MAGENTO_CLOUD_DOCUMENT_ROOT</code></td>
       <td>The absolute path to the web document root, if applicable.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">MAGENTO_CLOUD_ENVIRONMENT</code></td>
+      <td><code class="language-plaintext highlighter-rouge">MAGENTO_CLOUD_ENVIRONMENT</code></td>
       <td>The name of the environment branch.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">MAGENTO_CLOUD_PROJECT</code></td>
+      <td><code class="language-plaintext highlighter-rouge">MAGENTO_CLOUD_PROJECT</code></td>
       <td>The project ID.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">MAGENTO_CLOUD_RELATIONSHIPS</code></td>
-      <td>A base64-encoded JSON object that represents key (relationship name) and value (arrays of relationship pairs) endpoint definition. Each relationship endpoint definition is a decomposed form of a URL. It has a <code class="highlighter-rouge">scheme</code>, a <code class="highlighter-rouge">host</code>, a <code class="highlighter-rouge">port</code>, and <em>optionally</em> a <code class="highlighter-rouge">username</code>, <code class="highlighter-rouge">password</code>, <code class="highlighter-rouge">path</code> and some additional information in <code class="highlighter-rouge">query</code>.</td>
+      <td><code class="language-plaintext highlighter-rouge">MAGENTO_CLOUD_RELATIONSHIPS</code></td>
+      <td>A base64-encoded JSON object that represents key (relationship name) and value (arrays of relationship pairs) endpoint definition. Each relationship endpoint definition is a decomposed form of a URL. It has a <code class="language-plaintext highlighter-rouge">scheme</code>, a <code class="language-plaintext highlighter-rouge">host</code>, a <code class="language-plaintext highlighter-rouge">port</code>, and <em>optionally</em> a <code class="language-plaintext highlighter-rouge">username</code>, <code class="language-plaintext highlighter-rouge">password</code>, <code class="language-plaintext highlighter-rouge">path</code> and some additional information in <code class="language-plaintext highlighter-rouge">query</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">MAGENTO_CLOUD_ROUTES</code></td>
-      <td>Describe the routes defined in the environment <code class="highlighter-rouge">.magento/routes.yaml</code> file.</td>
+      <td><code class="language-plaintext highlighter-rouge">MAGENTO_CLOUD_ROUTES</code></td>
+      <td>Describe the routes defined in the environment <code class="language-plaintext highlighter-rouge">.magento/routes.yaml</code> file.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">MAGENTO_CLOUD_TREE_ID</code></td>
+      <td><code class="language-plaintext highlighter-rouge">MAGENTO_CLOUD_TREE_ID</code></td>
       <td>The tree ID for the application, which corresponds to the SHA of the tree in Git.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">MAGENTO_CLOUD_VARIABLES</code></td>
-      <td>A base64-encoded JSON object with key-value pairs, such as <code class="highlighter-rouge">"key":"value"</code>.</td>
+      <td><code class="language-plaintext highlighter-rouge">MAGENTO_CLOUD_VARIABLES</code></td>
+      <td>A base64-encoded JSON object with key-value pairs, such as <code class="language-plaintext highlighter-rouge">"key":"value"</code>.</td>
     </tr>
   </tbody>
 </table>
 
-<p class="bs-callout bs-callout-warning">When attempting to <a href="/devdocs/guides/v2.2/config-guide/prod/config-reference-var-name.html">use environment variables to override configuration settings</a> using the <a href="/devdocs/guides/v2.2/cloud/project/project-webint-basic.html#project-conf-env-var">Project Web Interface</a>, you must prepend the variable name with <code class="highlighter-rouge">env:</code> as in the following example.
+<p class="bs-callout bs-callout-warning">When attempting to <a href="/devdocs/guides/v2.2/config-guide/prod/config-reference-var-name.html">use environment variables to override configuration settings</a> using the <a href="/devdocs/guides/v2.2/cloud/project/project-webint-basic.html#project-conf-env-var">Project Web Interface</a>, you must prepend the variable name with <code class="language-plaintext highlighter-rouge">env:</code> as in the following example.
 <img src="/devdocs/common/images/cloud_env_var_example.png" alt="Environment variable example" /></p>
 
-<p>Since values can change over time, it is best to inspect the variable at runtime and use it to configure your application. For example, we use the <code class="highlighter-rouge">MAGENTO_CLOUD_RELATIONSHIPS</code> variable to retrieve environment-related relationships as follows:</p>
+<p>Since values can change over time, it is best to inspect the variable at runtime and use it to configure your application. For example, we use the <code class="language-plaintext highlighter-rouge">MAGENTO_CLOUD_RELATIONSHIPS</code> variable to retrieve environment-related relationships as follows:</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="sd">/**
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="cd">/**
   * Get relationships information from MagentoCloud environment variable.
   *
   * @return mixed
   */</span>
-    <span class="k">protected</span> <span class="k">function</span> <span class="nf">getRelationships</span><span class="p">()</span>
+    <span class="k">protected</span> <span class="k">function</span> <span class="n">getRelationships</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="k">return</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nb">base64_decode</span><span class="p">(</span><span class="nv">$_ENV</span><span class="p">[</span><span class="s2">"MAGENTO_CLOUD_RELATIONSHIPS"</span><span class="p">]),</span> <span class="kc">true</span><span class="p">);</span>
     <span class="p">}</span>

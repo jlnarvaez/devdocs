@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Typified element | Magento 2 Developer Documentation (copy)</title>
+	<title>Typified element | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/mtf/mtf_entities/mtf_typified-element.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/mtf/mtf_entities/mtf_typified-element.html">Magento 2.0</a></li>
 		
@@ -2237,7 +2238,7 @@
 
 <p><img src="/devdocs/common/images/ftf/mtf_typ_element_brows.png" alt="A typified element example in the browser" /></p>
 
-<p>This example shows the <code class="highlighter-rouge">optgroup</code> typified element. You can use the <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/OptgroupselectElement.php"><code class="highlighter-rouge">\Magento\Mtf\Client\Element\OptgroupselectElement</code></a> class to test it.</p>
+<p>This example shows the <code class="language-plaintext highlighter-rouge">optgroup</code> typified element. You can use the <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/OptgroupselectElement.php"><code class="language-plaintext highlighter-rouge">\Magento\Mtf\Client\Element\OptgroupselectElement</code></a> class to test it.</p>
 
 <p>This topic discusses how to create classes for a typified element and to use them in tests.</p>
 
@@ -2249,7 +2250,7 @@
 
 <div class="bs-callout bs-callout-tip">
   <p>  
-The most important methods are <code class="highlighter-rouge">setValue()</code> and <code class="highlighter-rouge">getValue()</code>. These methods are required when you work with a form.</p>
+The most important methods are <code class="language-plaintext highlighter-rouge">setValue()</code> and <code class="language-plaintext highlighter-rouge">getValue()</code>. These methods are required when you work with a form.</p>
 </div>
 
 <h3 id="classes">Classes and relations with UI</h3>
@@ -2267,9 +2268,9 @@ The most important methods are <code class="highlighter-rouge">setValue()</code>
 
 <h4 id="basic_class">Default typified elements</h4>
 
-<p>Default typified elements are stored in the <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/vendor/magento/mtf/Magento/Mtf/Client/Element</code> directory.</p>
+<p>Default typified elements are stored in the <code class="language-plaintext highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/vendor/magento/mtf/Magento/Mtf/Client/Element</code> directory.</p>
 
-<p>A root class for a typified element is the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SimpleElement.php"><code class="highlighter-rouge">\Magento\Mtf\Client\Element\SimpleElement</code></a> class. This class implements <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/ElementInterface.php"><code class="highlighter-rouge">ElementInterface</code></a> which contains methods such as <code class="highlighter-rouge">click()</code>, <code class="highlighter-rouge">doubleClick()</code>, <code class="highlighter-rouge">isVisible()</code>, <code class="highlighter-rouge">setValue()</code>, <code class="highlighter-rouge">getValue()</code>, <code class="highlighter-rouge">getText()</code>, <code class="highlighter-rouge">find()</code>, <code class="highlighter-rouge">dragAndDrop()</code>, <code class="highlighter-rouge">getElements()</code> etc.</p>
+<p>A root class for a typified element is the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SimpleElement.php"><code class="language-plaintext highlighter-rouge">\Magento\Mtf\Client\Element\SimpleElement</code></a> class. This class implements <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/ElementInterface.php"><code class="language-plaintext highlighter-rouge">ElementInterface</code></a> which contains methods such as <code class="language-plaintext highlighter-rouge">click()</code>, <code class="language-plaintext highlighter-rouge">doubleClick()</code>, <code class="language-plaintext highlighter-rouge">isVisible()</code>, <code class="language-plaintext highlighter-rouge">setValue()</code>, <code class="language-plaintext highlighter-rouge">getValue()</code>, <code class="language-plaintext highlighter-rouge">getText()</code>, <code class="language-plaintext highlighter-rouge">find()</code>, <code class="language-plaintext highlighter-rouge">dragAndDrop()</code>, <code class="language-plaintext highlighter-rouge">getElements()</code> etc.</p>
 
 <table>
   <thead>
@@ -2281,41 +2282,41 @@ The most important methods are <code class="highlighter-rouge">setValue()</code>
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">&lt;input type="checkbox" /&gt;</code></td>
-      <td><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/CheckboxElement.php"><code class="highlighter-rouge">\Magento\Mtf\Client\Element\CheckboxElement</code></a></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;input type="checkbox" /&gt;</code></td>
+      <td><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/CheckboxElement.php"><code class="language-plaintext highlighter-rouge">\Magento\Mtf\Client\Element\CheckboxElement</code></a></td>
       <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SimpleElement.php">SimpleElement</a></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;select multiple /&gt;</code></td>
-      <td><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/MultiselectElement.php"><code class="highlighter-rouge">\Magento\Mtf\Client\Element\MultiselectElement</code></a></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;select multiple /&gt;</code></td>
+      <td><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/MultiselectElement.php"><code class="language-plaintext highlighter-rouge">\Magento\Mtf\Client\Element\MultiselectElement</code></a></td>
       <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SelectElement.php">SelectElement</a></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;input type="radio" /&gt;</code></td>
-      <td><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/RadiobuttonElement.php"><code class="highlighter-rouge">\Magento\Mtf\Client\Element\RadiobuttonElement</code></a></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;input type="radio" /&gt;</code></td>
+      <td><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/RadiobuttonElement.php"><code class="language-plaintext highlighter-rouge">\Magento\Mtf\Client\Element\RadiobuttonElement</code></a></td>
       <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SimpleElement.php">SimpleElement</a></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;select /&gt;</code></td>
-      <td><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SelectElement.php"><code class="highlighter-rouge">\Magento\Mtf\Client\Element\SelectElement</code></a></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;select /&gt;</code></td>
+      <td><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SelectElement.php"><code class="language-plaintext highlighter-rouge">\Magento\Mtf\Client\Element\SelectElement</code></a></td>
       <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SimpleElement.php">SimpleElement</a></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;select multiple /&gt;</code></td>
-      <td><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/StrictmultiselectElement.php"><code class="highlighter-rouge">\Magento\Mtf\Client\Element\StrictmultiselectElement</code></a></td>
-      <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/MultiselectElement.php">MultiselectElement</a>. <code class="highlighter-rouge">setValue()</code> sets the exact value, as opposed to <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/MultiselectElement.php">MultiselectElement</a>.</td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;select multiple /&gt;</code></td>
+      <td><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/StrictmultiselectElement.php"><code class="language-plaintext highlighter-rouge">\Magento\Mtf\Client\Element\StrictmultiselectElement</code></a></td>
+      <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/MultiselectElement.php">MultiselectElement</a>. <code class="language-plaintext highlighter-rouge">setValue()</code> sets the exact value, as opposed to <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/MultiselectElement.php">MultiselectElement</a>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;select /&gt;</code></td>
-      <td><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/StrictselectElement.php"><code class="highlighter-rouge">\Magento\Mtf\Client\Element\StrictselectElement</code></a></td>
-      <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SelectElement.php">SelectElement</a>. <code class="highlighter-rouge">setValue()</code> sets the exact value, as opposed to <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SelectElement.php">SelectElement</a>.</td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;select /&gt;</code></td>
+      <td><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/StrictselectElement.php"><code class="language-plaintext highlighter-rouge">\Magento\Mtf\Client\Element\StrictselectElement</code></a></td>
+      <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SelectElement.php">SelectElement</a>. <code class="language-plaintext highlighter-rouge">setValue()</code> sets the exact value, as opposed to <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SelectElement.php">SelectElement</a>.</td>
     </tr>
   </tbody>
 </table>
 
 <h4 id="magento_class">Magento custom typified elements</h4>
 
-<p>Magento custom typified elements are stored in the <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/lib/Magento/Mtf/Client/Element</code> directory.</p>
+<p>Magento custom typified elements are stored in the <code class="language-plaintext highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/lib/Magento/Mtf/Client/Element</code> directory.</p>
 
 <table>
   <thead>
@@ -2327,78 +2328,78 @@ The most important methods are <code class="highlighter-rouge">setValue()</code>
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">&lt;div class="rule-tree" /&gt;</code></td>
-      <td><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/ConditionsElement.php"><code class="highlighter-rouge">\Magento\Mtf\Client\Element\ConditionsElement</code></a></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;div class="rule-tree" /&gt;</code></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/ConditionsElement.php"><code class="language-plaintext highlighter-rouge">\Magento\Mtf\Client\Element\ConditionsElement</code></a></td>
       <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SimpleElement.php">SimpleElement</a></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;div id="ui-datepicker-div" /&gt;</code></td>
-      <td><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/DatepickerElement.php"><code class="highlighter-rouge">\Magento\Mtf\Client\Element\DatepickerElement</code></a></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;div id="ui-datepicker-div" /&gt;</code></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/DatepickerElement.php"><code class="language-plaintext highlighter-rouge">\Magento\Mtf\Client\Element\DatepickerElement</code></a></td>
       <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SimpleElement.php">SimpleElement</a></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;div class="action-select admin__action-multiselect" /&gt;</code></td>
-      <td><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/DropdownmultiselectElement.php"><code class="highlighter-rouge">\Magento\Mtf\Client\Element\DropdownmultiselectElement</code></a></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;div class="action-select admin__action-multiselect" /&gt;</code></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/DropdownmultiselectElement.php"><code class="language-plaintext highlighter-rouge">\Magento\Mtf\Client\Element\DropdownmultiselectElement</code></a></td>
       <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/MultiselectElement.php">MultiselectElement</a></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;div class="search-global" /&gt;</code></td>
-      <td><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/GlobalsearchElement.php"><code class="highlighter-rouge">\Magento\Mtf\Client\Element\GlobalsearchElement</code></a></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;div class="search-global" /&gt;</code></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/GlobalsearchElement.php"><code class="language-plaintext highlighter-rouge">\Magento\Mtf\Client\Element\GlobalsearchElement</code></a></td>
       <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SimpleElement.php">SimpleElement</a></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;div class="tree x-tree jstree" /&gt;</code></td>
-      <td><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/JquerytreeElement.php"><code class="highlighter-rouge">\Magento\Mtf\Client\Element\JquerytreeElement</code></a></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;div class="tree x-tree jstree" /&gt;</code></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/JquerytreeElement.php"><code class="language-plaintext highlighter-rouge">\Magento\Mtf\Client\Element\JquerytreeElement</code></a></td>
       <td>Extends <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/Tree.php">Tree</a></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;div class="store-switcher /&gt;</code></td>
-      <td><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/LiselectstoreElement.php"><code class="highlighter-rouge">\Magento\Mtf\Client\Element\LiselectstoreElement</code></a></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;div class="store-switcher /&gt;</code></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/LiselectstoreElement.php"><code class="language-plaintext highlighter-rouge">\Magento\Mtf\Client\Element\LiselectstoreElement</code></a></td>
       <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SimpleElement.php">SimpleElement</a></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;select class="admin__control-multiselect"&gt;</code>     <code class="highlighter-rouge">&lt;option /&gt;</code> <br />     <code class="highlighter-rouge">&lt;optgroup /&gt;</code> <br />  <code class="highlighter-rouge">&lt;/select&gt;</code></td>
-      <td><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/MultiselectgrouplistElement.php"><code class="highlighter-rouge">\Magento\Mtf\Client\Element\MultiselectgrouplistElement</code></a></td>
-      <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/MultiselectElement.php">MultiselectElement</a>. Contains <code class="highlighter-rouge">option</code> and <code class="highlighter-rouge">optgroup</code> elements.</td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;select class="admin__control-multiselect"&gt;</code>     <code class="language-plaintext highlighter-rouge">&lt;option /&gt;</code> <br />     <code class="language-plaintext highlighter-rouge">&lt;optgroup /&gt;</code> <br />  <code class="language-plaintext highlighter-rouge">&lt;/select&gt;</code></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/MultiselectgrouplistElement.php"><code class="language-plaintext highlighter-rouge">\Magento\Mtf\Client\Element\MultiselectgrouplistElement</code></a></td>
+      <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/MultiselectElement.php">MultiselectElement</a>. Contains <code class="language-plaintext highlighter-rouge">option</code> and <code class="language-plaintext highlighter-rouge">optgroup</code> elements.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;section class="block mselect-list" /&gt;</code></td>
-      <td><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/MultiselectlistElement.php"><code class="highlighter-rouge">\Magento\Mtf\Client\Element\MultiselectlistElement</code></a></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;section class="block mselect-list" /&gt;</code></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/MultiselectlistElement.php"><code class="language-plaintext highlighter-rouge">\Magento\Mtf\Client\Element\MultiselectlistElement</code></a></td>
       <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/MultiselectElement.php">MultiselectElement</a></td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;div class="mage-suggest" /&gt;</code></td>
-      <td><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/MultisuggestElement.php"><code class="highlighter-rouge">\Magento\Mtf\Client\Element\MultisuggestElement</code></a></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;div class="mage-suggest" /&gt;</code></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/MultisuggestElement.php"><code class="language-plaintext highlighter-rouge">\Magento\Mtf\Client\Element\MultisuggestElement</code></a></td>
       <td>Extends <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/SuggestElement.php">SuggestElement</a>. Allows multiple selection.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;select&gt;</code>   <br />      <code class="highlighter-rouge">&lt;optgroup /&gt;</code> <br />     <code class="highlighter-rouge">&lt;optgroup /&gt;</code> <br />  <code class="highlighter-rouge">&lt;/select&gt;</code></td>
-      <td><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/OptgroupselectElement.php"><code class="highlighter-rouge">\Magento\Mtf\Client\Element\OptgroupselectElement</code></a></td>
-      <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SelectElement.php">SelectElement</a>. Contains <code class="highlighter-rouge">optgroup</code> elements.</td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;select&gt;</code>   <br />      <code class="language-plaintext highlighter-rouge">&lt;optgroup /&gt;</code> <br />     <code class="language-plaintext highlighter-rouge">&lt;optgroup /&gt;</code> <br />  <code class="language-plaintext highlighter-rouge">&lt;/select&gt;</code></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/OptgroupselectElement.php"><code class="language-plaintext highlighter-rouge">\Magento\Mtf\Client\Element\OptgroupselectElement</code></a></td>
+      <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SelectElement.php">SelectElement</a>. Contains <code class="language-plaintext highlighter-rouge">optgroup</code> elements.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;select&gt;</code> <br />      <code class="highlighter-rouge">&lt;option /&gt;</code> <br />     <code class="highlighter-rouge">&lt;optgroup /&gt;</code> <br />  <code class="highlighter-rouge">&lt;/select&gt;</code></td>
-      <td><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/SelectstoreElement.php"><code class="highlighter-rouge">\Magento\Mtf\Client\Element\SelectstoreElement</code></a></td>
-      <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SelectElement.php">SelectElement</a>. Contains <code class="highlighter-rouge">option</code> and <code class="highlighter-rouge">optgroup</code> elements.</td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;select&gt;</code> <br />      <code class="language-plaintext highlighter-rouge">&lt;option /&gt;</code> <br />     <code class="language-plaintext highlighter-rouge">&lt;optgroup /&gt;</code> <br />  <code class="language-plaintext highlighter-rouge">&lt;/select&gt;</code></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/SelectstoreElement.php"><code class="language-plaintext highlighter-rouge">\Magento\Mtf\Client\Element\SelectstoreElement</code></a></td>
+      <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SelectElement.php">SelectElement</a>. Contains <code class="language-plaintext highlighter-rouge">option</code> and <code class="language-plaintext highlighter-rouge">optgroup</code> elements.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;select class="admin__control-select"&gt;</code>  <br />     <code class="highlighter-rouge">&lt;optgroup&gt;</code> <br />         <code class="highlighter-rouge">&lt;option data-title/&gt;</code> <br />     <code class="highlighter-rouge">&lt;/optgroup&gt;</code> <br /> <code class="highlighter-rouge">&lt;/select&gt;</code></td>
-      <td><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/SimplifiedselectElement.php"><code class="highlighter-rouge">\Magento\Mtf\Client\Element\SimplifiedselectElement</code></a></td>
-      <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SelectElement.php">SelectElement</a>. Contains <code class="highlighter-rouge">option</code> and <code class="highlighter-rouge">optgroup</code> elements. <code class="highlighter-rouge">option</code> has a <code class="highlighter-rouge">data-title</code> attribute.</td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;select class="admin__control-select"&gt;</code>  <br />     <code class="language-plaintext highlighter-rouge">&lt;optgroup&gt;</code> <br />         <code class="language-plaintext highlighter-rouge">&lt;option data-title/&gt;</code> <br />     <code class="language-plaintext highlighter-rouge">&lt;/optgroup&gt;</code> <br /> <code class="language-plaintext highlighter-rouge">&lt;/select&gt;</code></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/SimplifiedselectElement.php"><code class="language-plaintext highlighter-rouge">\Magento\Mtf\Client\Element\SimplifiedselectElement</code></a></td>
+      <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SelectElement.php">SelectElement</a>. Contains <code class="language-plaintext highlighter-rouge">option</code> and <code class="language-plaintext highlighter-rouge">optgroup</code> elements. <code class="language-plaintext highlighter-rouge">option</code> has a <code class="language-plaintext highlighter-rouge">data-title</code> attribute.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;div class="mage-suggest" /&gt;</code></td>
-      <td><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/SuggestElement.php"><code class="highlighter-rouge">\Magento\Mtf\Client\Element\SuggestElement</code></a></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;div class="mage-suggest" /&gt;</code></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/SuggestElement.php"><code class="language-plaintext highlighter-rouge">\Magento\Mtf\Client\Element\SuggestElement</code></a></td>
       <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SimpleElement.php">SimpleElement</a></td>
     </tr>
     <tr>
       <td>Not available</td>
-      <td><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/Tree.php"><code class="highlighter-rouge">\Magento\Mtf\Client\Element\Tree</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/Tree.php"><code class="language-plaintext highlighter-rouge">\Magento\Mtf\Client\Element\Tree</code></a></td>
       <td>Abstract class</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">&lt;div class="tree x-tree" /&gt;</code></td>
-      <td><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/TreeElement.php"><code class="highlighter-rouge">\Magento\Mtf\Client\Element\TreeElement</code></a></td>
+      <td><code class="language-plaintext highlighter-rouge">&lt;div class="tree x-tree" /&gt;</code></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/TreeElement.php"><code class="language-plaintext highlighter-rouge">\Magento\Mtf\Client\Element\TreeElement</code></a></td>
       <td>Extends <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/Tree.php">Tree</a></td>
     </tr>
   </tbody>
@@ -2407,59 +2408,59 @@ The most important methods are <code class="highlighter-rouge">setValue()</code>
 <h2 id="create">How to create a class for the typified element</h2>
 
 <p><strong>Step 1.</strong> Create a   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
- class in the <code class="highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/lib/Magento/Mtf/Client/Element</code> directory</p>
+ class in the <code class="language-plaintext highlighter-rouge">&lt;magento2_root_dir&gt;/dev/tests/functional/lib/Magento/Mtf/Client/Element</code> directory</p>
 
-<p>It must be named according to the following naming convention. Two capital letters in the name: the first letter and a capital <code class="highlighter-rouge">E</code> in the <code class="highlighter-rouge">Element.php</code>. For example: <code class="highlighter-rouge">OptgroupselectElement.php</code>.</p>
+<p>It must be named according to the following naming convention. Two capital letters in the name: the first letter and a capital <code class="language-plaintext highlighter-rouge">E</code> in the <code class="language-plaintext highlighter-rouge">Element.php</code>. For example: <code class="language-plaintext highlighter-rouge">OptgroupselectElement.php</code>.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> 
  <span class="cp">&lt;?php</span>
 
- <span class="k">namespace</span> <span class="nx">Magento\Mtf\Client\Element</span><span class="p">;</span>
- <span class="sd">/**
+ <span class="kn">namespace</span> <span class="nn">Magento\Mtf\Client\Element</span><span class="p">;</span>
+ <span class="cd">/**
   * Typified element class for option group selectors.
   */</span>
- <span class="k">class</span> <span class="nc">OptgroupselectElement</span>
+ <span class="kd">class</span> <span class="nc">OptgroupselectElement</span>
  <span class="p">{</span>
-    <span class="c1">//
-</span> <span class="p">}</span>
+    <span class="c1">//</span>
+ <span class="p">}</span>
 </code></pre></div></div>
 
 <p><strong>Step 2.</strong> Extend your class from the <a href="#basic_class">default element</a> or the <a href="#magento_class">Magento custom element</a> class</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="k">class</span> <span class="nc">OptgroupselectElement</span> <span class="k">extends</span> <span class="nx">SelectElement</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="kd">class</span> <span class="nc">OptgroupselectElement</span> <span class="kd">extends</span> <span class="nc">SelectElement</span>
 </code></pre></div></div>
 
 <p><strong>Step 3.</strong> Redefine methods of the extended class according to your goals</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="sd">/**
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="cd">/**
  * Option group locator
  *
  * @var string
  */</span>
 <span class="k">protected</span> <span class="nv">$optionGroupValue</span> <span class="o">=</span> <span class="s2">".//optgroup[@label = '%s']/option[text() = '%s']"</span><span class="p">;</span>
 
-<span class="sd">/**
+<span class="cd">/**
  * Select value in dropdown that has option groups
  *
  * @param string $value
  * @return void
  */</span>
-<span class="k">public</span> <span class="k">function</span> <span class="nf">setValue</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span>
+<span class="k">public</span> <span class="k">function</span> <span class="n">setValue</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eventManager</span><span class="o">-&gt;</span><span class="na">dispatchEvent</span><span class="p">([</span><span class="s1">'set_value'</span><span class="p">],</span> <span class="p">[</span><span class="nx">__METHOD__</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getAbsoluteSelector</span><span class="p">()]);</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">eventManager</span><span class="o">-&gt;</span><span class="nf">dispatchEvent</span><span class="p">([</span><span class="s1">'set_value'</span><span class="p">],</span> <span class="p">[</span><span class="k">__METHOD__</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">getAbsoluteSelector</span><span class="p">()]);</span>
     <span class="k">list</span><span class="p">(</span><span class="nv">$group</span><span class="p">,</span> <span class="nv">$option</span><span class="p">)</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="nv">$value</span><span class="p">);</span>
-    <span class="nv">$xpath</span> <span class="o">=</span> <span class="nb">sprintf</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">optionGroupValue</span><span class="p">,</span> <span class="nv">$group</span><span class="p">,</span> <span class="nv">$option</span><span class="p">);</span>
-    <span class="nv">$option</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$xpath</span><span class="p">,</span> <span class="nx">Locator</span><span class="o">::</span><span class="na">SELECTOR_XPATH</span><span class="p">);</span>
-    <span class="nv">$option</span><span class="o">-&gt;</span><span class="na">click</span><span class="p">();</span>
+    <span class="nv">$xpath</span> <span class="o">=</span> <span class="nb">sprintf</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">optionGroupValue</span><span class="p">,</span> <span class="nv">$group</span><span class="p">,</span> <span class="nv">$option</span><span class="p">);</span>
+    <span class="nv">$option</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">find</span><span class="p">(</span><span class="nv">$xpath</span><span class="p">,</span> <span class="nc">Locator</span><span class="o">::</span><span class="no">SELECTOR_XPATH</span><span class="p">);</span>
+    <span class="nv">$option</span><span class="o">-&gt;</span><span class="nf">click</span><span class="p">();</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
 <h2 id="use">How to use</h2>
 
 <p>Typified elements are used in the <a href="/devdocs/guides/v2.1/mtf/mtf_entities/mtf_block.html"><abbr title="Functional Testing Framework">FTF</abbr> blocks</a>.
-Use a <code class="highlighter-rouge">find()</code> method to find an element. This method is declared in the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SimpleElement.php">SimpleElement</a> class:</p>
+Use a <code class="language-plaintext highlighter-rouge">find()</code> method to find an element. This method is declared in the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SimpleElement.php">SimpleElement</a> class:</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="sd">/**
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="cd">/**
  * Find element using locator in context of current element
  *
  * @param string $selector
@@ -2467,26 +2468,26 @@ Use a <code class="highlighter-rouge">find()</code> method to find an element. T
  * @param null|string $type [optional]
  * @return ElementInterface
  */</span>
-<span class="k">public</span> <span class="k">function</span> <span class="nf">find</span><span class="p">(</span><span class="nv">$selector</span><span class="p">,</span> <span class="nv">$strategy</span> <span class="o">=</span> <span class="nx">Locator</span><span class="o">::</span><span class="na">SELECTOR_CSS</span><span class="p">,</span> <span class="nv">$type</span> <span class="o">=</span> <span class="kc">null</span><span class="p">)</span>
+<span class="k">public</span> <span class="k">function</span> <span class="n">find</span><span class="p">(</span><span class="nv">$selector</span><span class="p">,</span> <span class="nv">$strategy</span> <span class="o">=</span> <span class="nc">Locator</span><span class="o">::</span><span class="no">SELECTOR_CSS</span><span class="p">,</span> <span class="nv">$type</span> <span class="o">=</span> <span class="kc">null</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">driver</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$selector</span><span class="p">,</span> <span class="nv">$strategy</span><span class="p">,</span> <span class="nv">$type</span><span class="p">,</span> <span class="nv">$this</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">driver</span><span class="o">-&gt;</span><span class="nf">find</span><span class="p">(</span><span class="nv">$selector</span><span class="p">,</span> <span class="nv">$strategy</span><span class="p">,</span> <span class="nv">$type</span><span class="p">,</span> <span class="nv">$this</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>The following code is an example of the <code class="highlighter-rouge">find()</code> method usage from the <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Catalog/Test/Block/Adminhtml/Category/Tree.php">\Magento\Catalog\Test\Block\Adminhtml\Category\Tree</a> block:</p>
+<p>The following code is an example of the <code class="language-plaintext highlighter-rouge">find()</code> method usage from the <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/tests/app/Magento/Catalog/Test/Block/Adminhtml/Category/Tree.php">\Magento\Catalog\Test\Block\Adminhtml\Category\Tree</a> block:</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="sd">/**
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="cd">/**
  * Check category in category tree
  *
  * @param Category $category
  * @return bool
  */</span>
-<span class="k">public</span> <span class="k">function</span> <span class="nf">isCategoryVisible</span><span class="p">(</span><span class="nx">Category</span> <span class="nv">$category</span><span class="p">)</span>
+<span class="k">public</span> <span class="k">function</span> <span class="n">isCategoryVisible</span><span class="p">(</span><span class="kt">Category</span> <span class="nv">$category</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="nv">$categoryPath</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">prepareFullCategoryPath</span><span class="p">(</span><span class="nv">$category</span><span class="p">);</span>
+    <span class="nv">$categoryPath</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">prepareFullCategoryPath</span><span class="p">(</span><span class="nv">$category</span><span class="p">);</span>
     <span class="nv">$categoryPath</span> <span class="o">=</span> <span class="nb">implode</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="nv">$categoryPath</span><span class="p">);</span>
-    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_rootElement</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">treeElement</span><span class="p">,</span> <span class="nx">Locator</span><span class="o">::</span><span class="na">SELECTOR_CSS</span><span class="p">,</span> <span class="s1">'tree'</span><span class="p">)</span>
-        <span class="o">-&gt;</span><span class="na">isElementVisible</span><span class="p">(</span><span class="nv">$categoryPath</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">_rootElement</span><span class="o">-&gt;</span><span class="nf">find</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">treeElement</span><span class="p">,</span> <span class="nc">Locator</span><span class="o">::</span><span class="no">SELECTOR_CSS</span><span class="p">,</span> <span class="s1">'tree'</span><span class="p">)</span>
+        <span class="o">-&gt;</span><span class="nf">isElementVisible</span><span class="p">(</span><span class="nv">$categoryPath</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -2496,7 +2497,7 @@ Use a <code class="highlighter-rouge">find()</code> method to find an element. T
 
 <p><img src="/devdocs/common/images/ftf/mtf_typ_element_map_gui.png" alt="A typified element mapping example in GUI" /></p>
 
-<p>The following code is a corresponding mapping with the typified element <code class="highlighter-rouge">optgroupselect</code> from the previous image:</p>
+<p>The following code is a corresponding mapping with the typified element <code class="language-plaintext highlighter-rouge">optgroupselect</code> from the previous image:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;mapping</span> <span class="na">strict=</span><span class="s">"0"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;wrapper&gt;</span>store<span class="nt">&lt;/wrapper&gt;</span>

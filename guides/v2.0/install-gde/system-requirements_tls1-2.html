@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>TLS 1.2 requirement for PayPal | Magento 2 Developer Documentation (copy)</title>
+	<title>TLS 1.2 requirement for PayPal | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/install-gde/system-requirements_tls1-2.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/install-gde/system-requirements_tls1-2.html">Magento 2.0</a></li>
 		
@@ -4437,12 +4438,12 @@
 
 <p>According to PayPal, symptoms of the issue include the following messages in your error log:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>*Unknown SSL protocol error* in connection to api-3t.sandbox.paypal.com:-9824
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>*Unknown SSL protocol error* in connection to api-3t.sandbox.paypal.com:-9824
 </code></pre></div></div>
 
 <p>or</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>140062736746144:error:1408F10B:SSL routines:SSL3_GET_RECORD:wrong version number:s3_pkt.c:337:
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>140062736746144:error:1408F10B:SSL routines:SSL3_GET_RECORD:wrong version number:s3_pkt.c:337:
 
 ... (more messages) ...
 
@@ -4458,27 +4459,27 @@ Protocol: SSLv3*
 
 <h3 id="description">Description</h3>
 
-<p>The source of the issue is your version of <a href="https://curl.haxx.se/libcurl/c/CURLOPT_SSLVERSION.html"><code class="highlighter-rouge">libcurl</code></a>. <code class="highlighter-rouge">libcurl</code> versions earlier than 7.34 use TLS 1.1 or earlier by default.</p>
+<p>The source of the issue is your version of <a href="https://curl.haxx.se/libcurl/c/CURLOPT_SSLVERSION.html"><code class="language-plaintext highlighter-rouge">libcurl</code></a>. <code class="language-plaintext highlighter-rouge">libcurl</code> versions earlier than 7.34 use TLS 1.1 or earlier by default.</p>
 
-<p>To determine the version of <code class="highlighter-rouge">libcurl</code> you’re running, enter the following command on the server that processes PayPal transactions:</p>
+<p>To determine the version of <code class="language-plaintext highlighter-rouge">libcurl</code> you’re running, enter the following command on the server that processes PayPal transactions:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>curl --version
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>curl --version
 </code></pre></div></div>
 
 <p>If the version is earlier than 7.34, continue with the next section. If you’re already running version 7.34 or later, no action is necessary.</p>
 
 <h3 id="solution">Solution</h3>
 
-<p>The source of the issue is that the <a href="https://curl.haxx.se/libcurl/c/CURLOPT_SSLVERSION.html"><code class="highlighter-rouge">libcurl</code></a> library packaged with CentOS 6.6 and earlier use TLS 1.1 or earlier by default.</p>
+<p>The source of the issue is that the <a href="https://curl.haxx.se/libcurl/c/CURLOPT_SSLVERSION.html"><code class="language-plaintext highlighter-rouge">libcurl</code></a> library packaged with CentOS 6.6 and earlier use TLS 1.1 or earlier by default.</p>
 
 <p>To determine the version of CentOS your server runs, enter the following command:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cat /etc/*release*
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cat /etc/*release*
 </code></pre></div></div>
 
 <p>If you’re already running CentOS 6.8 or later, no action is necessary. According to the <a href="https://wiki.centos.org/Manuals/ReleaseNotes/CentOS6.8">CentOS 6.8 changelog</a>, “various applications now support TLS 1.2, i.e. OpenLDAP, yum, stunnel, vsftpd, git, postfix and others. Also TLS 1.2 has been enabled by default in various packages”.</p>
 
-<p>(CentOS 7 has a newer version of <code class="highlighter-rouge">libcurl</code> that also defaults to TLS 1.2.)</p>
+<p>(CentOS 7 has a newer version of <code class="language-plaintext highlighter-rouge">libcurl</code> that also defaults to TLS 1.2.)</p>
 
 <p>You have the following options:</p>
 
@@ -4486,18 +4487,18 @@ Protocol: SSLv3*
   <li>
     <p>(Recommended). Upgrade your Magento server to CentOS 6.8 or later.</p>
 
-    <p>Its recommended repositories support current versions of TLS with <code class="highlighter-rouge">libcurl</code>. Using CentOS 6.8 or later is the most secure way to continue operating your store and accepting PayPal.</p>
+    <p>Its recommended repositories support current versions of TLS with <code class="language-plaintext highlighter-rouge">libcurl</code>. Using CentOS 6.8 or later is the most secure way to continue operating your store and accepting PayPal.</p>
 
-    <p>CentOS 6.8 has a <code class="highlighter-rouge">libcurl</code> version that defaults to TLS 1.2.</p>
+    <p>CentOS 6.8 has a <code class="language-plaintext highlighter-rouge">libcurl</code> version that defaults to TLS 1.2.</p>
   </li>
   <li>
-    <p>(Less secure, <em>not recommended</em>). Upgrade to <code class="highlighter-rouge">libcurl</code> 7.34 or later on CentOS 6 using a non-recommended third-party repository.</p>
+    <p>(Less secure, <em>not recommended</em>). Upgrade to <code class="language-plaintext highlighter-rouge">libcurl</code> 7.34 or later on CentOS 6 using a non-recommended third-party repository.</p>
 
     <p>One possible solution is to use the information on <a href="http://serverfault.com/questions/321321/upgrade-curl-to-latest-on-centos">serverfault</a>.</p>
   </li>
 </ul>
 
-<p class="bs-callout bs-callout-info">Installing software from non-recommended repositories can change other system packages and can result in issues. We strongly recommend you upgrade <code class="highlighter-rouge">libcurl</code> in a development environment and <em>thoroughly test</em> all payment processors you use as well as any other critical software before putting this into production.</p>
+<p class="bs-callout bs-callout-info">Installing software from non-recommended repositories can change other system packages and can result in issues. We strongly recommend you upgrade <code class="language-plaintext highlighter-rouge">libcurl</code> in a development environment and <em>thoroughly test</em> all payment processors you use as well as any other critical software before putting this into production.</p>
 
 
 			

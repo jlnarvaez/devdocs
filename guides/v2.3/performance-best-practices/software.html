@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Software recommendations | Magento 2 Developer Documentation (copy)</title>
+	<title>Software recommendations | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/performance-best-practices/software.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/performance-best-practices/software.html">Magento 2.0</a></li>
 		
@@ -1788,15 +1789,15 @@
 
 <h2 id="operating-system">Operating system</h2>
 
-<p>Operating system configurations and optimizations are similar for Magento as other high-load web applications. As the number of concurrent connections handled by the server increases, the number of available sockets can become fully allocated. The Linux kernel supports a mechanism to “reuse” and “recycle” TCP connections. Be aware that more aggressive recycling than re-use may cause issues on the load balancers. To enable these kernel settings, set the following values in <code class="highlighter-rouge">/etc/sysctl.conf</code>: </p>
+<p>Operating system configurations and optimizations are similar for Magento as other high-load web applications. As the number of concurrent connections handled by the server increases, the number of available sockets can become fully allocated. The Linux kernel supports a mechanism to “reuse” and “recycle” TCP connections. Be aware that more aggressive recycling than re-use may cause issues on the load balancers. To enable these kernel settings, set the following values in <code class="language-plaintext highlighter-rouge">/etc/sysctl.conf</code>: </p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>net.ipv4.tcp_tw_recycle = 1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>net.ipv4.tcp_tw_recycle = 1
 net.ipv4.tcp_tw_reuse = 1
 </code></pre></div></div>
 
-<p>The kernel parameter <code class="highlighter-rouge">net.core.somaxconn</code> controls the maximum number of open sockets waiting for connections. This value can be safely increased to 1024, but it should be correlated with the ability of the server to handle this amount. To enable this kernel parameter, set the following value in <code class="highlighter-rouge">/etc/sysctl.conf</code>: </p>
+<p>The kernel parameter <code class="language-plaintext highlighter-rouge">net.core.somaxconn</code> controls the maximum number of open sockets waiting for connections. This value can be safely increased to 1024, but it should be correlated with the ability of the server to handle this amount. To enable this kernel parameter, set the following value in <code class="language-plaintext highlighter-rouge">/etc/sysctl.conf</code>: </p>
 
-<p><code class="highlighter-rouge">net.core.somaxconn = 1024</code></p>
+<p><code class="language-plaintext highlighter-rouge">net.core.somaxconn = 1024</code></p>
 
 <h2 id="php">PHP</h2>
 
@@ -1807,21 +1808,21 @@ net.ipv4.tcp_tw_reuse = 1
 <p>We recommend limiting the list of active PHP extensions to those that are required for Magento functionality:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">php-bcmath</code></li>
-  <li><code class="highlighter-rouge">php-cli</code></li>
-  <li><code class="highlighter-rouge">php-common</code></li>
-  <li><code class="highlighter-rouge">php-curl</code></li>
-  <li><code class="highlighter-rouge">php-gd</code></li>
-  <li><code class="highlighter-rouge">php-intl</code></li>
-  <li><code class="highlighter-rouge">php-mbstring</code></li>
-  <li><code class="highlighter-rouge">php-mcrypt</code></li>
-  <li><code class="highlighter-rouge">php-opcache</code></li>
-  <li><code class="highlighter-rouge">php-openssl</code></li>
-  <li><code class="highlighter-rouge">php-pdo</code></li>
-  <li><code class="highlighter-rouge">php-soap</code></li>
-  <li><code class="highlighter-rouge">php-xml</code></li>
-  <li><code class="highlighter-rouge">php-xsl</code></li>
-  <li><code class="highlighter-rouge">php-zip</code></li>
+  <li><code class="language-plaintext highlighter-rouge">php-bcmath</code></li>
+  <li><code class="language-plaintext highlighter-rouge">php-cli</code></li>
+  <li><code class="language-plaintext highlighter-rouge">php-common</code></li>
+  <li><code class="language-plaintext highlighter-rouge">php-curl</code></li>
+  <li><code class="language-plaintext highlighter-rouge">php-gd</code></li>
+  <li><code class="language-plaintext highlighter-rouge">php-intl</code></li>
+  <li><code class="language-plaintext highlighter-rouge">php-mbstring</code></li>
+  <li><code class="language-plaintext highlighter-rouge">php-mcrypt</code></li>
+  <li><code class="language-plaintext highlighter-rouge">php-opcache</code></li>
+  <li><code class="language-plaintext highlighter-rouge">php-openssl</code></li>
+  <li><code class="language-plaintext highlighter-rouge">php-pdo</code></li>
+  <li><code class="language-plaintext highlighter-rouge">php-soap</code></li>
+  <li><code class="language-plaintext highlighter-rouge">php-xml</code></li>
+  <li><code class="language-plaintext highlighter-rouge">php-xsl</code></li>
+  <li><code class="language-plaintext highlighter-rouge">php-zip</code></li>
 </ul>
 
 <p>Adding more extensions increases library load times.</p>
@@ -1832,13 +1833,13 @@ net.ipv4.tcp_tw_reuse = 1
 
 <p>To guarantee successful execution of all Magento instances without dumping data or code to disk, set the memory limit as follows:</p>
 
-<p><code class="highlighter-rouge">memory_limit=768MB</code></p>
+<p><code class="language-plaintext highlighter-rouge">memory_limit=768MB</code></p>
 
 <h4 id="bytecode">ByteCode</h4>
 
 <p>To get maximum speed out of Magento 2 on PHP7, you must activate the OpCache module and properly configure it. These settings are recommended for the module:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>  opcache.memory_consumption=512MB
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>  opcache.memory_consumption=512MB
   opcache.max_accelerated_files=60000
   opcache.consistency_checks=0
   opcache.validate_timestamps=0
@@ -1849,13 +1850,13 @@ net.ipv4.tcp_tw_reuse = 1
 
 <p>If you have a low-memory machine and you do not have many extensions or customizations installed, use the following settings to get a similar result:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>opcache.memory_consumption=64
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>opcache.memory_consumption=64
 opcache.max_accelerated_files=60000
 </code></pre></div></div>
 
 <h2 id="web-server">Web server</h2>
 
-<p>Magento fully supports the Nginx and Apache web servers. Magento provides sample recommended configuration files in the  <code class="highlighter-rouge">&lt;magento_home&gt;/nginx.conf.sample</code> (Nginx) and  <code class="highlighter-rouge">&lt;magento_home&gt;.htaccess.sample</code> (Apache) files.  The Nginx sample contains settings for better performance and is designed so that little reconfiguration is required. Some of the main configuration best practices defined in the sample file include:</p>
+<p>Magento fully supports the Nginx and Apache web servers. Magento provides sample recommended configuration files in the  <code class="language-plaintext highlighter-rouge">&lt;magento_home&gt;/nginx.conf.sample</code> (Nginx) and  <code class="language-plaintext highlighter-rouge">&lt;magento_home&gt;.htaccess.sample</code> (Apache) files.  The Nginx sample contains settings for better performance and is designed so that little reconfiguration is required. Some of the main configuration best practices defined in the sample file include:</p>
 
 <ul>
   <li>Settings for caching static content in a browser</li>
@@ -1877,20 +1878,20 @@ opcache.max_accelerated_files=60000
   <tbody>
     <tr>
       <td>Nginx</td>
-      <td><code class="highlighter-rouge">worker_connections</code></td>
-      <td><code class="highlighter-rouge">/etc/nginx/nginx.conf</code> (Debian)</td>
+      <td><code class="language-plaintext highlighter-rouge">worker_connections</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/etc/nginx/nginx.conf</code> (Debian)</td>
       <td><a href="https://www.nginx.com/blog/tuning-nginx/">Tuning NGINX for Performance</a></td>
     </tr>
     <tr>
       <td>Apache 2.2</td>
-      <td><code class="highlighter-rouge">MaxClients</code></td>
-      <td><code class="highlighter-rouge">/etc/httpd/conf/httpd.conf</code> (CentOS)</td>
+      <td><code class="language-plaintext highlighter-rouge">MaxClients</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/etc/httpd/conf/httpd.conf</code> (CentOS)</td>
       <td><a href="http://httpd.apache.org/docs/2.2/misc/perf-tuning.html">Apache Performance Tuning</a></td>
     </tr>
     <tr>
       <td>Apache 2.4</td>
-      <td><code class="highlighter-rouge">MaxRequestWorkers</code></td>
-      <td><code class="highlighter-rouge">/etc/httpd/conf/httpd.conf</code> (CentOS)</td>
+      <td><code class="language-plaintext highlighter-rouge">MaxRequestWorkers</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/etc/httpd/conf/httpd.conf</code> (CentOS)</td>
       <td><a href="https://httpd.apache.org/docs/2.4/mod/mpm_common.html#maxrequestworkers">Apache MPM Common Directives</a></td>
     </tr>
   </tbody>
@@ -1912,24 +1913,24 @@ opcache.max_accelerated_files=60000
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">innodb_buffer_pool_instances</code></td>
+      <td><code class="language-plaintext highlighter-rouge">innodb_buffer_pool_instances</code></td>
       <td>8</td>
       <td>The default value is set to 8 to avoid issues with multiple threads attempting to access the same instance.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">innodb_buffer_pool_size</code></td>
+      <td><code class="language-plaintext highlighter-rouge">innodb_buffer_pool_size</code></td>
       <td>128MB</td>
-      <td>Combined with the multiple pool instances described above, this means a default memory allocation of 1024MB. The total size is divided among all the buffer pools. For best efficiency, specify a combination of <code class="highlighter-rouge">innodb_buffer_pool_instances</code> and <code class="highlighter-rouge">innodb_buffer_pool_size</code> so that each buffer pool instance is at least 1 GB.</td>
+      <td>Combined with the multiple pool instances described above, this means a default memory allocation of 1024MB. The total size is divided among all the buffer pools. For best efficiency, specify a combination of <code class="language-plaintext highlighter-rouge">innodb_buffer_pool_instances</code> and <code class="language-plaintext highlighter-rouge">innodb_buffer_pool_size</code> so that each buffer pool instance is at least 1 GB.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">max_connections</code></td>
+      <td><code class="language-plaintext highlighter-rouge">max_connections</code></td>
       <td>150</td>
-      <td>The value of the <code class="highlighter-rouge">max_connections</code> parameter should correlate with the total number of PHP threads configured in the application server. A general recommendation would be 300 for a small and 1,000 for a medium environment.</td>
+      <td>The value of the <code class="language-plaintext highlighter-rouge">max_connections</code> parameter should correlate with the total number of PHP threads configured in the application server. A general recommendation would be 300 for a small and 1,000 for a medium environment.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">innodb-thread-concurrency</code></td>
+      <td><code class="language-plaintext highlighter-rouge">innodb-thread-concurrency</code></td>
       <td>0</td>
-      <td>The best value for this configuration should be calculated by the formula: <code class="highlighter-rouge">innodb-thread-concurrency = 2 * (NumCPUs + NumDisks)</code></td>
+      <td>The best value for this configuration should be calculated by the formula: <code class="language-plaintext highlighter-rouge">innodb-thread-concurrency = 2 * (NumCPUs + NumDisks)</code></td>
     </tr>
   </tbody>
 </table>
@@ -1956,31 +1957,31 @@ opcache.max_accelerated_files=60000
 
 <p>If your site does not require deploying a large number of locales and your servers are in the same region as the majority of your customers, you may find significant performance gains at a lower cost by storing your assets in Varnish instead of using a CDN.</p>
 
-<p>To store your assets in Varnish, add the following VCL entries in your <code class="highlighter-rouge">default.vcl</code> file generated by Magento for Varnish 5.</p>
+<p>To store your assets in Varnish, add the following VCL entries in your <code class="language-plaintext highlighter-rouge">default.vcl</code> file generated by Magento for Varnish 5.</p>
 
-<p>At the end of the <code class="highlighter-rouge">if</code> statement for PURGE requests in the <code class="highlighter-rouge">vcl_recv</code> subroutine, add:</p>
+<p>At the end of the <code class="language-plaintext highlighter-rouge">if</code> statement for PURGE requests in the <code class="language-plaintext highlighter-rouge">vcl_recv</code> subroutine, add:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="err">#</span> <span class="kr">static</span> <span class="nx">files</span> <span class="nx">are</span> <span class="nx">cacheable</span><span class="p">.</span> <span class="nx">remove</span> <span class="nx">SSL</span> <span class="nx">flag</span> <span class="nx">and</span> <span class="nx">cookie</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="err">#</span> <span class="kd">static</span> <span class="nx">files</span> <span class="nx">are</span> <span class="nx">cacheable</span><span class="p">.</span> <span class="nx">remove</span> <span class="nx">SSL</span> <span class="nx">flag</span> <span class="nx">and</span> <span class="nx">cookie</span>
 
-<span class="k">if</span> <span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">url</span> <span class="o">~</span> <span class="s2">"^/(pub/)?(media|static)/.*</span><span class="err">\</span><span class="s2">.(ico|html|css|js|jpg|jpeg|png|gif|tiff|bmp|mp3|ogg|svg|swf|woff|woff2|eot|ttf|otf)$"</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">url</span> <span class="o">~</span> <span class="dl">"</span><span class="s2">^/(pub/)?(media|static)/.*</span><span class="se">\</span><span class="s2">.(ico|html|css|js|jpg|jpeg|png|gif|tiff|bmp|mp3|ogg|svg|swf|woff|woff2|eot|ttf|otf)$</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">unset</span> <span class="nx">req</span><span class="p">.</span><span class="nx">http</span><span class="p">.</span><span class="nx">Https</span><span class="p">;</span>
   <span class="nx">unset</span> <span class="nx">req</span><span class="p">.</span><span class="nx">http</span><span class="p">.</span><span class="cm">/*  */</span><span class="p">;</span>
   <span class="nx">unset</span> <span class="nx">req</span><span class="p">.</span><span class="nx">http</span><span class="p">.</span><span class="nx">Cookie</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>In the <code class="highlighter-rouge">vcl_backend_response</code> subroutine, look for the <code class="highlighter-rouge">if</code> statement that unsets the cookie for <code class="highlighter-rouge">GET</code> or <code class="highlighter-rouge">HEAD</code> requests.
-The updated <code class="highlighter-rouge">if</code> block should look like the following:</p>
+<p>In the <code class="language-plaintext highlighter-rouge">vcl_backend_response</code> subroutine, look for the <code class="language-plaintext highlighter-rouge">if</code> statement that unsets the cookie for <code class="language-plaintext highlighter-rouge">GET</code> or <code class="language-plaintext highlighter-rouge">HEAD</code> requests.
+The updated <code class="language-plaintext highlighter-rouge">if</code> block should look like the following:</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="err">#</span> <span class="nx">validate</span> <span class="k">if</span> <span class="nx">we</span> <span class="nx">need</span> <span class="nx">to</span> <span class="nx">cache</span> <span class="nx">it</span> <span class="nx">and</span> <span class="nx">prevent</span> <span class="k">from</span> <span class="nx">setting</span> <span class="nx">cookie</span>
 <span class="err">#</span> <span class="nx">images</span><span class="p">,</span> <span class="nx">css</span> <span class="nx">and</span> <span class="nx">js</span> <span class="nx">are</span> <span class="nx">cacheable</span> <span class="nx">by</span> <span class="k">default</span> <span class="nx">so</span> <span class="nx">we</span> <span class="nx">have</span> <span class="nx">to</span> <span class="nx">remove</span> <span class="nx">cookie</span> <span class="nx">also</span>
 
-<span class="k">if</span> <span class="p">(</span><span class="nx">beresp</span><span class="p">.</span><span class="nx">ttl</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="nx">s</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">bereq</span><span class="p">.</span><span class="nx">method</span> <span class="o">==</span> <span class="s2">"GET"</span> <span class="o">||</span> <span class="nx">bereq</span><span class="p">.</span><span class="nx">method</span> <span class="o">==</span> <span class="s2">"HEAD"</span><span class="p">))</span> <span class="p">{</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">beresp</span><span class="p">.</span><span class="nx">ttl</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="nx">s</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">bereq</span><span class="p">.</span><span class="nx">method</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span> <span class="o">||</span> <span class="nx">bereq</span><span class="p">.</span><span class="nx">method</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">HEAD</span><span class="dl">"</span><span class="p">))</span> <span class="p">{</span>
   <span class="nx">unset</span> <span class="nx">beresp</span><span class="p">.</span><span class="nx">http</span><span class="p">.</span><span class="kd">set</span><span class="o">-</span><span class="nx">cookie</span><span class="p">;</span>
-<span class="k">if</span> <span class="p">(</span><span class="nx">bereq</span><span class="p">.</span><span class="nx">url</span> <span class="o">!~</span> <span class="s2">"</span><span class="err">\</span><span class="s2">.(ico|css|js|jpg|jpeg|png|gif|tiff|bmp|gz|tgz|bz2|tbz|mp3|ogg|svg|swf|woff|woff2|eot|ttf|otf)(</span><span class="err">\</span><span class="s2">?|$)"</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">set</span> <span class="nx">beresp</span><span class="p">.</span><span class="nx">http</span><span class="p">.</span><span class="nx">Pragma</span> <span class="o">=</span> <span class="s2">"no-cache"</span><span class="p">;</span>
-  <span class="kd">set</span> <span class="nx">beresp</span><span class="p">.</span><span class="nx">http</span><span class="p">.</span><span class="nx">Expires</span> <span class="o">=</span> <span class="s2">"-1"</span><span class="p">;</span>
-  <span class="kd">set</span> <span class="nx">beresp</span><span class="p">.</span><span class="nx">http</span><span class="p">.</span><span class="nx">Cache</span><span class="o">-</span><span class="nx">Control</span> <span class="o">=</span> <span class="s2">"no-store, no-cache, must-revalidate, max-age=0"</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">bereq</span><span class="p">.</span><span class="nx">url</span> <span class="o">!~</span> <span class="dl">"</span><span class="se">\</span><span class="s2">.(ico|css|js|jpg|jpeg|png|gif|tiff|bmp|gz|tgz|bz2|tbz|mp3|ogg|svg|swf|woff|woff2|eot|ttf|otf)(</span><span class="se">\</span><span class="s2">?|$)</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">set</span> <span class="nx">beresp</span><span class="p">.</span><span class="nx">http</span><span class="p">.</span><span class="nx">Pragma</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">no-cache</span><span class="dl">"</span><span class="p">;</span>
+  <span class="kd">set</span> <span class="nx">beresp</span><span class="p">.</span><span class="nx">http</span><span class="p">.</span><span class="nx">Expires</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">-1</span><span class="dl">"</span><span class="p">;</span>
+  <span class="kd">set</span> <span class="nx">beresp</span><span class="p">.</span><span class="nx">http</span><span class="p">.</span><span class="nx">Cache</span><span class="o">-</span><span class="nx">Control</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">no-store, no-cache, must-revalidate, max-age=0</span><span class="dl">"</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>

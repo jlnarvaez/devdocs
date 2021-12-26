@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento Open Source 2.1.0 Release Notes | Magento 2 Developer Documentation (copy)</title>
+	<title>Magento Open Source 2.1.0 Release Notes | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/release-notes/ReleaseNotes2.1.0CE.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/release-notes/ReleaseNotes2.1.0CE.html">Magento 2.0</a></li>
 		
@@ -2823,12 +2824,12 @@
 
 <!--- 51033 -->
 <ul>
-  <li>System upgrades now ignore the contents of the Magento <code class="highlighter-rouge">var/session</code> directory.</li>
+  <li>System upgrades now ignore the contents of the Magento <code class="language-plaintext highlighter-rouge">var/session</code> directory.</li>
 </ul>
 
 <!--- 51327 -->
 <ul>
-  <li>You don’t need to have a <code class="highlighter-rouge">composer.json</code> to run Magento CLI commands.</li>
+  <li>You don’t need to have a <code class="language-plaintext highlighter-rouge">composer.json</code> to run Magento CLI commands.</li>
 </ul>
 
 <!--- 50794 -->
@@ -2859,7 +2860,7 @@
 
 <!--- 52973 -->
 <ul>
-  <li>Installing optional sample data no longer throws the following exception: <code class="highlighter-rouge">efault: Notice: /Stage[magento_setup]/Magento::Setup::Magento_cli/Exec[Run Magento reindex]/returns: SQLSTATE[23000]: Integrity constraint violation: 1062</code>.</li>
+  <li>Installing optional sample data no longer throws the following exception: <code class="language-plaintext highlighter-rouge">efault: Notice: /Stage[magento_setup]/Magento::Setup::Magento_cli/Exec[Run Magento reindex]/returns: SQLSTATE[23000]: Integrity constraint violation: 1062</code>.</li>
 </ul>
 
 <!--- 45608 -->
@@ -2890,7 +2891,7 @@
 
 <!--- 50848 -->
 <ul>
-  <li>The <code class="highlighter-rouge">magento setup:di:compile</code> command no longer throws a <code class="highlighter-rouge">No tokens were provided</code> exceptions when it encounters directories or empty files. <a href="https://github.com/magento/magento2/issues/3824" target="_blank"> (GITHUB-3824)</a></li>
+  <li>The <code class="language-plaintext highlighter-rouge">magento setup:di:compile</code> command no longer throws a <code class="language-plaintext highlighter-rouge">No tokens were provided</code> exceptions when it encounters directories or empty files. <a href="https://github.com/magento/magento2/issues/3824" target="_blank"> (GITHUB-3824)</a></li>
 </ul>
 
 <!--- 51953 -->
@@ -2906,12 +2907,12 @@
 
 <!--- 46858-->
 <ul>
-  <li>The Magento CLI <code class="highlighter-rouge">setup:config:set</code> now accepts  hyphens and dashes “-“.  <a href="https://github.com/magento/magento2/issues/2700" target="_blank"> (GITHUB-2700)</a></li>
+  <li>The Magento CLI <code class="language-plaintext highlighter-rouge">setup:config:set</code> now accepts  hyphens and dashes “-“.  <a href="https://github.com/magento/magento2/issues/2700" target="_blank"> (GITHUB-2700)</a></li>
 </ul>
 
 <!--- 47531-->
 <ul>
-  <li>Running <code class="highlighter-rouge">setup:config:set</code> updates the deployment configuration properly. <a href="https://github.com/magento/magento2/issues/2852" target="_blank"> (GITHUB-2852)</a></li>
+  <li>Running <code class="language-plaintext highlighter-rouge">setup:config:set</code> updates the deployment configuration properly. <a href="https://github.com/magento/magento2/issues/2852" target="_blank"> (GITHUB-2852)</a></li>
 </ul>
 
 <!--- 51779-->
@@ -2921,7 +2922,7 @@
 
 <!--- 53471-->
 <ul>
-  <li>The <code class="highlighter-rouge">MAGE_MODE</code> environment variable is no longer a required server config variable for   <span term-uuid="b14ef3d8-51fd-48fe-94df-ed069afb2cdc" class="glossary-term" data-toggle="popover">NGINX</span>
+  <li>The <code class="language-plaintext highlighter-rouge">MAGE_MODE</code> environment variable is no longer a required server config variable for   <span term-uuid="b14ef3d8-51fd-48fe-94df-ed069afb2cdc" class="glossary-term" data-toggle="popover">NGINX</span>
  configuration.</li>
 </ul>
 
@@ -2960,7 +2961,7 @@
 
 <!--- 43267-->
 <ul>
-  <li>Magento now logs exceptions in a file under <code class="highlighter-rouge">var/report</code> when in  default mode.</li>
+  <li>Magento now logs exceptions in a file under <code class="language-plaintext highlighter-rouge">var/report</code> when in  default mode.</li>
 </ul>
 
 <!--- 53468 -->
@@ -3161,7 +3162,7 @@
 
 <!--- 50636-->
 <ul>
-  <li>Magento validates all the appropriate REST calls with SearchCriteria filters if the response to the <code class="highlighter-rouge">search_criteria</code> key is NOT null.</li>
+  <li>Magento validates all the appropriate REST calls with SearchCriteria filters if the response to the <code class="language-plaintext highlighter-rouge">search_criteria</code> key is NOT null.</li>
 </ul>
 
 <!--- 53152-->
@@ -3198,7 +3199,7 @@
 
 <!--- 49967 -->
 <ul>
-  <li>We’ve optimized <code class="highlighter-rouge">registry.js</code> performance.</li>
+  <li>We’ve optimized <code class="language-plaintext highlighter-rouge">registry.js</code> performance.</li>
 </ul>
 
 <h4 class="no_toc" id="php">PHP</h4>
@@ -3375,12 +3376,12 @@
 
 <!--- 46021-->
 <ul>
-  <li>We’ve edited the <code class="highlighter-rouge">integration/acl.xml</code> file.</li>
+  <li>We’ve edited the <code class="language-plaintext highlighter-rouge">integration/acl.xml</code> file.</li>
 </ul>
 
 <!--- 46019-->
 <ul>
-  <li>Magento now creates an integration  after adding the <code class="highlighter-rouge">integration/config.xml</code> file.</li>
+  <li>Magento now creates an integration  after adding the <code class="language-plaintext highlighter-rouge">integration/config.xml</code> file.</li>
 </ul>
 
 <!--- 47301-->
@@ -3557,7 +3558,7 @@
 
 <!--- 49484-->
 <ul>
-  <li>Magento now correctly displays <code class="highlighter-rouge">sku_type</code>, <code class="highlighter-rouge">weight_type</code>, <code class="highlighter-rouge">shipment_type</code> after you save a Bundle product.</li>
+  <li>Magento now correctly displays <code class="language-plaintext highlighter-rouge">sku_type</code>, <code class="language-plaintext highlighter-rouge">weight_type</code>, <code class="language-plaintext highlighter-rouge">shipment_type</code> after you save a Bundle product.</li>
 </ul>
 
 <!--- 51925 -->
@@ -3625,7 +3626,7 @@
 
 <!--- 50817 -->
 <ul>
-  <li>The <code class="highlighter-rouge">console</code> command now flushes caches without error.   <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">Cache</span>
+  <li>The <code class="language-plaintext highlighter-rouge">console</code> command now flushes caches without error.   <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">Cache</span>
  should be flushed without errors.</li>
 </ul>
 
@@ -3633,12 +3634,12 @@
 
 <!--- 52340 -->
 <ul>
-  <li>The <code class="highlighter-rouge">getList</code> method documentation has been enhanced.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">getList</code> method documentation has been enhanced.</li>
 </ul>
 
 <!--- 52000 -->
 <ul>
-  <li>Error messages associated with <code class="highlighter-rouge">cron</code> processes are now more helpful. <a href="https://github.com/magento/magento2/issues/3189" target="_blank"> (GITHUB-3189)</a></li>
+  <li>Error messages associated with <code class="language-plaintext highlighter-rouge">cron</code> processes are now more helpful. <a href="https://github.com/magento/magento2/issues/3189" target="_blank"> (GITHUB-3189)</a></li>
 </ul>
 
 <!--- 50898 -->
@@ -3653,7 +3654,7 @@
 
 <!--- 48175 -->
 <ul>
-  <li>We’ve improved the error message that users typically received during upgrade. The message now clearly states when a user must login first to <code class="highlighter-rouge">magento.com</code> before continuing the upgrade process. <a href="https://github.com/magento/magento2/issues/3059" target="_blank"> (GITHUB-3059)</a></li>
+  <li>We’ve improved the error message that users typically received during upgrade. The message now clearly states when a user must login first to <code class="language-plaintext highlighter-rouge">magento.com</code> before continuing the upgrade process. <a href="https://github.com/magento/magento2/issues/3059" target="_blank"> (GITHUB-3059)</a></li>
 </ul>
 
 <!--- 51371, 51580-->
@@ -3669,7 +3670,7 @@
 
 <!--- 46415-->
 <ul>
-  <li>CLI documentation now includes <code class="highlighter-rouge">magento dev:css</code> command. <a href="https://github.com/magento/magento2/issues/433" target="_blank"> (GITHUB-433)</a></li>
+  <li>CLI documentation now includes <code class="language-plaintext highlighter-rouge">magento dev:css</code> command. <a href="https://github.com/magento/magento2/issues/433" target="_blank"> (GITHUB-433)</a></li>
 </ul>
 
 <h4 class="no_toc" id="admin">Admin</h4>
@@ -3882,7 +3883,7 @@
 
 <p>To view this setting in the Magento Admin, click <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; GENERAL &gt; <strong>Web</strong>. In the right pane, expand <strong>Base URLs (Secure)</strong>, value of the <strong>Offloader header</strong> field.</p>
 
-<p class="bs-callout bs-callout-info">If you change the value of this field, you must regenerate your <code class="highlighter-rouge">.vcl</code> files.</p>
+<p class="bs-callout bs-callout-info">If you change the value of this field, you must regenerate your <code class="language-plaintext highlighter-rouge">.vcl</code> files.</p>
 
 <!--- 51061, 51059 -->
 <ul>
@@ -3983,7 +3984,7 @@
 
 <!--- 54092 -->
 <ul>
-  <li>We now include <code class="highlighter-rouge">.gitignore</code> as part of the project package. <a href="https://github.com/magento/magento2/issues/4358" target="_blank"> (GITHUB-4358)</a></li>
+  <li>We now include <code class="language-plaintext highlighter-rouge">.gitignore</code> as part of the project package. <a href="https://github.com/magento/magento2/issues/4358" target="_blank"> (GITHUB-4358)</a></li>
 </ul>
 
 <!--- 46022 -->
@@ -4029,7 +4030,7 @@
 
 <!--- 53397 -->
 <ul>
-  <li>The <code class="highlighter-rouge">collectRates()</code> method now obtains the full address details for a registered customer.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">collectRates()</code> method now obtains the full address details for a registered customer.</li>
 </ul>
 
 <!--- 53463 -->
@@ -4049,12 +4050,12 @@
 
 <!--- 53362 -->
 <ul>
-  <li>Gift Message information is now present as expected in the <code class="highlighter-rouge">extension_attributes</code> when you request this list by Web API.  Previously, if you placed an order with a Gift Message, and then performed a Web API request to get the list of orders, Gift Message information would be absent in the <code class="highlighter-rouge">extension_attributes</code>. <a href="https://github.com/magento/magento2/issues/4414" target="_blank"> (GITHUB-4414)</a></li>
+  <li>Gift Message information is now present as expected in the <code class="language-plaintext highlighter-rouge">extension_attributes</code> when you request this list by Web API.  Previously, if you placed an order with a Gift Message, and then performed a Web API request to get the list of orders, Gift Message information would be absent in the <code class="language-plaintext highlighter-rouge">extension_attributes</code>. <a href="https://github.com/magento/magento2/issues/4414" target="_blank"> (GITHUB-4414)</a></li>
 </ul>
 
 <!--- 52782 -->
 <ul>
-  <li>The <code class="highlighter-rouge">getPassword()</code> and <code class="highlighter-rouge">getPasswordConfirm()</code> methods now return the <code class="highlighter-rouge">password</code> and <code class="highlighter-rouge">passwordconfirm</code> parameters as strings. <a href="https://github.com/magento/magento2/issues/4355" target="_blank"> (GITHUB-4355)</a></li>
+  <li>The <code class="language-plaintext highlighter-rouge">getPassword()</code> and <code class="language-plaintext highlighter-rouge">getPasswordConfirm()</code> methods now return the <code class="language-plaintext highlighter-rouge">password</code> and <code class="language-plaintext highlighter-rouge">passwordconfirm</code> parameters as strings. <a href="https://github.com/magento/magento2/issues/4355" target="_blank"> (GITHUB-4355)</a></li>
 </ul>
 
 <!--- 51292 -->
@@ -4069,7 +4070,7 @@
 
 <!--- 47439 -->
 <ul>
-  <li>The <code class="highlighter-rouge">i18n:collect-phrases -m</code> command now works correctly. Previously, this command would not find all important Magento phrases. <a href="https://github.com/magento/magento2/issues/2630" target="_blank"> (GITHUB-2630)</a></li>
+  <li>The <code class="language-plaintext highlighter-rouge">i18n:collect-phrases -m</code> command now works correctly. Previously, this command would not find all important Magento phrases. <a href="https://github.com/magento/magento2/issues/2630" target="_blank"> (GITHUB-2630)</a></li>
 </ul>
 
 <!--- 47009 -->
@@ -4079,7 +4080,7 @@
 
 <!--- 47639 -->
 <ul>
-  <li>The <code class="highlighter-rouge">setup:di:compile</code> script now compiles all files as expected. <a href="https://github.com/magento/magento2/issues/2888" target="_blank"> (GITHUB-2888)</a></li>
+  <li>The <code class="language-plaintext highlighter-rouge">setup:di:compile</code> script now compiles all files as expected. <a href="https://github.com/magento/magento2/issues/2888" target="_blank"> (GITHUB-2888)</a></li>
 </ul>
 
 <!--- 46044 -->
@@ -4094,7 +4095,7 @@
 
 <!--- 53865-->
 <ul>
-  <li>The CC model now assigns cc data that is passed in the <code class="highlighter-rouge">additional_data</code> field.  <a href="https://github.com/magento/magento2/issues/4741" target="_blank"> (GITHUB-4741)</a></li>
+  <li>The CC model now assigns cc data that is passed in the <code class="language-plaintext highlighter-rouge">additional_data</code> field.  <a href="https://github.com/magento/magento2/issues/4741" target="_blank"> (GITHUB-4741)</a></li>
 </ul>
 
 <!--- 51803-->
@@ -4120,7 +4121,7 @@
 
 <!--- 52621-->
 <ul>
-  <li>Magento now parallelizes the cron setting <code class="highlighter-rouge">use_separate_process</code>.
+  <li>Magento now parallelizes the cron setting <code class="language-plaintext highlighter-rouge">use_separate_process</code>.
 <a href="https://github.com/magento/magento2/issues/4435" target="_blank"> (GITHUB-4435)</a>
 <!--- 52590-->*  You can now set the date picker time format  to 24 hour notation.  <a href="https://github.com/magento/magento2/issues/3856" target="_blank"> (GITHUB-3856)</a>, <a href="https://github.com/magento/magento2/issues/4243" target="_blank"> (GITHUB-4243)</a></li>
 </ul>
@@ -4138,7 +4139,7 @@
 
 <!--- 53410-->
 <ul>
-  <li><code class="highlighter-rouge">system.log</code> behavior has changed to reduce the number of distracting logged broken references. <a href="https://github.com/magento/magento2/issues/3507" target="_blank"> (GITHUB-3507)</a>
+  <li><code class="language-plaintext highlighter-rouge">system.log</code> behavior has changed to reduce the number of distracting logged broken references. <a href="https://github.com/magento/magento2/issues/3507" target="_blank"> (GITHUB-3507)</a>
 <!--- 42439-->* UI form components now support customer custom attributes of ‘file’ type.
 <!--- 44598-->* Magento now identifies email validation errors after  you finish typing the email address.
 <!--- 45318-->* Fixed issues with the  New Accounts Report.
@@ -4147,7 +4148,7 @@
 <!--- 44789-->* Fixed issue with wrong AMQP connection alias creating message failures.
 <!--- 45215-->* Magento no longer throws an unmasked fatal error when you supply an invalid product ID.<br />
 <!--- 43336-->* Catalog Price Rules now work when based on configurable attributes
-<!--- 42982-->* Fixed issue with Magento populating <code class="highlighter-rouge">var/cache</code> and <code class="highlighter-rouge">var/page_cache</code>  after cache configuration.</li>
+<!--- 42982-->* Fixed issue with Magento populating <code class="language-plaintext highlighter-rouge">var/cache</code> and <code class="language-plaintext highlighter-rouge">var/page_cache</code>  after cache configuration.</li>
 </ul>
 
 <!--- 46431-->
@@ -4177,7 +4178,7 @@
 
 <!--- 46295-->
 <ul>
-  <li>You can now set <code class="highlighter-rouge">HtmlTag</code> to <code class="highlighter-rouge">nav</code>.  <a href="https://github.com/magento/magento2/issues/2549" target="_blank"> (GITHUB-2549)</a></li>
+  <li>You can now set <code class="language-plaintext highlighter-rouge">HtmlTag</code> to <code class="language-plaintext highlighter-rouge">nav</code>.  <a href="https://github.com/magento/magento2/issues/2549" target="_blank"> (GITHUB-2549)</a></li>
 </ul>
 
 <!--- 47377-->
@@ -4221,7 +4222,7 @@
 <!--- 51404-->
 <ul>
   <li>Fixed issue with changing product images.
-<!--- 51363-->*  A configurable product image’s JSON <code class="highlighter-rouge">isMain</code> attribute is no longer always set to false.
+<!--- 51363-->*  A configurable product image’s JSON <code class="language-plaintext highlighter-rouge">isMain</code> attribute is no longer always set to false.
 <!--- 51352-->* Magento no longer throws an exception when an admin user requests a password reset password while working on a site that does not support email (for example, Vagrant).
 <!--- 51791-->* Fixed issue with Sales Order extension_attributes.<a href="https://github.com/magento/magento2/issues/3967" target="_blank"> (GITHUB-3967)</a>
 <!--- 51719-->* Fixed issue with clearing the End Date.
@@ -4396,7 +4397,7 @@
 
 <!--- 51999-->
 <ul>
-  <li>Fixed issue with <code class="highlighter-rouge">updater/cron.php</code> processing newlines.</li>
+  <li>Fixed issue with <code class="language-plaintext highlighter-rouge">updater/cron.php</code> processing newlines.</li>
 </ul>
 
 <!--- 51955-->
@@ -4441,7 +4442,7 @@
 
 <!--- 52103-->
 <ul>
-  <li>Fixed problem with exception message on <code class="highlighter-rouge">admin/mui/index/render/</code> page.</li>
+  <li>Fixed problem with exception message on <code class="language-plaintext highlighter-rouge">admin/mui/index/render/</code> page.</li>
 </ul>
 
 <!--- 52098-->
@@ -4549,7 +4550,7 @@
 
 <!--- 48809-->
 <ul>
-  <li>Tests in <code class="highlighter-rouge">dev/tests/integration/testsuite/Magento/Catalog/Model/ProductTest.php</code> are executed as expected.</li>
+  <li>Tests in <code class="language-plaintext highlighter-rouge">dev/tests/integration/testsuite/Magento/Catalog/Model/ProductTest.php</code> are executed as expected.</li>
 </ul>
 
 <!--- 48659-->
@@ -4747,7 +4748,7 @@ to the customer after the Authorize.net  Fraud filters are triggered.</li>
 
 <!--- 53489-->
 <ul>
-  <li>The <code class="highlighter-rouge">setStoreId</code> method now checks for StoreInterface and Store.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">setStoreId</code> method now checks for StoreInterface and Store.</li>
 </ul>
 
 <!--- 53034-->
@@ -4772,7 +4773,7 @@ to the customer after the Authorize.net  Fraud filters are triggered.</li>
 
 <!--- 51929-->
 <ul>
-  <li>The Web Setup Wizard now works when Magento is installed in <code class="highlighter-rouge">/pub</code>. <a href="https://github.com/magento/magento2/issues/4159" target="_blank"> (GITHUB-4159)</a></li>
+  <li>The Web Setup Wizard now works when Magento is installed in <code class="language-plaintext highlighter-rouge">/pub</code>. <a href="https://github.com/magento/magento2/issues/4159" target="_blank"> (GITHUB-4159)</a></li>
 </ul>
 
 <!--- 52766-->
@@ -4817,12 +4818,12 @@ to the customer after the Authorize.net  Fraud filters are triggered.</li>
 
 <!--- 45613-->
 <ul>
-  <li>Magento now uses the XML schema location in both the <code class="highlighter-rouge">etc/adminhtml/system.xml</code>  and the <code class="highlighter-rouge">Magento/Config/etc/system_file.xsd</code> schema. <a href="https://github.com/magento/magento2/issues/2372" target="_blank"> (GITHUB-2372)</a></li>
+  <li>Magento now uses the XML schema location in both the <code class="language-plaintext highlighter-rouge">etc/adminhtml/system.xml</code>  and the <code class="language-plaintext highlighter-rouge">Magento/Config/etc/system_file.xsd</code> schema. <a href="https://github.com/magento/magento2/issues/2372" target="_blank"> (GITHUB-2372)</a></li>
 </ul>
 
 <!--- 46966-->
 <ul>
-  <li>Magento now reads the <code class="highlighter-rouge">.xml config</code> files during setup. <a href="https://github.com/magento/magento2/issues/2725" target="_blank"> (GITHUB-2725)</a></li>
+  <li>Magento now reads the <code class="language-plaintext highlighter-rouge">.xml config</code> files during setup. <a href="https://github.com/magento/magento2/issues/2725" target="_blank"> (GITHUB-2725)</a></li>
 </ul>
 
 <!--- 46927-->
@@ -4837,7 +4838,7 @@ to the customer after the Authorize.net  Fraud filters are triggered.</li>
 
 <!--- 46918-->
 <ul>
-  <li>Fixed possible memory leak in <code class="highlighter-rouge">\Magento\Framework\Image\Adapter\Gd2</code>. <a href="https://github.com/magento/magento2/issues/2696" target="_blank"> (GITHUB-2696)</a></li>
+  <li>Fixed possible memory leak in <code class="language-plaintext highlighter-rouge">\Magento\Framework\Image\Adapter\Gd2</code>. <a href="https://github.com/magento/magento2/issues/2696" target="_blank"> (GITHUB-2696)</a></li>
 </ul>
 
 <!--- 46877-->
@@ -4862,7 +4863,7 @@ to the customer after the Authorize.net  Fraud filters are triggered.</li>
 
 <!--- 47431-->
 <ul>
-  <li>Fixed issue in the <code class="highlighter-rouge">$product-&gt;load($id)</code> method for specific products. <a href="https://github.com/magento/magento2/issues/2800" target="_blank"> (GITHUB-2800)</a></li>
+  <li>Fixed issue in the <code class="language-plaintext highlighter-rouge">$product-&gt;load($id)</code> method for specific products. <a href="https://github.com/magento/magento2/issues/2800" target="_blank"> (GITHUB-2800)</a></li>
 </ul>
 
 <!--- 54051-->
@@ -4940,16 +4941,16 @@ to the customer after the Authorize.net  Fraud filters are triggered.</li>
 
 <h3 id="install-rc-composer" class="no_toc">Get the Magento Open Source software using Composer</h3>
 
-<p>The Open Source software is available from <code class="highlighter-rouge">repo.magento.com</code>. Before getting the Open Source software, familiarize yourself with the Composer metapackage  <a href="/devdocs/guides/v2.1/install-gde/composer.html">prerequisites</a>, then run</p>
+<p>The Open Source software is available from <code class="language-plaintext highlighter-rouge">repo.magento.com</code>. Before getting the Open Source software, familiarize yourself with the Composer metapackage  <a href="/devdocs/guides/v2.1/install-gde/composer.html">prerequisites</a>, then run</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer create-project --repository=https://repo.magento.com/ magento/project-community-edition=&lt;version&gt; &lt;installation directory name&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer create-project --repository=https://repo.magento.com/ magento/project-community-edition=&lt;version&gt; &lt;installation directory name&gt;
 </code></pre></div></div>
 
-<p>where <code class="highlighter-rouge">&lt;version&gt;</code> is <code class="highlighter-rouge">2.1.0</code>, <code class="highlighter-rouge">2.1.1</code>, and so on</p>
+<p>where <code class="language-plaintext highlighter-rouge">&lt;version&gt;</code> is <code class="language-plaintext highlighter-rouge">2.1.0</code>, <code class="language-plaintext highlighter-rouge">2.1.1</code>, and so on</p>
 
-<p>For example, to install Magento Open Source 2.1.1 in the <code class="highlighter-rouge">magento2</code> directory:</p>
+<p>For example, to install Magento Open Source 2.1.1 in the <code class="language-plaintext highlighter-rouge">magento2</code> directory:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer create-project --repository=https://repo.magento.com/ magento/project-community-edition=2.1.1 magento2
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>composer create-project --repository=https://repo.magento.com/ magento/project-community-edition=2.1.1 magento2
 </code></pre></div></div>
 
 <h3 id="install-archive" class="no_toc">Get a compressed archive</h3>
@@ -4963,7 +4964,7 @@ to the customer after the Authorize.net  Fraud filters are triggered.</li>
 
 <p>These packages are easy to get and install. You don’t need to use Composer, all you need to do is to upload a package to your Magento server or hosted platform, unpack it, and run the web-based Setup Wizard.</p>
 
-<p>Archives are available in the following formats: <code class="highlighter-rouge">.zip</code>, <code class="highlighter-rouge">.tar.bz2</code>, <code class="highlighter-rouge">.tar.gz</code></p>
+<p>Archives are available in the following formats: <code class="language-plaintext highlighter-rouge">.zip</code>, <code class="language-plaintext highlighter-rouge">.tar.bz2</code>, <code class="language-plaintext highlighter-rouge">.tar.gz</code></p>
 
 <p>To get the Magento Open Source software archive:</p>
 
@@ -4973,11 +4974,11 @@ to the customer after the Authorize.net  Fraud filters are triggered.</li>
     <p>Choose either the software or the software and sample data:</p>
 
     <ul>
-      <li><code class="highlighter-rouge">Magento-CE-&lt;version&gt;.*</code> (without sample data)</li>
-      <li><code class="highlighter-rouge">Magento-CE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
+      <li><code class="language-plaintext highlighter-rouge">Magento-CE-&lt;version&gt;.*</code> (without sample data)</li>
+      <li><code class="language-plaintext highlighter-rouge">Magento-CE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
     </ul>
 
-    <p><code class="highlighter-rouge">&lt;version&gt;</code> is the three-digit release number (for example, <code class="highlighter-rouge">2.0.7</code>, <code class="highlighter-rouge">2.1.0</code>, and so on).</p>
+    <p><code class="language-plaintext highlighter-rouge">&lt;version&gt;</code> is the three-digit release number (for example, <code class="language-plaintext highlighter-rouge">2.0.7</code>, <code class="language-plaintext highlighter-rouge">2.1.0</code>, and so on).</p>
   </li>
 </ol>
 

@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Configuration | Magento 2 Developer Documentation (copy)</title>
+	<title>Configuration | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -2157,10 +2156,9 @@
 	<h1 class="page-heading">Configuration</h1>
 </section>
 
-			
-<p style="text-align: right"><em>This topic was updated due to the 2.3.7 MFTF release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.3.7 MFTF release.</em></p>
 
-<p>The <code class="highlighter-rouge">*.env</code> file provides additional configuration for the Magento Functional Testing Framework (MFTF).
+<p>The <code class="language-plaintext highlighter-rouge">*.env</code> file provides additional configuration for the Magento Functional Testing Framework (MFTF).
 To run the MFTF on your Magento testing instance, specify the basic configuration values.
 Advanced users can create custom configurations based on requirements and environment.</p>
 
@@ -2177,7 +2175,7 @@ Advanced users can create custom configurations based on requirements and enviro
 <div class="language-conf highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="n">MAGENTO_BASE_URL</span>=<span class="n">http</span>://<span class="n">magento2</span>.<span class="n">vagrant251</span>
 </code></pre></div></div>
 
-<p class="bs-callout bs-callout-info">If the <code class="highlighter-rouge">MAGENTO_BASE_URL</code> contains a subdirectory (like <code class="highlighter-rouge">http://magento.test/magento2ce</code>), specify <a href="#magento_cli_command_path"><code class="highlighter-rouge">MAGENTO_CLI_COMMAND_PATH</code></a>.</p>
+<p class="bs-callout bs-callout-info">If the <code class="language-plaintext highlighter-rouge">MAGENTO_BASE_URL</code> contains a subdirectory (like <code class="language-plaintext highlighter-rouge">http://magento.test/magento2ce</code>), specify <a href="#magento_cli_command_path"><code class="language-plaintext highlighter-rouge">MAGENTO_CLI_COMMAND_PATH</code></a>.</p>
 
 <h3 id="magento_backend_name">MAGENTO_BACKEND_NAME</h3>
 
@@ -2213,11 +2211,11 @@ This section describes available configuration parameters and their default valu
 
 <h3 id="default_timezone">DEFAULT_TIMEZONE</h3>
 
-<p>Sets a default value for the <code class="highlighter-rouge">timezone</code> attribute of a <a href="test/actions.html#generatedate"><code class="highlighter-rouge">generateDate</code> action</a>.
+<p>Sets a default value for the <code class="language-plaintext highlighter-rouge">timezone</code> attribute of a <a href="test/actions.html#generatedate"><code class="language-plaintext highlighter-rouge">generateDate</code> action</a>.
 This value is applied when a test step does not specify a time zone.
 For the complete list of available time zones, refer to <a href="http://php.net/manual/en/timezones.php">List of Supported Timezones</a>.</p>
 
-<p>Default: <code class="highlighter-rouge">America/Los_Angeles</code>.</p>
+<p>Default: <code class="language-plaintext highlighter-rouge">America/Los_Angeles</code>.</p>
 
 <p>Example:</p>
 
@@ -2226,9 +2224,9 @@ For the complete list of available time zones, refer to <a href="http://php.net/
 
 <h3 id="selenium">SELENIUM</h3>
 
-<p>The <code class="highlighter-rouge">SELENIUM_*</code> values form the URL of a custom Selenium server for running testing.</p>
+<p>The <code class="language-plaintext highlighter-rouge">SELENIUM_*</code> values form the URL of a custom Selenium server for running testing.</p>
 
-<p>Default Selenium URL: <code class="highlighter-rouge">http://127.0.0.1:4444/wd/hub</code></p>
+<p>Default Selenium URL: <code class="language-plaintext highlighter-rouge">http://127.0.0.1:4444/wd/hub</code></p>
 
 <p>And the default configuration:</p>
 
@@ -2238,7 +2236,7 @@ For the complete list of available time zones, refer to <a href="http://php.net/
 <span class="n">SELENIUM_PATH</span>=/<span class="n">wd</span>/<span class="n">hub</span>
 </code></pre></div></div>
 
-<p class="bs-callout bs-callout-warning"><code class="highlighter-rouge">SELENIUM_*</code> values are required if you are running Selenium on an external system.
+<p class="bs-callout bs-callout-warning"><code class="language-plaintext highlighter-rouge">SELENIUM_*</code> values are required if you are running Selenium on an external system.
 If you change the configuration of the external Selenium server, you must update these values.</p>
 
 <h4 id="selenium_host">SELENIUM_HOST</h4>
@@ -2279,7 +2277,7 @@ If you change the configuration of the external Selenium server, you must update
 
 <h3 id="magento_restapi">MAGENTO_RESTAPI</h3>
 
-<p>These <code class="highlighter-rouge">MAGENTO_RESTAPI_*</code> values are optional and can be used in cases when your Magento instance has a different API path than the one in <code class="highlighter-rouge">MAGENTO_BASE_URL</code>.</p>
+<p>These <code class="language-plaintext highlighter-rouge">MAGENTO_RESTAPI_*</code> values are optional and can be used in cases when your Magento instance has a different API path than the one in <code class="language-plaintext highlighter-rouge">MAGENTO_BASE_URL</code>.</p>
 
 <div class="language-conf highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="n">MAGENTO_RESTAPI_SERVER_HOST</span>
 <span class="n">MAGENTO_RESTAPI_SERVER_PORT</span>
@@ -2318,7 +2316,7 @@ For example, when you need to place the MFTF and the Magento codebase in separat
 <h4 id="magento_bp">MAGENTO_BP</h4>
 
 <p>The path to a local Magento codebase.
-It enables the <a href="commands/mftf.html"><code class="highlighter-rouge">bin/mftf</code></a> commands such as <code class="highlighter-rouge">run</code> and <code class="highlighter-rouge">generate</code> to parse all modules of the Magento codebase for MFTF tests.</p>
+It enables the <a href="commands/mftf.html"><code class="language-plaintext highlighter-rouge">bin/mftf</code></a> commands such as <code class="language-plaintext highlighter-rouge">run</code> and <code class="language-plaintext highlighter-rouge">generate</code> to parse all modules of the Magento codebase for MFTF tests.</p>
 
 <div class="language-conf highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="n">MAGENTO_BP</span>=~/<span class="n">magento2</span>/
 </code></pre></div></div>
@@ -2355,7 +2353,7 @@ FW_BP is an acronym for <em>FrameWork Base Path</em>.</p>
 <h3 id="module_whitelist">MODULE_WHITELIST</h3>
 
 <p>Use for a new module.
-When adding a new directory at <code class="highlighter-rouge">Magento/FunctionalTest</code>, add the directory name to <code class="highlighter-rouge">MODULE_WHITELIST</code> to enable the MFTF to process it.</p>
+When adding a new directory at <code class="language-plaintext highlighter-rouge">Magento/FunctionalTest</code>, add the directory name to <code class="language-plaintext highlighter-rouge">MODULE_WHITELIST</code> to enable the MFTF to process it.</p>
 
 <p>Example:</p>
 
@@ -2366,17 +2364,17 @@ When adding a new directory at <code class="highlighter-rouge">Magento/Functiona
 
 <p>Path to the Magento CLI command entry point.</p>
 
-<p>Default: <code class="highlighter-rouge">dev/tests/acceptance/utils/command.php</code>.
-It points to <code class="highlighter-rouge">MAGENTO_BASE_URL</code> + <code class="highlighter-rouge">dev/tests/acceptance/utils/command.php</code></p>
+<p>Default: <code class="language-plaintext highlighter-rouge">dev/tests/acceptance/utils/command.php</code>.
+It points to <code class="language-plaintext highlighter-rouge">MAGENTO_BASE_URL</code> + <code class="language-plaintext highlighter-rouge">dev/tests/acceptance/utils/command.php</code></p>
 
 <p>Modify the default value:</p>
 
 <ul>
   <li>for non-default Magento installation</li>
-  <li>when use a subdirectory in the <code class="highlighter-rouge">MAGENTO_BASE_URL</code></li>
+  <li>when use a subdirectory in the <code class="language-plaintext highlighter-rouge">MAGENTO_BASE_URL</code></li>
 </ul>
 
-<p>Example: <code class="highlighter-rouge">dev/tests/acceptance/utils/command.php</code></p>
+<p>Example: <code class="language-plaintext highlighter-rouge">dev/tests/acceptance/utils/command.php</code></p>
 
 <h3 id="browser">BROWSER</h3>
 

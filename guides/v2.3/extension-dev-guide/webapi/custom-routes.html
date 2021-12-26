@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Set custom routes | Magento 2 Developer Documentation (copy)</title>
+	<title>Set custom routes | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/extension-dev-guide/webapi/custom-routes.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/extension-dev-guide/webapi/custom-routes.html">Magento 2.0</a></li>
 		
@@ -3472,9 +3473,9 @@
 	<h1 class="page-heading">Set custom routes</h1>
 </section>
 
-			<p>You can configure REST endpoints in your module to use custom routes (aliases) for URLs instead of the default URLs. For example, you can define the alias <code class="highlighter-rouge">createWidget</code> to represent <code class="highlighter-rouge">POST V1/widgets</code>. However, you cannot create an alias for a route that contains one or more variables, such as <code class="highlighter-rouge">PUT V1/widgets/:widgetId</code>.</p>
+			<p>You can configure REST endpoints in your module to use custom routes (aliases) for URLs instead of the default URLs. For example, you can define the alias <code class="language-plaintext highlighter-rouge">createWidget</code> to represent <code class="language-plaintext highlighter-rouge">POST V1/widgets</code>. However, you cannot create an alias for a route that contains one or more variables, such as <code class="language-plaintext highlighter-rouge">PUT V1/widgets/:widgetId</code>.</p>
 
-<p>To define custom routes, create an <code class="highlighter-rouge">etc/webapi_async.xml</code> file in your module that contains the following structure:</p>
+<p>To define custom routes, create an <code class="language-plaintext highlighter-rouge">etc/webapi_async.xml</code> file in your module that contains the following structure:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;services</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_WebapiAsync:etc/webapi_async.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;route</span> <span class="na">url=</span><span class="s">"V1/widgets"</span> <span class="na">method=</span><span class="s">"POST"</span> <span class="na">alias=</span><span class="s">"createWidget"</span> <span class="nt">/&gt;</span>
@@ -3486,11 +3487,11 @@
 <p>This example redefines two routes:</p>
 
 <ul>
-  <li>All requests made on endpoint <code class="highlighter-rouge">POST /createWidget</code> will be forwarded to <code class="highlighter-rouge">POST V1/widgets</code></li>
-  <li>All requests made on endpoint <code class="highlighter-rouge">PUT /asyncBulkUpdateWidgets</code> will be forwarded to <code class="highlighter-rouge">PUT async/bulk/V1/widget</code></li>
+  <li>All requests made on endpoint <code class="language-plaintext highlighter-rouge">POST /createWidget</code> will be forwarded to <code class="language-plaintext highlighter-rouge">POST V1/widgets</code></li>
+  <li>All requests made on endpoint <code class="language-plaintext highlighter-rouge">PUT /asyncBulkUpdateWidgets</code> will be forwarded to <code class="language-plaintext highlighter-rouge">PUT async/bulk/V1/widget</code></li>
 </ul>
 
-<p>The following table defines the <code class="highlighter-rouge">route</code> node attributes:</p>
+<p>The following table defines the <code class="language-plaintext highlighter-rouge">route</code> node attributes:</p>
 
 <table>
   <thead>
@@ -3502,19 +3503,19 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">url</code></td>
+      <td><code class="language-plaintext highlighter-rouge">url</code></td>
       <td>Yes</td>
-      <td>An existing REST endpoint. The route can be defined in the module’s <code class="highlighter-rouge">webapi.xml</code> file, or derived, such as those for asynchronous and bulk endpoints.</td>
+      <td>An existing REST endpoint. The route can be defined in the module’s <code class="language-plaintext highlighter-rouge">webapi.xml</code> file, or derived, such as those for asynchronous and bulk endpoints.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">method</code></td>
+      <td><code class="language-plaintext highlighter-rouge">method</code></td>
       <td>Yes</td>
-      <td>The HTTP request method. One of <code class="highlighter-rouge">GET</code>, <code class="highlighter-rouge">PUT</code>, <code class="highlighter-rouge">POST</code> or <code class="highlighter-rouge">DELETE</code>.</td>
+      <td>The HTTP request method. One of <code class="language-plaintext highlighter-rouge">GET</code>, <code class="language-plaintext highlighter-rouge">PUT</code>, <code class="language-plaintext highlighter-rouge">POST</code> or <code class="language-plaintext highlighter-rouge">DELETE</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">alias</code></td>
+      <td><code class="language-plaintext highlighter-rouge">alias</code></td>
       <td>Yes</td>
-      <td>A string that defines the custom route for the route defined in <code class="highlighter-rouge">url</code>.</td>
+      <td>A string that defines the custom route for the route defined in <code class="language-plaintext highlighter-rouge">url</code>.</td>
     </tr>
   </tbody>
 </table>

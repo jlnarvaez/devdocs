@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Codebase changes | Magento 2 Developer Documentation (copy)</title>
+	<title>Codebase changes | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/extension-dev-guide/versioning/codebase-changes.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/extension-dev-guide/versioning/codebase-changes.html">Magento 2.0</a></li>
 		
@@ -3043,7 +3044,7 @@ If this is unavoidable, you must depend on the patch version of the core modules
 <h2 id="api-and-customization-points">API and customization points</h2>
 
 <p>Public code includes Public   <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span>
-(indicated by the <code class="highlighter-rouge">@api</code> docblock tag) and Public Customization Points.</p>
+(indicated by the <code class="language-plaintext highlighter-rouge">@api</code> docblock tag) and Public Customization Points.</p>
 
 <p>Modules call APIs to create new application scenarios.
 Modifications that break the API will trigger an increase in a module’s MAJOR version.</p>
@@ -3058,20 +3059,20 @@ Modifications that break Customization Points will trigger an increase in a modu
 
 <h2 id="deprecation">Deprecation</h2>
 
-<p>Marking public code with <code class="highlighter-rouge">@deprecated</code> on a MINOR release indicates that Magento plans to remove that code in a future MINOR release.</p>
+<p>Marking public code with <code class="language-plaintext highlighter-rouge">@deprecated</code> on a MINOR release indicates that Magento plans to remove that code in a future MINOR release.</p>
 
-<p>When Magento deprecates the API or customization point in favor of a new implementation, the <code class="highlighter-rouge">@see</code> annotation points to the new implementation.</p>
+<p>When Magento deprecates the API or customization point in favor of a new implementation, the <code class="language-plaintext highlighter-rouge">@see</code> annotation points to the new implementation.</p>
 
 <p><strong>Deprecated Code Example</strong></p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cd">/**
  * @deprecated since 2.1.0
  * @see \Magento\Framework\Model\ResourceModel\Db\AbstractDb::save()
  */</span>
-<span class="k">public</span> <span class="k">function</span> <span class="nf">save</span><span class="p">()</span>
+<span class="k">public</span> <span class="k">function</span> <span class="n">save</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="c1">// ...
-</span><span class="p">}</span></code></pre></figure>
+    <span class="c1">// ...</span>
+<span class="p">}</span></code></pre></figure>
 
 <h2 id="version-increase-scenarios">Version increase scenarios</h2>
 
@@ -3088,7 +3089,7 @@ Use this table to understand what changes Magento can make and which version num
   </thead>
   <tbody>
     <tr>
-      <td><strong>PHP Interface</strong> (marked with <code class="highlighter-rouge">@api</code>)</td>
+      <td><strong>PHP Interface</strong> (marked with <code class="language-plaintext highlighter-rouge">@api</code>)</td>
       <td>New interface</td>
       <td>MINOR</td>
     </tr>
@@ -3125,7 +3126,7 @@ Use this table to understand what changes Magento can make and which version num
   </tbody>
   <tbody>
     <tr>
-      <td><strong>PHP Class</strong> (marked with <code class="highlighter-rouge">@api</code>)</td>
+      <td><strong>PHP Class</strong> (marked with <code class="language-plaintext highlighter-rouge">@api</code>)</td>
       <td>New Class</td>
       <td>MINOR</td>
     </tr>
@@ -3182,7 +3183,7 @@ Use this table to understand what changes Magento can make and which version num
   </tbody>
   <tbody>
     <tr>
-      <td><strong>JavaScript Interface</strong> (marked with <code class="highlighter-rouge">@api</code>)</td>
+      <td><strong>JavaScript Interface</strong> (marked with <code class="language-plaintext highlighter-rouge">@api</code>)</td>
       <td>New interface</td>
       <td>MINOR</td>
     </tr>
@@ -3219,7 +3220,7 @@ Use this table to understand what changes Magento can make and which version num
   </tbody>
   <tbody>
     <tr>
-      <td><strong>JavaScript class</strong> (marked with <code class="highlighter-rouge">@api</code></td>
+      <td><strong>JavaScript class</strong> (marked with <code class="language-plaintext highlighter-rouge">@api</code></td>
       <td>New class</td>
       <td>MINOR</td>
     </tr>

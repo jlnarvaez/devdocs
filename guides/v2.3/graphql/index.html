@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Overview | Magento 2 Developer Documentation (copy)</title>
+	<title>Overview | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/graphql">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/graphql">Magento 2.0</a></li>
 		
@@ -2191,20 +2192,20 @@
 
 <p>Most of the development team’s work thus far has been devoted to building the GraphQL infrastructure and enhancing the ability to query products. The complexity of the Catalog module made it the ideal candidate for early development. It supports all product types as well as extension, custom, and EAV attributes.</p>
 
-<p>GraphQL allows you to define the structure of the data that you need, and the server returns only the data you request. Each GraphQL-capable module contains a declarative schema that defines the syntax for queries that the module supports, as well as the attributes that can be returned. If you run a REST call such as <code class="highlighter-rouge">GET /V1/products/:sku</code> on a simple product, the system might fetch more than 100 lines of data. If all you need is the current price, the call has returned significantly more information than you need. With GraphQL, a query against the same SKU could return just the price.</p>
+<p>GraphQL allows you to define the structure of the data that you need, and the server returns only the data you request. Each GraphQL-capable module contains a declarative schema that defines the syntax for queries that the module supports, as well as the attributes that can be returned. If you run a REST call such as <code class="language-plaintext highlighter-rouge">GET /V1/products/:sku</code> on a simple product, the system might fetch more than 100 lines of data. If all you need is the current price, the call has returned significantly more information than you need. With GraphQL, a query against the same SKU could return just the price.</p>
 
 <p>A GraphQL-enabled module handles externally-defined attributes differently than other Magento modules. We used the following techniques to manage product-related attributes, but you are free to use alternate methods:</p>
 
 <ul>
   <li>
-    <p><strong>EAV attributes</strong> are explicitly declared in the <code class="highlighter-rouge">schema.graphqls</code> files.
-For example, the <a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/CatalogGraphQl/etc/schema.graphqls"><code class="highlighter-rouge">Catalogschema.graphqls</code></a> file declares multiple EAV attributes.</p>
+    <p><strong>EAV attributes</strong> are explicitly declared in the <code class="language-plaintext highlighter-rouge">schema.graphqls</code> files.
+For example, the <a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/CatalogGraphQl/etc/schema.graphqls"><code class="language-plaintext highlighter-rouge">Catalogschema.graphqls</code></a> file declares multiple EAV attributes.</p>
   </li>
   <li>
     <p><strong>Custom attributes</strong> are treated as dynamic attributes that might or might not be present. Therefore, they are not declared in the schema. Instead, we’ve implemented a reader that queries the database and gets any declared custom attributes. These attributes can be declared in the schema if you know they’ll always be present.</p>
   </li>
   <li>
-    <p><strong>Extension attributes</strong> can be declared in a <code class="highlighter-rouge">schema.graphqls</code> file or by a custom reader, but they should be declared in a separate <code class="highlighter-rouge">*GraphQl</code> module. The attributes should extend from the resolver that fetches that model’s data.</p>
+    <p><strong>Extension attributes</strong> can be declared in a <code class="language-plaintext highlighter-rouge">schema.graphqls</code> file or by a custom reader, but they should be declared in a separate <code class="language-plaintext highlighter-rouge">*GraphQl</code> module. The attributes should extend from the resolver that fetches that model’s data.</p>
   </li>
 </ul>
 
@@ -2217,8 +2218,8 @@ For example, the <a href="https://github.com/magento/magento2/blob/2.3/app/code/
   <li>All product types are supported. Currently, previous versions supported simple and configurable products only.</li>
   <li>A product query returns complex price objects that include the amount, the currency code, and any adjustments.</li>
   <li>You can query attributes of a logged-in customer. A session token provides authorization.</li>
-  <li>The REST and SOAP APIs had separate endpoints for searching across all products and individual products. In GraphQL, all product searches use the <code class="highlighter-rouge">products</code> query.</li>
-  <li>Developers who have URLs being rewritten using the rewrites table can send these generated URLs to the <code class="highlighter-rouge">urlResolver</code> query and receive back the canonical URL in the response.</li>
+  <li>The REST and SOAP APIs had separate endpoints for searching across all products and individual products. In GraphQL, all product searches use the <code class="language-plaintext highlighter-rouge">products</code> query.</li>
+  <li>Developers who have URLs being rewritten using the rewrites table can send these generated URLs to the <code class="language-plaintext highlighter-rouge">urlResolver</code> query and receive back the canonical URL in the response.</li>
   <li>GraphQL supports multiple stores. The context is specified in the HTTP header.  Your GraphQL client must support HTTP headers to query the non-default store.</li>
   <li>Attribute-level descriptions are displayed in the GraphQL browser.</li>
 </ul>
@@ -2240,7 +2241,7 @@ For example, the <a href="https://github.com/magento/magento2/blob/2.3/app/code/
 
 <p><img src="/devdocs/guides/v2.3/graphql/images/graphql-browser.png" alt="GraphiQL browser" /></p>
 
-<p>To begin using GraphiQL, set the GraphQL endpoint by entering <code class="highlighter-rouge">http://&lt;magento2-3-server&gt;/graphql</code> in the URL bar, then click <strong>Set endpoint</strong>. You can use the browser in the right column to determine how to set up a query. Additional examples are also available at <a href="/devdocs/guides/v2.3/graphql/search-pagination.html">Searches and pagination in GraphQL</a>.</p>
+<p>To begin using GraphiQL, set the GraphQL endpoint by entering <code class="language-plaintext highlighter-rouge">http://&lt;magento2-3-server&gt;/graphql</code> in the URL bar, then click <strong>Set endpoint</strong>. You can use the browser in the right column to determine how to set up a query. Additional examples are also available at <a href="/devdocs/guides/v2.3/graphql/search-pagination.html">Searches and pagination in GraphQL</a>.</p>
 
 <p class="bs-callout bs-callout-info">You can access the GraphQL introspection feature only if your Magento instance is in developer mode. <a href="/devdocs/guides/v2.3/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a> describes how to check and change the mode.</p>
 

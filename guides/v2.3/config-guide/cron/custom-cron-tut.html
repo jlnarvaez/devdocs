@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Configure a custom cron job and cron group (tutorial) | Magento 2 Developer Documentation (copy)</title>
+	<title>Configure a custom cron job and cron group (tutorial) | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/config-guide/cron/custom-cron-tut.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/config-guide/cron/custom-cron-tut.html">Magento 2.0</a></li>
 		
@@ -4019,23 +4020,23 @@
 </section>
 
 			<p>This tutorial shows you step-by-step how to create a custom cron job and optionally a cron group in a sample   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
-. You can use a module you already have or you can use a sample module from our <a href="https://github.com/magento/magento2-samples"><code class="highlighter-rouge">magento2-samples</code> repository</a>.</p>
+. You can use a module you already have or you can use a sample module from our <a href="https://github.com/magento/magento2-samples"><code class="language-plaintext highlighter-rouge">magento2-samples</code> repository</a>.</p>
 
-<p>Running the cron job results in a row being added to the <code class="highlighter-rouge">cron_schedule</code> table with the name of the cron job, <code class="highlighter-rouge">custom_cron</code>.</p>
+<p>Running the cron job results in a row being added to the <code class="language-plaintext highlighter-rouge">cron_schedule</code> table with the name of the cron job, <code class="language-plaintext highlighter-rouge">custom_cron</code>.</p>
 
 <p>We also show you how to optionally create a cron group, which you can use to run custom cron jobs with settings other than Magento application defaults.</p>
 
 <p>In this tutorial, we assume the following:</p>
 
 <ul>
-  <li>The Magento application is installed in <code class="highlighter-rouge">/var/www/html/magento2</code></li>
-  <li>Your Magento database username and password are both <code class="highlighter-rouge">magento</code></li>
+  <li>The Magento application is installed in <code class="language-plaintext highlighter-rouge">/var/www/html/magento2</code></li>
+  <li>Your Magento database username and password are both <code class="language-plaintext highlighter-rouge">magento</code></li>
   <li>You perform all actions as the <a href="/devdocs/guides/v2.3/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a></li>
 </ul>
 
 <h2 id="cron-tut-get">Step 1: Get a sample module</h2>
 
-<p>To set up a custom cron job, you need a sample module. We suggest the <code class="highlighter-rouge">magento-module-minimal</code> module.</p>
+<p>To set up a custom cron job, you need a sample module. We suggest the <code class="language-plaintext highlighter-rouge">magento-module-minimal</code> module.</p>
 
 <p>If you already have a sample module, you can use it; skip this step and the next step and continue with <a href="#cron-tut-class">Step 3: Create a class to run cron</a>.</p>
 
@@ -4045,37 +4046,37 @@
   <li>Log in to your Magento server as, or switch to, the <a href="/devdocs/guides/v2.3/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
   <li>Change to a directory that is not in your Magento application root (for example, your home directory).</li>
   <li>
-    <p>Clone the <a href="https://github.com/magento/magento2-samples"><code class="highlighter-rouge">magento2-samples</code> repository</a>.</p>
+    <p>Clone the <a href="https://github.com/magento/magento2-samples"><code class="language-plaintext highlighter-rouge">magento2-samples</code> repository</a>.</p>
 
     <p>For example,</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd ~
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd ~
 git clone git@github.com:magento/magento2-samples.git
 </code></pre></div>    </div>
 
-    <p>If the command fails with the error <code class="highlighter-rouge">Permission denied (publickey).</code>, you must <a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account">add your SSH public key to GitHub.com</a>.</p>
+    <p>If the command fails with the error <code class="language-plaintext highlighter-rouge">Permission denied (publickey).</code>, you must <a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account">add your SSH public key to GitHub.com</a>.</p>
   </li>
   <li>
     <p>Make a directory to which to copy the sample code:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mkdir -p /var/www/html/magento2/app/code/Magento/SampleMinimal
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mkdir -p /var/www/html/magento2/app/code/Magento/SampleMinimal
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Copy the sample module code:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cp -r ~/magento2-samples/sample-module-minimal/* /var/www/html/magento2/app/code/Magento/SampleMinimal
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cp -r ~/magento2-samples/sample-module-minimal/* /var/www/html/magento2/app/code/Magento/SampleMinimal
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Verify the files copied properly:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ls -al /var/www/html/magento2/app/code/Magento/SampleMinimal
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>ls -al /var/www/html/magento2/app/code/Magento/SampleMinimal
 </code></pre></div>    </div>
 
     <p>You should see the following result:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>drwxrwsr-x.   4 magento_user apache  4096 Oct 30 13:19 .
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>drwxrwsr-x.   4 magento_user apache  4096 Oct 30 13:19 .
 drwxrwsr-x. 121 magento_user apache  4096 Oct 30 13:19 ..
 -rw-rw-r--.   1 magento_user apache   372 Oct 30 13:19 composer.json
 drwxrwsr-x.   2 magento_user apache  4096 Oct 30 13:19 etc
@@ -4089,7 +4090,7 @@ drwxrwsr-x.   3 magento_user apache  4096 Oct 30 13:19 Test
   <li>
     <p>Update the Magento database and schema:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php /var/www/html/magento2/bin/magento setup:upgrade
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php /var/www/html/magento2/bin/magento setup:upgrade
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -4112,13 +4113,13 @@ drwxrwsr-x.   3 magento_user apache  4096 Oct 30 13:19 Test
   </li>
 </ol>
 
-<p>If the module doesn’t display, review <a href="#cron-tut-get">step 1</a> carefully. Make sure your code is in the correct directory. Spelling and case are important; if anything is different, the module won’t load. Also, don’t forget to run <code class="highlighter-rouge">magento setup:upgrade</code>.</p>
+<p>If the module doesn’t display, review <a href="#cron-tut-get">step 1</a> carefully. Make sure your code is in the correct directory. Spelling and case are important; if anything is different, the module won’t load. Also, don’t forget to run <code class="language-plaintext highlighter-rouge">magento setup:upgrade</code>.</p>
 </div>
   </div>
 
 <h2 id="cron-tut-class">Step 3: Create a class to run cron</h2>
 
-<p>This step shows a simple class to create a cron job. The class only writes a row to the <code class="highlighter-rouge">cron_schedule</code> table that confirms it’s set up successfully.</p>
+<p>This step shows a simple class to create a cron job. The class only writes a row to the <code class="language-plaintext highlighter-rouge">cron_schedule</code> table that confirms it’s set up successfully.</p>
 
 <div class="collapsible">
     <b class="collapsible-title">To create a class: </b>
@@ -4126,33 +4127,33 @@ drwxrwsr-x.   3 magento_user apache  4096 Oct 30 13:19 Test
   <li>
     <p>Create a directory for the class and change to that directory:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mkdir /var/www/html/magento2/app/code/Magento/SampleMinimal/Cron &amp;&amp; cd /var/www/html/magento2/app/code/Magento/SampleMinimal/Cron
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mkdir /var/www/html/magento2/app/code/Magento/SampleMinimal/Cron &amp;&amp; cd /var/www/html/magento2/app/code/Magento/SampleMinimal/Cron
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Created a file named <code class="highlighter-rouge">Test.php</code> in that directory with the following contents:</p>
+    <p>Created a file named <code class="language-plaintext highlighter-rouge">Test.php</code> in that directory with the following contents:</p>
   </li>
 </ol>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="k">namespace</span> <span class="nx">Magento\SampleMinimal\Cron</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">\Psr\Log\LoggerInterface</span><span class="p">;</span>
+<span class="kn">namespace</span> <span class="nn">Magento\SampleMinimal\Cron</span><span class="p">;</span>
+<span class="kn">use</span> <span class="err">\</span><span class="nc">Psr\Log\LoggerInterface</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">Test</span> <span class="p">{</span>
+<span class="kd">class</span> <span class="nc">Test</span> <span class="p">{</span>
     <span class="k">protected</span> <span class="nv">$logger</span><span class="p">;</span>
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">LoggerInterface</span> <span class="nv">$logger</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span> <span class="o">=</span> <span class="nv">$logger</span><span class="p">;</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="kt">LoggerInterface</span> <span class="nv">$logger</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">logger</span> <span class="o">=</span> <span class="nv">$logger</span><span class="p">;</span>
     <span class="p">}</span>
 
-<span class="sd">/**
+<span class="cd">/**
    * Write to system.log
    *
    * @return void
    */</span>
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span><span class="o">-&gt;</span><span class="na">info</span><span class="p">(</span><span class="s1">'Cron Works'</span><span class="p">);</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">execute</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">logger</span><span class="o">-&gt;</span><span class="nf">info</span><span class="p">(</span><span class="s1">'Cron Works'</span><span class="p">);</span>
     <span class="p">}</span>
 
 <span class="p">}</span></code></pre></figure>
@@ -4161,12 +4162,12 @@ drwxrwsr-x.   3 magento_user apache  4096 Oct 30 13:19 Test
 </div>
   </div>
 
-<h2 id="cron-tut-crontab">Step 4: Create <code class="highlighter-rouge">crontab.xml</code></h2>
-<p><code class="highlighter-rouge">crontab.xml</code> sets a schedule to run your custom cron code.</p>
+<h2 id="cron-tut-crontab">Step 4: Create <code class="language-plaintext highlighter-rouge">crontab.xml</code></h2>
+<p><code class="language-plaintext highlighter-rouge">crontab.xml</code> sets a schedule to run your custom cron code.</p>
 
 <div class="collapsible">
     <b class="collapsible-title">To create crontab.xml: </b>
-    <div class="collapsible-content"><p>Create <code class="highlighter-rouge">crontab.xml</code> as follows in the <code class="highlighter-rouge">/var/www/html/magento2/app/code/Magento/SampleMinimal/etc</code> directory:</p>
+    <div class="collapsible-content"><p>Create <code class="language-plaintext highlighter-rouge">crontab.xml</code> as follows in the <code class="language-plaintext highlighter-rouge">/var/www/html/magento2/app/code/Magento/SampleMinimal/etc</code> directory:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0"?&gt;</span>
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Cron:etc/crontab.xsd"</span><span class="nt">&gt;</span>
@@ -4177,13 +4178,13 @@ drwxrwsr-x.   3 magento_user apache  4096 Oct 30 13:19 Test
     <span class="nt">&lt;/group&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
-<p>The preceding <code class="highlighter-rouge">crontab.xml</code> runs the <code class="highlighter-rouge">Magento/SampleMinimal/Cron/Test.php</code> class once per minute, resulting in a row being added to the <code class="highlighter-rouge">cron_schedule</code> table.</p>
+<p>The preceding <code class="language-plaintext highlighter-rouge">crontab.xml</code> runs the <code class="language-plaintext highlighter-rouge">Magento/SampleMinimal/Cron/Test.php</code> class once per minute, resulting in a row being added to the <code class="language-plaintext highlighter-rouge">cron_schedule</code> table.</p>
 </div>
   </div>
 
 <h2 id="cron-tut-cronver">Step 5: Verify the cron job</h2>
 
-<p>This step shows how to verify the custom cron job successfully using a SQL query on the <code class="highlighter-rouge">cron_schedule</code> database table.</p>
+<p>This step shows how to verify the custom cron job successfully using a SQL query on the <code class="language-plaintext highlighter-rouge">cron_schedule</code> database table.</p>
 
 <div class="collapsible">
     <b class="collapsible-title">To verify cron: </b>
@@ -4191,26 +4192,26 @@ drwxrwsr-x.   3 magento_user apache  4096 Oct 30 13:19 Test
   <li>
     <p>Run Magento cron jobs:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php /var/www/html/magento2/bin/magento cron:run
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php /var/www/html/magento2/bin/magento cron:run
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Enter the <code class="highlighter-rouge">magento cron:run</code> command two or three times.</p>
+    <p>Enter the <code class="language-plaintext highlighter-rouge">magento cron:run</code> command two or three times.</p>
 
     <p>The first time you enter the command, it queues jobs; subsequently, the cron jobs are run. You must enter the command <em>at least</em> twice.</p>
   </li>
   <li>
-    <p>Run the SQL query <code class="highlighter-rouge">SELECT * from cron_schedule WHERE job_code like '%custom%'</code> as follows:</p>
+    <p>Run the SQL query <code class="language-plaintext highlighter-rouge">SELECT * from cron_schedule WHERE job_code like '%custom%'</code> as follows:</p>
 
     <ol>
-      <li>Enter <code class="highlighter-rouge">mysql -u magento -p</code></li>
-      <li>At the <code class="highlighter-rouge">mysql&gt;</code> prompt, enter <code class="highlighter-rouge">use magento;</code></li>
-      <li>Enter <code class="highlighter-rouge">SELECT * from cron_schedule WHERE job_code like '%custom%';</code></li>
+      <li>Enter <code class="language-plaintext highlighter-rouge">mysql -u magento -p</code></li>
+      <li>At the <code class="language-plaintext highlighter-rouge">mysql&gt;</code> prompt, enter <code class="language-plaintext highlighter-rouge">use magento;</code></li>
+      <li>Enter <code class="language-plaintext highlighter-rouge">SELECT * from cron_schedule WHERE job_code like '%custom%';</code></li>
     </ol>
 
     <p>The result should be similar to the following:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>+-------------+----------------+---------+----------+---------------------+---------------------+---------------------+---------------------+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>+-------------+----------------+---------+----------+---------------------+---------------------+---------------------+---------------------+
 | schedule_id | job_code       | status  | messages | created_at          | scheduled_at        | executed_at         | finished_at         |
 +-------------+----------------+---------+----------+---------------------+---------------------+---------------------+---------------------+
 |        3670 | custom_cronjob | success | NULL     | 2016-11-02 09:38:03 | 2016-11-02 09:38:00 | 2016-11-02 09:39:03 | 2016-11-02 09:39:03 |
@@ -4223,23 +4224,23 @@ drwxrwsr-x.   3 magento_user apache  4096 Oct 30 13:19 Test
   <li>
     <p>(Optional) Verify messages are written to Magento’s system log:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cat /var/www/html/magento2/var/log/system.log
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cat /var/www/html/magento2/var/log/system.log
 </code></pre></div>    </div>
 
     <p>You should see one or more entries like the following:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>[2016-11-02 22:17:03] main.INFO: Cron Works [] []
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>[2016-11-02 22:17:03] main.INFO: Cron Works [] []
 </code></pre></div>    </div>
 
-    <p>These messages come from the <code class="highlighter-rouge">execute</code> method in <code class="highlighter-rouge">Test.php</code>:</p>
+    <p>These messages come from the <code class="language-plaintext highlighter-rouge">execute</code> method in <code class="language-plaintext highlighter-rouge">Test.php</code>:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>public function execute() {
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>public function execute() {
    $this-&gt;logger-&gt;info('Cron Works');
 </code></pre></div>    </div>
   </li>
 </ol>
 
-<p>If the SQL command and system log contain no entries, run the <code class="highlighter-rouge">magento cron:run</code> command a few more times and wait. It can take some time for the database to update.</p>
+<p>If the SQL command and system log contain no entries, run the <code class="language-plaintext highlighter-rouge">magento cron:run</code> command a few more times and wait. It can take some time for the database to update.</p>
 </div>
   </div>
 
@@ -4250,10 +4251,10 @@ drwxrwsr-x.   3 magento_user apache  4096 Oct 30 13:19 Test
 <div class="collapsible">
     <b class="collapsible-title">To set up a custom cron group: </b>
     <div class="collapsible-content"><ol>
-  <li>Open <code class="highlighter-rouge">crontab.xml</code> in a text editor.</li>
-  <li>Change <code class="highlighter-rouge">&lt;group id="default"&gt;</code> to <code class="highlighter-rouge">&lt;group id="custom_crongroup"&gt;</code></li>
+  <li>Open <code class="language-plaintext highlighter-rouge">crontab.xml</code> in a text editor.</li>
+  <li>Change <code class="language-plaintext highlighter-rouge">&lt;group id="default"&gt;</code> to <code class="language-plaintext highlighter-rouge">&lt;group id="custom_crongroup"&gt;</code></li>
   <li>Exit the text editor.</li>
-  <li>Create <code class="highlighter-rouge">/var/www/html/magento2/app/code/Magento/SampleMinimal/etc/cron_groups.xml</code> with the following contents:</li>
+  <li>Create <code class="language-plaintext highlighter-rouge">/var/www/html/magento2/app/code/Magento/SampleMinimal/etc/cron_groups.xml</code> with the following contents:</li>
 </ol>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0"?&gt;</span>
@@ -4284,7 +4285,7 @@ drwxrwsr-x.   3 magento_user apache  4096 Oct 30 13:19 Test
   <li>
     <p>Run Magento cron jobs for your custom group:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php /var/www/html/magento2/bin/magento cron:run --group="custom_crongroup"
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php /var/www/html/magento2/bin/magento cron:run --group="custom_crongroup"
 </code></pre></div>    </div>
 
     <p>Run the command at least twice.</p>
@@ -4292,7 +4293,7 @@ drwxrwsr-x.   3 magento_user apache  4096 Oct 30 13:19 Test
   <li>
     <p>Clean the Magento cache:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php /var/www/html/magento2/bin/magento cache:clean
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php /var/www/html/magento2/bin/magento cache:clean
 </code></pre></div>    </div>
   </li>
   <li>Log in to the Magento Admin as an administrator.</li>

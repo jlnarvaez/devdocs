@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Plugins (Interceptors) | Magento 2 Developer Documentation (copy)</title>
+	<title>Plugins (Interceptors) | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/extension-dev-guide/plugins.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/extension-dev-guide/plugins.html">Magento 2.0</a></li>
 		
@@ -2902,10 +2903,10 @@
 
 <p>A plugin, or interceptor, is a class that modifies the behavior of public class functions by intercepting a function call and running code before, after, or around that function call. This allows you to <em>substitute</em> or <em>extend</em> the behavior of original, public methods for any <em>class</em> or <em>interface</em>.</p>
 
-<p>Extensions that wish to intercept and change the behavior of a <em>public method</em> can create a <code class="highlighter-rouge">Plugin</code> class which are referred to as plugins.</p>
+<p>Extensions that wish to intercept and change the behavior of a <em>public method</em> can create a <code class="language-plaintext highlighter-rouge">Plugin</code> class which are referred to as plugins.</p>
 
 <p>This   <span term-uuid="deea5a5a-e9e5-4591-b141-b849458feb1a" class="glossary-term" data-toggle="popover">interception</span>
- approach reduces conflicts among extensions that change the behavior of the same class or method. Your <code class="highlighter-rouge">Plugin</code> class implementation changes the behavior of a class function, but it does not change the class itself. Because they can be called sequentially according to a configured sort order, these interceptors do not conflict with one another.</p>
+ approach reduces conflicts among extensions that change the behavior of the same class or method. Your <code class="language-plaintext highlighter-rouge">Plugin</code> class implementation changes the behavior of a class function, but it does not change the class itself. Because they can be called sequentially according to a configured sort order, these interceptors do not conflict with one another.</p>
 
 <h4 id="limitations">Limitations</h4>
 
@@ -2916,10 +2917,10 @@
   <li>Final classes</li>
   <li>Non-public methods</li>
   <li>Static methods</li>
-  <li><code class="highlighter-rouge">__construct</code></li>
+  <li><code class="language-plaintext highlighter-rouge">__construct</code></li>
   <li>Virtual types</li>
-  <li>Objects that are instantiated before <code class="highlighter-rouge">Magento\Framework\Interception</code> is bootstrapped</li>
-  <li>Objects that are not instantiated by the ObjectManager (e.g. by using <code class="highlighter-rouge">new</code> directly).</li>
+  <li>Objects that are instantiated before <code class="language-plaintext highlighter-rouge">Magento\Framework\Interception</code> is bootstrapped</li>
+  <li>Objects that are not instantiated by the ObjectManager (e.g. by using <code class="language-plaintext highlighter-rouge">new</code> directly).</li>
 </ul>
 
 <h3 id="declaring-a-plugin">Declaring a plugin</h3>
@@ -2937,18 +2938,18 @@
 <p>You must specify these elements:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">type name</code>: A class or interface which the plugin observes.</li>
-  <li><code class="highlighter-rouge">plugin name</code>: An arbitrary plugin name that identifies a plugin. Also used to merge the configurations for the plugin.</li>
-  <li><code class="highlighter-rouge">plugin type</code>: The name of a plugin’s class or its virtual type. Use the following naming convention when you specify this element: <code class="highlighter-rouge">\Vendor\Module\Plugin\&lt;ModelName&gt;Plugin</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">type name</code>: A class or interface which the plugin observes.</li>
+  <li><code class="language-plaintext highlighter-rouge">plugin name</code>: An arbitrary plugin name that identifies a plugin. Also used to merge the configurations for the plugin.</li>
+  <li><code class="language-plaintext highlighter-rouge">plugin type</code>: The name of a plugin’s class or its virtual type. Use the following naming convention when you specify this element: <code class="language-plaintext highlighter-rouge">\Vendor\Module\Plugin\&lt;ModelName&gt;Plugin</code>.</li>
 </ul>
 
 <p>The following elements are optional:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">plugin sortOrder</code>: The order in which plugins that call the same method are run.</li>
-  <li><code class="highlighter-rouge">plugin disabled</code>: To disable a plugin, set this element to <code class="highlighter-rouge">true</code>. The default value is <code class="highlighter-rouge">false</code>.
+  <li><code class="language-plaintext highlighter-rouge">plugin sortOrder</code>: The order in which plugins that call the same method are run.</li>
+  <li><code class="language-plaintext highlighter-rouge">plugin disabled</code>: To disable a plugin, set this element to <code class="language-plaintext highlighter-rouge">true</code>. The default value is <code class="language-plaintext highlighter-rouge">false</code>.
     <ul>
-      <li>Use this property to disable core or third-party plugins in your <code class="highlighter-rouge">di.xml</code> file.</li>
+      <li>Use this property to disable core or third-party plugins in your <code class="language-plaintext highlighter-rouge">di.xml</code> file.</li>
     </ul>
   </li>
 </ul>
@@ -2963,17 +2964,17 @@
 
 <p>Before methods run prior to an observed method. These methods must have the same name as the observed method with ‘before’ as the prefix.</p>
 
-<p>You can use before methods to change the arguments of an observed method by returning a modified argument. If there are multiple arguments, the method should return an array of those arguments. Returning <code class="highlighter-rouge">null</code> will indicate that the arguments for the observed method should not be modified.</p>
+<p>You can use before methods to change the arguments of an observed method by returning a modified argument. If there are multiple arguments, the method should return an array of those arguments. Returning <code class="language-plaintext highlighter-rouge">null</code> will indicate that the arguments for the observed method should not be modified.</p>
 
-<p>Below is an example of a before method modifying the <code class="highlighter-rouge">$name</code> argument before passing it on to the observed <code class="highlighter-rouge">setName</code> method.</p>
+<p>Below is an example of a before method modifying the <code class="language-plaintext highlighter-rouge">$name</code> argument before passing it on to the observed <code class="language-plaintext highlighter-rouge">setName</code> method.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">My\Module\Plugin</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="kn">namespace</span> <span class="nn">My\Module\Plugin</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">ProductPlugin</span>
+<span class="kd">class</span> <span class="nc">ProductPlugin</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">beforeSetName</span><span class="p">(</span><span class="nx">\Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nv">$name</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">beforeSetName</span><span class="p">(</span><span class="err">\</span><span class="nc">Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nv">$name</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="k">return</span> <span class="p">[</span><span class="s1">'('</span> <span class="o">.</span> <span class="nv">$name</span> <span class="o">.</span> <span class="s1">')'</span><span class="p">];</span>
+        <span class="k">return</span> <span class="p">[</span><span class="s1">'('</span> <span class="mf">.</span> <span class="nv">$name</span> <span class="mf">.</span> <span class="s1">')'</span><span class="p">];</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
@@ -2983,15 +2984,15 @@
 
 <p>These methods can be used to modify the results of an observed method and are required to have a return value.</p>
 
-<p>Below is an example of an after method modifying the return value <code class="highlighter-rouge">$result</code> of an observed methods call.</p>
+<p>Below is an example of an after method modifying the return value <code class="language-plaintext highlighter-rouge">$result</code> of an observed methods call.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">My\Module\Plugin</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="kn">namespace</span> <span class="nn">My\Module\Plugin</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">ProductPlugin</span>
+<span class="kd">class</span> <span class="nc">ProductPlugin</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">afterGetName</span><span class="p">(</span><span class="nx">\Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nv">$result</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">afterGetName</span><span class="p">(</span><span class="err">\</span><span class="nc">Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nv">$result</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="k">return</span> <span class="s1">'|'</span> <span class="o">.</span> <span class="nv">$result</span> <span class="o">.</span> <span class="s1">'|'</span><span class="p">;</span>
+        <span class="k">return</span> <span class="s1">'|'</span> <span class="mf">.</span> <span class="nv">$result</span> <span class="mf">.</span> <span class="s1">'|'</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
@@ -2999,22 +3000,22 @@
 
 <p>Around methods are defined such that their code is run both before and after the observed method. This allows you to completely override a method. Around methods must have the same name as the observed method with ‘around’ as the prefix.</p>
 
-<p>Before the list of the original method’s arguments, around methods receive a <code class="highlighter-rouge">callable</code> that will allow a call to the next method in the chain. When the <code class="highlighter-rouge">callable</code> is called, the next plugin or the observed function is called.</p>
+<p>Before the list of the original method’s arguments, around methods receive a <code class="language-plaintext highlighter-rouge">callable</code> that will allow a call to the next method in the chain. When the <code class="language-plaintext highlighter-rouge">callable</code> is called, the next plugin or the observed function is called.</p>
 
-<p class="bs-callout bs-callout-warning">If the around method does not call the <code class="highlighter-rouge">callable</code>, it will prevent the execution of all the plugins next in the chain and the original method call.</p>
+<p class="bs-callout bs-callout-warning">If the around method does not call the <code class="language-plaintext highlighter-rouge">callable</code>, it will prevent the execution of all the plugins next in the chain and the original method call.</p>
 
 <p>Below is an example of an around method adding behavior before and after an observed method:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">My\Module\Plugin</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="kn">namespace</span> <span class="nn">My\Module\Plugin</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">ProductPlugin</span>
+<span class="kd">class</span> <span class="nc">ProductPlugin</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">aroundSave</span><span class="p">(</span><span class="nx">\Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nx">callable</span> <span class="nv">$proceed</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">aroundSave</span><span class="p">(</span><span class="err">\</span><span class="nc">Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">,</span> <span class="n">callable</span> <span class="nv">$proceed</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">doSmthBeforeProductIsSaved</span><span class="p">();</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">doSmthBeforeProductIsSaved</span><span class="p">();</span>
         <span class="nv">$returnValue</span> <span class="o">=</span> <span class="nv">$proceed</span><span class="p">();</span>
         <span class="k">if</span> <span class="p">(</span><span class="nv">$returnValue</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">postProductToFacebook</span><span class="p">();</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">postProductToFacebook</span><span class="p">();</span>
         <span class="p">}</span>
         <span class="k">return</span> <span class="nv">$returnValue</span><span class="p">;</span>
     <span class="p">}</span>
@@ -3024,26 +3025,26 @@
 
 <p>For example, the following code defines a parameter of type <code>SomeType</code> which is nullable:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">My\Module\Model</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="kn">namespace</span> <span class="nn">My\Module\Model</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">MyUtility</span>
+<span class="kd">class</span> <span class="nc">MyUtility</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">save</span><span class="p">(</span><span class="nx">SomeType</span> <span class="nv">$obj</span> <span class="o">=</span> <span class="kc">null</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">save</span><span class="p">(</span><span class="kt">SomeType</span> <span class="nv">$obj</span> <span class="o">=</span> <span class="kc">null</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="c1">//do something
-</span>    <span class="p">}</span>
+        <span class="c1">//do something</span>
+    <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
 <p>If you wrapped this method with a plugin like below:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">My\Module\Plugin</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="kn">namespace</span> <span class="nn">My\Module\Plugin</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">MyUtilityPlugin</span>
+<span class="kd">class</span> <span class="nc">MyUtilityPlugin</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">aroundSave</span><span class="p">(</span><span class="nx">\My\Module\Model\MyUtility</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nx">callable</span> <span class="nv">$proceed</span><span class="p">,</span> <span class="nx">SomeType</span> <span class="nv">$obj</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">aroundSave</span><span class="p">(</span><span class="err">\</span><span class="nc">My\Module\Model\MyUtility</span> <span class="nv">$subject</span><span class="p">,</span> <span class="n">callable</span> <span class="nv">$proceed</span><span class="p">,</span> <span class="nc">SomeType</span> <span class="nv">$obj</span><span class="p">)</span>
     <span class="p">{</span>
-      <span class="c1">//do something
-</span>    <span class="p">}</span>
+      <span class="c1">//do something</span>
+    <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
 <p>Note the missing <code>= null</code>. Now, if the original method was called with <code>null</code>   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
@@ -3051,26 +3052,26 @@
 
 <p>It is also worth noting that you are responsible for forwarding the arguments from the plugin to the <code>proceed</code> callable. If you are not using/modifying the arguments, you could use variadics and argument unpacking to achieve this simply:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">My\Module\Plugin</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="kn">namespace</span> <span class="nn">My\Module\Plugin</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">MyUtilityPlugin</span>
+<span class="kd">class</span> <span class="nc">MyUtilityPlugin</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">aroundSave</span><span class="p">(</span><span class="nx">\My\Module\Model\MyUtility</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nx">callable</span> <span class="nv">$proceed</span><span class="p">,</span> <span class="o">...</span><span class="nv">$args</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">aroundSave</span><span class="p">(</span><span class="err">\</span><span class="nc">My\Module\Model\MyUtility</span> <span class="nv">$subject</span><span class="p">,</span> <span class="n">callable</span> <span class="nv">$proceed</span><span class="p">,</span> <span class="mf">...</span><span class="nv">$args</span><span class="p">)</span>
     <span class="p">{</span>
-      <span class="c1">//do something
-</span>      <span class="nv">$proceed</span><span class="p">(</span><span class="o">...</span><span class="nv">$args</span><span class="p">);</span>
+      <span class="c1">//do something</span>
+      <span class="nv">$proceed</span><span class="p">(</span><span class="mf">...</span><span class="nv">$args</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
 <h3 id="prioritizing-plugins">Prioritizing plugins</h3>
 
-<p>The <code class="highlighter-rouge">sortOrder</code> property for plugins determine when their before, after, or around methods get called when several plugins are observing the same method.</p>
+<p>The <code class="language-plaintext highlighter-rouge">sortOrder</code> property for plugins determine when their before, after, or around methods get called when several plugins are observing the same method.</p>
 
 <p>The prioritization rules for ordering plugins:</p>
 
 <ul>
   <li>
-    <p>Prior to execution of the observed method, plugins will be executed from lowest to greatest <code class="highlighter-rouge">sortOrder</code>.</p>
+    <p>Prior to execution of the observed method, plugins will be executed from lowest to greatest <code class="language-plaintext highlighter-rouge">sortOrder</code>.</p>
 
     <ul>
       <li>During each plugin execution, the current plugin’s before method is executed first.</li>
@@ -3078,7 +3079,7 @@
     </ul>
   </li>
   <li>
-    <p>Following the execution of the observed method, plugins will be executed from greatest to lowest <code class="highlighter-rouge">sortOrder</code>.</p>
+    <p>Following the execution of the observed method, plugins will be executed from greatest to lowest <code class="language-plaintext highlighter-rouge">sortOrder</code>.</p>
 
     <ul>
       <li>During each plugin execution, the current plugin will first finish executing its around method.</li>
@@ -3131,37 +3132,37 @@
 <p>The execution flow will be as follows:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">PluginA::beforeDispatch()</code></li>
-  <li><code class="highlighter-rouge">PluginB::beforeDispatch()</code></li>
+  <li><code class="language-plaintext highlighter-rouge">PluginA::beforeDispatch()</code></li>
+  <li><code class="language-plaintext highlighter-rouge">PluginB::beforeDispatch()</code></li>
   <li>
-    <p><code class="highlighter-rouge">PluginB::aroundDispatch()</code> (Only the first half until <code class="highlighter-rouge">callable</code> is called)</p>
+    <p><code class="language-plaintext highlighter-rouge">PluginB::aroundDispatch()</code> (Only the first half until <code class="language-plaintext highlighter-rouge">callable</code> is called)</p>
 
     <ul>
-      <li><code class="highlighter-rouge">PluginC::beforeDispatch()</code></li>
+      <li><code class="language-plaintext highlighter-rouge">PluginC::beforeDispatch()</code></li>
       <li>
-        <p><code class="highlighter-rouge">PluginC::aroundDispatch()</code> (Only the first half until <code class="highlighter-rouge">callable</code> is called)</p>
+        <p><code class="language-plaintext highlighter-rouge">PluginC::aroundDispatch()</code> (Only the first half until <code class="language-plaintext highlighter-rouge">callable</code> is called)</p>
 
         <ul>
-          <li><code class="highlighter-rouge">Action::dispatch()</code></li>
+          <li><code class="language-plaintext highlighter-rouge">Action::dispatch()</code></li>
         </ul>
       </li>
-      <li><code class="highlighter-rouge">PluginC::aroundDispatch()</code> (Only the second half after <code class="highlighter-rouge">callable</code> is called)</li>
-      <li><code class="highlighter-rouge">PluginC::afterDispatch()</code></li>
+      <li><code class="language-plaintext highlighter-rouge">PluginC::aroundDispatch()</code> (Only the second half after <code class="language-plaintext highlighter-rouge">callable</code> is called)</li>
+      <li><code class="language-plaintext highlighter-rouge">PluginC::afterDispatch()</code></li>
     </ul>
   </li>
-  <li><code class="highlighter-rouge">PluginB::aroundDispatch()</code> (Only the second half after <code class="highlighter-rouge">callable</code> is called)</li>
-  <li><code class="highlighter-rouge">PluginB::afterDispatch()</code></li>
-  <li><code class="highlighter-rouge">PluginA::afterDispatch()</code></li>
+  <li><code class="language-plaintext highlighter-rouge">PluginB::aroundDispatch()</code> (Only the second half after <code class="language-plaintext highlighter-rouge">callable</code> is called)</li>
+  <li><code class="language-plaintext highlighter-rouge">PluginB::afterDispatch()</code></li>
+  <li><code class="language-plaintext highlighter-rouge">PluginA::afterDispatch()</code></li>
 </ul>
 
 <h3 id="configuration-inheritance">Configuration inheritance</h3>
 
 <p>All plugins added for interfaces and inherited classes will be added to classes that implement or inherit those classes and interfaces.</p>
 
-<p>Plugins defined in the global scope will be applied when the system is in a specific area (i.e. frontend, backend, etc). These global plugin configuration can also be extended or overridden via an area’s <code class="highlighter-rouge">di.xml</code>.</p>
+<p>Plugins defined in the global scope will be applied when the system is in a specific area (i.e. frontend, backend, etc). These global plugin configuration can also be extended or overridden via an area’s <code class="language-plaintext highlighter-rouge">di.xml</code>.</p>
 
 <p>For example, the developer can disable a global plugin in the   <span term-uuid="74d6d228-34bd-4475-a6f8-0c0f4d6d0d61" class="glossary-term" data-toggle="popover">backend</span>
- area by disabling it in the specific <code class="highlighter-rouge">di.xml</code> file for the backend area.</p>
+ area by disabling it in the specific <code class="language-plaintext highlighter-rouge">di.xml</code> file for the backend area.</p>
 
 <h3 id="related-topics">Related topics</h3>
 

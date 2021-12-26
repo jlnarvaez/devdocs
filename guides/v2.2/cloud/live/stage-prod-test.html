@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Test deployment | Magento 2 Developer Documentation (copy)</title>
+	<title>Test deployment | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/live/stage-prod-test.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/live/stage-prod-test.html">Magento 2.0</a></li>
 		
@@ -4323,9 +4324,9 @@
 
 <h2 id="logs">Log files</h2>
 
-<p>If you encounter errors on deployment or other issues when testing, check the log files. Log files are located under the <code class="highlighter-rouge">var/log</code> directory.</p>
+<p>If you encounter errors on deployment or other issues when testing, check the log files. Log files are located under the <code class="language-plaintext highlighter-rouge">var/log</code> directory.</p>
 
-<p>The deployment log is located in <code class="highlighter-rouge">/var/log/platform/&lt;prodject ID&gt;/deploy.log</code>. The value of <code class="highlighter-rouge">&lt;project ID&gt;</code> depends on the project ID and whether the environment is Staging or Production. For example, with a project ID of <code class="highlighter-rouge">yw1unoukjcawe</code>, the Staging user is <code class="highlighter-rouge">yw1unoukjcawe_stg</code> and the Production user is <code class="highlighter-rouge">yw1unoukjcawe</code>.</p>
+<p>The deployment log is located in <code class="language-plaintext highlighter-rouge">/var/log/platform/&lt;prodject ID&gt;/deploy.log</code>. The value of <code class="language-plaintext highlighter-rouge">&lt;project ID&gt;</code> depends on the project ID and whether the environment is Staging or Production. For example, with a project ID of <code class="language-plaintext highlighter-rouge">yw1unoukjcawe</code>, the Staging user is <code class="language-plaintext highlighter-rouge">yw1unoukjcawe_stg</code> and the Production user is <code class="language-plaintext highlighter-rouge">yw1unoukjcawe</code>.</p>
 
 <p>When accessing logs in Production, you may need to SSH into each of the three nodes to locate the logs.</p>
 
@@ -4333,28 +4334,28 @@
 
 <h2 id="codebase">Check the code base</h2>
 
-<p>Verify your <code class="highlighter-rouge">master</code> code base correctly deployed to Staging and Production environments. The environments should have identical code bases.</p>
+<p>Verify your <code class="language-plaintext highlighter-rouge">master</code> code base correctly deployed to Staging and Production environments. The environments should have identical code bases.</p>
 
 <h2 id="configsettings">Verify configuration settings</h2>
 
-<p>Check the Magento configuration settings through the Admin panel including the Base URL, Base Admin URL, multi-site settings, and more. If you need to make any additional changes, complete edits in your local Git branch and push to the <code class="highlighter-rouge">master</code> branch in Integration, Staging, and Production.</p>
+<p>Check the Magento configuration settings through the Admin panel including the Base URL, Base Admin URL, multi-site settings, and more. If you need to make any additional changes, complete edits in your local Git branch and push to the <code class="language-plaintext highlighter-rouge">master</code> branch in Integration, Staging, and Production.</p>
 
 <h2 id="fastly">Check Fastly caching</h2>
 
 <p>Verify Fastly is caching properly on Staging and Production. <a href="/devdocs/guides/v2.2/cloud/cdn/configure-fastly.html">Configuring Fastly</a> requires careful attention to details, using the correct Fastly Service ID and Fastly API key, and a proper VCL snippet uploaded.</p>
 
-<p>First, check for headers with a dig command to the URL. In a terminal application, enter <code class="highlighter-rouge">dig &lt;url&gt;</code> to verify Fastly services display in the headers. For additional <code class="highlighter-rouge">dig</code> tests, see Fastly’s <a href="https://docs.fastly.com/guides/basic-configuration/testing-setup-before-changing-domains">Testing before changing DNS</a>.</p>
+<p>First, check for headers with a dig command to the URL. In a terminal application, enter <code class="language-plaintext highlighter-rouge">dig &lt;url&gt;</code> to verify Fastly services display in the headers. For additional <code class="language-plaintext highlighter-rouge">dig</code> tests, see Fastly’s <a href="https://docs.fastly.com/guides/basic-configuration/testing-setup-before-changing-domains">Testing before changing DNS</a>.</p>
 
-<p>The following examples use Pro URLs. You can use any URL with the <code class="highlighter-rouge">dig</code> command.</p>
+<p>The following examples use Pro URLs. You can use any URL with the <code class="language-plaintext highlighter-rouge">dig</code> command.</p>
 
 <ul>
-  <li>Staging: <code class="highlighter-rouge">dig http[s]://staging.&lt;your domain&gt;.c.&lt;instanceid&gt;.ent.magento.cloud</code></li>
-  <li>Production: <code class="highlighter-rouge">dig http[s]://&lt;your domain&gt;.{1|2|3}.&lt;project ID&gt;.ent.magento.cloud</code></li>
+  <li>Staging: <code class="language-plaintext highlighter-rouge">dig http[s]://staging.&lt;your domain&gt;.c.&lt;instanceid&gt;.ent.magento.cloud</code></li>
+  <li>Production: <code class="language-plaintext highlighter-rouge">dig http[s]://&lt;your domain&gt;.{1|2|3}.&lt;project ID&gt;.ent.magento.cloud</code></li>
 </ul>
 
-<p>Next, use a <code class="highlighter-rouge">curl</code> command to verify X-Magento-Tags exist and additional header information. The format for the command is:</p>
+<p>Next, use a <code class="language-plaintext highlighter-rouge">curl</code> command to verify X-Magento-Tags exist and additional header information. The format for the command is:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>curl http[s]://&lt;full site URL&gt; -H "host: &lt;url&gt;" -k -vo /dev/null -HFastly-Debug:1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>curl http[s]://&lt;full site URL&gt; -H "host: &lt;url&gt;" -k -vo /dev/null -HFastly-Debug:1
 </code></pre></div></div>
 
 <p>For Starter, enter the full site URL from your environment <a href="/devdocs/guides/v2.2/cloud/live/stage-prod-migrate-prereq.html#starter-urls">Access info</a> in the command to view the headers.</p>
@@ -4362,29 +4363,29 @@
 <p>For Pro Staging and Production, the command differs per server:</p>
 
 <ul>
-  <li>Staging: <code class="highlighter-rouge">curl http[s]://staging.&lt;your domain&gt;.c.&lt;instanceid&gt;.ent.magento.cloud -H "host: &lt;url&gt;" -k -vo /dev/null -HFastly-Debug:1</code></li>
+  <li>Staging: <code class="language-plaintext highlighter-rouge">curl http[s]://staging.&lt;your domain&gt;.c.&lt;instanceid&gt;.ent.magento.cloud -H "host: &lt;url&gt;" -k -vo /dev/null -HFastly-Debug:1</code></li>
   <li>
     <p>Production:</p>
 
     <ul>
-      <li>The load balancer: <code class="highlighter-rouge">curl http[s]://&lt;your domain&gt;.c.&lt;project ID&gt;.ent.magento.cloud -H "host: &lt;url&gt;" -k -vo /dev/null -HFastly-Debug:1</code></li>
-      <li>A direct Origin node: <code class="highlighter-rouge">curl http[s]://&lt;your domain&gt;.{1|2|3}.&lt;project ID&gt;.ent.magento.cloud -H "host: &lt;url&gt;" -k -vo /dev/null -HFastly-Debug:1</code></li>
+      <li>The load balancer: <code class="language-plaintext highlighter-rouge">curl http[s]://&lt;your domain&gt;.c.&lt;project ID&gt;.ent.magento.cloud -H "host: &lt;url&gt;" -k -vo /dev/null -HFastly-Debug:1</code></li>
+      <li>A direct Origin node: <code class="language-plaintext highlighter-rouge">curl http[s]://&lt;your domain&gt;.{1|2|3}.&lt;project ID&gt;.ent.magento.cloud -H "host: &lt;url&gt;" -k -vo /dev/null -HFastly-Debug:1</code></li>
     </ul>
   </li>
 </ul>
 
-<p>After you are live, you can also check your live site: <code class="highlighter-rouge">curl https://&lt;your domain&gt; -k -vo /dev/null -HFastly-Debug:1</code>. You can also add <code class="highlighter-rouge">--resolve</code> if your live URL is not set up with DNS.</p>
+<p>After you are live, you can also check your live site: <code class="language-plaintext highlighter-rouge">curl https://&lt;your domain&gt; -k -vo /dev/null -HFastly-Debug:1</code>. You can also add <code class="language-plaintext highlighter-rouge">--resolve</code> if your live URL is not set up with DNS.</p>
 
 <p>Check the returned response headers and values:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">Fastly-Magento-VCL-Uploaded</code> should be present</li>
-  <li><code class="highlighter-rouge">X-Magento-Tags</code> should be returned</li>
-  <li><code class="highlighter-rouge">Fastly-Module-Enabled</code> should be either <code class="highlighter-rouge">Yes</code> or the Fastly extension version number</li>
-  <li><code class="highlighter-rouge">X-Cache</code> should be either <code class="highlighter-rouge">HIT</code> or <code class="highlighter-rouge">HIT, HIT</code></li>
-  <li><code class="highlighter-rouge">x-cache-hits</code> should be 1,1</li>
-  <li><a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9"><code class="highlighter-rouge">Cache-Control: max-age</code></a> should be greater than 0</li>
-  <li><a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32"><code class="highlighter-rouge">Pragma</code></a> should be <code class="highlighter-rouge">cache</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Fastly-Magento-VCL-Uploaded</code> should be present</li>
+  <li><code class="language-plaintext highlighter-rouge">X-Magento-Tags</code> should be returned</li>
+  <li><code class="language-plaintext highlighter-rouge">Fastly-Module-Enabled</code> should be either <code class="language-plaintext highlighter-rouge">Yes</code> or the Fastly extension version number</li>
+  <li><code class="language-plaintext highlighter-rouge">X-Cache</code> should be either <code class="language-plaintext highlighter-rouge">HIT</code> or <code class="language-plaintext highlighter-rouge">HIT, HIT</code></li>
+  <li><code class="language-plaintext highlighter-rouge">x-cache-hits</code> should be 1,1</li>
+  <li><a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9"><code class="language-plaintext highlighter-rouge">Cache-Control: max-age</code></a> should be greater than 0</li>
+  <li><a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32"><code class="language-plaintext highlighter-rouge">Pragma</code></a> should be <code class="language-plaintext highlighter-rouge">cache</code></li>
 </ul>
 
 <p>To verify Fastly is enabled in Staging and Production, check the configuration in the Magento Admin for each environment:</p>

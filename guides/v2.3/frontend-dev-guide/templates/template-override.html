@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Templates basic concepts | Magento 2 Developer Documentation (copy)</title>
+	<title>Templates basic concepts | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/frontend-dev-guide/templates/template-override.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/frontend-dev-guide/templates/template-override.html">Magento 2.0</a></li>
 		
@@ -2891,34 +2892,34 @@
  files, and
 each layout block has an associated template.</p>
 
-<p>The template is specified in the <code class="highlighter-rouge">template</code> attribute of the <code class="highlighter-rouge">&lt;block&gt;</code> layout instruction.</p>
+<p>The template is specified in the <code class="language-plaintext highlighter-rouge">template</code> attribute of the <code class="language-plaintext highlighter-rouge">&lt;block&gt;</code> layout instruction.</p>
 
-<p>Take this example from <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml"><code class="highlighter-rouge">app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml</code></a>:</p>
+<p>Take this example from <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml"><code class="language-plaintext highlighter-rouge">app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml</code></a>:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;block class="Magento\Catalog\Block\Category\View" name="category.image" template="Magento_Catalog::category/image.phtml"&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;block class="Magento\Catalog\Block\Category\View" name="category.image" template="Magento_Catalog::category/image.phtml"&gt;
 </code></pre></div></div>
 
-<p>The <code class="highlighter-rouge">category.image</code> block is rendered by the <code class="highlighter-rouge">image.phtml</code> template in the <code class="highlighter-rouge">category</code> subdirectory of the <code class="highlighter-rouge">Magento_Catalog</code>   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
+<p>The <code class="language-plaintext highlighter-rouge">category.image</code> block is rendered by the <code class="language-plaintext highlighter-rouge">image.phtml</code> template in the <code class="language-plaintext highlighter-rouge">category</code> subdirectory of the <code class="language-plaintext highlighter-rouge">Magento_Catalog</code>   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
  templates directory.</p>
 
-<p>The templates directory of <code class="highlighter-rouge">Magento_Catalog</code> is <code class="highlighter-rouge">app/code/Magento/Catalog/view/frontend/templates</code>.</p>
+<p>The templates directory of <code class="language-plaintext highlighter-rouge">Magento_Catalog</code> is <code class="language-plaintext highlighter-rouge">app/code/Magento/Catalog/view/frontend/templates</code>.</p>
 
 <h2 id="template-convention">Template location</h2>
 
 <p>Templates are stored in the following locations:</p>
 
 <ul>
-  <li>Module templates: <code class="highlighter-rouge">&lt;module_dir&gt;/view/frontend/templates/&lt;path_to_templates&gt;</code></li>
-  <li>Theme templates: <code class="highlighter-rouge">&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/templates/&lt;path_to_templates&gt;</code></li>
+  <li>Module templates: <code class="language-plaintext highlighter-rouge">&lt;module_dir&gt;/view/frontend/templates/&lt;path_to_templates&gt;</code></li>
+  <li>Theme templates: <code class="language-plaintext highlighter-rouge">&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/templates/&lt;path_to_templates&gt;</code></li>
 </ul>
 
-<p><code class="highlighter-rouge">&lt;path_to_templates&gt;</code> indicates zero or more directory levels.</p>
+<p><code class="language-plaintext highlighter-rouge">&lt;path_to_templates&gt;</code> indicates zero or more directory levels.</p>
 
 <p>Examples:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">app/code/Magento/Catalog/view/frontend/templates/product/widget/new/content/new_grid.phtml</code></li>
-  <li><code class="highlighter-rouge">app/code/Magento/Checkout/view/frontend/templates/cart.phtml</code></li>
+  <li><code class="language-plaintext highlighter-rouge">app/code/Magento/Catalog/view/frontend/templates/product/widget/new/content/new_grid.phtml</code></li>
+  <li><code class="language-plaintext highlighter-rouge">app/code/Magento/Checkout/view/frontend/templates/cart.phtml</code></li>
 </ul>
 
 <h2 id="override">Template overrides</h2>
@@ -2937,20 +2938,20 @@ This concept is the basis of template customization in Magento.</p>
 
 <h2 id="root">Root template</h2>
 
-<p><code class="highlighter-rouge">&lt;Magento_Theme_module_dir&gt;/view/base/templates/root.phtml</code> is the root template for all storefront pages in the Magento application.
+<p><code class="language-plaintext highlighter-rouge">&lt;Magento_Theme_module_dir&gt;/view/base/templates/root.phtml</code> is the root template for all storefront pages in the Magento application.
 This file can be overridden in a theme just like any other template file.</p>
 
-<p>Unlike other templates, <code class="highlighter-rouge">root.phtml</code> contains the <code class="highlighter-rouge">doctype</code> specification and contributes to <code class="highlighter-rouge">&lt;head&gt;</code> and <code class="highlighter-rouge">&lt;body&gt;</code> sections of all pages rendered by Magento application.</p>
+<p>Unlike other templates, <code class="language-plaintext highlighter-rouge">root.phtml</code> contains the <code class="language-plaintext highlighter-rouge">doctype</code> specification and contributes to <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;body&gt;</code> sections of all pages rendered by Magento application.</p>
 
 <h2 id="getter">Getting argument values from layout</h2>
 
-<p>Arguments values set in a layout file are accessed in templates using the <code class="highlighter-rouge">get{ArgumentName}()</code> and <code class="highlighter-rouge">has{ArgumentName}()</code> methods.</p>
+<p>Arguments values set in a layout file are accessed in templates using the <code class="language-plaintext highlighter-rouge">get{ArgumentName}()</code> and <code class="language-plaintext highlighter-rouge">has{ArgumentName}()</code> methods.</p>
 
 <p>See <a href="/devdocs/guides/v2.3/frontend-dev-guide/layouts/xml-instructions.html">Layout instructions</a></p>
 
 <h2 id="short-tags">Using PHP short tags in template PHTML files</h2>
 
-<p>The <code class="highlighter-rouge">echo</code> command in PHP can be written using the short tag in Magento templates.</p>
+<p>The <code class="language-plaintext highlighter-rouge">echo</code> command in PHP can be written using the short tag in Magento templates.</p>
 
 <p>For example:</p>
 <pre><code class="language-phtml">&lt;?= $block-&gt;getAdjustmentsHtml() ?&gt;

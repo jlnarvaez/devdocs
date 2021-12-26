@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Installation quick reference (tutorial) | Magento 2 Developer Documentation (copy)</title>
+	<title>Installation quick reference (tutorial) | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/install-gde/install-quick-ref.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/install-gde/install-quick-ref.html">Magento 2.0</a></li>
 		
@@ -4551,7 +4552,7 @@
 
 <ul>
   <li>You have your own Magento server (you’re not using a shared hosting provider).</li>
-  <li>You’re starting the installation using <code class="highlighter-rouge">composer create-project</code>, which enables you to get the most recent Magento software and to add your own customizations to it, if desired.</li>
+  <li>You’re starting the installation using <code class="language-plaintext highlighter-rouge">composer create-project</code>, which enables you to get the most recent Magento software and to add your own customizations to it, if desired.</li>
   <li>Everything is installed on one host (database, web server, and so on).</li>
   <li>
     <p>The host you’re installing on is either Ubuntu or CentOS.</p>
@@ -4559,12 +4560,12 @@
     <p>(You can use the same instructions to install on other UNIX distributions like RedHat Enterprise Linux (RHEL), or Debian, but these instructions aren’t for Mac or Windows.)</p>
   </li>
   <li>
-    <p>Your host’s IP address is <code class="highlighter-rouge">192.0.2.5</code>.</p>
+    <p>Your host’s IP address is <code class="language-plaintext highlighter-rouge">192.0.2.5</code>.</p>
 
     <p>This is just an example IP address that you’ll see in detailed examples throughout this topic. You can substitute it with whatever internal/external IP address matches your server.</p>
   </li>
   <li>
-    <p>You’re installing to the <code class="highlighter-rouge">magento2</code> subdirectory under your web server’s docroot (full path is <code class="highlighter-rouge">/var/www/html/magento2</code>)</p>
+    <p>You’re installing to the <code class="language-plaintext highlighter-rouge">magento2</code> subdirectory under your web server’s docroot (full path is <code class="language-plaintext highlighter-rouge">/var/www/html/magento2</code>)</p>
 
     <p>You can optionally set up static routing or a virtual host to install to a hostname instead of an IP but that’s beyond the scope of this topic.</p>
   </li>
@@ -4602,7 +4603,7 @@
 <p>When all prerequisites have been met, get the Magento software using   <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span>
  as follows:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd &lt;web server docroot directory&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd &lt;web server docroot directory&gt;
 composer create-project --repository=https://repo.magento.com/ magento/project-community-edition magento2
 </code></pre></div></div>
 
@@ -4632,25 +4633,25 @@ composer create-project --repository=https://repo.magento.com/ magento/project-c
     <p>Use a file manager application provided by your shared hosting provider to verify write permissions are set on the following directories:</p>
 
     <ul>
-      <li><code class="highlighter-rouge">vendor</code> (Composer or compressed archive installation)</li>
-      <li><code class="highlighter-rouge">app/etc</code></li>
-      <li><code class="highlighter-rouge">pub/static</code></li>
-      <li><code class="highlighter-rouge">var</code></li>
+      <li><code class="language-plaintext highlighter-rouge">vendor</code> (Composer or compressed archive installation)</li>
+      <li><code class="language-plaintext highlighter-rouge">app/etc</code></li>
+      <li><code class="language-plaintext highlighter-rouge">pub/static</code></li>
+      <li><code class="language-plaintext highlighter-rouge">var</code></li>
       <li>Any other static resources</li>
     </ul>
   </li>
   <li>
     <p>If you have command-line access, enter the following commands in the order shown:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd &lt;your Magento install dir&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd &lt;your Magento install dir&gt;
 find var vendor pub/static pub/media app/etc -type f -exec chmod u+w {} +
 find var vendor pub/static pub/media app/etc -type d -exec chmod u+w {} +
 chmod u+x bin/magento
 </code></pre></div>    </div>
 
-    <p>To optionally enter all commands on one line, enter the following assuming Magento is installed in <code class="highlighter-rouge">/var/www/html/magento2</code>:</p>
+    <p>To optionally enter all commands on one line, enter the following assuming Magento is installed in <code class="language-plaintext highlighter-rouge">/var/www/html/magento2</code>:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd /var/www/html/magento2 &amp;&amp; find var vendor pub/static pub/media app/etc -type f -exec chmod u+w {} + &amp;&amp; find var vendor pub/static pub/media app/etc -type d -exec chmod u+w {} + &amp;&amp; chmod u+x bin/magento
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd /var/www/html/magento2 &amp;&amp; find var vendor pub/static pub/media app/etc -type f -exec chmod u+w {} + &amp;&amp; find var vendor pub/static pub/media app/etc -type d -exec chmod u+w {} + &amp;&amp; chmod u+x bin/magento
 </code></pre></div>    </div>
   </li>
   <li>
@@ -4706,23 +4707,23 @@ chmod u+x bin/magento
 
 <p>This section discusses how to create the Magento file system owner. (Magento file system owner is another term for the <em>command-line user</em>.)</p>
 
-<p>To create a user on CentOS or Ubuntu, enter the following command as a user with <code class="highlighter-rouge">root</code> privileges:</p>
+<p>To create a user on CentOS or Ubuntu, enter the following command as a user with <code class="language-plaintext highlighter-rouge">root</code> privileges:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>adduser &lt;username&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>adduser &lt;username&gt;
 </code></pre></div></div>
 
-<p>To give the user a password, enter the following command as a user with <code class="highlighter-rouge">root</code> privileges:</p>
+<p>To give the user a password, enter the following command as a user with <code class="language-plaintext highlighter-rouge">root</code> privileges:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>passwd &lt;username&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>passwd &lt;username&gt;
 </code></pre></div></div>
 
 <p>Follow the prompts on your screen to create a password for the user.</p>
 
-<p class="bs-callout bs-callout-warning">If you don’t have <code class="highlighter-rouge">root</code> privileges on your Magento server, you can use another local user account. Make sure the user has a strong password and continue with <a href="#install-update-depend-user-add2group">Put the Magento file system owner in the web server group</a>.</p>
+<p class="bs-callout bs-callout-warning">If you don’t have <code class="language-plaintext highlighter-rouge">root</code> privileges on your Magento server, you can use another local user account. Make sure the user has a strong password and continue with <a href="#install-update-depend-user-add2group">Put the Magento file system owner in the web server group</a>.</p>
 
-<p>For example, to create a user named <code class="highlighter-rouge">magento_user</code> and give the user a password, enter:</p>
+<p>For example, to create a user named <code class="language-plaintext highlighter-rouge">magento_user</code> and give the user a password, enter:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>sudo adduser magento_user
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>sudo adduser magento_user
 sudo passwd magento_user
 </code></pre></div></div>
 
@@ -4734,41 +4735,41 @@ sudo passwd magento_user
 
 <ul>
   <li>
-    <p>CentOS: <code class="highlighter-rouge">egrep -i '^user|^group' /etc/httpd/conf/httpd.conf</code></p>
+    <p>CentOS: <code class="language-plaintext highlighter-rouge">egrep -i '^user|^group' /etc/httpd/conf/httpd.conf</code></p>
 
-    <p>Typically, the user and group name are both <code class="highlighter-rouge">apache</code></p>
+    <p>Typically, the user and group name are both <code class="language-plaintext highlighter-rouge">apache</code></p>
   </li>
   <li>
-    <p>Ubuntu: <code class="highlighter-rouge">ps aux | grep apache</code> to find the apache user, then <code class="highlighter-rouge">groups &lt;apache user&gt;</code> to find the group</p>
+    <p>Ubuntu: <code class="language-plaintext highlighter-rouge">ps aux | grep apache</code> to find the apache user, then <code class="language-plaintext highlighter-rouge">groups &lt;apache user&gt;</code> to find the group</p>
 
-    <p>Typically, the username and the group name are both <code class="highlighter-rouge">www-data</code></p>
+    <p>Typically, the username and the group name are both <code class="language-plaintext highlighter-rouge">www-data</code></p>
   </li>
 </ul>
 
 <h3 id="install-update-depend-user-add2group">Step 3: Put the Magento file system owner in the web server’s group</h3>
 
-<p>To put the Magento file system owner in the web server’s group (assuming the typical Apache group name for CentOS and Ubuntu), enter the following command as a user with <code class="highlighter-rouge">root</code> privileges:</p>
+<p>To put the Magento file system owner in the web server’s group (assuming the typical Apache group name for CentOS and Ubuntu), enter the following command as a user with <code class="language-plaintext highlighter-rouge">root</code> privileges:</p>
 
 <ul>
-  <li>CentOS: <code class="highlighter-rouge">usermod -a -G apache &lt;username&gt;</code></li>
-  <li>Ubuntu: <code class="highlighter-rouge">usermod -a -G www-data &lt;username&gt;</code></li>
+  <li>CentOS: <code class="language-plaintext highlighter-rouge">usermod -a -G apache &lt;username&gt;</code></li>
+  <li>Ubuntu: <code class="language-plaintext highlighter-rouge">usermod -a -G www-data &lt;username&gt;</code></li>
 </ul>
 
-<p class="bs-callout bs-callout-info">The <code class="highlighter-rouge">-a -G</code> options are important because they add <code class="highlighter-rouge">apache</code> or <code class="highlighter-rouge">www-data</code> as a <em>secondary</em> group to the user account, which preserves the user’s <em>primary</em> group. Adding a secondary group to a user account helps <a href="#perms-set-two-users">restrict file ownership and permissions</a> to ensure members of a shared group only have access to certain files.</p>
+<p class="bs-callout bs-callout-info">The <code class="language-plaintext highlighter-rouge">-a -G</code> options are important because they add <code class="language-plaintext highlighter-rouge">apache</code> or <code class="language-plaintext highlighter-rouge">www-data</code> as a <em>secondary</em> group to the user account, which preserves the user’s <em>primary</em> group. Adding a secondary group to a user account helps <a href="#perms-set-two-users">restrict file ownership and permissions</a> to ensure members of a shared group only have access to certain files.</p>
 
-<p>For example, to add <code class="highlighter-rouge">apache</code> as a secondary group to user <code class="highlighter-rouge">magento_user</code> on CentOS:</p>
+<p>For example, to add <code class="language-plaintext highlighter-rouge">apache</code> as a secondary group to user <code class="language-plaintext highlighter-rouge">magento_user</code> on CentOS:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>sudo usermod -a -G apache magento_user
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>sudo usermod -a -G apache magento_user
 </code></pre></div></div>
 
 <p>To confirm your Magento user is a member of the web server group, enter the following command:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>groups magento_user
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>groups magento_user
 </code></pre></div></div>
 
-<p>The following sample result shows the user’s primary (<code class="highlighter-rouge">magento</code>) and secondary (<code class="highlighter-rouge">apache</code>) groups.</p>
+<p>The following sample result shows the user’s primary (<code class="language-plaintext highlighter-rouge">magento</code>) and secondary (<code class="language-plaintext highlighter-rouge">apache</code>) groups.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento_user : magento_user apache
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento_user : magento_user apache
 </code></pre></div></div>
 
 <p class="bs-callout bs-callout-info">Typically, the username and primary group name are the same.</p>
@@ -4776,8 +4777,8 @@ sudo passwd magento_user
 <p>To complete the task, restart the web server:</p>
 
 <ul>
-  <li>Ubuntu: <code class="highlighter-rouge">service apache2 restart</code></li>
-  <li>CentOS: <code class="highlighter-rouge">service httpd restart</code></li>
+  <li>Ubuntu: <code class="language-plaintext highlighter-rouge">service apache2 restart</code></li>
+  <li>CentOS: <code class="language-plaintext highlighter-rouge">service httpd restart</code></li>
 </ul>
 
 <h3 id="perms-get-software">Step 4: Get the Magento software</h3>
@@ -4799,7 +4800,7 @@ sudo passwd magento_user
   <li>
     <p>Enter the following commands in the order shown:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd &lt;your Magento install dir&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd &lt;your Magento install dir&gt;
 find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
 find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
 sudo chown -R :&lt;web server group&gt; .
@@ -4808,14 +4809,14 @@ chmod u+x bin/magento
   </li>
 </ol>
 
-<p>To optionally enter all commands on one line, enter the following assuming Magento is installed in <code class="highlighter-rouge">/var/www/html/magento2</code> and the web server group name is <code class="highlighter-rouge">apache</code>:</p>
+<p>To optionally enter all commands on one line, enter the following assuming Magento is installed in <code class="language-plaintext highlighter-rouge">/var/www/html/magento2</code> and the web server group name is <code class="language-plaintext highlighter-rouge">apache</code>:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd /var/www/html/magento2 &amp;&amp; find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} + &amp;&amp; find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} + &amp;&amp; chown -R :apache . &amp;&amp; chmod u+x bin/magento
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd /var/www/html/magento2 &amp;&amp; find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} + &amp;&amp; find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} + &amp;&amp; chown -R :apache . &amp;&amp; chmod u+x bin/magento
 </code></pre></div></div>
 
-<p>In the event file system permissions are set improperly and can’t be changed by the Magento file system owner, you can enter the command as a user with <code class="highlighter-rouge">root</code> privileges:</p>
+<p>In the event file system permissions are set improperly and can’t be changed by the Magento file system owner, you can enter the command as a user with <code class="language-plaintext highlighter-rouge">root</code> privileges:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd /var/www/html/magento2 &amp;&amp; sudo find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} + &amp;&amp; sudo find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} + &amp;&amp; sudo chown -R :apache . &amp;&amp; sudo chmod u+x bin/magento
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd /var/www/html/magento2 &amp;&amp; sudo find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} + &amp;&amp; sudo find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} + &amp;&amp; sudo chown -R :apache . &amp;&amp; sudo chmod u+x bin/magento
 </code></pre></div></div>
 
 <h3 id="next-step">Next step</h3>
@@ -4834,13 +4835,13 @@ chmod u+x bin/magento
 <p>After you’ve performed the other tasks in this topic, enter one of the following commands to switch to that user:</p>
 
 <ul>
-  <li>Ubuntu: <code class="highlighter-rouge">su &lt;username&gt;</code></li>
-  <li>CentOS: <code class="highlighter-rouge">su - &lt;username&gt;</code></li>
+  <li>Ubuntu: <code class="language-plaintext highlighter-rouge">su &lt;username&gt;</code></li>
+  <li>CentOS: <code class="language-plaintext highlighter-rouge">su - &lt;username&gt;</code></li>
 </ul>
 
 <p>For example,</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>su magento_user
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>su magento_user
 </code></pre></div></div>
 
 <h2 id="installation-part-2-installing-the-magento-software">Installation part 2: Installing the Magento software</h2>
@@ -4855,12 +4856,12 @@ chmod u+x bin/magento
 
 <ul>
   <li>
-    <p>The Magento software is installed in the <code class="highlighter-rouge">/var/www/html/magento2</code> directory, which means your storefront URL is <code class="highlighter-rouge">http://192.0.2.5/magento2/</code></p>
+    <p>The Magento software is installed in the <code class="language-plaintext highlighter-rouge">/var/www/html/magento2</code> directory, which means your storefront URL is <code class="language-plaintext highlighter-rouge">http://192.0.2.5/magento2/</code></p>
   </li>
   <li>
     <p>The database server is on the same host as the web server.</p>
 
-    <p>The database name is <code class="highlighter-rouge">magento</code>, and the username and password are both <code class="highlighter-rouge">magento</code></p>
+    <p>The database name is <code class="language-plaintext highlighter-rouge">magento</code>, and the username and password are both <code class="language-plaintext highlighter-rouge">magento</code></p>
   </li>
   <li>
     <p>Uses server rewrites</p>
@@ -4869,17 +4870,17 @@ chmod u+x bin/magento
     <p>The Magento administrator has the following properties:</p>
 
     <ul>
-      <li>First and last name are <code class="highlighter-rouge">Magento User</code></li>
-      <li>Username is <code class="highlighter-rouge">admin</code> and the password is <code class="highlighter-rouge">admin123</code></li>
-      <li>E-mail address is <code class="highlighter-rouge">user@example.com</code></li>
+      <li>First and last name are <code class="language-plaintext highlighter-rouge">Magento User</code></li>
+      <li>Username is <code class="language-plaintext highlighter-rouge">admin</code> and the password is <code class="language-plaintext highlighter-rouge">admin123</code></li>
+      <li>E-mail address is <code class="language-plaintext highlighter-rouge">user@example.com</code></li>
     </ul>
   </li>
-  <li>Default language is <code class="highlighter-rouge">en_US</code> (U.S. English)</li>
+  <li>Default language is <code class="language-plaintext highlighter-rouge">en_US</code> (U.S. English)</li>
   <li>Default currency is U.S. dollars</li>
   <li>
     <p>Default time zone is U.S. Central (America/Chicago)</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php /var/www/html/magento2/bin/magento setup:install --base-url=http://192.0.2.5/magento2/ \
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php /var/www/html/magento2/bin/magento setup:install --base-url=http://192.0.2.5/magento2/ \
 --db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
 --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
 --admin-user=admin --admin-password=admin123 --language=en_US \
@@ -4890,7 +4891,7 @@ chmod u+x bin/magento
 
 <p>Optionally switch to <a href="/devdocs/guides/v2.1/config-guide/cli/config-cli-subcommands-mode.html">developer mode</a>.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd &lt;your Magento install dir&gt;/bin
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd &lt;your Magento install dir&gt;/bin
 php magento deploy:mode:set developer
 </code></pre></div></div>
 </div>
@@ -4904,22 +4905,22 @@ php magento deploy:mode:set developer
 
 <ul>
   <li>
-    <p>The Magento software is installed in the <code class="highlighter-rouge">magento2</code> directory relative to the web server docroot, which means your storefront URL is <code class="highlighter-rouge">http://192.0.2.5/magento2/</code></p>
+    <p>The Magento software is installed in the <code class="language-plaintext highlighter-rouge">magento2</code> directory relative to the web server docroot, which means your storefront URL is <code class="language-plaintext highlighter-rouge">http://192.0.2.5/magento2/</code></p>
   </li>
   <li>
     <p>The database server is on the same host as the web server.</p>
 
-    <p>The database name is <code class="highlighter-rouge">magento</code>, and the username and password are both <code class="highlighter-rouge">magento</code></p>
+    <p>The database name is <code class="language-plaintext highlighter-rouge">magento</code>, and the username and password are both <code class="language-plaintext highlighter-rouge">magento</code></p>
   </li>
   <li>
     <p>The Magento administrator has the following properties:</p>
 
     <ul>
-      <li>Username is <code class="highlighter-rouge">admin</code> and the password is <code class="highlighter-rouge">admin123</code></li>
-      <li>E-mail address is <code class="highlighter-rouge">user@example.com</code></li>
+      <li>Username is <code class="language-plaintext highlighter-rouge">admin</code> and the password is <code class="language-plaintext highlighter-rouge">admin123</code></li>
+      <li>E-mail address is <code class="language-plaintext highlighter-rouge">user@example.com</code></li>
     </ul>
   </li>
-  <li>Default language is <code class="highlighter-rouge">en_US</code> (U.S. English)</li>
+  <li>Default language is <code class="language-plaintext highlighter-rouge">en_US</code> (U.S. English)</li>
   <li>Default currency is U.S. dollars</li>
   <li>Default time zone is U.S. Central (America/Chicago)</li>
 </ul>
@@ -4930,7 +4931,7 @@ php magento deploy:mode:set developer
   <li>
     <p>Enter the following URL in your browser’s address or location field:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>http://192.0.2.5/magento2/setup
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>http://192.0.2.5/magento2/setup
 </code></pre></div>    </div>
   </li>
   <li>

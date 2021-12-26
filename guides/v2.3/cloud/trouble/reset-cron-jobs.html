@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Reset cron jobs | Magento 2 Developer Documentation (copy)</title>
+	<title>Reset cron jobs | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/trouble/reset-cron-jobs.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/trouble/reset-cron-jobs.html">Magento 2.0</a></li>
 		
@@ -4342,23 +4343,23 @@
 	<h1 class="page-heading">Reset cron jobs</h1>
 </section>
 
-			<p>Sometimes, Magento cron jobs do not finish executing and persist in a <code class="highlighter-rouge">running</code> status, which prevents other cron jobs from running. This can happen for a number of reasons, such as network issues, application crashes, redeployment issues.</p>
+			<p>Sometimes, Magento cron jobs do not finish executing and persist in a <code class="language-plaintext highlighter-rouge">running</code> status, which prevents other cron jobs from running. This can happen for a number of reasons, such as network issues, application crashes, redeployment issues.</p>
 
 <h2 id="symptom">Symptom</h2>
 
 <p>Symptoms of cron jobs that must be reset include:</p>
 
 <ul>
-  <li>Large quantity of jobs appear in the <code class="highlighter-rouge">cron_schedule</code> queue</li>
+  <li>Large quantity of jobs appear in the <code class="language-plaintext highlighter-rouge">cron_schedule</code> queue</li>
   <li>Site performance starts to degrade</li>
   <li>Jobs fail to execute on schedule</li>
 </ul>
 
 <h2 id="solution">Solution</h2>
 
-<p>To resolve this issue, you must reset the cron job(s) using the <code class="highlighter-rouge">cron:unlock</code> command. This command changes the status of the cron job in the database, ending the job forcefully to allow other scheduled jobs to continue.</p>
+<p>To resolve this issue, you must reset the cron job(s) using the <code class="language-plaintext highlighter-rouge">cron:unlock</code> command. This command changes the status of the cron job in the database, ending the job forcefully to allow other scheduled jobs to continue.</p>
 
-<p class="bs-callout bs-callout-warning">Running this command without the <code class="highlighter-rouge">--job-code</code> option resets <em>all</em> cron jobs, including those currently running, so we recommend using it only in exceptional cases, such as after you have verified that all cron jobs must be reset. Re-deployment runs this command by default to reset cron jobs, so they recover appropriately after the environment is back up. Avoid using this solution when indexers are running.</p>
+<p class="bs-callout bs-callout-warning">Running this command without the <code class="language-plaintext highlighter-rouge">--job-code</code> option resets <em>all</em> cron jobs, including those currently running, so we recommend using it only in exceptional cases, such as after you have verified that all cron jobs must be reset. Re-deployment runs this command by default to reset cron jobs, so they recover appropriately after the environment is back up. Avoid using this solution when indexers are running.</p>
 
 <ol>
   <li>
@@ -4367,17 +4368,17 @@
   <li>
     <p>Get the MySQL database credentials:</p>
 
-    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">echo</span> <span class="nv">$MAGENTO_CLOUD_RELATIONSHIPS</span> | base64 <span class="nt">-d</span> | json_pp
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nb">echo</span> <span class="nv">$MAGENTO_CLOUD_RELATIONSHIPS</span> | <span class="nb">base64</span> <span class="nt">-d</span> | json_pp
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Connect to the database using <code class="highlighter-rouge">mysql</code>:</p>
+    <p>Connect to the database using <code class="language-plaintext highlighter-rouge">mysql</code>:</p>
 
     <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql <span class="nt">-hdatabase</span>.internal <span class="nt">-uuser</span> <span class="nt">-ppassword</span> main
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Select the <code class="highlighter-rouge">main</code> database:</p>
+    <p>Select the <code class="language-plaintext highlighter-rouge">main</code> database:</p>
 
     <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>use main
 </code></pre></div>    </div>
@@ -4389,7 +4390,7 @@
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Copy the <code class="highlighter-rouge">schedule_id</code> of any job running longer than usual.</p>
+    <p>Copy the <code class="language-plaintext highlighter-rouge">schedule_id</code> of any job running longer than usual.</p>
   </li>
   <li>
     <p>Use the schedule IDs from the previous step to unlock specific cron jobs:</p>

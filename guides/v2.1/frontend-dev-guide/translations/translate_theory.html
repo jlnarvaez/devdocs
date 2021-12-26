@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Translate theme strings | Magento 2 Developer Documentation (copy)</title>
+	<title>Translate theme strings | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/frontend-dev-guide/translations/translate_theory.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/frontend-dev-guide/translations/translate_theory.html">Magento 2.0</a></li>
 		
@@ -2749,16 +2750,16 @@ Then when a new   <span term-uuid="9c4c7b9b-43f0-4454-8e8c-fb62ad40c35f" class="
 
 <h2 id="add_strings_phtml">Strings added in .phtml templates</h2>
 
-<p>To ensure that your new string is added to the dictionary and translated, use the <code class="highlighter-rouge">__('&lt;your_string&gt;')</code> method when outputting a string in a <a href="/devdocs/guides/v2.1/frontend-dev-guide/templates/template-overview.html">.phtml template</a>.</p>
+<p>To ensure that your new string is added to the dictionary and translated, use the <code class="language-plaintext highlighter-rouge">__('&lt;your_string&gt;')</code> method when outputting a string in a <a href="/devdocs/guides/v2.1/frontend-dev-guide/templates/template-overview.html">.phtml template</a>.</p>
 
 <p>For example:</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>### <span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">__</span><span class="p">(</span><span class="s1">'Create Backup'</span><span class="p">)</span> <span class="cp">?&gt;</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>### <span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nf">__</span><span class="p">(</span><span class="s1">'Create Backup'</span><span class="p">)</span> <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>If your string contains a variable, to add a placeholder for this variable in the dictionary, use syntax similar to the following:</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>### <span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">__</span><span class="p">(</span><span class="s1">'Hello %1'</span><span class="p">,</span> <span class="nv">$yourVariable</span><span class="p">)</span> <span class="cp">?&gt;</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>### <span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nf">__</span><span class="p">(</span><span class="s1">'Hello %1'</span><span class="p">,</span> <span class="nv">$yourVariable</span><span class="p">)</span> <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>In this example, the <i>‘Hello %1’</i> string is added to the dictionary when the i18n tool is run.</p>
@@ -2772,7 +2773,7 @@ To make sure the strings of an email template are added to the dictionary, use t
 
 <h2 id="add_strings_ui_html">Strings added in UI component templates</h2>
 
-<p>To ensure that the text you add in <code class="highlighter-rouge">.html</code> templates of UI components is added to the dictionary, mark the text using the <code class="highlighter-rouge">i18n</code> custom binding. The following code samples illustrate how it should be used for different cases of adding a text:</p>
+<p>To ensure that the text you add in <code class="language-plaintext highlighter-rouge">.html</code> templates of UI components is added to the dictionary, mark the text using the <code class="language-plaintext highlighter-rouge">i18n</code> custom binding. The following code samples illustrate how it should be used for different cases of adding a text:</p>
 
 <ul>
   <li>when a string is added in the scope of an HTML element:</li>
@@ -2797,44 +2798,44 @@ To make sure the strings of an email template are added to the dictionary, use t
 
 <h2 id="add_strings_ui_xml">Strings added in UI components configuration files</h2>
 
-<p>To ensure that the text you add in UI components configuration <code class="highlighter-rouge">.xml</code> files is added to the dictionary, use the <code class="highlighter-rouge">translate</code> attribute: set <code class="highlighter-rouge">translate=true</code> for the corresponding element. The following code sample is an illustration:</p>
+<p>To ensure that the text you add in UI components configuration <code class="language-plaintext highlighter-rouge">.xml</code> files is added to the dictionary, use the <code class="language-plaintext highlighter-rouge">translate</code> attribute: set <code class="language-plaintext highlighter-rouge">translate=true</code> for the corresponding element. The following code sample is an illustration:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"label"</span> <span class="na">xsi:type=</span><span class="s">"string"</span> <span class="na">translate=</span><span class="s">"true"</span><span class="nt">&gt;</span>Delete<span class="nt">&lt;/item&gt;</span>
 </code></pre></div></div>
 
 <p>In this example, the <em>Delete</em> string is added to the dictionary when the i18n tool is run.</p>
 
-<p>Translated strings that originate from <code class="highlighter-rouge">.xml</code> files will not render unless they are called with a <code class="highlighter-rouge">__(&lt;variable&gt;)</code> method.
+<p>Translated strings that originate from <code class="language-plaintext highlighter-rouge">.xml</code> files will not render unless they are called with a <code class="language-plaintext highlighter-rouge">__(&lt;variable&gt;)</code> method.
 In this example, you would use a call similar to the following to display the translated <em>Delete</em> string.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nx">__</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">config</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">(</span><span class="s1">'label'</span><span class="p">))</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nf">__</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">config</span><span class="o">-&gt;</span><span class="nf">getData</span><span class="p">(</span><span class="s1">'label'</span><span class="p">))</span>
 </code></pre></div></div>
 
 <h2 id="add_strings_js">Strings added in .js files</h2>
 
-<p>To ensure that the text you add in a <code class="highlighter-rouge">.js</code> file is collected by the i18n tool and added to the dictionary, take the following steps:</p>
+<p>To ensure that the text you add in a <code class="language-plaintext highlighter-rouge">.js</code> file is collected by the i18n tool and added to the dictionary, take the following steps:</p>
 
 <ol>
   <li>
-    <p>Link the <code class="highlighter-rouge">mage/translate</code> library:</p>
+    <p>Link the <code class="language-plaintext highlighter-rouge">mage/translate</code> library:</p>
 
-    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> <span class="nx">define</span> <span class="p">([</span><span class="s1">'jquery'</span><span class="p">,</span> <span class="s1">'mage/translate'</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{...});</span>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> <span class="nx">define</span> <span class="p">([</span><span class="dl">'</span><span class="s1">jquery</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">mage/translate</span><span class="dl">'</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{...});</span>
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Use the <code class="highlighter-rouge">$.mage.__('')</code> function when adding a string:</p>
+    <p>Use the <code class="language-plaintext highlighter-rouge">$.mage.__('')</code> function when adding a string:</p>
 
-    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> <span class="nx">$</span><span class="p">.</span><span class="nx">mage</span><span class="p">.</span><span class="nx">__</span><span class="p">(</span><span class="s1">'&lt;string&gt;'</span><span class="p">);</span>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> <span class="nx">$</span><span class="p">.</span><span class="nx">mage</span><span class="p">.</span><span class="nx">__</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;string&gt;</span><span class="dl">'</span><span class="p">);</span>
 </code></pre></div>    </div>
 
     <p>If your string contains a variable, to add a placeholder for this variable to the string stored in the dictionary, use the syntax similar to the following:</p>
 
-    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> <span class="nx">$</span><span class="p">.</span><span class="nx">mage</span><span class="p">.</span><span class="nx">__</span><span class="p">(</span><span class="s1">'Hello %1'</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="s1">'%1'</span><span class="p">,</span> <span class="nx">yourVariable</span><span class="p">);</span>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlighter"><code> <span class="nx">$</span><span class="p">.</span><span class="nx">mage</span><span class="p">.</span><span class="nx">__</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello %1</span><span class="dl">'</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="dl">'</span><span class="s1">%1</span><span class="dl">'</span><span class="p">,</span> <span class="nx">yourVariable</span><span class="p">);</span>
 </code></pre></div>    </div>
   </li>
 </ol>
 
-<p>In this example, the <code class="highlighter-rouge">'Hello %1'</code> string is added to the dictionary when the i18n tool is run.</p>
+<p>In this example, the <code class="language-plaintext highlighter-rouge">'Hello %1'</code> string is added to the dictionary when the i18n tool is run.</p>
 
 
 			

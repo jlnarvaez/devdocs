@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento_InstantPurchase module | Magento 2 Developer Documentation (copy)</title>
+	<title>Magento_InstantPurchase module | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/mrg/ce/InstantPurchase.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/mrg/ce/InstantPurchase.html">Magento 2.0</a></li>
 		
@@ -6806,7 +6807,7 @@ If you want to contribute, refer to <a href="/devdocs/guides/v2.3/contributor-gu
 
 <p>Prerequisites to display the Instant Purchase button:</p>
 <ol>
-  <li>Instant purchase enabled for a store at <code class="highlighter-rouge">Store / Configurations / Sales / Sales / Instant Purchase</code></li>
+  <li>Instant purchase enabled for a store at <code class="language-plaintext highlighter-rouge">Store / Configurations / Sales / Sales / Instant Purchase</code></li>
   <li>Customer is logged in</li>
   <li>Customer has default shipping and billing address defined</li>
   <li>Customer has valid stored payment method with instant purchase support</li>
@@ -6814,30 +6815,30 @@ If you want to contribute, refer to <a href="/devdocs/guides/v2.3/contributor-gu
 
 <h2 id="structure">Structure</h2>
 
-<p>In addition to <a href="/devdocs/guides/v2.2/extension-dev-guide/build/module-file-structure.html">a typical file structure for a Magento 2 module</a> <code class="highlighter-rouge">PaymentMethodsIntegration</code> directory contains interfaces and basic implementation of integration vault payment method to the instant purchase.</p>
+<p>In addition to <a href="/devdocs/guides/v2.2/extension-dev-guide/build/module-file-structure.html">a typical file structure for a Magento 2 module</a> <code class="language-plaintext highlighter-rouge">PaymentMethodsIntegration</code> directory contains interfaces and basic implementation of integration vault payment method to the instant purchase.</p>
 
 <h2 id="extensibility">Extensibility</h2>
 
 <h3 id="instant-purchase-customization">Instant purchase customization</h3>
 
-<p>Almost all aspects of instant purchase may be customized. See comments to classes and interfaces marked with <code class="highlighter-rouge">@api</code> tag.</p>
+<p>Almost all aspects of instant purchase may be customized. See comments to classes and interfaces marked with <code class="language-plaintext highlighter-rouge">@api</code> tag.</p>
 
-<p>All payments created for instant purchase also have <code class="highlighter-rouge">'instant-purchase' =&gt; true</code> in addition information. Use this only if all other customization points not suitable,</p>
+<p>All payments created for instant purchase also have <code class="language-plaintext highlighter-rouge">'instant-purchase' =&gt; true</code> in addition information. Use this only if all other customization points not suitable,</p>
 
 <h3 id="payment-method-integration">Payment method integration</h3>
 
 <p>Instant purchase support may be implemented for any payment method with <a href="/devdocs/guides/v2.1/payments-integrations/vault/vault-intro.html">vault support</a>.
-Basic implementation provided in <code class="highlighter-rouge">Magento\InstantPurchase\PaymentMethodIntegration</code> should be enough in most cases. It is not enabled by default to avoid issues on production sites and authors of vault payment method should verify correct work for instant purchase manually.
-To enable basic implementation just add single option to configuration of payemnt method in <code class="highlighter-rouge">config.xml</code>:</p>
+Basic implementation provided in <code class="language-plaintext highlighter-rouge">Magento\InstantPurchase\PaymentMethodIntegration</code> should be enough in most cases. It is not enabled by default to avoid issues on production sites and authors of vault payment method should verify correct work for instant purchase manually.
+To enable basic implementation just add single option to configuration of payemnt method in <code class="language-plaintext highlighter-rouge">config.xml</code>:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;instant_purchase&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;instant_purchase&gt;
     &lt;supported&gt;1&lt;/supported&gt;
 &lt;/instant_purchase&gt;
 </code></pre></div></div>
 
-<p>Basic implementation is a good start point but it’s recommended to provide own implementation to improve user experience. If instant purchase integration has customization then <code class="highlighter-rouge">supported</code> option is not required.</p>
+<p>Basic implementation is a good start point but it’s recommended to provide own implementation to improve user experience. If instant purchase integration has customization then <code class="language-plaintext highlighter-rouge">supported</code> option is not required.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;instant_purchase&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;instant_purchase&gt;
     &lt;available&gt;Implementation_Of_Magento\InstantPurchase\PaymentMethodIntegration\AvailabilityCheckerInterface&lt;/available&gt;
     &lt;tokenFormat&gt;Implementation_Of_Magento\InstantPurchase\PaymentMethodIntegration\PaymentTokenFormatterInterface&lt;/tokenFormat&gt;
     &lt;additionalInformation&gt;Implementation_Of_Magento\InstantPurchase\PaymentMethodIntegration\PaymentAdditionalInformationProviderInterface&lt;/additionalInformation&gt;
@@ -6845,16 +6846,16 @@ To enable basic implementation just add single option to configuration of payemn
 </code></pre></div></div>
 
 <ul>
-  <li><code class="highlighter-rouge">Magento\InstantPurchase\PaymentMethodIntegration\AvailabilityCheckerInterface</code> - allows programmatically defines if instant purchase supported (e.g. support may not be available if some payment method option switched on/off). Basic implementation always returns <code class="highlighter-rouge">true</code>.</li>
-  <li><code class="highlighter-rouge">Magento\InstantPurchase\PaymentMethodIntegration\PaymentTokenFormatterInterface</code> - creates string that describes stored payment method. Basic implementation returns payment method name. It is highly recommended to implement own formatter.</li>
-  <li><code class="highlighter-rouge">Magento\InstantPurchase\PaymentMethodIntegration\PaymentAdditionalInformationProviderInterface</code> - allows to add some extra values to payment additional information array. Default implementation returns empty array.</li>
+  <li><code class="language-plaintext highlighter-rouge">Magento\InstantPurchase\PaymentMethodIntegration\AvailabilityCheckerInterface</code> - allows programmatically defines if instant purchase supported (e.g. support may not be available if some payment method option switched on/off). Basic implementation always returns <code class="language-plaintext highlighter-rouge">true</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">Magento\InstantPurchase\PaymentMethodIntegration\PaymentTokenFormatterInterface</code> - creates string that describes stored payment method. Basic implementation returns payment method name. It is highly recommended to implement own formatter.</li>
+  <li><code class="language-plaintext highlighter-rouge">Magento\InstantPurchase\PaymentMethodIntegration\PaymentAdditionalInformationProviderInterface</code> - allows to add some extra values to payment additional information array. Default implementation returns empty array.</li>
 </ul>
 
 <h2 id="additional-information">Additional information</h2>
 
 <h3 id="backward-incompatible-changes">Backward incompatible changes</h3>
 
-<p>The <code class="highlighter-rouge">Magento_InstantPurchase</code> module does not introduce backward incompatible changes.</p>
+<p>The <code class="language-plaintext highlighter-rouge">Magento_InstantPurchase</code> module does not introduce backward incompatible changes.</p>
 
 <p>You can track <a href="/devdocs/guides/v2.2/release-notes/changes/ce_changes.html">backward incompatible changes in patch releases</a>.</p>
 

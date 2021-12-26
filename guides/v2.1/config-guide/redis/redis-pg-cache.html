@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Use Redis for the Magento page and default cache | Magento 2 Developer Documentation (copy)</title>
+	<title>Use Redis for the Magento page and default cache | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.1/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/config-guide/redis/redis-pg-cache.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/config-guide/redis/redis-pg-cache.html">Magento 2.0</a></li>
 		
@@ -3672,11 +3673,11 @@
 
 <h2 id="config-redis-config">Configure Magento to use Redis for default and page caching</h2>
 
-<p>Following is a sample configuration that causes Magento to use Redis for both the default cache (<code class="highlighter-rouge">default</code> array) and the full page cache (<code class="highlighter-rouge">page_cache</code> array). Magento’s caching is implemented by <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/CacheInterface.php"><code class="highlighter-rouge">Magento\Framework\App\CacheInterface</code></a>.</p>
+<p>Following is a sample configuration that causes Magento to use Redis for both the default cache (<code class="language-plaintext highlighter-rouge">default</code> array) and the full page cache (<code class="language-plaintext highlighter-rouge">page_cache</code> array). Magento’s caching is implemented by <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/CacheInterface.php"><code class="language-plaintext highlighter-rouge">Magento\Framework\App\CacheInterface</code></a>.</p>
 
-<p>Add a configuration similar to the following to <code class="highlighter-rouge">&lt;your Magento install dir&gt;app/etc/env.php</code>:</p>
+<p>Add a configuration similar to the following to <code class="language-plaintext highlighter-rouge">&lt;your Magento install dir&gt;app/etc/env.php</code>:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>'cache' =&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>'cache' =&gt;
 array(
    'frontend' =&gt;
    array(
@@ -3716,27 +3717,27 @@ array(
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">default, page_cache</code></td>
+      <td><code class="language-plaintext highlighter-rouge">default, page_cache</code></td>
       <td>Specify the segment name to use a particular segment or a default shortcut for all other caches.<br /><br />The default cache segment enables you to configure all cache segments except for page_cache (the full page cache).</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">server</code></td>
+      <td><code class="language-plaintext highlighter-rouge">server</code></td>
       <td>Absolute URL to your Redis server, or 127.0.0.1 if Redis is installed on the Magento server, or an absolute path to a UNIX socket.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">port</code></td>
+      <td><code class="language-plaintext highlighter-rouge">port</code></td>
       <td>Redis server listen port</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">database</code></td>
+      <td><code class="language-plaintext highlighter-rouge">database</code></td>
       <td>Required if you use Redis for both the default and full page cache. You must specify the database number of one of the caches; the other cache uses 0 by default.<br /><br />Important: If you use Redis for more than one type of caching (for example, default cache and page cache), the database numbers must be different.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">password</code></td>
+      <td><code class="language-plaintext highlighter-rouge">password</code></td>
       <td>Specifies a password if your Redis server requires authentication.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">compress_data</code></td>
+      <td><code class="language-plaintext highlighter-rouge">compress_data</code></td>
       <td>Required only for the full page cache. Set to 1 to compress the full page cache. Redis chooses a compression algorithm in the following order, based on availability: <a href="https://github.com/google/snappy">snappy</a>, <a href="https://github.com/Cyan4973/lz4">l4z</a>, or <a href="http://oldhome.schmorp.de/marc/liblzf.html">lzf</a>. If none of them available, Redis uses gzip.</td>
     </tr>
   </tbody>
@@ -3750,7 +3751,7 @@ array(
 
 <p>In a command prompt on the server on which Redis is running, enter:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>redis-cli monitor
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>redis-cli monitor
 </code></pre></div></div>
 
 <p>Refresh your storefront page and you’ll see output similar to the following.</p>
@@ -3797,15 +3798,15 @@ array(
 
 <p>Enter the following command:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>redis-cli ping
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>redis-cli ping
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">PONG</code> should be the response.</p>
+<p><code class="language-plaintext highlighter-rouge">PONG</code> should be the response.</p>
 
 <p>If both commands succeeded, Redis is set up properly.</p>
 
 <h4 id="more-information">More information</h4>
-<p><a href="http://redis.io/topics/rediscli"><code class="highlighter-rouge">redis-cli</code> command reference</a></p>
+<p><a href="http://redis.io/topics/rediscli"><code class="language-plaintext highlighter-rouge">redis-cli</code> command reference</a></p>
 
 <h4 id="related-topics">Related topics</h4>
 

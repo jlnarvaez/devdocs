@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Manage branches with the CLI | Magento 2 Developer Documentation (copy)</title>
+	<title>Manage branches with the CLI | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.2/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/cloud/env/environments-start.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/cloud/env/environments-start.html">Magento 2.0</a></li>
 		
@@ -4320,9 +4321,9 @@
 
 <h2 id="env-start-comm">Common Magento Cloud CLI commands</h2>
 
-<p>Magento Cloud CLI commands are very similar to Git commands. You can use them to connect to your Magento Commerce Cloud project and manage your  Magento Commerce Cloud environments. Although you can run the commands from any directory, we recommend that you run them from a project directory. When run from a project directory, you can omit the <code class="highlighter-rouge">-p &lt;project-ID&gt;</code> parameter.</p>
+<p>Magento Cloud CLI commands are very similar to Git commands. You can use them to connect to your Magento Commerce Cloud project and manage your  Magento Commerce Cloud environments. Although you can run the commands from any directory, we recommend that you run them from a project directory. When run from a project directory, you can omit the <code class="language-plaintext highlighter-rouge">-p &lt;project-ID&gt;</code> parameter.</p>
 
-<p>The following list of commonly used Magento Cloud CLI commands includes required options only. Use the <code class="highlighter-rouge">--help</code>
+<p>The following list of commonly used Magento Cloud CLI commands includes required options only. Use the <code class="language-plaintext highlighter-rouge">--help</code>
 option with any command to get more detailed information.</p>
 
 <table>
@@ -4334,43 +4335,43 @@ option with any command to get more detailed information.</p>
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">git commit --allow-empty -m "redeploy" &amp;&amp; git push &lt;branch-name&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">git commit --allow-empty -m "redeploy" &amp;&amp; git push &lt;branch-name&gt;</code></td>
       <td>Push an empty commit to force a redeployment. Some actions, such as adding a user, do not result in deployment.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">magento-cloud login</code></td>
+      <td><code class="language-plaintext highlighter-rouge">magento-cloud login</code></td>
       <td>Log in to the project.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">magento-cloud project:get &lt;project-ID&gt; &lt;directory&gt; -e &lt;environment-ID&gt;</code></td>
-      <td>Clone a project to a directory. To clone the <code class="highlighter-rouge">master</code> environment, omit <code class="highlighter-rouge">-e &lt;environment-ID&gt;</code>.</td>
+      <td><code class="language-plaintext highlighter-rouge">magento-cloud project:get &lt;project-ID&gt; &lt;directory&gt; -e &lt;environment-ID&gt;</code></td>
+      <td>Clone a project to a directory. To clone the <code class="language-plaintext highlighter-rouge">master</code> environment, omit <code class="language-plaintext highlighter-rouge">-e &lt;environment-ID&gt;</code>.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">magento-cloud environment:list -p &lt;project-ID&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">magento-cloud environment:list -p &lt;project-ID&gt;</code></td>
       <td>List the environments in the current project.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">magento-cloud environment:branch &lt;name&gt; &lt;parent-branch&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">magento-cloud environment:branch &lt;name&gt; &lt;parent-branch&gt;</code></td>
       <td>Create a new branch with a name and an ID. This information corresponds to the environment.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">magento-cloud environment:checkout &lt;environment-ID&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">magento-cloud environment:checkout &lt;environment-ID&gt;</code></td>
       <td>Check out an existing environment.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">magento-cloud environment:merge -p &lt;project-ID&gt; -e &lt;environment ID&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">magento-cloud environment:merge -p &lt;project-ID&gt; -e &lt;environment ID&gt;</code></td>
       <td>Merge changes in this environment with its parent.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">magento-cloud environment:synchronize -p &lt;project-ID&gt; -e &lt;environment-ID&gt; {code|data}</code></td>
-      <td>Synchronize (<code class="highlighter-rouge">git pull</code>) code and data from the parent to this environment.</td>
+      <td><code class="language-plaintext highlighter-rouge">magento-cloud environment:synchronize -p &lt;project-ID&gt; -e &lt;environment-ID&gt; {code|data}</code></td>
+      <td>Synchronize (<code class="language-plaintext highlighter-rouge">git pull</code>) code and data from the parent to this environment.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">magento-cloud variable:list</code></td>
+      <td><code class="language-plaintext highlighter-rouge">magento-cloud variable:list</code></td>
       <td>List variables in this environment.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">magento-cloud variable:set &lt;name&gt; &lt;value&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">magento-cloud variable:set &lt;name&gt; &lt;value&gt;</code></td>
       <td>Set a value for an environment variable.</td>
     </tr>
   </tbody>
@@ -4378,7 +4379,7 @@ option with any command to get more detailed information.</p>
 
 <p>For a full list of commands, see the <a href="/devdocs/guides/v2.2/cloud/reference/cli-ref-topic.html">Magento Cloud CLI reference</a>.</p>
 
-<p class="bs-callout bs-callout-info">The environment <em>name</em> is different from the environment <em>ID</em> only if you use spaces or capital letters in the environment name. An environment ID consists of all lowercase letters, numbers, and allowed symbols. Capital letters in an environment name are converted to lowercase in the ID; spaces in an environment name are converted to dashes. An environment name <em>cannot</em> include characters reserved for your Linux shell or for regular expressions. Forbidden characters include curly braces (<code class="highlighter-rouge">{ }</code>), parentheses, asterisk (<code class="highlighter-rouge">*</code>), angle brackets (<code class="highlighter-rouge">&lt; &gt;</code>), ampersand (<code class="highlighter-rouge">&amp;</code>), percent (<code class="highlighter-rouge">%</code>), and other characters.</p>
+<p class="bs-callout bs-callout-info">The environment <em>name</em> is different from the environment <em>ID</em> only if you use spaces or capital letters in the environment name. An environment ID consists of all lowercase letters, numbers, and allowed symbols. Capital letters in an environment name are converted to lowercase in the ID; spaces in an environment name are converted to dashes. An environment name <em>cannot</em> include characters reserved for your Linux shell or for regular expressions. Forbidden characters include curly braces (<code class="language-plaintext highlighter-rouge">{ }</code>), parentheses, asterisk (<code class="language-plaintext highlighter-rouge">*</code>), angle brackets (<code class="language-plaintext highlighter-rouge">&lt; &gt;</code>), ampersand (<code class="language-plaintext highlighter-rouge">&amp;</code>), percent (<code class="language-plaintext highlighter-rouge">%</code>), and other characters.</p>
 
 <h2 id="getstarted">Get started creating branches</h2>
 
@@ -4390,54 +4391,54 @@ option with any command to get more detailed information.</p>
   <li>
     <p>Enter the following command in a terminal to log in to your project:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud login
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud login
 </code></pre></div>    </div>
   </li>
   <li>
     <p>List your projects. With the project ID, you can complete additional commands.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud project:list
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud project:list
 </code></pre></div>    </div>
   </li>
   <li>
     <p>If necessary, clone the project to your local. You should have cloned when setting up your local development workspace.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud project:get &lt;project ID&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud project:get &lt;project ID&gt;
 </code></pre></div>    </div>
   </li>
-  <li>Change to a project directory. For example, <code class="highlighter-rouge">cd /var/www/html/magento2</code></li>
+  <li>Change to a project directory. For example, <code class="language-plaintext highlighter-rouge">cd /var/www/html/magento2</code></li>
   <li>
     <p>List environments in the project. Every environment includes an active Git branch of your code, database, environment variables, configurations, and services.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:list
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:list
 </code></pre></div>    </div>
 
-  	<code class="highlighter-rouge">magento-cloud environment:list</code>—displays environment hierarchies whereas the <code class="highlighter-rouge">git branch</code> command does not.
+  	<code class="language-plaintext highlighter-rouge">magento-cloud environment:list</code>—displays environment hierarchies whereas the <code class="language-plaintext highlighter-rouge">git branch</code> command does not.
   </li>
   <li>
     <p>Fetch origin branches to get the latest code:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git fetch origin
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git fetch origin
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Check out, or switch to, a specific branch and environment. Git commands only checkout the Git branch. The Magento Cloud command also switches to the active environment.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:checkout &lt;environment ID&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:checkout &lt;environment ID&gt;
 </code></pre></div>    </div>
 
-    <p>To create a new environment, use <code class="highlighter-rouge">magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
+    <p>To create a new environment, use <code class="language-plaintext highlighter-rouge">magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
   </li>
   <li>
     <p>Pull any updated code to your local for the environment ID (which is the Git branch):</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git pull origin &lt;environment ID&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>git pull origin &lt;environment ID&gt;
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Create a <a href="/devdocs/guides/v2.2/cloud/project/project-webint-snap.html">snapshot</a> of the environment as a backup:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -4468,7 +4469,7 @@ option with any command to get more detailed information.</p>
 
 <p>Only delete an environment if you are certain that you no longer need it. You cannot recover an environment after you delete it.</p>
 
-<p class="bs-callout bs-callout-warning">You cannot delete the <code class="highlighter-rouge">master</code> environment of any project.</p>
+<p class="bs-callout bs-callout-warning">You cannot delete the <code class="language-plaintext highlighter-rouge">master</code> environment of any project.</p>
 
 <p>You must be a <a href="/devdocs/guides/v2.2/cloud/project/user-admin.html#cloud-role-project">project administrator</a>, <a href="/devdocs/guides/v2.2/cloud/project/user-admin.html#cloud-role-env">environment administrator</a>, or <a href="/devdocs/guides/v2.2/cloud/project/user-admin.html#cloud-role-acct-owner">Project Owner</a> to perform this task.</p>
 
@@ -4495,7 +4496,7 @@ option with any command to get more detailed information.</p>
   <li>
     <p>Respond to the prompts to delete the local environment and the corresponding remote environment.</p>
 
-    <div class="language-terminal no-copy highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="gp">The environment &lt;environment-ID&gt;</span> is currently active: deleting it will delete all associated data.
+    <div class="language-terminal no-copy highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="gp">The environment &lt;environment-ID&gt;</span><span class="w"> </span>is currently active: deleting it will delete all associated data.
 <span class="gp">Are you sure you want to delete the environment &lt;environment-ID&gt;</span>? <span class="o">[</span>Y/n]
 </code></pre></div>    </div>
 
@@ -4509,14 +4510,14 @@ option with any command to get more detailed information.</p>
   <li>
     <p>Wait for the environment to delete.</p>
 
-    <div class="language-terminal no-copy highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="gp">Deleting environment &lt;environment-ID&gt;</span>
-<span class="go">Waiting for the activity...
+    <div class="language-terminal no-copy highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="gp">Deleting environment &lt;environment-ID&gt;</span><span class="w">
+</span><span class="go">Waiting for the activity...
 </span><span class="gp">  Deleting environment &lt;project-id&gt;</span>-&lt;environment-ID&gt;-xxxxxx
 <span class="go">    
   [============================]  1 min (complete)
 Activity ID succeeded
-</span><span class="gp">Deleted remote Git branch &lt;environment-ID&gt;</span>
-<span class="go">Run git fetch --prune to remove deleted branches from your local cache.
+</span><span class="gp">Deleted remote Git branch &lt;environment-ID&gt;</span><span class="w">
+</span><span class="go">Run git fetch --prune to remove deleted branches from your local cache.
 </span></code></pre></div>    </div>
   </li>
 </ol>
@@ -4528,7 +4529,7 @@ Activity ID succeeded
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud environment:delete &lt;environment-1-ID&gt; &lt;environment-2-ID&gt;
 </code></pre></div></div>
 
-<p class="bs-callout bs-callout-info">To activate an inactive environment, use the <code class="highlighter-rouge">magento-cloud environment:activate</code> command.</p>
+<p class="bs-callout bs-callout-info">To activate an inactive environment, use the <code class="language-plaintext highlighter-rouge">magento-cloud environment:activate</code> command.</p>
 
 <h2 id="ipaddress">Integration environment IP addresses</h2>
 
@@ -4649,21 +4650,21 @@ Activity ID succeeded
 
     <p>Sample output follows:</p>
 
-    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="nx">Array</span>
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlighter"><code><span class="k">Array</span>
  <span class="p">(</span>
-      <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="k">stdClass</span> <span class="nx">Object</span>
+      <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="n">stdClass</span> <span class="nf">Object</span>
         <span class="p">(</span>
-           <span class="p">[</span><span class="nx">username</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nx">user</span>
-           <span class="p">[</span><span class="nx">password</span><span class="p">]</span> <span class="o">=&gt;</span>
-           <span class="p">[</span><span class="nx">ip</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mf">192.0</span><span class="o">.</span><span class="mf">2.60</span>
-           <span class="p">[</span><span class="nx">host</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nx">database</span><span class="o">.</span><span class="nx">internal</span>
-           <span class="p">[</span><span class="nx">query</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="k">stdClass</span> <span class="nx">Object</span>
+           <span class="p">[</span><span class="n">username</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="n">user</span>
+           <span class="p">[</span><span class="n">password</span><span class="p">]</span> <span class="o">=&gt;</span>
+           <span class="p">[</span><span class="n">ip</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mf">192.0.2.60</span>
+           <span class="p">[</span><span class="n">host</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="n">database</span><span class="mf">.</span><span class="n">internal</span>
+           <span class="p">[</span><span class="n">query</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="n">stdClass</span> <span class="nf">Object</span>
               <span class="p">(</span>
-                <span class="p">[</span><span class="nx">is_master</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mi">1</span>
+                <span class="p">[</span><span class="n">is_master</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mi">1</span>
               <span class="p">)</span>
-           <span class="p">[</span><span class="nx">path</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nb">main</span>
-           <span class="p">[</span><span class="nx">scheme</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nx">mysql</span>
-           <span class="p">[</span><span class="nx">port</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mi">3306</span>
+           <span class="p">[</span><span class="n">path</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="n">main</span>
+           <span class="p">[</span><span class="n">scheme</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="n">mysql</span>
+           <span class="p">[</span><span class="n">port</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mi">3306</span>
         <span class="p">)</span>
     <span class="p">)</span>
 </code></pre></div>    </div>
@@ -4682,38 +4683,38 @@ Activity ID succeeded
 
 <p>Use a terminal application to log in and issue commands.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud login
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud login
 </code></pre></div></div>
 
 <p>First, you may want to check if any tunnels are already open using the following command:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud tunnel:list
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud tunnel:list
 </code></pre></div></div>
 
 <p>To build a tunnel, you must know the name of the app to which to tunnel. Use the following commands to list those applications:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd &lt;project directory&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>cd &lt;project directory&gt;
 magento-cloud project:list
 magento-cloud apps
 </code></pre></div></div>
 
-<p>For information on the command, you can enter <code class="highlighter-rouge">magento-cloud apps --help</code>.</p>
+<p>For information on the command, you can enter <code class="language-plaintext highlighter-rouge">magento-cloud apps --help</code>.</p>
 
 <h3 id="tunnel-setup">Set up the SSH tunnel</h3>
 
 <p>Use the following command:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud tunnel:open -e &lt;environment ID&gt; --app &lt;app name&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud tunnel:open -e &lt;environment ID&gt; --app &lt;app name&gt;
 </code></pre></div></div>
 
-<p>For example, to open a tunnel to the <code class="highlighter-rouge">sprint5</code> branch in a project with an app named <code class="highlighter-rouge">mymagento</code>, enter</p>
+<p>For example, to open a tunnel to the <code class="language-plaintext highlighter-rouge">sprint5</code> branch in a project with an app named <code class="language-plaintext highlighter-rouge">mymagento</code>, enter</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud tunnel:open -e sprint5 --app mymagento
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud tunnel:open -e sprint5 --app mymagento
 </code></pre></div></div>
 
 <p>Messages similar to the following display:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>SSH tunnel opened on port 30003 to relationship: solr
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>SSH tunnel opened on port 30003 to relationship: solr
 SSH tunnel opened on port 30004 to relationship: redis
 SSH tunnel opened on port 30005 to relationship: database
 Logs are written to: /home/magento_user/.magento/tunnels.log
@@ -4727,7 +4728,7 @@ Close tunnels with: magento-cloud tunnel:close
 
 <p>To display information about your tunnel, enter:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud tunnel:info -e &lt;environment ID&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento-cloud tunnel:info -e &lt;environment ID&gt;
 </code></pre></div></div>
 
 <h3 id="tunnel-services">Connect to services</h3>
@@ -4736,10 +4737,10 @@ Close tunnels with: magento-cloud tunnel:close
 
 <p>For example, to connect to the database, use the following command:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql --host=127.0.0.1 --user='&lt;database username&gt;' --pass='&lt;user password&gt;' --database='&lt;name&gt;' --port='&lt;port&gt;'
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>mysql --host=127.0.0.1 --user='&lt;database username&gt;' --pass='&lt;user password&gt;' --database='&lt;name&gt;' --port='&lt;port&gt;'
 </code></pre></div></div>
 
-<p>Details about the service display if you use the <code class="highlighter-rouge">magento-cloud tunnel:info</code> command.</p>
+<p>Details about the service display if you use the <code class="language-plaintext highlighter-rouge">magento-cloud tunnel:info</code> command.</p>
 
 			
 		</div>

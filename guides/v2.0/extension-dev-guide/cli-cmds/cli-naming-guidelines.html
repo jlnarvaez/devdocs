@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Command naming guidelines | Magento 2 Developer Documentation (copy)</title>
+	<title>Command naming guidelines | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/guides/v2.0/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/extension-dev-guide/cli-cmds/cli-naming-guidelines.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/extension-dev-guide/cli-cmds/cli-naming-guidelines.html">Magento 2.0</a></li>
 		
@@ -2913,31 +2914,31 @@
 <h2 id="cli-name">Command name</h2>
 
 <p>A command <em>name</em> is a part of the command, which defines behavior of the command on the very high level. In the command it goes right after the command’s name.
-For example, in <code class="highlighter-rouge">bin/magento setup:upgrade</code>, <code class="highlighter-rouge">bin/magento</code> is the command’s name and <code class="highlighter-rouge">setup:upgrade</code> is the name of the command.</p>
+For example, in <code class="language-plaintext highlighter-rouge">bin/magento setup:upgrade</code>, <code class="language-plaintext highlighter-rouge">bin/magento</code> is the command’s name and <code class="language-plaintext highlighter-rouge">setup:upgrade</code> is the name of the command.</p>
 
 <p>If you have a Magento installation handy, enter the following to display the current list of commands:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php &lt;your Magento install dir&gt;/bin/magento --list
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>php &lt;your Magento install dir&gt;/bin/magento --list
 </code></pre></div></div>
 
-<h4 id="format-groupsubjectaction">Format: <code class="highlighter-rouge">group:[subject:]action</code></h4>
+<h4 id="format-groupsubjectaction">Format: <code class="language-plaintext highlighter-rouge">group:[subject:]action</code></h4>
 
 <h3 id="group">group</h3>
-<p><code class="highlighter-rouge">group</code> represents a group of related commands. Commands in a group display in a list, which in turn makes it easier for the user to find the desired command. To find a group name for a command, imagine an subject area where it can be used. The subject area can be any of the following:</p>
+<p><code class="language-plaintext highlighter-rouge">group</code> represents a group of related commands. Commands in a group display in a list, which in turn makes it easier for the user to find the desired command. To find a group name for a command, imagine an subject area where it can be used. The subject area can be any of the following:</p>
 
 <ul>
-  <li><em>Domain</em> area (for example, <code class="highlighter-rouge">module</code> for actions with modules, <code class="highlighter-rouge">info</code> for commands that provide some information)</li>
-  <li><em>Workflow</em> area (for example, <code class="highlighter-rouge">admin</code> for commands that can be used by an administrator, <code class="highlighter-rouge">dev</code> for a developer)</li>
+  <li><em>Domain</em> area (for example, <code class="language-plaintext highlighter-rouge">module</code> for actions with modules, <code class="language-plaintext highlighter-rouge">info</code> for commands that provide some information)</li>
+  <li><em>Workflow</em> area (for example, <code class="language-plaintext highlighter-rouge">admin</code> for commands that can be used by an administrator, <code class="language-plaintext highlighter-rouge">dev</code> for a developer)</li>
 </ul>
 
 <h3 id="subject">subject</h3>
-<p><code class="highlighter-rouge">subject</code> is a subject for the action. The subject is optional, but it can be useful for defining sets of commands that work with the same object. If a subject is represented by a compound word, use a dash or hyphen character to separate the words.</p>
+<p><code class="language-plaintext highlighter-rouge">subject</code> is a subject for the action. The subject is optional, but it can be useful for defining sets of commands that work with the same object. If a subject is represented by a compound word, use a dash or hyphen character to separate the words.</p>
 
 <h3 id="action">action</h3>
-<p><code class="highlighter-rouge">action</code> is an action the command does.</p>
+<p><code class="language-plaintext highlighter-rouge">action</code> is an action the command does.</p>
 
 <h3 id="examples">Examples</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>// general commands: just a group and an action
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>// general commands: just a group and an action
 magento setup:install
 magento module:status
 
@@ -2948,13 +2949,13 @@ magento setup:db-schema:upgrade
 magento setup:db-data:upgrade
 </code></pre></div></div>
 
-<p class="bs-callout bs-callout-info"><code class="highlighter-rouge">db-schema</code> and <code class="highlighter-rouge">db-data</code> are examples of compound words.</p>
+<p class="bs-callout bs-callout-info"><code class="language-plaintext highlighter-rouge">db-schema</code> and <code class="language-plaintext highlighter-rouge">db-data</code> are examples of compound words.</p>
 
 <h2 id="cli-args">Command options and arguments</h2>
 
 <p>Options and arguments follow the command name and modify the command’s behavior.</p>
 
-<p>For example, in <code class="highlighter-rouge">bin/magento module:disable --force Magento_Catalog</code>, the <code class="highlighter-rouge">--force</code> <em>option</em> and the <code class="highlighter-rouge">Magento_Catalog</code> <em>argument</em> bypass the restrictions and specify a particular   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
+<p>For example, in <code class="language-plaintext highlighter-rouge">bin/magento module:disable --force Magento_Catalog</code>, the <code class="language-plaintext highlighter-rouge">--force</code> <em>option</em> and the <code class="language-plaintext highlighter-rouge">Magento_Catalog</code> <em>argument</em> bypass the restrictions and specify a particular   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
  to be disabled; in this case, regardless of dependencies on other modules.</p>
 
 <p>Options and arguments create different user experiences. As a developer, you can choose which type of input is better for your particular case.</p>
@@ -2967,16 +2968,16 @@ magento setup:db-data:upgrade
 
 <p>Example:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento dev:theme:create frontend vendor themename
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento dev:theme:create frontend vendor themename
 </code></pre></div></div>
 
 <p>where:</p>
 
-<p><code class="highlighter-rouge">frontend</code> is a subject area argument</p>
+<p><code class="language-plaintext highlighter-rouge">frontend</code> is a subject area argument</p>
 
-<p><code class="highlighter-rouge">vendor</code> is a vendor argument</p>
+<p><code class="language-plaintext highlighter-rouge">vendor</code> is a vendor argument</p>
 
-<p><code class="highlighter-rouge">themename</code> is a   <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>
+<p><code class="language-plaintext highlighter-rouge">themename</code> is a   <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>
  name argument</p>
 
 <p>Use arguments when you need required data from the user. We recommend as few arguments as possible (no more then three) so the user will not confuse their order.</p>
@@ -2997,15 +2998,15 @@ magento setup:db-data:upgrade
 
 <p>Options are name-value pairs. The sequence of entered values doesn’t matter.</p>
 
-<p>An option can have a value or no value. An option that does not require a value represents a flag (<code class="highlighter-rouge">yes</code> or <code class="highlighter-rouge">no</code>).</p>
+<p>An option can have a value or no value. An option that does not require a value represents a flag (<code class="language-plaintext highlighter-rouge">yes</code> or <code class="language-plaintext highlighter-rouge">no</code>).</p>
 
-<p>An option can also have a one-letter shortcut as an alternative to its full name. Enable shortcuts for often-used options or if it’s easy to determine what the shortcut means. Usually it makes sense to enable shortcuts for options similar to the ones used in widely-used commands (for example, <code class="highlighter-rouge">-f</code> for <code class="highlighter-rouge">--force</code>, <code class="highlighter-rouge">-v</code> for <code class="highlighter-rouge">--verbose</code>, <code class="highlighter-rouge">-h</code> for <code class="highlighter-rouge">--help</code>).</p>
+<p>An option can also have a one-letter shortcut as an alternative to its full name. Enable shortcuts for often-used options or if it’s easy to determine what the shortcut means. Usually it makes sense to enable shortcuts for options similar to the ones used in widely-used commands (for example, <code class="language-plaintext highlighter-rouge">-f</code> for <code class="language-plaintext highlighter-rouge">--force</code>, <code class="language-plaintext highlighter-rouge">-v</code> for <code class="language-plaintext highlighter-rouge">--verbose</code>, <code class="language-plaintext highlighter-rouge">-h</code> for <code class="language-plaintext highlighter-rouge">--help</code>).</p>
 
 <h4 id="format-single-word-or-a-compound-word-separated-with-a-dash-or-hyphen-character-1">Format: single word or a compound word separated with a dash or hyphen character.</h4>
 
 <p>For example,</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento dev:theme:create --parent=Magento/luma frontend arg1 arg2
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>magento dev:theme:create --parent=Magento/luma frontend arg1 arg2
 magento dev:theme:create -p=Magento/luma frontend vendor themename
 magento dev:theme:create --extend-from=Magento/luma frontend vendor themename
 magento module:disable -f Magento_Cms
@@ -3013,13 +3014,13 @@ magento module:disable -f Magento_Cms
 
 <p>Where:</p>
 
-<p><code class="highlighter-rouge">--parent</code> is an option that specifies a parent theme</p>
+<p><code class="language-plaintext highlighter-rouge">--parent</code> is an option that specifies a parent theme</p>
 
-<p><code class="highlighter-rouge">-p</code> is a shortcut for <code class="highlighter-rouge">--parent</code></p>
+<p><code class="language-plaintext highlighter-rouge">-p</code> is a shortcut for <code class="language-plaintext highlighter-rouge">--parent</code></p>
 
-<p><code class="highlighter-rouge">-f</code> is a shortcut for a non-value option <code class="highlighter-rouge">--force</code></p>
+<p><code class="language-plaintext highlighter-rouge">-f</code> is a shortcut for a non-value option <code class="language-plaintext highlighter-rouge">--force</code></p>
 
-<p><code class="highlighter-rouge">arg1</code>, <code class="highlighter-rouge">arg2</code>, <code class="highlighter-rouge">frontend</code>, <code class="highlighter-rouge">vendor</code> and <code class="highlighter-rouge">themename</code> are arguments (see <a href="#cli-args">Command options and arguments</a>).</p>
+<p><code class="language-plaintext highlighter-rouge">arg1</code>, <code class="language-plaintext highlighter-rouge">arg2</code>, <code class="language-plaintext highlighter-rouge">frontend</code>, <code class="language-plaintext highlighter-rouge">vendor</code> and <code class="language-plaintext highlighter-rouge">themename</code> are arguments (see <a href="#cli-args">Command options and arguments</a>).</p>
 
 <p>Use options for:</p>
 
@@ -3030,7 +3031,7 @@ magento module:disable -f Magento_Cms
 
 <p>Example:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>// correct
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>// correct
 magento dev:theme:create --extend-from=Magento/luma frontend Foo bar
 magento module:disable --force Magento_Catalog
 magento module:disable -f Magento_Catalog
@@ -3052,13 +3053,13 @@ magento module:disable -f=yes Magento_Catalog
     <p>Restricting command names to start with a unique name, such as a vendor name. The   <span term-uuid="f583cac1-8ed5-4305-8195-2d5630e72ba8" class="glossary-term" data-toggle="popover">usability</span>
  of the command depends on what you choose for a vendor name.</p>
 
-    <p>For example, <code class="highlighter-rouge">myname:dev:theme:create</code> is not obvious and is hard to remember.</p>
+    <p>For example, <code class="language-plaintext highlighter-rouge">myname:dev:theme:create</code> is not obvious and is hard to remember.</p>
 
     <p>The vendor name doesn’t have to start the command name; it could be in the middle. This way, related commands are grouped together.</p>
 
     <p>Examples:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>dev:myname:theme:create
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>dev:myname:theme:create
 dev:myname:theme:delete
 </code></pre></div>    </div>
   </li>

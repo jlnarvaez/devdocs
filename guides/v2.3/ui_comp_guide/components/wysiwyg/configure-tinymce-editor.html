@@ -5,14 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Configure the TinyMCE editor | Magento 2 Developer Documentation (copy)</title>
+	<title>Configure the TinyMCE editor | Copy of Magento 2 Developer Documentation</title>
 	<meta name="description" content="Copy of the Magento 2 Developer Documentation.">
 
 	<link rel="stylesheet" href="/devdocs/assets/css/app.css" />
 	<link rel="stylesheet" href="/devdocs/assets/css/print.css" media="print"/>
 
 	<link rel="stylesheet" href="/devdocs/common/css/devdocs.css" />
-<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
 
 	<script>
   var baseUrl = "/devdocs";
@@ -52,7 +51,7 @@
 
     <a class="logo" href="/devdocs/">
       <img src="/devdocs/assets/i/m-logo.svg" alt=""><img src="/devdocs/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">DevDocs (archived, unofficial)</span>
+      <span class="site-logo">DevDocs (unofficial copy)</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
@@ -63,6 +62,8 @@
     </button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+		
+		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/m1x/ui_comp_guide/components/wysiwyg/configure-tinymce-editor.html">Magento 1.x</a></li>
 		
 		<li><a class="dropdown-item" data-proofer-ignore href="/devdocs/guides/v2.0/ui_comp_guide/components/wysiwyg/configure-tinymce-editor.html">Magento 2.0</a></li>
 		
@@ -3295,13 +3296,13 @@
 			<p>You can extend and fully customize the TinyMCE editor to match the style and look-and-feel of your custom theme.
 This enables richer content editing capabilities and ensures that content created in the Page Builder <span term-uuid="98cf4fd5-59b6-4610-9c1f-b84c8c0abd97" class="glossary-term" data-toggle="popover">WYSIWYG</span> is seamlessly integrated and consistent with your other content.</p>
 
-<h2 id="edit-di">Edit the module’s <code class="highlighter-rouge">di.xml</code> file</h2>
+<h2 id="edit-di">Edit the module’s <code class="language-plaintext highlighter-rouge">di.xml</code> file</h2>
 
-<p>Revise the <code class="highlighter-rouge">di.xml</code> file, adding the configuration settings as an argument to <code class="highlighter-rouge">Magento\PageBuilder\Model\Wysiwyg\DefaultConfigProvider</code>, to customize the TinyMCE editor present in Page Builder.</p>
+<p>Revise the <code class="language-plaintext highlighter-rouge">di.xml</code> file, adding the configuration settings as an argument to <code class="language-plaintext highlighter-rouge">Magento\PageBuilder\Model\Wysiwyg\DefaultConfigProvider</code>, to customize the TinyMCE editor present in Page Builder.</p>
 
-<p>The following code shows an example of configuration settings in the <code class="highlighter-rouge">di.xml</code> file that determine the font sizes available for selection and add a paragraph menu option associated with the <code class="highlighter-rouge">&lt;p&gt;</code> tag:</p>
+<p>The following code shows an example of configuration settings in the <code class="language-plaintext highlighter-rouge">di.xml</code> file that determine the font sizes available for selection and add a paragraph menu option associated with the <code class="language-plaintext highlighter-rouge">&lt;p&gt;</code> tag:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;type name="Magento\PageBuilder\Model\Wysiwyg\DefaultConfigProvider"&gt;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlighter"><code>&lt;type name="Magento\PageBuilder\Model\Wysiwyg\DefaultConfigProvider"&gt;
     &lt;arguments&gt;
         &lt;argument name="additionalSettings" xsi:type="array"&gt;
             &lt;item name="fontsize_formats" xsi:type="string"&gt;10px 12px 14px 16px 18px 20px 24px 26px 28px 32px 34px 36px 38px 40px 42px 48px 52px 56px 64px 72px&lt;/item&gt;
@@ -3317,7 +3318,7 @@ This enables richer content editing capabilities and ensures that content create
 </code></pre></div></div>
 <p>See a list of possibly TinyMCE settings on their <a href="https://www.tinymce.com/docs/configure/">website</a>.</p>
 
-<p>Once you have edited the <code class="highlighter-rouge">di.xml</code> file you can apply custom styling for the settings you implemented in the related CSS file.</p>
+<p>Once you have edited the <code class="language-plaintext highlighter-rouge">di.xml</code> file you can apply custom styling for the settings you implemented in the related CSS file.</p>
 
 			
 		</div>
