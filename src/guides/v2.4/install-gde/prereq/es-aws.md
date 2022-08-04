@@ -48,7 +48,7 @@ To test that the new configuration is working, test the OpenSearch endpoint dire
 
 ## Additional resources {#es-resources}
 
-For additional information, see the [OpenSearch AWS documentation][].
+For additional information, see the [OpenSearch AWS documentation][] .
 
 <!-- Link Definitions -->
 
@@ -56,4 +56,5 @@ For additional information, see the [OpenSearch AWS documentation][].
 [Elasticdump]: https://www.npmjs.com/package/elasticdump
 [Elasticsearch documentation]: https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
 [Migrating to Amazon OpenSearch Service]: https://docs.aws.amazon.com/opensearch-service/latest/developerguide/migration.html
+[OpenSearch AWS documentation]: https://docs.aws.amazon.com/opensearch-service/
 [Advanced Install]: {{ page.baseurl }}/install-gde/install/cli/install-cli.html
